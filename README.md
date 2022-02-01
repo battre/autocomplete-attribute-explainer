@@ -257,8 +257,7 @@ types than "street name" and "house number". Here is the proposal:
 </tr>
 <tr style="vertical-align: top">
   <td></td>
-  <td></td>
-  <td colspan=1>"delivery-instructions"</td>
+  <td colspan=2>"delivery-instructions"</td>
   <td>Delivery instructions<br /><br />(not to be combined with address-lineX)</td>
   <td>Free-form text</td>
   <td>Use gate code: 3315</td>
