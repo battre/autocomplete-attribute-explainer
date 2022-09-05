@@ -48,7 +48,7 @@ I use the following representation of addresses below:
 <td> address-line1 | address-line2
 
 <tr>
-<td> Lvl, Apt. or Unit No. | Street No. | Address[^au-address-as-street]
+<td> Lvl, Apt. or Unit No. | Street No. | Address<sup id="au-1">[au-1](#f-au-1)</sup>
 <td>
 <td> sub-premise[^au-lvl-apt-unit] | street-name | house-number
 
@@ -94,9 +94,9 @@ I use the following representation of addresses below:
 
 </table>
 
-[^au-lvl-apt-unit]: This can be found on www.adidas.com.au.
+<b id="f-au-1">au-1</b> This can be found on www.adidas.com.au. [↩](#au-1)
 
-[^au-address-as-street]: This can be found on www.adidas.com.au. The term
+[^au-address-as-street] This can be found on www.adidas.com.au. The term
 "Address" can also refer to a street name when paired with "Street No."
 
 ## Brazil
@@ -371,13 +371,13 @@ Skipped, similar to US
 
 </table>
 
-[^es-lots-of-details]: This is from carrefour.es. And Yes - each of these is a
+[^es-lots-of-details] This is from carrefour.es. And Yes - each of these is a
   separate field. consum.es, dia.es, elcorteingles.es and many others have a
   similar split by fields.
 
-[^hispanic-names]: elcorteingles.es, ikea.com
+[^hispanic-names] elcorteingles.es, ikea.com
 
-[^es-sinúmero]: sometimes there is a checkbox "s/n" or "sin número" (without
+[^es-sinúmero] sometimes there is a checkbox "s/n" or "sin número" (without
   number)
 
 ## France
@@ -521,7 +521,7 @@ France typically relies on address line 1 and 2 fields.
 
 </table>
 
-[^uk-town]: The UK has the concept of postal towns. I am not sure how to
+[^uk-town] The UK has the concept of postal towns. I am not sure how to
   express this. (A single form will have one field for the town and one
   for the city). E.g. www.boots.com
 
@@ -764,7 +764,7 @@ in sequence (stripping the Pincode which was always present)
 
 </table>
 
-[^it-interno]: an internal number, i.e. not an address that lies directly on the road in question
+[^it-interno] an internal number, i.e. not an address that lies directly on the road in question
 
 ## Japan
 
@@ -866,7 +866,7 @@ skipped, as I cannot read the characters
 
 </table>
 
-[^mx-two-lastnames]: costco.com.mx, elpalaciodehierro.com - most websites just ask for both last names
+[^mx-two-lastnames] costco.com.mx, elpalaciodehierro.com - most websites just ask for both last names
   in a single field.
 
 address-level 1 through 4 are all commonly requested. It is very common to ask
@@ -1269,7 +1269,7 @@ known.
 
 </table>
 
-[^za-what3words]: dischem.co.za
+[^za-what3words] dischem.co.za
 
 Pretty often a street address field was "powered by Google".
 
