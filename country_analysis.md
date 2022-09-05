@@ -579,6 +579,7 @@ France typically relies on address line 1 and 2 fields.
 <td> District (Part of a city or regency)
 <td> address-level3
 
+<tr>
 <td> Subdistrict/Kecamatan
 <td> Subdistrict and district go into one field
 <td> *gap*
