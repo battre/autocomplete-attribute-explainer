@@ -48,9 +48,9 @@ I use the following representation of addresses below:
 <td> address-line1 | address-line2
 
 <tr>
-<td> Lvl, Apt. or Unit No. | Street No. | Address<sup id="au-1">[au-1](#f-au-1)</sup>
+<td> Lvl, Apt. or Unit No. | Street No. | Address<sup id="au-1"><a href="#f-au-1">[au-1]</a></sup>
 <td>
-<td> sub-premise[^au-lvl-apt-unit] | street-name | house-number
+<td> sub-premise<sup id="au-2"><a href="#f-au-2">[au-2]</a></sup> | street-name | house-number
 
 <tr>
 <td> Building/Floor/Apartment/Unit | House Number | Street Name/PO Box
@@ -94,10 +94,10 @@ I use the following representation of addresses below:
 
 </table>
 
-<b id="f-au-1">au-1</b> This can be found on www.adidas.com.au. [↩](#au-1)
+<b id="f-au-1">[au-1]:</b> This can be found on www.adidas.com.au. The term
+"Address" can also refer to a street name when paired with "Street No." [↩](#au-1)
 
-[^au-address-as-street] This can be found on www.adidas.com.au. The term
-"Address" can also refer to a street name when paired with "Street No."
+<b id="f-au-2">[au-2]:</b> This can be found on www.adidas.com.au. [↩](#au-2)
 
 ## Brazil
 
@@ -290,7 +290,7 @@ Skipped, similar to US
 <td> given-name | family-name
 
 <tr>
-<td> Nombre | Primer apellido | Segundo apellido [^hispanic-names]
+<td> Nombre | Primer apellido | Segundo apellido<sup id="es-1"><a href="#f-es-1">[es-1]</a></sup>
 <td> First name | First last name | Second last name
 <td> given-name | *gap* | *gap*
 
@@ -320,7 +320,7 @@ Skipped, similar to US
 <td> address-line1 *???*
 
 <tr>
-<td> Dirección | No / KM [^es-sinúmero]
+<td> Dirección | No / KM<sup id="es-2"><a href="#f-es-2">[es-2]</a></sup>
 <td> Street name | House number or location measured in kilometers
 <td> street-name | house-number
 
@@ -330,7 +330,7 @@ Skipped, similar to US
 <td> *gap*
 
 <tr>
-<td> Bloque/Portal | Escalera | Piso | Puerta | Urbanización [^es-lots-of-details]
+<td> Bloque/Portal | Escalera | Piso | Puerta | Urbanización<sup id="es-3"><a href="#f-es-3">[es-3]</a></sup>
 <td> Block/Gate | Staircase | Apartment | Gate | Resisential area
 <td> *gap*
 
@@ -371,14 +371,19 @@ Skipped, similar to US
 
 </table>
 
-[^es-lots-of-details] This is from carrefour.es. And Yes - each of these is a
-  separate field. consum.es, dia.es, elcorteingles.es and many others have a
-  similar split by fields.
+<b id="f-es-1">[es-1]:</b>
+elcorteingles.es, ikea.com
+[↩](#es-1)
 
-[^hispanic-names] elcorteingles.es, ikea.com
+<b id="f-es-2">[es-2]:</b>
+sometimes there is a checkbox "s/n" or "sin número" (without number)
+[↩](#es-2)
 
-[^es-sinúmero] sometimes there is a checkbox "s/n" or "sin número" (without
-  number)
+<b id="f-es-3">[es-3]:</b>
+This is from carrefour.es. And Yes - each of these is a separate field.
+consum.es, dia.es, elcorteingles.es and many others have a similar split by
+fields.
+[↩](#es-3)
 
 ## France
 
@@ -407,7 +412,7 @@ France typically relies on address line 1 and 2 fields.
 <td> organization
 
 <tr>
-<td> Addresse | Complément d'addresse[^fr-most-frequent]
+<td> Addresse | Complément d'addresse<sup id="fr-1"><a href="#f-fr-1">[fr-1]</a></sup>
 <td> Address | Address extension
 <td> address-line1 | address-line2
 
@@ -442,18 +447,24 @@ France typically relies on address line 1 and 2 fields.
 <td> country-name
 
 <tr>
-<td> Commune | Voie | Nº | Localité/lieu dit[^fr-lieu-dit] | Appartment | Bâtiment [^fr-details]
+<td> Commune | Voie | Nº | Localité/lieu dit<sup id="fr-2"><a href="#f-fr-2">[fr-2]</a></sup> | Appartment | Bâtiment <sup id="fr-3"><a href="#f-fr-3">[fr-3]</a></sup>
 <td> Town | Street | House number | Loality/Name of place | Apartment | Building
 <td>
 
 </table>
 
-[^fr-lieu-dit] A "Lieu dit" is a small place that often does not have street names. People would typically fill this into address line 1.
+<b id="f-fr-1">[f1-1]:</b>
+This is the most frequent way of expressing a location in in French websites.
+[↩](#fr-1)
 
-[^fr-details] This degree of details was not representative. It's from bonprix.fr
+<b id="f-fr-2">[f1-2]:</b>
+A "Lieu dit" is a small place that often does not have street names. People
+would typically fill this into address line 1.
+[↩](#fr-2)
 
-[^fr-most-frequent] This is the most frequent way of expressing a location in
-  in French websites.
+<b id="f-fr-3">[f1-3]:</b>
+This degree of details was not representative. It's from bonprix.fr
+[↩](#fr-3)
 
 # Great Britain / UK
 
@@ -485,7 +496,7 @@ France typically relies on address line 1 and 2 fields.
 <td> address-line1 | address-line2
 
 <tr>
-<td> House number, name or unit | Street name | Town | City[^uk-town]
+<td> House number, name or unit | Street name | Town | City<sup id="uk-1"><a href="#f-uk-1">[uk-1]</a></sup>
 <td>
 <td> *gap* | street-name | *gap* | address-level2
 
@@ -521,9 +532,11 @@ France typically relies on address line 1 and 2 fields.
 
 </table>
 
-[^uk-town] The UK has the concept of postal towns. I am not sure how to
-  express this. (A single form will have one field for the town and one
-  for the city). E.g. www.boots.com
+<b id="f-uk-1">[uk-1]:</b>
+The UK has the concept of postal towns. I am not sure how to
+express this. (A single form will have one field for the town and one
+for the city). E.g. www.boots.com
+[↩](#uk-1)
 
 # Indonesia
 
@@ -708,7 +721,7 @@ in sequence (stripping the Pincode which was always present)
 <td> *gap* | *gap*
 
 <tr>
-<td> Via e Numero Civico | Appartamento, Interno[^it-interno], Codice di Acecesso Edificio
+<td> Via e Numero Civico | Appartamento, Interno, Codice di Acecesso Edificio
 <td> Address (street name + houe number) | Apartment, internal number, Building Access Code
 <td> *gap* | *gap*
 
@@ -719,7 +732,7 @@ in sequence (stripping the Pincode which was always present)
 
 <tr>
 <td> Località
-<td> locality [Wikipedia](https://en.wikipedia.org/wiki/Localit%C3%A0)
+<td> locality (<a href="https://en.wikipedia.org/wiki/Localit%C3%A0">Wikipedia</a>)
 <td> address-level3 ???
 
 <tr>
@@ -743,7 +756,7 @@ in sequence (stripping the Pincode which was always present)
 <td> country-name
 
 <tr>
-<td> C/O Presso (azienda, interno[^it-interno], nom sul citofono etc)
+<td> C/O Presso (azienda, interno<sup id="it-1"><a href="#f-it-1">[it-1]</a></sup>, nom sul citofono etc)
 <td> C/O (company, internal number, name on the intercom etc)
 <td>
 
@@ -764,7 +777,10 @@ in sequence (stripping the Pincode which was always present)
 
 </table>
 
-[^it-interno] an internal number, i.e. not an address that lies directly on the road in question
+<b id="f-it-1">[it-1]:</b>
+an internal number, i.e. not an address that lies directly on the road in
+question. E.g. elcorteingles.es, ikea.com
+[↩](#it-1)
 
 ## Japan
 
@@ -786,12 +802,12 @@ skipped, as I cannot read the characters
 
 <tr>
 <td> Prefijo | Nombre | Apellido paterno | Apellido materno | Sufijo | Género
-<td> Prefix | First name | Father's last name | Mother's last name [^mx-two-lastnames] | suffix | gender
+<td> Prefix | First name | Father's last name | Mother's last name <sup id="mx-1"><a href="#f-mx-1">[mx-1]</a></sup> | suffix | gender
 <td> *gap* | given-name | *gap* | *gap* | *gap*
 
 <tr>
 <td> Primer Nombre | Segudo Nombre (opcional) | Apellido paterno | Apellido materno (opcional)
-<td> First name | Second name (optional) | Father's last name | Mother's last name (optional)[^mx-two-lastnames]
+<td> First name | Second name (optional) | Father's last name | Mother's last name (optional)
 <td> given-name | additional-name | *gap* | *gap*
 
 <tr>
@@ -841,7 +857,7 @@ skipped, as I cannot read the characters
 
 <tr>
 <td> Colonia
-<td> Neighborhood without jurisdictional autonomy [Wikipedia](https://en.wikipedia.org/wiki/Colonia_(Mexico)) - part of a Delegación
+<td> Neighborhood without jurisdictional autonomy (<a href="https://en.wikipedia.org/wiki/Colonia_(Mexico)">Wikipedia</a>) - part of a Delegación
 <td> address-level4
 
 <tr>
@@ -866,8 +882,10 @@ skipped, as I cannot read the characters
 
 </table>
 
-[^mx-two-lastnames] costco.com.mx, elpalaciodehierro.com - most websites just ask for both last names
-  in a single field.
+<b id="f-mx-1">[mx-1]:</b>
+costco.com.mx, elpalaciodehierro.com - most websites just ask for both last
+names in a single field.
+[↩](#mx-1)
 
 address-level 1 through 4 are all commonly requested. It is very common to ask
 for a house number and an apartment number.
@@ -1243,7 +1261,7 @@ known.
 <td> country-name
 
 <tr>
-<td> what3words address [^za-what3words]
+<td> what3words address <sup id="za-1"><a href="#f-za-1">[za-1]</a></sup>
 <td>
 <td>
 
@@ -1269,7 +1287,9 @@ known.
 
 </table>
 
-[^za-what3words] dischem.co.za
+<b id="f-za-1">[za-1]:</b>
+Found on dischem.co.za
+[↩](#za-1)
 
 Pretty often a street address field was "powered by Google".
 
