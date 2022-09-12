@@ -569,8 +569,21 @@ India had so many snow flake forms that I present the fields of a street address
 in sequence (stripping the Pincode which was always present). Often times sites
 have a single text input field (not textarea) for a street address, a textarea,
 or multiple address lines. These often seem to capture a building location that
-gets complementd by an apartment number, building name, etc. to help routing
+gets complemented by an apartment number, building name, etc. to help routing
 further.
+
+Some naming conventions are surprising, forms commonly ask for "House
+no/Apartment name". The "house number" in this is an apartment number (not the
+sequence number of a house in a street) and the apartment name is the name of a
+building (most buildings have a name, not really the name of an apartment).
+
+Another important aspect that is not common in other countries is a "locality"
+(sometimes referred to as "area details"). An example would be "HITEC City" in
+"Hyderabad". It's a name for an area that people know and use for orientation.
+Another example would be "old town".
+
+A "Colony" is a named group of buildings that belong to each other, e.g. sharing
+facilities.
 
 Indian address forms often ask for a landmark and additional information (free
 text).
@@ -610,12 +623,12 @@ text).
 <tr>
 <td> Locality/Area/Street (textarea) | Flat number/Building Name | Landmark | District/City | State
 <td>
-<td> street-location | premise-and-sub-premise | landmark | address-level2 | address-level1
+<td> [address-level3 street-location] | [premise apartment] | landmark | address-level2 | address-level1
 
 <tr>
 <td> House no/Apartment name | Area Details | Landmark (optional) | City | State
 <td>
-<td> premise-and-sub-premise | address-overflow | landmark | address-level2 | address-level1
+<td> [premise apartment] | address-level3 | landmark | address-level2 | address-level1
 
 <tr>
 <td> Company | Address | Apartment, suite, etc. | City | State
@@ -630,32 +643,32 @@ text).
 <tr>
 <td> Flat no, Building, Colony | Locality/Town | City/District/Town | State
 <td>
-<td> premise-and-sub-premise | address-level3 | address-level2 | address-level1
+<td> [premise apartment] | address-level3 | address-level2 | address-level1
 
 <tr>
 <td> House No | Apartment name | street details | landmark for each reach out | city name | area details
 <td>
-<td> house-number | sub-premise | street-name | landmark | address-level2 | *gap*
+<td> apartment (!)<sup id="in-1"><a href="#f-in-1">[in-1]</a></sup> | premise (!) | street-location (!) | landmark | address-level2 | *gap*
 
 <tr>
 <td> Flat no./Building Name/Society | Landmark/Locality/Area | State | City
 <td>
-<td> premise-and-sub-premise | *gap* | address-level1 | address-level2
+<td> [apartment premise] | [landmark, address-level3] | address-level1 | address-level2
 
 <tr>
 <td> House/Flat no/Building/Apartment | Street/Locality | Landmark | City, State (one field)
 <td>
-<td> premise-and-sub-premise | street-location | landmark | *gap*
+<td> [premise apartment] | [street-location, address-level3] | landmark | [address-level2 address-level1]
 
 <tr>
 <td> Building name or number | Street name or number | Landmark
 <td>
-<td> premise-and-sub-premise | street-location | landmark
+<td> [premise apartment] | street-location | landmark
 
 <tr>
 <td> Building name and flat number | Street name
 <td>
-<td> premise-and-sub-premise | street-location (as we have to put the house number somewhere)
+<td> [premise apartment] | street-location (not all buildings have house numbers but some do; all buildings have names)
 
 <tr>
 <td> Door number/Building name/Street name (single field for all of this)
@@ -670,12 +683,12 @@ text).
 <tr>
 <td> Flat/House No/Floor/Building Name | Colony/Street | Landmark
 <td>
-<td> premise-and-sub-premise | street-location | landmark
+<td> [premise apartment] | street-location | landmark
 
 <tr>
 <td> Address | More info | Locality | City | State ...
 <td>
-<td> street-location | address-overflow | *gap* | address-level2 | address-level1
+<td> street-location | address-overflow | address-level3 | address-level2 | address-level1
 
 <tr>
 <td> Address | Landmark | Pin Code
@@ -696,14 +709,17 @@ text).
 <td> Flat/House No. | Floor No. | Tower No. | Building/Apartment Name | Address
 | Landmark/Area
 <td>
-<td> [house-number apartment]<sup id="in-1"><a href="#f-in-1">[in-1]</a></sup>  | floor | *gap* | premise | street-location | landmark
+<td> apartment | floor | *gap* | premise | street-location | landmark
 
 </table>
 
-<b id="f-in-1">[in-1]:</b>
-It's unclear to me whether we would like to allow combining all types of fields.
-How would you epxress a combination of apartment 103 and house number 42? "42-103"? "42/103"? "42 Apt. 103"?
-[↩](#in-1)
+<b id="f-in-1">[in-1]:</b> While it looks very counter intuitive, all of this is
+correct. The "House Number" is an apartment number within a building. 801 would
+be room 1 on the 8th floor. The "Apartment name" refers to the name of the
+building. The "street details" would be the street name and house number (where
+available). Area detals are also calles localities. Basically some named
+districts like "old town" or "high tech center" - names that help people
+navigate large cities. [↩](#in-1)
 
 
 ## Italy
