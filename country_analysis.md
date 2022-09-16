@@ -813,6 +813,9 @@ full-width or half-widths characters/numbers.
 We often see an address field which has 2 or 3 numbers in the placeholder attribute
 as per [Wikipedia](https://en.wikipedia.org/wiki/Japanese_addressing_system) these numbers indicate [block]-[building]-[apartment number].
 
+We often see that building names are important and can be combined with a
+street-location or stand alone.
+
 While the address system is super complex, the HTML forms look pretty regular
 to the untrained eye.
 
@@ -831,107 +834,119 @@ to the untrained eye.
 <tr> <!-- https://www.apple.com/-->
 <td> 姓 - 全角で8文字以内に収めてください。
 <td> Last name - Please keep it within 8 full-width characters. (field has maxlength=16)
+<td> family-name
 
 <tr> <!-- https://www.amazon.co.jp -->
 <td> 氏名
 <td> Full name
-<td>
+<td> name
 
 <tr>
 <td> 郵便番号<br> 郵便番号を入力してください
 <td> Postal code (followed by two fields) <br> Please enter your postal code
 <br> The postcal code is often followed by two text fields to represent a format
 xxx-yyyy.
-<td>
+<td> postal-code
 
 <tr>
 <td> 都道府県
 <td> Prefecture (plain text, derived from postal code)
-<td>
+<td> address-level1
 
 <tr> <!-- https://shop.adidas.jp/checkout/ -->
 <td> 郵便番号 | 住所 | 住所（番地以降）
-<td> Post code | address | Address (after street number)
-<td>
-<!-- I am not sure whether there are other address form fields. -->
+<td> Post code | address | Address (after address)
+<td> *no idea...*
 
 <tr> <!-- https://www.amazon.co.jp -->
 <td> 郵便番号（半角数字）(two text fields with a - between) | 都道府県 | 市区町村 | 丁目・番地・号（数字は半角数字）| 建物名 / 会社名（会社への配送の場合）| 部屋番号（数字は半角数字）| 配送指示（置き配含む）
 <td> Postal code (single-byte numbers) | Prefecture | Municipality | Chome, address, number (numbers are single-byte numbers) | Building Name / Company Name (if shipping to a company) | Room number (numbers are single-byte numbers) | Delivery instructions (including undelivered)
-<td>
+<td> postal-code | address-level1 | address-level2 | street-location | [premise organization] | sub-premise | delivery-instructions
 
 <tr> <!-- https://www.apple.com -->
 <td> 〒(123-4567) | 都道府県 (select) | 市区町村 - 11文字以内に収めてください（例：新宿区）。| 番地など - 17文字以内に収めてください（例：西新宿）。| アパート名、部屋名、入館コード（任意）| 国 / 地域
 <td> Zip code? (123-4567) | Prefecture | Municipality - Please keep it within 11 characters (e.g. Shinjuku Ward). | address etc. - Please keep it within 17 characters (example: Nishi-Shinjuku). | Apartment name, room name, entrance code (optional) | Country / Region
+<td> postal-code | address-level1 | address-level2 | *gap* (why 17-characters?) | [sub-premise door-code]
 
 <tr> <!-- https://www.beams.co.jp -->
 <td> 郵便番号 | 都道府県 | 市区町村番地 | 建物名
 <td> Postal code  | Prefecture | City address (city?) | Building name
-<td>
+<td> postal-code | address-level1 | [address-level2 street-location] | premise
 
 <tr> <!-- https://dell.com -->
 <td> 郵便番号 (半角数字) | 都道府県 | 市区町村 | 町村名 | 番地（数字は半角）| 建物名, 部屋番号
-<td> Postal code (single-byte numbers) | Prefectures | Municipality | Town/village name | Street address (numbers are half-width) | Building name, room number |
+<td> Postal code (single-byte numbers) | Prefectures | Municipality | Town/village name | Street address (numbers are half-width) | Building name, room number
+<td> postal-code | address-level1 | address-level2 | *gap* | street-location | [premise-and-subpremise]
 
 <tr> <!-- https://www.dinos.co.jp -->
 <td> 郵便番号 | 市区郡　町村名／丁目 | 番地・号 (例：４６－２) | 建物名・部屋番号 (例：中野坂上セントラルハイツ２０１)
 <td> post code | City/town name/chome | Address/number (Example: 46-2) | Building name, room number (Example: Nakano Sakaue Central Heights 201)
+<td> postal-code | address-level2 | street-location | premise-and-sub-premise
 
 <tr> <!-- dot-st.com -->
 <td> 郵便番号必須 | 都道府県必須 (select) | 市区町村必須 | 番地必須 (Example: 2-21-1) | 建物名 部屋番号 (〇〇ビル〇〇号室)
 <td> postal code required | Prefecture Required | City Required | Address required (Example: 2-21-1) | Building name, room number (〇〇 building room 〇〇)
-
-<tr> <!-- https://dell.com -->
-<td> 会社名・氏名 | 会社名・氏名（カナ）
-<td> Company name/Name | Company name/Name (Kana) (phonetic)
-<td>
+<td> postal-code | address-level1 | address-level2 | street-location | premise-and-sub-premise
 
 <tr> <!-- gap.co.jp -->
 <td> 郵便番号 | 都道府県 | 市区町村 | 住所欄1 | 住所欄2
 <td> postal code | Prefecture | Municipality | Address field 1 | Address field 2
+<td> postal-code | address-level1 | address-level2 | address-line1 | address-line2
 
 <tr> <!-- https://www.gu-global.com -->
 <td> 郵便番号 | 都道府県 | 市区郡町村 (市区郡町村を入力してください) | 番地 (例: 1-2-3)
 <td> postal code | Prefecture | City (Please enter your city) | Street address (e.g. 1-2-3)
+<td> postal-code | address-level1 | address-level-2 | street-location
 
 <tr> <!-- https://www.hmv.co.jp -->
 <td> 郵便番号 | (unlabeled select element with prefectures) | 住所 (例）品川区大崎一丁目11番2号) | 建物名等
 <td> postal code | (unlabeled select element with prefectures) | address (Example) 1-11-2 Osaki, Shinagawa-ku) | Building name, etc
+<td> postal-code | address-level1 | [address-level-2 street-location] | premise
 
 <tr> <!-- https://iherb.com -->
 <td> 郵便番号 | 住所1 (都道府県・市区郡・町名・番地) ((例) 東京都新宿区新宿1-2-3) | 住所2 (建物名・号室) 日本語または英語でご利用ください。 ((例) ○○マンション101号)
 <td> postal code | Address 1 (Prefecture/City/Town/Address) ((Example) 1-2-3 Shinjuku, Shinjuku-ku, Tokyo) | Address 2 (building name/room number) Please use in Japanese or English. ((Example) ○○ Mansion No. 101)
+<td> postal-code | [address-level1 address-level2] | premise-and-sub-premise
 
 <tr> <!-- https://www.jins.com -->
 <td> 郵便番号 | 都道府県 | 市区町村郡、番地 | 建物、ビル名
 <td> postal code | Prefecture | city/town/county | building, building name
+<td> postal-code | address-level1 | address-level2 | premise-and-sub-premise
 
 <tr> <!-- https://joshinweb.jp -->
 <td> 郵便番号 | 都道府県 | 市区郡町村 丁目 | 番地等
-<td> postal code | Prefecture | Chome | address etc.
+<td> postal code | Prefecture | City Chome | address etc.
+<td> postal-code | address-level1 | address-level2 | [street-location premise-and-sub-premise]
 
 <tr> <!-- https://www.kojima.net -->
 <td> 郵便番号 | 都道府県 | 市区町村 (例）宇都宮市星が丘) | 番地以降, followed by two input fields with place holders 例）２−１−８ and 例）コジママンション１２３号室
 <td> postal code | Prefecture | municipalities (Example) Hoshigaoka, Utsunomiya City) | after address, followed by two input fields with place holders Example) 2-1-8 and Example) Kojima Mansion Room 123
+<td> postal-code | address-level1 | address-level2 | street-address, premise-and-sub-premise
 
 <tr>
 <td> 市区町村名
 <td> City name (plain text, derived from postal code)
+<td> address-level2
+
+<tr> <!-- https://dell.com -->
+<td> 会社名・氏名 | 会社名・氏名（カナ）
+<td> Company name/Name | Company name/Name (Kana) (phonetic)
+<td> organization | *gap*
 
 <tr>
 <td> 番地・建物名
 <td> address/building name
-<td>
+<td> [street-address premise]
 
 <tr>
 <td> 電話番号1 (followed by 3 input fields)
 <td> Phone number 1
-<td>
+<td> tel-national
 
 <tr>
 <td> 電話番号2 (followed by 3 input fields)
 <td> Phone number 2
-<td>
+<td> tel-national
 
 </table>
 
