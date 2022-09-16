@@ -896,7 +896,7 @@ xxx-yyyy.
 
 <tr> <!-- https://www.hmv.co.jp -->
 <td> 郵便番号 | (unlabeled select element with prefectures) | 住所 (例）品川区大崎一丁目11番2号) | 建物名等
-<td> postal code | | address (Example) 1-11-2 Osaki, Shinagawa-ku) | Building name, etc
+<td> postal code | (unlabeled select element with prefectures) | address (Example) 1-11-2 Osaki, Shinagawa-ku) | Building name, etc
 
 <tr> <!-- https://iherb.com -->
 <td> 郵便番号 | 住所1 (都道府県・市区郡・町名・番地) ((例) 東京都新宿区新宿1-2-3) | 住所2 (建物名・号室) 日本語または英語でご利用ください。 ((例) ○○マンション101号)
