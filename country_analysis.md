@@ -23,6 +23,118 @@ The recommened annotations assume field types that are spelled out in section
 The focus is on fields that provide a more structured representation of a
 `street-address` field. Names and phone numbers will require more work.
 
+## Argentina
+
+Argentinian address forms rely on street names and house numbers. Every form
+asks for "Piso" and epartamento", sometimes in a single field sometimes in
+two fields. The forms ask for states/provinces and localities/cities. One form
+asked for "Partido" *and* Localidad. I don't understand this.
+
+Frequently a DNI was requested (national identification number).
+
+<table>
+
+<tr>
+<th> Term
+<th> Translation
+<th> Recommended annotation
+
+<tr>
+<td> Nombre(s) | Apellido
+<td> Last name(s) | First name
+<td>
+
+<tr> <!-- https://www.adidas.com.ar -->
+<td> Calle | Número | Piso | Departamento | Código Postal | (unnamed state selector) | Localidad
+<td> Street | House number | Apartment or floor | Department? | postal code | State | Locality
+<td>
+
+<tr> <!-- https://www.arredo.com.ar/ -->
+<td> Código Postal | Calle | Número | Piso o departamento | Nombre de quién recibe | Provincia | Ciudad
+<td> Postal code | Street | House number | Apartment of floor ? | Name of receiver | Province | City
+<td>
+
+<tr> <!-- https://www.bangho.com.ar -->
+<td> Código Postal | Calle | Número | Piso y departamento | Provincia | Ciudad | Nombre de la persona que va a recibir
+<td> Postal code | Street | House number | Apartment of floor ? | Province | City | Name of receiver
+<td>
+
+<tr> <!-- https://www.avon.com.ar -->
+<td> Provincia | Localidad | Municipio | Código Postal | Calle | Número | Piso y departamento (Ej: 3A / Mza 97 Casa 21) | Información referencia (Ej: Entrecalles u otras referencias)
+<td> Province | Locality | Municipality | Postal code | Street | House number | Floor and apartment (Ex: 3A / Block 97 House 21) | Reference information (eg "between streets" or other references)
+<td>
+
+<tr> <!-- bidcom.com.ar -->
+<td> Código Postal | Localidad | Calle | Altura | Piso / departamento | Entrecalles: Calle 1, Calle 2 (two input fields)
+<td> Postal code | Locality | Street | Height (House number?) | Apartment of floor ? | Between streets street 1, street 2 (two input fields)
+<td>
+
+<tr> <!-- https://www.bookdepository.com -->
+<td> Línea 1 de dirección | Línea 2 de dirección | Ciudad | Provincia/Estado | Código Postal
+<td> Address line 1 | Address line 2 | City | Province/State | Postal code
+<td>
+
+<tr> <!-- https://www.carocuore.com -->
+<td> Calle (Ej. Costa Rica) | Número (Ej. 999) | Piso/Dpto. (Ej. 7G) | Entre Calles (Opcional) (Ej. Lavander y Gurion) | Provincia | Ciudad (Ej. Capital Federal) | Barrio (Ej. Palermo) | Código Postal (Ej. 1425)
+<td> Street (ex. Costa Rica) | House number (ex. 999) | Floor and apartment (ex. 7G) | Between streets (optional) (ex. Lavender and Gurion) | Province | City (Ex. Capital Federal) | Neighborhood/district | Postal code (ex. 1425)
+<td>
+<td>
+
+<tr> <!-- https://www.carrefour.com.ar/ -->
+<td> Dirección de entrega (text area, filled from a Google Maps search box) | Piso o Apartamento (ej: 2A)
+<td> Delivery address | Floor and apartment (ex. 2A)
+<td>
+
+<tr> <!-- https://www.casadelaudio.com -->
+<td> Provincia | Ciudad | Barrio | Código Postal
+<td> Province | City | Neighborhood | Postal code
+<td>
+
+<tr> <!-- also https://www.casadelaudio.com -->
+<td> Calle | Nro. | Piso/Dpto | Entre Calles (not! optional) | Provincia | Partido<sup id="ar-1"><a href="#f-ar-1">[ar-1]</a></sup> | Localidad | Código Postal
+<td> Street | House number | Floor and apartment | Between streets (not! optional) | Province | District | Locality | Postal code
+<td>
+
+<tr> <!-- https://compragamer.com -->
+<td> Tipo domicilio | Calle | Altura | Piso | Depto | Torre | Entrecalles | Código Postal | Provincia | Localidad | Observationes
+<td> Type of address | Street | House number | Floor | Apartment? | Tower | Between streets | Postal code | Province | Locality | Observations
+<td>
+
+<tr> <!-- https://www.coppel.com.ar -->
+<td> Código Postal | Calle | Número | Piso / Departamento | Provincia | Ciudad
+<td>
+<td>
+
+<tr> <!-- https://dafiti.com.ar -->
+<td> Calle | Número | Piso y departamento | Province | Código Postal | Ciudad
+<td>
+<td>
+
+<tr> <!-- https://www.dexter.com.ar -->
+<td> Calle | Número | Piso y/o Dpto | Código Postal | Partido (non-optional) | Aclaración Adicional | Provincia
+<td> Street | House Number | Floor and/or Apartment | Postal code | District (non-optional) | Additional Clarification | Province
+<td>
+
+<tr> <!-- https://www.digitalsport.com.ar -->
+<td> Province | Localidad | Calle | Nro | Piso | Dpto | Código Postal
+<td>
+<td>
+
+<tr> <!-- https://www.disco.com.ar -->
+<td> Domicilio* (Calle y Número (Sin piso ni dpto)) (Google Maps widget that fills the street name, city, country) | Numéro* | Checkbox "Barrio privado o Country" opens the rest: | Barrio* | Calle* | Sector / Nro | Ubicación | Lote
+<td> Address (Street and Number (No floor or apartment)) | House number | Checkbox "Private neighborhood or Country" opens the rest: | Neighborhood | Street | Sector / Number | Location | Batch (???)
+<td>
+
+<tr> <!-- https://www.easy.com.ar/ -->
+<td> Dirección (with search button) | Código Postal (filled by search box) | Número (filled by search box) | Calle (filled by search box) | Piso o departamento (Ej: 2A) -- after selecting "delivery", more fields appear -- Provincia | Ciudad
+<td>
+<td>
+
+</table>
+
+<b id="f-ar-1">[ar-1]:</b> Buenos Aires is structured into Partidos ([Wikipedia](https://es.wikipedia.org/wiki/Anexo:Partidos_de_la_provincia_de_Buenos_Aires)). I don't know whether this applies to other provinces as well. [↩](#ar-1)
+
+
 ## Australia
 
 Australia has largely simple addresses with
@@ -955,6 +1067,67 @@ xxx-yyyy.
 〒 is the Japanese postal mark and a sign put infront of a zip code.
 https://en.wikipedia.org/wiki/Japanese_postal_mark
 
+## Malaysia
+
+Malaysian addresses forms are very simple, typically with address lines 1, 2 and
+sometimes "additional address information". TBH most websites tested looked like
+international websites and those that looked more local could not be tested
+because they required a local phone number.
+
+<table>
+
+<tr>
+<th> Term
+<th> Translation
+<th> Recommended annotation
+
+<tr>
+<td> First name | Last names
+<td>
+<td> given-name | family-name
+
+<tr>
+<td> Full name
+<td>
+<td> name
+
+<tr>
+<td> Company
+<td>
+<td> organization
+
+<tr>
+<td> Address 1 | Address 2 | Additional Info
+<td>
+<td>
+
+<tr> <!-- apple.com -->
+<td>Building Number/Name/Street Name | Street/Road Name/Precinct (optional) | Additional Address info (optional) | Post Code | Capital City, Town, Village, Island | State, Federal Territory | Country, Region
+<td>
+<td> address-line1 | address-line2 | address-line3 (?) | postal-code | address-level2 | address-level1 | country-name
+
+<tr> <!-- https://bloomthis.co -->
+<td> Address | Apartment, suite, etc. (optional) | Post Code | City | State/Territory
+<td>
+<td> address-line1 | address-line2 | postal-code | address-level2 | address-level1
+
+<tr> <!-- https://www.bookdepository.com, euyansang.com.my -->
+<td> Address line 1 | Address line 2 | Town/City | County/State | Postcode/ZIP
+<td>
+<td> address-line1 | address-line2 | address-level2 | address-level1 | postal-code
+
+<tr> <!-- caring2u.com -->
+<td> Street address | City | State/Province | Zip/Postal Code | Country
+<td>
+<td> street-address | address-level2 | address-level1 | postal-code | country-name
+
+<tr> <!-- christyng.com -->
+<td> Address | Apartment, suite, etc. optional | Postcode | City | State/territory
+<td>
+<td> address-line1 | address-line2 | postal-code | address-level2 | address-level1
+
+</table>
+
 ## Mexico
 
 Mexico often asks for street name, house number and apartment number in three
@@ -1072,79 +1245,9 @@ used when the place in question is in the middle of the block. When the location
 is in a corner you can say esquina con (corner with) and the name of the other
 street."
 
-## Malaysia
-
-Malaysian addresses seem to be quite straight forward (address-line1, 2, 3
-based).
-
-<table>
-
-<tr>
-<th> Term
-<th> Translation
-<th> Recommended annotation
-
-<tr>
-<td> First name | Last name
-<td>
-<td> given-name | family-name
-
-<tr>
-<td> Full name
-<td>
-<td> name
-
-<tr>
-<td> Company
-<td>
-<td> organization
-
-<tr>
-<td> Company | Address
-<td>
-<td> organization | street-address
-
-<tr>
-<td> Street and number, c/o. etc. | Flat, suite, building, floor, etc. | Flat, suite, building, floor, etc.
-<td>
-<td> address-line1 | address-line2 | address-line3
-
-<tr>
-<td> Address 1 | Address 2 | Additional Info
-<td>
-<td> address-line1 | address-line2 | address-line3
-
-<tr>
-<td> Address | Apartment, suite, etc. (optional)
-<td>
-<td> address-line1 | address-line2 ??? - maybe street-location | sub-premise
-
-<tr>
-<td> State/Province
-<td>
-<td> address-level1
-
-<tr>
-<td> City
-<td>
-<td> address-level2
-
-<tr>
-<td> Zip/Postal Code
-<td>
-<td> postal-code
-
-<tr>
-<td> Country
-<td>
-<td> country
-
-</table>
-
-
 ## Nigeria
 
-Very frequently we see two fields "Address" followed by "Apartent, suite, etc.
+Very frequently we see two fields "Address" followed by "Apartment, suite, etc.
 (optional)" which seem to be meant as address line 1 and 2. Overall the existing
 autocomplete model seems to be sufficient.
 
@@ -1344,7 +1447,7 @@ This information can also be requested in a single address overflow field.
 
 <tr>
 <td> Bloque/Portal | Escalera | Piso | Puerta | Urbanización<sup id="es-3"><a href="#f-es-3">[es-3]</a></sup>
-<td> Block/Type of buliding | Staircase | Apartment | Gate | Resisential area
+<td> Block/Type of building | Staircase | Apartment | Gate | Resisential area
 <td> *gap* | staircase | apartment | entrance | *gap*
 
 <tr>
