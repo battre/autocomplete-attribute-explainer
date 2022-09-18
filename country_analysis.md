@@ -397,7 +397,7 @@ At last one form asked for an OIB (social security number).
 
 <tr> <!-- https://www.abrakadabra.com -->
 <td> Ulica i broj | Pošta | Grad | OIB
-<td> Street and number | Post (postal code) | City | Social security number 
+<td> Street and number | Post (postal code) | City | Social security number
 <td>
 
 <tr> <!-- https://www.autokreso.hr -->
@@ -766,7 +766,7 @@ that some address forms ask for a street name and house number.
 <td>
 
 <tr> <!-- https://epapoutsia.gr -->
-<td> Οδός | Αριθμός | Ταχυδρομικός κώδικας | Πόλη/Χωριό 
+<td> Οδός | Αριθμός | Ταχυδρομικός κώδικας | Πόλη/Χωριό
 <td> Street | Number | Postal code | City/Village
 <td>
 
@@ -841,7 +841,76 @@ address-lineX fields.
 Some websites combine multiple fields into one, e.g. subdistrict and district,
 or city and district (this site did not ask for a subdistrict)
 
-## India
+## Hungary (HU)
+
+Hungary seems to have a mix of unstructured address forms and ultra-detailed
+address forms, similar to some Hispanic/Latinx countries.
+
+<table>
+
+<tr>
+<th> Term
+<th> Translation
+<th> Recommended annotation
+
+<tr> <!-- https://www.alkatreszek.hu -->
+<td> Vezetéknév | Keresztnév
+<td> Last name | First name
+<td> family-name | given-name
+
+<tr> <!-- https://www.alza.hu -->
+<td> Cég neve
+<td> Company name
+<td> organization
+
+<tr> <!-- https://www.alkatreszek.hu -->
+<td> Számlázási cím | (Ir. sz.) | Város | Közterület neve | Közterület jellege | Házszám | Épület | Ajtó
+<td> Billing address | ??? | City | Name of public space | Nature of public space | House number | Building | Door
+<td> street-address | postal code | address-level2 | ??? | ??? | house-number | premise | *gap* apartment?
+
+<tr> <!-- alza.hu -->
+<td> Cím | Település | Irányítószám
+<td> Mailing address | City | Postal code
+<td>
+
+<tr> <!-- answear.hu -->
+<td> Utca | Házszám | Lakás száma | Irányítószám | Város
+<td> Street | House number | Apartment number |  Postal code | City
+<td>
+
+<tr> <!-- apple.com -->
+<td> Utca, házszám | Épület, lakás, kapukód (nem köt.) | További címinformáció (nem kötelező) | Irányítószám | Település | Ország/régió
+<td> Street Address | Building, apartment, gate code (optional) | Additional address information (optional) | Postal code | City | Country/Region
+<td>
+
+<tr> <!-- https://aqua.hu -->
+<td> Ország | Név / Cégnév | Irányítószám | Település | Közterület neve (utca) | Közterület jellege | Házszám | Épület | Lépcsőház | Emelet | Ajtó
+<td> Country | Name / Company name | Postal code | City | Name of public space (street) | Nature of public space | House number | Building | Stair case | Floor | Door
+<td>
+
+<tr> <!-- https://online.auchan.hu/ -->
+<td> Közterület neve | Közterület jellege | Házszám | Épület | Emelet | Ajtó
+<td> Name of public space | Nature of public space | House number | Building | Floor | Door
+<td>
+
+<tr> <!-- https://www.bestmarkt.hu -->
+<td> Irányítószám | Város | Utca, házszám
+<td> Postal code | City | Street, house number
+<td>
+
+<tr> <!-- https://www.bonprix.hu/ -->
+<td> Utca | Házszám | Helyiség | Irányítószám | Helység
+<td> Street | House number | Premise (in html this refers to a flat number) | Postal code | Locality
+<td>
+
+<tr> <!-- https://bookline.hu -->
+<td> Ország | Irányítószám | Város | Utcanév, házszám
+<td> Country | Postal code | City | Street name, House number
+<td>
+
+</table>
+
+## India (IN)
 
 India had so many snow flake forms that I present the fields of a street address
 in sequence (stripping the Pincode which was always present). Often times sites
