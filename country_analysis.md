@@ -26,7 +26,7 @@ The focus is on fields that provide a more structured representation of a
 ## Argentina
 
 Argentinian address forms rely on street names and house numbers. Every form
-asks for "Piso" and epartamento", sometimes in a single field sometimes in
+asks for "Piso" and departamento", sometimes in a single field sometimes in
 two fields. The forms ask for states/provinces and localities/cities. One form
 asked for "Partido" *and* Localidad. I don't understand this.
 
@@ -77,7 +77,6 @@ Frequently a DNI was requested (national identification number).
 <tr> <!-- https://www.carocuore.com -->
 <td> Calle (Ej. Costa Rica) | Número (Ej. 999) | Piso/Dpto. (Ej. 7G) | Entre Calles (Opcional) (Ej. Lavander y Gurion) | Provincia | Ciudad (Ej. Capital Federal) | Barrio (Ej. Palermo) | Código Postal (Ej. 1425)
 <td> Street (ex. Costa Rica) | House number (ex. 999) | Floor and apartment (ex. 7G) | Between streets (optional) (ex. Lavender and Gurion) | Province | City (Ex. Capital Federal) | Neighborhood/district | Postal code (ex. 1425)
-<td>
 <td>
 
 <tr> <!-- https://www.carrefour.com.ar/ -->
@@ -372,6 +371,92 @@ a block in Brasilia or needs to be supported as a separate field type.
 ## Canada
 
 Skipped, similar to US
+
+## Egypt
+
+I write fields left to right, so that they lign up with the English transaltions.
+
+By and large, Egyptian address forms seem to be compatible with today's
+autocomplete attribute.
+
+<table>
+
+<tr>
+<th> Term
+<th> Translation
+<th> Recommended annotation
+
+<tr> <!-- https://2b.com.eg/ -->
+<td> الإسم الأول |
+ اسم العائلة
+<td> First name | Last name
+<td>
+
+<tr> <!-- https://www.amazon.eg -->
+<td> الاسم بالكامل (الاسم الأول واسم العائلة)
+<td> Full name (first and last name)
+<td>
+
+<tr> <!-- https://2b.com.eg -->
+<td> عنوان الشارع
+| ولاية/محافظة
+| المدينة
+| الرمز البريدي
+| الدولة
+<td>
+Street address
+| state/province (select)
+| city
+| postal code
+| the state ???
+<td>
+
+<tr> <!-- https://www.amazon.eg -->
+<td> البلد/المنطقة
+| اسم الشارع (شارع طلعت حرب)
+| اسم/رقم المبنى (مثال برج الأميرة)
+| المدينة/المنطقة (النزهة ، مدينة القاهرة الجديدة والدقي)
+| أقرب معلم (على سبيل المثال كايرو فيستيفال سيتي)
+<td> Country/Region
+| Street name (Talaat Harb Street)
+| Building name/number (Princess Tower example)
+| City/area (Nozha, New Cairo City and Dokki)
+| Nearest teacher ???? (html refers to a landmark) (For example, Cairo Festival City)
+<td> country-name | premise | address-level2 | landmark
+
+<tr> <!-- https://www.bershka.com -->
+<td> العنوان (يجب أن تشير إلى الشارع والبوابة والدور والحرف)
+| أكمل عنوانك
+| محافظة
+| المدينة
+| السوق
+<td> Address (must indicate street, gate, turn and letter)
+| Complete your address
+| Governate (state)
+| city
+| market (country)
+<td> address-line1 ? | address-line2 | address-level1 | address-level2 | country-name
+
+<tr> <!-- Cairocart.com -->
+<td> Country | Street address (two input fields) | City | State/Province | Zip/Postal code
+<td>
+<td>
+
+<tr> <!-- https://cairosales.com -->
+<td> Address | Address (line 2) | Governorate | District (Type city name above or select it from the menu below)
+<td>
+<td>
+
+<tr> <!-- https://dawaya.com] -->
+<td> المنطقه
+| المدينه
+| العنوان
+<td> Region (field name referred to districtId)
+| City
+| Address
+<td>
+
+</table>
 
 ## France
 
