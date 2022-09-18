@@ -691,6 +691,45 @@ express this. (A single form will have one field for the town and one
 for the city). E.g. www.boots.com
 [↩](#uk-1)
 
+## Greece
+
+Greek address forms seem to be well covered by todayś autocomplete spec except
+that some address forms ask for a street name and house number.
+
+<table>
+
+<tr> <!-- https://www.adidas.gr -->
+<td> ONOMA | ΕΠΩΝΥΜΟ <br> Όνομα | Επώνυμο (Probably the same with lower case spelling, feel free to make fun of me)
+<td> First name | last name
+<td>
+
+<tr> <!-- https://www.2happy.gr-->
+<td> ΔΙΕΥΘΥΝΣΗ | ΤΑΧ. ΚΩΔΙΚΟΣ | ΠΟΛΗ | ΠΕΡΙΟΧΗ | ΧΩΡΑ | ΝΟΜΟ
+<td> Address | Zip Code | City | Region | Country | Law (???)
+<td> street-address | postal-code | address-level2 | address-level1 | ???
+
+<tr> <!-- https://www.adidas.gr/ -->
+<td> Πρώτη γραμμή διεύθυνσης | Επιπρόσθετες πληροφορίες | Ταχυδρομικός Κώδικας | Πόλη
+<td> First line of address | Further information | Postal code | | City
+<td> address-line1 | address-line2 | postal-code | address-level2
+
+<tr> <!-- https://www.celestino.gr -->
+<td> Oδός | Αρ. | TK | Πόλη | Select element with ΕΛΛΑΔΑ
+<td> Street | House number (???) | Postal code | City | Select with Greece
+<td>
+
+<tr> <!-- https://www.cosmossport.gr -->
+<td> Χώρα | Νομός | Διεύθυνση(Οδός & Αριθμός) | Πόλη | Ταχυδρομικός κώδικας | Σχόλια Παράδοσης ή Τσάντας ΔΩΡΟΥ
+<td> Country | State | Address (Street & Number) | City | Postal code | Delivery or Gift Bag Comments
+<td>
+
+<tr> <!-- https://epapoutsia.gr -->
+<td> Οδός | Αριθμός | Ταχυδρομικός κώδικας | Πόλη/Χωριό 
+<td> Street | Number | Postal code | City/Village
+<td>
+
+</table>
+
 ## Indonesia
 
 Indonesian addresses are special because of their depth, using all of
