@@ -414,6 +414,54 @@ At last one form asked for an OIB (social security number).
 
 I checked several other sites but they were just repetitions of whatś shown above.
 
+## Denmark (DK)
+
+Danish address forms are very simple, typically asking for a single street-address field, a postal code and a city.
+
+<table>
+
+<tr>
+<th> Term
+<th> Translation
+<th> Recommended annotation
+
+<tr> <!-- https://apopro.dk -->
+<td> Eventuelt firmanavn
+<td> Any company name
+<td>
+
+<tr> <!-- https://apopro.dk -->
+<td> Fornavn | Efternavn
+<td> First name | Last name
+<td>
+
+<tr> <!-- https://www.av-cables.dk -->
+<td> Fulde navn
+<td> Full name
+<td>
+
+<tr> <!-- apple.com -->
+<td> Fornavn | Efternavn | Suffiks (valgfrit)
+<td> First name | Last name | Suffix (optional)
+<td>
+
+<tr> <!-- https://apopro.dk -->
+<td> Adresse | Postnr | By
+<td> Address | Postal code | City
+<td> street-address | postal-code | address-level2 
+
+<tr> <!-- apple.com -->
+<td> Adresse | Lejlighed, suite, bygningens adgangskode (valgfrit) | Ekstra adresseoplysninger (valgfrit) | Postnummer | By | Land/område
+<td> Address | Apartment, suite, building password (optional) | Additional address information (optional) | Postal code | City | Country/territory (note that this is a translated US website and not representative)
+<td>
+
+<tr> <!-- https://www.av-cables.dk -->
+<td> Vejnavn + husnummer | By | Postnummer
+<td> Street name + house number | City | Postal code
+<td>
+
+</table>
+
 ## Egypt (EG)
 
 I write fields left to right, so that they lign up with the English transaltions.
