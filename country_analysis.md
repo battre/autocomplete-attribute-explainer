@@ -23,7 +23,7 @@ The recommened annotations assume field types that are spelled out in section
 The focus is on fields that provide a more structured representation of a
 `street-address` field. Names and phone numbers will require more work.
 
-## Argentina
+## Argentina (AR)
 
 Argentinian address forms rely on street names and house numbers. Every form
 asks for "Piso" and departamento", sometimes in a single field sometimes in
@@ -134,7 +134,7 @@ Frequently a DNI was requested (national identification number).
 <b id="f-ar-1">[ar-1]:</b> Buenos Aires is structured into Partidos ([Wikipedia](https://es.wikipedia.org/wiki/Anexo:Partidos_de_la_provincia_de_Buenos_Aires)). I don't know whether this applies to other provinces as well. [↩](#ar-1)
 
 
-## Australia
+## Australia (AU)
 
 Australia has largely simple addresses with
 * address lines 1, 2, 3, or
@@ -220,7 +220,7 @@ Australia has largely simple addresses with
 
 <b id="f-au-2">[au-2]:</b> This can be found on www.adidas.com.au. [↩](#au-2)
 
-## Brazil
+## Brazil (BR)
 
 Brazil is special because the street name (enderço) is derived from the zip code
 (CEP) and typically not editable by the user. The user needs to provide the
@@ -368,11 +368,53 @@ a checkbox for this).
 For these reasons, I am not sure whether Bloco in a Complemento field refers to
 a block in Brasilia or needs to be supported as a separate field type.
 
-## Canada
+## Canada (CA)
 
 Skipped, similar to US
 
-## Egypt
+## Croatia (HR)
+
+Croatian address forms seem to be largely compatible with the autocomplete spec,
+except that some forms asked for street name and house number in separate fields.
+At last one form asked for an OIB (social security number).
+
+<table>
+
+<tr> <!-- https://www.abrakadabra.com -->
+<td> Ime | Prezime
+<td> First name | Last name
+<td> given-name | family-name
+
+<tr> <!-- https://bazzar.hr -->
+<td> Ime i Prezime
+<td> First and last name
+<td> name
+
+<tr> <!-- https://www.abrakadabra.com -->
+<td> Naziv poduzeća
+<td> Comany name
+<td> organization
+
+<tr> <!-- https://www.abrakadabra.com -->
+<td> Ulica i broj | Pošta | Grad | OIB
+<td> Street and number | Post (postal code) | City | Social security number 
+<td>
+
+<tr> <!-- https://www.autokreso.hr -->
+<td> Adresa (Adresa ulice) | Mjesto/ Grad (Unesite poštanski broj ili naziv mjesta/grada) | Zemlja
+<td> Address (Street address) | Place/ City (Enter a postal code or city/town name) | Country
+<td> street-address | address-level2 | country-name
+
+<tr> <!-- https://www.bauhaus.hr -->
+<td> Ulica | Kućni broj | ZIP broj | Mjesto | Zemlja
+<td> Street | House number | Postal code | Place | Country
+<td> street-name | house-number | postal-code | address-level2 | country-name
+
+</table>
+
+I checked several other sites but they were just repetitions of whatś shown above.
+
+## Egypt (EG)
 
 I write fields left to right, so that they lign up with the English transaltions.
 
@@ -458,7 +500,7 @@ Street address
 
 </table>
 
-## France
+## France (FR)
 
 France typically relies on address line 1 and 2 fields.
 
@@ -539,7 +581,7 @@ would typically fill this into address line 1.
 This degree of details was not representative. It's from bonprix.fr
 [↩](#fr-3)
 
-## Germany
+## Germany (DE)
 
 Germany asks for street name and house number in a single or two different
 fields. This is often complemented by an address extension ("Addresszusatz"), a
@@ -691,7 +733,7 @@ express this. (A single form will have one field for the town and one
 for the city). E.g. www.boots.com
 [↩](#uk-1)
 
-## Greece
+## Greece (GR)
 
 Greek address forms seem to be well covered by todayś autocomplete spec except
 that some address forms ask for a street name and house number.
