@@ -471,8 +471,6 @@ Danish address forms are very simple, typically asking for a single street-addre
 
 ## Egypt (EG)
 
-I write fields left to right, so that they lign up with the English transaltions.
-
 By and large, Egyptian address forms seem to be compatible with today's
 autocomplete attribute.
 
