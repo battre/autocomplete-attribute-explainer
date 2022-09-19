@@ -484,18 +484,18 @@ autocomplete attribute.
 <th> Recommended annotation
 
 <tr> <!-- https://2b.com.eg/ -->
-<td> الإسم الأول |
+<td dir="rtl"> الإسم الأول |
  اسم العائلة
 <td> First name | Last name
 <td>
 
 <tr> <!-- https://www.amazon.eg -->
-<td> الاسم بالكامل (الاسم الأول واسم العائلة)
+<td dir="rtl"> الاسم بالكامل (الاسم الأول واسم العائلة)
 <td> Full name (first and last name)
 <td>
 
 <tr> <!-- https://2b.com.eg -->
-<td> عنوان الشارع
+<td dir="rtl"> عنوان الشارع
 | ولاية/محافظة
 | المدينة
 | الرمز البريدي
@@ -509,7 +509,8 @@ Street address
 <td>
 
 <tr> <!-- https://www.amazon.eg -->
-<td> البلد/المنطقة
+<td dir="rtl">
+البلد/المنطقة
 | اسم الشارع (شارع طلعت حرب)
 | اسم/رقم المبنى (مثال برج الأميرة)
 | المدينة/المنطقة (النزهة ، مدينة القاهرة الجديدة والدقي)
@@ -518,11 +519,11 @@ Street address
 | Street name (Talaat Harb Street)
 | Building name/number (Princess Tower example)
 | City/area (Nozha, New Cairo City and Dokki)
-| Nearest teacher ???? (html refers to a landmark) (For example, Cairo Festival City)
+| Nearest landmark (For example, Cairo Festival City)
 <td> country-name | premise | address-level2 | landmark
 
 <tr> <!-- https://www.bershka.com -->
-<td> العنوان (يجب أن تشير إلى الشارع والبوابة والدور والحرف)
+<td dir="rtl"> العنوان (يجب أن تشير إلى الشارع والبوابة والدور والحرف)
 | أكمل عنوانك
 | محافظة
 | المدينة
@@ -545,7 +546,7 @@ Street address
 <td>
 
 <tr> <!-- https://dawaya.com] -->
-<td> المنطقه
+<td dir="rtl"> المنطقه
 | المدينه
 | العنوان
 <td> Region (field name referred to districtId)
