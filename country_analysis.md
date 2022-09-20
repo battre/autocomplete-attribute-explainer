@@ -48,17 +48,17 @@ Frequently a DNI was requested (national identification number).
 
 <tr> <!-- https://www.adidas.com.ar -->
 <td> Calle | Número | Piso | Departamento | Código Postal | (unnamed state selector) | Localidad
-<td> Street | House number | Apartment or floor | Department? | postal code | State | Locality
+<td> Street | House number | Floor | Apartment | Postal code | State | Locality
 <td>
 
 <tr> <!-- https://www.arredo.com.ar/ -->
 <td> Código Postal | Calle | Número | Piso o departamento | Nombre de quién recibe | Provincia | Ciudad
-<td> Postal code | Street | House number | Apartment of floor ? | Name of receiver | Province | City
+<td> Postal code | Street | House number | Floor or Apartment | Name of receiver | Province | City
 <td>
 
 <tr> <!-- https://www.bangho.com.ar -->
 <td> Código Postal | Calle | Número | Piso y departamento | Provincia | Ciudad | Nombre de la persona que va a recibir
-<td> Postal code | Street | House number | Apartment of floor ? | Province | City | Name of receiver
+<td> Postal code | Street | House number | Floor or Apartment | Province | City | Name of receiver
 <td>
 
 <tr> <!-- https://www.avon.com.ar -->
@@ -68,7 +68,7 @@ Frequently a DNI was requested (national identification number).
 
 <tr> <!-- bidcom.com.ar -->
 <td> Código Postal | Localidad | Calle | Altura | Piso / departamento | Entrecalles: Calle 1, Calle 2 (two input fields)
-<td> Postal code | Locality | Street | Height (House number?) | Apartment of floor ? | Between streets street 1, street 2 (two input fields)
+<td> Postal code | Locality | Street | Height (House number?) | Floor / apartment | Between streets street 1, street 2 (two input fields)
 <td>
 
 <tr> <!-- https://www.bookdepository.com -->
@@ -78,12 +78,12 @@ Frequently a DNI was requested (national identification number).
 
 <tr> <!-- https://www.carocuore.com -->
 <td> Calle (Ej. Costa Rica) | Número (Ej. 999) | Piso/Dpto. (Ej. 7G) | Entre Calles (Opcional) (Ej. Lavander y Gurion) | Provincia | Ciudad (Ej. Capital Federal) | Barrio (Ej. Palermo) | Código Postal (Ej. 1425)
-<td> Street (ex. Costa Rica) | House number (ex. 999) | Floor and apartment (ex. 7G) | Between streets (optional) (ex. Lavender and Gurion) | Province | City (Ex. Capital Federal) | Neighborhood/district | Postal code (ex. 1425)
+<td> Street (ex. Costa Rica) | House number (ex. 999) | Floor/apartment (ex. 7G) | Between streets (optional) (ex. Lavender and Gurion) | Province | City (Ex. Capital Federal) | Neighborhood/district | Postal code (ex. 1425)
 <td>
 
 <tr> <!-- https://www.carrefour.com.ar/ -->
 <td> Dirección de entrega (text area, filled from a Google Maps search box) | Piso o Apartamento (ej: 2A)
-<td> Delivery address | Floor and apartment (ex. 2A)
+<td> Delivery address | Floor or Apartment (ex. 2A)
 <td>
 
 <tr> <!-- https://www.casadelaudio.com -->
@@ -93,12 +93,12 @@ Frequently a DNI was requested (national identification number).
 
 <tr> <!-- also https://www.casadelaudio.com -->
 <td> Calle | Nro. | Piso/Dpto | Entre Calles (not! optional) | Provincia | Partido<sup id="ar-1"><a href="#f-ar-1">[ar-1]</a></sup> | Localidad | Código Postal
-<td> Street | House number | Floor and apartment | Between streets (not! optional) | Province | District | Locality | Postal code
+<td> Street | House number | Floor/Apartment | Between streets (not! optional) | Province | District | Locality | Postal code
 <td>
 
 <tr> <!-- https://compragamer.com -->
-<td> Tipo domicilio | Calle | Altura | Piso | Depto | Torre | Entrecalles | Código Postal | Provincia | Localidad | Observationes
-<td> Type of address | Street | House number | Floor | Apartment? | Tower | Between streets | Postal code | Province | Locality | Observations
+<td> Tipo domicilio | Calle | Altura<sup id="ar-2"><a href="#f-ar-2">[ar-2]</a></sup> | Piso | Depto | Torre<sup id="ar-3"><a href="#f-ar-3">[ar-3]</a></sup> | Entrecalles | Código Postal | Provincia | Localidad | Observationes
+<td> Type of address | Street | House number range | Floor | Apartment | Tower | Between streets | Postal code | Province | Locality | Observations
 <td>
 
 <tr> <!-- https://www.coppel.com.ar -->
@@ -122,8 +122,8 @@ Frequently a DNI was requested (national identification number).
 <td>
 
 <tr> <!-- https://www.disco.com.ar -->
-<td> Domicilio* (Calle y Número (Sin piso ni dpto)) (Google Maps widget that fills the street name, city, country) | Numéro* | Checkbox "Barrio privado o Country" opens the rest: | Barrio* | Calle* | Sector / Nro | Ubicación | Lote
-<td> Address (Street and Number (No floor or apartment)) | House number | Checkbox "Private neighborhood or Country" opens the rest: | Neighborhood | Street | Sector / Number | Location | Batch (???)
+<td> Domicilio* (Calle y Número (Sin piso ni dpto)) (Google Maps widget that fills the street name, city, country) | Numéro* | Checkbox "Barrio privado o Country" opens the rest: | Barrio* | Calle* | Sector / Nro | Ubicación | Lote<sup id="ar-4"><a href="#f-ar-4">[ar-4]</a></sup>
+<td> Address (Street and Number (No floor or apartment)) | House number | Checkbox "Private neighborhood or Country" opens the rest: | Neighborhood | Street | Sector / Number | Location | Lot
 <td>
 
 <tr> <!-- https://www.easy.com.ar/ -->
@@ -135,6 +135,15 @@ Frequently a DNI was requested (national identification number).
 
 <b id="f-ar-1">[ar-1]:</b> Buenos Aires is structured into Partidos ([Wikipedia](https://es.wikipedia.org/wiki/Anexo:Partidos_de_la_provincia_de_Buenos_Aires)). I don't know whether this applies to other provinces as well. [↩](#ar-1)
 
+<b id="f-ar-2">[ar-2]:</b> "Altura" refers to a range of house numbers or block
+of a street. E.g. 400-500. [↩](#ar-2)
+
+<b id="f-ar-3">[ar-3]:</b> "Torre" is literally a tower but in this context it
+would refer to a part of a building (e.g. front-building, a wing of a building,
+...). [↩](#ar-3)
+
+<b id="f-ar-4">[ar-4]:</b> "Lote" refers to a piece of land (a lot / parcel of
+land). [↩](#ar-4)
 
 ## Australia (AU)
 
