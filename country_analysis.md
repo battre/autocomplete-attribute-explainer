@@ -969,6 +969,26 @@ address forms, similar to some Hispanic/Latinx countries.
 
 </table>
 
+"Közterület jellege" is "street type", such as {street, road, drive, avenue,
+boulevard, square, etc.} While in most languages street name emcompasses the
+name and the street type, in Hungarian they are often separated in official
+records. "Közterület neve" could be "Amphitheatre", "Közterület jellege" could
+be "Pkwy".
+
+"Épület" (Building): is only used when multiple buildings share the same house
+number, so it identifies which one. Can be another number or letter.
+
+"Lépcsőház" (Staircase): serves a similar purpose as "Épület" (Building) when
+there are multiple entrances to a single building, and there are mailboxes next
+to each.
+
+"Emelet" (Floor) / "Ajtó" (Door): These are a more structured way to refer to an
+"apartment number", "flat number", or "room number" in an office. These
+historically have the structure of "floor / door", e.g. "3/1", meaning 3rd
+floor, 1st apartment within that floor. The "door number" is most often a
+locally unique identifier within the floor, not within the building as common in
+the US.
+
 ## India (IN)
 
 India had so many snow flake forms that I present the fields of a street address
