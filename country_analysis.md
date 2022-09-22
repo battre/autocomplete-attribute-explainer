@@ -187,12 +187,12 @@ Australia has largely simple addresses with
 <tr>
 <td> Building/Floor/Apartment/Unit | House Number | Street Name/PO Box
 <td>
-<td> premis-and-sub-premise | house-number | street-name
+<td> premise-and-sub-premise | house-number | street-name
 
 <tr>
 <td> Street number and name | Suite, building, level, etc.
 <td>
-<td> street-location | premis-and-sub-premise
+<td> street-location | premise-and-sub-premise
 
 <tr>
 <td> Suburb<br>City/Suburb
@@ -761,7 +761,7 @@ Dr./Prof. Dr./noble titles)
 <tr>
 <td> Address | Flat Number/House Name
 <td>
-<td> street-location | premis-and-sub-premise
+<td> street-location | premise-and-sub-premise
 
 <tr>
 <td> Company Name
@@ -1311,7 +1311,7 @@ xxx-yyyy.
 <tr> <!-- https://dell.com -->
 <td> 郵便番号 (半角数字) | 都道府県 | 市区町村 | 町村名 | 番地（数字は半角）| 建物名, 部屋番号
 <td> Postal code (single-byte numbers) | Prefectures | Municipality | Town/village name | Street address (numbers are half-width) | Building name, room number
-<td> postal-code | address-level1 | address-level2 | *gap* | street-location | [premise-and-subpremise]
+<td> postal-code | address-level1 | address-level2 | *gap* | street-location | premise-and-subpremise
 
 <tr> <!-- https://www.dinos.co.jp -->
 <td> 郵便番号 | 市区郡　町村名／丁目 | 番地・号 (例：４６－２) | 建物名・部屋番号 (例：中野坂上セントラルハイツ２０１)
@@ -1599,7 +1599,7 @@ autocomplete model seems to be sufficient.
 <tr>
 <td> Street Address | Apartment/House number
 <td>
-<td> street-address | sub-prenise
+<td> street-address | sub-premise
 
 <tr>
 <td> State <br> State/County
