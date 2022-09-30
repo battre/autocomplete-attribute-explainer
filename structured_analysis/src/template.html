@@ -34,10 +34,11 @@
     {% if field.concepts | length > 1 %}[{% endif %}
     <span id="concept_{{field.internal_id}}">
     {% for concept in field.concepts %}<code
-    class="{{'unknown-concept' if concept not in known_concepts else ''}}
+    class="{{'unknown-concept new-concept' if concept not in known_concepts else ''}}
     {{'low-certainty' if field.low_certainty else ''}}
     {{'gap' if concept == 'gap' else ''}}
-    {{'unset' if concept == 'unset' else ''}}">
+    {{'unset' if concept == 'unset' else ''}}
+    {{'new-concept' if concept in new_concepts else ''}}">
       {{entry(concept, "", "", field.concepts_comment, "left")}}
     </code>{% endfor %}
     </span>
@@ -132,6 +133,9 @@ code.unset {
 code.gap {
   background-color: blanchedalmond;
 }
+code.new-concept {
+  color: black;
+}
   </style>
 </head>
 <body>
@@ -161,7 +165,9 @@ useful for more countries.
 {% for concept in ontology.concepts %}
   {% if not concept.specialization %}
   <tr>
-    <td><code>{{concept.name}}</code></td>
+    <td><code class="{{'new-concept' if concept.name in new_concepts else ''}}">
+      {{concept.name}}
+    </code></td>
     <td>{{concept.description|safe}}</td>
     <td>{{concept.canonical_format_example|safe}}</td>
   </tr>

@@ -41,6 +41,10 @@ message Concept {
   string label = 5;
 
   repeated Locales specialization = 6;
+
+  // Whether this is a new concept not defined in the current autocomplete
+  // spec.
+  bool is_new = 7;
 }
 
 // TODO: Definition of higher level constructs.

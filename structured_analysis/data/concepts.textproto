@@ -4,16 +4,19 @@
 concepts {
   name: "gap"
   description: "We don't have a useful concept for this field, yet."
+  is_new: true
 }
 
 concepts {
   name: "unset"
   description: "We don't have a concept set for this field, yet."
+  is_new: true
 }
 
 concepts {
   name: "unsure"
   description: "It's not clear what to set here."
+  is_new: true
 }
 
 # Default concepts from
@@ -261,6 +264,7 @@ concepts {
     "characters as well"
   canonical_format_example: "32"
   label: "House number"
+  is_new: true
 }
 
 concepts {
@@ -268,6 +272,7 @@ concepts {
   description: "Name of a building"
   canonical_format_example: "Stata Center"
   label: "Building name"
+  is_new: true
 }
 
 concepts {
@@ -275,6 +280,7 @@ concepts {
   description: "Landmark"
   canonical_format_example: "Near the police station"
   label: "Landmark"
+  is_new: true
 }
 
 # Generic "street-name house-number" pattern.

@@ -113,10 +113,14 @@ assign_ids_to_fields(ontology)
 # Determine all known concepts (e.g. first name, address-level1, ...) in the
 # ontology.
 known_concepts = set()
+new_concepts = set()
 for concept in ontology.concepts:
   known_concepts.add(concept.name)
+  if concept.is_new:
+    new_concepts.add(concept.name)
 for concept in ontology.compound_concepts:
   known_concepts.add(concept.name)
+  new_concepts.add(concept.name)
 
 # Determine all countries for which we have examples.
 countries = set([example.locale.country for example in ontology.site_examples])
@@ -131,7 +135,8 @@ result = template.render(
     countries=countries,
     address_pb2=address_pb2,
     rtl_languages=set(["ar"]),
-    known_concepts=known_concepts)
+    known_concepts=known_concepts,
+    new_concepts=new_concepts)
 f = open(args.output, "w")
 f.write(result)
 f.close()
