@@ -1,0 +1,158 @@
+# proto-file: address.proto
+# proto-message: AddressOntology
+
+site_examples {
+  url: "https://www.amazon.ae"
+  is_structured: true
+  locale {
+    country: "EG"
+    language: "ar"
+  }
+  sequences {
+    fields {
+      section: ADDRESS
+      name: "address-ui-widgets-countryCode-dropdown-nativeId|address-ui-widgets-countryCode"
+      label: "البلد/المنطقة"
+      label_translated: "Country/Region"
+      control_type: SELECT
+      concepts: "country"
+    }
+    fields {
+      name: "address-ui-widgets-enterAddressFullName|address-ui-widgets-enterAddressFullName"
+      label: "الاسم بالكامل (الاسم الأول واسم العائلة)"
+      label_translated: "Full name (first and last name)"
+      control_type: INPUT
+      concepts: "name"
+    }
+    fields {
+      hide: true
+      section: ADDRESS
+      name: "address-ui-widgets-enterAddressISDPhoneNumber|address-ui-widgets-enterAddressISDPhoneNumber"
+      label: "يمكن استخدامها للمساعدة في التوصيليرجى تقديم رقم هاتف صالح"
+      label_translated: "Can be used to help with delivery Please provide a valid phone number"
+      control_type: SELECT
+      concepts: "tel-country-code"
+    }
+    fields {
+      hide: true
+      section: ADDRESS
+      name: "address-ui-widgets-enterAddressPhoneNumber|address-ui-widgets-enterAddressPhoneNumber"
+      label: "1XXXXXXXXX"
+      label_translated: "1xxxxxxxxxx"
+      example: "1XXXXXXXXX"
+      example_translated: "1xxxxxxxxxx"
+      control_type: INPUT
+      concepts: "tel-national"
+    }
+    fields {
+      section: ADDRESS
+      name: "address-ui-widgets-enterAddressLine1|address-ui-widgets-enterAddressLine1"
+      label: "اسم الشارع"
+      label_translated: "Street name"
+      example: "شارع طلعت حرب"
+      example_translated: "Talaat Harb Street"
+      control_type: INPUT
+      concepts: "street-name"
+    }
+    fields {
+      section: ADDRESS
+      name: "address-ui-widgets-enter-building-name-or-number|address-ui-widgets-enterAddressLine2"
+      label: "اسم/رقم المبنى"
+      label_translated: "Building name/number"
+      example: "مثال برج الأميرة"
+      example_translated: "Princess Tower example"
+      control_type: INPUT
+      concepts: "premise"
+      concepts: "house-number"
+    }
+    fields {
+      section: ADDRESS
+      name: "address-ui-widgets-enterAddressCity|address-ui-widgets-enterAddressCity"
+      label: "المدينة/المنطقة"
+      label_translated: "City/area"
+      example: "النزهة ، مدينة القاهرة الجديدة والدقي"
+      example_translated: "Nozha, New Cairo City and Dokki"
+      control_type: INPUT
+      concepts: "address-level2"
+    }
+    fields {
+      section: ADDRESS
+      name: "address-ui-widgets-enterAddressDistrictOrCounty|address-ui-widgets-enterAddressDistrictOrCounty"
+      label: "الحي"
+      label_translated: "Neighborhood"
+      control_type: INPUT
+      concepts: "address-level3"
+    }
+    fields {
+      section: ADDRESS
+      name: "address-ui-widgets-enterAddressStateOrRegion|address-ui-widgets-enterAddressStateOrRegion"
+      label: "المحافظة"
+      label_translated: "Governorate"
+      control_type: INPUT
+      concepts: "address-level1"
+    }
+    fields {
+      section: ADDRESS
+      name: "address-ui-widgets-landmark|address-ui-widgets-landmark"
+      label: "أقرب معلم"
+      label_translated: "nearest landmark"
+      example: "على سبيل المثال كايرو فيستيفال سيتي"
+      example_translated: "For example, Cairo Festival City"
+      control_type: INPUT
+      concepts: "landmark"
+    }
+    fields {
+      section: ADDRESS
+      hide: true
+      name: "address-ui-widgets-addr-details-res-radio-input|address-ui-widgets-addr-details-address-type-radio"
+      label: "المنزل (7 صباحًا - 9 مساءً، كل الأيام)"
+      label_translated: "Home (7 AM - 9 PM, all days)"
+      control_type: INPUT
+      concepts: "unset"
+    }
+    fields {
+      section: ADDRESS
+      hide: true
+      name: "address-ui-widgets-addr-details-com-radio-input|address-ui-widgets-addr-details-address-type-radio"
+      label: "المكتب التوصيل خلال ايام الإسبوع - صباحًا 9 - 6 مساءً"
+      label_translated: "Office Delivery on weekdays - 9am - 6pm"
+      control_type: INPUT
+      concepts: "unset"
+    }
+    fields {
+      section: ADDRESS
+      hide: true
+      name: "address-ui-widgets-addr-details-fri|address-ui-widgets-addr-details-fri"
+      label: "الجمعة"
+      label_translated: "Friday"
+      control_type: INPUT
+      concepts: "unset"
+    }
+    fields {
+      section: ADDRESS
+      hide: true
+      name: "address-ui-widgets-addr-details-sat|address-ui-widgets-addr-details-sat"
+      label: "السبت"
+      label_translated: "Saturday"
+      control_type: INPUT
+      concepts: "unset"
+    }
+    fields {
+      section: ADDRESS
+      hide: true
+      name: "|address-ui-widgets-addr-details-address-type-and-business-hours"
+      control_type: INPUT
+      concepts: "unset"
+    }
+    fields {
+      section: ADDRESS
+      hide: true
+      name: "address-ui-widgets-use-as-my-default|address-ui-widgets-use-as-my-default"
+      label: "الاستخدام كعنواني الرئيسي"
+      label_translated: "Use as my main address"
+      control_type: INPUT
+      concepts: "unset"
+    }
+  }
+}
+

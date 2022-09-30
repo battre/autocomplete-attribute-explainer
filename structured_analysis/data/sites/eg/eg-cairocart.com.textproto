@@ -1,0 +1,320 @@
+site_examples {
+  url: "https://cairocart.com"
+  is_structured: false
+  locale {
+    country: "EG"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "|login[username]"
+      label: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      section: LOGIN
+    }
+    fields {
+      name: "|login[password]"
+      label: "Password"
+      control_type: INPUT
+      concepts: "unset"
+      section: LOGIN
+    }
+    fields {
+      hide: true
+      name: "search|q"
+      label: "Search entire store here..."
+      example: "Search entire store here..."
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      name: "login-email|username"
+      label: "Email Address"
+      control_type: INPUT
+      concepts: "unset"
+      section: LOGIN
+    }
+    fields {
+      name: "login-password|password"
+      label: "Password"
+      control_type: INPUT
+      concepts: "unset"
+      section: LOGIN
+    }
+    fields {
+      name: "customer-email|username"
+      label: "Email Address"
+      control_type: INPUT
+      concepts: "unset"
+      section: LOGIN
+    }
+    fields {
+      name: "customer-password|password"
+      label: "Password"
+      example: "Password"
+      control_type: INPUT
+      concepts: "unset"
+      section: LOGIN
+    }
+    fields {
+      name: "K1NNUDI|country_id"
+      label: "Country"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "Y2IEIK4|firstname"
+      label: "First Name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "JK1EJTC|lastname"
+      label: "Last Name"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "MSJV9O6|company"
+      label: "Company"
+      control_type: INPUT
+      concepts: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "X5D9YPK|street[0]"
+      label: "Street address (1st input field)"
+      control_type: INPUT
+      concepts: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "IYPT091|street[1]"
+      label: "Street address (2nd input field)"
+      control_type: INPUT
+      concepts: "address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "AAUCBMD|city"
+      label: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "MIRVE1K|region_id"
+      label: "State/Province"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "R40KQN8|region"
+      label: "State/Province"
+      control_type: INPUT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "F7R0MB6|postcode"
+      label: "Zip/Postal Code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "PPR5MCY|telephone"
+      label: "Phone Number"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "XRSNM1Y|fax"
+      label: "Fax"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      name: "cashondelivery|payment[method]"
+      control_type: INPUT
+      concepts: "unset"
+      section: CREDIT_CARD
+    }
+    fields {
+      name: "installments|payment[method]"
+      control_type: INPUT
+      concepts: "unset"
+      section: CREDIT_CARD
+    }
+    fields {
+      name: "souhoola|payment[method]"
+      control_type: INPUT
+      concepts: "unset"
+      section: CREDIT_CARD
+    }
+    fields {
+      name: "online|payment[method]"
+      control_type: INPUT
+      concepts: "unset"
+      section: CREDIT_CARD
+    }
+    fields {
+      name: "valu|payment[method]"
+      control_type: INPUT
+      concepts: "unset"
+      section: CREDIT_CARD
+    }
+    fields {
+      name: "banktransfer|payment[method]"
+      control_type: INPUT
+      concepts: "unset"
+      section: CREDIT_CARD
+    }
+    fields {
+      name: "premium|payment[method]"
+      control_type: INPUT
+      concepts: "unset"
+      section: CREDIT_CARD
+    }
+    fields {
+      name: "getgo|payment[method]"
+      control_type: INPUT
+      concepts: "unset"
+      section: CREDIT_CARD
+    }
+    fields {
+      # Ignore billing address
+      hide: true
+      name: "billing-address-same-as-shipping-shared|billing-address-same-as-shipping"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      # Ignore billing address
+      hide: true
+      name: "JYA32UX|firstname"
+      label: "First Name"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      # Ignore billing address
+      hide: true
+      name: "DK98SEW|lastname"
+      label: "Last Name"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      # Ignore billing address
+      hide: true
+      name: "EVE3OHC|company"
+      label: "Company"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      # Ignore billing address
+      hide: true
+      name: "KTWJS7J|street[0]"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      # Ignore billing address
+      hide: true
+      name: "G6S90WF|street[1]"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      # Ignore billing address
+      hide: true
+      name: "P1WEA0K|city"
+      label: "City"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      # Ignore billing address
+      hide: true
+      name: "Y6C3QKI|region_id"
+      label: "State/Province"
+      control_type: SELECT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      # Ignore billing address
+      hide: true
+      name: "CURRJ3Q|region"
+      label: "State/Province"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      # Ignore billing address
+      hide: true
+      name: "LYUIXFD|postcode"
+      label: "Zip/Postal Code"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      # Ignore billing address
+      hide: true
+      name: "TKB5IMF|country_id"
+      label: "Country"
+      control_type: SELECT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      # Ignore billing address
+      hide: true
+      name: "DF1AH2K|telephone"
+      label: "Phone Number"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      # Ignore billing address
+      hide: true
+      name: "KU3JWND|fax"
+      label: "Fax"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "discount-code|discount_code"
+      label: "Enter discount code"
+      example: "Enter discount code"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+  }
+}
+

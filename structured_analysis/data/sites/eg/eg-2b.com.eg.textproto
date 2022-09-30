@@ -1,0 +1,129 @@
+# proto-file: address.proto
+# proto-message: AddressOntology
+
+site_examples {
+  url: "https://2b.com.eg"
+  is_structured: false
+  locale {
+    country: "EG"
+    language: "ar"
+  }
+  sequences {
+    fields {
+      section: NAME
+      name: "firstname|firstname"
+      label: "الإسم الأول"
+      label_translated: "First Name"
+      example: "الإسم الأول"
+      example_translated: "First Name"
+      control_type: INPUT
+      concepts: "given-name"
+    }
+    fields {
+      section: NAME
+      name: "lastname|lastname"
+      label: "اسم العائلة"
+      label_translated: "family name"
+      example: "اسم العائلة"
+      example_translated: "family name"
+      control_type: INPUT
+      concepts: "family-name"
+    }
+  }
+  sequences {
+    fields {
+      section: ADDRESS
+      name: "company|company"
+      label: "الشركة"
+      label_translated: "company"
+      control_type: INPUT
+      concepts: "organization"
+    }
+    fields {
+      section: ADDRESS
+      hide: true
+      name: "telephone|telephone"
+      label: "رقم الهاتف"
+      label_translated: "Telephone number"
+      example: "رقم الهاتف"
+      example_translated: "Telephone number"
+      control_type: INPUT
+      concepts: "unset"
+    }
+    fields {
+      section: ADDRESS
+      name: "street_1|street[]"
+      label: "عنوان الشارع"
+      label_translated: "Street address"
+      control_type: INPUT
+      concepts: "street-address"
+    }
+    fields {
+      section: ADDRESS
+      name: "region_id|region_id"
+      label: "ولاية/محافظة"
+      label_translated: "state/province"
+      control_type: SELECT
+      concepts: "address-level1"
+    }
+    fields {
+      section: ADDRESS
+      name: "region|region"
+      label: "ولاية/محافظة"
+      label_translated: "state/province"
+      control_type: INPUT
+      concepts: "address-level1"
+    }
+    fields {
+      section: ADDRESS
+      name: "city_id|city_id"
+      label: "المدينة"
+      label_translated: "City"
+      control_type: SELECT
+      concepts: "address-level2"
+    }
+    fields {
+      section: ADDRESS
+      name: "city|city"
+      label: "الوراق"
+      label_translated: "Warraq"
+      control_type: INPUT
+      concepts: "address-level2"
+    }
+    fields {
+      section: ADDRESS
+      name: "zip|postcode"
+      label: "الرمز البريدي"
+      label_translated: "Postal code"
+      control_type: INPUT
+      concepts: "postal-code"
+    }
+    fields {
+      section: ADDRESS
+      name: "country|country_id"
+      label: "الدولة"
+      label_translated: "The state"
+      control_type: SELECT
+      concepts: "country"
+    }
+  }
+  sequences {
+    fields {
+      section: LOGIN
+      name: "email|username"
+      label: "البريد الإلكتروني"
+      label_translated: "E-mail"
+      control_type: INPUT
+      concepts: "unset"
+    }
+    fields {
+      section: LOGIN
+      name: "pass|password"
+      label: "كلمة المرور"
+      label_translated: "password"
+      control_type: INPUT
+      concepts: "unset"
+    }
+  }
+}
+

@@ -1,0 +1,261 @@
+{% macro entry(text, suffix, id, tooltip, position) %}
+  {% if tooltip %}
+    <span class="entry-with-tooltip" id="{{id}}">{{text}}{{suffix}}
+      <div class="tooltip tooltip-{{position}}">{{tooltip|safe}}</div>
+    </span>
+  {% else %}
+    <span id="{{id}}">{{text}}{{suffix if text}}</span>
+  {% endif %}
+{% endmacro %}
+
+{% macro terms(sequence) %}
+  {% for field in sequence.fields %}
+    {% if loop.index0 > 0 %}|{% endif %}
+    {{entry(
+        field.label + (" (" + field.example + ")" if field.example else ""),
+        "▽" if field.control_type == address_pb2.ControlType.SELECT else "",
+        "term_" + field.internal_id, field.label_comment, "right")}}
+  {% endfor %}
+{% endmacro %}
+
+{% macro translated_terms(sequence) %}
+  {% for field in sequence.fields %}
+    {% if loop.index0 > 0 %}|{% endif %}
+    {{entry(
+        field.label_translated + (" (" + field.example_translated + ")" if field.example_translated else ""),
+        "▽" if field.control_type == address_pb2.ControlType.SELECT else "",
+        "translated_term_" + field.internal_id, field.label_translated_comment, "bottom")}}
+  {% endfor %}
+{% endmacro %}
+
+{% macro concepts(sequence) %}
+  {% for field in sequence.fields %}
+    {% if loop.index0 > 0 %}|{% endif %}
+    {% if field.concepts | length > 1 %}[{% endif %}
+    <span id="concept_{{field.internal_id}}">
+    {% for concept in field.concepts %}<code
+    class="{{'unknown-concept' if concept not in known_concepts else ''}}
+    {{'low-certainty' if field.low_certainty else ''}}
+    {{'gap' if concept == 'gap' else ''}}
+    {{'unset' if concept == 'unset' else ''}}">
+      {{entry(concept, "", "", field.concepts_comment, "left")}}
+    </code>{% endfor %}
+    </span>
+    {% if field.concepts | length > 1 %}]{% endif %}
+  {% endfor %}
+{% endmacro %}
+
+<html>
+<head>
+  <!-- https://picocss.com/ -->
+  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+  <style>
+    /* Tweaks to pico style */
+    @media (min-width: 1200px) {
+      :root {
+          --font-size: 18px;
+      }
+    }
+    @media (min-width: 992px) {
+      :root {
+          --font-size: 18px;
+      }
+    }
+    h1, h2, h3, h4, h5 {
+      --typography-spacing-vertical: 0.5rem;
+    }
+    h1, h2, h3 {
+      border-bottom: 1px solid #d8dee4;
+    }
+  </style>
+
+
+  <style>
+/* https://www.w3schools.com/css/css_tooltip.asp */
+/* Tooltip container */
+.entry-with-tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.entry-with-tooltip .tooltip {
+  visibility: hidden;
+  width: 300px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+}
+
+.entry-with-tooltip .tooltip-bottom {
+  /** Default */
+}
+
+.entry-with-tooltip .tooltip-left {
+  top: -5px;
+  right: 105%;
+}
+
+.entry-with-tooltip .tooltip-right {
+  top: -5px;
+  left: 105%;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.entry-with-tooltip:hover .tooltip {
+  visibility: visible;
+}
+
+span.hovered {
+  color: red;
+}
+span.hovered code {
+  color: red;
+}
+
+code.unknown-concept {
+  background-color: darksalmon !important;
+}
+code.low-certainty {
+  background-color: blanchedalmond;
+}
+code.unset {
+  background-color: blanchedalmond;
+}
+code.gap {
+  background-color: blanchedalmond;
+}
+  </style>
+</head>
+<body>
+<main class="container-fluid">
+<h1>Extending the autocomplete attribute</h1>
+
+This is an effort to analyze the structures of address forms in a somewhat
+machine readable way.
+
+<section>
+<h2>Concepts</h2>
+
+<p>
+The following are concepts taken from the
+<a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill">
+  autocomplete specification
+</a> with extensions that I deemed useful to make the autocomplete attribute
+useful for more countries.
+</p>
+
+<table role="grid">
+  <thead>
+    <th>Field name</th>
+    <th>Meaning</th>
+    <th>Canonical format example</th>
+  </thead>
+{% for concept in ontology.concepts %}
+  {% if not concept.specialization %}
+  <tr>
+    <td><code>{{concept.name}}</code></td>
+    <td>{{concept.description|safe}}</td>
+    <td>{{concept.canonical_format_example|safe}}</td>
+  </tr>
+  {% endif %}
+{% endfor %}
+</table>
+</section>
+
+<section>
+<h2>Examples</h2>
+
+<p>
+The following are examples of real-world address forms. The purpose is to see
+frequent structures and learn requirements for a more powerful autocomplete
+attribute that meets the requirements of real-world websites.
+</p>
+
+{% for country in countries %}
+  <h3 id="{{country}}"><a href="#{{country}}">#</a> {{country}}
+    {% for country_data in ontology.country_data %}
+      {{"- " + country_data.country_name if country_data.country == country}}
+    {% endfor %}
+  </h3>
+  {% for country_data in ontology.country_data %}
+  {{country_data.site_examples_preamble_html|safe if country_data.country == country}}
+  {% endfor %}
+  {% for section in [address_pb2.ExampleSequenceSection.NAME, address_pb2.ExampleSequenceSection.ADDRESS] %}
+  <h4 id="{{country}}-{{section}}"> <!-- <a href="#{{country}}-{{section}}">#</a> -->
+  {% if section == address_pb2.ExampleSequenceSection.NAME %}Names ({{country}}){% endif %}
+  {% if section == address_pb2.ExampleSequenceSection.ADDRESS %}Addresses ({{country}}){% endif %}
+  </h4>
+  <table role="grid">
+    <thead>
+      <th style="padding: 0; width: 60px"></th>
+      <th>Term</th>
+      <th>Translation</th>
+      <th>Recommnended annotation</th>
+    </thead>
+    {% for site in ontology.site_examples %}
+    {% for sequence in site.sequences %}
+    {% if site.locale.country == country and sequence.section == section %}
+    <tr>
+      <td id="{{section}}-{{site.url|replace('/','')|replace(':', '')|replace('?', '')}}" style="padding: 0"><a href="#{{section}}-{{site.url|replace('/','')|replace(':', '')|replace('?', '')}}" title="{{site.url}}">#</a>
+      {%if site.is_structured %}<span title="Structured address"><b>S</b></span>
+      {% else %}<span title="Unstructured address">U</span>{% endif %}
+      <a href="{{site.url}}" target="_blank">🔗</a>
+      </td>
+      <td {% if site.locale.language in rtl_languages %}dir="rtl"{% endif %}>{{terms(sequence)}}</td>
+      <td>{{translated_terms(sequence)}}</td>
+      <td>{{concepts(sequence)}}</td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+  </table>
+  {% for country_data in ontology.country_data %}
+  {{country_data.site_examples_epilog_html|safe if country_data.country == country}}
+  {% endfor %}
+  {% endfor %}
+{% endfor %}
+
+</section>
+
+</main>
+<script>
+document.body.addEventListener('mouseover', (event) => {
+  for (let node = event.target; node != document.body; node = node.parentNode) {
+    if (node.tagName !== 'SPAN')
+      continue;
+    const element_id = node.id;
+    const matches  = element_id.match("^.*_(field_\\d+)$");
+    if (matches) {
+      document.getElementById('term_' + matches[1]).classList.add('hovered');
+      document.getElementById('translated_term_' + matches[1]).classList.add('hovered');
+      document.getElementById('concept_' + matches[1]).classList.add('hovered');
+      return;
+    }
+  }
+});
+document.body.addEventListener('mouseout', (event) => {
+  for (let node = event.target; node != document.body; node = node.parentNode) {
+    if (node.tagName !== 'SPAN')
+      continue;
+    const element_id = node.id;
+    const matches  = element_id.match("^.*_(field_\\d+)$");
+    if (matches) {
+      document.getElementById('term_' + matches[1]).classList.remove('hovered');
+      document.getElementById('translated_term_' + matches[1]).classList.remove('hovered');
+      document.getElementById('concept_' + matches[1]).classList.remove('hovered');
+      return;
+    }
+  }
+});
+</script>
+
+</body>
+</html>

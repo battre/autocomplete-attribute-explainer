@@ -1,0 +1,4 @@
+protobuf
+Jinja2
+google-cloud-translate
+beautifulsoup4

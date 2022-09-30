@@ -1,0 +1,121 @@
+site_examples {
+  url: "https://www.decathlon.eg"
+  is_structured: false
+  locale {
+    country: "EG"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "|id_address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|id_customer"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|back"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|firstname"
+      label: "* First name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "|lastname"
+      label: "* Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "|phone"
+      label: "* Phone"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      name: "|city"
+      label: "* City"
+      control_type: SELECT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "|address1"
+      label: "* District"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "|address2"
+      label: "* street name / building number / appartment number"
+      control_type: INPUT
+      concepts: "street-address"
+      concepts_comment:
+        "Even though specific types are given here, playing Sudoku results in "
+        "the observation that this requires a street-address."
+      section: ADDRESS
+    }
+    fields {
+      name: "|postcode"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "|id_country"
+      label: "* Country"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "|alias"
+      label: "e.g. Home, Office..."
+      example: "e.g. Home, Office..."
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      name: "|saveAddress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|submitAddressAndReturn"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|submitAddress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

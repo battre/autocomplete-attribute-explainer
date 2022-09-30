@@ -1,0 +1,78 @@
+site_examples {
+  url: "https://www.bershka.com"
+  is_structured: false
+  locale {
+    country: "EG"
+    language: "ar"
+  }
+  sequences {
+    fields {
+      name: "|name"
+      label: "الاسم"
+      label_translated: "The name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "|surname"
+      label: "الألقاب"
+      label_translated: "epithet/byname"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      hide: true
+      name: "|"
+      label: "+20"
+      label_translated: "+20"
+      control_type: SELECT
+      concepts: "tel-country-code"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "|phone"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      name: "|address"
+      label: "العنوان (يجب أن تشير إلى الشارع والبوابة والدور والحرف)"
+      label_translated: "Address (must indicate street, gate, turn and letter)"
+      control_type: INPUT
+      concepts: "address-line1"
+      concepts_comment: "This is a bit unclean because specific information is requested"
+      low_certainty: true
+      section: ADDRESS
+    }
+    fields {
+      name: "|address2"
+      label: "أكمل عنوانك"
+      label_translated: "Complete your address"
+      control_type: INPUT
+      concepts: "address-line2"
+      low_certainty: true
+      section: ADDRESS
+    }
+    fields {
+      name: "|province"
+      label: "محافظة"
+      label_translated: "Governorate"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "|city"
+      label: "المدينة *"
+      label_translated: "City *"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+  }
+}
+

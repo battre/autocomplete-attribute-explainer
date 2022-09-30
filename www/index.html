@@ -1,0 +1,3090 @@
+
+
+
+
+
+
+
+
+<html>
+<head>
+  <!-- https://picocss.com/ -->
+  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+  <style>
+    /* Tweaks to pico style */
+    @media (min-width: 1200px) {
+      :root {
+          --font-size: 18px;
+      }
+    }
+    @media (min-width: 992px) {
+      :root {
+          --font-size: 18px;
+      }
+    }
+    h1, h2, h3, h4, h5 {
+      --typography-spacing-vertical: 0.5rem;
+    }
+    h1, h2, h3 {
+      border-bottom: 1px solid #d8dee4;
+    }
+  </style>
+
+
+  <style>
+/* https://www.w3schools.com/css/css_tooltip.asp */
+/* Tooltip container */
+.entry-with-tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.entry-with-tooltip .tooltip {
+  visibility: hidden;
+  width: 300px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+}
+
+.entry-with-tooltip .tooltip-bottom {
+  /** Default */
+}
+
+.entry-with-tooltip .tooltip-left {
+  top: -5px;
+  right: 105%;
+}
+
+.entry-with-tooltip .tooltip-right {
+  top: -5px;
+  left: 105%;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.entry-with-tooltip:hover .tooltip {
+  visibility: visible;
+}
+
+span.hovered {
+  color: red;
+}
+span.hovered code {
+  color: red;
+}
+
+code.unknown-concept {
+  background-color: darksalmon !important;
+}
+code.low-certainty {
+  background-color: blanchedalmond;
+}
+code.unset {
+  background-color: blanchedalmond;
+}
+code.gap {
+  background-color: blanchedalmond;
+}
+  </style>
+</head>
+<body>
+<main class="container-fluid">
+<h1>Extending the autocomplete attribute</h1>
+
+This is an effort to analyze the structures of address forms in a somewhat
+machine readable way.
+
+<section>
+<h2>Concepts</h2>
+
+<p>
+The following are concepts taken from the
+<a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill">
+  autocomplete specification
+</a> with extensions that I deemed useful to make the autocomplete attribute
+useful for more countries.
+</p>
+
+<table role="grid">
+  <thead>
+    <th>Field name</th>
+    <th>Meaning</th>
+    <th>Canonical format example</th>
+  </thead>
+
+  
+  <tr>
+    <td><code>gap</code></td>
+    <td>We don't have a useful concept for this field, yet.</td>
+    <td></td>
+  </tr>
+  
+
+  
+  <tr>
+    <td><code>unset</code></td>
+    <td>We don't have a concept set for this field, yet.</td>
+    <td></td>
+  </tr>
+  
+
+  
+  <tr>
+    <td><code>unsure</code></td>
+    <td>It's not clear what to set here.</td>
+    <td></td>
+  </tr>
+  
+
+  
+  <tr>
+    <td><code>name</code></td>
+    <td>Full name</td>
+    <td>Sir Timothy John Berners-Lee, OM, KBE, FRS, FREng, FRSA</td>
+  </tr>
+  
+
+  
+  <tr>
+    <td><code>honorific-prefix</code></td>
+    <td>Prefix or title (e.g. "Mr.", "Ms.", "Dr.", "Mlle")</td>
+    <td>Sir</td>
+  </tr>
+  
+
+  
+  <tr>
+    <td><code>given-name</code></td>
+    <td>Given name (in some Western cultures, also known as the first name)</td>
+    <td>Timothy</td>
+  </tr>
+  
+
+  
+  <tr>
+    <td><code>additional-name</code></td>
+    <td>Additional names (in some Western cultures, also known as middle names, forenames other than the first name)</td>
+    <td>John</td>
+  </tr>
+  
+
+  
+  <tr>
+    <td><code>family-name</code></td>
+    <td>Family name (in some Western cultures, also known as the last name or surname)</td>
+    <td>Berners-Lee</td>
+  </tr>
+  
+
+  
+  <tr>
+    <td><code>honorific-suffix</code></td>
+    <td>Suffix (e.g. "Jr.", "B.Sc.", "MBASW", "II")</td>
+    <td>OM, KBE, FRS, FREng, FRSA</td>
+  </tr>
+  
+
+  
+  <tr>
+    <td><code>nickname</code></td>
+    <td>Nickname, screen name, handle: a typically short name used instead of the full name</td>
+    <td>Tim</td>
+  </tr>
+  
+
+  
+  <tr>
+    <td><code>organization-title</code></td>
+    <td>Job title (e.g. "Software Engineer", "Senior Vice President", "Deputy Managing Director")</td>
+    <td>Professor</td>
+  </tr>
+  
+
+  
+  <tr>
+    <td><code>username</code></td>
+    <td>A username</td>
+    <td>timbl</td>
+  </tr>
+  
+
+  
+  <tr>
+    <td><code>new-password</code></td>
+    <td>A new password (e.g. when creating an account or changing a password)</td>
+    <td>GUMFXbadyrS3</td>
+  </tr>
+  
+
+  
+  <tr>
+    <td><code>current-password</code></td>
+    <td>The current password for the account identified by the username field (e.g. when logging in)</td>
+    <td>qwerty</td>
+  </tr>
+  
+
+  
+  <tr>
+    <td><code>one-time-code</code></td>
+    <td>One-time code used for verifying user identity</td>
+    <td>123456</td>
+  </tr>
+  
+
+  
+  <tr>
+    <td><code>organization</code></td>
+    <td>Company name corresponding to the person, address, or contact information in the other fields associated with this field</td>
+    <td>World Wide Web Consortium</td>
+  </tr>
+  
+
+  
+  <tr>
+    <td><code>street-address</code></td>
+    <td>Street address (multiple lines, newlines preserved)</td>
+    <td>32 Vassar Street<br>MIT Room 32-G524</td>
+  </tr>
+  
+
+  
+  <tr>
+    <td><code>address-line1</code></td>
+    <td>Street address (one line per field)</td>
+    <td>32 Vassar Street</td>
+  </tr>
+  
+
+  
+  <tr>
+    <td><code>address-line2</code></td>
+    <td>Street address (one line per field)</td>
+    <td>MIT Room 32-G524</td>
+  </tr>
+  
+
+  
+  <tr>
+    <td><code>address-line3</code></td>
+    <td>Street address (one line per field)</td>
+    <td></td>
+  </tr>
+  
+
+  
+  <tr>
+    <td><code>address-level4</code></td>
+    <td>The most fine-grained administrative level, in addresses with four administrative levels</td>
+    <td></td>
+  </tr>
+  
+
+  
+  <tr>
+    <td><code>address-level3</code></td>
+    <td>The third administrative level, in addresses with three or more administrative levels</td>
+    <td></td>
+  </tr>
+  
+
+  
+  <tr>
+    <td><code>address-level2</code></td>
+    <td>The second administrative level, in addresses with two or more administrative levels; in the countries with two administrative levels, this would typically be the city, town, village, or other locality within which the relevant street address is found</td>
+    <td>Cambridge</td>
+  </tr>
+  
+
+  
+  <tr>
+    <td><code>address-level1</code></td>
+    <td>The broadest administrative level in the address, i.e. the province within which the locality is found; for example, in the US, this would be the state; in Switzerland it would be the canton; in the UK, the post town</td>
+    <td>MA</td>
+  </tr>
+  
+
+  
+  <tr>
+    <td><code>country</code></td>
+    <td>Country code</td>
+    <td>US</td>
+  </tr>
+  
+
+  
+  <tr>
+    <td><code>country-name</code></td>
+    <td>Country name</td>
+    <td>US</td>
+  </tr>
+  
+
+  
+  <tr>
+    <td><code>postal-code</code></td>
+    <td>Postal code, post code, ZIP code, CEDEX code (if CEDEX, append "CEDEX", and the arrondissement, if relevant, to the address-level2 field)</td>
+    <td>02139</td>
+  </tr>
+  
+
+  
+  <tr>
+    <td><code>email</code></td>
+    <td>Email address</td>
+    <td>timbl@w3.org</td>
+  </tr>
+  
+
+  
+
+  
+
+  
+  <tr>
+    <td><code>street-name</code></td>
+    <td>Name of a street</td>
+    <td>Vassar Street</td>
+  </tr>
+  
+
+  
+  <tr>
+    <td><code>house-number</code></td>
+    <td>Numeric identifier of a house in a street. Can sometimes contain characters as well</td>
+    <td>32</td>
+  </tr>
+  
+
+  
+  <tr>
+    <td><code>premise</code></td>
+    <td>Name of a building</td>
+    <td>Stata Center</td>
+  </tr>
+  
+
+  
+  <tr>
+    <td><code>landmark</code></td>
+    <td>Landmark</td>
+    <td>Near the police station</td>
+  </tr>
+  
+
+</table>
+</section>
+
+<section>
+<h2>Examples</h2>
+
+<p>
+The following are examples of real-world address forms. The purpose is to see
+frequent structures and learn requirements for a more powerful autocomplete
+attribute that meets the requirements of real-world websites.
+</p>
+
+
+  <h3 id="EG"><a href="#EG">#</a> EG
+    
+      
+    
+      - Egypt
+    
+  </h3>
+  
+  
+  
+  <p>By and large, Egyptian address forms seem to be compatible with today's autocomplete attribute.</p>
+  
+  
+  <h4 id="EG-1"> <!-- <a href="#EG-1">#</a> -->
+  Names (EG)
+  
+  </h4>
+  <table role="grid">
+    <thead>
+      <th style="padding: 0; width: 60px"></th>
+      <th>Term</th>
+      <th>Translation</th>
+      <th>Recommnended annotation</th>
+    </thead>
+    
+    
+    
+    <tr>
+      <td id="1-https2b.com.eg" style="padding: 0"><a href="#1-https2b.com.eg" title="https://2b.com.eg">#</a>
+      <span title="Unstructured address">U</span>
+      <a href="https://2b.com.eg" target="_blank">🔗</a>
+      </td>
+      <td dir="rtl">
+  
+    
+    
+  
+    <span id="term_field_0">الإسم الأول (الإسم الأول)</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_1">اسم العائلة (اسم العائلة)</span>
+  
+
+  
+</td>
+      <td>
+  
+    
+    
+  
+    <span id="translated_term_field_0">First Name (First Name)</span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_1">family name (family name)</span>
+  
+
+  
+</td>
+      <td>
+  
+    
+    
+    <span id="concept_field_0">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">given-name</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_1">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">family-name</span>
+  
+
+    </code>
+    </span>
+    
+  
+</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+      <td id="1-httpswww.azzafahmy.com" style="padding: 0"><a href="#1-httpswww.azzafahmy.com" title="https://www.azzafahmy.com">#</a>
+      <span title="Unstructured address">U</span>
+      <a href="https://www.azzafahmy.com" target="_blank">🔗</a>
+      </td>
+      <td >
+  
+    
+    
+  
+    <span id="term_field_34">First Name</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_35">Last Name</span>
+  
+
+  
+</td>
+      <td>
+  
+    
+    
+  
+    <span id="translated_term_field_34"></span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_35"></span>
+  
+
+  
+</td>
+      <td>
+  
+    
+    
+    <span id="concept_field_34">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">given-name</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_35">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">family-name</span>
+  
+
+    </code>
+    </span>
+    
+  
+</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+      <td id="1-httpswww.bershka.com" style="padding: 0"><a href="#1-httpswww.bershka.com" title="https://www.bershka.com">#</a>
+      <span title="Unstructured address">U</span>
+      <a href="https://www.bershka.com" target="_blank">🔗</a>
+      </td>
+      <td dir="rtl">
+  
+    
+    
+  
+    <span id="term_field_43">الاسم</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_44">الألقاب</span>
+  
+
+  
+</td>
+      <td>
+  
+    
+    
+  
+    <span id="translated_term_field_43">The name</span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_44">epithet/byname</span>
+  
+
+  
+</td>
+      <td>
+  
+    
+    
+    <span id="concept_field_43">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">given-name</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_44">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">family-name</span>
+  
+
+    </code>
+    </span>
+    
+  
+</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+      <td id="1-httpscairocart.com" style="padding: 0"><a href="#1-httpscairocart.com" title="https://cairocart.com">#</a>
+      <span title="Unstructured address">U</span>
+      <a href="https://cairocart.com" target="_blank">🔗</a>
+      </td>
+      <td >
+  
+    
+    
+  
+    <span id="term_field_63">First Name</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_64">Last Name</span>
+  
+
+  
+</td>
+      <td>
+  
+    
+    
+  
+    <span id="translated_term_field_63"></span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_64"></span>
+  
+
+  
+</td>
+      <td>
+  
+    
+    
+    <span id="concept_field_63">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">given-name</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_64">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">family-name</span>
+  
+
+    </code>
+    </span>
+    
+  
+</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+      <td id="1-httpscairosales.com" style="padding: 0"><a href="#1-httpscairosales.com" title="https://cairosales.com">#</a>
+      <span title="Unstructured address">U</span>
+      <a href="https://cairosales.com" target="_blank">🔗</a>
+      </td>
+      <td >
+  
+    
+    
+  
+    <span id="term_field_75">Mr.</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_76">Mrs.</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_77">First name</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_78">Last name</span>
+  
+
+  
+</td>
+      <td>
+  
+    
+    
+  
+    <span id="translated_term_field_75"></span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_76"></span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_77"></span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_78"></span>
+  
+
+  
+</td>
+      <td>
+  
+    
+    
+    <span id="concept_field_75">
+    <code
+    class="
+    
+    gap
+    ">
+      
+  
+    <span id="">gap</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_76">
+    <code
+    class="
+    
+    gap
+    ">
+      
+  
+    <span id="">gap</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_77">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">given-name</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_78">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">family-name</span>
+  
+
+    </code>
+    </span>
+    
+  
+</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+      <td id="1-httpsdawaya.com" style="padding: 0"><a href="#1-httpsdawaya.com" title="https://dawaya.com">#</a>
+      <span title="Unstructured address">U</span>
+      <a href="https://dawaya.com" target="_blank">🔗</a>
+      </td>
+      <td dir="rtl">
+  
+    
+    
+  
+    <span id="term_field_109">اﻷسم اﻷول*</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_110">اسم العائله*</span>
+  
+
+  
+</td>
+      <td>
+  
+    
+    
+  
+    <span id="translated_term_field_109">first name*</span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_110">family name*</span>
+  
+
+  
+</td>
+      <td>
+  
+    
+    
+    <span id="concept_field_109">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">given-name</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_110">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">family-name</span>
+  
+
+    </code>
+    </span>
+    
+  
+</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </table>
+  
+  
+  
+  
+  
+  
+  <h4 id="EG-2"> <!-- <a href="#EG-2">#</a> -->
+  
+  Addresses (EG)
+  </h4>
+  <table role="grid">
+    <thead>
+      <th style="padding: 0; width: 60px"></th>
+      <th>Term</th>
+      <th>Translation</th>
+      <th>Recommnended annotation</th>
+    </thead>
+    
+    
+    
+    
+    
+    <tr>
+      <td id="2-https2b.com.eg" style="padding: 0"><a href="#2-https2b.com.eg" title="https://2b.com.eg">#</a>
+      <span title="Unstructured address">U</span>
+      <a href="https://2b.com.eg" target="_blank">🔗</a>
+      </td>
+      <td dir="rtl">
+  
+    
+    
+  
+    <span id="term_field_2">الشركة</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_3">عنوان الشارع</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_4">ولاية/محافظة▽</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_5">ولاية/محافظة</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_6">المدينة▽</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_7">الوراق</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_8">الرمز البريدي</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_9">الدولة▽</span>
+  
+
+  
+</td>
+      <td>
+  
+    
+    
+  
+    <span id="translated_term_field_2">company</span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_3">Street address</span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_4">state/province▽</span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_5">state/province</span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_6">City▽</span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_7">Warraq</span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_8">Postal code</span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_9">The state▽</span>
+  
+
+  
+</td>
+      <td>
+  
+    
+    
+    <span id="concept_field_2">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">organization</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_3">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">street-address</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_4">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">address-level1</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_5">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">address-level1</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_6">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">address-level2</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_7">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">address-level2</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_8">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">postal-code</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_9">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">country</span>
+  
+
+    </code>
+    </span>
+    
+  
+</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+      <td id="2-httpswww.amazon.ae" style="padding: 0"><a href="#2-httpswww.amazon.ae" title="https://www.amazon.ae">#</a>
+      <span title="Structured address"><b>S</b></span>
+      
+      <a href="https://www.amazon.ae" target="_blank">🔗</a>
+      </td>
+      <td dir="rtl">
+  
+    
+    
+  
+    <span id="term_field_12">البلد/المنطقة▽</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_13">اسم الشارع (شارع طلعت حرب)</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_14">اسم/رقم المبنى (مثال برج الأميرة)</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_15">المدينة/المنطقة (النزهة ، مدينة القاهرة الجديدة والدقي)</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_16">الحي</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_17">المحافظة</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_18">أقرب معلم (على سبيل المثال كايرو فيستيفال سيتي)</span>
+  
+
+  
+</td>
+      <td>
+  
+    
+    
+  
+    <span id="translated_term_field_12">Country/Region▽</span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_13">Street name (Talaat Harb Street)</span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_14">Building name/number (Princess Tower example)</span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_15">City/area (Nozha, New Cairo City and Dokki)</span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_16">Neighborhood</span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_17">Governorate</span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_18">nearest landmark (For example, Cairo Festival City)</span>
+  
+
+  
+</td>
+      <td>
+  
+    
+    
+    <span id="concept_field_12">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">country</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_13">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">street-name</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    [
+    <span id="concept_field_14">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">premise</span>
+  
+
+    </code><code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">house-number</span>
+  
+
+    </code>
+    </span>
+    ]
+  
+    |
+    
+    <span id="concept_field_15">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">address-level2</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_16">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">address-level3</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_17">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">address-level1</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_18">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">landmark</span>
+  
+
+    </code>
+    </span>
+    
+  
+</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+      <td id="2-httpswww.azzafahmy.com" style="padding: 0"><a href="#2-httpswww.azzafahmy.com" title="https://www.azzafahmy.com">#</a>
+      <span title="Unstructured address">U</span>
+      <a href="https://www.azzafahmy.com" target="_blank">🔗</a>
+      </td>
+      <td >
+  
+    
+    
+  
+    <span id="term_field_36">Street Address (Enter a location)</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_37">Country▽</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_38">City</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_39">Zip/Postal Code</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_40">State/Province</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_41">State/Province▽</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_42">Company</span>
+  
+
+  
+</td>
+      <td>
+  
+    
+    
+  
+    <span id="translated_term_field_36"></span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_37"></span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_38"></span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_39"></span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_40"></span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_41"></span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_42"></span>
+  
+
+  
+</td>
+      <td>
+  
+    
+    
+    <span id="concept_field_36">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">street-location</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_37">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">country</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_38">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">address-level2</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_39">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">postal-code</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_40">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">address-level1</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_41">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">address-level1</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_42">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">organization</span>
+  
+
+    </code>
+    </span>
+    
+  
+</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+      <td id="2-httpswww.bershka.com" style="padding: 0"><a href="#2-httpswww.bershka.com" title="https://www.bershka.com">#</a>
+      <span title="Unstructured address">U</span>
+      <a href="https://www.bershka.com" target="_blank">🔗</a>
+      </td>
+      <td dir="rtl">
+  
+    
+    
+  
+    <span id="term_field_45">العنوان (يجب أن تشير إلى الشارع والبوابة والدور والحرف)</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_46">أكمل عنوانك</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_47">محافظة▽</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_48">المدينة *▽</span>
+  
+
+  
+</td>
+      <td>
+  
+    
+    
+  
+    <span id="translated_term_field_45">Address (must indicate street, gate, turn and letter)</span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_46">Complete your address</span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_47">Governorate▽</span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_48">City *▽</span>
+  
+
+  
+</td>
+      <td>
+  
+    
+    
+    <span id="concept_field_45">
+    <code
+    class="
+    low-certainty
+    
+    ">
+      
+  
+    <span class="entry-with-tooltip" id="">address-line1
+      <div class="tooltip tooltip-left">This is a bit unclean because specific information is requested</div>
+    </span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_46">
+    <code
+    class="
+    low-certainty
+    
+    ">
+      
+  
+    <span id="">address-line2</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_47">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">address-level1</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_48">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">address-level1</span>
+  
+
+    </code>
+    </span>
+    
+  
+</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+      <td id="2-httpscairocart.com" style="padding: 0"><a href="#2-httpscairocart.com" title="https://cairocart.com">#</a>
+      <span title="Unstructured address">U</span>
+      <a href="https://cairocart.com" target="_blank">🔗</a>
+      </td>
+      <td >
+  
+    
+    
+  
+    <span id="term_field_55">Country▽</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_56">Company</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_57">Street address (1st input field)</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_58">Street address (2nd input field)</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_59">City</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_60">State/Province▽</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_61">State/Province</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_62">Zip/Postal Code</span>
+  
+
+  
+</td>
+      <td>
+  
+    
+    
+  
+    <span id="translated_term_field_55"></span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_56"></span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_57"></span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_58"></span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_59"></span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_60"></span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_61"></span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_62"></span>
+  
+
+  
+</td>
+      <td>
+  
+    
+    
+    <span id="concept_field_55">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">country</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_56">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">organization</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_57">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">address-line1</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_58">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">address-line2</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_59">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">address-level2</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_60">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">address-level1</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_61">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">address-level1</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_62">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">postal-code</span>
+  
+
+    </code>
+    </span>
+    
+  
+</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+      <td id="2-httpscairosales.com" style="padding: 0"><a href="#2-httpscairosales.com" title="https://cairosales.com">#</a>
+      <span title="Unstructured address">U</span>
+      <a href="https://cairosales.com" target="_blank">🔗</a>
+      </td>
+      <td >
+  
+    
+    
+  
+    <span id="term_field_82">Address</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_83">Address (Line 2):</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_84">Governorate▽</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_85">District</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_86">District▽</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_87">Company (if applicable):</span>
+  
+
+  
+</td>
+      <td>
+  
+    
+    
+  
+    <span id="translated_term_field_82"></span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_83"></span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_84"></span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_85"></span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_86"></span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_87"></span>
+  
+
+  
+</td>
+      <td>
+  
+    
+    
+    <span id="concept_field_82">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">address-line1</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_83">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">address-line2</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_84">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">address-level1</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_85">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">address-level2</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_86">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">address-level2</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_87">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">organization</span>
+  
+
+    </code>
+    </span>
+    
+  
+</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+      <td id="2-httpsdawaya.com" style="padding: 0"><a href="#2-httpsdawaya.com" title="https://dawaya.com">#</a>
+      <span title="Unstructured address">U</span>
+      <a href="https://dawaya.com" target="_blank">🔗</a>
+      </td>
+      <td dir="rtl">
+  
+    
+    
+  
+    <span id="term_field_111">المنطقه*▽</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_112">المدينه *▽</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_113">العنوان*</span>
+  
+
+  
+</td>
+      <td>
+  
+    
+    
+  
+    <span id="translated_term_field_111">Region*▽</span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_112">City *▽</span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_113">the address*</span>
+  
+
+  
+</td>
+      <td>
+  
+    
+    
+    <span id="concept_field_111">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">address-level1</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_112">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">address-level2</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_113">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">street-address</span>
+  
+
+    </code>
+    </span>
+    
+  
+</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+      <td id="2-httpswww.decathlon.eg" style="padding: 0"><a href="#2-httpswww.decathlon.eg" title="https://www.decathlon.eg">#</a>
+      <span title="Unstructured address">U</span>
+      <a href="https://www.decathlon.eg" target="_blank">🔗</a>
+      </td>
+      <td >
+  
+    
+    
+  
+    <span id="term_field_121">* First name</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_122">* Last name</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_123">* City▽</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_124">* District▽</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_125">* street name / building number / appartment number</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_126"></span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_127">* Country▽</span>
+  
+
+  
+</td>
+      <td>
+  
+    
+    
+  
+    <span id="translated_term_field_121"></span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_122"></span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_123"></span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_124"></span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_125"></span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_126"></span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_127"></span>
+  
+
+  
+</td>
+      <td>
+  
+    
+    
+    <span id="concept_field_121">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">given-name</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_122">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">family-name</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_123">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">address-level2</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_124">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">address-level1</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_125">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span class="entry-with-tooltip" id="">street-address
+      <div class="tooltip tooltip-left">Even though specific types are given here, playing Sudoku results in the observation that this requires a street-address.</div>
+    </span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_126">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">postal-code</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_127">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">country</span>
+  
+
+    </code>
+    </span>
+    
+  
+</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+      <td id="2-httpsglobal.dejavu.shoes" style="padding: 0"><a href="#2-httpsglobal.dejavu.shoes" title="https://global.dejavu.shoes">#</a>
+      <span title="Unstructured address">U</span>
+      <a href="https://global.dejavu.shoes" target="_blank">🔗</a>
+      </td>
+      <td >
+  
+    
+    
+  
+    <span id="term_field_130">Country/Region▽</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_131">First name</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_132">Last name</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_133">Address</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_134">Apartment, suite, etc.</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_135">City</span>
+  
+
+  
+    |
+    
+  
+    <span id="term_field_136">Emirate▽</span>
+  
+
+  
+</td>
+      <td>
+  
+    
+    
+  
+    <span id="translated_term_field_130"></span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_131"></span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_132"></span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_133"></span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_134"></span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_135"></span>
+  
+
+  
+    |
+    
+  
+    <span id="translated_term_field_136"></span>
+  
+
+  
+</td>
+      <td>
+  
+    
+    
+    <span id="concept_field_130">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">country</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_131">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">given-name</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_132">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">family-name</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_133">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">address-line1</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_134">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span class="entry-with-tooltip" id="">address-line2
+      <div class="tooltip tooltip-left">This is a bit unclean</div>
+    </span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_135">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">address-level2</span>
+  
+
+    </code>
+    </span>
+    
+  
+    |
+    
+    <span id="concept_field_136">
+    <code
+    class="
+    
+    
+    ">
+      
+  
+    <span id="">address-level1</span>
+  
+
+    </code>
+    </span>
+    
+  
+</td>
+    </tr>
+    
+    
+    
+  </table>
+  
+  
+  
+  
+  
+  
+
+
+</section>
+
+</main>
+<script>
+document.body.addEventListener('mouseover', (event) => {
+  for (let node = event.target; node != document.body; node = node.parentNode) {
+    if (node.tagName !== 'SPAN')
+      continue;
+    const element_id = node.id;
+    const matches  = element_id.match("^.*_(field_\\d+)$");
+    if (matches) {
+      document.getElementById('term_' + matches[1]).classList.add('hovered');
+      document.getElementById('translated_term_' + matches[1]).classList.add('hovered');
+      document.getElementById('concept_' + matches[1]).classList.add('hovered');
+      return;
+    }
+  }
+});
+document.body.addEventListener('mouseout', (event) => {
+  for (let node = event.target; node != document.body; node = node.parentNode) {
+    if (node.tagName !== 'SPAN')
+      continue;
+    const element_id = node.id;
+    const matches  = element_id.match("^.*_(field_\\d+)$");
+    if (matches) {
+      document.getElementById('term_' + matches[1]).classList.remove('hovered');
+      document.getElementById('translated_term_' + matches[1]).classList.remove('hovered');
+      document.getElementById('concept_' + matches[1]).classList.remove('hovered');
+      return;
+    }
+  }
+});
+</script>
+
+</body>
+</html>

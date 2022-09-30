@@ -1,0 +1,17 @@
+# proto-file: address.proto
+# proto-message: AddressOntology
+
+country_data {
+  country: "AR"
+  country_name: "Argentina"
+  site_examples_preamble_html:
+    "<p>TODO</p>"
+}
+
+country_data {
+  country: "EG"
+  country_name: "Egypt"
+  site_examples_preamble_html:
+    "<p>By and large, Egyptian address forms seem to be compatible with "
+    "today's autocomplete attribute.</p>"
+}

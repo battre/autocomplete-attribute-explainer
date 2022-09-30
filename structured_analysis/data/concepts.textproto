@@ -1,0 +1,317 @@
+# proto-file: address.proto
+# proto-message: AddressOntology
+
+concepts {
+  name: "gap"
+  description: "We don't have a useful concept for this field, yet."
+}
+
+concepts {
+  name: "unset"
+  description: "We don't have a concept set for this field, yet."
+}
+
+concepts {
+  name: "unsure"
+  description: "It's not clear what to set here."
+}
+
+# Default concepts from
+# https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill
+
+## Name
+concepts {
+  name: "name"
+  description: "Full name"
+  canonical_format_example:
+    "Sir Timothy John Berners-Lee, OM, KBE, FRS, FREng, FRSA"
+  label: "Full name"
+}
+
+concepts {
+  name: "honorific-prefix"
+  parent: "name"
+  description:
+    "Prefix or title (e.g. \"Mr.\", \"Ms.\", \"Dr.\", \"Mlle\")"
+  canonical_format_example: "Sir"
+  label: "Prefix or title"
+}
+
+concepts {
+  name: "given-name"
+  parent: "name"
+  description:
+    "Given name (in some Western cultures, also known as the first name)"
+  canonical_format_example: "Timothy"
+  label: "Given name"
+}
+
+concepts {
+  name: "additional-name"
+  parent: "name"
+  description:
+    "Additional names (in some Western cultures, also known as middle names, "
+    "forenames other than the first name)"
+  canonical_format_example: "John"
+  label: "Additional name"
+}
+
+concepts {
+  name: "family-name"
+  parent: "name"
+  description:
+    "Family name (in some Western cultures, also known as the last name or "
+    "surname)"
+  canonical_format_example: "Berners-Lee"
+  label: "Family name"
+}
+
+concepts {
+  name: "honorific-suffix"
+  parent: "name"
+  description: "Suffix (e.g. \"Jr.\", \"B.Sc.\", \"MBASW\", \"II\")"
+  canonical_format_example: "OM, KBE, FRS, FREng, FRSA"
+  label: "Suffix"
+}
+
+## Other naming fields
+
+concepts {
+  name: "nickname"
+  description: "Nickname, screen name, handle: a typically short name used instead of the full name"
+  canonical_format_example: "Tim"
+  label: "Nickname"
+}
+
+concepts {
+  name: "organization-title"
+  description: "Job title (e.g. \"Software Engineer\", \"Senior Vice President\", \"Deputy Managing Director\")"
+  canonical_format_example: "Professor"
+  label: "Job title"
+}
+
+concepts {
+  name: "username"
+  description: "A username"
+  canonical_format_example: "timbl"
+  label: "Username"
+}
+
+concepts {
+  name: "new-password"
+  description: "A new password (e.g. when creating an account or changing a password)"
+  canonical_format_example: "GUMFXbadyrS3"
+  label: "New password"
+}
+
+concepts {
+  name: "current-password"
+  description: "The current password for the account identified by the username field (e.g. when logging in)"
+  canonical_format_example: "qwerty"
+  label: "Password"
+}
+
+concepts {
+  name: "one-time-code"
+  description: "One-time code used for verifying user identity"
+  canonical_format_example: "123456"
+  label: "One time code"
+}
+
+concepts {
+  name: "organization"
+  description: "Company name corresponding to the person, address, or contact information in the other fields associated with this field"
+  canonical_format_example: "World Wide Web Consortium"
+  label: "Company / Organization"
+}
+
+concepts {
+  name: "street-address"
+  description: "Street address (multiple lines, newlines preserved)"
+  canonical_format_example: "32 Vassar Street<br>MIT Room 32-G524"
+  label: "Street address"
+}
+
+concepts {
+  name: "address-line1"
+  parent: "street-address"
+  description: "Street address (one line per field)"
+  canonical_format_example: "32 Vassar Street"
+  label: "Address line 1"
+}
+
+concepts {
+  name: "address-line2"
+  parent: "street-address"
+  description: "Street address (one line per field)"
+  canonical_format_example: "MIT Room 32-G524"
+  label: "Address line 2"
+}
+
+concepts {
+  name: "address-line3"
+  parent: "street-address"
+  description: "Street address (one line per field)"
+  canonical_format_example: ""
+  label: "Address line 3"
+}
+
+concepts {
+  name: "address-level4"
+  description: "The most fine-grained administrative level, in addresses with four administrative levels"
+  canonical_format_example: ""
+  label: "Address level 4"
+}
+
+concepts {
+  name: "address-level3"
+  description:
+    "The third administrative level, in addresses with three or more "
+    "administrative levels"
+  canonical_format_example: ""
+  label: "Address level 3"
+}
+
+concepts {
+  name: "address-level2"
+  description:
+    "The second administrative level, in addresses with two or more "
+    "administrative levels; in the countries with two administrative levels, "
+    "this would typically be the city, town, village, or other locality within "
+    "which the relevant street address is found"
+  canonical_format_example: "Cambridge"
+  label: "Address level 2"
+}
+
+concepts {
+  name: "address-level1"
+  description:
+    "The broadest administrative level in the address, i.e. the province "
+    "within which the locality is found; for example, in the US, this would be "
+    "the state; in Switzerland it would be the canton; in the UK, the post town"
+  canonical_format_example: "MA"
+  label: "Address level 1"
+}
+
+concepts {
+  name: "country"
+  description: "Country code"
+  canonical_format_example: "US"
+  label: "Country code"
+}
+
+concepts {
+  name: "country-name"
+  description: "Country name"
+  canonical_format_example: "US"
+  label: "Country name"
+}
+
+concepts {
+  name: "postal-code"
+  description:
+    "Postal code, post code, ZIP code, CEDEX code (if CEDEX, append \"CEDEX\", "
+    "and the arrondissement, if relevant, to the address-level2 field)"
+  canonical_format_example: "02139"
+  label: "Postal code"
+}
+
+# TODO: Credit card fields and more.
+
+concepts {
+  name: "email"
+  description: "Email address"
+  canonical_format_example: "timbl@w3.org"
+  label: "Email address"
+}
+
+# Locatization
+
+concepts {
+  name: "given-name"
+  specialization {
+    country: "US"
+    language: "en"
+  }
+  label: "First name"
+}
+
+concepts {
+  name: "additional-name"
+  specialization {
+    country: "US"
+    language: "en"
+  }
+  label: "Middle name"
+}
+
+# New concepts
+
+concepts {
+  name: "street-name"
+  description: "Name of a street"
+  canonical_format_example: "Vassar Street"
+  label: "Street name"
+}
+
+concepts {
+  name: "house-number"
+  description:
+    "Numeric identifier of a house in a street. Can sometimes contain "
+    "characters as well"
+  canonical_format_example: "32"
+  label: "House number"
+}
+
+concepts {
+  name: "premise"
+  description: "Name of a building"
+  canonical_format_example: "Stata Center"
+  label: "Building name"
+}
+
+concepts {
+  name: "landmark"
+  description: "Landmark"
+  canonical_format_example: "Near the police station"
+  label: "Landmark"
+}
+
+# Generic "street-name house-number" pattern.
+compound_concepts {
+  name: "street-location"
+  description: "A combination of a street and house number"
+  label: "Street and house number"
+
+  tokens {
+    concept_name: "street-name"
+  }
+  tokens {
+    separator_value: " "
+  }
+  tokens {
+    concept_name: "house-number"
+  }
+}
+
+# Specialization for "house-number street-name" pattern.
+compound_concepts {
+  name: "street-location"
+  description: "A combination of a house number and street"
+  label: "House number and street"
+
+  tokens {
+    concept_name: "house-number"
+  }
+  tokens {
+    separator_value: " "
+  }
+  tokens {
+    concept_name: "street-name"
+  }
+
+  specialization {
+    country: "US"
+    country: "EG"
+  }
+}

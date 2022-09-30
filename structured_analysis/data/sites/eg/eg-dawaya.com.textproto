@@ -1,0 +1,89 @@
+site_examples {
+  url: "https://dawaya.com"
+  is_structured: false
+  locale {
+    country: "EG"
+    language: "ar"
+  }
+  sequences {
+    fields {
+      name: "searchInput|"
+      label: "ابحث هنا"
+      label_translated: "search here"
+      example: "ابحث هنا"
+      example_translated: "search here"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "ابحث هنا"
+      label_translated: "search here"
+      example: "ابحث هنا"
+      example_translated: "search here"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|cart.guest.firstname"
+      label: "اﻷسم اﻷول*"
+      label_translated: "first name*"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "|cart.guest.lastname"
+      label: "اسم العائله*"
+      label_translated: "family name*"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "|cart.guest.districtId"
+      label: "المنطقه*"
+      label_translated: "Region*"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "|cart.guest.cityId"
+      label: "المدينه *"
+      label_translated: "City *"
+      control_type: SELECT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "|cart.guest.address"
+      label: "العنوان*"
+      label_translated: "the address*"
+      control_type: INPUT
+      concepts: "street-address"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "|cart.guest.email"
+      label: "البريد الإلكتروني"
+      label_translated: "E-mail"
+      control_type: INPUT
+      concepts: "email"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "|cart.guest.mobile"
+      label: "رقم التليفون *"
+      label_translated: "phone number *"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+  }
+}
+
