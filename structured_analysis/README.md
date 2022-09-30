@@ -36,3 +36,8 @@ python3 -m pip install -r requirements.txt
 ./generate_protos.sh
 python3 src/extract_fields.py --country=EN --language=ja file.html > out.textproto
 ```
+
+## Result
+
+You can find the result of the data analysis [here](https://battre.github.io/autocomplete-attribute-explainer/). Note that this is work in progress and not
+as comprehensive as the initial [country_analysis.md](../country_analysis.md).
