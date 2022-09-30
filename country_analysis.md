@@ -527,7 +527,7 @@ Street address
 | Building name/number (Princess Tower example)
 | City/area (Nozha, New Cairo City and Dokki)
 | Nearest landmark (For example, Cairo Festival City)
-<td> country-name | premise | address-level2 | landmark
+<td> country-name | street-name | premise | address-level2 | landmark
 
 <tr> <!-- https://www.bershka.com -->
 <td dir="rtl"> العنوان (يجب أن تشير إلى الشارع والبوابة والدور والحرف)
@@ -535,7 +535,7 @@ Street address
 | محافظة
 | المدينة
 | السوق
-<td> Address (must indicate street, gate, turn and letter)
+<td> Address (must indicate street, gate (probably house number), floor and letter)
 | Complete your address
 | Governate (state)
 | city
