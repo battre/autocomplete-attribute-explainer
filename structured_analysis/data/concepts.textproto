@@ -255,6 +255,7 @@ concepts {
   description: "Name of a street"
   canonical_format_example: "Vassar Street"
   label: "Street name"
+  is_new: true
 }
 
 concepts {
@@ -283,11 +284,20 @@ concepts {
   is_new: true
 }
 
+concepts {
+  name: "delivery-instructions"
+  description: "Delivery instructions"
+  canonical_format_example: "Dial 312 123 1234 when you are there."
+  label: "Delivery instructions"
+  is_new: true
+}
+
+
 # Generic "street-name house-number" pattern.
 compound_concepts {
   name: "street-location"
   description: "A combination of a street and house number"
-  label: "Street and house number"
+  label: "Street name and house number"
 
   tokens {
     concept_name: "street-name"
@@ -304,7 +314,7 @@ compound_concepts {
 compound_concepts {
   name: "street-location"
   description: "A combination of a house number and street"
-  label: "House number and street"
+  label: "House number and street name"
 
   tokens {
     concept_name: "house-number"
@@ -319,5 +329,63 @@ compound_concepts {
   specialization {
     country: "US"
     country: "EG"
+    language: "*"
+  }
+}
+
+compound_concepts {
+  name: "sub-premise"
+  description: "All fields within a building, depending on the country. "
+    "E.g. apartment number, floor, stair case, ..."
+  tokens {
+    concept_name: "gap"
+  }
+}
+
+compound_concepts {
+  name: "premise-and-sub-premise"
+  description: "Name of a building plus sub-premise information"
+  tokens {
+    concept_name: "premise"
+  }
+  tokens {
+    separator_value: ", "
+  }
+  tokens {
+    concept_name: "sub-premise"
+  }
+}
+
+compound_concepts {
+  name: "address-search"
+  description: "An address search widget, typically accepting information down "
+    "to the premise level, but no name or sub-premise information. "
+    "E.g. 32 Vassar Street, Cambridge, MA, USA"
+  label: "n/a: this would not be shown in the UI."
+
+  tokens {
+    concept_name: "street-location"
+  }
+  tokens {
+    separator_value: ", "
+  }
+  tokens {
+    concept_name: "address-level2"
+  }
+  tokens {
+    separator_value: ", "
+  }
+  tokens {
+    concept_name: "address-level1"
+  }
+  tokens {
+    separator_value: ", "
+  }
+  tokens {
+    concept_name: "country-name"
+  }
+  specialization {
+    country: "US"
+    language: "en"
   }
 }

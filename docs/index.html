@@ -409,7 +409,7 @@ useful for more countries.
 
   
   <tr>
-    <td><code class="">
+    <td><code class="new-concept">
       street-name
     </code></td>
     <td>Name of a street</td>
@@ -447,7 +447,113 @@ useful for more countries.
   </tr>
   
 
+  
+  <tr>
+    <td><code class="new-concept">
+      delivery-instructions
+    </code></td>
+    <td>Delivery instructions</td>
+    <td>Dial 312 123 1234 when you are there.</td>
+  </tr>
+  
+
 </table>
+
+<p>
+The following are compound concepts. They are typically strongly localized,
+which I have not done yet.
+</p>
+<table role="grid">
+  <thead>
+    <th>Compound concept name</th>
+    <th>Meaning</th>
+    <th>In product label</th>
+    <th></th>
+    <th>Tokens</th>
+  </thead>
+
+<tr>
+  <td><code class="new-concept">
+    street-location
+  </code>
+  
+  </td>
+  <td>A combination of a street and house number</td>
+  <td>Street name and house number</td>
+  <td></td>
+  <td>
+    <code class="new-concept">street-name</code><code> </code><code class="new-concept">house-number</code>
+  </td>
+</tr>
+
+<tr>
+  <td><code class="new-concept">
+    street-location
+  </code>
+  
+    { US, EG }
+    x
+    { * }
+    
+  
+  </td>
+  <td>A combination of a house number and street</td>
+  <td>House number and street name</td>
+  <td></td>
+  <td>
+    <code class="new-concept">house-number</code><code> </code><code class="new-concept">street-name</code>
+  </td>
+</tr>
+
+<tr>
+  <td><code class="new-concept">
+    sub-premise
+  </code>
+  
+  </td>
+  <td>All fields within a building, depending on the country. E.g. apartment number, floor, stair case, ...</td>
+  <td></td>
+  <td></td>
+  <td>
+    <code class="new-concept">gap</code>
+  </td>
+</tr>
+
+<tr>
+  <td><code class="new-concept">
+    premise-and-sub-premise
+  </code>
+  
+  </td>
+  <td>Name of a building plus sub-premise information</td>
+  <td></td>
+  <td></td>
+  <td>
+    <code class="new-concept">premise</code><code>, </code><code class="new-concept">sub-premise</code>
+  </td>
+</tr>
+
+<tr>
+  <td><code class="new-concept">
+    address-search
+  </code>
+  
+    { US }
+    x
+    { en }
+    
+  
+  </td>
+  <td>An address search widget, typically accepting information down to the premise level, but no name or sub-premise information. E.g. 32 Vassar Street, Cambridge, MA, USA</td>
+  <td>n/a: this would not be shown in the UI.</td>
+  <td></td>
+  <td>
+    <code class="new-concept">street-location</code><code>, </code><code class="">address-level2</code><code>, </code><code class="">address-level1</code><code>, </code><code class="">country-name</code>
+  </td>
+</tr>
+
+</table>
+
 </section>
 
 <section>
@@ -1799,11 +1905,11 @@ attribute that meets the requirements of real-world websites.
     
     <span id="concept_field_43">
     <code
-    class="unknown-concept new-concept
+    class="
     
     
     
-    ">
+    new-concept">
       
   
     <span id="">sub-premise</span>
@@ -1839,7 +1945,7 @@ attribute that meets the requirements of real-world websites.
     
     
     
-    ">
+    new-concept">
       
   
     <span id="">street-name</span>
@@ -2508,11 +2614,11 @@ attribute that meets the requirements of real-world websites.
     
     <span id="concept_field_125">
     <code
-    class="unknown-concept new-concept
+    class="
     
     
     
-    ">
+    new-concept">
       
   
     <span id="">address-search</span>
@@ -2526,11 +2632,11 @@ attribute that meets the requirements of real-world websites.
     
     <span id="concept_field_126">
     <code
-    class="unknown-concept new-concept
+    class="
     
     
     
-    ">
+    new-concept">
       
   
     <span id="">premise-and-sub-premise</span>
@@ -2566,7 +2672,7 @@ attribute that meets the requirements of real-world websites.
     
     
     
-    ">
+    new-concept">
       
   
     <span id="">street-name</span>
@@ -2908,11 +3014,11 @@ attribute that meets the requirements of real-world websites.
     
     <span id="concept_field_170">
     <code
-    class="unknown-concept new-concept
+    class="
     
     
     
-    ">
+    new-concept">
       
   
     <span id="">address-search</span>
@@ -3137,11 +3243,11 @@ attribute that meets the requirements of real-world websites.
     
     <span id="concept_field_194">
     <code
-    class="unknown-concept new-concept
+    class="
     
     
     
-    ">
+    new-concept">
       
   
     <span class="entry-with-tooltip" id="">premise-and-sub-premise
@@ -3350,11 +3456,11 @@ attribute that meets the requirements of real-world websites.
     
     <span id="concept_field_209">
     <code
-    class="unknown-concept new-concept
+    class="
     
     
     
-    ">
+    new-concept">
       
   
     <span id="">delivery-instructions</span>
@@ -4743,7 +4849,7 @@ attribute that meets the requirements of real-world websites.
     
     
     
-    ">
+    new-concept">
       
   
     <span id="">street-name</span>
