@@ -179,7 +179,7 @@ frequent structures and learn requirements for a more powerful autocomplete
 attribute that meets the requirements of real-world websites.
 </p>
 
-{% for country in countries %}
+{% for country in countries|sort %}
   <h3 id="{{country}}"><a href="#{{country}}">#</a> {{country}}
     {% for country_data in ontology.country_data %}
       {{"- " + country_data.country_name if country_data.country == country}}

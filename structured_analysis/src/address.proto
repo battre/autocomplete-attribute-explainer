@@ -116,10 +116,11 @@ enum ExampleSequenceSection {
   UNDEFINED = 0;
   NAME = 1;
   ADDRESS = 2;
-  CREDIT_CARD = 3;
+  PAYMENT = 3;
   LOGIN = 4;
   SIGNUP = 5;
-  OTHER = 6;
+  PHONE = 6;
+  OTHER = 7;
 }
 
 message ExampleFieldSequence {

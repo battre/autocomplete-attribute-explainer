@@ -27,7 +27,7 @@ from google.cloud import translate_v2 as translate
 # information about Chrome autofill's interpretation of the form control.
 def extract_autofill_information(element):
   if not element.has_attr("autofill-information"):
-    return ""
+    return {}
   autofill_information = [
       row.strip() for row in element["autofill-information"].split("\n")
   ]
@@ -91,7 +91,7 @@ site_example = ontology.site_examples.add()
 site_example.locale.country = args.country
 site_example.locale.language = args.language
 site_example.url = "todo"
-site_example.is_structured = False
+site_example.is_structured = True
 
 translate_client = translate.Client()
 
@@ -117,8 +117,8 @@ for html_field in soup.find_all(["input", "select"]):
     translation = translate_client.translate(
         field.label, target_language="en", source_language=args.language)
     field.label_translated = translation["translatedText"]
-  if placeholder:
-    field.example = placeholder
+  if placeholder and placeholder.strip():
+    field.example = placeholder.strip()
     if args.translate:
       translation = translate_client.translate(
           placeholder, target_language="en", source_language=args.language)

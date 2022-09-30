@@ -2,6 +2,15 @@
 # proto-message: AddressOntology
 
 country_data {
+  country: "AU"
+  country_name: "Australia"
+  site_examples_preamble_html:
+    "<p>Australia has largely simple addresses with<ul><li>address lines 1, 2, "
+    "3, or<li>street name, house number and up to one field for extra "
+    "information (apartment number, floor, etc.).</ul></p>"
+}
+
+country_data {
   country: "AR"
   country_name: "Argentina"
   site_examples_preamble_html:

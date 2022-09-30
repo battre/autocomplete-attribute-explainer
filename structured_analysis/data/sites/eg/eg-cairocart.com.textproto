@@ -148,49 +148,49 @@ site_examples {
       name: "cashondelivery|payment[method]"
       control_type: INPUT
       concepts: "unset"
-      section: CREDIT_CARD
+      section: PAYMENT
     }
     fields {
       name: "installments|payment[method]"
       control_type: INPUT
       concepts: "unset"
-      section: CREDIT_CARD
+      section: PAYMENT
     }
     fields {
       name: "souhoola|payment[method]"
       control_type: INPUT
       concepts: "unset"
-      section: CREDIT_CARD
+      section: PAYMENT
     }
     fields {
       name: "online|payment[method]"
       control_type: INPUT
       concepts: "unset"
-      section: CREDIT_CARD
+      section: PAYMENT
     }
     fields {
       name: "valu|payment[method]"
       control_type: INPUT
       concepts: "unset"
-      section: CREDIT_CARD
+      section: PAYMENT
     }
     fields {
       name: "banktransfer|payment[method]"
       control_type: INPUT
       concepts: "unset"
-      section: CREDIT_CARD
+      section: PAYMENT
     }
     fields {
       name: "premium|payment[method]"
       control_type: INPUT
       concepts: "unset"
-      section: CREDIT_CARD
+      section: PAYMENT
     }
     fields {
       name: "getgo|payment[method]"
       control_type: INPUT
       concepts: "unset"
-      section: CREDIT_CARD
+      section: PAYMENT
     }
     fields {
       # Ignore billing address

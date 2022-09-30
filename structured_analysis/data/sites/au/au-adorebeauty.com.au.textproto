@@ -1,0 +1,107 @@
+site_examples {
+  url: "https://www.adorebeauty.com.au"
+  is_structured: false
+  locale {
+    country: "AU"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "firstNameInput|shippingAddress.firstName"
+      label: "First Name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "lastNameInput|shippingAddress.lastName"
+      label: "Last Name"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "companyInput|shippingAddress.company"
+      label: "Company Name (Optional)"
+      control_type: INPUT
+      concepts: "organization"
+      autocomplete_attribute: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "phoneInput|shippingAddress.phone"
+      label: "Phone Number"
+      control_type: INPUT
+      concepts: "tel"
+      autocomplete_attribute: "tel"
+      section: PHONE
+    }
+    fields {
+      name: "addressLine1Input|shippingAddress.address1"
+      label: "Address Line 1"
+      control_type: INPUT
+      concepts: "address-line1"
+      autocomplete_attribute: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "addressLine2Input|shippingAddress.address2"
+      label: "Address Line 2 (Optional)"
+      control_type: INPUT
+      concepts: "address-line2"
+      autocomplete_attribute: "address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "cityInput|shippingAddress.city"
+      label: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "countryCodeInput|shippingAddress.countryCode"
+      label: "Country"
+      control_type: SELECT
+      concepts: "country"
+      autocomplete_attribute: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "provinceCodeInput|shippingAddress.stateOrProvinceCode"
+      label: "State/Province"
+      control_type: SELECT
+      concepts: "address-level1"
+      autocomplete_attribute: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "postCodeInput|shippingAddress.postalCode"
+      label: "Postal Code"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "sameAsBilling|billingSameAsShipping"
+      label: "My Billing address is the same as my Shipping address"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "shippingOptionRadio-62cea1807da27-019cb015ff365f6d75913da336485994|shippingOptionIds.62cea1807da27"
+      label: "Courier Express (Courier) $0.00"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+  }
+}
+

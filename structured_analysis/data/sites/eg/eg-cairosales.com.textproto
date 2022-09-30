@@ -196,85 +196,85 @@ site_examples {
       label: "Pay with cash on delivery (COD) (You pay for your order upon delivery)"
       control_type: INPUT
       concepts: "unset"
-      section: CREDIT_CARD
+      section: PAYMENT
     }
     fields {
       name: "url_module_payment_86|"
       control_type: INPUT
       concepts: "unset"
-      section: CREDIT_CARD
+      section: PAYMENT
     }
     fields {
       name: "module_payment_319_0|method_payment"
       label: "Pay Online with Debit/Credit Card"
       control_type: INPUT
       concepts: "unset"
-      section: CREDIT_CARD
+      section: PAYMENT
     }
     fields {
       name: "url_module_payment_319|"
       control_type: INPUT
       concepts: "unset"
-      section: CREDIT_CARD
+      section: PAYMENT
     }
     fields {
       name: "module_payment_319_1|method_payment"
       label: "Pay in Installments via multiple banksPay in Installments for up to 36 months - CIB and Misr Bank of"
       control_type: INPUT
       concepts: "unset"
-      section: CREDIT_CARD
+      section: PAYMENT
     }
     fields {
       name: "url_module_payment_319|"
       control_type: INPUT
       concepts: "unset"
-      section: CREDIT_CARD
+      section: PAYMENT
     }
     fields {
       name: "module_payment_446_2|method_payment"
       label: "Pay with valUPay in installments with valU"
       control_type: INPUT
       concepts: "unset"
-      section: CREDIT_CARD
+      section: PAYMENT
     }
     fields {
       name: "url_module_payment_446|"
       control_type: INPUT
       concepts: "unset"
-      section: CREDIT_CARD
+      section: PAYMENT
     }
     fields {
       name: "module_payment_430_0|method_payment"
       label: "National Bank of Egypt Installments6 months installments with 0 interest for NBE Bank"
       control_type: INPUT
       concepts: "unset"
-      section: CREDIT_CARD
+      section: PAYMENT
     }
     fields {
       name: "url_module_payment_430|"
       control_type: INPUT
       concepts: "unset"
-      section: CREDIT_CARD
+      section: PAYMENT
     }
     fields {
       name: "|quantity_14278_918_nocustom_644911_hidden"
       control_type: INPUT
       concepts: "unset"
-      section: CREDIT_CARD
+      section: PAYMENT
     }
     fields {
       name: "|quantity_14278_918_nocustom_644911"
       label: "Quantity:"
       control_type: INPUT
       concepts: "unset"
-      section: CREDIT_CARD
+      section: PAYMENT
     }
     fields {
       name: "|quantity_14278_918_nocustom_644911"
       label: "Quantity:"
       control_type: INPUT
       concepts: "unset"
-      section: CREDIT_CARD
+      section: PAYMENT
     }
     fields {
       name: "discount_name|discount_name"
