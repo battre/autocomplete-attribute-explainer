@@ -301,6 +301,7 @@ site_examples {
       section: OTHER
     }
     fields {
+      hide: true
       name: "summary-postal-code|"
       control_type: INPUT
       concepts: "postal-code"

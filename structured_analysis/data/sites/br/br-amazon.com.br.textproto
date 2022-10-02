@@ -249,7 +249,7 @@ site_examples {
     fields {
       name: "address-ui-widgets-streetName|address-ui-widgets-streetName"
       label: "Endereço"
-      label_translated: "Address"
+      label_translated: "Street name"
       control_type: INPUT
       concepts: "street-name"
       section: ADDRESS

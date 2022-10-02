@@ -53,7 +53,7 @@ site_examples {
     fields {
       name: "streetAddress|streetAddress"
       label: "Endereço:"
-      label_translated: "Address:"
+      label_translated: "Street name:"
       control_type: INPUT
       concepts: "street-name"
       autocomplete_attribute: "off"

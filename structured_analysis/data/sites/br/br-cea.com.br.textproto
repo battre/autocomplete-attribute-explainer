@@ -246,7 +246,7 @@ site_examples {
     fields {
       name: "ship-street|street"
       label: "Endereço *"
-      label_translated: "Address *"
+      label_translated: "Street name *"
       control_type: INPUT
       concepts: "street-name"
       section: ADDRESS

@@ -166,7 +166,7 @@ site_examples {
       label: "Nome"
       label_translated: "Name"
       control_type: INPUT
-      concepts: "unset"
+      concepts: "given-name"
       section: NAME
     }
     fields {
@@ -174,7 +174,7 @@ site_examples {
       label: "Sobrenome"
       label_translated: "Last name"
       control_type: INPUT
-      concepts: "unset"
+      concepts: "family-name"
       section: NAME
     }
     fields {
@@ -239,7 +239,7 @@ site_examples {
     fields {
       name: "BillingAddressForm_address1|BillingAddressForm[address1]"
       label: "Endereço"
-      label_translated: "Address"
+      label_translated: "Street name"
       control_type: INPUT
       concepts: "street-name"
       section: ADDRESS
@@ -363,7 +363,7 @@ site_examples {
       hide: true
       name: "ShippingAddressForm_address1|ShippingAddressForm[address1]"
       label: "Endereço"
-      label_translated: "Address"
+      label_translated: "Street name"
       control_type: INPUT
       concepts: "unset"
       section: ADDRESS

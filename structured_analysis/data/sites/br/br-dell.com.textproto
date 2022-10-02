@@ -37,7 +37,7 @@ site_examples {
       label: "Sobrenome"
       label_translated: "Last name"
       control_type: INPUT
-      concepts: "first-name"
+      concepts: "family-name"
       section: NAME
     }
     fields {
@@ -53,7 +53,7 @@ site_examples {
     fields {
       name: "DataModel-ShippingContact-Line1|DataModel-ShippingContact-Line1"
       label: "Endereço"
-      label_translated: "Address"
+      label_translated: "Street name"
       label_comment: "Read only, derived from CEP/Zip code."
       control_type: INPUT
       concepts: "street-name"

@@ -27,7 +27,7 @@ site_examples {
     fields {
       name: "shippingAddress-address1|shippingAddress.address1"
       label: "Endereço"
-      label_translated: "Address"
+      label_translated: "Street name"
       control_type: INPUT
       concepts: "street-name"
       autocomplete_attribute: "street-address address-line1"

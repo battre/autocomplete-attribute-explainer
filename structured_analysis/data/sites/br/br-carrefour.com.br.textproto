@@ -141,7 +141,7 @@ site_examples {
     fields {
       name: "payment-billing-address-street-0|"
       label: "Endereço *"
-      label_translated: "Address *"
+      label_translated: "Street name *"
       control_type: INPUT
       concepts: "street-name"
       autocomplete_attribute: "nope"
