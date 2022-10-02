@@ -1,0 +1,219 @@
+site_examples {
+  url: "https://www.apple.com"
+  is_structured: false
+  locale {
+    country: "BR"
+    language: "pt"
+  }
+  sequences {
+    fields {
+      name: "ac-gn-menustate|"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ac-gn-searchform-input|"
+      example: "Buscar em apple.com"
+      example_translated: "Search on apple.com"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "ac-gn-searchform-src|src"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.firstName|firstName"
+      label: "Primeiro nome"
+      label_translated: "First name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.lastName|lastName"
+      label: "Sobrenome"
+      label_translated: "Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.street|street"
+      label: "Rua (Av, Pça, etc.) e número"
+      label_translated: "Street (Av, Pça, etc.) and number"
+      control_type: INPUT
+      concepts: "address-line1"
+      autocomplete_attribute: "address-line1"
+      low_certainty: true
+      section: ADDRESS
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.street2|street2"
+      label: "apto, bloco, prédio (opcional)"
+      label_translated: "apt, block, building (optional)"
+      control_type: INPUT
+      concepts: "address-line2"
+      autocomplete_attribute: "address-line2"
+      low_certainty: true
+      section: ADDRESS
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.zipLookup.postalCode|postalCode"
+      label: "CEP"
+      label_translated: "Zip code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.zipLookup.district|district"
+      label: "Bairro"
+      label_translated: "Neighborhood"
+      control_type: INPUT
+      concepts: "address-level3"
+      section: OTHER
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.zipLookup.city|city"
+      label: "Cidade/Município"
+      label_translated: "City / Municipality"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.zipLookup.state|state"
+      label: "Estado"
+      label_translated: "State"
+      control_type: CUSTOM
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.countryCode|countryCode"
+      label: "País/Região"
+      label_translated: "Country/Region"
+      control_type: INPUT
+      concepts: "country-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.isBusinessAddress|isBusinessAddress"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkout.shipping.addressContactEmail.address.emailAddress|emailAddress"
+      label: "E-mail"
+      label_translated: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "email"
+      section: OTHER
+    }
+    fields {
+      name: "checkout.shipping.addressContactPhone.address.mobilePhoneAreaCode|mobilePhoneAreaCode"
+      label: "DDD"
+      label_translated: "Area code"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "tel-area-code"
+      section: PHONE
+    }
+    fields {
+      name: "checkout.shipping.addressContactPhone.address.mobilePhone|mobilePhone"
+      label: "Celular"
+      label_translated: "Cell"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "tel-local"
+      section: PHONE
+    }
+    fields {
+      name: "checkout.shipping.addressContactPhone.address.isDaytimePhoneSelected|isDaytimePhoneSelected"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkout.shipping.addressNotification.address.emailAddress|emailAddress"
+      label: "E-mail (opcional)"
+      label_translated: "Email (optional)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "67cec4f0-07e6-11ed-9fda-0d102875d522|"
+      label: "CPF"
+      label_translated: "CPF"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkout.shipping.taxInformation.cpf.cpf|"
+      label: "CPF"
+      label_translated: "CPF"
+      example: "xxx.xxx.xxx-xx"
+      example_translated: "xxx.xxx.xxx-xx"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "67ceec01-07e6-11ed-9fda-0d102875d522|"
+      label: "CNPJ"
+      label_translated: "CNPJ"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkout.shipping.taxInformation.cnpj.cnpj|"
+      label: "CNPJ"
+      label_translated: "CNPJ"
+      example: "xx.xxx.xxx/xxxx-xx"
+      example_translated: "xx.xxx.xxx/xxxx-xx"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "checkout.shipping.taxInformation.cnpj.companyName|"
+      label: "Razão social"
+      label_translated: "social reason"
+      control_type: INPUT
+      concepts: "ogranization"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "rs-taxinfo-isExempt|"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkout.shipping.taxInformation.cnpj.stateRegistration|"
+      label: "Inscrição estadual"
+      label_translated: "State registration"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+  }
+}

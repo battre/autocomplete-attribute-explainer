@@ -14,7 +14,46 @@ country_data {
   country: "AR"
   country_name: "Argentina"
   site_examples_preamble_html:
-    "<p>TODO</p>"
+    "<p>Argentinian address forms rely on street names and house numbers. "
+    "Every form asks for \"Piso\" and \"Departamento\", sometimes in a single "
+    "field sometimes in two fields. The forms ask for states/provinces and "
+    "localities/cities. One form asked for \"Partido\" <b>and</b> Localidad. "
+    "I don't understand this.</p>"
+    "<p>Often times the address form was filled via an address search box.</p>"
+    "<p>Frequently a DNI was requested (national identification number).</p>"
+}
+
+country_data {
+  country: "BR"
+  country_name: "Brazil"
+  site_examples_preamble_html:
+    "<p>Brazil relies heavily on structured addresses. Basically eveyr form "
+    "has separate fields for street name, house number and often an complement "
+    "(for apartments, blocks, ...). Often times, a lot of information is "
+    "derived from the CEP (postal code)."
+  site_examples_epilog_html:
+    "<p>The capital city of Brasilia is divided into sectors. The sectors "
+    "appear as abbreviations in the address (three to four capital letters). "
+    "A sector is divided into quadras, which are themselves divided into "
+    "blocks (<a href=\"https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/braEn.pdf\">source</a>).<p>"
+    "<p>While most cities seem to follow a \"street name, house number\" "
+    "schema, the capital Brasilia uses \"sector, quadra, block, floor\", "
+    "e.g. SBN – Quadra 13 – Bloco B – 8º andar. "
+    "<a href=\"https://goo.gl/maps/Nru1v31DUeKCwXvc7\">Here</a> is an image of "
+    "\"Superquadra Sul (sector) 303 (quadra)\", where each building is called "
+    "a block. The address refers to block B and floor number 8.<p>"
+    "<p>I looked up a zip code in Brasilia (70670-503) and a website "
+    "(casasbahia.com.br) translated this into a two-line Endereço: "
+    "<pre>CLSW 101 Bloco C\n"
+    "Setor Sudoeste - Brasília - DF</pre></p>"
+    "<p>It is pretty common that the website only asks for the zip code (CEP), "
+    "derives the Endereço, and then asks the user to enter Número (house "
+    "number). For an address in Brasilia, I suppose that you would specify "
+    "\"s/n\" as the number (as you don't have one - s/n = \"sem número\" = "
+    "without number; some websites have a checkbox for this).</p>"
+    "<p>For these reasons, I am not sure whether Bloco in a Complemento field "
+    "refers to a block in Brasilia or needs to be supported as a separate "
+    "field type.</p>"
 }
 
 country_data {

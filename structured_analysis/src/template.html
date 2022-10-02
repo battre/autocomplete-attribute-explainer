@@ -10,7 +10,7 @@
 
 {% macro terms(sequence) %}
   {% for field in sequence.fields %}
-    {% if loop.index0 > 0 %}|{% endif %}
+    {% if loop.index0 > 0 %}<span class="separator">|</span>{% endif %}
     {{entry(
         field.label + (" (" + field.example + ")" if field.example else ""),
         "▽" if field.control_type == address_pb2.ControlType.SELECT else "",
@@ -20,7 +20,7 @@
 
 {% macro translated_terms(sequence) %}
   {% for field in sequence.fields %}
-    {% if loop.index0 > 0 %}|{% endif %}
+    {% if loop.index0 > 0 %}<span class="separator">|</span>{% endif %}
     {{entry(
         field.label_translated + (" (" + field.example_translated + ")" if field.example_translated else ""),
         "▽" if field.control_type == address_pb2.ControlType.SELECT else "",
@@ -48,6 +48,7 @@
 
 <html>
 <head>
+  <title>Address form analysis</title>
   <!-- https://picocss.com/ -->
   <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
   <style>
@@ -73,11 +74,15 @@
 
   <style>
 /* https://www.w3schools.com/css/css_tooltip.asp */
+
 /* Tooltip container */
 .entry-with-tooltip {
   position: relative;
   display: inline-block;
-  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+  text-decoration-line: underline;
+  text-decoration-color: black;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 1px;
 }
 
 /* Tooltip text */
@@ -112,6 +117,11 @@
 /* Show the tooltip text when you mouse over the tooltip container */
 .entry-with-tooltip:hover .tooltip {
   visibility: visible;
+}
+
+.separator {
+  margin-left: 6px;
+  margin-right: 6px;
 }
 
 span.hovered {
@@ -265,9 +275,9 @@ attribute that meets the requirements of real-world websites.
     {% endfor %}
     {% endfor %}
   </table>
+  {% endfor %}
   {% for country_data in ontology.country_data %}
   {{country_data.site_examples_epilog_html|safe if country_data.country == country}}
-  {% endfor %}
   {% endfor %}
 {% endfor %}
 

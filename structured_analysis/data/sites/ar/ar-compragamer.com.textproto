@@ -1,0 +1,211 @@
+site_examples {
+  url: "	https://compragamer.com"
+  is_structured: true
+  locale {
+    country: "AR"
+    language: "es"
+  }
+  sequences {
+    fields {
+      name: "mat-input-0|"
+      label: "Buscador"
+      label_translated: "Seeker"
+      example: "Buscar productos"
+      example_translated: "Search products"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "mat-radio-11-input|mat-radio-group-1"
+      label: "$ 666"
+      label_translated: "$666"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mat-radio-12-input|mat-radio-group-1"
+      label: "$ 799"
+      label_translated: "$799"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mat-radio-13-input|mat-radio-group-1"
+      label: "$ 1.230"
+      label_translated: "$1,230"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mat-input-2|"
+      label: "Ingresar código de descuento"
+      label_translated: "Enter discount code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mat-radio-8-input|mat-radio-group-0"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mat-radio-9-input|mat-radio-group-0"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mat-radio-10-input|mat-radio-group-0"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mat-checkbox-1-input|"
+      label: "Seleccionar como dirección de envío"
+      label_translated: "Select as shipping address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "something-custom"
+      label: "Tipo domicilio"
+      label_translated: "Type of address"
+      control_type: CUSTOM
+      concepts: "gap"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "mat-input-5|"
+      label: "Calle*"
+      label_translated: "Street*"
+      control_type: INPUT
+      concepts: "street-name"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "mat-input-6|"
+      label: "Altura*"
+      label_translated: "House number range"
+      label_comment: "\"Altura\" refers to a range of house numbers or block "
+        "of a street. E.g. 400-500."
+      control_type: INPUT
+      concepts: "house-number"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "mat-input-7|"
+      label: "Piso"
+      label_translated: "Floor"
+      control_type: INPUT
+      concepts: "floor"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "mat-input-8|"
+      label: "Depto"
+      label_translated: "apartment"
+      control_type: INPUT
+      concepts: "apartment"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "mat-input-9|"
+      label: "Torre"
+      label_translated: "Tower"
+      label_comment: "\"Torre\" is literally a tower but in this context it "
+        "would refer to a part of a building (e.g. front-building, a wing of a "
+        "building, ...)."
+      control_type: INPUT
+      concepts: "gap"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "mat-input-10|"
+      label: "Entrecalles*"
+      label_translated: "Between streets*"
+      control_type: INPUT
+      concepts: "gap"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "mat-input-11|"
+      label: "Código Postal*"
+      label_translated: "Postal Code*"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "something-custom"
+      label: "Provincia"
+      label_translated: "Province"
+      control_type: CUSTOM
+      concepts: "address-level1"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "something-custom"
+      label: "Localidad"
+      label_translated: "Locality"
+      control_type: CUSTOM
+      concepts: "address-level2"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "mat-input-12|"
+      label: "Observaciones"
+      label_translated: "Observations"
+      control_type: TEXTAREA
+      concepts: "gap"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "mat-input-13|"
+      label: "Nombre persona responsable*"
+      label_translated: "Name of responsible person*"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "off"
+      section: NAME
+    }
+    fields {
+      name: "mat-input-14|"
+      label: "Apellido persona responsable*"
+      label_translated: "Surname responsible person*"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "off"
+      section: NAME
+    }
+    fields {
+      name: "mat-input-15|"
+      label: "Teléfono (con código de área)*"
+      label_translated: "Telephone (with area code)*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PHONE
+    }
+  }
+}
+

@@ -1,0 +1,111 @@
+site_examples {
+  url: "	https://www.bidcom.com.ar"
+  is_structured: true
+  locale {
+    country: "AR"
+    language: "es"
+  }
+  sequences {
+    fields {
+      name: "fecha_entrega|fecha_entrega"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|id_direccion"
+      label: "Paso 1"
+      label_translated: "Step 1"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "numero|numero"
+      label: "Código postal *"
+      label_translated: "Zip Code * "
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "|nombre_ciudad"
+      label: "Localidad *"
+      label_translated: "Location *"
+      control_type: SELECT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "calle|calle"
+      label: "Calle *"
+      label_translated: "Street *"
+      example: "Ej. Avenida San Martín"
+      example_translated: "Ex. San Martin Avenue"
+      control_type: INPUT
+      concepts: "street-name"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "numero|numero"
+      label: "Altura *"
+      label_translated: "Height *"
+      label_comment: "'Altura' refers to a range of house numbers or block "
+        "of a street. E.g. 400-500."
+      example: "Numero"
+      example_translated: "Number"
+      control_type: INPUT
+      concepts: "house-number"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "piso|piso"
+      label: "Piso / Departamento"
+      label_translated: "Floor / Apartment"
+      example: "Ej. 2 A"
+      example_translated: "Ex. 2 A"
+      control_type: INPUT
+      concepts: "floor"
+      concepts: "apartment"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "entrecalle1|entre_calle1"
+      label: "Entrecalles: Calle 1*"
+      label_translated: "Between streets: Street 1*"
+      control_type: INPUT
+      concepts: "gap"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "entrecalle2|entre_calle2"
+      label: "Entrecalles: Calle 2"
+      label_translated: "Between streets: street 2"
+      control_type: INPUT
+      concepts: "gap"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "|telefono"
+      label: "0"
+      label_translated: "0"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PHONE
+    }
+    fields {
+      name: "input-button|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

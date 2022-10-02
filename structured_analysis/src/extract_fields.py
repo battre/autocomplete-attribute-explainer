@@ -98,7 +98,7 @@ translate_client = translate.Client()
 sequence = site_example.sequences.add()
 sequence.section = address_pb2.ExampleSequenceSection.UNDEFINED
 sequence.hide = False
-for html_field in soup.find_all(["input", "select"]):
+for html_field in soup.find_all(["input", "select", "textarea"]):
   field = sequence.fields.add()
   field.name = ((html_field["id"] if html_field.has_attr("id") else "") + "|" +
                 (html_field["name"] if html_field.has_attr("name") else ""))
@@ -108,6 +108,7 @@ for html_field in soup.find_all(["input", "select"]):
       html_field["autocomplete"] if html_field.has_attr("autocomplete") else "")
 
   autofill_information = extract_autofill_information(html_field)
+  overall_type = autofill_information.get("overall type", "")
 
   if args.label_follows_field:
     field.label = extract_label_after_field(html_field)
@@ -126,14 +127,33 @@ for html_field in soup.find_all(["input", "select"]):
 
   field.control_type = address_pb2.ControlType.UNSPECIFIED
   if html_field.name == "input":
-    field.control_type = address_pb2.ControlType.INPUT
+    if html_field.has_attr("type") and html_field["type"] == "radio":
+      field.control_type = address_pb2.ControlType.RADIO
+    elif html_field.has_attr("type") and html_field["type"] == "checkbox":
+      field.control_type = address_pb2.ControlType.CHECKBOX
+    else:
+      field.control_type = address_pb2.ControlType.INPUT
   elif html_field.name == "select":
     field.control_type = address_pb2.ControlType.SELECT
+  elif html_field.name == "textarea":
+    field.control_type = address_pb2.ControlType.TEXTAREA
 
   if autocomplete:
     field.autocomplete_attribute = autocomplete
 
   field.concepts.append("unset")
-  field.section = address_pb2.ExampleSequenceSection.ADDRESS
+
+  field.section = address_pb2.ExampleSequenceSection.OTHER
+  if "CREDIT_CARD_" in overall_type:
+    field.section = address_pb2.ExampleSequenceSection.PAYMENT
+  elif "ADDRESS_" in overall_type or "COMPANY_NAME" in overall_type:
+    field.section = address_pb2.ExampleSequenceSection.ADDRESS
+  elif "NAME_" in overall_type:
+    field.section = address_pb2.ExampleSequenceSection.NAME
+  elif "PHONE" in overall_type:
+    field.section = address_pb2.ExampleSequenceSection.PHONE
+  elif "EMAIL" in overall_type:
+    field.section = address_pb2.ExampleSequenceSection.OTHER
+
 
 print(text_format.MessageToString(ontology, as_utf8=True))

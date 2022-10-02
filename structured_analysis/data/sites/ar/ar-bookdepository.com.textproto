@@ -1,0 +1,111 @@
+site_examples {
+  url: "https://www.bookdepository.com"
+  is_structured: false
+  locale {
+    country: "AR"
+    language: "es"
+  }
+  sequences {
+    fields {
+      name: "|emailAddress"
+      label: "Dirección de correo electrónico (para confirmación de pedido)"
+      label_translated: "Email address (for order confirmation)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Número de teléfono del destinatario (solo para comunicación de entrega) Código del país para llamada"
+      label_translated: "Recipient&#39;s phone number (for delivery communication only) Country code for call"
+      control_type: SELECT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|delivery-telephone"
+      label: "Número de teléfono del destinatario (solo para comunicación de entrega)"
+      label_translated: "Recipient&#39;s phone number (for delivery communication only)"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "delivery-fullName|delivery-fullName"
+      label: "Nombre completo"
+      label_translated: "Full name"
+      control_type: INPUT
+      concepts: "name"
+      section: NAME
+    }
+    fields {
+      name: "delivery-CountryDropdown|deliveryCountry"
+      label: "País de entrega"
+      label_translated: "country of delivery"
+      control_type: SELECT
+      concepts: "country-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "delivery-addressSearch|delivery-addressSearch"
+      label: "Encuentra tu dirección de entrega:"
+      label_translated: "Find your delivery address:"
+      example: "Comienza a escribir tu dirección"
+      example_translated: "Start typing your address"
+      control_type: INPUT
+      concepts: "address-search"
+      autocomplete_attribute: "none"
+      section: ADDRESS
+    }
+    fields {
+      name: "delivery-addressLine1|delivery-addressLine1"
+      label: "Línea 1 de dirección"
+      label_translated: "Address Line 1"
+      control_type: INPUT
+      concepts: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "delivery-addressLine2|delivery-addressLine2"
+      label: "Línea 2 de dirección"
+      label_translated: "Address Line 2"
+      control_type: INPUT
+      concepts: "address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "delivery-city|delivery-city"
+      label: "Ciudad"
+      label_translated: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "delivery-county|delivery-county"
+      label: "Provincia/Estado"
+      label_translated: "Province/State"
+      control_type: INPUT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "delivery-postCode|delivery-postCode"
+      label: "Código postal"
+      label_translated: "Postal Code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "useSameBillingAddress|"
+      label: "Mi dirección de facturación es la misma que mi dirección de entrega"
+      label_translated: "My billing address is the same as my delivery address"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+  }
+}
+

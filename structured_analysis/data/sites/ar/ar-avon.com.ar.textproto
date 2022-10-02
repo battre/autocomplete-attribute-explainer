@@ -1,0 +1,172 @@
+site_examples {
+  url: "https://www.avon.com.ar"
+  is_structured: true
+  locale {
+    country: "AR"
+    language: "es"
+  }
+  sequences {
+    fields {
+      name: "react-select-2-input|"
+      label: "Provincia"
+      label_translated: "Province"
+      control_type: INPUT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "react-select-3-input|"
+      label: "Localidad"
+      label_translated: "Location"
+      control_type: INPUT
+      concepts: "address-level1"
+      autocomplete_attribute: "none"
+      section: ADDRESS
+    }
+    fields {
+      name: "|neighborhood"
+      label: "Municipio"
+      label_translated: "Municipality"
+      control_type: INPUT
+      concepts: "address-level3"
+      section: ADDRESS
+    }
+    fields {
+      name: "|postalCode"
+      label: "Código postal"
+      label_translated: "Postal Code"
+      example: "B3643BAC"
+      example_translated: "B3643BAC"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "autocomplete-input|address"
+      label: "Calle"
+      label_translated: "Street"
+      example: "Ej: Avenida del Libertador"
+      example_translated: "Ex: Libertador Avenue"
+      control_type: INPUT
+      concepts: "street-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "autocomplete-inputNumber|houseNumber"
+      label: "Número"
+      label_translated: "Number"
+      control_type: INPUT
+      concepts: "house-number"
+      section: ADDRESS
+    }
+    fields {
+      name: "|complement"
+      label: "Piso y Departamento"
+      label_translated: "Floor and Apartment"
+      example: "Ej: 3A / Mza 97 Casa 21"
+      example_translated: "Ex: 3A / Block 97 House 21"
+      control_type: INPUT
+      concepts: "floor"
+      concepts: "apartment"
+      section: ADDRESS
+    }
+    fields {
+      name: "|referencePoint"
+      label: "Información referencia"
+      label_translated: "Reference information"
+      example: "Ej: Entrecalles u otras referencias"
+      example_translated: "eg \"between streets\" or other references"
+      control_type: INPUT
+      concepts: "gap"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "|addressNickname"
+      label: "Guardar Dirección como"
+      label_translated: "Save Address As"
+      example: "Ej: Casa, trabajo"
+      example_translated: "Ex: home, work"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      name: "|fullName"
+      label: "Nombre y apellido de la persona que va a recibir el pedido"
+      label_translated: "Name and surname of the person who will receive the order"
+      control_type: INPUT
+      concepts: "name"
+      section: NAME
+    }
+    fields {
+      name: "|phoneNumber"
+      label: "00 0000-0000"
+      label_translated: "00 0000-0000"
+      example: "00 0000-0000"
+      example_translated: "00 0000-0000"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|addrKey"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|country"
+      control_type: INPUT
+      concepts: "country-name"
+      section: OTHER
+    }
+    fields {
+      name: "coupon-input|"
+      label: "CUPÓN"
+      label_translated: "COUPON"
+      example: "Escribe o pega el código"
+      example_translated: "Type or paste the code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|login"
+      label: "E-mail"
+      label_translated: "E-mail"
+      example: "E-mail"
+      example_translated: "E-mail"
+      control_type: INPUT
+      concepts: "unset"
+      section: LOGIN
+    }
+    fields {
+      name: "|login"
+      label: "Email o DNI"
+      label_translated: "Email or ID"
+      example: "Email o DNI"
+      example_translated: "Email or ID"
+      control_type: INPUT
+      concepts: "unset"
+      section: LOGIN
+    }
+    fields {
+      name: "|password"
+      label: "Contraseña"
+      label_translated: "Password"
+      example: "Contraseña"
+      example_translated: "Password"
+      control_type: INPUT
+      concepts: "unset"
+      section: LOGIN
+    }
+  }
+}
+

@@ -1,0 +1,199 @@
+site_examples {
+  url: "https://www.carrefour.com.br"
+  is_structured: true
+  locale {
+    country: "BR"
+    language: "pt"
+  }
+  sequences {
+    fields {
+      name: "creditCardpayment-card-0Number|cardNumber"
+      label: "Número do cartão"
+      label_translated: "Card number"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "creditCardselectedCard0cc-0|creditCardselectedCardFlag-0"
+      label: "Visa"
+      label_translated: "Visa"
+      control_type: RADIO
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "creditCardselectedCard1cc-0|creditCardselectedCardFlag-0"
+      label: "American Express"
+      label_translated: "American Express"
+      control_type: RADIO
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "creditCardselectedCard2cc-0|creditCardselectedCardFlag-0"
+      label: "Hipercard"
+      label_translated: "hypercard"
+      control_type: RADIO
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "creditCardselectedCard3cc-0|creditCardselectedCardFlag-0"
+      label: "Diners"
+      label_translated: "diners"
+      control_type: RADIO
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "creditCardselectedCard4cc-0|creditCardselectedCardFlag-0"
+      label: "Mastercard"
+      label_translated: "MasterCard"
+      control_type: RADIO
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "creditCardselectedCard5cc-0|creditCardselectedCardFlag-0"
+      label: "Elo"
+      label_translated: "Link"
+      control_type: RADIO
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "creditCardpayment-card-0Brand|"
+      label: "Parcelamentos disponíveis:"
+      label_translated: "Available installments:"
+      control_type: SELECT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "creditCardpayment-card-0Name|ccName"
+      label: "Nome impresso no cartão"
+      label_translated: "Name printed on card"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "creditCardpayment-card-0Month|cardExpirationMonth"
+      label: "Validade/"
+      label_translated: "Validity/"
+      control_type: SELECT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "creditCardpayment-card-0Year|cardExpirationYear"
+      label: "Validade/"
+      label_translated: "Validity/"
+      control_type: SELECT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "creditCardpayment-card-0Code|"
+      label: "Código de segurança"
+      label_translated: "security code"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PAYMENT
+    }
+    fields {
+      name: "holder-document-0|"
+      label: "CPF do titular"
+      label_translated: "CPF of the holder"
+      example: "999.999.999-99"
+      example_translated: "999,999,999-99"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address-toggle-0|"
+      label: "O endereço da fatura do cartão é Rua Douracy Costa Oliv..."
+      label_translated: "The card bill address is Rua Douracy Costa Oliv..."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payment-billing-address-all-countries-0|"
+      label: "País *"
+      label_translated: "Country *"
+      control_type: SELECT
+      concepts: "country-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "payment-billing-address-postalCode-0|"
+      label: "CEP *"
+      label_translated: "ZIP CODE *"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "nope"
+      section: ADDRESS
+    }
+    fields {
+      name: "payment-billing-address-street-0|"
+      label: "Endereço *"
+      label_translated: "Address *"
+      control_type: INPUT
+      concepts: "street-name"
+      autocomplete_attribute: "nope"
+      section: ADDRESS
+    }
+    fields {
+      name: "payment-billing-address-number-0|"
+      label: "Número *"
+      label_translated: "Number *"
+      control_type: INPUT
+      concepts: "house-number"
+      autocomplete_attribute: "nope"
+      section: ADDRESS
+    }
+    fields {
+      name: "payment-billing-address-complement-0|"
+      label: "Complemento e referência"
+      label_translated: "Complement and reference"
+      example: "Opcional"
+      example_translated: "Optional"
+      control_type: INPUT
+      concepts: "gap"
+      autocomplete_attribute: "nope"
+      section: ADDRESS
+    }
+    fields {
+      name: "payment-billing-address-neighborhood-0|"
+      label: "Bairro *"
+      label_translated: "Neighborhood *"
+      control_type: INPUT
+      concepts: "address-level3"
+      autocomplete_attribute: "nope"
+      section: ADDRESS
+    }
+    fields {
+      name: "payment-billing-address-city-0|"
+      label: "Cidade *"
+      label_translated: "City *"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "nope"
+      section: ADDRESS
+    }
+    fields {
+      name: "payment-billing-address-state-0|"
+      label: "Estado *"
+      label_translated: "State *"
+      control_type: SELECT
+      concepts: "address-level1"
+      autocomplete_attribute: "nope"
+      section: ADDRESS
+    }
+  }
+}
+

@@ -82,7 +82,9 @@ enum ControlType {
   INPUT = 1;
   SELECT = 2;
   RADIO = 3;
-  CUSTOM = 4;
+  CHECKBOX = 4;
+  TEXTAREA = 5;
+  CUSTOM = 6;
 }
 
 message ExampleField {

@@ -1,0 +1,458 @@
+site_examples {
+  url: "	https://www.47street.com.ar"
+  is_structured: true
+  locale {
+    country: "AR"
+    language: "es"
+  }
+  sequences {
+    fields {
+      name: "order-by-select|"
+      label: "Ordenar por"
+      label_translated: "Sort by"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Entregar"
+      label_translated: "Deliver"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Recoger"
+      label_translated: "Pick up"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Andreani EstandarEn hasta 3 días hábiles$ 450"
+      label_translated: "Andreani StandardIn up to 3 business days$ 450"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cart-coupon|"
+      label: "Cupón de descuento Cupón de descuento Cupón de descuento Cupón de descuento"
+      label_translated: "discount coupon discount coupon discount coupon discount coupon"
+      example: "Código"
+      example_translated: "Code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cart-coupon|"
+      label: "Código"
+      label_translated: "Code"
+      example: "Código"
+      example_translated: "Code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "summary-postal-code|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "client-pre-email|email"
+      label: "Ingresa tu mail para continuar la compra. Rápido. Fácil. Seguro."
+      label_translated: "Enter your email to continue shopping. Fast. Easy. Sure."
+      example: "su@correo.com"
+      example_translated: "your@mail.com"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "on"
+      section: OTHER
+    }
+    fields {
+      name: "client-email|email"
+      label: "Correo"
+      label_translated: "Mail"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "client-first-name|"
+      label: "Nombre"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "client-last-name|"
+      label: "Apellidos"
+      label_translated: "Surnames"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "last-name"
+      section: NAME
+    }
+    fields {
+      name: "client-document|"
+      label: "DNI"
+      label_translated: "ID"
+      example: "99999999"
+      example_translated: "99999999"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "client-document2|"
+      label: "DNI"
+      label_translated: "ID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "client-phone-mobile|isMobile"
+      label: "Móvil"
+      label_translated: "Mobile"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "client-phone1|"
+      label: "0"
+      label_translated: "0"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "client-phone3|"
+      label: "0"
+      label_translated: "0"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "client-phone-mobile|isMobile"
+      label: "Móvil"
+      label_translated: "Mobile"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "client-phone1|"
+      label: "0"
+      label_translated: "0"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "client-phone3|"
+      label: "0"
+      label_translated: "0"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "client-document-type|"
+      label: "Tipo del documento"
+      label_translated: "document type"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "no-complete"
+      section: OTHER
+    }
+    fields {
+      name: "client-new-document|"
+      label: "Documento"
+      label_translated: "Document"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "no-complete"
+      section: OTHER
+    }
+    fields {
+      name: "client-new-phone|"
+      label: "Teléfono Internacional"
+      label_translated: "International Telephone"
+      example: "+9 999 999 9999"
+      example_translated: "+9 999 999 9999"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "client-company-name|"
+      label: "Razón Social"
+      label_translated: "Business name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "client-company-nickname|"
+      label: "Nombre de la empresa"
+      label_translated: "Company name"
+      control_type: INPUT
+      concepts: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "client-company-document|"
+      label: "CUIT"
+      label_translated: "CUIT"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "client-company-document2|"
+      label: "CUIT"
+      label_translated: "CUIT"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "state-inscription|"
+      label: "Aucun Registro Estatal"
+      label_translated: "No State Registry"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "client-new-company-document|"
+      label: "Documento de la Compañía"
+      label_translated: "Company Document"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "opt-in-save-data|"
+      label: "Permito guardar mis datos de forma segura para mis siguientes pedidos."
+      label_translated: "I allow to save my data safely for my next orders."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "opt-in-newsletter|"
+      label: "Quiero recibir el newsletter con promociones."
+      label_translated: "I want to receive the newsletter with promotions."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ship-postalCode|postalCode"
+      label: "Código Postal"
+      label_translated: "Postal Code"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "nope"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "Método de entrega"
+      label_translated: "Method of delivery"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ship-country|country"
+      label: "País"
+      label_translated: "Country"
+      control_type: INPUT
+      concepts: "country-name"
+      autocomplete_attribute: "on"
+      section: ADDRESS
+    }
+    fields {
+      name: "ship-street|street"
+      label: "Calle"
+      label_translated: "Street"
+      example: "Dirección"
+      example_translated: "Address"
+      control_type: INPUT
+      concepts: "street-name"
+      autocomplete_attribute: "on"
+      section: ADDRESS
+    }
+    fields {
+      name: "ship-number|number"
+      label: "Número"
+      label_translated: "Number"
+      control_type: INPUT
+      concepts: "house-number"
+      autocomplete_attribute: "nope"
+      section: ADDRESS
+    }
+    fields {
+      name: "ship-complement|complement"
+      example: "Dirección Complementaria"
+      example_translated: "Supplementary Address"
+      control_type: INPUT
+      concepts: "address-overflow"
+      autocomplete_attribute: "on"
+      section: ADDRESS
+    }
+    fields {
+      name: "ship-reference|reference"
+      label: "Punto o calle cerca"
+      label_translated: "Nearby point or street"
+      control_type: INPUT
+      concepts: "landmark"
+      low_certainty: true
+      autocomplete_attribute: "on"
+      section: ADDRESS
+    }
+    fields {
+      name: "ship-neighborhood|neighborhood"
+      label: "Barrio"
+      label_translated: "Neighborhood"
+      control_type: INPUT
+      concepts: "address-level3"
+      autocomplete_attribute: "on"
+      section: ADDRESS
+    }
+    fields {
+      name: "ship-state|state"
+      label: "Provincia"
+      label_translated: "Province"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "ship-city|city"
+      label: "Ciudad"
+      label_translated: "City"
+      control_type: SELECT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "ship-receiverName|receiver"
+      label: "Nombre de la persona que va a recibir"
+      label_translated: "Name of the person who will receive"
+      control_type: INPUT
+      concepts: "name"
+      autocomplete_attribute: "on"
+      section: NAME
+    }
+    fields {
+      name: "paymentGroup-16627141613586pcrg1cb982|paymentGroup"
+      label: "Tarjeta de débito"
+      label_translated: "Debit"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "paymentGroup-1662714161361ci9tqfqsth7|paymentGroup"
+      label: "Tarjeta de crédito"
+      label_translated: "Credit card"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "paymentsArray|paymentsArray"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "sessionId|sessionId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "macId|macId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "sourceApplication|sourceApplication"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "callbackURL|callbackUrl"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cart-coupon|"
+      label: "Código"
+      label_translated: "Code"
+      example: "Código"
+      example_translated: "Code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cart-coupon|"
+      label: "Código"
+      label_translated: "Code"
+      example: "Código"
+      example_translated: "Code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "summary-postal-code|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|custom_fields[coupon_code]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|custom_fields[coupon_title]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ele_n01nmq1BCv1|visitor[email]"
+      label: "Correo electrónico"
+      label_translated: "Email"
+      example: "Correo electrónico"
+      example_translated: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "on"
+      section: OTHER
+    }
+  }
+}
+
