@@ -1,0 +1,651 @@
+site_examples {
+  url: "https://auragentum.de"
+  is_structured: true
+  locale {
+    country: "DE"
+    language: "de"
+  }
+  sequences {
+    fields {
+      name: "|name"
+      label: "Name"
+      label_translated: "Surname"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|telefon"
+      label: "Telefonnummer"
+      label_translated: "phone number"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|sCaptcha"
+      label: "Telefon"
+      label_translated: "phone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|__csrf_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|sTarget"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "email|email"
+      label: "E-Mail-Adresse"
+      label_translated: "E-mail address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "passwort|password"
+      label: "Passwort"
+      label_translated: "password"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|__csrf_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|sSearch"
+      example: "Suchbegriff..."
+      example_translated: "Search term..."
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "register_personal_customer_type|register[personal][customer_type]"
+      label: "Ich bin Neukunde"
+      label_translated: "I am a new customer"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "salutation|register[personal][salutation]"
+      label: "Ich bin Neukunde"
+      label_translated: "I am a new customer"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "title|register[personal][title]"
+      label: "Titel"
+      label_translated: "title"
+      control_type: INPUT
+      concepts: "honorific-prefix"
+      concepts_comment: "The website has separate fields for the gender and "
+        "honorific prefix."
+      low_certainty: true
+      autocomplete_attribute: "section-personal title"
+      section: NAME
+    }
+    fields {
+      name: "firstname|register[personal][firstname]"
+      label: "Vorname*"
+      label_translated: "First name*"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "section-personal given-name"
+      section: NAME
+    }
+    fields {
+      name: "lastname|register[personal][lastname]"
+      label: "Nachname*"
+      label_translated: "Surname*"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "section-personal family-name"
+      section: NAME
+    }
+    fields {
+      name: "register_personal_skipLogin|register[personal][accountmode]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "register_personal_email|register[personal][email]"
+      label: "Ihre E-Mail-Adresse*"
+      label_translated: "Your email address*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "section-personal email"
+      section: OTHER
+    }
+    fields {
+      name: "register_personal_emailConfirmation|register[personal][emailConfirmation]"
+      label: "Wiederholen Sie Ihre E-Mail-Adresse*"
+      label_translated: "Repeat your Email Address*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "section-personal email"
+      section: OTHER
+    }
+    fields {
+      name: "register_personal_password|register[personal][password]"
+      label: "Ihr Passwort*"
+      label_translated: "Your password*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "new-password"
+      section: OTHER
+    }
+    fields {
+      name: "phone|register[personal][phone]"
+      label: "Telefon*"
+      label_translated: "Phone*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "section-personal tel"
+      section: PHONE
+    }
+    fields {
+      name: "register_personal_birthdate|register[personal][birthday][day]"
+      label: "Geburtsdatum*"
+      label_translated: "Date of birth*"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|register[personal][birthday][month]"
+      label: "Geburtsdatum*"
+      label_translated: "Date of birth*"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|register[personal][birthday][year]"
+      label: "Geburtsdatum*"
+      label_translated: "Date of birth*"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "register_billing_company|register[billing][company]"
+      label: "Firma*"
+      label_translated: "Company*"
+      control_type: INPUT
+      concepts: "organization"
+      autocomplete_attribute: "section-billing billing organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "register_billing_department|register[billing][department]"
+      label: "Adresszusatz"
+      label_translated: "address supplement"
+      control_type: INPUT
+      concepts: "gap"
+      autocomplete_attribute: "section-billing billing organization-title"
+      section: ADDRESS
+    }
+    fields {
+      name: "register_billing_vatid|register[billing][vatId]"
+      label: "Umsatzsteuer-ID"
+      label_translated: "Tax ID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "street|register[billing][street]"
+      label: "Straße und Nr.*"
+      label_translated: "Street and number.*"
+      control_type: INPUT
+      concepts: "street-location"
+      autocomplete_attribute: "section-billing billing street-address"
+      section: ADDRESS
+    }
+    fields {
+      name: "zipcode|register[billing][zipcode]"
+      label: "PLZ*"
+      label_translated: "POSTCODE*"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "section-billing billing postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "city|register[billing][city]"
+      label: "Ort*"
+      label_translated: "Location*"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "section-billing billing address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "country|register[billing][country]"
+      label: "Ihre Adresse"
+      label_translated: "Your Address"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "register_billing_shippingAddress|register[billing][shippingAddress]"
+      label: "Die Lieferadresse weicht von der Rechnungsadresse ab."
+      label_translated: "The delivery address differs from the billing address."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "viison-packstation-post-address|packstation"
+      label: "Postadresse"
+      label_translated: "postal address"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "viison-packstation-packstation-address|packstation"
+      label: "DHL Packstation"
+      label_translated: "DHL packing station"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "viison-packstation-postoffice-address|packstation"
+      label: "Postfiliale"
+      label_translated: "post office"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "salutation2|register[shipping][salutation]"
+      label: "Ihre abweichende Lieferadresse"
+      label_translated: "Your divergent delivery address"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "company2|register[shipping][company]"
+      label: "Firma"
+      label_translated: "company"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "section-shipping shipping organization"
+      section: OTHER
+    }
+    fields {
+      name: "department2|register[shipping][department]"
+      label: "Adresszusatz"
+      label_translated: "address supplement"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "section-shipping shipping organization-title"
+      section: OTHER
+    }
+    fields {
+      name: "firstname2|register[shipping][firstname]"
+      label: "Vorname*"
+      label_translated: "First name*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "section-shipping shipping given-name"
+      section: OTHER
+    }
+    fields {
+      name: "lastname2|register[shipping][lastname]"
+      label: "Nachname*"
+      label_translated: "Surname*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "section-shipping shipping family-name"
+      section: OTHER
+    }
+    fields {
+      name: "street2|register[shipping][street]"
+      label: "Straße und Nr.*"
+      label_translated: "Street and number.*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "section-shipping shipping street-address"
+      section: OTHER
+    }
+    fields {
+      name: "additionalAddressLine1|register[shipping][additionalAddressLine1]"
+      label: "Adresszusatz 1"
+      label_translated: "Addition to address 1"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "section-billing billing address-line2"
+      section: OTHER
+    }
+    fields {
+      name: "zipcode2|register[shipping][zipcode]"
+      label: "PLZ*"
+      label_translated: "POSTCODE*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "section-shipping shipping postal-code"
+      section: OTHER
+    }
+    fields {
+      name: "city2|register[shipping][city]"
+      label: "Ort*"
+      label_translated: "Location*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "section-shipping shipping address-level2"
+      section: OTHER
+    }
+    fields {
+      name: "country_shipping|register[shipping][country]"
+      label: "Ihre abweichende Lieferadresse"
+      label_translated: "Your divergent delivery address"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|captchaName"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dpacheckbox|register[personal][dpacheckbox]"
+      label: "Ich habe die Datenschutzbestimmungen zur Kenntnis genommen."
+      label_translated: "I have read the privacy policy."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|__csrf_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|sTarget"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "email|email"
+      label: "Ihre E-Mail-Adresse"
+      label_translated: "Your email address"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "email"
+      section: OTHER
+    }
+    fields {
+      name: "passwort|password"
+      label: "Ihr Passwort"
+      label_translated: "Your password"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "current-password"
+      section: OTHER
+    }
+    fields {
+      name: "|__csrf_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|technical-state"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|cookieDeclined-state"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|allowCookie-state"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|shop-state"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|csrf_token-state"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|cookiePreferences-state"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|x-cache-context-hash-state"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|slt-state"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|nocache-state"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|paypal-cookies-state"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|session-state"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|currency-state"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|comfort-state"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|sUniqueID-state"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|statistics-state"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|x-ua-device-state"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|partner-state"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|subscribeToNewsletter"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|newsletter"
+      label: "Ihre E-Mail Adresse"
+      label_translated: "Your email address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|__csrf_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

@@ -1,0 +1,436 @@
+site_examples {
+  url: "https://www.aboutyou.de"
+  is_structured: false
+  locale {
+    country: "DE"
+    language: "de"
+  }
+  sequences {
+    fields {
+      name: "|"
+      label: "59,90 €"
+      label_translated: "€59.90"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Anzahl:"
+      label_translated: "Number:"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "hasSubscribedNewsletter|"
+      label: "Ich möchte zukünftig über aktuelle Trends, Angebote und Gutscheine von About You per E-Mail informie"
+      label_translated: "I would like to be informed about current trends, offers and vouchers from About You by e-mail in the future"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billing-female|gender"
+      label: "Frau"
+      label_translated: "Mrs"
+      control_type: RADIO
+      concepts: "gap"
+      section: NAME
+    }
+    fields {
+      name: "billing-male|gender"
+      label: "Herr"
+      label_translated: "Mister"
+      control_type: RADIO
+      concepts: "gap"
+      section: NAME
+    }
+    fields {
+      name: "country_DE|"
+      label: "DE"
+      label_translated: "EN"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "country_AT|"
+      label: "AT"
+      label_translated: "AT"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "country_CH|"
+      label: "CH"
+      label_translated: "CH"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "country_NL|"
+      label: "NL"
+      label_translated: "NL"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "country_PL|"
+      label: "PL"
+      label_translated: "pl"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "country_CZ|"
+      label: "CZ"
+      label_translated: "CZ"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "country_BE|"
+      label: "BE"
+      label_translated: "BE"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "country_BG|"
+      label: "BG"
+      label_translated: "bg"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "country_HR|"
+      label: "HR"
+      label_translated: "MR"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "country_CY|"
+      label: "CY"
+      label_translated: "CY"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "country_DK|"
+      label: "DK"
+      label_translated: "DK"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "country_EE|"
+      label: "EE"
+      label_translated: "EE"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "country_FI|"
+      label: "FI"
+      label_translated: "FI"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "country_FR|"
+      label: "FR"
+      label_translated: "FR"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "country_GR|"
+      label: "GR"
+      label_translated: "GR"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "country_HU|"
+      label: "HU"
+      label_translated: "HU"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "country_IE|"
+      label: "IE"
+      label_translated: "ie"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "country_IT|"
+      label: "IT"
+      label_translated: "IT"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "country_LV|"
+      label: "LV"
+      label_translated: "LV"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "country_LT|"
+      label: "LT"
+      label_translated: "LT"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "country_LU|"
+      label: "LU"
+      label_translated: "LU"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "country_MT|"
+      label: "MT"
+      label_translated: "MT"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "country_PT|"
+      label: "PT"
+      label_translated: "pt"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "country_RO|"
+      label: "RO"
+      label_translated: "RO"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "country_SK|"
+      label: "SK"
+      label_translated: "SK"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "country_SI|"
+      label: "SI"
+      label_translated: "S.I"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "country_ES|"
+      label: "ES"
+      label_translated: "IT"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "country_SE|"
+      label: "SE"
+      label_translated: "SE"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "country_GB|"
+      label: "GB"
+      label_translated: "GB"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|firstName"
+      label: "Vorname"
+      label_translated: "first name"
+      example_translated: "first name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "|lastName"
+      label: "Nachname"
+      label_translated: "Surname"
+      example_translated: "Surname"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "|streetHouseNumber"
+      label: "Straße und Hausnummer"
+      label_translated: "Street and house number"
+      control_type: INPUT
+      concepts: "street-location"
+      autocomplete_attribute: "none"
+      section: ADDRESS
+    }
+    fields {
+      name: "|additional"
+      label: "Adresszusatz (optional)"
+      label_translated: "Additional address (optional)"
+      control_type: INPUT
+      concepts: "gap"
+      section: ADDRESS
+    }
+    fields {
+      name: "|zipCode"
+      label: "PLZ"
+      label_translated: "Postcode"
+      example_translated: "Postcode"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "|city"
+      label: "Stadt"
+      label_translated: "city"
+      example_translated: "city"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "|birthDate"
+      label: "Dein Geburtsdatum"
+      label_translated: "Your date of birth"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|birthDate"
+      label: "TT.MM.JJJJ"
+      label_translated: "DD.MM.YYYY"
+      example_translated: "DD.MM.YYYY"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      hide: true
+      name: "shipping-female|gender"
+      label: "Frau"
+      label_translated: "Woman"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      hide: true
+      name: "shipping-male|gender"
+      label: "Herr"
+      label_translated: "Mister"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      hide: true
+      name: "shipping-country_DE|"
+      label: "DE"
+      label_translated: "EN"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      hide: true
+      name: "|firstName"
+      label: "Vorname"
+      label_translated: "first name"
+      example_translated: "first name"
+      control_type: INPUT
+      concepts: "unset"
+      section: NAME
+    }
+    fields {
+      hide: true
+      name: "|lastName"
+      label: "Nachname"
+      label_translated: "Surname"
+      control_type: INPUT
+      concepts: "unset"
+      section: NAME
+    }
+    fields {
+      hide: true
+      name: "|streetHouseNumber"
+      label: "Straße und Hausnummer"
+      label_translated: "Street and house number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "none"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "|additional"
+      label: "Adresszusatz (optional)"
+      label_translated: "Additional address (optional)"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "|zipCode"
+      label: "PLZ"
+      label_translated: "Postcode"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "|city"
+      label: "Stadt"
+      label_translated: "city"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+  }
+}
+

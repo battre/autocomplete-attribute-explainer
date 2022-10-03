@@ -120,9 +120,11 @@ for html_field in soup.find_all(["input", "select", "textarea"]):
     field.label_translated = translation["translatedText"]
   if placeholder and placeholder.strip():
     field.example = placeholder.strip()
+    if field.example == field.label:
+      field.example = ""
     if args.translate:
       translation = translate_client.translate(
-          placeholder, target_language="en", source_language=args.language)
+          field.example, target_language="en", source_language=args.language)
       field.example_translated = translation["translatedText"]
 
   field.control_type = address_pb2.ControlType.UNSPECIFIED

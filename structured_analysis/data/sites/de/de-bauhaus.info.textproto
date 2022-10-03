@@ -1,0 +1,465 @@
+site_examples {
+  url: "https://www.bauhaus.info"
+  is_structured: true
+  locale {
+    country: "DE"
+    language: "de"
+  }
+  sequences {
+    fields {
+      name: "|adobeTracking_loginType"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "isTelefonRequired|isTelefonRequired"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "differentDeliveryAddress|differentDeliveryAddress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "deliveryAddressType|deliveryAddressType"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-gender-1|paymentGender"
+      label: "Herr"
+      label_translated: "Mr"
+      control_type: RADIO
+      concepts: "gap"
+      section: NAME
+    }
+    fields {
+      name: "form-new-gender-2|paymentGender"
+      label: "Frau"
+      label_translated: "Mrs"
+      control_type: RADIO
+      concepts: "gap"
+      section: NAME
+    }
+    fields {
+      hide: true
+      name: "firma|isCompanyCustomer"
+      label: "Firma"
+      label_translated: "company"
+      control_type: CHECKBOX
+      concepts: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "|_isCompanyCustomer"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "paymentAddressCompany|paymentCompanyName"
+      label: "Firma"
+      label_translated: "company"
+      control_type: INPUT
+      concepts: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "companyTaxNumber|companyTaxNumber"
+      label: "Steuernummer"
+      label_translated: "tax number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-firstName|firstName"
+      label: "Vorname*"
+      label_translated: "First name*"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "form-new-lastName|lastName"
+      label: "Nachname*"
+      label_translated: "Surname*"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "form-new-address-search-input-field|form-new[address-search]"
+      label: "Nach Straße, Haus-Nr. und Ort suchen"
+      label_translated: "By street, house no. and search location"
+      control_type: INPUT
+      concepts: "address-search"
+      autocomplete_attribute: "new-user-street-address"
+      section: ADDRESS
+    }
+    fields {
+      name: "form-new-paymentLine1|paymentLine1"
+      label: "Straße*"
+      label_translated: "Street*"
+      control_type: INPUT
+      concepts: "street-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "form-new-paymentLine2|paymentLine2"
+      label: "Haus-Nr.*"
+      label_translated: "House no.*"
+      control_type: INPUT
+      concepts: "house-number"
+      section: ADDRESS
+    }
+    fields {
+      name: "form-new-paymentAdditionalInfo|paymentAdditionalInfo"
+      label: "Adresszusatz (c/o)"
+      label_translated: "Additional address information (c/o)"
+      control_type: INPUT
+      concepts: "gap"
+      section: ADDRESS
+    }
+    fields {
+      name: "form-new-paymentPostalCode|paymentPostalCode"
+      label: "PLZ*"
+      label_translated: "POSTCODE*"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "form-new-paymentTown|paymentTown"
+      label: "Ort*"
+      label_translated: "Location*"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "form-new-paymentCountry|paymentCountry"
+      label: "Land*"
+      label_translated: "Country*"
+      control_type: SELECT
+      concepts: "country-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "form-new-email|email"
+      label: "E-Mail-Adresse* E-Mail-Adresse wiederholen*"
+      label_translated: "Email address* Repeat email address*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-email|checkEmail"
+      label: "E-Mail-Adresse wiederholen*"
+      label_translated: "Repeat email address*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-phone|phone"
+      label: "Telefon*"
+      label_translated: "Phone*"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "form-new-delivery-1|choosenDelivery"
+      label: "Lieferadresse"
+      label_translated: "shipping address"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-delivery-2|choosenDelivery"
+      label: "Fachcentrum"
+      label_translated: "specialist centre"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-deliveryTarget-1|isSameDelivery"
+      label: "An Rechnungsadresse"
+      label_translated: "To billing address"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-deliveryTarget-2|isSameDelivery"
+      label: "Abweichende Lieferadresse"
+      label_translated: "Differing Shipping Address"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-deviatingDeliveryAddress-gender-1|deliveryGender"
+      label: "Herr"
+      label_translated: "Mister"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-deviatingDeliveryAddress-gender-2|deliveryGender"
+      label: "Frau"
+      label_translated: "Woman"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-deviatingDeliveryAddress-isCompany|deliveryCompanyCustomer"
+      label: "Firma"
+      label_translated: "company"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_deliveryCompanyCustomer"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-deviatingDeliveryAddress-companyName|deliveryCompanyName"
+      label: "Firma"
+      label_translated: "company"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-deviatingDeliveryAddress-firstName|deliveryFirstName"
+      label: "Vorname*"
+      label_translated: "First name*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-deviatingDeliveryAddress-lastName|deliveryLastName"
+      label: "Nachname*"
+      label_translated: "Surname*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-deviatingDeliveryAddress-address-search-input-field|form-new-deviatingDeliveryAddress[address-search]"
+      label: "Nach Straße, Haus-Nr. und Ort suchen"
+      label_translated: "By street, house no. and search location"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-deviatingDeliveryAddress-addresseLine1|deliveryLine1"
+      label: "Straße*"
+      label_translated: "Street*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-deviatingDeliveryAddress-addressLine2|deliveryLine2"
+      label: "Haus-Nr.*"
+      label_translated: "House no.*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-deviatingDeliveryAddress-paymentAdditionalInfo|deliveryAdditionalInfo"
+      label: "Adresszusatz (c/o)"
+      label_translated: "Additional address information c / o)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-deviatingDeliveryAddress-postalCode|deliveryPostalCode"
+      label: "PLZ*"
+      label_translated: "POSTCODE*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-deviatingDeliveryAddress-town|deliveryTown"
+      label: "Ort*"
+      label_translated: "Location*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-deviatingDeliveryAddress-country|deliveryCountry"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-deviatingDeliveryAddress-country|country"
+      label: "Land"
+      label_translated: "country"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "js-sdo-selected-country-iso|deliveryCountry"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "js-sdo-selected-id|posId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-pickup-locationSelect|posId"
+      label: "BAUHAUS finden*"
+      label_translated: "Find BAUHAUS*"
+      example: "PLZ oder Ort eingeben"
+      example_translated: "Enter zip code or city"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-createAccount|createAccount"
+      label: "Jetzt registrieren und von den Vorteilen des Kundenkontos profitieren!"
+      label_translated: "Register now and benefit from the advantages of the customer account!"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_createAccount"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "pwd|pwd"
+      label: "Passwort (mind. 8 Zeichen und eine Zahl)*"
+      label_translated: "Password (at least 8 characters and one number)*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "new-password"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-checkPwd|checkPwd"
+      label: "Passwort wiederholen*"
+      label_translated: "Repeat password*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-agbAccepted|agbAccepted"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-newsletterAccepted|newsletterAccepted"
+      label: "Ja, ich möchte den BAUHAUS Newsletter abonnieren."
+      label_translated: "Yes, I would like to subscribe to the BAUHAUS newsletter."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_newsletterAccepted"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|bahagNewsletterFormat"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|adobeTracking_loginType"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|login-type"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|profileTracking"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-login-j_username|j_username"
+      label: "E-Mail-Adresse*"
+      label_translated: "E-mail address*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-login-j_password|j_password"
+      label: "Passwort*"
+      label_translated: "Password*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

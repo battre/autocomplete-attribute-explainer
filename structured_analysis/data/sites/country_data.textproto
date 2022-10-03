@@ -97,6 +97,38 @@ country_data {
 }
 
 country_data {
+  country: "CA"
+  country_name: "Canada"
+  site_examples_preamble_html:
+    "<p>The sample of forms analyzed for Canada all shared the same structure. "
+    "While the sites mentioned examples of information to be put into "
+    "address lines 1 and 2 it looked like the fields were genuinely treated as "
+    "unstructured address lines 1 and 2.</p>"
+}
+
+country_data {
+  country: "DE"
+  country_name: "Germany"
+  site_examples_preamble_html:
+    "<p>German sites often ask for street name and house number in a single "
+    "designated filed or two separate fields. This is often complemented by an "
+    "address extension (\"Addresszusatz\"), a catch all field that can list an "
+    "apartment number (rare), c/o person or a company name.<p>"
+    "<p>German address forms are special in that they often ask for gender, "
+    "saluation, and social / academic titles.<p>"
+    "<p>The following cases are currently missing in the autocomplete spec and "
+    "occurred on multiple sites:"
+    "<ul>"
+    "<li>street-name (Straße)"
+    "<li>house-number (Hausnummer)"
+    "<li>address extension (Addresszusatz)"
+    "<li>salutation (Herr/Frau - Mr./Mrs.)"
+    "<li>academic title (Titel)"
+    "</ul>"
+    "</p>"
+}
+
+country_data {
   country: "EG"
   country_name: "Egypt"
   site_examples_preamble_html:
