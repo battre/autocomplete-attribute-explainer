@@ -94,17 +94,21 @@ span.hovered code {
 code.unknown-concept {
   background-color: darksalmon !important;
 }
-code.low-certainty {
+code.low-certainty,
+code.new-concept.unset.gap {
   background-color: blanchedalmond;
 }
-code.unset {
+code.unset,
+code.new-concept.unset {
   background-color: blanchedalmond;
 }
-code.gap {
+code.gap,
+code.new-concept.gap {
   background-color: blanchedalmond;
 }
 code.new-concept {
   color: black;
+  background-color: lightgreen;
 }
   </style>
 </head>
@@ -440,6 +444,26 @@ useful for more countries.
   
   <tr>
     <td><code class="new-concept">
+      apartment
+    </code></td>
+    <td>Identifier for an apartment, often numeric.</td>
+    <td>201</td>
+  </tr>
+  
+
+  
+  <tr>
+    <td><code class="new-concept">
+      floor
+    </code></td>
+    <td>Identifier for floor, often numeric.</td>
+    <td>2</td>
+  </tr>
+  
+
+  
+  <tr>
+    <td><code class="new-concept">
       premise
     </code></td>
     <td>Name of a building</td>
@@ -578,9 +602,9 @@ attribute that meets the requirements of real-world websites.
 
   <h3 id="AR"><a href="#AR">#</a> AR
     
-      
-    
       - Argentina
+    
+      
     
       
     
@@ -588,9 +612,9 @@ attribute that meets the requirements of real-world websites.
     
   </h3>
   
+  <p>Argentinian address forms rely on street names and house numbers. Every form asks for "Piso" and "Departamento", sometimes in a single field sometimes in two fields. The forms ask for states/provinces and localities/cities. One form asked for "Partido" <b>and</b> Localidad. I don't understand this.</p><p>Often times the address form was filled via an address search box.</p><p>Frequently a DNI was requested (national identification number).</p><p>The following cases are currently missing in the autocomplete spec and occurred on multiple sites:<ul><li>street-name (calle)<li>house-number (número)<li>floor (piso)<li>apartment (departamento)<li>floor and/or apartment (piso y/o departamento)<li>"between streets" (entrecalles) - either with one input field or with two<li>additional information (datos adicionales/aclaración adicional/observations/Dirección Complementaria</ul></p>
   
   
-  <p>Argentinian address forms rely on street names and house numbers. Every form asks for "Piso" and "Departamento", sometimes in a single field sometimes in two fields. The forms ask for states/provinces and localities/cities. One form asked for "Partido" <b>and</b> Localidad. I don't understand this.</p><p>Often times the address form was filled via an address search box.</p><p>Frequently a DNI was requested (national identification number).</p>
   
   
   
@@ -2226,11 +2250,11 @@ attribute that meets the requirements of real-world websites.
     
     <span id="concept_field_58">
     <code
-    class="unknown-concept new-concept
+    class="
     
     
     
-    ">
+    new-concept">
       
   
     <span id="">floor</span>
@@ -2244,11 +2268,11 @@ attribute that meets the requirements of real-world websites.
     
     <span id="concept_field_59">
     <code
-    class="unknown-concept new-concept
+    class="
     
     
     
-    ">
+    new-concept">
       
   
     <span id="">apartment</span>
@@ -2563,22 +2587,22 @@ attribute that meets the requirements of real-world websites.
     [
     <span id="concept_field_76">
     <code
-    class="unknown-concept new-concept
+    class="
     
     
     
-    ">
+    new-concept">
       
   
     <span id="">floor</span>
   
 
     </code><code
-    class="unknown-concept new-concept
+    class="
     
     
     
-    ">
+    new-concept">
       
   
     <span id="">apartment</span>
@@ -2813,22 +2837,22 @@ attribute that meets the requirements of real-world websites.
     [
     <span id="concept_field_94">
     <code
-    class="unknown-concept new-concept
+    class="
     
     
     
-    ">
+    new-concept">
       
   
     <span id="">floor</span>
   
 
     </code><code
-    class="unknown-concept new-concept
+    class="
     
     
     
-    ">
+    new-concept">
       
   
     <span id="">apartment</span>
@@ -3319,22 +3343,22 @@ attribute that meets the requirements of real-world websites.
     [
     <span id="concept_field_126">
     <code
-    class="unknown-concept new-concept
+    class="
     
     
     
-    ">
+    new-concept">
       
   
     <span id="">floor</span>
   
 
     </code><code
-    class="unknown-concept new-concept
+    class="
     
     
     
-    ">
+    new-concept">
       
   
     <span id="">apartment</span>
@@ -4358,22 +4382,22 @@ attribute that meets the requirements of real-world websites.
     [
     <span id="concept_field_303">
     <code
-    class="unknown-concept new-concept
+    class="
     
     
     
-    ">
+    new-concept">
       
   
     <span id="">floor</span>
   
 
     </code><code
-    class="unknown-concept new-concept
+    class="
     
     
     
-    ">
+    new-concept">
       
   
     <span id="">apartment</span>
@@ -4714,11 +4738,11 @@ attribute that meets the requirements of real-world websites.
     
     <span id="concept_field_322">
     <code
-    class="unknown-concept new-concept
+    class="
     
     
     
-    ">
+    new-concept">
       
   
     <span id="">floor</span>
@@ -4732,11 +4756,11 @@ attribute that meets the requirements of real-world websites.
     
     <span id="concept_field_323">
     <code
-    class="unknown-concept new-concept
+    class="
     
     
     
-    ">
+    new-concept">
       
   
     <span id="">apartment</span>
@@ -5059,22 +5083,22 @@ attribute that meets the requirements of real-world websites.
     [
     <span id="concept_field_373">
     <code
-    class="unknown-concept new-concept
+    class="
     
     
     
-    ">
+    new-concept">
       
   
     <span id="">floor</span>
   
 
     </code><code
-    class="unknown-concept new-concept
+    class="
     
     
     
-    ">
+    new-concept">
       
   
     <span id="">apartment</span>
@@ -5329,22 +5353,22 @@ attribute that meets the requirements of real-world websites.
     [
     <span id="concept_field_424">
     <code
-    class="unknown-concept new-concept
+    class="
     
     
     
-    ">
+    new-concept">
       
   
     <span id="">floor</span>
   
 
     </code><code
-    class="unknown-concept new-concept
+    class="
     
     
     
-    ">
+    new-concept">
       
   
     <span id="">apartment</span>
@@ -5992,9 +6016,9 @@ attribute that meets the requirements of real-world websites.
 
   <h3 id="AU"><a href="#AU">#</a> AU
     
-      - Australia
-    
       
+    
+      - Australia
     
       
     
@@ -6002,9 +6026,9 @@ attribute that meets the requirements of real-world websites.
     
   </h3>
   
-  <p>Australia has largely simple addresses with<ul><li>address lines 1, 2, 3, or<li>street name, house number and up to one field for extra information (apartment number, floor, etc.).</ul></p>
   
   
+  <p>Australia has largely simple addresses with<ul><li>address lines 1, 2, 3, or<li>street name, house number and up to one field for extra information (apartment number, floor, etc.).</ul></p><p>The following cases are currently missing in the autocomplete spec and occurred on multiple sites:<ul><li>street-name<li>house-number (also referred to as street no)<li>sub-premise / premise-and-subpremise (Lvl, Apt or Unit No.;     Building/Floor/Apartment/Unit; Suite, building, level, etc. (optional) </ul></p>
   
   
   
@@ -9456,7 +9480,7 @@ attribute that meets the requirements of real-world websites.
   
   
   
-  <p>Brazil relies heavily on structured addresses. Basically eveyr form has separate fields for street name, house number and often an complement (for apartments, blocks, ...). Often times, a lot of information is derived from the CEP (postal code).
+  <p>Brazil relies heavily on structured addresses. Basically every form has separate fields for street name, house number and often an complement (for apartments, blocks, ...). Often times, a lot of information is derived from the CEP (postal code).<p>The following cases are currently missing in the autocomplete spec and occurred on multiple sites:<ul><li>street-name (endereço)<li>house-number (número)<li>additional information (Informações adicionais; Complemento (opcional)   (Apartamento, sala, conjunto, edifício, andar, etc.); Complemento;   Complemento e referência (Opcional); Complemento (Nº do apartamento,   Bloco, etc.); Complemento (Apto/Bloco/Casa))<br> Informationen going   into this are:  <ul>  <li>apartment, room, suite  <li>building, block, house  <li>floor  </ul><li> reference-point (landmark?) (Referência;  Complemento e referência;      Ponto de referência)</ul></p>
   
   
   
@@ -12245,11 +12269,11 @@ attribute that meets the requirements of real-world websites.
     
     <span id="concept_field_824">
     <code
-    class="unknown-concept new-concept
+    class="
     low-certainty
     
     
-    ">
+    new-concept">
       
   
     <span id="">apartment</span>

@@ -269,6 +269,25 @@ concepts {
 }
 
 concepts {
+  name: "apartment"
+  description:
+    "Identifier for an apartment, often numeric."
+  canonical_format_example: "201"
+  label: "Apartment"
+  is_new: true
+}
+
+concepts {
+  name: "floor"
+  description:
+    "Identifier for floor, often numeric."
+  canonical_format_example: "2"
+  label: "Floor"
+  is_new: true
+}
+
+
+concepts {
   name: "premise"
   description: "Name of a building"
   canonical_format_example: "Stata Center"
