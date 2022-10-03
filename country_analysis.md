@@ -2,6 +2,11 @@
 
 **Written**: 2022-09-04, **Updated**: 2022-09-12
 
+> **Note:**
+> This is currently the most comprehensive analysis I have done, but my
+> intention is to replace it step by step with a more structured version at
+> https://battre.github.io/autocomplete-attribute-explainer/index.html
+
 The purpose of this document is to analyze common address patterns of real-world
 websites and provide guidancen on how to annotate the fields.
 
