@@ -142,7 +142,7 @@ country_data {
 
 country_data {
   country: "ES"
-  country_name: "SPAIN"
+  country_name: "Spain"
   site_examples_preamble_html:
     "<p>Spanish addresses ask for street name and house number in either one or "
     "two input fields. Spain is special because some websites ask for "
