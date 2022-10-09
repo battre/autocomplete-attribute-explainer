@@ -298,6 +298,7 @@ site_examples {
       section: ADDRESS
     }
     fields {
+      hide: true
       name: "shippingZipCode23bf19e48083f946da60861e69|dwfrm_shipping_shippingAddress_addressFields_postalCode"
       label: "Código Postal"
       label_translated: "Postal Code"

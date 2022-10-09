@@ -174,7 +174,7 @@ site_examples {
       label_comment: "\"Lote\" refers to a piece of land (a lot / parcel of "
         "land)."
       control_type: INPUT
-      concepts: "unset"
+      concepts: "gap"
       section: ADDRESS
     }
   }

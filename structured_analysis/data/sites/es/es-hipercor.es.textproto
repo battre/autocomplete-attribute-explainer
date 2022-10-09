@@ -199,7 +199,7 @@ site_examples {
       control_type: INPUT
       concepts: "unset"
       autocomplete_attribute: "new-alias"
-      section: ADDRESS
+      section: OTHER
     }
   }
 }
