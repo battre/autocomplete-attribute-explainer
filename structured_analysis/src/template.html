@@ -12,11 +12,11 @@
   {% for field in sequence.fields %}
     {% if loop.index0 > 0 %}<span class="separator">|</span>{% endif %}
     {{entry(
-        "☑" if field.control_type == address_pb2.ControlType.CHECKBOX else
-        "⊙" if field.control_type == address_pb2.ControlType.RADIO else
+        "☑ " if field.control_type == address_pb2.ControlType.CHECKBOX else
+        "⊙ " if field.control_type == address_pb2.ControlType.RADIO else
         "",
         field.label + (" (" + field.example + ")" if field.example else ""),
-        "▽" if field.control_type == address_pb2.ControlType.SELECT else "",
+        " ▽" if field.control_type == address_pb2.ControlType.SELECT else "",
         "term_" + field.internal_id, field.label_comment, "right")}}
   {% endfor %}
 {% endmacro %}
@@ -25,11 +25,11 @@
   {% for field in sequence.fields %}
     {% if loop.index0 > 0 %}<span class="separator">|</span>{% endif %}
     {{entry(
-        "☑" if field.control_type == address_pb2.ControlType.CHECKBOX else
-        "⊙" if field.control_type == address_pb2.ControlType.RADIO else
+        "☑ " if field.control_type == address_pb2.ControlType.CHECKBOX else
+        "⊙ " if field.control_type == address_pb2.ControlType.RADIO else
         "",
         field.label_translated + (" (" + field.example_translated + ")" if field.example_translated else ""),
-        "▽" if field.control_type == address_pb2.ControlType.SELECT else "",
+        " ▽" if field.control_type == address_pb2.ControlType.SELECT else "",
         "translated_term_" + field.internal_id, field.label_translated_comment, "bottom")}}
   {% endfor %}
 {% endmacro %}

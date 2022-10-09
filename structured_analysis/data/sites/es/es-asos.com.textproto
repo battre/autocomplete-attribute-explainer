@@ -1,0 +1,109 @@
+site_examples {
+  url: "https://www.asos.com"
+  is_structured: false
+  locale {
+    country: "ES"
+    language: "es"
+  }
+  sequences {
+    fields {
+      name: "firstName|firstname"
+      label: "Nombre"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "lastName|lastname"
+      label: "Apellidos"
+      label_translated: "Surnames"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "contactNumber|phone"
+      label: "Móvil (Para actualizaciones sobre el envío"
+      label_translated: "Mobile (For updates on shipping"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "tel"
+      section: PHONE
+    }
+    fields {
+      name: "address_finder|"
+      label: "Buscador de direcciones"
+      label_translated: "address finder"
+      example: "Comienza a escribir la primera línea de tu dirección."
+      example_translated: "Start typing the first line of your address."
+      control_type: INPUT
+      concepts: "address-search"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "address1|"
+      label: "Dirección 1"
+      label_translated: "Address 1"
+      control_type: INPUT
+      concepts: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "address2|"
+      label: "Dirección 2"
+      label_translated: "Address 2"
+      example: "Opcional"
+      example_translated: "Optional"
+      control_type: INPUT
+      concepts: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "locality|"
+      label: "Ciudad"
+      label_translated: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "countyStateProvinceOrArea|"
+      label: "Provincia"
+      label_translated: "Province"
+      example: "Opcional"
+      example_translated: "Optional"
+      control_type: INPUT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "postalCode|"
+      label: "Código postal"
+      label_translated: "Postal Code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "delivery_13|selectedDeliveryOption"
+      label: "Envío Estándar"
+      label_translated: "Standard shipping"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "delivery_14|selectedDeliveryOption"
+      label: "Siguiente Día Laborable"
+      label_translated: "Next Business Day"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+
