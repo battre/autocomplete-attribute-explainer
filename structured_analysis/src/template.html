@@ -16,7 +16,8 @@
         "⊙ " if field.control_type == address_pb2.ControlType.RADIO else
         "",
         field.label + (" (" + field.example + ")" if field.example else ""),
-        " ▽" if field.control_type == address_pb2.ControlType.SELECT else "",
+        " ▽" if field.control_type == address_pb2.ControlType.SELECT else
+        " 🤷" if field.control_type == address_pb2.ControlType.CUSTOM else "",
         "term_" + field.internal_id, field.label_comment, "right")}}
   {% endfor %}
 {% endmacro %}
@@ -29,7 +30,8 @@
         "⊙ " if field.control_type == address_pb2.ControlType.RADIO else
         "",
         field.label_translated + (" (" + field.example_translated + ")" if field.example_translated else ""),
-        " ▽" if field.control_type == address_pb2.ControlType.SELECT else "",
+        " ▽" if field.control_type == address_pb2.ControlType.SELECT else
+        " 🤷" if field.control_type == address_pb2.ControlType.CUSTOM else "",
         "translated_term_" + field.internal_id, field.label_translated_comment, "bottom")}}
   {% endfor %}
 {% endmacro %}
@@ -236,6 +238,31 @@ which I have not done yet.
 {% endfor %}
 </table>
 
+</section>
+
+<section>
+<h2>Icons</h2>
+The following icons are used below:
+<ul>
+  <li> Information about sites:
+    <ul>
+      <li>S - structured form (containing fine-grained address information not
+          supported by the current autofill spec)
+      <li>U - unstructured form (typically asking for address-line[123] or
+          street address)
+      <li># - Anchor-tag to create a deep link to the current position
+      <li>🔗 - Link to the tested website
+    </ul>
+  </li>
+  <li> Information about fields
+    <ul>
+      <li>☑ - Form control is a checkbox
+      <li>⊙ -  Form control is a radio button
+      <li>▽ - Form control is a select element
+      <li>🤷 - Form control is a custom element (divs + CSS + click handlers + ...)
+    </ul>
+  </li>
+</ul>
 </section>
 
 <section>
