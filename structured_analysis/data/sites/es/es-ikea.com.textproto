@@ -1,0 +1,214 @@
+site_examples {
+  url: "https://www.ikea.com"
+  is_structured: false
+  locale {
+    country: "ES"
+    language: "es"
+  }
+  sequences {
+    fields {
+      name: "|q"
+      example: "¿Qué es lo que buscas?"
+      example_translated: "What are you looking for?"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Selecciona tu idioma preferido"
+      label_translated: "Select your preferred language"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "business_profile_check|checkboxname"
+      label: "Estoy comprando para mi empresa"
+      label_translated: "I am buying for my company"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "REGULAR-taxInformation-taxCodeType|taxCodeType"
+      label: "Tipo de documento"
+      label_translated: "Document type"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "REGULAR-taxInformation-taxCode|taxCode"
+      label: "Nº de documento (aparecerá en tu factura)"
+      label_translated: "Document number (will appear on your invoice)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "REGULAR-shipping-firstName|firstName"
+      label: "Nombre (sin apellido)"
+      label_translated: "Name (no surname)"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "REGULAR-shipping-lastName|lastName"
+      label: "Primer apellido"
+      label_translated: "Surname"
+      control_type: INPUT
+      concepts: "gap"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "REGULAR-shipping-secondSurname|secondSurname"
+      label: "Segundo apellido"
+      label_translated: "Second surname"
+      control_type: INPUT
+      concepts: "gap"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "REGULAR-shipping-mobileNumber|mobileNumber"
+      label: "Número de móvil"
+      label_translated: "Phone number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "tel-national"
+      section: PHONE
+    }
+    fields {
+      name: "REGULAR-shipping-addressLine1|addressLine1"
+      label: "Dirección: nombre de la calle, portal, escalera, piso y puerta."
+      label_translated: "Address: name of the street, portal, stairs, floor and door."
+      control_type: INPUT
+      concepts: "address-line1"
+      autocomplete_attribute: "new-password"
+      section: ADDRESS
+    }
+    fields {
+      name: "REGULAR-shipping-city|city"
+      label: "Municipio"
+      label_translated: "Municipality"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "REGULAR-shipping-state|state"
+      label: "Provincia"
+      label_translated: "Province"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "billingaddress__add|billingaddress__add"
+      label: "Igual que la dirección de entrega"
+      label_translated: "Same as delivery address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "REGULAR-billing-firstName|firstName"
+      label: "Nombre (sin apellido)"
+      label_translated: "Name (no surname)"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "given-name"
+      section: OTHER
+    }
+    fields {
+      name: "REGULAR-billing-lastName|lastName"
+      label: "Primer apellido"
+      label_translated: "Surname"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "family-name"
+      section: OTHER
+    }
+    fields {
+      name: "REGULAR-billing-secondSurname|secondSurname"
+      label: "Segundo apellido (opcional)"
+      label_translated: "Second surname (optional)"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "family-name"
+      section: OTHER
+    }
+    fields {
+      name: "REGULAR-billing-email|email"
+      label: "E-mail"
+      label_translated: "E-mail"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "email"
+      section: OTHER
+    }
+    fields {
+      name: "REGULAR-billing-mobileNumber|mobileNumber"
+      label: "Número de móvil"
+      label_translated: "Phone number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "tel-national"
+      section: PHONE
+    }
+    fields {
+      name: "REGULAR-billing-addressLine1|addressLine1"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "billing address-line1"
+      section: OTHER
+    }
+    fields {
+      name: "REGULAR-billing-zipCode|zipCode"
+      label: "Código postal"
+      label_translated: "Postal Code"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "billing address-zip-code"
+      section: OTHER
+    }
+    fields {
+      name: "REGULAR-billing-city|city"
+      label: "Municipio"
+      label_translated: "Municipality"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "address-level2"
+      section: OTHER
+    }
+    fields {
+      name: "REGULAR-billing-state|state"
+      label: "Provincia"
+      label_translated: "Province"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "terms_and_conditions|terms_and_conditions"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Selecciona tu idioma preferido"
+      label_translated: "Select your preferred language"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

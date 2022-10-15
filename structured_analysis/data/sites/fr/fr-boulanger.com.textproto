@@ -1,0 +1,123 @@
+site_examples {
+  url: "https://www.boulanger.com"
+  is_structured: false
+  locale {
+    country: "FR"
+    language: "fr"
+  }
+  sequences {
+    fields {
+      name: "delivery-address-list-0|delivery-address-list"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "gender-1|gender"
+      label: "Madame"
+      label_translated: "Mrs."
+      control_type: RADIO
+      concepts: "sex"
+      section: NAME
+    }
+    fields {
+      name: "gender-2|gender"
+      label: "Monsieur"
+      label_translated: "Sir"
+      control_type: RADIO
+      concepts: "sex"
+      section: NAME
+    }
+    fields {
+      name: "addressFamilyName|addressFamilyName"
+      label: "Nom*"
+      label_translated: "Last name*"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "addressGivenName|addressGivenName"
+      label: "Prénom*"
+      label_translated: "First name*"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "country|country"
+      label: "Pays*"
+      label_translated: "Country*"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "address|address"
+      label: "Adresse*"
+      label_translated: "Address*"
+      control_type: INPUT
+      concepts: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "deliveryAddress|deliveryAddress"
+      label: "Complément d\'adresse"
+      label_translated: "Additional address"
+      control_type: INPUT
+      concepts: "address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "postalCode|postalCode"
+      label: "Code postal*"
+      label_translated: "Postal code*"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "city|city"
+      label: "Ville*"
+      label_translated: "Town*"
+      control_type: SELECT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "|phoneNumberIndicator"
+      label: "Code pays du numéro de téléphone"
+      label_translated: "Telephone number country code"
+      control_type: SELECT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "phoneNumberDigits|phoneNumberDigits"
+      label: "N° de mobile*"
+      label_translated: "Mobile number*"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "RDV-F164|RDV"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "a2cba8e3-c603-4b3f-a7c3-f53caee40e51_code_002-001|a2cba8e3-c603-4b3f-a7c3-f53caee40e51_code_002"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "a2cba8e3-c603-4b3f-a7c3-f53caee40e51_code_002-002|a2cba8e3-c603-4b3f-a7c3-f53caee40e51_code_002"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

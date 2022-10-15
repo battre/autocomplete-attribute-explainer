@@ -1,0 +1,641 @@
+site_examples {
+  url: "https://www.conforama.fr"
+  is_structured: true
+  locale {
+    country: "FR"
+    language: "fr"
+  }
+  sequences {
+    fields {
+      name: "currentPosistion|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cartCurrentPosition|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "MAG_NA_2424521880|delivery_method"
+      label: "Voir les horaires"
+      label_translated: "See schedules"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "check-MAG_NA_2424521880-705600|cartDelivery"
+      label: "Voir les horaires"
+      label_translated: "See schedules"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "service7161510|selectedService"
+      label: "Reprise de l\'ancien matériel voir conditions Reprise de l\'ancien matériel voir conditions Reprise de"
+      label_translated: "Take-back of old equipment see conditions Take-back of old equipment see conditions Take-back of"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|currentEntry"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "update|update"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CSRFToken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "MAG_DRIVE_2424521880|delivery_method"
+      label: "Voir les horaires"
+      label_translated: "See schedules"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "check-MAG_DRIVE_2424521880-705600|cartDelivery"
+      label: "Voir les horaires"
+      label_translated: "See schedules"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "service7161510|selectedService"
+      label: "Reprise de l\'ancien matériel voir conditions"
+      label_translated: "Resumption of old equipment see conditions"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|currentEntry"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "update|update"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CSRFToken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "rccRnvpAddress|rccRnvpAddress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "rccRefusedRnvp|rccRefusedRnvp"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "rccRnvpQuality|rccRnvpQuality"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "redressedAddressIdRcc|redressedAddressIdRcc"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "rccEnabled|rccEnabled"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "modifiedAddressDetails|modifiedAddressDetails"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "currentEntryAddress|currentEntryAddress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "adressName|adressName"
+      label: "Nommer l\'adresse *"
+      label_translated: "Name address *"
+      example: "Exemple : Domicile ou bureau"
+      example_translated: "Example: Home or office"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "chrome-off"
+      section: OTHER
+    }
+    fields {
+      name: "titleCode-M.|titleCode"
+      label: "Mr"
+      label_translated: "Mr."
+      control_type: RADIO
+      concepts: "sex"
+      section: NAME
+    }
+    fields {
+      name: "titleCode-Mme|titleCode"
+      label: "Mme"
+      label_translated: "Mrs"
+      control_type: RADIO
+      concepts: "sex"
+      section: NAME
+    }
+    fields {
+      name: "lastName|lastName"
+      label: "Nom *"
+      label_translated: "Last name *"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "firstName|firstName"
+      label: "Prénom *"
+      label_translated: "First name *"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "country|countryIso"
+      label: "Pays *"
+      label_translated: "Country *"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "zipCode|postcode"
+      label: "Code Postal *"
+      label_translated: "Postal code *"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "city|townCity"
+      label: "Ville *"
+      label_translated: "Town *"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "chrome-off"
+      section: ADDRESS
+    }
+    fields {
+      name: "codeInseeForAddress|codeInseeForAddress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dqeTimeout|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "adressNumber|adressNumber"
+      label: "Numéro"
+      label_translated: "Number"
+      control_type: INPUT
+      concepts: "house-number"
+      section: ADDRESS
+    }
+    fields {
+      name: "place|place"
+      label: "Voie *"
+      label_translated: "Way *"
+      control_type: INPUT
+      concepts: "street-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "addressComplement|line2"
+      label: "Complément d\'adresse"
+      label_translated: "Additional address"
+      control_type: INPUT
+      concepts: "gap"
+      autocomplete_attribute: "chrome-off"
+      section: ADDRESS
+    }
+    fields {
+      name: "batiments|building"
+      label: "Bâtiment"
+      label_translated: "Building"
+      control_type: INPUT
+      concepts: "premise"
+      section: ADDRESS
+    }
+    fields {
+      name: "etages|floor"
+      label: "Etage"
+      label_translated: "floor"
+      control_type: INPUT
+      concepts: "floor"
+      section: ADDRESS
+    }
+    fields {
+      name: "fixePhone|fixePhone"
+      label: "Téléphone *"
+      label_translated: "Telephone *"
+      example: "domicile"
+      example_translated: "residence"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "chrome-off"
+      section: PHONE
+    }
+    fields {
+      name: "mobilePhone|mobilePhone"
+      label: "Téléphone portable *"
+      label_translated: "Cellphone *"
+      example: "portable"
+      example_translated: "portable"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "chrome-off"
+      section: PHONE
+    }
+    fields {
+      name: "phone1Inter|phone1Inter"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "phone2Inter|phone2Inter"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CSRFToken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "check-LIVMAG_PIECE_2424521880-705600|cartDelivery"
+      label: "Livraison à domicile 91€"
+      label_translated: "Home delivery 91€"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "LIVMAG_PIECE_2424521880|delivery_method705600"
+      label: "Livraison à domicile 91€"
+      label_translated: "Home delivery 91€"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "check-LIVMAG_PIECE_2424521880-705600|cartDelivery"
+      label: "Livraison à domicile 91€"
+      label_translated: "Home delivery 91€"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "check-LIVMAG_PIECE_2424521880-705600|cartDelivery"
+      label: "Livraison à domicile 91€"
+      label_translated: "Home delivery 91€"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|currentEntry"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "update|update"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CSRFToken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "check-LIVMAG_MONTE_2424521880-705600|cartDelivery"
+      label: "Livraison à domicile 91€"
+      label_translated: "Home delivery 91€"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "LIVMAG_MONTE_2424521880|delivery_method705600"
+      label: "Livraison à domicile 91€"
+      label_translated: "Home delivery 91€"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "check-LIVMAG_MONTE_2424521880-705600|cartDelivery"
+      label: "Livraison à domicile 91€"
+      label_translated: "Home delivery 91€"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "check-LIVMAG_MONTE_2424521880-705600|cartDelivery"
+      label: "Livraison à domicile 91€"
+      label_translated: "Home delivery 91€"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "service7161510|selectedService"
+      label: "Reprise de l\'ancien matériel voir conditions"
+      label_translated: "Resumption of old equipment see conditions"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|currentEntry"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "update|update"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CSRFToken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CSRFToken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|currentEntry"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "update|update"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "fromMag|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "fromPfvad|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CSRFToken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "receiveBySms|receiveBySms"
+      label: "Je souhaite être contacté par SMS pour définir un autre créneau"
+      label_translated: "I would like to be contacted by SMS to define another slot"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0003|ot-group-id-C0003"
+      label: "Functional Cookies"
+      label_translated: "Functional Cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0002|ot-group-id-C0002"
+      label: "Performance Cookies"
+      label_translated: "Performance-Cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0004|ot-group-id-C0004"
+      label: "Targeting Cookies"
+      label_translated: "Targeting Cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-IABV2_1|ot-group-id-IABV2_1"
+      label: "Store and/or access information on a device"
+      label_translated: "Store and/or access information on a device"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-STACK42|ot-group-id-STACK42"
+      label: "Personalised ads and content, ad and content measurement, audience insights and product development"
+      label_translated: "Personalized ads and content, ad and content measurement, audience insights and product development"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-sub-group-id-IABV2_6|switch"
+      label: "Switch Label"
+      label_translated: "Switch Label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-sub-group-id-IABV2_8|switch"
+      label: "Switch Label"
+      label_translated: "Switch Label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-sub-group-id-IABV2_7|switch"
+      label: "Switch Label"
+      label_translated: "Switch Label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-sub-group-id-IABV2_9|switch"
+      label: "Switch Label"
+      label_translated: "Switch Label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-sub-group-id-IABV2_2|switch"
+      label: "Switch Label"
+      label_translated: "Switch Label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-sub-group-id-IABV2_10|switch"
+      label: "Switch Label"
+      label_translated: "Switch Label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-sub-group-id-IABV2_4|switch"
+      label: "Switch Label"
+      label_translated: "Switch Label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-sub-group-id-IABV2_3|switch"
+      label: "Switch Label"
+      label_translated: "Switch Label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-sub-group-id-IABV2_5|switch"
+      label: "Switch Label"
+      label_translated: "Switch Label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-ISFV2_2|ot-group-id-ISFV2_2"
+      label: "Actively scan device characteristics for identification"
+      label_translated: "Actively scan device characteristics for identification"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-ISFV2_1|ot-group-id-ISFV2_1"
+      label: "Use precise geolocation data"
+      label_translated: "Use precise geolocation data"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "vendor-search-handler|vendor-search-handler"
+      label: "Vendor Search"
+      label_translated: "Vendor Search"
+      example: "Search..."
+      example_translated: "Search..."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "chkbox-id|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-hosts-groups-handler|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-vendor-groups-handler|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-vendor-leg-handler|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

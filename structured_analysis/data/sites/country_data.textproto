@@ -197,3 +197,27 @@ country_data {
     "  </ul>"
     "</ul>"
 }
+
+country_data {
+  country: "FR"
+  country_name: "France"
+  site_examples_preamble_html:
+    "<p>French websites often work well with an address-line1 and 2. The "
+    "websites may specify what to put into each line but it looks like "
+    "address-line1 always gets the street name and house number. <p>"
+    "<p>Some websites ask for a street name and house number and then also "
+    "have overflow fields.<p>"
+    "<p>Many websites asked for a (binary) gener.<p>"
+    "<p>The following cases are currently missing in the autocomplete spec and "
+    "occurred on multiple sites:"
+    "<ul>"
+    "<li>street name (Numéro)"
+    "<li>house number (Voie)"
+    "<li>premise (Bâtiment)"
+    "<li>floor (Étage)"
+    "<li>stair case (Escalier) - just once in the sample"
+    "<li>door (Porte) - just once in the sample"
+    "<li>academic title (Titel)"
+    "</ul>"
+    "</p>"
+}

@@ -1,0 +1,187 @@
+site_examples {
+  url: "https://www.electrodepot.fr"
+  is_structured: false
+  locale {
+    country: "FR"
+    language: "fr"
+  }
+  sequences {
+    fields {
+      name: "|form_key"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "prefix|"
+      label: "Genre*"
+      label_translated: "Gender*"
+      control_type: INPUT
+      concepts: "sex"
+      section: NAME
+    }
+    fields {
+      name: "lastname|"
+      label: "Nom*"
+      label_translated: "Last name*"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "firstname|"
+      label: "Prénom*"
+      label_translated: "First name*"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "street1|"
+      label: "Numéro et rue*"
+      label_translated: "Number and street*"
+      control_type: INPUT
+      concepts: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "street2|"
+      label: "Complément d\'adresse (Appt, étage ...)"
+      label_translated: "Additional address (Appt, floor ...)"
+      control_type: INPUT
+      concepts: "address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "country|"
+      label: "Pays"
+      label_translated: "Country"
+      control_type: INPUT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "zipcode|"
+      label: "Code postal*"
+      label_translated: "Postal code*"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "city|"
+      label: "Ville*"
+      label_translated: "Town*"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "telephone|"
+      label: "Téléphone portable*"
+      label_translated: "Cellphone*"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "g-recaptcha-response|g-recaptcha-response"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|pid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_scsid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_sclid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0002|ot-group-id-C0002"
+      label: "Cookies analytiques"
+      label_translated: "Analytical cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0003|ot-group-id-C0003"
+      label: "Cookies de personnalisation"
+      label_translated: "Personalization cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0004|ot-group-id-C0004"
+      label: "Cookies publicitaires"
+      label_translated: "Advertising cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0005|ot-group-id-C0005"
+      label: "Cookies « réseaux sociaux »"
+      label_translated: "&quot;Social network&quot; cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "vendor-search-handler|vendor-search-handler"
+      label: "Vendor Search"
+      label_translated: "Vendor Search"
+      example: "Search..."
+      example_translated: "Search..."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-hosts-groups-handler|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-vendor-groups-handler|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-vendor-leg-handler|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "chkbox-id|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

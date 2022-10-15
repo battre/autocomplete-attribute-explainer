@@ -1,0 +1,194 @@
+site_examples {
+  url: "https://www.brandalley.fr/"
+  is_structured: false
+  locale {
+    country: "FR"
+    language: "fr"
+  }
+  sequences {
+    fields {
+      name: "search_q|search[q]"
+      label: "Je recherche..."
+      label_translated: "I research..."
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "address_societe|address[societe]"
+      label: "Société (facultatif)"
+      label_translated: "Company (optional)"
+      control_type: INPUT
+      concepts: "organization"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "address_lastname|address[lastname]"
+      label: "Nom *"
+      label_translated: "Last name *"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "off"
+      section: NAME
+    }
+    fields {
+      name: "address_firstname|address[firstname]"
+      label: "Prénom *"
+      label_translated: "First name *"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "off"
+      section: NAME
+    }
+    fields {
+      name: "address_mobilePhoneNumber|address[mobilePhoneNumber]"
+      label: "Tél Mobile *"
+      label_translated: "Mobile phone *"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PHONE
+    }
+    fields {
+      name: "address_country|address[country]"
+      label: "Pays"
+      label_translated: "Country"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "address_zipcode|address[zipcode]"
+      label: "Code postal *"
+      label_translated: "Postal code *"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "address_strCity|address[strCity]"
+      label: "Ville *"
+      label_translated: "Town *"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "address_lieuDitAddress|address[lieuDitAddress]"
+      label: "Lieu-dit (facultatif)"
+      label_translated: "Location (optional)"
+      control_type: INPUT
+      concepts: "gap"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "address_address1|address[address1]"
+      label: "Adresse *"
+      label_translated: "Address *"
+      control_type: INPUT
+      concepts: "street-name"
+      low_certainty: true
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "address_numeroVoie|address[numeroVoie]"
+      label: "N° de voie (facultatif)"
+      label_translated: "Lane number (optional)"
+      control_type: INPUT
+      concepts: "house-number"
+      low_certainty: true
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "address_address2|address[address2]"
+      label: "Complément d\'adresse (facultatif)"
+      label_translated: "Additional address (optional)"
+      control_type: INPUT
+      concepts: "gap"
+      low_certainty: true
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "address_digicode|address[digicode]"
+      label: "Digicode (facultatif)"
+      label_translated: "Digicode (optional)"
+      label_comment: "Door code"
+      control_type: INPUT
+      concepts: "gap"
+      section: ADDRESS
+    }
+    fields {
+      name: "address_shippingNote|address[shippingNote]"
+      label: "Note de livraison (facultatif)"
+      label_translated: "Delivery note (optional)"
+      control_type: TEXTAREA
+      concepts: "delivery-instructions"
+      section: ADDRESS
+    }
+    fields {
+      name: "address_capInsee|address[capInsee]"
+      example: "Cap insee (facultatif)"
+      example_translated: "Cap insee (optional)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address_codeQualite|address[codeQualite]"
+      example: "Code qualite (facultatif)"
+      example_translated: "Quality code (optional)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address_capItypeCploc|address[capItypeCploc]"
+      example: "Cap itype cploc (facultatif)"
+      example_translated: "Cap itype cploc (optional)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address_capMatHexavia|address[capMatHexavia]"
+      example: "Cap mat hexavia (facultatif)"
+      example_translated: "Cap mat hexavia (optional)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address_capHexacle|address[capHexacle]"
+      example: "Cap hexacle (facultatif)"
+      example_translated: "Cap hexacle (optional)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address_formName|address[formName]"
+      example: "Form name (facultatif)"
+      example_translated: "Form name (optional)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address_phoneNumber|address[phoneNumber]"
+      example: "Phone number (facultatif)"
+      example_translated: "Phone number (optional)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

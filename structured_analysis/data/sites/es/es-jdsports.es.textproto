@@ -1,0 +1,816 @@
+site_examples {
+  url: "https://www.jdsports.es"
+  is_structured: false
+  locale {
+    country: "ES"
+    language: "es"
+  }
+  sequences {
+    fields {
+      name: "|ID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "input1|firstName"
+      label: "Nombre"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "input2|lastName"
+      label: "Apellido"
+      label_translated: "Surname"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "phone|phone"
+      label: "Teléfono móvil"
+      label_translated: "Mobile phone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "address1|address1"
+      label: "Dirección (calle)"
+      label_translated: "Address (street)"
+      control_type: INPUT
+      concepts: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "address2|address2"
+      label: "Dirección (n. º, piso)"
+      label_translated: "Address (no., floor)"
+      control_type: INPUT
+      concepts: "address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "town|town"
+      label: "Población/ciudad"
+      label_translated: "Population / City"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "county|county"
+      label: "Provincia"
+      label_translated: "Province"
+      control_type: INPUT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "country|country"
+      label: "País"
+      label_translated: "Country"
+      control_type: SELECT
+      concepts: "country-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "|locale"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "postcode|postcode"
+      label: "Código postal"
+      label_translated: "Postal Code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "PCA_return|"
+      label: "Selecciona dirección"
+      label_translated: "Select address"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "useDeliveryAddress|useDeliveryAddress"
+      label: "Usar como dirección de envío por defecto"
+      label_translated: "Use as default shipping address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "useBillingAddress|useBillingAddress"
+      label: "Usar como dirección de facturación por defecto"
+      label_translated: "Use as default billing address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "editCartAddress|editCartAddress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "currentInputID|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "country|country"
+      label: "País"
+      label_translated: "Country"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|locale"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "firstName|firstName"
+      label: "Nombre"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "lastName|lastName"
+      label: "Apellido"
+      label_translated: "Surname"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "phone|phone"
+      label: "Teléfono móvil"
+      label_translated: "Mobile phone"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address1|address1"
+      label: "Dirección (calle)"
+      label_translated: "Address (street)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address2|address2"
+      label: "Dirección (n. º, piso)"
+      label_translated: "Address (no., floor)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "town|town"
+      label: "Población/ciudad"
+      label_translated: "Population / City"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "county|county"
+      label: "Provincia"
+      label_translated: "Province"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "countySel|county"
+      label: "Provincia"
+      label_translated: "Province"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "postcodeLook|postcode"
+      label: "Código postal"
+      label_translated: "Postal Code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "addressPredictLook|addressPredict"
+      label: "Haz click en el botón de abajo para escribir tu dirección completa"
+      label_translated: "Click the button below to write your full address"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "PCA_return|"
+      label: "Selecciona dirección"
+      label_translated: "Select address"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "setOnCart|setOnCart"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "addressPredictFlag|addressPredictflag"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|LOCALE"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|FULL_LOCALE"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|PAYPAL_FULL_LOCALE"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|DATEPICKER_FORMAT"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|NEXT_DAY_DELIVERY_CUTOFF"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|EVENING_DELIVERY_CUTOFF"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|MERCHANT_ID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|APPEND_CURRENCY_SYMBOL"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|OI_ANALYTICS"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|SHOW_MOBILE_MINI_CART"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|STORELOCATOR_MAP_ICONS"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "trendingSearchesConfig|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|PAYPAL_EXPRESS"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|PAYPAL_EXPRESS_ENV"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|KLARNA_EXPRESS_ENV"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|ADD_PRODUCT_GO_TO_CART_QUICKBUY"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|ADD_PRODUCT_GO_TO_CART_PRODUCT_PAGE"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CAROUSEL_360"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|DELIVERY_COUNTRY_FLAGS"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|DELIVERY_COUNTRY_FLAGS_BASE_URL"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "emailAutocorrectConfig|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|MAP_PROVIDER"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|SINGLE_FIELD_NAME"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|ADDRESS_LOOKUP"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|UNIT_NUMBER"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|SYMBOLS_ALLOWED_IN_PASSWORD"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|RESTRICT_SAME_CHARACTER_3_TIMES_IN_PASSWORD"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|COUNTY_ADDRESS_FIELD_REQUIRED"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|POSTCODE_LENGTH"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|PROMOTION_CODE_PREFIX"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|PICKFROMSTORE"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|FORCE_INFRAME_PAYMENT_PAGE"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|DEFAULT_UK_LATITUDE"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|DEFAULT_UK_LONGITUDE"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CHECKOUT_SERVICE_ENABLED"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|POWER_REVIEWS_ENABLED"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|POWER_REVIEWS_MERCHANT_NAME"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|POWER_REVIEWS_NONPROD"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|POWER_REVIEWS_MERCH_GROUP_ID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|POWER_REVIEWS_MERCH_ID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|POWER_REVIEWS_URI"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|POWER_REVIEWS_API_KEY"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|POWER_REVIEWS_INCLUDE_UI"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|POWER_REVIEWS_INCLUDE_TRACKER"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|LANGUAGE_CODE"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CONCAT_ADDRESS_FOR_KLARNA"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|NEWRELIC_ENABLE"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|ADDRESS_PREDICT_MIN_SYMBOLS"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|PRODUCT_LISTING_L_IMAGES"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|STORE_DISPLAY_NAME"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|USE_MISSIONLABS_ORDER_TRACKER"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|PASSWORD_VALIDATOR"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|NAME_MAX_LENGTH_ALLOWED"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|ADDRESS_MAX_LENGTH_ALLOWED"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|VALIDATE_COUNTY_TOWN"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|ENABLE_PERSONALISATION"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|STATIC_MAPS_URL"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|WOOSMAPS_KEY"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|WOOSMAPS_ENABLED"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|WOOSMAPS_ENABLE_COUNTRY_SPECIFIC"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|STATIC_MAPS_SIZE"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|STATIC_MAPS_SCALE"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|STATIC_MAPS_MAP_TYPE"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|STATIC_MAPS_FORMAT"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|APPEND_EXCLUDEING_DELIVERY_TEXT"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|ORDER_LENGTH_CHECK"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|PROMPT_IF_PASSWORD_HAS_SPECIAL_CHARS"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|GOOGLE_CHANNEL_ID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|ENABLE_DESKTOP_SLIDE_FLITER"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|TOP_LEVEL_FILTERS"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|NAV_FASHION_MENU"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|HEADER_FADE"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|VALIDATE_POSTCODE"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|GET_COUNTIES_LIST"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|VALIDATE_ADDRESS_ON_CHECKOUT"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|BASE_URL"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|NEWRELIC_IN_ENSIGHTEN"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|DISPATCH_TIME_GAP"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|DEFAULT_PRODUCT_GRID_SIZE"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|HIDE_METADATA_DESCRIPTION_OVER_PAGES"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|BASE_URL"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|PRODUCT_IMAGE_GALLERY_AUTO_SCROLL"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|PRODUCT_IMAGE_FMT_AUTO"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CHANNEL"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|FULFILMENT_TERMS_REDIRECTION"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|FULFILMENT_TERMS_ID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|IS_SEARCHBAR_LAYOUT_V2"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|NEWRELICID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "necessary|necessary"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "functional|functional"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "performance|performance"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "targeting|targeting"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|pid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_scsid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_sclid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+
