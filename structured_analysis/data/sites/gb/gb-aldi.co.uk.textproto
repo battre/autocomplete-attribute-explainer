@@ -1,0 +1,178 @@
+site_examples {
+  url: "https://www.aldi.co.uk"
+  is_structured: false
+  locale {
+    country: "GB"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "addressId|addressId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address.billstate|bill_state"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address.title|titleCode"
+      label: "Title"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address.firstName|firstName"
+      label: "First name*"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "address.lastName|lastName"
+      label: "Last name*"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      hide: true
+      name: "address-lookup|addressLookup"
+      label: "Delivery Address *"
+      example: "Start typing your postcode or address"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "address-line1|line1"
+      label: "Address line 1*"
+      control_type: INPUT
+      concepts: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "address-line2|line2"
+      label: "Address line 2"
+      control_type: INPUT
+      concepts: "address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "address-townCity|townCity"
+      label: "Town*"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "address-postcode|postcode"
+      label: "Postcode*"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "address-useAsBillingAddress|useAsBillingAddress"
+      label: "*Required information"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_useAsBillingAddress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address.phoneNumber|phoneNumber"
+      label: "Preferred contact number*"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "address-optInMarketing|optInMarketing"
+      label: "*Required information"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_optInMarketing"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CSRFToken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0002|ot-group-id-C0002"
+      label: "Performance Cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0003|ot-group-id-C0003"
+      label: "Functional Cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0004|ot-group-id-C0004"
+      label: "Marketing Cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "vendor-search-handler|vendor-search-handler"
+      label: "Vendor Search"
+      example: "Search..."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "chkbox-id|"
+      label: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-hosts-groups-handler|"
+      label: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-vendor-groups-handler|"
+      label: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-vendor-leg-handler|"
+      label: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

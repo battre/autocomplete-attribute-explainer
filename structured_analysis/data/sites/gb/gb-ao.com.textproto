@@ -1,0 +1,285 @@
+site_examples {
+  url: "https://www.ao.com"
+  is_structured: true
+  locale {
+    country: "GB"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "|HouseNameNumber"
+      label: "House number / name"
+      label_comment: "Note that we may need to ask for a house name or number. "
+        "Maybe we want to expreiss this as house-number or premise."
+      control_type: INPUT
+      concepts: "house-number"
+      concepts: "premise"
+      low_certainty: true
+      section: ADDRESS
+    }
+    fields {
+      name: "|Street"
+      label: "Street 1"
+      control_type: INPUT
+      concepts: "street-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "|Address2"
+      label: "Street 2 (optional)"
+      control_type: INPUT
+      concepts: "gap"
+      section: ADDRESS
+    }
+    fields {
+      name: "|PostTown"
+      label: "Town or City"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "|County"
+      label: "County (optional)"
+      control_type: INPUT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "|PostCode"
+      label: "Postcode"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "|Model.ResponsiveDelivery.ExpertHasOrangeBox"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|Model.ResponsiveDelivery.ExpertSelectedDate"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|Model.ResponsiveDelivery.ExpertSelectedTimeslotId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|Model.ResponsiveDelivery.DeliveryType"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|Model.OrderTotal"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|Model.Basket.PremiumInstallationPostCode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|Model.Basket.DiscountCode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|Model.Basket.AppliedDiscountCode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|Model.Basket.BasketPromotionCode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|Model.Products[0].Sku"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|Model.Products[0].IsDiscontinued"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|Model.Products[0].Quantity"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|Model.Products[RS68A8820SL_AI].Bundle[Complete 2744]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|Model.Products[RS68A8820SL_AI].Bundle[Basic 1426]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|Model.Products[0].Services[0].ServiceType"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|Model.Products[0].Services[1].ServiceType"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|Model.Products[0].Services[2].ServiceType"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|Model.Products[0].Services[3].ServiceType"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|Model.Products[0].Promotions[0].PromotionTypeId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|Model.Products[0].Promotions[0].PromotionCode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|Model.Products[0].Promotions[1].PromotionTypeId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|Model.Products[0].Promotions[1].PromotionCode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|Model.Products[0].Promotions[2].PromotionTypeId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|Model.Products[0].Promotions[2].PromotionCode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|Model.Products[0].Promotions[3].PromotionTypeId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|Model.Products[0].Promotions[3].PromotionCode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|Model.Products[0].Promotions[4].PromotionTypeId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|Model.Products[0].Promotions[4].PromotionCode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|Model.Contact.Title"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|Model.Contact.Email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|Model.Contact.Firstname"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|Model.Contact.Surname"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|Model.Contact.AlternativeNumber"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|Model.Contact.Mobile"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|showRecommendations"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|pid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_scsid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_sclid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

@@ -1,0 +1,210 @@
+site_examples {
+  url: "https://www.ebuyer.com/"
+  is_structured: false
+  locale {
+    country: "GB"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "js-challenge|strChallenge"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|strFirstName"
+      label: "First Name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "|strLastName"
+      label: "Last Name"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "|strEmail"
+      label: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|bolB2b"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|strCompanyName"
+      label: "Company Name"
+      control_type: INPUT
+      concepts: "organization"
+      section: OTHER
+    }
+    fields {
+      name: "|strCompanyRegNo"
+      label: "Company Reg No"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|intBusinessSectorId"
+      label: "Business Sector"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|strMobilePhoneNumber"
+      label: "Mobile Phone Number"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "js-shipping-postcode|strShippingPostcode"
+      label: "Postcode"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "js-find-shipping-address|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "js-select-shipping-address|"
+      label: "Postcode"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "js-shipping-address-company|strShippingCompany"
+      label: "Company (Optional)"
+      control_type: INPUT
+      concepts: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "js-shipping-address-property|strShippingProperty"
+      label: "Property Name/Number"
+      control_type: INPUT
+      concepts: "premise"
+      concepts: "house-number"
+      section: ADDRESS
+    }
+    fields {
+      name: "js-shipping-address-address1|strShippingAddress1"
+      label: "Street Name"
+      control_type: INPUT
+      concepts: "street-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "js-shipping-address-address2|strShippingAddress2"
+      label: "Area"
+      control_type: INPUT
+      concepts: "gap"
+      section: ADDRESS
+    }
+    fields {
+      name: "js-shipping-address-town|strShippingTown"
+      label: "Town"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "js-shipping-address-county|strShippingCounty"
+      label: "County"
+      control_type: INPUT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "js-show-billing-checkbox|strShippingIsBilling"
+      label: "My billing address is the same."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "js-postcode|strBillingPostcode"
+      label: "Postcode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "js-find-billing-address|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "js-select-billing-address|"
+      label: "Postcode"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "js-billing-address-company|strBillingCompany"
+      label: "Company (Optional)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "js-billing-address-property|strBillingProperty"
+      label: "Property Name/Number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "js-billing-address-address1|strBillingAddress1"
+      label: "Street Name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "js-billing-address-address2|strBillingAddress2"
+      label: "Area"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "js-billing-address-town|strBillingTown"
+      label: "Town"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "js-billing-address-county|strBillingCounty"
+      label: "County"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

@@ -1,0 +1,203 @@
+site_examples {
+  url: "https://www2.hm.com/"
+  is_structured: false
+  locale {
+    country: "GB"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "main-search|q"
+      label: "Search products"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Same as my shipping address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "firstName|firstName"
+      label: "First name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "lastName|lastName"
+      label: "Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "line1|line1"
+      label: "Address"
+      control_type: INPUT
+      concepts: "address-line1"
+      autocomplete_attribute: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "line2|line2"
+      label: "Flat Number / House Name"
+      label_comment: "The autocomplete attribute says 'address-line-2' and I "
+        "am not sure whether we should represent this as an [apartment-number "
+        "premise] combination."
+      control_type: INPUT
+      concepts: "address-line2"
+      low_certainty: true
+      autocomplete_attribute: "address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "town|town"
+      label: "Town/City"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "postalCode|postalCode"
+      label: "Postcode"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "club-signin-day|day"
+      label: "dd"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "bday-day"
+      section: OTHER
+    }
+    fields {
+      name: "club-signin-month|month"
+      label: "/"
+      example: "mm"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "bday-month"
+      section: OTHER
+    }
+    fields {
+      name: "club-signin-year|year"
+      label: "/"
+      example: "yyyy"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "bday-year"
+      section: OTHER
+    }
+    fields {
+      name: "club-dob|birthDate"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|hmClubJoin"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "upgrade-create-account-fashion-news|hmNewsSubscription"
+      label: "Yes, email me offers, style updates, and special invites to sales and events."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0001|ot-group-id-C0001"
+      label: "Strictly Necessary Cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0002|ot-group-id-C0002"
+      label: "Performance Cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0003|ot-group-id-C0003"
+      label: "Functional Cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0004|ot-group-id-C0004"
+      label: "Marketing Cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "vendor-search-handler|vendor-search-handler"
+      label: "Vendor Search"
+      example: "Search..."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "storage-access-group|"
+      label: "Information storage and access"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-vendor-leg-handler|"
+      label: "Select All Vendors"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-vendor-groups-handler|"
+      label: "Select All Vendors"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-hosts-groups-handler|"
+      label: "Select All Hosts"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|pid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_scsid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_sclid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

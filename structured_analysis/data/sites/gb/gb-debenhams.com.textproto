@@ -1,0 +1,95 @@
+site_examples {
+  url: "https://www.debenhams.com"
+  is_structured: false
+  locale {
+    country: "GB"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "|"
+      label: "Promo CodePromo code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|firstName"
+      label: "First name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "|lastName"
+      label: "Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "|country"
+      label: "Country"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "|phone"
+      label: "Phone number"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|streetName"
+      label: "Address line 1"
+      control_type: INPUT
+      concepts: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "|additionalStreetInfo"
+      label: "Address line 2 (optional)"
+      control_type: INPUT
+      concepts: "address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "|city"
+      label: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "|region"
+      label: "County (optional)"
+      control_type: INPUT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "|postalCode"
+      label: "Postcode"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "24bc7c43-2186-418c-8dde-e193e5516dd1|shippingMethod"
+      label: "Delivery method"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bbe5a303-0f60-42c1-ae87-75cbdcbf9cf0|shippingMethod"
+      label: "Delivery method"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

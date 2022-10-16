@@ -221,3 +221,22 @@ country_data {
     "</ul>"
     "</p>"
 }
+
+country_data {
+  country: "GB"
+  country_name: "Great Britain"
+  site_examples_preamble_html:
+    "<p>British houses have either numbers or names.<p>"
+    "<p>The following cases are currently missing in the autocomplete spec and "
+    "occurred on multiple sites:"
+    "<ul>"
+    "<li>street name"
+    "<li>house number"
+    "<li>house name"
+    "<li>town (separate field from a city - probably referring to a postal town)."
+    "Occurred once in the sample set."
+    "</ul>"
+    "Street name + house number/name are often combined with another overflow "
+    "field."
+    "</p>"
+}

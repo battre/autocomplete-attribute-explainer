@@ -1,0 +1,124 @@
+site_examples {
+  url: "https://www.diy.com"
+  is_structured: true
+  locale {
+    country: "GB"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "|title"
+      label: "Title (optional)"
+      example: "Miss, Mr, Ms, Mrs, Dr"
+      control_type: SELECT
+      concepts: "unset"
+      section: NAME
+    }
+    fields {
+      name: "|firstName"
+      label: "First name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "off"
+      section: NAME
+    }
+    fields {
+      name: "|lastName"
+      label: "Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "off"
+      section: NAME
+    }
+    fields {
+      name: "tel-mobileNumber|mobileNumber"
+      label: "Mobile number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PHONE
+    }
+    fields {
+      name: "tel-contactNumber|contactNumber"
+      label: "Contact number (optional)"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "tel"
+      section: PHONE
+    }
+    fields {
+      name: "|postalCode"
+      label: "Postcode"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "|companyName"
+      label: "Company name (optional)"
+      control_type: INPUT
+      concepts: "organization"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "|houseName"
+      label: "House or building name"
+      control_type: INPUT
+      concepts: "premise"
+      autocomplete_attribute: "house_name"
+      section: ADDRESS
+    }
+    fields {
+      name: "|houseNumber"
+      label: "House number"
+      control_type: INPUT
+      concepts: "house-number"
+      autocomplete_attribute: "house_number"
+      section: ADDRESS
+    }
+    fields {
+      name: "|addressLine1"
+      label_comment: "This site asks for an address line 1 in addition to the "
+        "street name and house number."
+      label: "Address Line 1"
+      control_type: INPUT
+      concepts: "address-line1"
+      autocomplete_attribute: "address_line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "|addressLine2"
+      label: "Address Line 2 (optional)"
+      control_type: INPUT
+      concepts: "address-line2"
+      autocomplete_attribute: "address_line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "|city"
+      label: "Town or City"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "|county"
+      label: "County (optional)"
+      control_type: INPUT
+      concepts: "address-level1"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "|country"
+      label: "Country"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+  }
+}
+

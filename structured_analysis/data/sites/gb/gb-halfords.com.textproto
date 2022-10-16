@@ -1,0 +1,222 @@
+site_examples {
+  url: "https://www.halfords.com"
+  is_structured: false
+  locale {
+    country: "GB"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "dwfrm_billing_addressFields_email|dwfrm_billing_addressFields_email"
+      label: "Email Address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_billing_addressFields_addtoemaillist|dwfrm_billing_addressFields_addtoemaillist"
+      label: "Please tick if you would like to receive information about the latest arrivals, exclusive products a"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_billing_addressFields_title|dwfrm_billing_addressFields_title"
+      label: "Title"
+      example: "Mr, Mrs, Miss, Ms, Mx, Dr, Lord, Lady, Sir, Dame"
+      control_type: SELECT
+      concepts: "unset"
+      section: NAME
+    }
+    fields {
+      name: "dwfrm_billing_addressFields_firstName|dwfrm_billing_addressFields_firstName"
+      label: "First Name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "dwfrm_billing_addressFields_lastName|dwfrm_billing_addressFields_lastName"
+      label: "Last Name"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "dwfrm_billing_addressFields_phone|dwfrm_billing_addressFields_phone"
+      label: "Mobile Phone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|"
+      label: "Start typing an Address, Post Code or City"
+      control_type: INPUT
+      concepts: "address-search"
+      autocomplete_attribute: "address-autocomplete"
+      section: ADDRESS
+    }
+    fields {
+      name: "dwfrm_billing_addressFields_addressId|dwfrm_billing_addressFields_addressId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_billing_addressFields_address1|dwfrm_billing_addressFields_address1"
+      label: "Address Line 1"
+      control_type: INPUT
+      concepts: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "dwfrm_billing_addressFields_address2|dwfrm_billing_addressFields_address2"
+      label: "Address Line 2"
+      control_type: INPUT
+      concepts: "address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "dwfrm_billing_addressFields_city|dwfrm_billing_addressFields_city"
+      label: "Town / City"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "dwfrm_billing_addressFields_county|dwfrm_billing_addressFields_county"
+      label: "Region / County"
+      control_type: INPUT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "dwfrm_billing_addressFields_country|dwfrm_billing_addressFields_country"
+      label: "Country"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "dwfrm_billing_addressFields_postalCode|dwfrm_billing_addressFields_postalCode"
+      label: "Postcode"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "|csrf_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "Datacash|dwfrm_billing_paymentMethod"
+      label: "Please provide your billing address to proceed"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "tab-4|cardSelection"
+      label: "New Credit Card"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "Datacash_Paypal|dwfrm_billing_paymentMethod"
+      label: "You will be redirected to PayPal to complete your order securely."
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "SVS_PAYMENTS|dwfrm_billing_paymentMethod"
+      label: "Please provide your billing address to proceed"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_svs_svsNumber|dwfrm_svs_svsNumber"
+      label: "Enter your Halfords Gift Card Number here"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_svs_svsPin|dwfrm_svs_svsPin"
+      label: "Pin Number"
+      example: "1234"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|csrf_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0003|ot-group-id-C0003"
+      label: "Functional Cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0004|ot-group-id-C0004"
+      label: "Targeting Cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0002|ot-group-id-C0002"
+      label: "Performance Cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "vendor-search-handler|vendor-search-handler"
+      label: "Vendor Search"
+      example: "Search..."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "chkbox-id|"
+      label: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-hosts-groups-handler|"
+      label: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-vendor-groups-handler|"
+      label: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-vendor-leg-handler|"
+      label: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+
