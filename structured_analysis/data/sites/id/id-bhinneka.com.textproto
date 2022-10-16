@@ -1,0 +1,319 @@
+site_examples {
+  url: "https://www.bhinneka.com"
+  is_structured: false
+  locale {
+    country: "ID"
+    language: "id"
+  }
+  sequences {
+    fields {
+      name: "searchProduct|"
+      label: "Cari produk asli..."
+      label_translated: "Look for original products..."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Judul Alamat"
+      label_translated: "Address Title"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Nama lengkap"
+      label_translated: "Full name"
+      control_type: INPUT
+      concepts: "name"
+      section: NAME
+    }
+    fields {
+      name: "|"
+      label: "Nomor ponsel"
+      label_translated: "Phone number"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|"
+      label: "Telepon"
+      label_translated: "Phone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|"
+      label: "Alamat"
+      label_translated: "Address"
+      example: "Alamat lengkap Anda"
+      example_translated: "Your full address"
+      control_type: TEXTAREA
+      concepts: "street-address"
+      section: ADDRESS
+    }
+    fields {
+      name: "react-select-2-input|"
+      label: "Provinsi"
+      label_translated: "Province"
+      example: "Pilih provinsi"
+      example_translated: "Select province"
+      control_type: INPUT
+      concepts: "address-level1"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "react-select-3-input|"
+      label: "Kota"
+      label_translated: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "react-select-4-input|"
+      label: "Kecamatan"
+      label_translated: "District"
+      example: "Pilih kecamatan"
+      example_translated: "Choose a district"
+      control_type: INPUT
+      concepts: "address-level3"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "react-select-5-input|"
+      label: "Kode Pos - Kelurahan"
+      label_translated: "Postal code - Subdistrict"
+      label_comment: "Custom select element in which you can pick a pair of "
+        "postal code and subdistrict."
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "|switch"
+      label: "Unggah File"
+      label_translated: "Upload File"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Data pengunjung sama dengan pembeli"
+      label_translated: "Visitor data is the same as the buyer"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|faktur"
+      label: "Perlu faktur pajak untuk transaksi ini"
+      label_translated: "Need a tax invoice for this transaction"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Masukkan kode eCoupon"
+      label_translated: "Enter the eCoupon code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkbox"
+      label: "DBS Festival 200Potongan 10% max Rp 200.000Berlaku 6 hari lagi. Lihat S&K."
+      label_translated: "DBS Festival 200 10% off max Rp 200,000Valid for 6 more days. See T&amp;C."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkbox"
+      label: "MAYAPADA Daily Deals 100Potongan harga Rp 100.000Berlaku hingga 24 Juli 2022. Lihat S&K."
+      label_translated: "MAYAPADA Daily Deals 100Price off Rp 100.000Valid until July 24, 2022. See T&amp;C."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkbox"
+      label: "MAYAPADA Daily Deals 300Potongan harga Rp 300.000Berlaku hingga 24 Juli 2022. Lihat S&K."
+      label_translated: "MAYAPADA Daily Deals 300Price off Rp. 300,000Valid until July 24, 2022. See T&amp;C."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkbox"
+      label: "OCBC Everyday DealsPotongan 10% max Rp 200.000Berlaku hingga 24 Juli 2022. Lihat S&K."
+      label_translated: "OCBC Everyday Deals 10% off max Rp 200,000Valid until July 24, 2022. See T&amp;C."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkbox"
+      label: "TMRW Kartu Kredit 500Potongan 10% max Rp 500.000Berlaku hingga 31 Juli 2022. Lihat S&K."
+      label_translated: "TMRW Credit Card 50010% off max Rp 500,000Valid until 31 July 2022. See T&amp;C."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkbox"
+      label: "TMRW Pay 200Potongan 10% max Rp 200.000Berlaku hingga 31 Juli 2022. Lihat S&K."
+      label_translated: "TMRW Pay 200 10% off max Rp 200,000Valid until 31 July 2022. See T&amp;C."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkbox"
+      label: "TMRW Pay 500Potongan 10% max Rp 500.000Berlaku hingga 31 Juli 2022. Lihat S&K."
+      label_translated: "TMRW Pay 50010% off max Rp 500,000Valid until 31 July 2022. See T&amp;C."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkbox"
+      label: "TMRW Kartu Kredit 150Potongan 10% max Rp 150.000Berlaku hingga 31 Juli 2022. Lihat S&K."
+      label_translated: "TMRW Credit Card 15010% off max Rp 150,000Valid until 31 July 2022. See T&amp;C."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkbox"
+      label: "Mega Gadget & AksesoriPotongan harga Rp 100.000Berlaku hingga 31 Juli 2022. Lihat S&K."
+      label_translated: "Mega Gadgets &amp; AccessoriesPrice off IDR 100,000Valid until July 31, 2022. See T&amp;C."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkbox"
+      label: "CICIL Back to SchoolPotongan harga Rp 300.000Berlaku hingga 31 Juli 2022. Lihat S&K."
+      label_translated: "CICIL Back to SchoolPrice discount of IDR 300,000Valid until July 31, 2022. See T&amp;C."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkbox"
+      label: "DBS Daily DealsPotongan harga Rp 50.000Berlaku hingga 31 Juli 2022. Lihat S&K."
+      label_translated: "DBS Daily Deals Rp 50,000 discount Valid until 31 July 2022. See T&amp;C."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkbox"
+      label: "Cicil 200Potongan harga Rp 200.000Berlaku hingga 31 Juli 2022. Lihat S&K."
+      label_translated: "Installment 200Price discount of IDR 200,000Valid until July 31, 2022. See T&amp;C."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkbox"
+      label: "TMRW Pay Daily DealsPotongan 10% max Rp 250.000Berlaku hingga 31 Juli 2022. Lihat S&K."
+      label_translated: "TMRW Pay Daily Deals 10% off max Rp 250,000Valid until 31 July 2022. See T&amp;C."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkbox"
+      label: "BRImo Deals KamisPotongan harga Rp 30.000Berlaku 2 hari lagi. Lihat S&K."
+      label_translated: "BRImo Deals ThursdayPrice discount of IDR 30,000Valid for 2 more days. See T&amp;C."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkbox"
+      label: "Mega CDNPotongan harga Rp 230.000Berlaku hingga 31 Juli 2022. Lihat S&K."
+      label_translated: "Mega CDNPrice discount of IDR 230,000Valid until July 31, 2022. See T&amp;C."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkbox"
+      label: "Gratis OngkirGratis ongkir Rp 22.500Berlaku hingga 31 Juli 2022. Lihat S&K."
+      label_translated: "Free ShippingFree shipping IDR 22,500Valid until July 31, 2022. See T&amp;C."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkbox"
+      label: "Debit BNI WeekendPotongan 10% max Rp 150.000Berlaku hingga 31 Juli 2022. Lihat S&K."
+      label_translated: "Debit BNI Weekend 10% discount max Rp 150,000Valid until July 31, 2022. See T&amp;C."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkbox"
+      label: "OCBC Saturday DealsPotongan harga Rp 100.000Berlaku hingga 31 Juli 2022. Lihat S&K."
+      label_translated: "OCBC Saturday Deals Rp 100,000 discount Valid until July 31, 2022. See T&amp;C."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkbox"
+      label: "TMRW WeekendPotongan harga Rp 150.000Berlaku hingga 31 Juli 2022. Lihat S&K."
+      label_translated: "TMRW WeekendPrice discount of IDR 150,000Valid until July 31, 2022. See T&amp;C."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkbox"
+      label: "BCA FRIDAY CCPotongan harga Rp 100.000Berlaku hingga 31 Juli 2022. Lihat S&K."
+      label_translated: "BCA FRIDAY CCPrice discount of IDR 100,000Valid until July 31, 2022. See T&amp;C."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkbox"
+      label: "BCA FRIDAY VAPotongan harga Rp 75.000Berlaku hingga 31 Juli 2022. Lihat S&K."
+      label_translated: "BCA FRIDAY VA Rp 75,000 discount Valid until July 31, 2022. See T&amp;C."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkbox"
+      label: "Asus Vaganza diskon Rp 150rbPotongan harga Rp 150.000Berlaku hingga 31 Juli 2022. Lihat S&K."
+      label_translated: "Asus Vaganza discount Rp 150kPrice discount Rp 150,000Valid until July 31, 2022. See T&amp;C."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkbox"
+      label: "Asus Vaganza diskon Rp 500rbPotongan harga Rp 500.000Berlaku hingga 31 Juli 2022. Lihat S&K."
+      label_translated: "Asus Vaganza IDR 500k discount IDR 500,000 discount Valid until 31 July 2022. See T&amp;C."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

@@ -1,0 +1,733 @@
+site_examples {
+  url: "https://berrybenka.com/"
+  is_structured: false
+  locale {
+    country: "ID"
+    language: "id"
+  }
+  sequences {
+    fields {
+      name: "itm_tot|itm_tot"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|customer_email"
+      label: "email"
+      label_translated: "e-mail"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|password"
+      label: "password"
+      label_translated: "password"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "keyword|keyword"
+      example: "cari produk"
+      example_translated: "search product"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "type|type"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "filter|filter"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "url|url"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "parent|parent"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "keywords|keywords"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "names|names"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "gender|gender"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ajax_url|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "new-shipping-street|new-shipping-street"
+      label: "Alamat"
+      label_translated: "Address"
+      control_type: TEXTAREA
+      concepts: "street-address"
+      section: ADDRESS
+    }
+    fields {
+      name: "new-shipping-province|new-shipping-province"
+      label: "<unnamed>"
+      label_translated: "<unnamed>"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "new-shipping-city|new-shipping-city"
+      label: "<unnamed>"
+      label_translated: "<unnamed>"
+      control_type: SELECT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "new-shipping-postcode|new-shipping-postcode"
+      label: "Kode Pos (5 Angka)"
+      label_translated: "Postal Code (5 digits)"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "new-shipping-phone|new-shipping-phone"
+      label: "Telp"
+      label_translated: "phone"
+      example: "02xxxxxxxx/08xxxxxxxxxx"
+      example_translated: "02xxxxxxxx/08xxxxxxxxxx"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "tambah-alamat-checkbox|"
+      label: "Atur Sebagai Alamat Penagihan"
+      label_translated: "Set As Billing Address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "new-billing-street|new-billing-street"
+      label: "Alamat Telp"
+      label_translated: "Phone Address"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "new-billing-province|new-billing-province"
+      label: "Alamat Telp"
+      label_translated: "Phone Address"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "new-billing-city|new-billing-city"
+      label: "Alamat Telp"
+      label_translated: "Phone Address"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "new-billing-postcode|new-billing-postcode"
+      label: "Kode Pos (5 Angka)"
+      label_translated: "Postal Code (5 digits)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "new-billing-phone|new-billing-phone"
+      label: "Telp"
+      label_translated: "phone"
+      example: "02xxxxxxxx/08xxxxxxxxxx"
+      example_translated: "02xxxxxxxx/08xxxxxxxxxx"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "btn-new-address|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "add-address-type|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "add-address-street|"
+      label: "Alamat Telp"
+      label_translated: "Phone Address"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "add-address-province|Propinsi"
+      label: "Alamat Telp"
+      label_translated: "Phone Address"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "add-address-city|kota"
+      label: "Alamat Telp"
+      label_translated: "Phone Address"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "add-address-postcode|"
+      label: "Kode Pos (5 Angka)"
+      label_translated: "Postal Code (5 digits)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "add-address-phone|"
+      label: "Telp"
+      label_translated: "phone"
+      example: "02xxxxxxxx/08xxxxxxxxxx"
+      example_translated: "02xxxxxxxx/08xxxxxxxxxx"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "btn-add-address|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "edit-address-id|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "edit-address-type|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "edit-address-street|"
+      label: "Alamat Telpon"
+      label_translated: "Phone Address"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "edit-address-province|Propinsi"
+      label: "Alamat Telpon"
+      label_translated: "Phone Address"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "edit-address-city|kota"
+      label: "Alamat Telpon"
+      label_translated: "Phone Address"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "edit-address-postcode|"
+      label: "Kode Pos (5 Angka)"
+      label_translated: "Postal Code (5 digits)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "edit-address-phone|"
+      label: "02xxxxxxxx/08xxxxxxxxxx"
+      label_translated: "02xxxxxxxx/08xxxxxxxxxx"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "btn-edit-address|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "RadioGroup2_0|rad-payment-method"
+      label: "BCA Virtual Account New"
+      label_translated: "BCA Virtual Account New"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "RadioGroup2_0|rad-payment-method"
+      label: "Virtual Account Bank Lain New"
+      label_translated: "Virtual Account Other Bank New"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "RadioGroup2_0|rad-payment-method"
+      label: "Transfer BCA"
+      label_translated: "BCA Transfer"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "RadioGroup2_0|rad-payment-method"
+      label: "Transfer Bank Mandiri"
+      label_translated: "Mandiri Bank Transfer"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "RadioGroup2_0|rad-payment-method"
+      label: "Transfer BNI"
+      label_translated: "BNI Transfer"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "RadioGroup2_0|rad-payment-method"
+      label: "Transfer BRI"
+      label_translated: "BRI Transfers"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "RadioGroup2_0|rad-payment-method"
+      label: "Kartu Kredit Visa atau Mastercard atau JCB"
+      label_translated: "Visa or Mastercard or JCB Credit Card"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bin-number|"
+      label: "Nomor Kartu Kredit"
+      label_translated: "Credit card number"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "bin-name|"
+      label: "Nama Lengkap sesuai kartu"
+      label_translated: "Full name according to the card"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "bin-month|month_exp"
+      label: "Masa Berlaku"
+      label_translated: "Validity period"
+      control_type: SELECT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "bin-year|year_exp"
+      label: "/"
+      label_translated: "/"
+      control_type: SELECT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "bin-cvv|cvv"
+      label: "CVV"
+      label_translated: "CVV"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "RadioGroup2_2|rad-payment-method"
+      label: "Kartu Debit Mandiri"
+      label_translated: "Independent Debit Card"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bin-number-mandiri|"
+      label: "Nomor Kartu Debit Mandiri"
+      label_translated: "Mandiri Debit Card Number"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "bin-name-mandiri|"
+      label: "Nama Lengkap sesuai kartu"
+      label_translated: "Full name according to the card"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "bin-month-mandiri|month_exp"
+      label: "Masa Berlaku"
+      label_translated: "Validity period"
+      control_type: SELECT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "bin-year-mandiri|year_exp"
+      label: "/"
+      label_translated: "/"
+      control_type: SELECT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "bin-cvv-mandiri|cvv"
+      label: "CVV"
+      label_translated: "CVV"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "RadioGroup2_0|rad-payment-method"
+      label: "KlikBCA Internet Banking"
+      label_translated: "KlikBCA Internet Banking"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "txt-klikbca-user-id|klikbcauserid"
+      label: "Masukkan User ID KlikBCA Anda."
+      label_translated: "Enter your KlikBCA User ID."
+      example: "Enter your KlikBCA User ID"
+      example_translated: "Enter your KlikBCA User ID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "RadioGroup2_0|rad-payment-method"
+      label: "BCA KlikPay"
+      label_translated: "BCA KlikPay"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "RadioGroup2_0|rad-payment-method"
+      label: "COD New"
+      label_translated: "COD New"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "RadioGroup2_0|rad-payment-method"
+      label: "Bayar di Toko (Summarecon Mal Serpong) New"
+      label_translated: "Pay at the Store (Summarecon Mal Serpong) New"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "RadioGroup2_0|rad-payment-method"
+      label: "Beli Sekarang, Bayar Nanti - Kredivo New"
+      label_translated: "Buy Now, Pay Later - Kredivo New"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "RadioGroup2_0|rad-payment-method"
+      label: "Indomaret"
+      label_translated: "Indomaret"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "RadioGroup2_0|rad-payment-method"
+      label: "Go-Pay New"
+      label_translated: "Go-Pay New"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "RadioGroup2_0|rad-payment-method"
+      label: "Alfamart"
+      label_translated: "Alfamart"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "RadioGroup2_0|rad-payment-method"
+      label: "OVO New"
+      label_translated: "OVO New"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "txt-ovo-phone-number|ovophonenumber"
+      label: "Masukkan Nomor Handphone Anda."
+      label_translated: "Enter your Mobile Number."
+      example: "Enter your OVO Phone Number"
+      example_translated: "Enter your OVO Phone Number"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "RadioGroup2_0|rad-payment-method"
+      label: "Dana New"
+      label_translated: "New Fund"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "voucher_code|voucher_code"
+      label: "Masukan Kupon Anda"
+      label_translated: "Enter your Coupon"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "client-key|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "veritrans-api|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "transaction-queuing|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "queuing-periodic-time|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "max-queuing-trying|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "klikbca-user-id|klikbca-user-id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "token-id|token-id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cc-holder|cc-holder"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "authentication_id|authentication_id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ovo-phone-number|ovo-phone-number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "kredivo-payment-type|kredivo-payment-type"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "final-grand-total|final-grand-total"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "btn-submit-order|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|referrer"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|host_name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|utm_source"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|utm_campaign"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|utm_medium"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|form_location"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "subscriber_gender|subscriber_gender"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|subscriber_email"
+      label: "TYPE YOUR EMAIL"
+      label_translated: "TYPE YOUR EMAIL"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "subscribe_women|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "tracking-server|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dir|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

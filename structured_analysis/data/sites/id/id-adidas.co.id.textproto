@@ -1,0 +1,177 @@
+site_examples {
+  url: "https://www.aidas.co.id"
+  is_structured: false
+  locale {
+    country: "ID"
+    language: "id"
+  }
+  sequences {
+    fields {
+      name: "firstname|firstname"
+      label: "Nama Depan"
+      label_translated: "First name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "off"
+      section: NAME
+    }
+    fields {
+      name: "lastname|lastname"
+      label: "Nama Belakang"
+      label_translated: "Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "off"
+      section: NAME
+    }
+    fields {
+      name: "telephone|telephone"
+      label: "Nomor telepon"
+      label_translated: "Phone number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PHONE
+    }
+    fields {
+      name: "email|email"
+      label: "Email"
+      label_translated: "E-mail"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "street|street"
+      label: "Nama jalan"
+      label_translated: "street name"
+      control_type: INPUT
+      concepts: "address-line1"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "street2|street2"
+      label: "Nama jalan 2"
+      label_translated: "Street name 2"
+      control_type: INPUT
+      concepts: "address-line2"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "|country_id"
+      label: "Negara"
+      label_translated: "Country"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "state|state"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|state_id"
+      label: "Provinsi"
+      label_translated: "Province"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "city|city"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|city_id"
+      label: "Kota"
+      label_translated: "City"
+      control_type: SELECT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "district|district"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|district_id"
+      label: "Kecamatan"
+      label_translated: "District (Part of a city or regency)"
+      control_type: SELECT
+      concepts: "address-level3"
+      section: ADDRESS
+    }
+    fields {
+      name: "sub_district|sub_district"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|sub_district_id"
+      label: "Kelurahan"
+      label_translated: "Subdistrict (Part of a district)"
+      control_type: SELECT
+      concepts: "address-level4"
+      section: ADDRESS
+    }
+    fields {
+      name: "postcode|postcode"
+      label: "Kode pos"
+      label_translated: "Postal code"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "sameAsShippingAddress|sameAsShippingAddress"
+      label: "MasukRingkasan Pesanan:Edit Bag1 produk Need Help? Ordering Accepted Payment Methods"
+      label_translated: "Sign In Order Summary:Edit Product Bag1 Need Help? Ordering Accepted Payment Methods"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "email|email"
+      label: "hide-inactiveshow Lupa Kata Sandi Anda?MasukATAUGoogleFacebook"
+      label_translated: "hide-inactiveshow Forgot Your Password?Log InORGoogleFacebook"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "password|password"
+      label: "Kata Sandi"
+      label_translated: "Password"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "current-password"
+      section: OTHER
+    }
+    fields {
+      name: "couponCode|couponCode"
+      label: "Masukkan Kode Promo Anda"
+      label_translated: "Enter your Promo Code"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+  }
+}
+

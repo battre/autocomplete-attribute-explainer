@@ -1,0 +1,92 @@
+site_examples {
+  url: "https://www.dinomarket.com/"
+  is_structured: false
+  locale {
+    country: "ID"
+    language: "id"
+  }
+  sequences {
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "coordinate|"
+      label: "Latitude,Longitude"
+      label_translated: "Latitude,Longitude"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "searchTextField|"
+      label: "search"
+      label_translated: "search"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      hide: true
+      name: "|name"
+      label: "Nama Lengkap * :"
+      label_translated: "Full name * :"
+      control_type: INPUT
+      concepts: "name"
+      section: NAME
+    }
+    fields {
+      name: "|address"
+      label: "Alamat * :"
+      label_translated: "Address * :"
+      control_type: TEXTAREA
+      concepts: "street-address"
+      section: ADDRESS
+    }
+    fields {
+      name: "iMapAddress|iMapAddress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "iMapLocation|iMapLocation"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "r_city|r_city"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "discit|discit"
+      label: "Kota & Kecamatan * :"
+      label_translated: "City & District * :"
+      control_type: CUSTOM
+      concepts: "address-level2"
+      concepts: "address-level3"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "|poscode"
+      label: "Kode Pos * :"
+      label_translated: "Postal code * :"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

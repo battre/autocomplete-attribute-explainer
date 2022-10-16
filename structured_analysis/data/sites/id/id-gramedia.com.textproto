@@ -1,0 +1,161 @@
+site_examples {
+  url: "https://www.gramedia.com"
+  is_structured: false
+  locale {
+    country: "ID"
+    language: "id"
+  }
+  sequences {
+    fields {
+      name: "|search"
+      label: "Cari Produk, Judul Buku, Penulis"
+      label_translated: "Search Product, Book Title, Author"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|searchReadonly"
+      label: "Cari Produk, Judul Buku, Penulis"
+      label_translated: "Search Product, Book Title, Author"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|search"
+      label: "Cari Produk, Judul Buku, Penulis"
+      label_translated: "Search Product, Book Title, Author"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|search"
+      label: "Cari Produk, Judul Buku, Penulis"
+      label_translated: "Search Product, Book Title, Author"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|searchReadonly"
+      label: "Cari Produk, Judul Buku, Penulis"
+      label_translated: "Search Product, Book Title, Author"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|search"
+      label: "Cari Produk, Judul Buku, Penulis"
+      label_translated: "Search Product, Book Title, Author"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      example: "Contoh: MERDEKA17"
+      example_translated: "Example: INDEPENDENT17"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      example: "Contoh: MERDEKA17"
+      example_translated: "Example: INDEPENDENT17"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "newsletter|email_subscriber"
+      label: "Masukkan email anda disini"
+      label_translated: "Enter your email here"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Label Alamat*"
+      label_translated: "Address Labels*"
+      example: "Cth : (Rumah, Kantor)"
+      example_translated: "Ex: (Home, Office)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Nama Penerima*"
+      label_translated: "Recipient's name*"
+      example: "Masukkan Nama Penerima"
+      example_translated: "Enter Recipient Name"
+      control_type: INPUT
+      concepts: "name"
+      section: NAME
+    }
+    fields {
+      name: "|"
+      label: "+62"
+      label_translated: "+62"
+      example: "Masukkan No. Handphone"
+      example_translated: "Enter No. Mobile"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|"
+      label: "Provinsi*"
+      label_translated: "Province*"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "Kota/ Kabupaten*"
+      label_translated: "City/Regency*"
+      control_type: SELECT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "Kecamatan*"
+      label_translated: "District*"
+      control_type: SELECT
+      concepts: "address-level3"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "Kode Pos*"
+      label_translated: "Postal code*"
+      control_type: SELECT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "Alamat Lengkap*"
+      label_translated: "Complete address*"
+      example: "Masukkan Alamat Lengkap"
+      example_translated: "Enter Full Address"
+      control_type: INPUT
+      concepts: "street-address"
+      section: ADDRESS
+    }
+  }
+}
+
