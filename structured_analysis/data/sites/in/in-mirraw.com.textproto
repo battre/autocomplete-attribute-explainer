@@ -1,0 +1,288 @@
+site_examples {
+  url: "https://www.mirraw.com"
+  is_structured: false
+  locale {
+    country: "IN"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "|utf8"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|authenticity_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_paypal_smart_pay|order[paypal_smart_pay]"
+      label: "Click to select new address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_paypal_inline_cc|order[paypal_inline_cc]"
+      label: "Click to select new address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form_type|form_type"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_billing_first_name|order[billing_first_name]"
+      label: "First name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "order_billing_last_name|order[billing_last_name]"
+      label: "Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "order_billing_email|order[billing_email]"
+      label: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_shipping_restrict|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_billing_country|order[billing_country]"
+      label: "Country / Region"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "order_billing_pincode|order[billing_pincode]"
+      label: "Pincode / Zip / Postal Code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "order_billing_street_line_1|order[billing_street_line_1]"
+      label: "Address Line 1"
+      example: "Flat No, Floor, Building Name"
+      control_type: INPUT
+      concepts: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "order_billing_street_line_2|order[billing_street_line_2]"
+      label: "Address Line 2"
+      example: "Colony, Street, Locality"
+      control_type: INPUT
+      concepts: "address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "order_billing_city|order[billing_city]"
+      label: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "order_billing_state|order[billing_state]"
+      label: "State  / Province"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "phone-code1|dial_code"
+      label: "Mobile No"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "none"
+      section: PHONE
+    }
+    fields {
+      name: "order_billing_phone|order[billing_phone]"
+      label: "Mobile No"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "exists|exists"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "password|password"
+      label: "Enter password"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "seamless|seamless"
+      label: "Create an account?"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ship_to_same_address|ship_to_same_address"
+      label: "Ship to Same Address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_first_name|order[first_name]"
+      label: "First name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_last_name|order[last_name]"
+      label: "Last name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_country|order[country]"
+      label: "Country/Region"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_pincode|order[pincode]"
+      label: "Pincode / Zip / Postal Code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_street_line_1|order[street_line_1]"
+      label: "Address Line 1"
+      example: "Flat No, Floor, Building Name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_street_line_2|order[street_line_2]"
+      label: "Address Line 2"
+      example: "Colony, Street, Locality"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_city|order[city]"
+      label: "City"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_buyer_state|order[buyer_state]"
+      label: "State / Province"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "phone-code2|dial_code"
+      label: "Phone"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "none"
+      section: PHONE
+    }
+    fields {
+      name: "order_phone|order[phone]"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "delivery_type_regular|delivery_type"
+      label: "Regular Delivery"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "delivery_type_express|delivery_type"
+      label: "Express Delivery"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_pay_type_creditdebit_cardnet_banking|order[pay_type]"
+      label: "Credit/Debit Card/Net Banking/Wallet"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_pay_type_paytm|order[pay_type]"
+      label: "Paytm"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_pay_type_cash_on_delivery|order[pay_type]"
+      label: "Cash On Delivery"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|commit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "newsletter_confirmation|newsletter_confirmation"
+      label: "I agree to receive news letters from Mirraw"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cart_final_id|cart_final_id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "free_shipping_country|free_shipping_country"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

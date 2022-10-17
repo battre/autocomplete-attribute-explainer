@@ -1,0 +1,348 @@
+site_examples {
+  url: "https://www.bata.in"
+  is_structured: false
+  locale {
+    country: "IN"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "|shipmentUUID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingMethod-STH-8b6de2214f93c478e1a6eb08a4|dwfrm_shipping_shippingAddress_shippingMethodID"
+      label: "Home Delivery Delivery of the package to the selected address within 5-7 days after the order submis"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingMethodRadioButton|"
+      label: "Shipping"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingEmaildefault|dwfrm_shipping_shippingAddress_addressFields_email"
+      label: "E-mail"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "shipping email"
+      section: OTHER
+    }
+    fields {
+      name: "shippingPhoneNumberdefault|dwfrm_shipping_shippingAddress_addressFields_phone"
+      label: "Phone Number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "shipping tel"
+      section: PHONE
+    }
+    fields {
+      name: "|originalShipmentUUID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|shipmentUUID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping-newAddressRadio|shipping-radio"
+      label: "New Address"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ms|dwfrm_shipping_shippingAddress_addressFields_title"
+      label: "Ms"
+      control_type: RADIO
+      concepts: "sex"
+      section: NAME
+    }
+    fields {
+      name: "mr|dwfrm_shipping_shippingAddress_addressFields_title"
+      label: "Mr"
+      control_type: RADIO
+      concepts: "sex"
+      section: NAME
+    }
+    fields {
+      name: "shippingFirstNamedefault|dwfrm_shipping_shippingAddress_addressFields_firstName"
+      label: "First Name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "shipping given-name"
+      section: NAME
+    }
+    fields {
+      name: "shippingLastNamedefault|dwfrm_shipping_shippingAddress_addressFields_lastName"
+      label: "Last Name"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "shipping family-name"
+      section: NAME
+    }
+    fields {
+      name: "shippingAddressOnedefault|dwfrm_shipping_shippingAddress_addressFields_address1"
+      label: "Address"
+      control_type: INPUT
+      concepts: "street-address"
+      autocomplete_attribute: "shipping address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingZipCodedefault|dwfrm_shipping_shippingAddress_addressFields_postalCode"
+      label: "Pincode"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "shipping postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddressCitydefault|dwfrm_shipping_shippingAddress_addressFields_city"
+      label: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "shipping address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingStatedefault|dwfrm_shipping_shippingAddress_addressFields_stateCode"
+      label: "Province/State"
+      control_type: INPUT
+      concepts: "address-level1"
+      autocomplete_attribute: "shipping address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingCountrydefault|dwfrm_shipping_shippingAddress_addressFields_country"
+      label: "Country"
+      control_type: SELECT
+      concepts: "country"
+      autocomplete_attribute: "shipping country"
+      section: ADDRESS
+    }
+    fields {
+      name: "|dwfrm_shipping_shippingAddress_addressFields_isValidated"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "js-click-collect-storeId|storeId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|csrf_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingBillingSame|dwfrm_billing_shippingAddressUseAsBillingAddress"
+      label: "Billing address is same as delivery address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "newAddressRadio|addressSelector"
+      label: "New Address"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billing_ms|dwfrm_billing_addressFields_title"
+      label: "Ms"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billing_mr|dwfrm_billing_addressFields_title"
+      label: "Mr"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingFirstName|dwfrm_billing_addressFields_firstName"
+      label: "First Name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "given-name"
+      section: OTHER
+    }
+    fields {
+      name: "billingLastName|dwfrm_billing_addressFields_lastName"
+      label: "Last Name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "family-name"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressOne|dwfrm_billing_addressFields_address1"
+      label: "Address"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "billing address-line1"
+      section: OTHER
+    }
+    fields {
+      name: "billingZipCode|dwfrm_billing_addressFields_postalCode"
+      label: "Pincode"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "billing postal-code"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressCity|dwfrm_billing_addressFields_city"
+      label: "City"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "billing address-level2"
+      section: OTHER
+    }
+    fields {
+      name: "billingState|dwfrm_billing_addressFields_stateCode"
+      label: "Province/State"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "billing address-level1"
+      section: OTHER
+    }
+    fields {
+      name: "billingCountry|dwfrm_billing_addressFields_country"
+      label: "Country"
+      control_type: SELECT
+      concepts: "unset"
+      autocomplete_attribute: "billing country"
+      section: OTHER
+    }
+    fields {
+      name: "|csrf_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|localizedNewAddressTitle"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "fakeCouponCode|fakeCouponCode"
+      label: "Do you have a discount code?"
+      example: "Enter a promo code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "Credit_Card_CC_Avenue|dwfrm_billing_paymentMethod"
+      label: "Credit Card"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "Debit_Card_CC_Avenue|dwfrm_billing_paymentMethod"
+      label: "Debit Card"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "Net_Banking_CC_Avenue|dwfrm_billing_paymentMethod"
+      label: "Net Banking"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "Wallet_CC_Avenue|dwfrm_billing_paymentMethod"
+      label: "Wallets"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "Unified_Payments_CC_Avenue|dwfrm_billing_paymentMethod"
+      label: "UPI/QR code"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CASH_ON_DELIVERY|dwfrm_billing_paymentMethod"
+      label: "Cash On Delivery"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "couponCode|couponCode"
+      label: "Do you have a discount code?"
+      example: "Enter a promo code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|csrf_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "login-form-email|loginEmail"
+      label: "E-mail/Mobile"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "login-form-password|loginPassword"
+      label: "Password"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "rememberMe|loginRememberMe"
+      label: "Remember Me"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "csrfTokenInput|csrf_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "reset-password-email|loginEmail"
+      label: "E-mail"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

@@ -1,0 +1,219 @@
+site_examples {
+  url: "https://www.adidas.co.in"
+  is_structured: false
+  locale {
+    country: "IN"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "shippingAddress-firstName|shippingAddress.firstName"
+      label: "First Name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "shippingAddress-lastName|shippingAddress.lastName"
+      label: "Last Name"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "shippingAddress-address1|shippingAddress.address1"
+      label: "Street Address"
+      control_type: INPUT
+      concepts: "street-address"
+      autocomplete_attribute: "street-address address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress-address2|shippingAddress.address2"
+      label: "Landmark"
+      control_type: INPUT
+      concepts: "landmark"
+      autocomplete_attribute: "street-address address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress-address3|shippingAddress.address3"
+      label: "Additional info"
+      control_type: INPUT
+      concepts: "address-level3"
+      autocomplete_attribute: "street-address address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress-city|shippingAddress.city"
+      label: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "|shippingAddress.countyProvince"
+      label: "State"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress-zipcode|shippingAddress.zipcode"
+      label: "Pin Code"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "contact-emailAddress|shippingAddress.emailAddress"
+      label: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "home email"
+      section: OTHER
+    }
+    fields {
+      name: "contact-phoneNumber|shippingAddress.phoneNumber"
+      label: "Mobile Number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "home tel"
+      section: OTHER
+    }
+    fields {
+      name: "|shouldUseShippingAddressForBilling"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddress-firstName|billingAddress.firstName"
+      label: "First Name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "given-name"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddress-lastName|billingAddress.lastName"
+      label: "Last Name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "family-name"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddress-address1|billingAddress.address1"
+      label: "Street Address"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "street-address address-line1"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddress-address2|billingAddress.address2"
+      label: "Landmark"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "street-address address-line2"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddress-address3|billingAddress.address3"
+      label: "Additional info"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "street-address address-level1"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddress-city|billingAddress.city"
+      label: "City"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "address-level2"
+      section: OTHER
+    }
+    fields {
+      name: "|billingAddress.countyProvince"
+      label: "State"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddress-zipcode|billingAddress.zipcode"
+      label: "Pin Code"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "postal-code"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddress-phoneNumber|billingAddress.phoneNumber"
+      label: "Mobile Number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "home tel"
+      section: PHONE
+    }
+    fields {
+      name: "|"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "login-email|"
+      label: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "login-password|"
+      label: "Password"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|persistentLogin"
+      label: "Forgotten Your Password?"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "coupon-input|coupon"
+      label: "Enter your promo code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "fileSelector|file"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|filename"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

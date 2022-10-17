@@ -1,0 +1,74 @@
+site_examples {
+  url: "https://www.apollopharmacy.in"
+  is_structured: false
+  locale {
+    country: "IN"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "+91XXXXXXXXXX"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "*House no | Apartment name"
+      label_comment: "'House no' refers to an apartment number within a building."
+      control_type: TEXTAREA
+      concepts: "apartment-number"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "0 / 60"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "*Area Details"
+      control_type: INPUT
+      concepts: "address-level3"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "Landmark (Optional)"
+      control_type: INPUT
+      concepts: "landmark"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "*Pincode"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "State"
+      control_type: INPUT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+  }
+}
+

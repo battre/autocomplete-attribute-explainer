@@ -1,0 +1,405 @@
+site_examples {
+  url: "https://store-usa.arduino.cc"
+  is_structured: false
+  locale {
+    country: "IN"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "|_method"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|authenticity_token"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "previous_step|previous_step"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|step"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "checkout_email|checkout[email]"
+      example: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "shipping email"
+      section: OTHER
+    }
+    fields {
+      name: "|checkout[buyer_accepts_marketing]"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "checkout_buyer_accepts_marketing|checkout[buyer_accepts_marketing]"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "undefined"
+      label: "Country/region"
+      control_type: CUSTOM
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "|checkout[shipping_address][first_name]"
+      label: "First name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "shipping given-name"
+      section: NAME
+    }
+    fields {
+      name: "|checkout[shipping_address][last_name]"
+      label: "Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "shipping family-name"
+      section: NAME
+    }
+    fields {
+      name: "|checkout[shipping_address][company]"
+      label: "Company (optional)"
+      control_type: INPUT
+      concepts: "organization"
+      autocomplete_attribute: "shipping organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "|checkout[shipping_address][address1]"
+      label: "Address"
+      control_type: INPUT
+      concepts: "address-line1"
+      autocomplete_attribute: "shipping address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "|checkout[shipping_address][address2]"
+      label: "Apartment, suite, etc. (optional)"
+      control_type: INPUT
+      concepts: "address-line2"
+      autocomplete_attribute: "shipping address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "|checkout[shipping_address][city]"
+      label: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "shipping address-level2"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "|checkout[shipping_address][country]"
+      label: "Country/region"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "shipping country"
+      section: OTHER
+    }
+    fields {
+      name: "|checkout[shipping_address][province]"
+      label: "State"
+      control_type: INPUT
+      concepts: "address-level1"
+      autocomplete_attribute: "shipping address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "|checkout[shipping_address][zip]"
+      label: "PIN code"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "shipping postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "|checkout[shipping_address][phone]"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "shipping tel"
+      section: PHONE
+    }
+    fields {
+      name: "checkout_shipping_address_country|checkout[shipping_address][country]"
+      example: "Country/region"
+      control_type: SELECT
+      concepts: "unset"
+      autocomplete_attribute: "shipping country"
+      section: OTHER
+    }
+    fields {
+      name: "checkout_shipping_address_first_name|checkout[shipping_address][first_name]"
+      example: "First name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "shipping given-name"
+      section: OTHER
+    }
+    fields {
+      name: "checkout_shipping_address_last_name|checkout[shipping_address][last_name]"
+      example: "Last name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "shipping family-name"
+      section: OTHER
+    }
+    fields {
+      name: "checkout_shipping_address_company|checkout[shipping_address][company]"
+      example: "Company (optional)"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "shipping organization"
+      section: OTHER
+    }
+    fields {
+      name: "checkout_shipping_address_address1|checkout[shipping_address][address1]"
+      example: "Address"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "shipping address-line1"
+      section: OTHER
+    }
+    fields {
+      name: "checkout_shipping_address_address2|checkout[shipping_address][address2]"
+      example: "Apartment, suite, etc. (optional)"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "shipping address-line2"
+      section: OTHER
+    }
+    fields {
+      name: "checkout_shipping_address_city|checkout[shipping_address][city]"
+      example: "City"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "shipping address-level2"
+      section: OTHER
+    }
+    fields {
+      name: "checkout_shipping_address_province|checkout[shipping_address][province]"
+      example: "State"
+      control_type: SELECT
+      concepts: "unset"
+      autocomplete_attribute: "shipping address-level1"
+      section: OTHER
+    }
+    fields {
+      name: "checkout_shipping_address_zip|checkout[shipping_address][zip]"
+      example: "PIN code"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "shipping postal-code"
+      section: OTHER
+    }
+    fields {
+      name: "checkout_shipping_address_phone|checkout[shipping_address][phone]"
+      example: "Phone"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "shipping tel"
+      section: PHONE
+    }
+    fields {
+      name: "|checkout[remember_me]"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|checkout[remember_me]"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "checkout_remember_me|checkout[remember_me]"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkout[client_details][browser_width]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkout[client_details][browser_height]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkout[client_details][javascript_enabled]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkout[client_details][color_depth]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkout[client_details][java_enabled]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkout[client_details][browser_tz]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_method"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|authenticity_token"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|step"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|checkout[client_details][browser_width]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkout[client_details][browser_height]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkout[client_details][javascript_enabled]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkout[client_details][color_depth]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkout[client_details][java_enabled]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkout[client_details][browser_tz]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_method"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|authenticity_token"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|step"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "checkout_reduction_code|checkout[reduction_code]"
+      example: "Gift card or discount code"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|checkout[client_details][browser_width]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkout[client_details][browser_height]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkout[client_details][javascript_enabled]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkout[client_details][color_depth]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkout[client_details][java_enabled]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkout[client_details][browser_tz]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

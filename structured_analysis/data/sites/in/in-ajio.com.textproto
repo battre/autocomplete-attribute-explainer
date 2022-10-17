@@ -1,0 +1,137 @@
+site_examples {
+  url: "https://www.ajio.com/"
+  is_structured: true
+  locale {
+    country: "IN"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "|\"orderSummary\""
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|\"notes\""
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|\"multipleWalletsSupported\""
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "addressPoc-undefined-Name-33978|addressPoc"
+      label: "Name*"
+      control_type: INPUT
+      concepts: "name"
+      autocomplete_attribute: "Off"
+      section: NAME
+    }
+    fields {
+      name: "phone-undefined-Mobile-39472|phone"
+      label: "Mobile*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "Off"
+      section: PHONE
+    }
+    fields {
+      name: "|country.isocode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "postalCode-undefined-PinCode-33949|postalCode"
+      label: "Pin Code*"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "Off"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "Locality / Area / Street*"
+      control_type: TEXTAREA
+      concepts: "address-level3"
+      concepts: "street-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "line2-undefined-LocalityAreaStreet-42431|line2"
+      label: "Locality / Area / Street*"
+      control_type: TEXTAREA
+      concepts: "address-level3"
+      concepts: "street-name"
+      autocomplete_attribute: "Off"
+      section: ADDRESS
+    }
+    fields {
+      name: "line1-undefined-FlatnumberBuildingName-43506|line1"
+      label: "Flat number / Building Name*"
+      control_type: INPUT
+      concepts: "apartment"
+      concepts: "premise"
+      autocomplete_attribute: "Off"
+      section: ADDRESS
+    }
+    fields {
+      name: "landmark-undefined-Landmark-42014|landmark"
+      label: "Landmark"
+      control_type: INPUT
+      concepts: "landmark"
+      autocomplete_attribute: "Off"
+      section: ADDRESS
+    }
+    fields {
+      name: "district-undefined-DistrictCity-39139|district"
+      label: "District/City*"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "Off"
+      section: ADDRESS
+    }
+    fields {
+      name: "state-undefined-State-49151|state"
+      label: "State*"
+      control_type: INPUT
+      concepts: "address-level1"
+      autocomplete_attribute: "Off"
+      section: ADDRESS
+    }
+    fields {
+      name: "|selectedAddressType"
+      label: "Home"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|selectedAddressType"
+      label: "Work"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|selectedAddressType"
+      label: "Others"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|defaultAddress"
+      label: "Make as default Address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

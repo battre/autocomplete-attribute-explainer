@@ -260,6 +260,33 @@ country_data {
     "</p>"
 }
 
+country_data {
+  country: "IN"
+  country_name: "India"
+  site_examples_preamble_html:
+    "<p>Indian addresses forms have surprising naming conventions. Forms "
+    "commonly ask for a 'House no/Apartment name'. The 'house number' is an "
+    "apartment number (not the sequence of a house in a street) and the "
+    "apartment name is the name of a building (most buildings have a name; this "
+    "is not referring to the name of an apartment).</p>"
+    "<p>Another important aspect that is not common in other countries is a "
+    "'locality' (sometimes referred to as 'area details'). An example would be "
+    "'HITEC City' in Hyderabad. It's a name for an area that people know and use "
+    "for orientation. Another example would be 'old town'.</p>"
+    "<p>A 'Colony' is a named group of buildings that belong to each other, "
+    "e.g. sharing amenities. Also serves as a landmark.</p>"
+    "<p>The following cases are currently missing in the autocomplete spec and "
+    "occurred on multiple sites:"
+    "<ul>"
+    "<li>landmark"
+    "<li>premise (apartment name)"
+    "<li>apartment (house no)"
+    "<li>street name"
+    "</ul>"
+    "</p>"
+}
+
+
 
 
 

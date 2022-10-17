@@ -1,0 +1,67 @@
+site_examples {
+  url: "https://www.medplusmart.com"
+  is_structured: false
+  locale {
+    country: "IN"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "Fullname|firstName"
+      label: "Enter your full name"
+      control_type: INPUT
+      concepts: "full-name"
+      autocomplete_attribute: "off"
+      section: NAME
+    }
+    fields {
+      name: "Street|addressLine1"
+      label: "Door Number/Building Name/Street Name"
+      control_type: INPUT
+      concepts: "street-address"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "Phone|mobileNo"
+      label: "Enter Mobile Number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PHONE
+    }
+    fields {
+      name: "Location|"
+      label: "Location Area"
+      control_type: INPUT
+      concepts: "address-level3"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "City|"
+      label: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "State|"
+      label: "State"
+      control_type: INPUT
+      concepts: "address-level1"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "Pincode|"
+      label: "Pin code"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+  }
+}
+

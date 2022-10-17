@@ -1,0 +1,124 @@
+site_examples {
+  url: "https://secure4.store.apple.com/"
+  is_structured: false
+  locale {
+    country: "IN"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "ac-gn-menustate|"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ac-gn-searchform-input|"
+      example: "Search apple.com"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "ac-gn-searchform-src|src"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.firstName|firstName"
+      label: "First Name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.lastName|lastName"
+      label: "Last Name"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.street|street"
+      label: "Address Line 1"
+      control_type: INPUT
+      concepts: "address-line1"
+      autocomplete_attribute: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.street2|street2"
+      label: "Address Line 2 (Optional)"
+      control_type: INPUT
+      concepts: "address-line2"
+      autocomplete_attribute: "address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.street3|street3"
+      label: "Landmark (optional)"
+      control_type: INPUT
+      concepts: "landmark"
+      autocomplete_attribute: "address-line3"
+      section: ADDRESS
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.zipLookup.postalCode|postalCode"
+      label: "PIN code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.zipLookup.zipLookupCityState|zipLookupCityState"
+      label: "City, State"
+      label_comment: "&lt;select&gt; element which is populated with data from "
+        "postal code."
+      control_type: SELECT
+      concepts: "address-level2"
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.countryCode|countryCode"
+      label: "India"
+      control_type: INPUT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.isBusinessAddress|isBusinessAddress"
+      label: "This is a business addressBusiness shipments are usually delivered Monday through Friday from 8:00 a"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkout.shipping.addressContactEmail.address.emailAddress|emailAddress"
+      label: "We’ll email you a receipt and send order updates to your mobile phone via SMS or iMessage."
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "email"
+      section: OTHER
+    }
+    fields {
+      name: "checkout.shipping.addressContactPhone.address.mobilePhone|mobilePhone"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "tel-local"
+      section: OTHER
+    }
+    fields {
+      name: "checkout.shipping.addressNotification.address.emailAddress|emailAddress"
+      label: "Shipping notifications will be sent to the email address you enter."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+
