@@ -3,7 +3,7 @@
 
 country_data {
   country: "AR"
-  country_name: "Argentina"
+  country_name: "Argentina 🇦🇷"
   site_examples_preamble_html:
     "<p>Argentinian address forms rely on street names and house numbers. "
     "Every form asks for \"Piso\" and \"Departamento\", sometimes in a single "
@@ -28,7 +28,7 @@ country_data {
 
 country_data {
   country: "AU"
-  country_name: "Australia"
+  country_name: "Australia 🇦🇺"
   site_examples_preamble_html:
     "<p>Australia has largely simple addresses with<ul><li>address lines 1, 2, "
     "3, or<li>street name, house number and up to one field for extra "
@@ -46,7 +46,7 @@ country_data {
 
 country_data {
   country: "BR"
-  country_name: "Brazil"
+  country_name: "Brazil 🇧🇷"
   site_examples_preamble_html:
     "<p>Brazil relies heavily on structured addresses. Basically every form "
     "has separate fields for street name, house number and often an complement "
@@ -102,7 +102,7 @@ country_data {
 
 country_data {
   country: "CA"
-  country_name: "Canada"
+  country_name: "Canada 🇨🇦"
   site_examples_preamble_html:
     "<p>The sample of forms analyzed for Canada all shared the same structure. "
     "While the sites mentioned examples of information to be put into "
@@ -112,7 +112,7 @@ country_data {
 
 country_data {
   country: "DE"
-  country_name: "Germany"
+  country_name: "Germany 🇩🇪"
   site_examples_preamble_html:
     "<p>German sites often ask for street name and house number in a single "
     "designated filed or two separate fields. This is often complemented by an "
@@ -134,7 +134,7 @@ country_data {
 
 country_data {
   country: "EG"
-  country_name: "Egypt"
+  country_name: "Egypt 🇪🇬"
   site_examples_preamble_html:
     "<p>By and large, Egyptian address forms seem to be compatible with "
     "today's autocomplete attribute.</p>"
@@ -142,7 +142,7 @@ country_data {
 
 country_data {
   country: "ES"
-  country_name: "Spain"
+  country_name: "Spain 🇪🇸"
   site_examples_preamble_html:
     "<p>Spanish addresses ask for street name and house number in either one or "
     "two input fields. Spain is special because some websites ask for "
@@ -200,7 +200,7 @@ country_data {
 
 country_data {
   country: "FR"
-  country_name: "France"
+  country_name: "France 🇫🇷"
   site_examples_preamble_html:
     "<p>French websites often work well with an address-line1 and 2. The "
     "websites may specify what to put into each line but it looks like "
@@ -224,7 +224,7 @@ country_data {
 
 country_data {
   country: "GB"
-  country_name: "Great Britain"
+  country_name: "Great Britain 🇬🇧"
   site_examples_preamble_html:
     "<p>British houses have either numbers or names.<p>"
     "<p>The following cases are currently missing in the autocomplete spec and "
@@ -242,7 +242,7 @@ country_data {
 }
 country_data {
   country: "ID"
-  country_name: "Indonesia"
+  country_name: "Indonesia 🇮🇩"
   site_examples_preamble_html:
     "<p>Indonesian addresses are special because of their depth, using all of "
     "address-level1 through address-level4. Sometimes the higher address levels "
@@ -262,7 +262,7 @@ country_data {
 
 country_data {
   country: "IN"
-  country_name: "India"
+  country_name: "India 🇮🇳"
   site_examples_preamble_html:
     "<p>Indian addresses forms have surprising naming conventions. Forms "
     "commonly ask for a 'House no/Apartment name'. The 'house number' is an "
@@ -286,7 +286,47 @@ country_data {
     "</p>"
 }
 
+country_data {
+  country: "IT"
+  country_name: "Italy 🇮🇹"
+}
 
+country_data {
+  country: "JP"
+  country_name: "Japan 🇯🇵"
+}
 
+country_data {
+  country: "MX"
+  country_name: "Mexico 🇲🇽"
+}
 
+country_data {
+  country: "MY"
+  country_name: "Malaysia 🇲🇾"
+}
 
+country_data {
+  country: "NG"
+  country_name: "Nigeria 🇳🇬"
+}
+
+country_data {
+  country: "PL"
+  country_name: "Poland 🇵🇱"
+}
+
+country_data {
+  country: "TR"
+  country_name: "Turkey 🇹🇷"
+}
+
+country_data {
+  country: "US"
+  country_name: "United States of America 🇺🇸"
+}
+
+country_data {
+  country: "ZA"
+  country_name: "South Africa 🇿🇦"
+}
