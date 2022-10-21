@@ -228,6 +228,14 @@ concepts {
   label: "Email address"
 }
 
+concepts {
+  name: "sex"
+  description: "Gender identity (e.g. Female, Fa'afafine) <b>Note: only "
+    "defined for free form text, which does not help for most sites.</b>"
+  canonical_format_example: "Male"
+  label: "Sex"
+}
+
 # Locatization
 
 concepts {

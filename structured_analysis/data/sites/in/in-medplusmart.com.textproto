@@ -10,7 +10,7 @@ site_examples {
       name: "Fullname|firstName"
       label: "Enter your full name"
       control_type: INPUT
-      concepts: "full-name"
+      concepts: "name"
       autocomplete_attribute: "off"
       section: NAME
     }
