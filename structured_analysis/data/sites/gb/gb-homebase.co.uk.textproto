@@ -55,6 +55,8 @@ site_examples {
       label: "Address 2"
       control_type: INPUT
       concepts: "gap"
+      concepts_comment: "'Gap' because a structured house-name/street-name pair "
+        "is combined with address line 2."
       section: ADDRESS
     }
     fields {

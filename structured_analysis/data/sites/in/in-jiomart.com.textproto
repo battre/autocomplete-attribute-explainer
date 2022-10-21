@@ -181,7 +181,7 @@ site_examples {
       label: "Name *"
       control_type: INPUT
       concepts: "unset"
-      section: NAME
+      section: OTHER
     }
     fields {
       name: "mobile_no|mobile_no"
