@@ -1,0 +1,146 @@
+site_examples {
+  url: "https://www.apple.com"
+  is_structured: true
+  locale {
+    country: "JP"
+    language: "ja"
+  }
+  sequences {
+    fields {
+      name: "ac-gn-menustate|"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ac-gn-searchform-input|"
+      example: "apple.comを検索"
+      example_translated: "Search apple.com"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "ac-gn-searchform-src|src"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.lastName|lastName"
+      label: "姓"
+      label_translated: "Surname"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.firstName|firstName"
+      label: "名"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.postalCode|postalCode"
+      label: "〒(123-4567)"
+      label_translated: "Postal code(123-4567)"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "postal-code"
+      section: OTHER
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.state|state"
+      label: "都道府県"
+      label_translated: "Prefecture"
+      control_type: SELECT
+      concepts: "address-level1"
+      autocomplete_attribute: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.city|city"
+      label: "市区町村"
+      label_translated: "municipalities"
+      example: "11文字以内に収めてください（例：新宿区）。"
+      example_translated: "Please keep it within 11 characters (e.g. Shinjuku Ward)"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.street|street"
+      label: "番地など"
+      label_translated: "address etc."
+      example: "17文字以内に収めてください（例：西新宿）。"
+      example_translated: "Please keep it within 17 characters (example: Nishi-Shinjuku)."
+      control_type: INPUT
+      concepts: "street-location"
+      autocomplete_attribute: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.street2|street2"
+      label: "アパート名、部屋名、入館コード（任意）"
+      label_translated: "Apartment name, room name, entrance code (optional)"
+      control_type: INPUT
+      concepts: "premise-and-sub-premise"
+      concepts: "door-code"
+      autocomplete_attribute: "address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.countryCode|countryCode"
+      label: "国 / 地域"
+      label_translated: "Country / Region"
+      control_type: INPUT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.isBusinessAddress|isBusinessAddress"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkout.shipping.addressContactEmail.address.emailAddress|emailAddress"
+      label: "メールアドレス"
+      label_translated: "email address"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "email"
+      section: OTHER
+    }
+    fields {
+      name: "checkout.shipping.addressContactPhone.address.mobilePhone|mobilePhone"
+      label: "携帯電話番号"
+      label_translated: "mobile number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "tel-local"
+      section: PHONE
+    }
+    fields {
+      name: "checkout.shipping.addressContactPhone.address.isDaytimePhoneSelected|isDaytimePhoneSelected"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkout.shipping.addressNotification.address.emailAddress|emailAddress"
+      label: "Eメールアドレス（任意）"
+      label_translated: "Email address (optional)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

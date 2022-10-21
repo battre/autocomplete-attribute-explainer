@@ -1,0 +1,288 @@
+site_examples {
+  url: "https://www.amazon.co.jp"
+  is_structured: true
+  locale {
+    country: "JP"
+    language: "ja"
+  }
+  sequences {
+    fields {
+      name: "|purchaseId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address-ui-widgets-countryCode-dropdown-nativeId|address-ui-widgets-countryCode"
+      label: "国/地域"
+      label_translated: "Country / Region"
+      control_type: SELECT
+      concepts: "country"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "address-ui-widgets-enterAddressFullName|address-ui-widgets-enterAddressFullName"
+      label: "氏名"
+      label_translated: "Full name"
+      control_type: INPUT
+      concepts: "name"
+      section: NAME
+    }
+    fields {
+      name: "address-ui-widgets-enterAddressPhoneNumber|address-ui-widgets-enterAddressPhoneNumber"
+      label: "電話番号"
+      label_translated: "phone number"
+      example: "例：00-0000-0000"
+      example_translated: "Example: 00-0000-0000"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "address-ui-widgets-enterAddressPostalCodeOne|address-ui-widgets-enterAddressPostalCodeOne"
+      label: "郵便番号（半角数字)"
+      label_translated: "Postal code (single-byte numbers)"
+      label_comment: "First of two text fields separated by a '-'."
+      example: "例：000"
+      example_translated: "Example: 000"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "address-ui-widgets-enterAddressPostalCodeTwo|address-ui-widgets-enterAddressPostalCodeTwo"
+      label: "郵便番号（半角数字)"
+      label_translated: "Postal code (single-byte numbers)"
+      label_comment: "Second of two text fields separated by a '-'."
+      example: "例：0000"
+      example_translated: "Example: 0000"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "address-ui-widgets-enterAddressStateOrRegion-dropdown-nativeId|address-ui-widgets-enterAddressStateOrRegion"
+      label: "都道府県"
+      label_translated: "Prefectures"
+      control_type: SELECT
+      concepts: "address-level1"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "address-ui-widgets-enterAddressLine1|address-ui-widgets-enterAddressLine1"
+      label: "市区町村"
+      label_translated: "municipalities"
+      example: "例：〇〇市〇〇町"
+      example_translated: "Example: 〇〇 city 〇〇 town"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "address-ui-widgets-enterAddressLine2|address-ui-widgets-enterAddressLine2"
+      label: "丁目・番地・号（数字は半角数字）"
+      label_translated: "Chome, address, number (numbers are single-byte numbers)"
+      example: "例：1-2-3"
+      example_translated: "Example: 1-2-3"
+      control_type: INPUT
+      concepts: "street-location"
+      section: ADDRESS
+    }
+    fields {
+      name: "address-ui-widgets-enterBuildingOrCompanyName|address-ui-widgets-enterBuildingOrCompanyName"
+      label: "建物名 / 会社名（会社への配送の場合）"
+      label_translated: "Building Name / Company Name (if shipping to a company)"
+      example: "例：〇〇マンション"
+      example_translated: "Example: 〇〇 apartment"
+      control_type: INPUT
+      concepts: "premise"
+      concepts: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "address-ui-widgets-enterUnitOrRoomNumber|address-ui-widgets-enterUnitOrRoomNumber"
+      label: "部屋番号（数字は半角数字）"
+      label_translated: "Room number (numbers are single-byte numbers)"
+      example: "例：123"
+      example_translated: "Example: 123"
+      control_type: INPUT
+      concepts: "sub-premise"
+      section: ADDRESS
+    }
+    fields {
+      name: "|address-ui-widgets-previous-address-form-state-token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address-ui-widgets-use-as-my-default|address-ui-widgets-use-as-my-default"
+      label: "新しい住所を追加する"
+      label_translated: "add new address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-delivery-instructions-desktop-expander-context"
+      label: "配送指示（置き配含む)"
+      label_translated: "Delivery instructions (including undelivered)"
+      control_type: INPUT
+      concepts: "delivery-instructions"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-addressFormButtonText"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-addressFormHideHeading"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-addressFormHideSubmitButton"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-enableAddressDetails"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-returnLegacyAddressID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-enableDeliveryInstructions"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-enableAddressWizardInlineSuggestions"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-enableEmailAddress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-enableAddressTips"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-amazonBusinessGroupId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-clientName"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-enableAddressWizardForm"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-delivery-instructions-data"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-address-wizard-interaction-id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-obfuscated-customerId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-locationData"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-enableLatestAddressWizardForm"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-avsSuppressSoftblock"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-avsSuppressSuggestion"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-csrfToken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-locale"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|hasWorkingJavascript"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|ue_back"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|hasWorkingJavascript"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+
