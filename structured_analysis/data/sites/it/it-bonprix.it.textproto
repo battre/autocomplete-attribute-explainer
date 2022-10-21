@@ -1,0 +1,157 @@
+site_examples {
+  url: "https://www.bonprix.it"
+  is_structured: true
+  locale {
+    country: "IT"
+    language: "it"
+  }
+  sequences {
+    fields {
+      name: "submitstate|submitstate"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressType_billing|shippingAddressTypeUiCode"
+      label: "Consegna all\'indirizzo di fatturazione"
+      label_translated: "Delivery to the billing address"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressType_alternative|shippingAddressTypeUiCode"
+      label: "Consegna a un indirizzo diverso"
+      label_translated: "Delivery to a different address"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "addressBookEntryId|currentOrder.shippingAddress.addressBookEntryId"
+      label: "Importa dalla rubrica"
+      label_translated: "Import from the address book"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddress.salutation_0|shippingAddress.salutation"
+      label: "Signora"
+      label_translated: "Mrs"
+      control_type: RADIO
+      concepts: "sex"
+      section: NAME
+    }
+    fields {
+      name: "shippingAddress.salutation_1|shippingAddress.salutation"
+      label: "Signor"
+      label_translated: "Mr"
+      control_type: RADIO
+      concepts: "sex"
+      section: NAME
+    }
+    fields {
+      name: "shippingAddress.firstName|shippingAddress.firstName"
+      label: "Nome*"
+      label_translated: "First name*"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "off"
+      section: NAME
+    }
+    fields {
+      name: "shippingAddress.name|shippingAddress.name"
+      label: "Cognome*"
+      label_translated: "Last name*"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "off"
+      section: NAME
+    }
+    fields {
+      name: "shippingAddress.city2|shippingAddress.city2"
+      label: "Prov."
+      label_translated: "Province"
+      control_type: INPUT
+      concepts: "address-level1"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress.city|shippingAddress.city"
+      label: "Città*"
+      label_translated: "City*"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress.street|shippingAddress.street"
+      label: "Via"
+      label_translated: "Street"
+      control_type: INPUT
+      concepts: "street-name"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress.houseNumber|shippingAddress.houseNumber"
+      label: "Numero civico"
+      label_translated: "house number"
+      control_type: INPUT
+      concepts: "house-number"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress.postalCode|shippingAddress.postalCode"
+      label: "CAP*"
+      label_translated: "Postal code*"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "transferToAddressbook|transferToAddressbook"
+      label: "Inserisci l’indirizzo nella rubrica"
+      label_translated: "Enter the address in the address book"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressType_bpstore|shippingAddressTypeUiCode"
+      label: "Consegna nello show-room bonprix (Centro C.le Gli Orsi, Biella)"
+      label_translated: "Delivery to the bonprix showroom (Centro C.le Gli Orsi, Biella)"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingMethodTypeUiCode_normal|shippingMethodTypeUiCode"
+      label: "Spedizione standard"
+      label_translated: "Standard delivery"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingMethodTypeUiCode_quick|shippingMethodTypeUiCode"
+      label: "Consegna express (3,50 €) solo con PayPal e Carta di Credito."
+      label_translated: "Express delivery (€ 3.50) only with PayPal and Credit Card."
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "g-recaptcha-response-100000|g-recaptcha-response"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

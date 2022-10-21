@@ -1,0 +1,625 @@
+site_examples {
+  url: "	https://www.amicafarmacia.com"
+  is_structured: true
+  locale {
+    country: "IT"
+    language: "it"
+  }
+  sequences {
+    fields {
+      name: "|form_key"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "email|login[username]"
+      label: "Email"
+      label_translated: "E-mail"
+      example: "Inserisci la tua email"
+      example_translated: "insert your email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "pass|login[password]"
+      label: "Password"
+      label_translated: "Password"
+      example: "Inserisci la password associata al tuo account"
+      example_translated: "Enter the password associated with your account"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "search|q"
+      label: "Search:"
+      label_translated: "Search:"
+      example: "Cosa stai cercando?"
+      example_translated: "What are you looking for?"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "login-email|username"
+      label: "Indirizzo email"
+      label_translated: "Email address"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "login-password|password"
+      label: "Password"
+      label_translated: "Password"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|captcha_form_id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|context"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|form_key"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cart-15329010-qty|cart[15329010][qty]"
+      label: "19,60 â‚¬ 25,99 â‚¬"
+      label_translated: "€ 19.60 € 25.99"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|form_key"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "customer-email|username"
+      label: "Indirizzo email"
+      label_translated: "Email address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "customer-password|password"
+      label: "Password"
+      label_translated: "Password"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|captcha_form_id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|context"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "WQOW05I|firstname"
+      label: "Nome"
+      label_translated: "First name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "CCJJCR2|lastname"
+      label: "Cognome"
+      label_translated: "Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "JSSBJO9|country_id"
+      label: "Paese"
+      label_translated: "Country"
+      control_type: SELECT
+      concepts: "country-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "V80SSQ8|region_id"
+      label: "Provincia/Regione"
+      label_translated: "Province / Region"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "VM8MKMG|region"
+      label: "Provincia/Regione"
+      label_translated: "Province / Region"
+      control_type: INPUT
+      concepts: "address-level1"
+      section: OTHER
+    }
+    fields {
+      name: "X3JS2LT|postcode"
+      label: "CAP"
+      label_translated: "POSTAL CODE"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "SJC4R9J|city"
+      label: "Città"
+      label_translated: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: OTHER
+    }
+    fields {
+      name: "WKV86JN|city"
+      label: "Città"
+      label_translated: "City"
+      control_type: SELECT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "J1IVILH|custom_attributes[infoaggiuntive]"
+      label: "C/O Presso (azienda, interno, nome sul citofono etc.)"
+      label_translated: "C/O At (company, extension, name on the intercom etc.)"
+      control_type: INPUT
+      concepts: "gap"
+      section: ADDRESS
+    }
+    fields {
+      name: "YWYLW7X|street[0]"
+      label: "Indirizzo"
+      label_translated: "Address"
+      control_type: INPUT
+      concepts: "street-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "R8OYLIH|custom_attributes[civico]"
+      label: "Civico"
+      label_translated: "House number"
+      control_type: INPUT
+      concepts: "house-number"
+      section: ADDRESS
+    }
+    fields {
+      name: "K5VFTNH|telephone"
+      label: "Numero di telefono"
+      label_translated: "Telephone number"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "RAALQC4|custom_attributes[is_business_address]"
+      label: "Tipo di documento"
+      label_translated: "Type of document"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "VYGUI5Y|custom_attributes[tax_code]"
+      label: "Codice Fiscale"
+      label_translated: "Fiscal Code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "WSOXLEU|company"
+      label: "Azienda"
+      label_translated: "Agency"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "GIO0L2F|vat_id"
+      label: "Partita Iva"
+      label_translated: "VAT number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "GPLH8UY|custom_attributes[fe_pec]"
+      label: "PEC"
+      label_translated: "PEC"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "AU3DMNJ|custom_attributes[fe_cod]"
+      label: "Codice Identificativo"
+      label_translated: "Identification code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billing-address-same-as-shipping-shared|billing-address-same-as-shipping"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ARQ5S61|firstname"
+      label: "Nome"
+      label_translated: "First name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "JDFPOCO|lastname"
+      label: "Cognome"
+      label_translated: "Last name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "A7K3GX8|country_id"
+      label: "Paese"
+      label_translated: "Village"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "JCKT4HV|region_id"
+      label: "Provincia/Regione"
+      label_translated: "Province / Region"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "S8RRPQ8|region"
+      label: "Provincia/Regione"
+      label_translated: "Province / Region"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "KPMM1WA|postcode"
+      label: "CAP"
+      label_translated: "POSTAL CODE"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "FXB4V35|city"
+      label: "CittÃ"
+      label_translated: "City"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "P3IIIYH|city"
+      label: "CittÃ"
+      label_translated: "City"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "VA9D532|custom_attributes[infoaggiuntive]"
+      label: "C/O Presso (azienda, interno, nome sul citofono etc.)"
+      label_translated: "C / O At (company, extension, name on the intercom etc.)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "L476YM5|street[0]"
+      label: "Indirizzo"
+      label_translated: "Address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "T1U4CQA|custom_attributes[civico]"
+      label: "Civico"
+      label_translated: "Street number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "NUBLVIG|telephone"
+      label: "Numero di telefono"
+      label_translated: "Telephone number"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "MHFTOJJ|custom_attributes[is_business_address]"
+      label: "Tipo di Documento"
+      label_translated: "Type of Document"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "GFXEKT0|custom_attributes[tax_code]"
+      label: "Codice Fiscale"
+      label_translated: "Fiscal Code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "GNHD2T8|company"
+      label: "Azienda"
+      label_translated: "Agency"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "B5QLXE1|vat_id"
+      label: "Partita Iva"
+      label_translated: "VAT number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "QPLG96U|custom_attributes[fe_pec]"
+      label: "PEC"
+      label_translated: "PEC"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "A7ULUF8|custom_attributes[fe_cod]"
+      label: "Codice Identificativo"
+      label_translated: "Identification code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|ko_unique_2"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|form_key"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|captcha_form_id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "scalapay|payment[method]"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "agreement_scalapay_3|agreement[3]"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "agreement_scalapay_6|agreement[6]"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "adyen_cc|payment[method]"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Nome sulla carta"
+      label_translated: "Name on the Card"
+      example: "J. Smith"
+      example_translated: "J. Smith"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "agreement_adyen_cc_3|agreement[3]"
+      label: "Accetto le condizioni della privacy"
+      label_translated: "I accept the privacy terms"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "agreement_adyen_cc_6|agreement[6]"
+      label: "Autorizzo il trattamento dei dati per scopi di profilazione e di marketing e per l\'iscrizione alla n"
+      label_translated: "I authorize the processing of data for profiling and marketing purposes and for registration to n"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "paypal_express|payment[method]"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "agreement_paypal_express_3|agreement[3]"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "agreement_paypal_express_6|agreement[6]"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cashondelivery|payment[method]"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "agreement_cashondelivery_3|agreement[3]"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "agreement_cashondelivery_6|agreement[6]"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "banktransfer|payment[method]"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "agreement_banktransfer_3|agreement[3]"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "agreement_banktransfer_6|agreement[6]"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "satispay|payment[method]"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "agreement_satispay_3|agreement[3]"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "agreement_satispay_6|agreement[6]"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order-attachment|order-attachment[]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "discount-code|discount_code"
+      label: "Inserisci il codice sconto"
+      label_translated: "Enter the discount code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "giftcard-code|giftcard_code"
+      label: "Inserisci il codice gift card"
+      label_translated: "Enter the gift card code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "fileSelector|file"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|filename"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "customer-email|username"
+      label: "Indirizzo email"
+      label_translated: "Email address"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "pass|password"
+      label: "Password"
+      label_translated: "Password"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|captcha_form_id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|context"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

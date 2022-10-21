@@ -1,0 +1,577 @@
+site_examples {
+  url: "https://www.agrieuro.com"
+  is_structured: true
+  locale {
+    country: "IT"
+    language: "it"
+  }
+  sequences {
+    fields {
+      name: "autocomplete-0-input|"
+      label: "Cosa stai cercando..."
+      label_translated: "What are you looking for..."
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "billing_email_address|billing_email_address"
+      label: "E-Mail:"
+      label_translated: "E-mail:"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "false"
+      section: OTHER
+    }
+    fields {
+      name: "billing_email_address2|billing_email_address2"
+      label: "Ripetere E-mail"
+      label_translated: "Repeat E-mail"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "false"
+      section: OTHER
+    }
+    fields {
+      name: "billing_company|billing_company"
+      label: "Nome dell\' azienda:"
+      label_translated: "Company name:"
+      control_type: INPUT
+      concepts: "organization"
+      autocomplete_attribute: "false"
+      section: ADDRESS
+    }
+    fields {
+      name: "billing_piva|billing_piva"
+      label: "Partita Iva:"
+      label_translated: "VAT number:"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "false"
+      section: OTHER
+    }
+    fields {
+      name: "billing_fe_codice|billing_fe_codice"
+      label: "Codice destinatario:"
+      label_translated: "Recipient code:"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "false"
+      section: OTHER
+    }
+    fields {
+      name: "billing_fe_pec|billing_fe_pec"
+      label: "Indirizzo PEC:"
+      label_translated: "PEC address:"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "false"
+      section: OTHER
+    }
+    fields {
+      name: "billing_firstname|billing_firstname"
+      label: "Nome:"
+      label_translated: "First name:"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "false"
+      section: NAME
+    }
+    fields {
+      name: "billing_lastname|billing_lastname"
+      label: "Cognome:"
+      label_translated: "Last name:"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "false"
+      section: NAME
+    }
+    fields {
+      name: "billing_cf|billing_cf"
+      label: "Codice Fiscale:"
+      label_translated: "Fiscal Code:"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "false"
+      section: OTHER
+    }
+    fields {
+      name: "billing_street_address|billing_street_address"
+      label: "Indirizzo"
+      label_translated: "Street name"
+      control_type: INPUT
+      concepts: "street-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "billing_street_address_number|billing_street_address_number"
+      label: "Num"
+      label_translated: "House number"
+      control_type: INPUT
+      concepts: "house-number"
+      autocomplete_attribute: "false"
+      section: ADDRESS
+    }
+    fields {
+      name: "billing_suburb|billing_suburb"
+      label: "Località:"
+      label_translated: "Suburb"
+      control_type: INPUT
+      concepts: "address-line3"
+      section: ADDRESS
+    }
+    fields {
+      name: "s2id_autogen2|"
+      label: "Nazione:"
+      label_translated: "Country:"
+      control_type: INPUT
+      concepts: "country"
+      section: OTHER
+    }
+    fields {
+      name: "billing_country|billing_country"
+      label: "Nazione:"
+      label_translated: "Country:"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "s2id_autogen3|"
+      label: "Stato/Provincia:"
+      label_translated: "State / Province:"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billing_state|billing_state"
+      label: "Stato/Provincia:"
+      label_translated: "State / Province:"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "s2id_autogen14|"
+      label: "Città:"
+      label_translated: "City:"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billing_city|billing_city"
+      label: "Città:"
+      label_translated: "City:"
+      control_type: SELECT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "s2id_autogen165|"
+      label: "CAP:"
+      label_translated: "Postal code:"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "billing_zipcode|billing_zipcode"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "s2id_autogen1|"
+      label: "IT+39"
+      label_translated: "IT + 39"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "s2id_autogen1_search|"
+      label: "IT+39"
+      label_translated: "IT + 39"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "billing_phone_prefix|"
+      control_type: SELECT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "billing_telephone|billing_telephone"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "false"
+      section: PHONE
+    }
+    fields {
+      name: "billing_telephone2|billing_telephone2"
+      label: "Altro telefono:"
+      label_translated: "Other phone:"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "false"
+      section: PHONE
+    }
+    fields {
+      name: "cust_password|cust_password"
+      label: "Password:"
+      label_translated: "Password:"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "false"
+      section: OTHER
+    }
+    fields {
+      name: "cust_password_confirm|cust_password_confirm"
+      label: "Conferma Password:"
+      label_translated: "Confirm password:"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "false"
+      section: OTHER
+    }
+    fields {
+      name: "billing_newsletter|billing_newsletter"
+      label: "Iscriviti alla newsletter"
+      label_translated: "Subscribe to the newsletter"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "diffShipping_0|diffShipping"
+      label: "Voglio che il mio ordine venga spedito all\'indirizzo inserito"
+      label_translated: "I want my order to be shipped to the address entered"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "diffShipping_1|diffShipping"
+      label: "Voglio che il mio ordine venga spedito ad un indirizzo diverso"
+      label_translated: "I want my order to be shipped to a different address"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_company|shipping_company"
+      label: "Nome dell\' azienda:"
+      label_translated: "Company name:"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "false"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_firstname|shipping_firstname"
+      label: "Nome:"
+      label_translated: "First name:"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "false"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_lastname|shipping_lastname"
+      label: "Cognome:"
+      label_translated: "Last name:"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "false"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_street_address|shipping_street_address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_street_address_number|shipping_street_address_number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "false"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_suburb|shipping_suburb"
+      label: "Località:"
+      label_translated: "Location:"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "s2id_autogen9|"
+      label: "Nazione:"
+      label_translated: "Country:"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "s2id_autogen9_search|"
+      label: "Nazione:"
+      label_translated: "Country:"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_country|shipping_country"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "s2id_autogen10|"
+      label: "Stato/Provincia:"
+      label_translated: "State / Province:"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_state|shipping_state"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "s2id_autogen12|"
+      label: "Città:"
+      label_translated: "City:"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "s2id_autogen12_search|"
+      label: "Città:"
+      label_translated: "City:"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_city|shipping_city"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_zipcode|shipping_zipcode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|comments"
+      label: "Se vuoi, puoi aggiungere una nota all\'ordine"
+      label_translated: "If you want, you can add a note to the order"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "privacy|privacy"
+      label: "Con il tuo ordine accetti le nostre Condizioni di acquisto e le Informazioni sulla privacy. In quali"
+      label_translated: "By placing your order, you agree to our Purchase Conditions and Privacy Information. In which"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "email-form-nl-2|email-form-nl-2"
+      label: "Email:*"
+      label_translated: "E-mail:*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkbox-group-privacy-adb-form-rec-28040|checkbox-group-privacy"
+      label: "Accetto la privacy policy"
+      label_translated: "I accept the privacy policy"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "g-recaptcha-response|g-recaptcha-response"
+      label: "Iscriviti"
+      label_translated: "subscribe"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|email_address"
+      label: "Email"
+      label_translated: "E-mail"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "false"
+      section: OTHER
+    }
+    fields {
+      name: "|password"
+      label: "Password"
+      label_translated: "Password"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "false"
+      section: OTHER
+    }
+    fields {
+      name: "edit_firstname|edit_firstname"
+      label: "Nome:"
+      label_translated: "First name:"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "false"
+      section: OTHER
+    }
+    fields {
+      name: "edit_lastname|edit_lastname"
+      label: "Cognome:"
+      label_translated: "Last name:"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "false"
+      section: OTHER
+    }
+    fields {
+      name: "edit_company|edit_company"
+      label: "Nome dell\' azienda:"
+      label_translated: "Company name:"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "false"
+      section: OTHER
+    }
+    fields {
+      name: "edit_street_address|edit_street_address"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "false"
+      section: OTHER
+    }
+    fields {
+      name: "edit_street_address_number|edit_street_address_number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "false"
+      section: OTHER
+    }
+    fields {
+      name: "edit_suburb|edit_suburb"
+      label: "Località:"
+      label_translated: "Location:"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "false"
+      section: OTHER
+    }
+    fields {
+      name: "edit_country|edit_country"
+      label: "Nazione:"
+      label_translated: "Country:"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "false"
+      section: OTHER
+    }
+    fields {
+      name: "edit_state|edit_state"
+      label: "Stato/Provincia:"
+      label_translated: "State / Province:"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "false"
+      section: OTHER
+    }
+    fields {
+      name: "edit_city|edit_city"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "false"
+      section: OTHER
+    }
+    fields {
+      name: "edit_zipcode|edit_zipcode"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "false"
+      section: OTHER
+    }
+    fields {
+      name: "edit_telephone|edit_telephone"
+      label: "Telefono:"
+      label_translated: "Phone:"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "false"
+      section: PHONE
+    }
+    fields {
+      name: "s2id_autogen2_search|"
+      label: "Nazione:"
+      label_translated: "Country:"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "s2id_autogen10_search|"
+      label: "Stato/Provincia:"
+      label_translated: "State / Province:"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "s2id_autogen3_search|"
+      label: "Stato/Provincia:"
+      label_translated: "State / Province:"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "s2id_autogen14_search|"
+      label: "Città:"
+      label_translated: "City:"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "s2id_autogen165_search|"
+      label: "CAP:"
+      label_translated: "POSTAL CODE:"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+  }
+}
+

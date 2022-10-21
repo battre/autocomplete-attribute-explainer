@@ -1,0 +1,261 @@
+site_examples {
+  url: "https://www.bershka.com"
+  is_structured: false
+  locale {
+    country: "IT"
+    language: "it"
+  }
+  sequences {
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Chat"
+      label_translated: "Chat"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|name"
+      label: "Nome"
+      label_translated: "First name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: OTHER
+    }
+    fields {
+      name: "|mail"
+      label: "E-mail"
+      label_translated: "E-mail"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Chat"
+      label_translated: "Chat"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|name"
+      label: "Nome"
+      label_translated: "First name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "|surname"
+      label: "Cognome"
+      label_translated: "Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "|email"
+      label: "E-mail"
+      label_translated: "E-mail"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "+39"
+      label_translated: "+39"
+      control_type: SELECT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|phone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|address"
+      label: "Indirizzo (scrivi qui: via, numero)"
+      label_translated: "Address (write here: street, number)"
+      control_type: INPUT
+      concepts: "address-line1"
+      low_certainty: true
+      section: ADDRESS
+    }
+    fields {
+      name: "|address2"
+      label: "Indirizzo"
+      label_translated: "Address"
+      control_type: INPUT
+      concepts: "address-line2"
+      low_certainty: true
+      section: ADDRESS
+    }
+    fields {
+      name: "|zipCode"
+      label: "Codice Postale"
+      label_translated: "Postal code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "|province"
+      label: "Provincia"
+      label_translated: "Province"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "|city"
+      label: "Località *"
+      label_translated: "Location *"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "|typeButton"
+      label: "Privato"
+      label_translated: "Private"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|typeButton"
+      label: "Azienda"
+      label_translated: "Agency"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|name"
+      label: "Nome"
+      label_translated: "First name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|surname"
+      label: "Cognome"
+      label_translated: "Last name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|email"
+      label: "E-mail"
+      label_translated: "E-mail"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "+39"
+      label_translated: "+39"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|phone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|nif"
+      label: "Codice fiscale"
+      label_translated: "Fiscal Code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|PEC"
+      label: "PEC (Posta Elettronica Certificata)"
+      label_translated: "PEC (Certified Electronic Mail)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|receiverCode"
+      label: "Codice destinatario"
+      label_translated: "Recipient code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address2"
+      label: "Indirizzo"
+      label_translated: "Address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|zipCode"
+      label: "Codice Postale"
+      label_translated: "Postal code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|province"
+      label: "Provincia"
+      label_translated: "Province"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|city"
+      label: "Località *"
+      label_translated: "Location *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Mercato"
+      label_translated: "Market"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "|privacyPolicy"
+      label: "Ho avuto modo di prendere visione e di comprendere le informazioni relative all’uso dei miei dati pe"
+      label_translated: "I was able to view and understand the information relating to the use of my data eg"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

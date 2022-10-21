@@ -1,0 +1,329 @@
+site_examples {
+  url: "https://www.auto-doc.it"
+  is_structured: true
+  locale {
+    country: "IT"
+    language: "it"
+  }
+  sequences {
+    fields {
+      name: "lAnrede|lAnrede"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form_lVorname|lVorname"
+      label: "Nome*"
+      label_translated: "First name*"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "form_lName|lName"
+      label: "Cognome*"
+      label_translated: "Last name*"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "is_company_shipping|"
+      label: "È un indirizzo aziendale"
+      label_translated: "It&#39;s a business address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "is-lFiscal-code|"
+      label: "Codice fiscale (Opzionale)"
+      label_translated: "Tax number (Optional)"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form_lFiscalCode|lFiscalCode"
+      label: "Codice fiscale (Opzionale) Codice fiscale*"
+      label_translated: "Tax code (Optional) Tax code *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form_lFirma|lFirma"
+      label: "Azienda*"
+      label_translated: "Agency*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form_lUmsatzId|lUmsatzId"
+      label: "Partita IVA*"
+      label_translated: "VAT number*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form_lStrasse|lStrasse"
+      label: "Via*"
+      label_translated: "Street*"
+      control_type: INPUT
+      concepts: "street-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "form_delivery_house|delivery_house"
+      label: "Numero Civico*"
+      label_translated: "House number*"
+      control_type: INPUT
+      concepts: "house-number"
+      section: ADDRESS
+    }
+    fields {
+      name: "form_deliveryAddressDesc|deliveryAddressDesc"
+      label: "Indirizzo aggiuntivo"
+      label_translated: "Additional address"
+      control_type: INPUT
+      concepts: "address-overflow"
+      section: ADDRESS
+    }
+    fields {
+      name: "form_lPlz|lPlz"
+      label: "CAP*"
+      label_translated: "Postal code*"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "form_lOrt|lOrt"
+      label: "Città*"
+      label_translated: "City*"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "form_lLand|lLand"
+      label: "Paese*"
+      label_translated: "Country*"
+      control_type: SELECT
+      concepts: "country-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "Поиск..."
+      label_translated: "Поиск ..."
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "disabled"
+      section: OTHER
+    }
+    fields {
+      name: "form_lTelefonCode|lTelefonCode"
+      label: "Tel*"
+      label_translated: "Tel *"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Поиск..."
+      label_translated: "Поиск ..."
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "form_lTelefon|lTelefon"
+      label: "Tel*"
+      label_translated: "Tel *"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "form_Email|Email"
+      label: "Email*"
+      label_translated: "E-mail*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "showBilling|"
+      label: "Gli indirizzi di consegna e fatturazione coincidono"
+      label_translated: "The delivery and billing addresses are the same"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "isBilling|delivery_mode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form_surveySubscribe|survey_subscription"
+      label: "Acconsento ad essere contattato/a telefonicamente per l’effettuazione di sondaggi sul grado di soddi"
+      label_translated: "I agree to be contacted by telephone to carry out surveys on the degree of satisfaction"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "rAnrede|rAnrede"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form_rVorname|rVorname"
+      label: "Nome*"
+      label_translated: "First name*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form_rName|rName"
+      label: "Cognome*"
+      label_translated: "Last name*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "is_company_billing|"
+      label: "È un indirizzo aziendale"
+      label_translated: "It&#39;s a business address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "is-rFiscal-code|"
+      label: "Codice fiscale (Opzionale)"
+      label_translated: "Tax number (Optional)"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form_rFiscalCode|rFiscalCode"
+      label: "Codice fiscale (Opzionale) Codice fiscale*"
+      label_translated: "Tax code (Optional) Tax code *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form_Firma|Firma"
+      label: "Azienda*"
+      label_translated: "Agency*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form_rUmsatzId|rUmsatzId"
+      label: "Partita IVA*"
+      label_translated: "VAT number*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form_rStrasse|rStrasse"
+      label: "Via*"
+      label_translated: "Street*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form_payment_house|payment_house"
+      label: "Numero Civico*"
+      label_translated: "House number*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form_paymentAddressDesc|paymentAddressDesc"
+      label: "Indirizzo aggiuntivo Indirizzo aggiuntivo"
+      label_translated: "Additional address Additional address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form_rPlz|rPlz"
+      label: "CAP*"
+      label_translated: "POSTAL CODE*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form_rOrt|rOrt"
+      label: "Città*"
+      label_translated: "City*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form_rLand|rLand"
+      label: "Paese*"
+      label_translated: "Village*"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Поиск..."
+      label_translated: "Поиск ..."
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "disabled"
+      section: OTHER
+    }
+    fields {
+      name: "form_rTelefonCode|rTelefonCode"
+      label: "Tel*"
+      label_translated: "Tel *"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Поиск..."
+      label_translated: "Поиск ..."
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "form_rTelefon|rTelefon"
+      label: "Tel*"
+      label_translated: "Tel *"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+  }
+}
+

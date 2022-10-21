@@ -1,0 +1,205 @@
+site_examples {
+  url: "https://www.deghi.it"
+  is_structured: true
+  locale {
+    country: "IT"
+    language: "it"
+  }
+  sequences {
+    fields {
+      name: "|"
+      label: "Tutti"
+      label_translated: "All"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "search_elastic|search"
+      label: "Cerca ..."
+      label_translated: "Near ..."
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "formulate--checkout-Privato-7|Nome"
+      label: "Nome *"
+      label_translated: "First name *"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "formulate--checkout-Privato-8|Cognome"
+      label: "Cognome *"
+      label_translated: "Last name *"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "formulate--checkout-Privato-9|Indirizzo"
+      label: "Indirizzo *"
+      label_translated: "Address *"
+      control_type: INPUT
+      concepts: "street-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "formulate--checkout-Privato-10|N.Civico"
+      label: "N.Civico *"
+      label_translated: "Street number *"
+      control_type: INPUT
+      concepts: "house-number"
+      section: ADDRESS
+    }
+    fields {
+      name: "formulate--checkout-Privato-11|CAP"
+      label: "CAP *"
+      label_translated: "Postal code *"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "Nazione"
+      label_translated: "Country"
+      control_type: INPUT
+      concepts: "country-name"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "Provincia"
+      label_translated: "Province"
+      control_type: INPUT
+      concepts: "address-level1"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "Città"
+      label_translated: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "Loading..."
+      label_translated: "Loading ..."
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Loading..."
+      label_translated: "Loading ..."
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Loading..."
+      label_translated: "Loading ..."
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Loading..."
+      label_translated: "Loading ..."
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "formulate--checkout-Privato-12|Codice Fiscale"
+      label: "Codice Fiscale *"
+      label_translated: "Fiscal Code *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "formulate--checkout-Privato-1|Email"
+      label: "Email *"
+      label_translated: "Email *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "formulate--checkout-Privato-2|Telefono"
+      label: "Telefono *"
+      label_translated: "Phone *"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "formulate--checkout-Privato-3|password"
+      label: "Password*"
+      label_translated: "Password*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "formulate--checkout-Privato-4|password_confirm"
+      label: "Ripeti password*"
+      label_translated: "Repeat the password*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "formulate--checkout-Privato-5|"
+      label: "Acconsento al trattamento dei dati*"
+      label_translated: "I agree to the processing of data *"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "formulate--checkout-Privato-6|"
+      label: "Voglio iscrivermi alla newsletter"
+      label_translated: "I want to subscribe to the newsletter"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "email|email"
+      label: "Inserisci la tua migliore email"
+      label_translated: "Enter your best email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "search_elastic_footer|search"
+      label: "Cerca nell\'intero negozio..."
+      label_translated: "Search the entire store ..."
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+  }
+}
+
