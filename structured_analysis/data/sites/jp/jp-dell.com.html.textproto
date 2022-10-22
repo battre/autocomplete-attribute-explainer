@@ -53,7 +53,7 @@ site_examples {
       label: "会社名・氏名（カナ）"
       label_translated: "Company name/Name (Kana)"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "organization"
       section: ADDRESS
     }
     fields {

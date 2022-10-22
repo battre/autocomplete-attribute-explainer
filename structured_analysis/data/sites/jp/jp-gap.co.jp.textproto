@@ -1,0 +1,1387 @@
+site_examples {
+  url: "https://secure-www.gap.co.jp"
+  is_structured: false
+  locale {
+    country: "JP"
+    language: "ja"
+  }
+  sequences {
+    fields {
+      name: "small-search|searchText"
+      example: "Search"
+      example_translated: "Search"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "signInEmailAddress|signInEmailAddress"
+      label: "メールアドレス"
+      label_translated: "email address"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "signInPassword|signInPassword"
+      label: "パスワード"
+      label_translated: "password"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "signInButton|submit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "registrationEmailAddress|registrationEmailAddress"
+      label: "メールアドレス この情報が必要な理由"
+      label_translated: "Email address Why we need this information"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "signInContinueButton|submit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressFieldGroup1-shippingCountryCode|shippingAddressFieldGroup1-shippingCountryCode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressFieldGroup1-shippingStoreId|shippingAddressFieldGroup1-shippingStoreId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressFieldGroup1-shippingFirstName|shippingAddressFieldGroup1-shippingFirstName"
+      label: "*名（全角で入力してください）"
+      label_translated: "* First name (please enter in full-width characters)"
+      control_type: INPUT
+      concepts: "given-name"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressFieldGroup1-shippingLastName|shippingAddressFieldGroup1-shippingLastName"
+      label: "*性（全角で入力してください）"
+      label_translated: "*Gender (Please enter in full-width characters)"
+      label_comment: "Maybe a mistranslation? The field name indicates that this is the shipping last name."
+      control_type: INPUT
+      concepts: "family-name"
+      section: OTHER
+    }
+    fields {
+      name: "storeLookupButton|button"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressFieldGroup1-shippingAddressLine1|shippingAddressFieldGroup1-shippingAddressLine1"
+      label: "*住所欄１"
+      label_translated: "* Address field 1"
+      control_type: INPUT
+      concepts: "address-line1"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressFieldGroup1-shippingAddressLine2|shippingAddressFieldGroup1-shippingAddressLine2"
+      label: "建物名"
+      label_translated: "Building name"
+      control_type: INPUT
+      concepts: "address-line2"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressFieldGroup1-shippingCity|shippingAddressFieldGroup1-shippingCity"
+      label: "*市区町村"
+      label_translated: "*municipalities"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressFieldGroup1-shippingPostalCode|shippingAddressFieldGroup1-shippingPostalCode"
+      label: "*郵便番号"
+      label_translated: "*post code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressFieldGroup1-shippingDayPhone|shippingAddressFieldGroup1-shippingDayPhone"
+      label: "*日中の電話番号（ハイフン「-」なしで半角で入力してください。例：1234567890）"
+      label_translated: "*Daytime phone number (Please enter in half-width characters without hyphens, e.g. 1234567890)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressFieldGroup1-shippingState|shippingAddressFieldGroup1-shippingState"
+      label: "shippingAddressFieldGroup1-shippingState"
+      label_translated: "shippingAddressFieldGroup1-shippingState"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressFieldGroup2-shippingFirstName|shippingAddressFieldGroup2-shippingFirstName"
+      label: "*名（全角で入力してください）"
+      label_translated: "* First name (please enter in full-width characters)"
+      control_type: INPUT
+      concepts: "given-name"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressFieldGroup2-shippingLastName|shippingAddressFieldGroup2-shippingLastName"
+      label: "*性（全角で入力してください）"
+      label_translated: "*Gender (Please enter in full-width characters)"
+      label_comment: "Maybe a mistranslation? The field name indicates that this is the shipping last name."
+      control_type: INPUT
+      concepts: "family-name"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressFieldGroup2-shippingAddressLine1|shippingAddressFieldGroup2-shippingAddressLine1"
+      label: "*住所欄１"
+      label_translated: "* Address field 1"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressFieldGroup2-shippingAddressLine2|shippingAddressFieldGroup2-shippingAddressLine2"
+      label: "住所欄2"
+      label_translated: "Address field 2"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressFieldGroup2-shippingCity|shippingAddressFieldGroup2-shippingCity"
+      label: "*市区町村"
+      label_translated: "*municipalities"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressFieldGroup2-shippingState|shippingAddressFieldGroup2-shippingState"
+      label: "*州都道府県"
+      label_translated: "*State/province"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressFieldGroup2-shippingPostalCode|shippingAddressFieldGroup2-shippingPostalCode"
+      label: "*郵便番号"
+      label_translated: "*post code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressFieldGroup2-shippingDayPhone|shippingAddressFieldGroup2-shippingDayPhone"
+      label: "*日中の電話番号（ハイフン「-」なしで半角で入力してください。例：1234567890）"
+      label_translated: "*Daytime phone number (Please enter in half-width characters without hyphens, e.g. 1234567890)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressFieldGroup3-shippingFirstName|shippingAddressFieldGroup3-shippingFirstName"
+      label: "*名（全角で入力してください）"
+      label_translated: "* First name (please enter in full-width characters)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressFieldGroup3-shippingLastName|shippingAddressFieldGroup3-shippingLastName"
+      label: "*性（全角で入力してください）"
+      label_translated: "*Gender (Please enter in full-width characters)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressFieldGroup3-shippingAddressLine1|shippingAddressFieldGroup3-shippingAddressLine1"
+      label: "*住所欄１"
+      label_translated: "* Address field 1"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressFieldGroup3-shippingAddressLine2|shippingAddressFieldGroup3-shippingAddressLine2"
+      label: "住所欄2"
+      label_translated: "Address field 2"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressFieldGroup3-shippingCity|shippingAddressFieldGroup3-shippingCity"
+      label: "*市区町村"
+      label_translated: "*municipalities"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressFieldGroup3-shippingState|shippingAddressFieldGroup3-shippingState"
+      label: "*都道府県"
+      label_translated: "*Prefectures"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressFieldGroup3-shippingCounty|shippingAddressFieldGroup3-shippingCounty"
+      label: "*州都道府県"
+      label_translated: "*State/province"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressFieldGroup3-shippingPostalCode|shippingAddressFieldGroup3-shippingPostalCode"
+      label: "*郵便番号"
+      label_translated: "*post code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressFieldGroup3-shippingDayPhone|shippingAddressFieldGroup3-shippingDayPhone"
+      label: "*日中の電話番号（ハイフン「-」なしで半角で入力してください。例：1234567890）"
+      label_translated: "*Daytime phone number (Please enter in half-width characters without hyphens, e.g. 1234567890)"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "shippingAddressFieldGroup4-shippingFirstName|shippingAddressFieldGroup4-shippingFirstName"
+      label: "*名（全角で入力してください）"
+      label_translated: "* First name (please enter in full-width characters)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressFieldGroup4-shippingLastName|shippingAddressFieldGroup4-shippingLastName"
+      label: "*性（全角で入力してください）"
+      label_translated: "*Gender (Please enter in full-width characters)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressFieldGroup4-shippingAddressLine1|shippingAddressFieldGroup4-shippingAddressLine1"
+      label: "*住所欄１"
+      label_translated: "* Address field 1"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressFieldGroup4-shippingAddressLine2|shippingAddressFieldGroup4-shippingAddressLine2"
+      label: "住所欄2"
+      label_translated: "Address field 2"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressFieldGroup4-shippingCity|shippingAddressFieldGroup4-shippingCity"
+      label: "*市区町村"
+      label_translated: "*municipalities"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressFieldGroup4-shippingState|shippingAddressFieldGroup4-shippingState"
+      label: "*都道府県"
+      label_translated: "*Prefectures"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressFieldGroup4-shippingPostalCode|shippingAddressFieldGroup4-shippingPostalCode"
+      label: "*郵便番号"
+      label_translated: "*post code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressFieldGroup4-shippingDayPhone|shippingAddressFieldGroup4-shippingDayPhone"
+      label: "*日中の電話番号（ハイフン「-」なしで半角で入力してください。例：1234567890） *日中の電話番号（ハイフン「-」なしで半角で入力してください。例：1234567890）"
+      label_translated: "*Daytime phone number (Enter in half-width characters without hyphens.Example: 1234567890) *Daytime phone number (Enter in half-width characters without hyphens.Example: 1234567890)"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "shippingAddressFieldGroup5-shippingLastName|shippingAddressFieldGroup5-shippingLastName"
+      label: "*姓（全角で入力してください）"
+      label_translated: "*Last name (please enter in full-width characters)"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "shippingAddressFieldGroup5-shippingFirstName|shippingAddressFieldGroup5-shippingFirstName"
+      label: "*名（全角で入力してください）"
+      label_translated: "* First name (please enter in full-width characters)"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "shippingAddressFieldGroup5-shippingPostalCode|shippingAddressFieldGroup5-shippingPostalCode"
+      label: "*郵便番号(半角で入力してください)"
+      label_translated: "*Zip code (Please enter in half-width characters)"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddressFieldGroup5-shippingState|shippingAddressFieldGroup5-shippingState"
+      label: "都道府県"
+      label_translated: "Prefectures"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddressFieldGroup5-shippingCity|shippingAddressFieldGroup5-shippingCity"
+      label: "*市区町村"
+      label_translated: "*municipalities"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddressFieldGroup5-shippingAddressLine1|shippingAddressFieldGroup5-shippingAddressLine1"
+      label: "住所欄1"
+      label_translated: "Address field 1"
+      control_type: INPUT
+      concepts: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddressFieldGroup5-shippingAddressLine2|shippingAddressFieldGroup5-shippingAddressLine2"
+      label: "住所欄2"
+      label_translated: "Address field 2"
+      control_type: INPUT
+      concepts: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddressFieldGroup5-shippingDayPhone|shippingAddressFieldGroup5-shippingDayPhone"
+      label: "*日中の電話番号（ハイフン「-」なしで半角で入力してください。例：1234567890）"
+      label_translated: "*Daytime phone number (Please enter in half-width characters without hyphens, e.g. 1234567890)"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "shippingBillingSameAsShipping|shippingBillingSameAsShipping"
+      label: "請求情報にこの住所を使ってください。"
+      label_translated: "Please use this address for your billing information."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingOptions2038|shippingOptions"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingOptions2150|shippingOptions"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "selectedShippingOptionsRo|selectedShippingOptionsRo"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "selectedShippingOptionsDTLId|selectedShippingOptionsDTLId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingContinueButton|submit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingModuleEditButtonOn|submit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingModuleEditButtonOff|shippingModuleEditButtonOff"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "giftingYesButton|submit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "giftingNoButton|submit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "giftingGiftReceipt|giftingGiftReceipt"
+      label: "ギフトレシートを同封"
+      label_translated: "Enclose a gift receipt"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "giftingGreeting|giftingGreeting"
+      label: "受け取る方のお名前 （最大30文字）"
+      label_translated: "Recipient&#39;s name (up to 30 characters)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "giftingMessage|giftingMessage"
+      label: "メッセージ （最大70文字）"
+      label_translated: "Message (up to 70 characters)"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "giftingClosing|giftingClosing"
+      label: "贈る方のお名前 （最大30文字）"
+      label_translated: "Name of recipient (up to 30 characters)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "giftingContinueButton|submit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "giftingModuleEditButtonOn|submit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "giftingModuleEditButtonOff|giftingModuleEditButtonOff"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingCreditCardId|billingCreditCardId"
+      label: "* マイカード"
+      label_translated: "* My Card"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingCardNumber|billingCardNumber"
+      label: "* カード番号（半角数字で番号のみ入力してください）"
+      label_translated: "* Card number (Please enter only the number in half-width numbers)"
+      example: "クレジットカード番号を入力ください。"
+      example_translated: "Please enter your credit card number."
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PAYMENT
+    }
+    fields {
+      name: "billingExpirationMonth|billingExpirationMonth"
+      label: "* 有効期限"
+      label_translated: "* date of expiry"
+      example: "有効期限（月）"
+      example_translated: "Expiration date (months)"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "billingExpirationYear|billingExpirationYear"
+      label: "/"
+      label_translated: "/"
+      example: "有効期限 (年 : 4桁)"
+      example_translated: "Expiration date (year: 4 digits)"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "billingCardCvvNumber|billingCardCvvNumber"
+      label: "* セキュリティコード セキュリティコードとは"
+      label_translated: "* Security code What is a security code?"
+      example: "セキュリティコードを入力ください。"
+      example_translated: "Please enter the security code."
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PAYMENT
+    }
+    fields {
+      name: "saveCreditCardAsDefault|saveCreditCardAsDefault"
+      label: "次回のためにクレジットカード情報を保存します。"
+      label_translated: "Save your credit card information for next time."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressId|billingAddressId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "editBillingAddressButton|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingSameAsShippingCheck|"
+      label: "お届け先住所を使う"
+      label_translated: "Use your shipping address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup1-billingFirstName|billingAddressFieldGroup1-billingFirstName"
+      label: "*名（全角で入力してください）"
+      label_translated: "* First name (please enter in full-width characters)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup1-billingLastName|billingAddressFieldGroup1-billingLastName"
+      label: "*性（全角で入力してください）"
+      label_translated: "*Gender (Please enter in full-width characters)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup1-billingAddressLine1|billingAddressFieldGroup1-billingAddressLine1"
+      label: "*住所欄１"
+      label_translated: "* Address field 1"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup1-billingAddressLine2|billingAddressFieldGroup1-billingAddressLine2"
+      label: "建物名"
+      label_translated: "Building name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup1-billingCity|billingAddressFieldGroup1-billingCity"
+      label: "*市区町村"
+      label_translated: "*municipalities"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup1-billingState|billingAddressFieldGroup1-billingState"
+      label: "*都道府県"
+      label_translated: "*Prefectures"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup1-billingPostalCode|billingAddressFieldGroup1-billingPostalCode"
+      label: "*郵便番号"
+      label_translated: "*post code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup1-billingDayPhone|billingAddressFieldGroup1-billingDayPhone"
+      label: "*日中の電話番号（ハイフン「-」なしで半角で入力してください。例：1234567890）"
+      label_translated: "*Daytime phone number (Please enter in half-width characters without hyphens, e.g. 1234567890)"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "billingAddressFieldGroup2-billingFirstName|billingAddressFieldGroup2-billingFirstName"
+      label: "*名（全角で入力してください）"
+      label_translated: "* First name (please enter in full-width characters)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup2-billingLastName|billingAddressFieldGroup2-billingLastName"
+      label: "*性（全角で入力してください）"
+      label_translated: "*Gender (Please enter in full-width characters)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup2-billingAddressLine1|billingAddressFieldGroup2-billingAddressLine1"
+      label: "*住所欄１"
+      label_translated: "* Address field 1"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup2-billingAddressLine2|billingAddressFieldGroup2-billingAddressLine2"
+      label: "住所欄2"
+      label_translated: "Address field 2"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup2-billingCity|billingAddressFieldGroup2-billingCity"
+      label: "*市区町村"
+      label_translated: "*municipalities"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup2-billingState|billingAddressFieldGroup2-billingState"
+      label: "*州都道府県"
+      label_translated: "*State/province"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup2-billingPostalCode|billingAddressFieldGroup2-billingPostalCode"
+      label: "*郵便番号"
+      label_translated: "*post code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup2-billingDayPhone|billingAddressFieldGroup2-billingDayPhone"
+      label: "*日中の電話番号（ハイフン「-」なしで半角で入力してください。例：1234567890）"
+      label_translated: "*Daytime phone number (Please enter in half-width characters without hyphens, e.g. 1234567890)"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "billingAddressFieldGroup3-billingFirstName|billingAddressFieldGroup3-billingFirstName"
+      label: "*名（全角で入力してください）"
+      label_translated: "* First name (please enter in full-width characters)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup3-billingLastName|billingAddressFieldGroup3-billingLastName"
+      label: "*性（全角で入力してください）"
+      label_translated: "*Gender (Please enter in full-width characters)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup3-billingAddressLine1|billingAddressFieldGroup3-billingAddressLine1"
+      label: "*住所欄１"
+      label_translated: "* Address field 1"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup3-billingAddressLine2|billingAddressFieldGroup3-billingAddressLine2"
+      label: "住所欄2"
+      label_translated: "Address field 2"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup3-billingCity|billingAddressFieldGroup3-billingCity"
+      label: "*市区町村"
+      label_translated: "*municipalities"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup3-billingState|billingAddressFieldGroup3-billingState"
+      label: "*都道府県"
+      label_translated: "*Prefectures"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup3-billingPostalCode|billingAddressFieldGroup3-billingPostalCode"
+      label: "*郵便番号"
+      label_translated: "*post code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup3-billingDayPhone|billingAddressFieldGroup3-billingDayPhone"
+      label: "*日中の電話番号（ハイフン「-」なしで半角で入力してください。例：1234567890）"
+      label_translated: "*Daytime phone number (Please enter in half-width characters without hyphens, e.g. 1234567890)"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "billingAddressFieldGroup4-billingFirstName|billingAddressFieldGroup4-billingFirstName"
+      label: "*名（全角で入力してください）"
+      label_translated: "* First name (please enter in full-width characters)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup4-billingLastName|billingAddressFieldGroup4-billingLastName"
+      label: "*性（全角で入力してください）"
+      label_translated: "*Gender (Please enter in full-width characters)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup4-billingAddressLine1|billingAddressFieldGroup4-billingAddressLine1"
+      label: "*住所欄1"
+      label_translated: "*Address field 1"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup4-billingAddressLine2|billingAddressFieldGroup4-billingAddressLine2"
+      label: "住所欄2"
+      label_translated: "Address field 2"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup4-billingCity|billingAddressFieldGroup4-billingCity"
+      label: "*市区町村"
+      label_translated: "*municipalities"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup4-billingState|billingAddressFieldGroup4-billingState"
+      label: "*都道府県"
+      label_translated: "*Prefectures"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup4-billingPostalCode|billingAddressFieldGroup4-billingPostalCode"
+      label: "*郵便番号"
+      label_translated: "*post code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup4-billingDayPhone|billingAddressFieldGroup4-billingDayPhone"
+      label: "*日中の電話番号（ハイフン「-」なしで半角で入力してください。例：1234567890）"
+      label_translated: "*Daytime phone number (Please enter in half-width characters without hyphens, e.g. 1234567890)"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "billingAddressFieldGroup5-billingLastName|billingAddressFieldGroup5-billingLastName"
+      label: "*姓（全角で入力してください）"
+      label_translated: "*Last name (please enter in full-width characters)"
+      control_type: INPUT
+      concepts: "family-name"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup5-billingFirstName|billingAddressFieldGroup5-billingFirstName"
+      label: "*名（全角で入力してください）"
+      label_translated: "* First name (please enter in full-width characters)"
+      control_type: INPUT
+      concepts: "given-name"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup5-billingPostalCode|billingAddressFieldGroup5-billingPostalCode"
+      label: "*郵便番号（全角で入力してください）"
+      label_translated: "*post code (please enter in full-width characters)"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup5-billingState|billingAddressFieldGroup5-billingState"
+      label: "*都道府県"
+      label_translated: "*Prefectures"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup5-billingCity|billingAddressFieldGroup5-billingCity"
+      label: "*市区町村"
+      label_translated: "*municipalities"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup5-billingAddressLine1|billingAddressFieldGroup5-billingAddressLine1"
+      label: "*住所欄1"
+      label_translated: "*Address field 1"
+      control_type: INPUT
+      concepts: "address-line1"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup5-billingAddressLine2|billingAddressFieldGroup5-billingAddressLine2"
+      label: "住所欄2"
+      label_translated: "Address field 2"
+      control_type: INPUT
+      concepts: "address-line2"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressFieldGroup5-billingDayPhone|billingAddressFieldGroup5-billingDayPhone"
+      label: "*日中の電話番号（ハイフン「-」なしで半角で入力してください。例：1234567890）"
+      label_translated: "*Daytime phone number (Please enter in half-width characters without hyphens, e.g. 1234567890)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingInputGiftCard|billingInputGiftCard"
+      label: "Gift card番号"
+      label_translated: "Gift card number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingInputGiftCardPin|billingInputGiftCardPin"
+      label: "暗証番号"
+      label_translated: "personal identification number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "giftCardApplyButton|submit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingInputPromoRewardCode|billingInputPromoRewardCode"
+      label: "クーポンコード"
+      label_translated: "Coupon code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingPromoCodeApply|submit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingContinueButton|submit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingModuleEditButtonOn|submit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingModuleEditButtonOff|billingModuleEditButtonOff"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingSummaryInputGiftCard|billingSummaryInputGiftCard"
+      label: "Gift card:"
+      label_translated: "Gift cards:"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingSummaryInputGiftCardPin|billingSummaryInputGiftCardPin"
+      label: "billingSummaryInputGiftCardPin"
+      label_translated: "billingSummaryInputGiftCardPin"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "giftCardSummaryApplyButton|submit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingSummaryInputPromoRewardCode|billingSummaryInputPromoRewardCode"
+      label: "プロモーション＆クーポンコード:"
+      label_translated: "Promotions &amp; Coupon Codes:"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "promoCodeSummaryApplyButton|submit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "saveShippingAndBillingAsDefault|saveShippingAndBillingAsDefault"
+      label: "次回のために、上の支払い情報をデフォルト設定します。"
+      label_translated: "Default payment information above for next time."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "emailOptinIndicator|emailOptinIndicator"
+      label: "上記で入力したメールアドレスへのメールマガジン配信を希望します。ブランド： Gap."
+      label_translated: "I would like to receive the e-mail magazine to the e-mail address entered above. Brand: Gap."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "agreePrivacyPolicyTermsAndConditions|agreePrivacyPolicyTermsAndConditions"
+      label: "私は 利用規約 および プライバシーポリシー を読み、理解し、同意しました。"
+      label_translated: "I have read, understood and agree to the Terms of Use and Privacy Policy."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "placeOrderButton|submit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkoutType|checkoutType"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "isNewUser|isNewUser"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "orderConfirmationNumber|orderConfirmationNumber"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "productsInBag|productsInBag"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "merchandiseSubTotal|merchandiseSubTotal"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cjUrl|cjUrl"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bluestreakRangeUrl|bluestreakRangeUrl"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "marinRangeUrl|marinRangeUrl"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "microsoftUrl|microsoftUrl"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "googleUrl|googleUrl"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "googleProductAdUrl|googleProductAdUrl"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "searchDexUrl|searchDexUrl"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "acernoUrl|acernoUrl"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brandWiseItemsTotal|brandWiseItemsTotal"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingOptionSelected|shippingOptionSelected"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "loyaltyMemberId|loyaltyMemberId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "productBrands|productBrands"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingZipCode|shippingZipCode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingState|shippingState"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingCountryCode|shippingCountryCode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cardTypeName|cardTypeName"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "localVATPercent|localVATPercent"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bopisActive|bopisActive"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "emailAddress|emailAddress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "pickUpOrderType|pickUpOrderType"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "registrationPassword|registrationPassword"
+      label: "CREATE PASSWORD"
+      label_translated: "CREATE PASSWORD"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "registrationPasswordMatch|registrationPasswordMatch"
+      label: "パスワードを確認"
+      label_translated: "Confirm password"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "saveCardYesRadioButton|saveCreditCardInRegistration"
+      label: "はい"
+      label_translated: "yes"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "saveCardNoRadioButton|saveCreditCardInRegistration"
+      label: "いいえ"
+      label_translated: "No"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "completeRegistrationContinueButton|submit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "sessionTimeOutContinueButton|submit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "addressVerificationPanelHiddenInput|"
+      label: "入力された住所が認識できません。 間違いがないか確認してください。"
+      label_translated: "The address you entered is not recognized. Please check for any mistakes."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "addressVerificationEditAddressButton|addressVerificationEditAddressButton"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "addressVerificationConfirmAddressButton|addressVerificationConfirmAddressButton"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "selectButton1|submit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "selectButton2|submit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "addressAcceptSuggestionButton|addressAcceptSuggestionButton"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressFieldGroup1-clickAndCollectSearchAddress|shippingAddressFieldGroup1-clickAndCollectSearchAddress"
+      label: "Enter Postal Code or Location"
+      label_translated: "Enter Postal Code or Location"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "storeLookupButton|submit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingGiftCardBalanceCardNumber|billingGiftCardBalanceCardNumber"
+      label: "Gift card number"
+      label_translated: "Gift card number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingGiftCardBalanceCardPin|billingGiftCardBalanceCardPin"
+      label: "暗証番号"
+      label_translated: "personal identification number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "giftCardBalanceCheckBalanceButton|submit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "giftCardBalanceApplyCardNumber|giftCardBalanceApplyCardNumber"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "giftCardBalanceApplyCardPin|giftCardBalanceApplyCardPin"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "giftCardBalanceApplyButton|submit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "updateShippingWithBillingButtonYes|submit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "updateShippingWithBillingButtonNo|submit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_device_id|order_device_id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "PaReq|PaReq"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "TermUrl|TermUrl"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "MD|MD"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "updateBillingSameAsShippingYesButton|submit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "updateBillingSameAsShippingNoButton|submit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+
