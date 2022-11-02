@@ -97,7 +97,7 @@ site_examples {
       example: "例：〇〇マンション"
       example_translated: "Example: 〇〇 apartment"
       control_type: INPUT
-      concepts: "premise"
+      concepts: "building"
       concepts: "organization"
       section: ADDRESS
     }
@@ -108,7 +108,7 @@ site_examples {
       example: "例：123"
       example_translated: "Example: 123"
       control_type: INPUT
-      concepts: "sub-premise"
+      concepts: "part-of-building"
       section: ADDRESS
     }
     fields {

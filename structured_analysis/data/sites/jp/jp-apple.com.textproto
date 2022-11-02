@@ -90,7 +90,7 @@ site_examples {
       label: "アパート名、部屋名、入館コード（任意）"
       label_translated: "Apartment name, room name, entrance code (optional)"
       control_type: INPUT
-      concepts: "premise-and-sub-premise"
+      concepts: "building-and-part-of-building"
       concepts: "door-code"
       autocomplete_attribute: "address-line2"
       section: ADDRESS

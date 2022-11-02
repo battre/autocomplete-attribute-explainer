@@ -296,7 +296,7 @@ concepts {
 
 
 concepts {
-  name: "premise"
+  name: "building"
   description: "Name of a building"
   canonical_format_example: "Stata Center"
   label: "Building name"
@@ -361,7 +361,7 @@ compound_concepts {
 }
 
 compound_concepts {
-  name: "sub-premise"
+  name: "part-of-building"
   description: "All fields within a building, depending on the country. "
     "E.g. apartment number, floor, stair case, ..."
   tokens {
@@ -370,23 +370,23 @@ compound_concepts {
 }
 
 compound_concepts {
-  name: "premise-and-sub-premise"
-  description: "Name of a building plus sub-premise information"
+  name: "building-and-part-of-building"
+  description: "Name of a building plus part-of-building information"
   tokens {
-    concept_name: "premise"
+    concept_name: "building"
   }
   tokens {
     separator_value: ", "
   }
   tokens {
-    concept_name: "sub-premise"
+    concept_name: "part-of-building"
   }
 }
 
 compound_concepts {
   name: "address-search"
   description: "An address search widget, typically accepting information down "
-    "to the premise level, but no name or sub-premise information. "
+    "to the building level, but no name or part-of-building information. "
     "E.g. 32 Vassar Street, Cambridge, MA, USA"
   label: "n/a: this would not be shown in the UI."
 

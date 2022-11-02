@@ -142,7 +142,7 @@ site_examples {
       label: "建物名"
       label_translated: "Building name"
       control_type: INPUT
-      concepts: "premise"
+      concepts: "building"
       section: ADDRESS
     }
     fields {

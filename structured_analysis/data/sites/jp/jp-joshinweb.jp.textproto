@@ -211,7 +211,7 @@ site_examples {
       label_translated: "Address etc. Required"
       control_type: INPUT
       concepts: "street-location"
-      concepts: "premise-and-sub-premise"
+      concepts: "building-and-part-of-building"
       section: ADDRESS
     }
     fields {

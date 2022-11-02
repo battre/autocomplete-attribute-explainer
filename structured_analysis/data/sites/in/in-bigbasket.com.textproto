@@ -42,7 +42,7 @@ site_examples {
       label_comment: "This may be confusing to foreigners but the 'apartment "
         "name' actually refers to the building name."
       control_type: INPUT
-      concepts: "premise"
+      concepts: "building"
       section: ADDRESS
     }
     fields {

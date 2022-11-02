@@ -142,7 +142,7 @@ site_examples {
       label: "Bâtiment"
       label_translated: "Building"
       control_type: INPUT
-      concepts: "premise"
+      concepts: "building"
       autocomplete_attribute: "address-line3"
       section: ADDRESS
     }

@@ -33,7 +33,7 @@ site_examples {
       name: "shippingAddress-apartmentNumber|shippingAddress.apartmentNumber"
       label: "Lvl, Apt or Unit No."
       control_type: INPUT
-      concepts: "sub-premise"
+      concepts: "part-of-building"
       section: ADDRESS
     }
     fields {

@@ -62,7 +62,7 @@ site_examples {
       example: "مثال برج الأميرة"
       example_translated: "Princess Tower example"
       control_type: INPUT
-      concepts: "premise"
+      concepts: "building"
       concepts: "house-number"
     }
     fields {

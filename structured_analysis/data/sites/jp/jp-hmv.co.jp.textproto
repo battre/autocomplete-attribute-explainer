@@ -67,7 +67,7 @@ site_examples {
       example: "例）ゲートシティ大崎イーストタワー"
       example_translated: "Example) Gate City Osaki East Tower"
       control_type: INPUT
-      concepts: "premise-and-sub-premise"
+      concepts: "building-and-part-of-building"
       section: ADDRESS
     }
     fields {

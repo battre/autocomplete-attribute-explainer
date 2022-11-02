@@ -48,7 +48,7 @@ site_examples {
       label: "Flat Number / House Name"
       label_comment: "The autocomplete attribute says 'address-line-2' and I "
         "am not sure whether we should represent this as an [apartment-number "
-        "premise] combination."
+        "building] combination."
       control_type: INPUT
       concepts: "address-line2"
       low_certainty: true

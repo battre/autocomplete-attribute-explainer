@@ -161,7 +161,7 @@ site_examples {
       label: "House number, name or unit"
       control_type: INPUT
       concepts: "house-number"
-      concepts: "premise"
+      concepts: "building"
       section: ADDRESS
     }
     fields {

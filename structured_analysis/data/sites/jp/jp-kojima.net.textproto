@@ -97,7 +97,7 @@ site_examples {
       example: "例）コジママンション１２３号室"
       example_translated: "Example) Kojima Mansion Room 123"
       control_type: INPUT
-      concepts: "premise-and-sub-premise"
+      concepts: "building-and-part-of-building"
       autocomplete_attribute: "off"
       section: ADDRESS
     }

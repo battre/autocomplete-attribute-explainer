@@ -76,7 +76,7 @@ site_examples {
       label: "Flat number / Building Name*"
       control_type: INPUT
       concepts: "apartment"
-      concepts: "premise"
+      concepts: "building"
       autocomplete_attribute: "Off"
       section: ADDRESS
     }

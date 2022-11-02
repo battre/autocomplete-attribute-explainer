@@ -44,7 +44,7 @@ site_examples {
       name: "|"
       label: "Building / Floor / Apartment / Unit:"
       control_type: INPUT
-      concepts: "premise-and-sub-premise"
+      concepts: "building-and-part-of-building"
       section: ADDRESS
     }
     fields {

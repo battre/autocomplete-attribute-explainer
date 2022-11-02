@@ -88,7 +88,7 @@ site_examples {
       concepts: "address-line3"
       concepts_comment: "The website labels this as autocomplete=address-line3 "
         "but I don't know whehter users would leave address line 2 blank to "
-        "enter sub-premise information into this field."
+        "enter part-of-building information into this field."
       autocomplete_attribute: "shipping address-line3"
       low_certainty: true
       section: ADDRESS

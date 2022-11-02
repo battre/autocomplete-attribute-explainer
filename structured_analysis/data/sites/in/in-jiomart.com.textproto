@@ -67,7 +67,7 @@ site_examples {
       name: "buildingname|building_name"
       label: "Building / Apartment Name"
       control_type: INPUT
-      concepts: "premise"
+      concepts: "building"
       section: ADDRESS
     }
     fields {

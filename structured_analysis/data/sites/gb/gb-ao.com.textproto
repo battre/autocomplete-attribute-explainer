@@ -10,10 +10,10 @@ site_examples {
       name: "|HouseNameNumber"
       label: "House number / name"
       label_comment: "Note that we may need to ask for a house name or number. "
-        "Maybe we want to expreiss this as house-number or premise."
+        "Maybe we want to expreiss this as house-number or building."
       control_type: INPUT
       concepts: "house-number"
-      concepts: "premise"
+      concepts: "building"
       low_certainty: true
       section: ADDRESS
     }

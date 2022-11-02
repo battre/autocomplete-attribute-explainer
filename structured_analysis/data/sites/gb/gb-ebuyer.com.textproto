@@ -98,7 +98,7 @@ site_examples {
       name: "js-shipping-address-property|strShippingProperty"
       label: "Property Name/Number"
       control_type: INPUT
-      concepts: "premise"
+      concepts: "building"
       concepts: "house-number"
       section: ADDRESS
     }

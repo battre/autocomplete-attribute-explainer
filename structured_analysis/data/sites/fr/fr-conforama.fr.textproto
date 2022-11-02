@@ -263,7 +263,7 @@ site_examples {
       label: "Bâtiment"
       label_translated: "Building"
       control_type: INPUT
-      concepts: "premise"
+      concepts: "building"
       section: ADDRESS
     }
     fields {

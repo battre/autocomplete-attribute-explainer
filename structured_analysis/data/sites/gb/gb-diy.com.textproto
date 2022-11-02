@@ -66,7 +66,7 @@ site_examples {
       name: "|houseName"
       label: "House or building name"
       control_type: INPUT
-      concepts: "premise"
+      concepts: "building"
       autocomplete_attribute: "house_name"
       section: ADDRESS
     }
