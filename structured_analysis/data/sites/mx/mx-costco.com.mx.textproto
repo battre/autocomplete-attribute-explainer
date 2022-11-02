@@ -1,0 +1,892 @@
+site_examples {
+  url: "https://www.costco.com.mx"
+  is_structured: true
+  locale {
+    country: "MX"
+    language: "es"
+  }
+  sequences {
+    fields {
+      name: "|"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|text"
+      example: "Encuentra un tesoro en cada click"
+      example_translated: "Find a treasure with every click"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|text"
+      example: "Encuentra un tesoro en cada click"
+      example_translated: "Find a treasure with every click"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "cmsSiteUid|cmsSiteUid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "consentMembershipRadioAgreeAll|agreeAllCheck"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "consentsMap[\'ACCEPT_GENERAL_TERMS\']|consentsMap[\'ACCEPT_GENERAL_TERMS\']"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_consentsMap[\'ACCEPT_GENERAL_TERMS\']"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mandatoryConsents[\'ACCEPT_GENERAL_TERMS\']|mandatoryConsents[\'ACCEPT_GENERAL_TERMS\']"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "consentsMap[\'ACCEPT_COLLECTION_PERSONAL_INFO\']|consentsMap[\'ACCEPT_COLLECTION_PERSONAL_INFO\']"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_consentsMap[\'ACCEPT_COLLECTION_PERSONAL_INFO\']"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mandatoryConsents[\'ACCEPT_COLLECTION_PERSONAL_INFO\']|mandatoryConsents[\'ACCEPT_COLLECTION_PERSONAL_INFO\']"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "consentsMap[\'ACCEPT_USE_PERSONAL_INFO_PROMOTIONS\']|consentsMap[\'ACCEPT_USE_PERSONAL_INFO_PROMOTIONS\']"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_consentsMap[\'ACCEPT_USE_PERSONAL_INFO_PROMOTIONS\']"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mandatoryConsents[\'ACCEPT_USE_PERSONAL_INFO_PROMOTIONS\']|mandatoryConsents[\'ACCEPT_USE_PERSONAL_INFO_PROMOTIONS\']"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "consentsMap[\'ACCEPT_USE_PERSONAL_INFO_THIRDPARTY\']|consentsMap[\'ACCEPT_USE_PERSONAL_INFO_THIRDPARTY\']"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_consentsMap[\'ACCEPT_USE_PERSONAL_INFO_THIRDPARTY\']"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mandatoryConsents[\'ACCEPT_USE_PERSONAL_INFO_THIRDPARTY\']|mandatoryConsents[\'ACCEPT_USE_PERSONAL_INFO_THIRDPARTY\']"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CSRFToken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "membershipType|membershipType"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "countryCode|countryCode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "membershipCode|membershipCode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "allowIdentityNumber|allowIdentityNumber"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "allowRegularIdentityNumber|allowRegularIdentityNumber"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "prefix|prefix"
+      label: "Prefijo"
+      label_translated: "Prefix"
+      control_type: SELECT
+      concepts: "honorific-prefix"
+      section: NAME
+    }
+    fields {
+      name: "firstName|firstName"
+      label: "Nombre"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "lastName|lastName"
+      label: "Apellido paterno"
+      label_translated: "Last name"
+      control_type: INPUT
+      concepts: "gap"
+      section: NAME
+    }
+    fields {
+      name: "maternalLastName|maternalLastName"
+      label: "Apellido materno"
+      label_translated: "Mother&#39;s last name"
+      control_type: INPUT
+      concepts: "gap"
+      section: NAME
+    }
+    fields {
+      name: "suffix|suffix"
+      label: "Sufijo"
+      label_translated: "Suffix"
+      control_type: SELECT
+      concepts: "honorific-suffix"
+      section: NAME
+    }
+    fields {
+      name: "gender|gender"
+      label: "Género"
+      label_translated: "Gender"
+      control_type: SELECT
+      concepts: "sex"
+      section: NAME
+    }
+    fields {
+      name: "dobYear|dobYear"
+      label: "Fecha de nacimiento"
+      label_translated: "Date of Birth"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dobMonth|dobMonth"
+      label: "Fecha de nacimiento"
+      label_translated: "Date of Birth"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dobDay|dobDay"
+      label: "Fecha de nacimiento"
+      label_translated: "Date of Birth"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "addressValidationTypeId|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "informaticaJobToken|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "isBillingAddress|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "homeAddress11|address1"
+      label: "Calle y número exterior"
+      label_translated: "Street and exterior number"
+      control_type: INPUT
+      concepts: "street-location"
+      section: ADDRESS
+    }
+    fields {
+      name: "homeAddress21|address2"
+      label: "Número Interior"
+      label_translated: "Inside Number"
+      control_type: INPUT
+      concepts: "apartment"
+      section: ADDRESS
+    }
+    fields {
+      name: "colonia1|colonia"
+      label: "Colonia"
+      label_translated: "Colonia"
+      control_type: INPUT
+      concepts: "address-level4"
+      section: ADDRESS
+    }
+    fields {
+      name: "city1|city"
+      label: "Delegación o Municipio"
+      label_translated: "Delegation or Municipality"
+      control_type: INPUT
+      concepts: "address-level3"
+      low_certainty: true
+      section: ADDRESS
+    }
+    fields {
+      name: "postalCode1|postalCode"
+      label: "Código Postal"
+      label_translated: "Zip Code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "crossStreet|crossStreet"
+      label: "Referencias adicionales"
+      label_translated: "Additional references"
+      control_type: INPUT
+      concepts: "gap"
+      section: ADDRESS
+    }
+    fields {
+      name: "isBillingAddress|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "homeAddress11|address1"
+      label: "Calle y número exterior"
+      label_translated: "Street and outside number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "homeAddress21|address2"
+      label: "Número Interior"
+      label_translated: "Interior number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "colonia1|colonia"
+      label: "Colonia"
+      label_translated: "Cologne"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "city1|city"
+      label: "Delegación o Municipio"
+      label_translated: "Delegation or Municipality"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|state"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "state1|state"
+      label: "Estado"
+      label_translated: "Condition"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "postalCode1|postalCode"
+      label: "Código Postal"
+      label_translated: "Postal Code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "crossStreet|crossStreet"
+      label: "Referencias adicionales"
+      label_translated: "additional references"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "email|email"
+      label: "Correo electrónico"
+      label_translated: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "emailConfirm|emailConfirm"
+      label: "Confirma el correo electrónico"
+      label_translated: "Confirm email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "password|password"
+      label: "Contraseña"
+      label_translated: "Password"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "passwordConfirm|passwordConfirm"
+      label: "Confirma la contraseña"
+      label_translated: "Confirm the password"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mobilePhone|mobilePhone"
+      label: "Celular"
+      label_translated: "Cell phone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "homePhone|homePhone"
+      label: "Teléfono(opcional)"
+      label_translated: "Telephone(optional)"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "bizName|bizName"
+      label: "Razón Social"
+      label_translated: "Business name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bizTaxId|bizTaxId"
+      label: "RFC"
+      label_translated: "RFC"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bizPhone|bizPhone"
+      label: "Teléfono"
+      label_translated: "Telephone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "bizEmail|bizEmail"
+      label: "Correo electrónico"
+      label_translated: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bizEmailConfirm|bizEmailConfirm"
+      label: "Confirma el correo electrónico"
+      label_translated: "Confirm email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bizAddress11|bizAddress1"
+      label: "Calle Calle"
+      label_translated: "Street street"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bizAddress21|bizAddress2"
+      label: "Número Interior Número Interior"
+      label_translated: "Inside Number Inside Number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bizColonia1|bizColonia"
+      label: "Colonia"
+      label_translated: "Cologne"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bizCity1|bizCity"
+      label: "Municipio Municipio"
+      label_translated: "Municipality Municipality"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bizState1|bizState"
+      label: "Estado Estado"
+      label_translated: "State State"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bizPostalCode1|bizPostalCode"
+      label: "Código Postal Código Postal"
+      label_translated: "Zip Code Zip Code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bizCrossStreet|bizCrossStreet"
+      label: "Referencias adicionales Referencias adicionales"
+      label_translated: "Additional references Additional references"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bizAddress11|bizAddress1"
+      label: "Calle"
+      label_translated: "Street"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bizAddress21|bizAddress2"
+      label: "Número Interior"
+      label_translated: "Interior number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bizColonia1|bizColonia"
+      label: "Colonia"
+      label_translated: "Cologne"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bizCity1|bizCity"
+      label: "Municipio"
+      label_translated: "Municipality"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bizState1|bizState"
+      label: "Estado"
+      label_translated: "Condition"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bizPostalCode1|bizPostalCode"
+      label: "Código Postal"
+      label_translated: "Postal Code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bizCrossStreet|bizCrossStreet"
+      label: "Referencias adicionales"
+      label_translated: "additional references"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "spousePrefix|spousePrefix"
+      label: "Prefijo"
+      label_translated: "Prefix"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "spouseFirstName|spouseFirstName"
+      label: "Nombre"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "spouseLastName|spouseLastName"
+      label: "Apellido paterno"
+      label_translated: "Last name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "spouseMaternalLastName|spouseMaternalLastName"
+      label: "Apellido materno"
+      label_translated: "Mother&#39;s last name"
+      control_type: INPUT
+      concepts: "unset"
+      section: NAME
+    }
+    fields {
+      name: "spouseSuffix|spouseSuffix"
+      label: "Sufijo"
+      label_translated: "Suffix"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "spouseGender|spouseGender"
+      label: "Género"
+      label_translated: "Gender"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "spouseDobYear|spouseDobYear"
+      label: "Fecha de nacimiento"
+      label_translated: "Date of Birth"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "spouseDobMonth|spouseDobMonth"
+      label: "Fecha de nacimiento"
+      label_translated: "Date of Birth"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "spouseDobDay|spouseDobDay"
+      label: "Fecha de nacimiento"
+      label_translated: "Date of Birth"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "spouseEmail|spouseEmail"
+      label: "Correo electrónico"
+      label_translated: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "spouseEmailConfirm|spouseEmailConfirm"
+      label: "Confirma el correo electrónico"
+      label_translated: "Confirm email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "spouseHomePhone|spouseHomePhone"
+      label: "Teléfono"
+      label_translated: "Telephone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "checkbox-multi-radio_CP-TRANSACTIONAL-MOBILE-MEXICO|"
+      label: "También deseo recibir notificaciones en mi celular."
+      label_translated: "I also want to receive notifications on my cell phone."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "radio-button_CP-TRANSACTIONAL-MOBILE-MEXICO_WHATSAPP|preferencesForm.communicationPreferences[CP-TRANSACTIONAL-MOBILE-MEXICO].defaultSubscriptions[WHATSAPP]"
+      label: "Whatsapp"
+      label_translated: "WhatsApp"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "radio-button_CP-TRANSACTIONAL-MOBILE-MEXICO_SMS|preferencesForm.communicationPreferences[CP-TRANSACTIONAL-MOBILE-MEXICO].defaultSubscriptions[SMS]"
+      label: "Mensajes SMS"
+      label_translated: "SMS messages"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkbox-subscribe-to-all|"
+      label: "Deseo recibir información de Costco en mi correo electrónico."
+      label_translated: "I want to receive information from Costco in my email."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CP-MARKETING-EMAIL-MEXICO|preferencesForm.communicationPreferences[CP-MARKETING-EMAIL-MEXICO].defaultSubscriptions[EMAIL]"
+      label: "Información sobre mi membresía, promociones, servicios nuevos y noticias exclusivas para Socios."
+      label_translated: "Information about my membership, promotions, new services and exclusive news for Members."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "interestEmail|preferencesForm.communicationPreferences[interestEmail].defaultSubscriptions[EMAIL]"
+      label: "Información basada en mis intereses."
+      label_translated: "Information based on my interests."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "my-account-select-all-interests|preferencesForm.selectAllInterests"
+      label: "Seleccionar todo"
+      label_translated: "Select all"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "009|preferencesForm.interests[009].selected"
+      label: "Automotriz y Llantas"
+      label_translated: "Automotive and Tires"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "preferencesForm.interests009.name|preferencesForm.interests[009].name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "008|preferencesForm.interests[008].selected"
+      label: "Bebés y Niños"
+      label_translated: "Babies and Children"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "preferencesForm.interests008.name|preferencesForm.interests[008].name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "007|preferencesForm.interests[007].selected"
+      label: "Club del Vino"
+      label_translated: "wine club"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "preferencesForm.interests007.name|preferencesForm.interests[007].name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "001|preferencesForm.interests[001].selected"
+      label: "Cuidado Personal"
+      label_translated: "Personal care"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "preferencesForm.interests001.name|preferencesForm.interests[001].name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "006|preferencesForm.interests[006].selected"
+      label: "Electrónica"
+      label_translated: "electronics"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "preferencesForm.interests006.name|preferencesForm.interests[006].name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "005|preferencesForm.interests[005].selected"
+      label: "Hogar"
+      label_translated: "Home"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "preferencesForm.interests005.name|preferencesForm.interests[005].name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "004|preferencesForm.interests[004].selected"
+      label: "Mascotas"
+      label_translated: "Pets"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "preferencesForm.interests004.name|preferencesForm.interests[004].name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "003|preferencesForm.interests[003].selected"
+      label: "Moda y Belleza"
+      label_translated: "Fashion and Beauty"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "preferencesForm.interests003.name|preferencesForm.interests[003].name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "002|preferencesForm.interests[002].selected"
+      label: "Negocios"
+      label_translated: "Business"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "preferencesForm.interests002.name|preferencesForm.interests[002].name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CSRFToken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|selection"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "footer-search-field|q"
+      label: "Ciudad o Estado"
+      label_translated: "City or State"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "searchClear|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "footer-email-offers|emailSignUp"
+      label: "Ingresa tu email"
+      label_translated: "Enter your email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "accesibility_refreshScreenReaderBufferField|accesibility_refreshScreenReaderBufferField"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

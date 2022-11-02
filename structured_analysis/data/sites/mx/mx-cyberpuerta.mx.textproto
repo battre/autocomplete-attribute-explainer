@@ -1,0 +1,655 @@
+site_examples {
+  url: "thttps://www.cyberpuerta.mxodo"
+  is_structured: true
+  locale {
+    country: "MX"
+    language: "es"
+  }
+  sequences {
+    fields {
+      name: "|stoken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|lang"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|actcontrol"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|tpl"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|oxloadid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|lgn_cook"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CustomError"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|user"
+      label: "E-Mail:"
+      label_translated: "E-mail:"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|password"
+      label: "Contraseña:"
+      label_translated: "Password:"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|stoken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|lang"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|actcontrol"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|fnc"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|cl"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|lgn_cook"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "reloadAddress|reloadaddress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|option"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CustomError"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|lgn_name"
+      label: "Nombre:"
+      label_translated: "Name:"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|lgn_usr"
+      label: "E-mail:"
+      label_translated: "E-mail:"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "emuser_password1|lgn_pwd"
+      label: "Contraseña:"
+      label_translated: "Password:"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "emuser_password2|lgn_pwd2"
+      label: "Confirmar contraseña:"
+      label_translated: "Confirm Password:"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|blnewssubscribed"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|blnewssubscribed"
+      label: "Sí"
+      label_translated: "Yes"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|blnewssubscribed"
+      label: "No"
+      label_translated: "Nope"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|oxaddress__oxfname"
+      label: "Nombre(s) destinatario:*"
+      label_translated: "Recipient Name(s):*"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "|oxaddress__oxlname"
+      label: "Apellido(s) destinatario:*"
+      label_translated: "Recipient Surname(s):*"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "|oxaddress__oxfon"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "cpsal-mrb|oxaddress__oxsal"
+      label: "Género: H"
+      label_translated: "Sex: H"
+      control_type: RADIO
+      concepts: "sex"
+      section: NAME
+    }
+    fields {
+      name: "cpsal-mrsb|oxaddress__oxsal"
+      label: "Género: M"
+      label_translated: "Género: M"
+      control_type: RADIO
+      concepts: "sex"
+      section: NAME
+    }
+    fields {
+      name: "|oxaddress__oxcompany"
+      label: "Empresa destino"
+      label_translated: "Recipient company"
+      control_type: INPUT
+      concepts: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "|oxaddress__oxstreet"
+      label: "Calle:"
+      label_translated: "Street:"
+      control_type: INPUT
+      concepts: "street-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "|oxaddress__oxstreetnr"
+      label: "Número:"
+      label_translated: "House number"
+      control_type: INPUT
+      concepts: "house-number"
+      section: ADDRESS
+    }
+    fields {
+      name: "|oxaddress__emstreetnrint"
+      label: "Int:"
+      label_translated: "Internal number:"
+      control_type: INPUT
+      concepts: "apartment"
+      section: ADDRESS
+    }
+    fields {
+      name: "|oxaddress__oxaddinfo"
+      label: "Referencia"
+      label_translated: "Reference"
+      example: "(entre calles o puntos de referencia)"
+      example_translated: "(between streets or landmarks)"
+      control_type: INPUT
+      concepts: "gap"
+      section: ADDRESS
+    }
+    fields {
+      name: "|oxaddress__emcolonia"
+      label: "Colonia"
+      label_translated: "Colonia"
+      control_type: INPUT
+      concepts: "address-level4"
+      section: ADDRESS
+    }
+    fields {
+      name: "|oxaddress__oxzip"
+      label: "Código Postal"
+      label_translated: "Postal code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "|oxaddress__oxcity"
+      label: "Ciudad"
+      label_translated: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "|oxaddress__oxstateid"
+      label: "Estado:"
+      label_translated: "State:"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "|oxaddress__oxcountryid"
+      label: "País:"
+      label_translated: "Country"
+      control_type: INPUT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "billing_cpid|cpid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|cpcompany"
+      label: "Razón Social o Nombre:"
+      label_translated: "Company Name or Name:"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|cpust_id"
+      label: "RFC:"
+      label_translated: "RFC:"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|cpcompany"
+      label: "Razón Social o Nombre:"
+      label_translated: "Company Name or Name:"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|cpust_id"
+      label: "RFC:"
+      label_translated: "RFC:"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|stoken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|lang"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|actcontrol"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|sourcecl"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|cl"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|pgNr"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cpnosto_place|place"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|parentlink"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|oxaddressid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|oxaddress__oxfname"
+      label: "Nombre(s) destinatario:*"
+      label_translated: "Recipient Name(s):*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|oxaddress__oxlname"
+      label: "Apellido(s) destinatario:*"
+      label_translated: "Recipient Surname(s):*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|oxaddress__oxfon"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "cpsal-mr|oxaddress__oxsal"
+      label: "H"
+      label_translated: "H"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cpsal-mrs|oxaddress__oxsal"
+      label: "M"
+      label_translated: "M"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|oxaddress__oxcompany"
+      label: "(Opcional)"
+      label_translated: "(Optional)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|oxaddress__oxstreet"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|oxaddress__oxstreetnr"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|oxaddress__emstreetnrint"
+      label: "Favor de llenar"
+      label_translated: "please fill"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|oxaddress__oxaddinfo"
+      label: "(entre calles o puntos de referencia)"
+      label_translated: "(between streets or landmarks)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|oxaddress__emcolonia"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|oxaddress__oxzip"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|oxaddress__oxcity"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|oxaddress__oxstateid"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|oxaddress__oxcountryid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|cpid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|cpcompany"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|cpust_id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

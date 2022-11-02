@@ -1,0 +1,119 @@
+site_examples {
+  url: "https://www.cuidadoconelperro.com.mx"
+  is_structured: true
+  locale {
+    country: "MX"
+    language: "es"
+  }
+  sequences {
+    fields {
+      name: "search-input|"
+      label: "Buscar producto..."
+      label_translated: "Search product..."
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "a-email|username"
+      label: "Correo Electrónico *"
+      label_translated: "Email *"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "username"
+      section: OTHER
+    }
+    fields {
+      name: "anonymous-firstName|anonymous-firstName"
+      label: "Nombre(s) *"
+      label_translated: "Name(s) *"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "anonymous-lastName|anonymous-lastName"
+      label: "Apellidos *"
+      label_translated: "Surnames *"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "anonymous-address|anonymous-address"
+      label: "Dirección *"
+      label_translated: "Address *"
+      control_type: INPUT
+      concepts: "street-location"
+      low_certainty: true
+      autocomplete_attribute: "street-address"
+      section: ADDRESS
+    }
+    fields {
+      name: "anonymous-between|anonymous-between"
+      label: "Entre calles *"
+      label_translated: "Between streets *"
+      control_type: INPUT
+      concepts: "gap"
+      autocomplete_attribute: "address-level4"
+      section: ADDRESS
+    }
+    fields {
+      name: "|anonymous-state"
+      label: "Estado *"
+      label_translated: "State *"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "anonymous-city|anonymous-city"
+      label: "Ciudad *"
+      label_translated: "City *"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "anonymous-colony|anonymous-colony"
+      label: "Colonia *"
+      label_translated: "Colonia *"
+      control_type: INPUT
+      concepts: "address-level4"
+      autocomplete_attribute: "address-level3"
+      section: ADDRESS
+    }
+    fields {
+      name: "anonymous-zip|anonymous-zip"
+      label: "Código Postal *"
+      label_translated: "Postal Code *"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "postal-code"
+      section: OTHER
+    }
+    fields {
+      name: "anonymous-phone|anonymous-phone"
+      label: "Teléfono *"
+      label_translated: "Telephone *"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "tel-local"
+      section: PHONE
+    }
+    fields {
+      name: "mobile-search|mobile-search"
+      label: "Buscar producto..."
+      label_translated: "Search product..."
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+  }
+}
+

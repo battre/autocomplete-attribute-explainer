@@ -1,0 +1,257 @@
+site_examples {
+  url: "https://www.casadellibro.com"
+  is_structured: false
+  locale {
+    country: "MX"
+    language: "es"
+  }
+  sequences {
+    fields {
+      name: "checkoutRegisterUserName|"
+      label: "Nombre*"
+      label_translated: "Name*"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "checkoutRegisterUserLastname|"
+      label: "Apellidos*"
+      label_translated: "Surnames*"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "checkoutRegisterUserEmail|"
+      label: "Email*"
+      label_translated: "E-mail*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkoutRegisterUserPassword|"
+      label: "Contraseña*"
+      label_translated: "Password*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "input-2017|"
+      label: "Consientes que te recomendemos, de forma personalizada, libros, ofertas, novedades y otros productos"
+      label_translated: "You agree that we recommend you, in a personalized way, books, offers, news and other products"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "regSocio|"
+      label: "Sí, quiero ser socio de Casa del Libro gratis."
+      label_translated: "Yes, I want to be a member of Casa del Libro for free."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "regSocioInf|"
+      label: "Sí, quiero añadir a un menor de 14 años al programa de socios infantil Leo."
+      label_translated: "Yes, I want to add a child under the age of 14 to the Leo Child Membership Program."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "nombreDestinatario|"
+      label: "Nombre Destinatario*"
+      label_translated: "Recipient Name*"
+      control_type: INPUT
+      concepts: "unset"
+      section: NAME
+    }
+    fields {
+      name: "apellidosDestinatario|"
+      label: "Apellidos Destinatario*"
+      label_translated: "Recipient Surname*"
+      control_type: INPUT
+      concepts: "unset"
+      section: NAME
+    }
+    fields {
+      name: "direccionEnvio|"
+      label: "Dirección*"
+      label_translated: "Address*"
+      control_type: INPUT
+      concepts: "street-address"
+      section: ADDRESS
+    }
+    fields {
+      name: "paisEnvio|"
+      label: "País*"
+      label_translated: "Country*"
+      control_type: INPUT
+      concepts: "country"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "codigoPostalEnvio|"
+      label: "Código Postal*"
+      label_translated: "Postal Code*"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "provinciaEnvio|"
+      label: "Provincia*"
+      label_translated: "Province*"
+      control_type: INPUT
+      concepts: "address-level1"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "poblacionEnvio|"
+      label: "Selecciona tu ciudad, población o urbanización*"
+      label_translated: "Select your city, population or urbanization*"
+      control_type: CUSTOM
+      concepts: "address-level2"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "prefijoTelefonoEnvio|"
+      label: "+34"
+      label_translated: "+34"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PHONE
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "telefonoEnvio|"
+      label: "Teléfono*"
+      label_translated: "Telephone*"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Numeración de la tarjeta*"
+      label_translated: "Card number*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "titularTarjeta|"
+      label: "Titular de la tarjeta*"
+      label_translated: "Cardholder*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mesTarjeta|"
+      label: "Mes*"
+      label_translated: "Month*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "anioTarj|"
+      label: "Año*"
+      label_translated: "Year*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "CVV*"
+      label_translated: "CVV*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "tarjetaFuturas|"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "facturaSi|radio-1976"
+      label: "si"
+      label_translated: "Yes"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "facturaNo|radio-1976"
+      label: "no"
+      label_translated: "No"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "input-1988|"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "input-2028|"
+      label: "País"
+      label_translated: "Country"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Por favor, escribe aquí..."
+      label_translated: "Please write here..."
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

@@ -1,0 +1,772 @@
+site_examples {
+  url: "https://www.coppel.com"
+  is_structured: true
+  locale {
+    country: "MX"
+    language: "es"
+  }
+  sequences {
+    fields {
+      name: "selectedAddressId|selectedAddressId"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "editAddressFirst|editAddressFirst"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "showDatosEntrega|showDatosEntrega"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "xCurrentOrderId|xCurrentOrderId"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "csrf_authToken|csrf_authToken"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "currentOrderQuantity|"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "currentOrderAmount|"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "currentOrderCurrency|"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "currentOrderLanguage|"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "currentOrderId|"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "currentOrderLocked|"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "thereIsAtLeastOneMotoInCart|"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "listOfMotosSku|"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "address_id|"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "urlName|"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "total_x|total_x"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "importeMinimo|importeMinimo"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "checkoutCountry|"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "WC_UnregisteredCheckout_inputs_1|storeId"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "WC_UnregisteredCheckout_inputs_2|catalogId"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "WC_UnregisteredCheckout_inputs_3|langId"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "WC_UnregisteredCheckout_inputs_4|status"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "WC_UnregisteredCheckout_inputs_5|addressType"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "WC_UnregisteredCheckout_inputs_authToken_billing|authToken"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "WC__ShoppingCartAddressEntryForm_billingAddressCreateEditFormDiv_1_nickName|nickName"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "WC__ShoppingCartAddressEntryForm_billingAddressCreateEditFormDiv_1_email1_1|email1"
+      label: "Correo electrónico:"
+      label_translated: "Email:"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "new-email1"
+      section: OTHER
+    }
+    fields {
+      name: "WC__ShoppingCartAddressEntryForm_billingAddressCreateEditFormDiv_1_firstName_1|firstName"
+      label: "Nombre(s)"
+      label_translated: "Names"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "new-firstName"
+      section: NAME
+    }
+    fields {
+      name: "WC__ShoppingCartAddressEntryForm_billingAddressCreateEditFormDiv_1_lastName_1|lastName"
+      label: "Apellidos"
+      label_translated: "Surnames"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "new-lastName"
+      section: NAME
+    }
+    fields {
+      name: "WC__ShoppingCartAddressEntryForm_billingAddressCreateEditFormDiv_1_phone1_1|phone1"
+      label: "Teléfono (10 dígitos) Fijo Celular"
+      label_translated: "Telephone (10 digits) Landline Cellular"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "new-phone1"
+      section: PHONE
+    }
+    fields {
+      name: "f|phone1Type"
+      label: "Fijo"
+      label_translated: "Permanent"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "c|phone1Type"
+      label: "Celular"
+      label_translated: "Cell phone"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "WC__ShoppingCartAddressEntryForm_billingAddressCreateEditFormDiv_1_addressField1_1|addressField1"
+      label: "Calle"
+      label_translated: "Street"
+      control_type: INPUT
+      concepts: "street-name"
+      autocomplete_attribute: "new-addressField1"
+      section: ADDRESS
+    }
+    fields {
+      name: "WC__ShoppingCartAddressEntryForm_billingAddressCreateEditFormDiv_1_address3_1|address3"
+      label: "Número exterior"
+      label_translated: "Outdoor Number"
+      control_type: INPUT
+      concepts: "house-number"
+      autocomplete_attribute: "new-address3"
+      section: ADDRESS
+    }
+    fields {
+      name: "WC__ShoppingCartAddressEntryForm_billingAddressCreateEditFormDiv_1_addressField2_1|addressField2"
+      label: "Interior"
+      label_translated: "Inside"
+      control_type: INPUT
+      concepts: "apartment"
+      autocomplete_attribute: "new-addressField2"
+      section: ADDRESS
+    }
+    fields {
+      name: "WC__ShoppingCartAddressEntryForm_billingAddressCreateEditFormDiv_1_zipCode_1|zipCode"
+      label: "Código postal"
+      label_translated: "Postal Code"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "new-zipCode1"
+      section: ADDRESS
+    }
+    fields {
+      name: "addressField3Hidden|addressField3Hidden"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "coloniaValidation|addressField3"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "addressField3Name|addressField3Name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "colonia|colonia"
+      label: "Colonia:"
+      label_translated: "Colonia:"
+      example: "Elegir"
+      example_translated: "To choose"
+      control_type: CUSTOM
+      concepts: "address-level4"
+      autocomplete_attribute: "new-password"
+      section: ADDRESS
+    }
+    fields {
+      name: "hdnAddressField3|hdnAddressField3"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "hdnCodeColonia|hdnCodeColonia"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "WC_AccountForm_AddressEntryForm_FormInput_state_1|state"
+      label: "Estado"
+      label_translated: "State"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "hdnState|hdnState"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "hdnCountry|hdnCountry"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "selectCityAddress|cityAddress"
+      label: "Ciudad o Estado"
+      label_translated: "City or State"
+      control_type: SELECT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "hdnCity|hdnCity"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "WC__ShoppingCartAddressEntryForm_billingAddressCreateEditFormDiv_1_address2_1|address2"
+      label: "Dirección"
+      label_translated: "Address"
+      control_type: INPUT
+      concepts: "street-address"
+      autocomplete_attribute: "new-address2"
+      section: ADDRESS
+    }
+    fields {
+      name: "WC__ShoppingCartAddressEntryForm_billingAddressCreateEditFormDiv_1_address1_1|address1"
+      label: "¿Entre qué calles está el domicilio? Referencias, ¿qué se encuentra cerca?"
+      label_translated: "Between which streets is the address? References, what is nearby?"
+      control_type: INPUT
+      concepts: "gap"
+      autocomplete_attribute: "new-address1"
+      section: ADDRESS
+    }
+    fields {
+      name: "sendMeEmail|sendMeEmail"
+      label: "Deseo recibir ofertas y promociones en mi correo electrónico"
+      label_translated: "I want to receive offers and promotions in my email"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkEntrega|checkEntrega"
+      label: "Quiero que alguien más pueda recibir mi pedido"
+      label_translated: "I want someone else to receive my order"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|internalOfficeAddress"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "nameRecipient|nameRecipient"
+      label: "Nombre"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "new-nameRecipient"
+      section: OTHER
+    }
+    fields {
+      name: "surnameRecipient|surnameRecipient"
+      label: "Apellido"
+      label_translated: "Surname"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "new-surnameRecipient"
+      section: OTHER
+    }
+    fields {
+      name: "hdnMiddleName|hdnMiddleName"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "phone2|phone2"
+      label: "Teléfono (10 dígitos)"
+      label_translated: "Phone (10 digits)"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "new-phone2"
+      section: PHONE
+    }
+    fields {
+      name: "F|phone2Type"
+      label: "Fijo"
+      label_translated: "Permanent"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "C|phone2Type"
+      label: "Celular"
+      label_translated: "Cell phone"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "AddressForm_FieldsOrderByLocale|"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "SameShippingAndBillingAddress|SameShippingAndBillingAddress"
+      label: "Igual que mi dirección de facturación"
+      label_translated: "Same as my billing address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "WC_UnregisteredCheckout_inputs_6|storeId"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "WC_UnregisteredCheckout_inputs_7|catalogId"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "WC_UnregisteredCheckout_inputs_8|langId"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "WC_UnregisteredCheckout_inputs_9|status"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "WC_UnregisteredCheckout_inputs_10|addressType"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "WC_UnregisteredCheckout_inputs_authToken_shipping|authToken"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "hiddenTotalProductPrice|hiddenTotalProductPrice"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "hiddenTotalProductPrice_1|hiddenTotalProductPrice_1"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "piAmount_CreditoCoppel|piAmountCreditoCoppel"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "total_price|total_price"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "hiddenTotalShippingCharges|hiddenTotalShippingCharge"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "total_price_creditCoppel|total_price_creditCoppel"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "OrderTotalAmount|OrderTotalAmount"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "currentPageNumber|currentPageNumber"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "id_order_shipping_name_state|order_shipping_name_state"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "id_order_shipping_name_city|order_shipping_name_city"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "id_order_shipping_name_postalcode|order_shipping_name_postalcode"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "orderItem_1|orderItem_1"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "xShipMode_1|xShipMode_1"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "catalogId_1|catalogId_1"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "selectedAttr_500131471|selectedAttr"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "qty_1|qty_1"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "qty_1|qty_1"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "item_1|item_1"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "order_item_dineroElectronico_1049099|"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "ProductTagInfo_500131471|"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "totalNumberOfItems|totalNumberOfItems"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "addressId_all|addressId_all"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "shipModeId_all|shipModeId_all"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "setCurrentIdDeleteArticle|setCurrentIdDeleteArticle"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "itemUniqueIdDeleteArticle|itemUniqueIdDeleteArticle"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "item_countDeleteArticle|item_countDeleteArticle"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "configuracionTipoOrden|configurationTypeOrden"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "tottalShippingCharge|tottalShippingCharge"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "amountMinime|amountMinime"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "currentOrderAmount|"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "x_typeOrder|x_typeOrder"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "enableOrderTypeConfiguration|enableOrderTypeConfiguration"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "catalogoCoppel|"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "footer_subscribe_hombre|footer_subscribe_tipo"
+      label: "Soy hombre"
+      label_translated: "I am a man"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "footer_subscribe_mujer|footer_subscribe_tipo"
+      label: "Soy mujer"
+      label_translated: "I am a woman"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "sendNewlatter|email1"
+      label: "Ingresa tu correo electrónico"
+      label_translated: "Enter your email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "IpInorganico|"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+
