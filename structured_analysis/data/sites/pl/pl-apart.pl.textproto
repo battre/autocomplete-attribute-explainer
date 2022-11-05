@@ -1,0 +1,618 @@
+site_examples {
+  url: "https://www.apart.pl"
+  is_structured: false
+  locale {
+    country: "PL"
+    language: "pl"
+  }
+  sequences {
+    fields {
+      name: "|cena-od"
+      label: "od"
+      label_translated: "from"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|cena-do"
+      label: "do"
+      label_translated: "down"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|kamien"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|cena-od"
+      label: "od"
+      label_translated: "from"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|cena-do"
+      label: "do"
+      label_translated: "down"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|kolekcja"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|cena-od"
+      label: "od"
+      label_translated: "from"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|cena-do"
+      label: "do"
+      label_translated: "down"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|cena-od"
+      label: "od"
+      label_translated: "from"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|cena-do"
+      label: "do"
+      label_translated: "down"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|dla-kogo"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|cena-od"
+      label: "od"
+      label_translated: "from"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|cena-do"
+      label: "do"
+      label_translated: "down"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|dla-kogo"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|cena-od"
+      label: "od"
+      label_translated: "from"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|cena-do"
+      label: "do"
+      label_translated: "down"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|cena-od"
+      label: "od"
+      label_translated: "from"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|cena-do"
+      label: "do"
+      label_translated: "down"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Szukaj"
+      label_translated: "Search"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|items[][catalog]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|items[][id]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|items[][catalog]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|items[][id]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cartTotal|cartTotal"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkoutLocal|checkoutLocal"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cartTotalWithDiscount|cartTotalWithDiscount"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store_country_code|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "isECard|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_pod|shipping_pod"
+      label: "Sposób dostawy *"
+      label_translated: "Delivery method *"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "country_id|country_id"
+      label: "Sposób dostawy * Kraj *"
+      label_translated: "Delivery method * Country *"
+      control_type: SELECT
+      concepts: "country"
+      autocomplete_attribute: "no"
+      section: ADDRESS
+    }
+    fields {
+      name: "inputShipping-Courier-GLS|shipping"
+      label: "Kurier"
+      label_translated: "Delivery man"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "inputShipping-Courier-FedEx|shipping"
+      label: "Kurier FedEx"
+      label_translated: "FedEx courier"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "enablePaymentCOD|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "inputPayment-Payu|payment"
+      label: "Płatność szybkim przelewem online"
+      label_translated: "Payment by fast online transfer"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "inputPayment-PayPo|payment"
+      label: "Kup teraz, sprawdź produkt i zapłać za 30 dni"
+      label_translated: "Buy now, check the product and pay in 30 days"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "inputPayment-CreditCards|payment"
+      label: "Płatność kartą płatniczą lub kredytową"
+      label_translated: "Payment by credit or debit card"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "inputPayment-PayURaty|payment"
+      label: "WNIOSEK ONLINE"
+      label_translated: "ONLINE APPLICATION"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "inputPayment-Blik|payment"
+      label: "Płatność kodem BLIK"
+      label_translated: "Payment with the BLIK code"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "inputPayment-COD|payment"
+      label: "Płatność przy odbiorze paczki"
+      label_translated: "Payment upon receipt of the package"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "inputPayment-BankTransfer|payment"
+      label: "Płatność przelewem tradycyjnym"
+      label_translated: "Traditional bank transfer"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select_point|select_point"
+      label: "Punkt dostawy *"
+      label_translated: "Delivery point *"
+      example: "Wybierz punkt na mapie"
+      example_translated: "Select a point on the map"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_bp_id|shipping_bp_id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_pod_id|shipping_pod_id"
+      label: "Wybierz salon Apart *"
+      label_translated: "Choose Apart lounge *"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Search"
+      label_translated: "Search"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "firstname|firstname"
+      label: "Imię *"
+      label_translated: "Name *"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "lastname|lastname"
+      label: "Nazwisko *"
+      label_translated: "Last name *"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "address|address"
+      label: "Adres (ulica i numer domu/lokalu) *"
+      label_translated: "Address (street and house / flat number) *"
+      control_type: INPUT
+      concepts: "address-line1"
+      concepts_comment: "The website asks for street name, house number and "
+        "flat number here and sets the autocomplete attribute to 'anything-else' "
+        "for the next field."
+      section: ADDRESS
+    }
+    fields {
+      name: "address2|address2"
+      label: "Adres (ew. dodatkowe informacje)"
+      label_translated: "Address (additional information, if applicable)"
+      control_type: INPUT
+      concepts: "address-line2"
+      autocomplete_attribute: "anything-else"
+      section: ADDRESS
+    }
+    fields {
+      name: "postcode|postcode"
+      label: "Kod pocztowy *"
+      label_translated: "ZIP code *"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "city|city"
+      label: "Miejscowość *"
+      label_translated: "City *"
+      control_type: INPUT
+      concepts: "address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "mobile_prefix|mobile_prefix"
+      label: "Kod *"
+      label_translated: "Code *"
+      control_type: SELECT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "mobile|mobile"
+      label: "Telefon komórkowy"
+      label_translated: "Mobile phone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "email|email"
+      label: "Adres email"
+      label_translated: "E-mail adress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "toggleSendAsGift|"
+      label: "Wysyłka jako upominek"
+      label_translated: "Shipping as a gift"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "gift-message|gift-message"
+      label: "Treść dedykacji"
+      label_translated: "The content of the dedication"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "card_template|card_template"
+      example: "Wybierz wzór"
+      example_translated: "Choose a pattern"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "card_template_input|card_template_input"
+      label: "Wybierz wzór"
+      label_translated: "Choose a pattern"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|gift[firstname]"
+      label: "Imię"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|gift[lastname]"
+      label: "Nazwisko"
+      label_translated: "Last name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|gift[address]"
+      label: "Adres (ulica i numer domu/lokalu)"
+      label_translated: "Address (street and house / flat number)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|gift[postcode]"
+      label: "Kod pocztowy"
+      label_translated: "ZIP code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|gift[city]"
+      label: "Miejscowość"
+      label_translated: "City"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "toggleInvoiceData|"
+      label: "Dane do faktury"
+      label_translated: "Billing"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|vatId"
+      label: "NIP"
+      label_translated: "Tax ID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|invoice[company]"
+      label: "Nazwa firmy"
+      label_translated: "company name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|invoice[address]"
+      label: "Adres (ulica i numer domu/lokalu)"
+      label_translated: "Address (street and house / flat number)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|invoice[postcode]"
+      label: "Kod pocztowy"
+      label_translated: "ZIP code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|invoice[city]"
+      label: "Miejscowość"
+      label_translated: "City"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "invoice-country-id|invoice[country_id]"
+      label: "Kraj"
+      label_translated: "Country"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "comments|comments"
+      label: "Komentarze"
+      label_translated: "Comments"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "terms_accepted|terms_accepted"
+      label: "Zapoznałem się z"
+      label_translated: "I got acquainted with"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payuAccept|payuAccept"
+      label: "Akceptuję"
+      label_translated: "I accept"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "paypoAccept|paypoAccept"
+      label: "Akceptuję „Regulamin pojedynczej transakcji płatniczej PayPo”."
+      label_translated: "I accept the &quot;Regulations for a single PayPo payment transaction&quot;."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|shop_code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|source"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|language"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "newsletter-email|email"
+      label: "Podaj adres email"
+      label_translated: "give me your e-mail address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|pic"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

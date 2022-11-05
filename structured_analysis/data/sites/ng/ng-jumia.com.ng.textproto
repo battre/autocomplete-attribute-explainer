@@ -1,0 +1,127 @@
+site_examples {
+  url: "https://www.jumia.com.ng"
+  is_structured: false
+  locale {
+    country: "NG"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "|YII_CSRF_TOKEN"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAsShipping|billingAsShipping"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "selectedIdBillingAddress|selectedIdBillingAddress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "selectedIdShippingAddress|selectedIdShippingAddress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "newShippingAddress|newShippingAddress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "newBillingAddress|newBillingAddress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ShippingAddressForm_id_customer_address|ShippingAddressForm[id_customer_address]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ShippingAddressForm_first_name|ShippingAddressForm[first_name]"
+      label: "First Name *"
+      example: "Femi"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "ShippingAddressForm_last_name|ShippingAddressForm[last_name]"
+      label: "Last Name *"
+      example: "Chukuma Muhammed"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "ShippingAddressForm_phone_prefix|ShippingAddressForm[phone_prefix]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ShippingAddressForm_phone|ShippingAddressForm[phone]"
+      label: "Mobile Phone Number *"
+      example: "8080000000"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "ShippingAddressForm_additional_phone_prefix|ShippingAddressForm[additional_phone_prefix]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ShippingAddressForm_additional_phone|ShippingAddressForm[additional_phone]"
+      label: "Additional mobile number"
+      example: "8080000000"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "ShippingAddressForm_address1|ShippingAddressForm[address1]"
+      label: "Delivery Address *"
+      example: "Street Name / Building / Apartment No. / Floor"
+      control_type: TEXTAREA
+      concepts: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "ShippingAddressForm_address2|ShippingAddressForm[address2]"
+      label: "Additional Info"
+      example: "Landmark / Directions / More Details"
+      control_type: TEXTAREA
+      concepts: "address-line2"
+      section: OTHER
+    }
+    fields {
+      name: "ShippingAddressForm_fk_customer_address_region|ShippingAddressForm[fk_customer_address_region]"
+      label: "State/Region *"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "ShippingAddressForm_fk_customer_address_city|ShippingAddressForm[fk_customer_address_city]"
+      label: "City *"
+      control_type: SELECT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+  }
+}
+

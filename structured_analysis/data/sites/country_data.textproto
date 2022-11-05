@@ -374,16 +374,39 @@ country_data {
 country_data {
   country: "MY"
   country_name: "Malaysia 🇲🇾"
+  site_examples_preamble_html:
+    "<p>Malaysian addresses forms are very simple, typically with address "
+    "lines 1, 2 and sometimes \"additional address information\". TBH most "
+    "websites tested looked like international websites and those that looked "
+    "more local could not be tested because they required a local phone number."
+    "For this reason only few websites are listed here. All others looked the"
+    "same.</p>"
 }
 
 country_data {
   country: "NG"
   country_name: "Nigeria 🇳🇬"
+  site_examples_preamble_html:
+    "<p>Practically all websites I have seen relied on unstructured addresses. "
+    "I observed that most websites I saw were hosted via WooCommerce which may "
+    "be a common practice or a sampling bias. I saw a single exceptional website "
+    "which asked for the LGA (Local Government Area). As per official "
+    "guidelines, addresses have the following order of elements (see page 28 of "
+    "<a href=\"https://www.nipost.gov.ng/Site_Downloads/NIGERIAN-NATIONAL-ADDRESSING-STANDARD-AND-GUIDELINES.pdf\">here</a>): "
+    "District, Postcode, City, Local Government Area, State, "
+    "Country. This means that a city would need to be address-level3. In "
+    "practice my sample of sites did not ask for LGAs frequently (except for one "
+    "page) so there would be a high chance of confusion if we supported this "
+    "field as address-level2."
+    "</p>"
 }
 
 country_data {
   country: "PL"
   country_name: "Poland 🇵🇱"
+  site_examples_preamble_html:
+    "<p>Polish addresses rely on address-line1, 2, 3 or separate fields for street "
+    "name, house number and apartment number.</p>"
 }
 
 country_data {
