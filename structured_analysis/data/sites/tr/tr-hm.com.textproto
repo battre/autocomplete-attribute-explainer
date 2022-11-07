@@ -1,0 +1,213 @@
+site_examples {
+  url: "https://www2.hm.com"
+  is_structured: false
+  locale {
+    country: "TR"
+    language: "tr"
+  }
+  sequences {
+    fields {
+      name: "main-search|q"
+      label: "Ürün ara"
+      label_translated: "Search product"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "firstName|firstName"
+      label: "Adın"
+      label_translated: "your name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "lastName|lastName"
+      label: "Soyadınız"
+      label_translated: "Your surname"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "province|province"
+      label: "Şehir"
+      label_translated: "City"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "town|town"
+      label: "İlçe/Şehir"
+      label_translated: "County/City"
+      control_type: SELECT
+      concepts: "address-level2"
+      autocomplete_attribute: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "district|district"
+      label: "Semt/Mahalle"
+      label_translated: "District/Neighborhood"
+      control_type: SELECT
+      concepts: "address-level3"
+      section: ADDRESS
+    }
+    fields {
+      name: "line1|line1"
+      label: "Adres"
+      label_translated: "Address"
+      control_type: INPUT
+      concepts: "street-address"
+      autocomplete_attribute: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "club-signin-day|day"
+      label: "gg"
+      label_translated: "gg"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "bday-day"
+      section: OTHER
+    }
+    fields {
+      name: "club-signin-month|month"
+      label: "."
+      label_translated: "."
+      example: "aa"
+      example_translated: "AA"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "bday-month"
+      section: OTHER
+    }
+    fields {
+      name: "club-signin-year|year"
+      label: "."
+      label_translated: "."
+      example: "yyyy"
+      example_translated: "yyyy"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "bday-year"
+      section: OTHER
+    }
+    fields {
+      name: "club-dob|birthDate"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|hmClubJoin"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "upgrade-create-account-fashion-news|hmNewsSubscription"
+      label: "Evet; fırsatlar, stil güncellemeleri, satış ve etkinliklere özel davetler için bana e-posta gönder."
+      label_translated: "Yes; Email me for deals, style updates, sales and special invitations to events."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0001|ot-group-id-C0001"
+      label: "Kesinlikle gerekli çerezler"
+      label_translated: "Strictly necessary cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0002|ot-group-id-C0002"
+      label: "Performans çerezleri"
+      label_translated: "Performance cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0003|ot-group-id-C0003"
+      label: "İşlevsel çerezler"
+      label_translated: "Functional cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0004|ot-group-id-C0004"
+      label: "Pazarlama çerezleri"
+      label_translated: "Marketing cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "vendor-search-handler|vendor-search-handler"
+      label: "Vendor Search"
+      label_translated: "Vendor Search"
+      example: "Search..."
+      example_translated: "Search..."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "storage-access-group|"
+      label: "Information storage and access"
+      label_translated: "Information storage and access"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-vendor-leg-handler|"
+      label: "Select All Vendors"
+      label_translated: "Select All Vendors"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-vendor-groups-handler|"
+      label: "Select All Vendors"
+      label_translated: "Select All Vendors"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-hosts-groups-handler|"
+      label: "Select All Hosts"
+      label_translated: "Select All Hosts"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|pid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_scsid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_sclid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

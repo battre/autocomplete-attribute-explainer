@@ -1,0 +1,400 @@
+site_examples {
+  url: "https://www.dr.com.tr"
+  is_structured: true
+  locale {
+    country: "TR"
+    language: "tr"
+  }
+  sequences {
+    fields {
+      name: "selectedId|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "sameAddress|"
+      label: "Teslimat ve fatura adresim aynı."
+      label_translated: "My delivery and billing address are the same."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|shippingoption"
+      label: "Standart Teslimat 7,99 TL"
+      label_translated: "Standard Delivery 7.99 TL"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "discountcouponcode|"
+      label: "İndirim kuponunuza ait kodu girin"
+      label_translated: "Enter the code for your discount coupon"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "card-no|cardNumberGift"
+      label: "Lütfen Kart Numaranızı Giriniz."
+      label_translated: "Please Enter Your Card Number."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "secure-code|cvvGift"
+      label: "Lütfen Güvenlik Numarasını Giriniz."
+      label_translated: "Please Enter the Security Number."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "zubizucouponcode|"
+      label: "ZUBİZU QR Kod"
+      label_translated: "ZUBIZU QR Code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ecomm_prodid|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ecomm_prodid2|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ecomm_rritems|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "pname|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "product_brand|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "pvalue|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "pfullvalue|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "pquantity|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ecomm_totalvalue|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "pcat|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "pcatid|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "pmaincat|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "pauthor|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ppublisher|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "pdiscount|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "pdiscountTL|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "totalDiscountTL|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ecomm_itemList|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "prodList|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "useauto|"
+      label: "Adres Bilgileri Adresimi Arayarak Bul"
+      label_translated: "Address Information Find My Address By Searching"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|city"
+      label: "Şehir *"
+      label_translated: "City *"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: OTHER
+    }
+    fields {
+      name: "|district"
+      label: "İlçe *"
+      label_translated: "District *"
+      control_type: SELECT
+      concepts: "address-level2"
+      section: OTHER
+    }
+    fields {
+      name: "addressInput|addressInput"
+      label: "Aramak İstediğiniz Adresi Giriniz"
+      label_translated: "Enter the Address You Want to Search"
+      control_type: INPUT
+      concepts: "addess-search"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "name|name"
+      label: "Lütfen Ad Soyadı Giriniz."
+      label_translated: "Please Enter Name Surname."
+      control_type: INPUT
+      concepts: "name"
+      section: OTHER
+    }
+    fields {
+      name: "topic|address"
+      label: "Lütfen Adres Başlığı Giriniz."
+      label_translated: "Please Enter Address Title."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "country|country"
+      label: "Ülke *"
+      label_translated: "Country *"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "city|city"
+      label: "Lütfen Şehir Seçiniz."
+      label_translated: "Please Select City."
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "txtCity|txtCity"
+      label: "Şehir *"
+      label_translated: "City *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "district|district"
+      label: "İlçe *"
+      label_translated: "District *"
+      control_type: SELECT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "txtDistrict|txtDistrict"
+      label: "İlçe *"
+      label_translated: "District *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "state|state"
+      label: "Lütfen Mahalle / Köy Giriniz."
+      label_translated: "Please Enter Neighborhood / Village."
+      control_type: INPUT
+      concepts: "address-level3"
+      section: ADDRESS
+    }
+    fields {
+      name: "addressdetail|addressdetail"
+      label: "Teslimat Adresi"
+      label_translated: "Delivery address"
+      example: "Sokak, cadde, apartman adı, daire no ve diğer bilgileri eksiksiz girmeniz “kargo teslimatı” için çok"
+      example_translated: "Entering the street, street, apartment name, apartment number and other information completely is very important for \"cargo delivery\"."
+      control_type: TEXTAREA
+      concepts: "street-address"
+      section: ADDRESS
+    }
+    fields {
+      name: "description|description"
+      label: "Site adı, İşyeri adı, Apt adı, Avm, Plaza, Okul v.b. adresinizi daha belirgin kılacak bilgileri giri"
+      label_translated: "Site name, Workplace name, Apt name, Mall, Plaza, School etc. Enter the information that will make your address more prominent."
+      example: "Site adı, İşyeri adı, Apt adı, Avm, Plaza, Okul v.b. adresinizi daha belirgin kılacak bilgileri giriniz."
+      example_translated: "Site name, Workplace name, Apt name, Mall, Plaza, School etc. Enter the information that will make your address more prominent."
+      control_type: INPUT
+      concepts: "gap"
+      section: OTHER  # invisible
+    }
+    fields {
+      name: "buildNumber|buildNumber"
+      label: "Bina/Apt./Blok No"
+      label_translated: "Building/Apt./Block No"
+      control_type: INPUT
+      concepts: "building"
+      section: ADDRESS
+    }
+    fields {
+      name: "floorNumber|floorNumber"
+      label: "Kat No"
+      label_translated: "Floor No."
+      control_type: INPUT
+      concepts: "floor"
+      section: ADDRESS
+    }
+    fields {
+      name: "number|number"
+      label: "Daire No"
+      label_translated: "Apartment number"
+      control_type: INPUT
+      concepts: "apartment"
+      section: ADDRESS
+    }
+    fields {
+      name: "zipcode|zipcode"
+      label: "Lütfen Posta kodunu Giriniz."
+      label_translated: "Please Enter Postcode."
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "gsm|gsm"
+      label: "Telefon numaranız en az 10 haneli olmalı."
+      label_translated: "Your phone number must be at least 10 digits."
+      example: "(5XX) XXX XX XX"
+      example_translated: "(5XX) XXX XX XX"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "personaladdress|radio"
+      label: "Bireysel"
+      label_translated: "Individual"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "corporateaddress|radio"
+      label: "Kurumsal"
+      label_translated: "Institutional"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "taxid|taxid"
+      label: "Vergi Numarası *"
+      label_translated: "Tax number *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "taxoffice|taxoffice"
+      label: "Vergi Dairesi *"
+      label_translated: "Tax Administration *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "aid|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "encryptedgeo|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "autoaddresstype|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "laty|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "longx|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

@@ -1950,7 +1950,7 @@ Pretty often a street address field was "powered by Google".
 
 ## Turkey (TR)
 
-Turkish addresses are first special because the concept translated to a city
+Turkish addresses are special because the concept translated to a city
 (Şehir/Il) is more comparable to states in other countries.
 
 Turkey had cases where a building identifier (building/apt/block), a floor

@@ -1,0 +1,139 @@
+site_examples {
+  url: "https://www.doz.pl"
+  is_structured: true
+  locale {
+    country: "PL"
+    language: "pl"
+  }
+  sequences {
+    fields {
+      name: "|delivery_types_select_COURIER"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|delivery_types_select_PICKUP_POINT"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DeliveryAddressWithoutRegistrationForm459366_first_name981962|first_name"
+      label: "Wpisz imię*"
+      label_translated: "Enter name *"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "DeliveryAddressWithoutRegistrationForm152805_last_name869770|last_name"
+      label: "Wpisz nazwisko*"
+      label_translated: "Enter last name *"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "DeliveryAddressWithoutRegistrationForm254710_phone_number802304|phone_number"
+      label: "Telefon kontaktowy*"
+      label_translated: "Phone number*"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "DeliveryAddressWithoutRegistrationForm347986_mail954689|mail"
+      label: "Email*"
+      label_translated: "E-mail*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|country_code"
+      label: "Polska"
+      label_translated: "Poland"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "DeliveryAddressWithoutRegistrationForm206574_city881441|city"
+      label: "Miejscowość*"
+      label_translated: "City *"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "DeliveryAddressWithoutRegistrationForm407035_zip_code368268|zip_code"
+      label: "Kod pocztowy*"
+      label_translated: "ZIP code*"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "DeliveryAddressWithoutRegistrationForm897706_street528821|street"
+      label: "Ulica*"
+      label_translated: "Street*"
+      control_type: INPUT
+      concepts: "street-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "DeliveryAddressWithoutRegistrationForm318280_building_number791125|building_number"
+      label: "Nr domu*"
+      label_translated: "House number*"
+      control_type: INPUT
+      concepts: "house-number"
+      section: ADDRESS
+    }
+    fields {
+      name: "DeliveryAddressWithoutRegistrationForm598486_place_number809675|place_number"
+      label: "Nr lokalu"
+      label_translated: "No. of premises"
+      control_type: INPUT
+      concepts: "apartment"
+      section: OTHER
+    }
+    fields {
+      name: "DeliveryAddressWithoutRegistrationForm935014_company_name971911|company_name"
+      label: "Nazwa firmy (opcjonalnie)"
+      label_translated: "Company name (optional)"
+      control_type: INPUT
+      concepts: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "|inv_invoice_type"
+      label: "PARAGON"
+      label_translated: "RECEIPT"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|code"
+      label: "Wpisz kod rabatowy"
+      label_translated: "Enter the rebate code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

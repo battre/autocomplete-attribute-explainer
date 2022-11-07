@@ -1,0 +1,709 @@
+site_examples {
+  url: "https://www.arcelik.com.tr"
+  is_structured: false
+  locale {
+    country: "TR"
+    language: "tr"
+  }
+  sequences {
+    fields {
+      name: "searchText|text"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "true"
+      label_translated: "true"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkoutEventJson"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "chk_diff_address|"
+      label: "Faturamı farklı adrese gönder"
+      label_translated: "Send my invoice to different address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "sw_adr_1|rs_adr_type"
+      label: "Bireysel"
+      label_translated: "Individual"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "sw_adr_2|rs_adr_type"
+      label: "Kurumsal"
+      label_translated: "Institutional"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|addressType"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|checkout"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|billingAndShipmentSame"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|billingAddressType"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "company|company"
+      label: "Firma Adı"
+      label_translated: "Company name"
+      control_type: INPUT
+      concepts: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "taxNumber|taxNumber"
+      label: "Vergi Numarası"
+      label_translated: "Tax number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "taxOffice|taxOffice"
+      label: "Vergi Dairesi"
+      label_translated: "Tax Administration"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "fullName|fullName"
+      label: "Ad Soyad"
+      label_translated: "Name surname"
+      control_type: INPUT
+      concepts: "name"
+      section: NAME
+    }
+    fields {
+      name: "firstName|firstName"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "lastName|lastName"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "phone|phone"
+      label: "Telefon"
+      label_translated: "Telephone"
+      example: "05*********"
+      example_translated: "05**********"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "cityCode|cityCode"
+      label: "Il"
+      label_translated: "Province"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "townCode|townCode"
+      label: "İlçe"
+      label_translated: "District"
+      control_type: SELECT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "neighborhood|neighborhood"
+      label: "Mahalle"
+      label_translated: "Neighbourhood"
+      control_type: SELECT
+      concepts: "address-level3"
+      section: ADDRESS
+    }
+    fields {
+      name: "line1|line1"
+      label: "Adres Detaylari"
+      label_translated: "Address Details"
+      control_type: TEXTAREA
+      concepts: "street-address"
+      section: ADDRESS
+    }
+    fields {
+      name: "addressName|addressName"
+      label: "Adres Adi"
+      label_translated: "Address Name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "g-recaptcha-response|g-recaptcha-response"
+      label: "Adresi Kaydet"
+      label_translated: "Save Address"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CSRFToken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cityCode|city"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "townCode|postCode"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "isService|isService"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "submitParam|proceed"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "installmentOptionsHidden|installmentOptionsHidden"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "submitAddressTypeParam|addressType"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "postUrlHidden|postUrlHidden"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "debitPostUrlHidden|debitPostUrlHidden"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "saveCard|saveCard"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "installmentCount|installmentCount"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "numOfInstallments|numOfInstallments"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "vPosId|vPosId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "paymentForm.cardTypeCode|cardTypeCode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "paymentForm.formattedNumber|pan"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mcard_step_1_cardno|number"
+      label: "Kart Numarasi"
+      label_translated: "Card number"
+      example: "XXXX XXXX XXXX XXXX"
+      example_translated: "XXXX XXXX XXXX XXXX"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "mcard_step_1_name|cardOwner"
+      label: "Kart Üzerindeki Isim"
+      label_translated: "Name on the card"
+      example: "Kart sahibini adı ve soyadı"
+      example_translated: "Cardholder name and surname"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PAYMENT
+    }
+    fields {
+      name: "mcard_step_1_expiry|expiry"
+      label: "Son Kullanma Tarihi"
+      label_translated: "Expiration date"
+      example: "XX/XX"
+      example_translated: "XX/XX"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PAYMENT
+    }
+    fields {
+      name: "|expiryMonth"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|expiryYear"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mcard_step_1_cvv|cvv"
+      label: "CVV"
+      label_translated: "CVV"
+      example: "XXX"
+      example_translated: "XXX"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PAYMENT
+    }
+    fields {
+      name: "|CSRFToken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "currentPart|currentPart"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "currentPart|currentPart"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|expiryMonth"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|expiryYear"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "submitParam|proceed"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "installmentOptionsHidden|installmentOptionsHidden"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "submitAddressTypeParam|addressType"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "postUrlHidden|postUrlHidden"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "debitPostUrlHidden|debitPostUrlHidden"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "saveCard|saveCard"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "installmentCount|installmentCount"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "numOfInstallments|numOfInstallments"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "vPosId|vPosId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "partialPaymentForm.cardTypeCode|cardTypeCode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "partialPaymentForm.formattedNumber|pan"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mcard_step_2_amount|partialAmount"
+      label: "Ödenecek Tutar"
+      label_translated: "Amount to be paid"
+      example: "ÖR; 500"
+      example_translated: "EX; 500"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "mcard_step_2_cardno|number"
+      label: "Kart Numarasi"
+      label_translated: "Card number"
+      example: "XXXX XXXX XXXX XXXX"
+      example_translated: "XXXX XXXX XXXX XXXX"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "mcard_step_2_name|cardOwner"
+      label: "Kart Üzerindeki Isim"
+      label_translated: "Name on the card"
+      example: "Kart sahibini adı ve soyadı"
+      example_translated: "Cardholder name and surname"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PAYMENT
+    }
+    fields {
+      name: "mcard_step_2_expiry|expiry"
+      label: "Son Kullanma Tarihi"
+      label_translated: "Expiration date"
+      example: "XX/XX"
+      example_translated: "XX/XX"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PAYMENT
+    }
+    fields {
+      name: "mcard_step_2_cvc|cvv"
+      label: "CVV"
+      label_translated: "CVV"
+      example: "XXX"
+      example_translated: "XXX"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PAYMENT
+    }
+    fields {
+      name: "|CSRFToken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|onlineLoanProvider"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "YKB|pbt_sel_list"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CSRFToken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "submitParam|proceed"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "installmentOptionsHidden|installmentOptionsHidden"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "submitAddressTypeParam|addressType"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "postUrlHidden|postUrlHidden"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "debitPostUrlHidden|debitPostUrlHidden"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "saveCard|saveCard"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "installmentCount|installmentCount"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "numOfInstallments|numOfInstallments"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "vPosId|vPosId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "paymentForm.cardTypeCode|cardTypeCode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "paymentForm.formattedNumber|pan"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mcard_step_1_cardno|number"
+      label: "XXXX XXXX XXXX XXXX"
+      label_translated: "XXXX XXXX XXXX XXXX"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "mcard_step_1_name|cardOwner"
+      label: "Kart sahibini adı ve soyadı"
+      label_translated: "Cardholder name and surname"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PAYMENT
+    }
+    fields {
+      name: "mcard_step_1_expiry|expiry"
+      label: "XX/XX"
+      label_translated: "XX/XX"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PAYMENT
+    }
+    fields {
+      name: "|expiryMonth"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|expiryYear"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mcard_step_1_cvv|cvv"
+      label: "XXX"
+      label_translated: "XXX"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PAYMENT
+    }
+    fields {
+      name: "|CSRFToken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "chk_cart_sum_confirm_1|distantAgreement"
+      label: "Ön Bilgilendirme okumak için tıklayınız."
+      label_translated: "Click to read the Preliminary Information."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "chk_cart_sum_confirm_2|distantSales"
+      label: "Mesafeli satış sözleşmesini okudum ve kabul ediyorum."
+      label_translated: "I have read and accept the distance selling agreement."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0002|ot-group-id-C0002"
+      label: "Performans Tanımlama Bilgileri"
+      label_translated: "Performance Cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0004|ot-group-id-C0004"
+      label: "Hedefleme Amaçlı Tanımlama Bilgileri"
+      label_translated: "Targeting Cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0003|ot-group-id-C0003"
+      label: "İşlevsel Tanımlama Bilgileri"
+      label_translated: "Functional Cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "vendor-search-handler|vendor-search-handler"
+      label: "Filter IconClear"
+      label_translated: "Filter IconClear"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "chkbox-id|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-hosts-groups-handler|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-vendor-groups-handler|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-vendor-leg-handler|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

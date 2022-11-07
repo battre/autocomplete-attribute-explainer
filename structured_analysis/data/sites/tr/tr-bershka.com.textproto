@@ -1,0 +1,129 @@
+site_examples {
+  url: "https://www.bershka.com"
+  is_structured: false
+  locale {
+    country: "TR"
+    language: "tr"
+  }
+  sequences {
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Sohbet"
+      label_translated: "Chat"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|name"
+      label: "İsim"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|mail"
+      label: "E-mail"
+      label_translated: "E-mail"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Sohbet"
+      label_translated: "Chat"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|name"
+      label: "Adı"
+      label_translated: "First Name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "|surname"
+      label: "Soyad(lar)ı"
+      label_translated: "Surname(s)"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "|email"
+      label: "Email"
+      label_translated: "E-mail"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "+90"
+      label_translated: "+90"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|phone"
+      label: "Cep Telefonu"
+      label_translated: "Mobile phone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|address"
+      label: "Adres"
+      label_translated: "Address"
+      control_type: INPUT
+      concepts: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "|address2"
+      label: "Adres"
+      label_translated: "Address"
+      control_type: INPUT
+      concepts: "address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "|zipCode"
+      label: "Posta Kodu"
+      label_translated: "Post code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "|city"
+      label: "Şehir *"
+      label_translated: "City *"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "|colony"
+      label: "Yer *"
+      label_translated: "Place *"
+      control_type: SELECT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+  }
+}
+

@@ -1,0 +1,97 @@
+site_examples {
+  url: "https://www2.e-bebek.com"
+  is_structured: false
+  locale {
+    country: "TR"
+    language: "tr"
+  }
+  sequences {
+    fields {
+      name: "chkSameBillingAddress|"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "txtFirstName|"
+      label: "Ad"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "txtLastName|"
+      label: "Soyad"
+      label_translated: "Surname"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "txtPhoneNumber|"
+      label: "Cep telefonu  (5__)  ___  __  __"
+      label_translated: "Mobile phone (5__) ___ __ __"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "txtAddressTitle|"
+      label: "Örnek; Evim, Ofisim vb."
+      label_translated: "Sample; My Home, Office etc."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Şehir"
+      label_translated: "City"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "İlçe"
+      label_translated: "District"
+      control_type: SELECT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "Mahalle"
+      label_translated: "Neighbourhood"
+      control_type: SELECT
+      concepts: "address-level3"
+      section: ADDRESS
+    }
+    fields {
+      name: "txtAddress|"
+      label: "Lütfen sokak,cadde ve diğer bilgilerinizi ekleyin."
+      label_translated: "Please add your street, avenue and other information."
+      control_type: TEXTAREA
+      concepts: "street-address"
+      section: OTHER
+    }
+    fields {
+      name: "|review"
+      label: "Bireysel"
+      label_translated: "Individual"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|review"
+      label: "Kurumsal"
+      label_translated: "Institutional"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

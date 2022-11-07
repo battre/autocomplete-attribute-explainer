@@ -1,0 +1,162 @@
+site_examples {
+  url: "https://www.beymen.com"
+  is_structured: false
+  locale {
+    country: "TR"
+    language: "tr"
+  }
+  sequences {
+    fields {
+      name: "countrySelect|"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "storeSelecet|"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "nameSurname|"
+      label: "Adınız Soyadınız / Firma Adı *"
+      label_translated: "Name Surname / Company Name *"
+      example: "Lütfen Adınız Soyadınız / Firma Adı yazınız"
+      example_translated: "Please write your Name Surname / Company Name"
+      control_type: INPUT
+      concepts: "name"
+      concepts: "organization"
+      section: NAME
+    }
+    fields {
+      name: "email|"
+      label: "E-Posta Adresiniz *"
+      label_translated: "E-Mail Address *"
+      example: "Lütfen e-posta adresinizi yazınız"
+      example_translated: "Please write your e-mail address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "phone|"
+      label: "Cep Telefonu Numaranız *"
+      label_translated: "Your Mobile Number *"
+      example: "(555) 555 55 55"
+      example_translated: "(555) 555 55 55"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PHONE
+    }
+    fields {
+      name: "country|"
+      label: "İl Seçiniz *"
+      label_translated: "Select City *"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "district|"
+      label: "İlçe Seçiniz *"
+      label_translated: "Select District *"
+      control_type: SELECT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "neighborhood|"
+      label: "Mahalle Seçiniz *"
+      label_translated: "Select Neighborhood *"
+      control_type: SELECT
+      concepts: "address-level3"
+      section: ADDRESS
+    }
+    fields {
+      name: "addressDescription|"
+      label: "Adresiniz *"
+      label_translated: "Your address *"
+      example: "Lütfen açık adresinizi yazınız"
+      example_translated: "Please write your full address"
+      control_type: TEXTAREA
+      concepts: "street-address"
+      section: ADDRESS
+    }
+    fields {
+      name: "billingType|"
+      label: "Adres Tipi *"
+      label_translated: "Address Type *"
+      example: "Lütfen adres tipi seçiniz, Bireysel, Kurumsal"
+      control_type: SELECT
+      concepts: "Please select address type, Individual, Corporate"
+      section: OTHER
+    }
+    fields {
+      name: "tckn|"
+      label: "T.C. Kimlik Numaranız"
+      label_translated: "Your TR Identity Number"
+      example: "Lütfen T.C. Kimlik Numaranızı Giriniz"
+      example_translated: "Please Enter Your TR Identity Number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "addressName|"
+      label: "Adres Tanımı *"
+      label_translated: "Address Description *"
+      example: "Lütfen adresinize bir ad verin (Örneğin  Ev, İş)"
+      example_translated: "Please provide a name for your address (For example Home, Work)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "delivery_billing_1780824968|billing"
+      label: "Levent, Eski Buyukdere Cad. No"
+      label_translated: "Levent, Eski Buyukdere Cad. No."
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "delivery_billing_542847804|billing"
+      label: "Home"
+      label_translated: "Home"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingNote|shippingNote"
+      label: "GÖNDERİM NOTU EKLEMEK İSTİYORUM"
+      label_translated: "I WANT TO ADD SHIPPING NOTE"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "giftNote|giftNote"
+      label: "HEDİYE NOTU EKLEMEK İSTİYORUM"
+      label_translated: "I WANT TO ADD A GIFT NOTE"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|__RequestVerificationToken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|__RequestVerificationToken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+
