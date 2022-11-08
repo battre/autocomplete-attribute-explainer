@@ -17,6 +17,7 @@
 
 import address_pb2
 import argparse
+import bs4
 from bs4 import BeautifulSoup
 from google.protobuf import text_format
 from google.cloud import translate_v2 as translate
@@ -48,6 +49,20 @@ def extract_label_after_field(element):
     return element.string.strip()
   return ""
 
+def extract_label_before_field(element):
+  for attempt in range(1, 3):
+    element = element.previous_sibling
+    if not element:
+      return ""
+    if element.string and element.string.strip():
+      return element.string.strip()
+    if isinstance(element, bs4.element.NavigableString) and element.strip():
+      return element
+    if not isinstance(element, bs4.element.NavigableString):
+      contents = u' '.join(element.findAll(text=True)).strip()
+      if contents:
+        return contents
+  return ""
 
 parser = argparse.ArgumentParser(description="Extract fields of forms.")
 parser.add_argument(
@@ -70,6 +85,11 @@ parser.add_argument(
     help="label follows field (in some languages or sites, the label of a field"
     " follow the field. In this case, chrome does a poor job at extracting"
     " the label.",
+)
+parser.add_argument(
+    "--label-before-field",
+    action="store_true",
+    help="take label from dom predecessor",
 )
 parser.add_argument(
     "--translate", action="store_true", help="enable Google translate")
@@ -112,6 +132,8 @@ for html_field in soup.find_all(["input", "select", "textarea"]):
 
   if args.label_follows_field:
     field.label = extract_label_after_field(html_field)
+  elif args.label_before_field:
+    field.label = extract_label_before_field(html_field)
   else:
     field.label = autofill_information.get("label", "")
   if field.label and args.translate:
