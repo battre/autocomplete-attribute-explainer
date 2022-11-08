@@ -1,0 +1,185 @@
+site_examples {
+  url: "https://www.game.co.za"
+  is_structured: true
+  locale {
+    country: "ZA"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "|"
+      label: "Enter your email"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "on"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Search for products"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Enter coupon code"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "on"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Enter your email"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "on"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Search for products"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Email address / cellphone number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "on"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Search for products"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Search for an address"
+      control_type: INPUT
+      concepts: "address-search"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "Title"
+      example: "Mr., Mrs., Miss, Ms., Mx."
+      control_type: SELECT
+      concepts: "gap"
+      section: NAME
+    }
+    fields {
+      name: "|"
+      label: "First name *"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "on"
+      section: NAME
+    }
+    fields {
+      name: "|"
+      label: "Last name *"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "on"
+      section: NAME
+    }
+    fields {
+      name: "|"
+      label: "Cellphone number *"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "on"
+      section: PHONE
+    }
+    fields {
+      name: "|"
+      label: "Alternate number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "on"
+      section: PHONE
+    }
+    fields {
+      name: "|"
+      label: "Email *"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "on"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Unit number"
+      control_type: INPUT
+      concepts: "apartment"
+      autocomplete_attribute: "on"
+      section: PHONE
+    }
+    fields {
+      name: "|"
+      label: "Complex / building name"
+      control_type: INPUT
+      concepts: "building"
+      autocomplete_attribute: "on"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Street number *"
+      control_type: INPUT
+      concepts: "house-number"
+      autocomplete_attribute: "on"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "Street name *"
+      control_type: INPUT
+      concepts: "street-name"
+      autocomplete_attribute: "on"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "Province"
+      control_type: CUSTOM
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "Town / suburb"
+      control_type: CUSTOM
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "Postal code"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "on"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "Search for products"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+  }
+}
+

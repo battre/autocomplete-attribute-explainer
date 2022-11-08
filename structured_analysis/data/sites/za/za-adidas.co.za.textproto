@@ -1,0 +1,502 @@
+site_examples {
+  url: "https://www.adidas.co.za"
+  is_structured: false
+  locale {
+    country: "ZA"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "langSelectionHeader|"
+      label: "Change Language"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CheckoutData_CartToken|CheckoutData.CartToken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CheckoutData_CultureID|CheckoutData.CultureID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CheckoutData_GASessionsID|CheckoutData.GASessionsID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CheckoutData_IsVirtualOrder|CheckoutData.IsVirtualOrder"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "selectedPaymentGatewayId|CheckoutData.ExternalData.CurrentGatewayId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "forterToken|CheckoutData.ForterToken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CheckoutData_ExternalData_AllowedCharsRegex|CheckoutData.ExternalData.AllowedCharsRegex"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CheckoutData_ExternalData_UnsupportedCharactersErrorTipTimeout|CheckoutData.ExternalData.UnsupportedCharactersErrorTipTimeout"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CheckoutData_EnableUnsupportedCharactersValidation|CheckoutData.EnableUnsupportedCharactersValidation"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CheckoutData_BillingFirstName|CheckoutData.BillingFirstName"
+      label: "First Name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "CheckoutData_BillingLastName|CheckoutData.BillingLastName"
+      label: "Last Name"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "CheckoutData_Email|CheckoutData.Email"
+      label: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "BillingCountryID|CheckoutData.BillingCountryID"
+      label: "Country"
+      control_type: SELECT
+      concepts: "country"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "CheckoutData_BillingAddress1|CheckoutData.BillingAddress1"
+      label: "Address Line 1"
+      control_type: INPUT
+      concepts: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "CheckoutData_BillingAddress2|CheckoutData.BillingAddress2"
+      label: "Address Line 2"
+      control_type: INPUT
+      concepts: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "BillingCity|CheckoutData.BillingCity"
+      label: "City / Suburb"
+      control_type: SELECT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "BillingCityRegionID|CheckoutData.BillingCityRegionID"
+      label: "Region"
+      control_type: SELECT
+      concepts: "address-level3"
+      section: ADDRESS
+    }
+    fields {
+      name: "BillingCountyID|CheckoutData.BillingCountyID"
+      label: "County"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "BillingZIP|CheckoutData.BillingZIP"
+      label: "Zip / Postcode"
+      example: "4 digits, for example: 9086"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "BillingStateID|CheckoutData.BillingStateID"
+      label: "State / Province"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "CheckoutData_BillingPhone|CheckoutData.BillingPhone"
+      label: "Mobile Phone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "CheckoutData_OffersFromMerchant|CheckoutData.OffersFromMerchant"
+      label: "I agree to receive information, special offers and promotions based on my interests and preferences"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CheckoutData.OffersFromMerchant"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingDefault|CheckoutData.ShippingType"
+      label: "Default (same as billing address)"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipToStore|CheckoutData.ShippingType"
+      label: "Store Collection"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipToLocation|CheckoutData.ShippingType"
+      label: "Collection Points"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "newShipping|CheckoutData.ShippingType"
+      label: "Add an alternative delivery address"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CheckoutData_ShippingFirstName|CheckoutData.ShippingFirstName"
+      label: "First Name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CheckoutData_ShippingLastName|CheckoutData.ShippingLastName"
+      label: "Last Name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ShippingCountryID|CheckoutData.ShippingCountryID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "South Africa"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CheckoutData_ShippingAddress1|CheckoutData.ShippingAddress1"
+      label: "Address Line 1"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CheckoutData_ShippingAddress2|CheckoutData.ShippingAddress2"
+      label: "Address Line 2"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ShippingCity|CheckoutData.ShippingCity"
+      label: "City / Suburb"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ShippingCityRegionID|CheckoutData.ShippingCityRegionID"
+      label: "Region"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ShippingCountyID|CheckoutData.ShippingCountyID"
+      label: "County"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ShippingZIP|CheckoutData.ShippingZIP"
+      label: "Zip / Postcode"
+      example: "4 digits, for example: 9086"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ShippingStateID|CheckoutData.ShippingStateID"
+      label: "State / Province"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CheckoutData_ShippingPhone|CheckoutData.ShippingPhone"
+      label: "Mobile Phone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "ship-opt-20001001|CheckoutData.SelectedShippingOptionID"
+      label: "Free Standard Courier 2 to 4 business days 2 to 4 business days"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ship-opt-20000990|CheckoutData.SelectedShippingOptionID"
+      label: "R 60.00 Express Courier 1 to 2 business days 1 to 2 business days"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CheckoutData.SelectedTaxOption"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ioBlackBox|ioBlackBox"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "hdnStoreID|CheckoutData.StoreID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "addressVerified|CheckoutData.AddressVerified"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "SelectedPaymentMethodID|CheckoutData.SelectedPaymentMethodID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "currentPaymentGayewayID|CheckoutData.CurrentPaymentGayewayID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkoutDataMerchantID|CheckoutData.MerchantID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkoutDataMultipleAddressesMode|CheckoutData.MultipleAddressesMode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkoutMerchantSupportsAddressName|CheckoutData.MerchantSupportsAddressName"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkoutDataSupportDynamicFieldsMode|CheckoutData.MultipleAddressesMode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkoutDataIsGiftCardsEnabled|CheckoutData.MultipleAddressesMode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "IsBillingDynamicFieldsApplied|CheckoutData.MultipleAddressesMode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "IsShippingDynamicFieldsApplied|CheckoutData.MultipleAddressesMode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CollectionPointZip|CheckoutData.CollectionPointZip"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "UseAvalara|CheckoutData.UseAvalara"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "IsAvalaraLoaded|CheckoutData.IsAvalaraLoaded"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "IsUnsupportedRegion|CheckoutData.IsUnsupportedRegion"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "IsShowTitle|CheckoutData.IsShowTitle"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "IsBillingSavedAddressUsed|CheckoutData.IsBillingSavedAddressUsed"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "IsShippingSavedAddressUsed|CheckoutData.IsShippingSavedAddressUsed"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "SaveBillingCountryOnChange|CheckoutData.SaveBillingCountryOnChange"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DisplayInternatioanlPrefixInCheckout|CheckoutData.DisplayInternatioanlPrefixInCheckout"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "IsValidationMessagesV2|CheckoutData.IsValidationMessagesV2"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CheckoutData.DoLightSave"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|PaymentData.checkoutV2"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cartToken|PaymentData.cartToken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "gatewayId|PaymentData.gatewayId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "paymentMethodId|PaymentData.paymentMethodId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "machineId|PaymentData.machineId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "createTransaction|PaymentData.createTransaction"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "voucherInput|"
+      label: "Please enter coupon code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CartToken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "authStatus|AuthStatus"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "pfd|PFD"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

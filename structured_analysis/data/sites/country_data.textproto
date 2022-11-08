@@ -428,9 +428,16 @@ country_data {
 country_data {
   country: "US"
   country_name: "United States of America 🇺🇸"
+  site_examples_preamble_html:
+    "<p>All US websites I tested followed the same address form structure "
+    "shown below with the one exception that sometimes there was a single "
+    "street-address field.</p>"
 }
 
 country_data {
   country: "ZA"
   country_name: "South Africa 🇿🇦"
+  site_examples_preamble_html:
+    "<p>South Africa has a mixed set of structured and unstructured address "
+    "forms.</p>"
 }

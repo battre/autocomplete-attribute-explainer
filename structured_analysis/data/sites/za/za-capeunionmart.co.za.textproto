@@ -1,0 +1,770 @@
+site_examples {
+  url: "todo"
+  is_structured: true
+  locale {
+    country: "ZA"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "login-form-email|loginEmail"
+      label: "Email address"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "email"
+      section: OTHER
+    }
+    fields {
+      name: "login-form-password|loginPassword"
+      label: "Password"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "password"
+      section: OTHER
+    }
+    fields {
+      name: "rememberMe|loginRememberMe"
+      label: "Remember me"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|csrf_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "reset-password-email|loginEmail"
+      label: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "registration-form-fname|dwfrm_profile_customer_firstname"
+      label: "First Name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "registration-form-lname|dwfrm_profile_customer_lastname"
+      label: "Last Name"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "mobilePhoneCountryCode|dwfrm_profile_customer_mobilePhoneCountryCode"
+      label: "South Africa +27"
+      control_type: SELECT
+      concepts: "unset"
+      autocomplete_attribute: "tel-country-code"
+      section: PHONE
+    }
+    fields {
+      name: "phoneMobile|dwfrm_profile_customer_phoneMobile"
+      example: "Mobile Number (ex: 0812345678)"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "tel"
+      section: PHONE
+    }
+    fields {
+      name: "registration-form-email|dwfrm_profile_customer_email"
+      label: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "email"
+      section: OTHER
+    }
+    fields {
+      name: "registration-form-email-confirm|dwfrm_profile_customer_emailconfirm"
+      label: "Confirm Email"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "registration-form-password|dwfrm_profile_login_password"
+      label: "Password"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "new-password"
+      section: OTHER
+    }
+    fields {
+      name: "registration-form-password-confirm|dwfrm_profile_login_passwordconfirm"
+      label: "Confirm Password"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "new-password"
+      section: OTHER
+    }
+    fields {
+      name: "add-to-email-list|dwfrm_profile_customer_addtoemaillist"
+      label: "Email"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "add-to-sms-list|dwfrm_profile_customer_addtosmslist"
+      label: "SMS"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "joinloyalty|dwfrm_profile_customer_joinloyalty"
+      label: "Join our Friends & Family Community & get access to rewards and exclusive benefits. By signing up yo"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "day|dwfrm_profile_customer_day"
+      label: "Day"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "month|dwfrm_profile_customer_month"
+      label: "Month"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "year|dwfrm_profile_customer_year"
+      label: "Year"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_profile_customer_birthday|dwfrm_profile_customer_birthday"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|csrf_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|originalShipmentUUID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|shipmentUUID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|shipmentUUID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|dwfrm_shipping_shippingAddress_shippingMethodPickupPointID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "home_delivery|dwfrm_shipping_shippingAddress_shippingMethodID"
+      label: "Deliver to my address FREE standard delivery for orders over R500. FREE expedited delivery for order"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingMethod-STANDARD-SHIPPING|subradio"
+      label: "Standard Delivery 2–4 working days to main centres (Cape Town, Johannesburg, Pretoria). Up to 7 work"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingMethod-EXPEDITED-SHIPPING|subradio"
+      label: "Expedited Delivery 2–3 working days to main centres (Cape Town, Johannesburg, Pretoria). Up to 5 wor"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingMethod-storepickup|dwfrm_shipping_shippingAddress_shippingMethodID"
+      label: "Collect from a Store FREE Click & Collect delivery takes 5-7 working days. Collect from one of our s"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingStoreName|dwfrm_shipping_shippingAddress_addressFields_storeName"
+      label: "Store Name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "shipping storeName"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressId|dwfrm_shipping_shippingAddress_addressFields_addressId"
+      label: "Address Name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "shipping street-address"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressOne|dwfrm_shipping_shippingAddress_addressFields_address1"
+      label: "Address Line 1"
+      control_type: INPUT
+      concepts: "street-address"
+      autocomplete_attribute: "shipping street-address"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingSuburb|dwfrm_shipping_shippingAddress_addressFields_suburb"
+      label: "Suburb"
+      control_type: INPUT
+      concepts: "address-level3"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddressCity|dwfrm_shipping_shippingAddress_addressFields_city"
+      label: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "shipping address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingZipCode|dwfrm_shipping_shippingAddress_addressFields_postalCode"
+      label: "Postal Code"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingBuilding|dwfrm_shipping_shippingAddress_addressFields_building"
+      label: "Building"
+      control_type: INPUT
+      concepts: "building"
+      autocomplete_attribute: "shipping building"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingUnit|dwfrm_shipping_shippingAddress_addressFields_unit"
+      label: "Unit"
+      control_type: INPUT
+      concepts: "apartment"
+      autocomplete_attribute: "shipping address-level4"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingProvince|dwfrm_shipping_shippingAddress_addressFields_province"
+      label: "Province"
+      control_type: SELECT
+      concepts: "address-level1"
+      autocomplete_attribute: "shipping address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingCountry|dwfrm_shipping_shippingAddress_addressFields_country"
+      label: "South Africa"
+      control_type: SELECT
+      concepts: "country"
+      autocomplete_attribute: "shipping country"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingSpecialInstructions|dwfrm_shipping_shippingAddress_addressFields_specialInstructions"
+      label: "Shipping instructions"
+      control_type: INPUT
+      concepts: "delivery-instructions"
+      autocomplete_attribute: "specialInstructions"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingCompanyName|dwfrm_shipping_shippingAddress_addressFields_companyName"
+      label: "Company Name"
+      control_type: INPUT
+      concepts: "organization"
+      autocomplete_attribute: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "useForBilling-shipment|useForBilling"
+      label: "Use this address for billing"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingFirstName|dwfrm_shipping_shippingAddress_addressFields_firstName"
+      label: "First Name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "shipping given-name"
+      section: OTHER
+    }
+    fields {
+      name: "shippingLastName|dwfrm_shipping_shippingAddress_addressFields_lastName"
+      label: "Last Name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "family-name"
+      section: OTHER
+    }
+    fields {
+      name: "shippingEmail|dwfrm_shipping_shippingAddress_addressFields_email"
+      label: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "email"
+      section: OTHER
+    }
+    fields {
+      name: "shippingMobilePhoneCountryCode|dwfrm_shipping_shippingAddress_addressFields_mobilePhoneCountryCode"
+      label: "South Africa +27"
+      control_type: SELECT
+      concepts: "unset"
+      autocomplete_attribute: "tel-country-code"
+      section: PHONE
+    }
+    fields {
+      name: "shippingMobilePhone|dwfrm_shipping_shippingAddress_addressFields_mobilePhone"
+      example: "Mobile Number (ex: 0812345678)"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "tel-national"
+      section: PHONE
+    }
+    fields {
+      name: "addGiftWrapping|addGiftWrapping"
+      label: "Add gift wrapping (includes tissue paper, box & gift message) - R69.00"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "isGift-default-1ae4f7d53027bb6fde96ea1f8b|dwfrm_shipping_shippingAddress_isGift"
+      label: "Add FREE gift message"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "giftMessageFrom|dwfrm_shipping_shippingAddress_giftMessageFrom"
+      label: "From"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "giftMessageTo|dwfrm_shipping_shippingAddress_giftMessageTo"
+      label: "To"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "giftMessage|dwfrm_shipping_shippingAddress_giftMessage"
+      label: "Gift Order? Enter a custom gift message to be included as part of your order."
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkout_emailSubscription|dwfrm_shipping_shippingAddress_subscribe"
+      label: "Email"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkout_smsSubscription|dwfrm_shipping_shippingAddress_subscribeSms"
+      label: "SMS"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|csrf_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|dwfrm_billing_paymentMethod"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "paymentMethod_PAYU_CREDITCARD|test"
+      label: "PAYU_CREDITCARD"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "paymentMethod_PAYU_PAYFLEX|test"
+      label: "PAYU_PAYFLEX"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "paymentMethod_PAYJUSTNOW_PBI|test"
+      label: "PAYJUSTNOW_PBI"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "paymentMethod_WICODE|test"
+      label: "WICODE"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payment_wicode|giftCardNumber"
+      label: "wiCode voucher number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "g-recaptcha-response-1|g-recaptcha-response"
+      label: "Please fill in a wiCode number."
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "paymentMethod_PAYU_EFT_PRO|test"
+      label: "PAYU_EFT_PRO"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "paymentMethod_PayPal|test"
+      label: "PayPal"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "paymentMethod_PAYU_RCS|test"
+      label: "PAYU_RCS"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "paymentMethod_PAYU_EBUCKS|test"
+      label: "PAYU_EBUCKS"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "paymentMethod_PAYU_DISCOVERYMILES|test"
+      label: "PAYU_DISCOVERYMILES"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "paymentMethod_PAYU_MOBICRED|test"
+      label: "PAYU_MOBICRED"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "paymentMethod_GIFT_CERTIFICATE|test"
+      label: "GIFT_CERTIFICATE"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payment_giftCard|giftCardNumber"
+      label: "Gift Card Number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "payment_giftCard_scratchCode|giftCardScratchCode"
+      label: "Scratchcode if applicable"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "new-password"
+      section: OTHER
+    }
+    fields {
+      name: "g-recaptcha-response|g-recaptcha-response"
+      label: "Please fill in a gift Card number."
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|csrf_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ebucks|ebucks"
+      label: "Earn loyalty rewards with eBucks"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ebucks_rsa_id|ebucks_rsa_id"
+      label: "RSA ID number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "couponCode|couponCode"
+      label: "Enter promo code / voucher"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|csrf_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingFirstName|dwfrm_billing_addressFields_firstName"
+      label: "First Name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "given-name"
+      section: OTHER
+    }
+    fields {
+      name: "billingLastName|dwfrm_billing_addressFields_lastName"
+      label: "Last Name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "family-name"
+      section: OTHER
+    }
+    fields {
+      name: "billingEmail|dwfrm_billing_addressFields_email"
+      label: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "email"
+      section: OTHER
+    }
+    fields {
+      name: "billingMobilePhoneCountryCode|dwfrm_billing_addressFields_mobilePhoneCountryCode"
+      label: "South Africa +27"
+      control_type: SELECT
+      concepts: "unset"
+      autocomplete_attribute: "tel-country-code"
+      section: PHONE
+    }
+    fields {
+      name: "billingMobilePhone|dwfrm_billing_addressFields_mobilePhone"
+      example: "Mobile Number (ex: 0812345678)"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "tel-national"
+      section: PHONE
+    }
+    fields {
+      name: "billingAddressId|dwfrm_billing_addressFields_addressId"
+      label: "Address Name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "billing street-address"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressOne|dwfrm_billing_addressFields_address1"
+      label: "Address 1"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "billing street-address"
+      section: OTHER
+    }
+    fields {
+      name: "billingSuburb|dwfrm_billing_addressFields_suburb"
+      label: "Suburb"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressCity|dwfrm_billing_addressFields_city"
+      label: "City"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "billing address-level2"
+      section: OTHER
+    }
+    fields {
+      name: "billingZipCode|dwfrm_billing_addressFields_postalCode"
+      label: "ZIP Code"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "billingBuilding|dwfrm_billing_addressFields_building"
+      label: "Building"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "building"
+      section: OTHER
+    }
+    fields {
+      name: "billingUnit|dwfrm_billing_addressFields_unit"
+      label: "Unit"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "unit"
+      section: OTHER
+    }
+    fields {
+      name: "billingProvince|dwfrm_billing_addressFields_province"
+      label: "Province"
+      control_type: SELECT
+      concepts: "unset"
+      autocomplete_attribute: "billing address-level1"
+      section: OTHER
+    }
+    fields {
+      name: "billingCountry|dwfrm_billing_addressFields_country"
+      label: "South Africa"
+      control_type: SELECT
+      concepts: "unset"
+      autocomplete_attribute: "billing country"
+      section: OTHER
+    }
+    fields {
+      name: "billingSpecialInstructions|dwfrm_billing_addressFields_specialInstructions"
+      label: "Shipping instructions"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "specialInstructions"
+      section: OTHER
+    }
+    fields {
+      name: "billingCompanyName|dwfrm_billing_addressFields_companyName"
+      label: "Company Name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "companyName"
+      section: OTHER
+    }
+    fields {
+      name: "useForBilling-payment|useForBilling"
+      label: "Use delivery address for billing"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkout_agree_terms|agree_terms"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "paypalMethodId|dwfrm_billing_paymentMethod"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "paypal_orderId|dwfrm_billing_paypal_paypalOrderID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "paypal_saveAccount|dwfrm_billing_paypal_savePaypalAccount"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "paypal_makeDefault|dwfrm_billing_paypal_makeDefaultPaypalAccount"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "paypal_activeAccount|dwfrm_billing_paypal_paypalActiveAccount"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "usedPaymentMethod|usedPaymentMethod"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAgreementID|dwfrm_billing_paypal_billingAgreementID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAgreementPayerEmail|dwfrm_billing_paypal_billingAgreementPayerEmail"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "fileSelector|file"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|filename"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+
