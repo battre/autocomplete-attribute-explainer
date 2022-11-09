@@ -1,0 +1,263 @@
+site_examples {
+  url: "https://apopro.dk"
+  is_structured: false
+  locale {
+    country: "DK"
+    language: "da"
+  }
+  sequences {
+    fields {
+      name: "coi-consent-banner__category-expander-cookie_cat_necessary|tabs"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "coi-consent-banner__category-expander-cookie_cat_functional|tabs"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cookie_cat_functional|cookie_cat_functional"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "coi-consent-banner__category-expander-cookie_cat_statistic|tabs"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cookie_cat_statistic|cookie_cat_statistic"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "coi-consent-banner__category-expander-cookie_cat_marketing|tabs"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cookie_cat_marketing|cookie_cat_marketing"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "coi-consent-banner__category-expander-cookie_cat_unclassified|tabs"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "query|query"
+      example: "Søg blandt tusindvis af danske apoteksvarer"
+      example_translated: "Search among thousands of Danish pharmacy products"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "email|Order.Email"
+      label: "E-mail*"
+      label_translated: "Email*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mobileNumber|Order.MobileNumber"
+      label: "Mobil*"
+      label_translated: "Mobile phone*"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "deliveryCompanyName|Order.DeliveryCompanyName"
+      label: "Eventuelt firmanavn"
+      label_translated: "Any company name"
+      control_type: INPUT
+      concepts: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "deliveryFirstName|Order.DeliveryFirstName"
+      label: "Fornavn*"
+      label_translated: "First Name*"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "deliverySurname|Order.DeliverySurname"
+      label: "Efternavn*"
+      label_translated: "Last name*"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "deliveryAddress|Order.DeliveryAddress"
+      label: "Adresse*"
+      label_translated: "Address*"
+      control_type: INPUT
+      concepts: "street-address"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "deliveryPostCode|Order.DeliveryPostCode"
+      label: "Postnr.*"
+      label_translated: "ZIP code.*"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "deliveryCity|Order.DeliveryCity"
+      label: "By*"
+      label_translated: "Town*"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "same-shipping|"
+      label: "Leverings- og faktureringsadresse den samme"
+      label_translated: "Delivery and billing address the same"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CreateProfile|CreateProfile"
+      label: "Opret en profil"
+      label_translated: "Create a profile"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CreateProfile"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "new-password|Password"
+      label: "Adgangskode*"
+      label_translated: "Password*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "confirm-new-password|ConfirmPassword"
+      label: "Bekræft ny adgangskode*"
+      label_translated: "Confirm new password*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingCompanyName|Order.BillingCompanyName"
+      label: "Eventuelt firmanavn"
+      label_translated: "Any company name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingFirstName|Order.BillingFirstName"
+      label: "Fornavn*"
+      label_translated: "First Name*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingSurname|Order.BillingSurname"
+      label: "Efternavn*"
+      label_translated: "Last name*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddress|Order.BillingAddress"
+      label: "Faktureringsadresse*"
+      label_translated: "Billing address*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingPostCode|Order.BillingPostCode"
+      label: "Postnr.*"
+      label_translated: "ZIP code.*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingCity|Order.BillingCity"
+      label: "By*"
+      label_translated: "Town*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "to-shipment|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "Email|Email"
+      label: "E-mail*"
+      label_translated: "Email*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "password|Password"
+      label: "Adgangskode*"
+      label_translated: "Password*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "login-submit|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "email|Email"
+      label: "E-mail*"
+      label_translated: "Email*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "js-NewsletterFooterSignupBtn|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

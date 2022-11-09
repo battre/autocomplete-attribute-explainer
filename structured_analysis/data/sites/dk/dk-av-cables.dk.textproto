@@ -1,0 +1,250 @@
+site_examples {
+  url: "https://www.av-cables.dk/"
+  is_structured: false
+  locale {
+    country: "DK"
+    language: "da"
+  }
+  sequences {
+    fields {
+      name: "cookie_cat_necessary|cookie_cat_necessary"
+      label: "Nødvendige"
+      label_translated: "Necessary"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cookie_cat_functional|cookie_cat_functional"
+      label: "Funktionelle"
+      label_translated: "Functional"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cookie_cat_statistic|cookie_cat_statistic"
+      label: "Statistiske"
+      label_translated: "Statistical"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cookie_cat_marketing|cookie_cat_marketing"
+      label: "Marketing"
+      label_translated: "Marketing"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|efter"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Søg efter produkter, kategorier, mærker og mere..."
+      label_translated: "Search for products, categories, brands and more..."
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|efter"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Søg efter produkter, kategorier, mærker og mere..."
+      label_translated: "Search for products, categories, brands and more..."
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "load_info|phone"
+      label: "Hent oplysninger via mobilnummer."
+      label_translated: "Get information via mobile number."
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "tel"
+      section: OTHER
+    }
+    fields {
+      name: "G-70|customer_type"
+      label: "Vælg kundetype"
+      label_translated: "Select customer type"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "G-72|name"
+      label: "Fulde navn"
+      label_translated: "Full name"
+      control_type: INPUT
+      concepts: "name"
+      section: NAME
+    }
+    fields {
+      name: "G-74|address"
+      label: "Vejnavn + husnummer"
+      label_translated: "Street name + house number"
+      control_type: INPUT
+      concepts: "street-address"
+      section: ADDRESS
+    }
+    fields {
+      name: "G-76|postnumber"
+      label: "Postnummer"
+      label_translated: "Zip code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "G-78|city"
+      label: "By"
+      label_translated: "Town"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "G-81|phone"
+      label: "Mobilnummer"
+      label_translated: "Mobile number"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "G-83|email"
+      label: "E-mail adresse"
+      label_translated: "Email address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "G-85|country"
+      label: "Land"
+      label_translated: "Country"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "G-87|city"
+      label: "By"
+      label_translated: "Town"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "G-94|"
+      label: "Rekvisitionsnummer"
+      label_translated: "Requisition number"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "G-99|"
+      label: "Modtag vores nyhedsbreve og skræddersyet markedsføring via e-mail,"
+      label_translated: "Receive our newsletters and tailored marketing via e-mail,"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "G-107|G-104"
+      label: "Dankort, kreditkort, MobilePay, Viabill eller Apple Pay"
+      label_translated: "Dankort, credit card, MobilePay, Viabill or Apple Pay"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "G-116|G-111"
+      label: "Privatpakke Collect uden omdeling - Vælg selv udleveringssted (29,00 kr.) Inkl. lørdagsudlevering."
+      label_translated: "Private package Collect without distribution - Choose your own delivery location (DKK 29.00) Incl. Saturday delivery."
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "G-124|G-111"
+      label: "Privatpakke Home med omdeling (39,00 kr.)"
+      label_translated: "Private package Home with sharing (DKK 39.00)"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "G-228|"
+      label: "Skal pakken leveres til en anden adresse eller firma?"
+      label_translated: "Should the package be delivered to another address or company?"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "G-235|name"
+      label: "Fulde navn"
+      label_translated: "Full name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "G-237|address"
+      label: "Vejnavn + husnummer"
+      label_translated: "Street name + house number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "G-239|postnumber"
+      label: "Postnummer"
+      label_translated: "Zip code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "G-242|company"
+      label: "Firmanavn"
+      label_translated: "Company name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "G-244|city"
+      label: "By"
+      label_translated: "Town"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "a94400f9-7d8f-4f1c-9eaa-4bc1296b5e46:email|"
+      label: "Indtast e-mailadresse"
+      label_translated: "Enter email address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

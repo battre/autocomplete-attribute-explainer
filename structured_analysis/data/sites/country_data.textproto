@@ -456,6 +456,15 @@ country_data {
     "security number).</p>"
 }
 
+country_data {
+  country: "DK"
+  country_name: "Denmark 🇩🇰"
+  site_examples_preamble_html:
+    "<p>I have checked ~15 danish address forms and they consistently fit "
+    "into the unstructured address types of the existing autocomplete spec "
+    "(asking for a street-address/address-linesX, a postal code and a city). "
+    "This is why I have not transcribed more sites.</p>"
+}
 
 country_data {
   country: "AE"
@@ -516,13 +525,6 @@ country_data {
 country_data {
   country: "CZ"
   country_name: "Czechia 🇨🇿"
-  site_examples_preamble_html:
-    ""
-}
-
-country_data {
-  country: "DK"
-  country_name: "Denmark 🇩🇰"
   site_examples_preamble_html:
     ""
 }
