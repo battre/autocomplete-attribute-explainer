@@ -1,0 +1,323 @@
+site_examples {
+  url: "https://www.alza.hu"
+  is_structured: false
+  locale {
+    country: "HU"
+    language: "hu"
+  }
+  sequences {
+    fields {
+      name: "__VIEWSTATE|__VIEWSTATE"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "__VIEWSTATEGENERATOR|__VIEWSTATEGENERATOR"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "userEmail|email"
+      label: "Kérem, a megrendeléshez adja meg az e-mail címét"
+      label_translated: "Please enter your email address when ordering"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "email"
+      section: OTHER
+    }
+    fields {
+      name: "userEmailAlt|email"
+      label: "E-mail:"
+      label_translated: "E-mail:"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "email"
+      section: OTHER
+    }
+    fields {
+      name: "deliveryName|"
+      label: "Vezetéknév & keresztnév:"
+      label_translated: "Surname first name:"
+      control_type: INPUT
+      concepts: "name"
+      autocomplete_attribute: "name"
+      section: NAME
+    }
+    fields {
+      name: "deliveryFirmName|"
+      label: "Cég neve:"
+      label_translated: "Name of the company:"
+      control_type: INPUT
+      concepts: "organization"
+      autocomplete_attribute: "organization-title"
+      section: ADDRESS
+    }
+    fields {
+      name: "deliveryStreet|"
+      label: "Cím:"
+      label_translated: "Mailing address:"
+      control_type: INPUT
+      concepts: "street-address"
+      autocomplete_attribute: "street-address"
+      section: ADDRESS
+    }
+    fields {
+      name: "deliveryCity|city"
+      label: "Település:"
+      label_translated: "City:"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "deliveryZip|"
+      label: "Irányítószám:"
+      label_translated: "Postal code:"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "deliveryNote|"
+      label: "Megjegyzés a futár számára"
+      label_translated: "Note to courier"
+      control_type: TEXTAREA
+      concepts: "delivery-instructions"
+      section: ADDRESS
+    }
+    fields {
+      name: "ddlPhoneCountryPrefix|"
+      label: "Telefonszám:"
+      label_translated: "Telephone number:"
+      control_type: SELECT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "inpDeliveryTelNumber|"
+      label: "Telefonszám:"
+      label_translated: "Telephone number:"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "questionBillingInformation|"
+      label: "Szállítási információk"
+      label_translated: "Shipping information"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "isPersonInput|customerType"
+      label: "Magánszemélyként vásárolok"
+      label_translated: "I am buying as an individual"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "isEntrepreneurInput|customerType"
+      label: "Vállalkozóként/intézményként vásárolok"
+      label_translated: "I am buying as an entrepreneur/institution"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "isForeignEntrepreneurInput|customerType"
+      label: "Külföldi vállalkozóként/intézményként vásárolok"
+      label_translated: "I am buying as a foreign entrepreneur/institution"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "name|"
+      label: "Az  e-mailcímed már regisztrálva van. Kérjük lépj be a webáruházba, és az üzleti fiókodból add le a"
+      label_translated: "Your email address is already registered. Please enter the online store and submit the"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "name"
+      section: OTHER
+    }
+    fields {
+      name: "street|"
+      label: "Az  e-mailcímed már regisztrálva van. Kérjük lépj be a webáruházba, és az üzleti fiókodból add le a"
+      label_translated: "Your email address is already registered. Please enter the online store and submit the"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "street-address"
+      section: OTHER
+    }
+    fields {
+      name: "city|"
+      label: "Az  e-mailcímed már regisztrálva van. Kérjük lépj be a webáruházba, és az üzleti fiókodból add le a"
+      label_translated: "Your email address is already registered. Please enter the online store and submit the"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "address-level2"
+      section: OTHER
+    }
+    fields {
+      name: "zip|"
+      label: "Irányítószám:"
+      label_translated: "Postal code:"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "postal-code"
+      section: OTHER
+    }
+    fields {
+      name: "ddlPhoneCountryPrefix|"
+      label: "Telefonszám:"
+      label_translated: "Telephone number:"
+      control_type: SELECT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "inpTelNumber|"
+      label: "Telefonszám:"
+      label_translated: "Telephone number:"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "vatParamDic|"
+      label: "Adószám"
+      label_translated: "Tax number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "vatParamDicToggle|"
+      label: "Nincs adóazonosító számom"
+      label_translated: "I don&#39;t have a tax identification number"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "vatParamIcdph|"
+      label: "Közösségi adószám"
+      label_translated: "Public tax ID number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bic|"
+      label: "BIC (SWIFT kód)"
+      label_translated: "BIC (SWIFT code)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "iban|"
+      label: "IBAN"
+      label_translated: "IBAN"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bankAccountOwnerName|"
+      label: "Bankszámla tulajdonos neve:"
+      label_translated: "Name of bank account holder:"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "name"
+      section: OTHER
+    }
+    fields {
+      name: "internalOrderNumber|"
+      label: "Az  e-mailcímed már regisztrálva van. Kérjük lépj be a webáruházba, és az üzleti fiókodból add le a"
+      label_translated: "Your email address is already registered. Please enter the online store and submit the"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "none"
+      section: OTHER
+    }
+    fields {
+      name: "questionNews|"
+      label: "Ez az e-mailcím már regisztrálva van. Önnek be kell jelentkeznie, hogy igénybe vehesse a diákkedvezm"
+      label_translated: "This email address is already registered. You must log in to take advantage of the student discount"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "questionRememberUserData|"
+      label: "Ez az e-mailcím már regisztrálva van. Önnek be kell jelentkeznie, hogy igénybe vehesse a diákkedvezm"
+      label_translated: "This email address is already registered. You must log in to take advantage of the student discount"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "password|"
+      label: "Musíte mít registraci, abyste mohli dokončit objednávku Jelszó"
+      label_translated: "You must register to complete your registration Password"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "new-password"
+      section: OTHER
+    }
+    fields {
+      name: "passwordAgain|"
+      label: "Musíte mít registraci, abyste mohli dokončit objednávku Jelszó"
+      label_translated: "You must register to complete your registration Password"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "new-password"
+      section: OTHER
+    }
+    fields {
+      name: "verifiedSmsCode|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "helpLoginOrder3Submit|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "edtSearch|"
+      label: "Keresés"
+      label_translated: "Search"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "message-text|"
+      label: "Írja meg az üzenetet..."
+      label_translated: "Write your message..."
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "phone-number-input|"
+      label: "Kérjük, add meg a telefonszámodat:"
+      label_translated: "Please enter your phone number:"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+  }
+}
+

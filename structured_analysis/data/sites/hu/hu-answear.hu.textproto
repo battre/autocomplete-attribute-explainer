@@ -1,0 +1,91 @@
+site_examples {
+  url: "https://answear.hu"
+  is_structured: true
+  locale {
+    country: "HU"
+    language: "hu"
+  }
+  sequences {
+    fields {
+      name: "firstName|firstName"
+      label: "Név"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "surname|surname"
+      label: "Családnév"
+      label_translated: "Family name"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "company|company"
+      label: "Cég (opcionális a futár részére)"
+      label_translated: "Company (optional for courier)"
+      control_type: INPUT
+      concepts: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "street|street"
+      label: "Utca Kötelezően kitöltendő"
+      label_translated: "Street Mandatory"
+      control_type: INPUT
+      concepts: "street-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "houseNumber|houseNumber"
+      label: "Házszám Kötelezően kitöltendő"
+      label_translated: "House number Mandatory"
+      control_type: INPUT
+      concepts: "house-number"
+      section: ADDRESS
+    }
+    fields {
+      name: "apartmentNumber|apartmentNumber"
+      label: "Lakás száma"
+      label_translated: "Apartment number"
+      control_type: INPUT
+      concepts: "apartment"
+      section: ADDRESS
+    }
+    fields {
+      name: "postalCode|postalCode"
+      label: "Irányítószám"
+      label_translated: "Postal code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "city|city"
+      label: "Város"
+      label_translated: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "phone|phone"
+      label: "Telefonszám"
+      label_translated: "Phone number"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "email|email"
+      label: "Email cím"
+      label_translated: "E-mail address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

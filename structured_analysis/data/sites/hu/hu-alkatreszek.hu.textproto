@@ -1,0 +1,485 @@
+site_examples {
+  url: "https://www.alkatreszek.hu"
+  is_structured: true
+  locale {
+    country: "HU"
+    language: "hu"
+  }
+  sequences {
+    fields {
+      name: "|cookie-consent-input"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|cookie-consent-input"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|cookie-consent-input"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "terméknév / termékcsoport / cikkszám / gyári szám"
+      label_translated: "product name / product group / article number / serial number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "40 656 Ft"
+      label_translated: "HUF 40,656"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "2 541 Ft"
+      label_translated: "HUF 2,541"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "40 656 Ft"
+      label_translated: "HUF 40,656"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "2 541 Ft"
+      label_translated: "HUF 2,541"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "email|email"
+      example: "E-mail cím"
+      example_translated: "E-mail address"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "email_confirmation|email_confirmation"
+      label: "E-mail cím újra"
+      label_translated: "E-mail address again"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "password|password"
+      label: "Jelszó *:"
+      label_translated: "Password *:"
+      example: "Jelszó"
+      example_translated: "Password"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "password_confirmation|password_confirmation"
+      label: "Jelszó megerősítése *:"
+      label_translated: "Confirm password *:"
+      example: "Jelszó megerősítése"
+      example_translated: "Confirm password"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "user_type_user|user_type"
+      label: "Magánszemély"
+      label_translated: "Private person"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "user_type_company|user_type"
+      label: "Jogi személy (Ha a számlát cégnévre szeretné, kérjük pipálja ki a négyzetet és adja meg a cég adatai"
+      label_translated: "Legal person (If you want the invoice to be in the name of a company, please tick the box and enter the company&#39;s details"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "lastname|lastname"
+      label: "Vezetéknév *:"
+      label_translated: "Surname *:"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "firstname|firstname"
+      label: "Keresztnév *:"
+      label_translated: "First name *:"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "company_name|company_name"
+      label: "Cég neve *:"
+      label_translated: "Name of the company *:"
+      example: "Minta Kft."
+      example_translated: "Sample Kft."
+      control_type: INPUT
+      concepts: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "vat_id|vat_id"
+      label: "Adószám *:"
+      label_translated: "Tax number *:"
+      example: "12345678-9-00"
+      example_translated: "12345678-9-00"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cntryPrefix|cntryPrefix"
+      label: "Mobiltelefon *:"
+      label_translated: "Mobile phone *:"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "phone-service|"
+      label: "20"
+      label_translated: "20"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "line-number|line-number"
+      label: "123 4567"
+      label_translated: "123 4567"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|"
+      label: "Számlázási cím *:"
+      label_translated: "Billing address *:"
+      control_type: INPUT
+      concepts: "street-address"
+      section: OTHER
+    }
+    fields {
+      name: "zip_code|zip_code"
+      label: "Ir. sz."
+      label_translated: "Postal code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "city|city"
+      label: "Város"
+      label_translated: "City"
+      control_type: SELECT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "address|address"
+      label: "Közterület neve"
+      label_translated: "Name of public space"
+      control_type: INPUT
+      concepts: "gap"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "Közterület jellege"
+      label_translated: "Nature of public space"
+      control_type: INPUT
+      concepts: "gap"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "address_number|address_number"
+      label: "Házszám"
+      label_translated: "House number"
+      control_type: INPUT
+      concepts: "house-number"
+      section: ADDRESS
+    }
+    fields {
+      name: "building|building"
+      label: "Épület"
+      label_translated: "Building"
+      control_type: INPUT
+      concepts: "building"
+      section: ADDRESS
+    }
+    fields {
+      name: "floor|floor"
+      label: "Emelet"
+      label_translated: "Floor"
+      control_type: INPUT
+      concepts: "floor"
+      section: ADDRESS
+    }
+    fields {
+      name: "door|door"
+      label: "Ajtó"
+      label_translated: "Door"
+      control_type: INPUT
+      concepts: "apartment"
+      section: ADDRESS
+    }
+    fields {
+      name: "address_match_toggle|"
+      label: "A szállítási és a számlázási cím megegyezik."
+      label_translated: "Shipping and billing addresses are the same."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Szállítási cím *:"
+      label_translated: "Delivery Address *:"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_zip_code|shipping_zip_code"
+      label: "Ir. sz."
+      label_translated: "You write."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_city|shipping_city"
+      label: "Szállítási cím *:"
+      label_translated: "Delivery Address *:"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_address|shipping_address"
+      label: "Közterület neve"
+      label_translated: "Name of public space"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Közterület jellege"
+      label_translated: "Nature of public space"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_address_number|shipping_address_number"
+      label: "Házszám"
+      label_translated: "House number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_building|shipping_building"
+      label: "Épület"
+      label_translated: "Building"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_floor|shipping_floor"
+      label: "Emelet"
+      label_translated: "Floor"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_door|shipping_door"
+      label: "Ajtó"
+      label_translated: "Door"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "delivery_method_9_input|delivery_method"
+      label: "Fáma futár házhozszállítás"
+      label_translated: "Fáma courier home delivery"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      example: "Pl.: 13-as kapucsengő, Portán átveszik a csomagot, stb."
+      example_translated: "E.g.: doorbell number 13, the package will be picked up at the door, etc."
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "delivery_method_5_input|delivery_method"
+      label: "Posta pont-postán maradó átvételi mód"
+      label_translated: "Posta dot-posta permanent collection method"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "delivery_method_1_input|delivery_method"
+      label: "Posta MPL Futárszolgálat házhozszállítás"
+      label_translated: "Posta MPL Courier service home delivery"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      example: "Pl.: 13-as kapucsengő, Portán átveszik a csomagot, stb."
+      example_translated: "E.g.: doorbell number 13, the package will be picked up at the door, etc."
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "delivery_method_6_input|delivery_method"
+      label: "GLS CsomagPont"
+      label_translated: "GLS ParcelPoint"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "delivery_method_2_input|delivery_method"
+      label: "GLS Futárszolgálat házhozszállítás"
+      label_translated: "GLS Courier service home delivery"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "delivery_method_7_input|delivery_method"
+      label: "Pick Pack Pont áruátvétel"
+      label_translated: "Pick Pack Point goods receipt"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "delivery_method_3_input|delivery_method"
+      label: "Sprinter futárszolgálat házhozszállítás"
+      label_translated: "Sprinter courier service home delivery"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      example: "Pl.: 13-as kapucsengő, Portán átveszik a csomagot, stb."
+      example_translated: "E.g.: doorbell number 13, the package will be picked up at the door, etc."
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "delivery_method_8_input|delivery_method"
+      label: "Személyes átvétel üzletünkben (ingyenes)"
+      label_translated: "Personal collection in our store (free)"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "delivery_method_4_input|delivery_method"
+      label: "Posta Mol és Coop csomag pontok"
+      label_translated: "Posta Mol and Coop package points"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payment_method_1|payment_method"
+      label: "Utánvét"
+      label_translated: "Cash on delivery"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payment_method_3|payment_method"
+      label: "Előre utalás"
+      label_translated: "Forward references"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payment_method_2|payment_method"
+      label: "Online bankkártyával"
+      label_translated: "Online with a bank card"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "sales_comment|"
+      label: "Megjegyzés az értékesítőnek:"
+      label_translated: "Note to seller:"
+      example: "Ide írhatja az értékesítőnek szánt információkat."
+      example_translated: "Here you can write the information intended for the seller."
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "40 656 Ft"
+      label_translated: "HUF 40,656"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "2 541 Ft"
+      label_translated: "HUF 2,541"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+
