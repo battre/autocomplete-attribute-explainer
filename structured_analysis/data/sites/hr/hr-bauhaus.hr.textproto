@@ -1,0 +1,432 @@
+site_examples {
+  url: "https://www.bauhaus.hr"
+  is_structured: true
+  locale {
+    country: "HR"
+    language: "hr"
+  }
+  sequences {
+    fields {
+      name: "|adobeTracking_loginType"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "isTelefonRequired|isTelefonRequired"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "differentDeliveryAddress|differentDeliveryAddress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "deliveryAddressType|deliveryAddressType"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-gender-1|paymentGender"
+      label: "Gospodin"
+      label_translated: "Sir"
+      control_type: RADIO
+      concepts: "sex"
+      section: NAME
+    }
+    fields {
+      name: "form-new-gender-2|paymentGender"
+      label: "Gospođa"
+      label_translated: "Mrs"
+      control_type: RADIO
+      concepts: "sex"
+      section: NAME
+    }
+    fields {
+      name: "firma|isCompanyCustomer"
+      label: "Tvrtka"
+      label_translated: "Company"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_isCompanyCustomer"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "paymentAddressCompany|paymentCompanyName"
+      label: "Tvrtka*"
+      label_translated: "Company*"
+      control_type: INPUT
+      concepts: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "companyTaxNumber|companyTaxNumber"
+      label: "Porezni broj*"
+      label_translated: "Tax number*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-firstName|firstName"
+      label: "Ime*"
+      label_translated: "Name*"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "form-new-lastName|lastName"
+      label: "Prezime*"
+      label_translated: "Surname*"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "form-new-address-search-input-field|form-new[address-search]"
+      label: "Pretražiti po ulici, kućnom br. i mjestu"
+      label_translated: "Search by street, house no. and place"
+      control_type: INPUT
+      concepts: "address-search"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "form-new-paymentLine1|paymentLine1"
+      label: "Ulica*"
+      label_translated: "Street*"
+      control_type: INPUT
+      concepts: "street-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "form-new-paymentLine2|paymentLine2"
+      label: "Kućni broj*"
+      label_translated: "House number*"
+      control_type: INPUT
+      concepts: "house-number"
+      section: ADDRESS
+    }
+    fields {
+      name: "form-new-paymentPostalCode|paymentPostalCode"
+      label: "ZIP broj*"
+      label_translated: "ZIP number*"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "form-new-paymentTown|paymentTown"
+      label: "Mjesto*"
+      label_translated: "Place*"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "form-new-paymentCountry|paymentCountry"
+      label: "Zemlja*"
+      label_translated: "Earth*"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "form-new-email|email"
+      label: "Adresa e-pošte*"
+      label_translated: "Email address*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-phone|phone"
+      label: "Telefon*"
+      label_translated: "Phone*"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "form-new-delivery-1|choosenDelivery"
+      label: "Isporuka"
+      label_translated: "Delivery"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-deliveryTarget-1|isSameDelivery"
+      label: "Adresa kupca"
+      label_translated: "Buyer&#39;s address"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-deliveryTarget-2|isSameDelivery"
+      label: "Druga adresa isporuke"
+      label_translated: "Other delivery address"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-deviatingDeliveryAddress-gender-1|deliveryGender"
+      label: "Gospodin"
+      label_translated: "Sir"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-deviatingDeliveryAddress-gender-2|deliveryGender"
+      label: "Gospođa"
+      label_translated: "Mrs"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-deviatingDeliveryAddress-isCompany|deliveryCompanyCustomer"
+      label: "Tvrtka"
+      label_translated: "Company"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_deliveryCompanyCustomer"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-deviatingDeliveryAddress-companyName|deliveryCompanyName"
+      label: "Tvrtka"
+      label_translated: "Company"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-deviatingDeliveryAddress-firstName|deliveryFirstName"
+      label: "Ime*"
+      label_translated: "Name*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-deviatingDeliveryAddress-lastName|deliveryLastName"
+      label: "Prezime*"
+      label_translated: "Surname*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-deviatingDeliveryAddress-address-search-input-field|form-new-deviatingDeliveryAddress[address-search]"
+      label: "Pretražiti po ulici, kućnom br. i mjestu"
+      label_translated: "Search by street, house no. and place"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-deviatingDeliveryAddress-addresseLine1|deliveryLine1"
+      label: "Ulica*"
+      label_translated: "Street*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-deviatingDeliveryAddress-addressLine2|deliveryLine2"
+      label: "Kućni broj*"
+      label_translated: "House number*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-deviatingDeliveryAddress-postalCode|deliveryPostalCode"
+      label: "ZIP broj*"
+      label_translated: "ZIP number*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-deviatingDeliveryAddress-town|deliveryTown"
+      label: "Mjesto*"
+      label_translated: "Place*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-deviatingDeliveryAddress-country|deliveryCountry"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-deviatingDeliveryAddress-country|country"
+      label: "Zemlja"
+      label_translated: "Earth"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "js-sdo-selected-country-iso|deliveryCountry"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "js-sdo-selected-id|posId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-pickup-locationSelect|posId"
+      label: "BAUHAUS finden*"
+      label_translated: "BAUHAUS finden*"
+      example: "Unesite poštanski broj ili mjesto"
+      example_translated: "Enter a zip code or city"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-createAccount|createAccount"
+      label: "Registrirajte se sada i iskoristite prednosti korisničkog računa!"
+      label_translated: "Register now and take advantage of the benefits of a user account!"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_createAccount"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "pwd|pwd"
+      label: "Lozinka*"
+      label_translated: "Password*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "new-password"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-checkPwd|checkPwd"
+      label: "Ponovno unesite lozinku*"
+      label_translated: "Re-enter password*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-agbAccepted|agbAccepted"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-new-newsletterAccepted|newsletterAccepted"
+      label: "Da, želim se pretplatiti na Newsletter tvrtke BAUHAUS."
+      label_translated: "Yes, I want to subscribe to the BAUHAUS Newsletter."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_newsletterAccepted"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|bahagNewsletterFormat"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|adobeTracking_loginType"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|login-type"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|profileTracking"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-login-j_username|j_username"
+      label: "Adresa e-pošte*"
+      label_translated: "Email address*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-login-j_password|j_password"
+      label: "Lozinka*"
+      label_translated: "Password*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

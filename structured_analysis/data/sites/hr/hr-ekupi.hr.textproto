@@ -1,0 +1,136 @@
+site_examples {
+  url: "https://www.ekupi.hr"
+  is_structured: false
+  locale {
+    country: "HR"
+    language: "hr"
+  }
+  sequences {
+    fields {
+      name: "js-site-search-input|text"
+      example: "Unesite pojam pretrage"
+      example_translated: "Enter a search term"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "addressId|addressId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address.billstate|bill_state"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address.country|countryIso"
+      label: "Država"
+      label_translated: "State"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "entityName|"
+      label: "Pošiljka - 1 artikal(a)"
+      label_translated: "Shipment - 1 item(s)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "taxNo|"
+      label: "Pošiljka - 1 artikal(a)"
+      label_translated: "Shipment - 1 item(s)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mbr|"
+      label: "Pošiljka - 1 artikal(a)"
+      label_translated: "Shipment - 1 item(s)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address.title|titleCode"
+      label: "Titula"
+      label_translated: "Title"
+      example: "g, gda, dr"
+      example_translated: "Mr., Mrs., Dr."
+      control_type: SELECT
+      concepts: "honorific-prefix"
+      section: NAME
+    }
+    fields {
+      name: "address.firstName|firstName"
+      label: "Ime"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "address.surname|lastName"
+      label: "Prezime"
+      label_translated: "Surname"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "address.line1|line1"
+      label: "Adresa 1"
+      label_translated: "Address 1"
+      control_type: INPUT
+      concepts: "street-address"
+      section: ADDRESS
+    }
+    fields {
+      name: "address.townCity|townCity"
+      label: "Grad"
+      label_translated: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "none"
+      section: ADDRESS
+    }
+    fields {
+      name: "address.postcode|postcode"
+      label: "Poštanski broj"
+      label_translated: "Zip code"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "none"
+      section: ADDRESS
+    }
+    fields {
+      name: "address.phone|phone"
+      label: "Broj telefona"
+      label_translated: "Telephone number"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|CSRFToken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "accesibility_refreshScreenReaderBufferField|accesibility_refreshScreenReaderBufferField"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

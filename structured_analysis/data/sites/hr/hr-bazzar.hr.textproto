@@ -1,0 +1,75 @@
+site_examples {
+  url: "https://bazzar.hr"
+  is_structured: false
+  locale {
+    country: "HR"
+    language: "hr"
+  }
+  sequences {
+    fields {
+      name: "|utf8"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|authenticity_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address_recipient|address[recipient]"
+      label: "Ime i Prezime"
+      label_translated: "Name and surname"
+      control_type: INPUT
+      concepts: "name"
+      section: NAME
+    }
+    fields {
+      name: "address_street|address[street]"
+      label: "Ulica i Kućni Broj"
+      label_translated: "Street and house number"
+      control_type: INPUT
+      concepts: "street-address"
+      section: ADDRESS
+    }
+    fields {
+      name: "address_city|address[city]"
+      label: "Grad"
+      label_translated: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "address_zip|address[zip]"
+      label: "Poštanski Broj"
+      label_translated: "Zip code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "address_country|address[country]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address_phone|address[phone]"
+      label: "Broj Mobitela"
+      label_translated: "Mobile number"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|commit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

@@ -447,6 +447,17 @@ country_data {
 }
 
 country_data {
+  country: "HR"
+  country_name: "Croatia 🇭🇷"
+  site_examples_preamble_html:
+    "<p>Croatian address forms seem to be largely compatible with the "
+    "autocomplete spec, except that some forms asked for street name and house "
+    "number in separate fields. At last one form asked for an OIB (social "
+    "security number).</p>"
+}
+
+
+country_data {
   country: "AE"
   country_name: "United Arabic Emirates 🇦🇪"
   site_examples_preamble_html:
@@ -517,13 +528,6 @@ country_data {
 }
 
 country_data {
-  country: "EG"
-  country_name: "Egypt 🇪🇬"
-  site_examples_preamble_html:
-    ""
-}
-
-country_data {
   country: "FI"
   country_name: "Finland 🇫🇮"
   site_examples_preamble_html:
@@ -536,15 +540,6 @@ country_data {
   site_examples_preamble_html:
     ""
 }
-
-country_data {
-  country: "HR"
-  country_name: "Croatia 🇭🇷"
-  site_examples_preamble_html:
-    ""
-}
-
-
 
 country_data {
   country: "HU"
