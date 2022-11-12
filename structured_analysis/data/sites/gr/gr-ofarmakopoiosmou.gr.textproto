@@ -1,0 +1,178 @@
+site_examples {
+  url: "https://www.ofarmakopoiosmou.gr"
+  is_structured: true
+  locale {
+    country: "GR"
+    language: "el"
+  }
+  sequences {
+    fields {
+      name: "edit-account-login-mail|account[login][mail]"
+      label: "Διεύθυνση e-mail *"
+      label_translated: "E-mail address *"
+      example: "Διεύθυνση e-mail"
+      example_translated: "Email address"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "email"
+      section: OTHER
+    }
+    fields {
+      name: "edit-customer-profile-shipping-commerce-customer-address-und-0-country|customer_profile_shipping[commerce_customer_address][und][0][country]"
+      label: "Χώρα *"
+      label_translated: "Country *"
+      control_type: SELECT
+      concepts: "country"
+      autocomplete_attribute: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "edit-customer-profile-shipping-commerce-customer-address-und-0-first-name|customer_profile_shipping[commerce_customer_address][und][0][first_name]"
+      label: "Όνομα *"
+      label_translated: "Name *"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "edit-customer-profile-shipping-commerce-customer-address-und-0-last-name|customer_profile_shipping[commerce_customer_address][und][0][last_name]"
+      label: "Επώνυμο *"
+      label_translated: "Last name *"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "edit-customer-profile-shipping-commerce-customer-address-und-0-thoroughfare|customer_profile_shipping[commerce_customer_address][und][0][thoroughfare]"
+      label: "Διεύθυνση *"
+      label_translated: "Address *"
+      control_type: INPUT
+      concepts: "street-address"
+      autocomplete_attribute: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "edit-customer-profile-shipping-commerce-customer-address-und-0-postal-code|customer_profile_shipping[commerce_customer_address][und][0][postal_code]"
+      label: "Τ.Κ. *"
+      label_translated: "Postal Code *"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "edit-customer-profile-shipping-commerce-customer-address-und-0-locality--2|customer_profile_shipping[commerce_customer_address][und][0][locality]"
+      label: "Πόλη / Περιοχή *"
+      label_translated: "City / Region *"
+      control_type: INPUT
+      concepts: "address-level2"
+      concepts: "address-level3"
+      autocomplete_attribute: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "edit-customer-profile-shipping-field-phone-und-0-value|customer_profile_shipping[field_phone][und][0][value]"
+      label: "Τηλέφωνο"
+      label_translated: "Phone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "edit-customer-profile-shipping-field-mobile-und-0-value|customer_profile_shipping[field_mobile][und][0][value]"
+      label: "Κινητό *"
+      label_translated: "Mobile *"
+      example: "Κινητό"
+      example_translated: "Mobile"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "edit-customer-profile-billing-commerce-customer-profile-copy-1|customer_profile_billing[commerce_customer_profile_copy]"
+      label: "Ίδια με τη Διεύθυνση Αποστολής"
+      label_translated: "Same as Shipping Address"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "edit-customer-profile-billing-commerce-customer-profile-copy-0|customer_profile_billing[commerce_customer_profile_copy]"
+      label: "Διαφορετική Διεύθυνση"
+      label_translated: "Different Address"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "edit-customer-profile-billing-field-invoice-type-und|customer_profile_billing[field_invoice_type][und]"
+      label: "Τύπος Παραστατικού"
+      label_translated: "Type of Document"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "edit-customer-profile-billing-field-company-name-und-0-value|customer_profile_billing[field_company_name][und][0][value]"
+      label: "Επωνυμία"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "edit-customer-profile-billing-field-company-professor-und-0-value|customer_profile_billing[field_company_professor][und][0][value]"
+      label: "Επάγγελμα"
+      label_translated: "Profession"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "edit-customer-profile-billing-field-vat-und-0-value|customer_profile_billing[field_vat][und][0][value]"
+      label: "ΑΦΜ"
+      label_translated: "VAT number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|customer_profile_billing[field_tax_office][und][0][value]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "edit-customer-profile-billing-field-tax-office-dummy|customer_profile_billing[field_tax_office_dummy]"
+      label: "Δ.Ο.Υ."
+      label_translated: "D.O.Y."
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|form_build_id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|form_id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "findastic-search-input|"
+      label: "Solgar, Βιταμίνες, Ανοσοποιητικό, Ενυδάτωση"
+      label_translated: "Solgar, Vitamins, Immune, Hydration"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+  }
+}
+

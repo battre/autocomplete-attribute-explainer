@@ -319,6 +319,14 @@ concepts {
   is_new: true
 }
 
+concepts {
+  name: "care-of"
+  description: "care of"
+  canonical_format_example: "Mrs. Example"
+  label: "c/o"
+  is_new: true
+}
+
 
 # Generic "street-name house-number" pattern.
 compound_concepts {

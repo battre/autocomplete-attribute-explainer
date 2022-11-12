@@ -496,6 +496,17 @@ country_data {
 }
 
 country_data {
+  country: "GR"
+  country_name: "Greece 🇬🇷"
+  site_examples_preamble_html:
+    "<p>Greek address forms seem to be well covered by today's autocomplete "
+    "spec except that some address forms ask for a street name and house "
+    "number. I don't fully understand the concepts of ΠΕΡΙΟΧΗ (region in a "
+    "city?) and ΝΟΜΟ (equivalent of a state?)</p>"
+
+}
+
+country_data {
   country: "AE"
   country_name: "United Arabic Emirates 🇦🇪"
   site_examples_preamble_html:
@@ -561,13 +572,6 @@ country_data {
 country_data {
   country: "FI"
   country_name: "Finland 🇫🇮"
-  site_examples_preamble_html:
-    ""
-}
-
-country_data {
-  country: "GR"
-  country_name: "Greece 🇬🇷"
   site_examples_preamble_html:
     ""
 }

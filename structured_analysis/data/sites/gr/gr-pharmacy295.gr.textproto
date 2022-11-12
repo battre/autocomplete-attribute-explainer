@@ -1,0 +1,489 @@
+site_examples {
+  url: "https://www.pharmacy295.gr"
+  is_structured: true
+  locale {
+    country: "GR"
+    language: "el"
+  }
+  sequences {
+    fields {
+      name: "|"
+      label: "-"
+      label_translated: "-"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|utf8"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "text_search|query"
+      label: "Ενδιαφέρομαι για..."
+      label_translated: "I&#39;m interested in..."
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|utf8"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "text_search|query"
+      label: "Ενδιαφέρομαι για..."
+      label_translated: "I&#39;m interested in..."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|utf8"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_method"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|authenticity_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "receipt|order[is_invoice]"
+      label: "Απόδειξη"
+      label_translated: "Evidence"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "invoice|order[is_invoice]"
+      label: "Τιμολόγιο"
+      label_translated: "Invoice"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_billing_address_attributes_company|order[billing_address_attributes][company]"
+      label: "ΕΤΑΙΡΕΙΑ"
+      label_translated: "COMPANY"
+      control_type: INPUT
+      concepts: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "order_billing_address_attributes_vat_number|order[billing_address_attributes][vat_number]"
+      label: "ΑΦΜ"
+      label_translated: "VAT number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "ΔΟΥ"
+      label_translated: "SEE"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "|order[billing_address_attributes][vat_office_id]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_billing_address_attributes_profession|order[billing_address_attributes][profession]"
+      label: "ΕΠΑΓΓΕΛΜΑ"
+      label_translated: "PROFESSION"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_billing_address_attributes_first_name|order[billing_address_attributes][first_name]"
+      label: "* ΟΝΟΜΑ"
+      label_translated: "* NAME"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "order_billing_address_attributes_last_name|order[billing_address_attributes][last_name]"
+      label: "* ΕΠΙΘΕΤΟ"
+      label_translated: "* LAST NAME"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "order_billing_address_attributes_email|order[billing_address_attributes][email]"
+      label: "* EMAIL"
+      label_translated: "* EMAIL"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_billing_address_attributes_telephone|order[billing_address_attributes][telephone]"
+      label: "* ΤΗΛΕΦΩΝΟ"
+      label_translated: "* TELEPHONE"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "order_billing_address_attributes_mobile|order[billing_address_attributes][mobile]"
+      label: "* ΚΙΝΗΤΟ"
+      label_translated: "* MOBILE"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "order_billing_address_attributes_street|order[billing_address_attributes][street]"
+      label: "* ΔΙΕΥΘΥΝΣΗ"
+      label_translated: "* ADDRESS"
+      control_type: INPUT
+      concepts: "street-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "order_billing_address_attributes_street_number|order[billing_address_attributes][street_number]"
+      label: "* ΑΡΙΘΜΟΣ"
+      label_translated: "* NUMBER"
+      control_type: INPUT
+      concepts: "house-number"
+      section: ADDRESS
+    }
+    fields {
+      name: "order_billing_address_attributes_zip|order[billing_address_attributes][zip]"
+      label: "* ΤΚ"
+      label_translated: "* Postal code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "order_billing_address_attributes_city|order[billing_address_attributes][city]"
+      label: "* ΠΟΛΗ"
+      label_translated: "* CITY"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "order_billing_address_attributes_area|order[billing_address_attributes][area]"
+      label: "ΠΕΡΙΟΧΗ"
+      label_translated: "REGION"
+      control_type: INPUT
+      concepts: "address-level3"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "Επιλέξτε χώρα"
+      label_translated: "Choose a country"
+      control_type: INPUT
+      concepts: "country"
+      autocomplete_attribute: "nope"
+      section: ADDRESS
+    }
+    fields {
+      name: "|order[billing_address_attributes][country_id]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Επιλέξτε νομό"
+      label_translated: "Select county"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "|order[billing_address_attributes][region_id]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "use_as_shipping_info|use_as_shipping_info"
+      label: "Η διεύθυνση αποστολής είναι ίδια με την διεύθυνση τιμολόγησης"
+      label_translated: "The shipping address is the same as the billing address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_shipping_address_attributes_first_name|order[shipping_address_attributes][first_name]"
+      label: "* ΟΝΟΜΑ"
+      label_translated: "* NAME"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_shipping_address_attributes_last_name|order[shipping_address_attributes][last_name]"
+      label: "* ΕΠΙΘΕΤΟ"
+      label_translated: "* ADJECTIVE"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_shipping_address_attributes_email|order[shipping_address_attributes][email]"
+      label: "* EMAIL"
+      label_translated: "* EMAIL"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_shipping_address_attributes_telephone|order[shipping_address_attributes][telephone]"
+      label: "* ΤΗΛΕΦΩΝΟ"
+      label_translated: "* TELEPHONE"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "order_shipping_address_attributes_mobile|order[shipping_address_attributes][mobile]"
+      label: "* ΚΙΝΗΤΟ"
+      label_translated: "* MOBILE"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "order_shipping_address_attributes_street|order[shipping_address_attributes][street]"
+      label: "* ΔΙΕΥΘΥΝΣΗ"
+      label_translated: "* ADDRESS"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_shipping_address_attributes_street_number|order[shipping_address_attributes][street_number]"
+      label: "* ΑΡΙΘΜΟΣ"
+      label_translated: "* NUMBER"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_shipping_address_attributes_zip|order[shipping_address_attributes][zip]"
+      label: "* ΤΚ"
+      label_translated: "* Tk"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_shipping_address_attributes_city|order[shipping_address_attributes][city]"
+      label: "* ΠΟΛΗ"
+      label_translated: "* CITY"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_shipping_address_attributes_area|order[shipping_address_attributes][area]"
+      label: "ΠΕΡΙΟΧΗ"
+      label_translated: "REGION"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Επιλέξτε χώρα"
+      label_translated: "Choose a country"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "|order[shipping_address_attributes][country_id]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Επιλέξτε νομό"
+      label_translated: "Select county"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "|order[shipping_address_attributes][region_id]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_payment_method_id_1|order[payment_method_id]"
+      label: "Πιστωτική/Χρεωστική Κάρτα"
+      label_translated: "Credit card"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_installments|order[installments]"
+      label: "Πιστωτική/Χρεωστική Κάρτα"
+      label_translated: "Credit card"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_payment_method_id_2|order[payment_method_id]"
+      label: "Paypal"
+      label_translated: "Paypal"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_payment_method_id_3|order[payment_method_id]"
+      label: "Κατάθεση σε τράπεζα (ισχύει για παραγγελίες από 100 ευρώ και πάνω)"
+      label_translated: "Bank deposit (valid for orders of 100 euros and above)"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_payment_method_id_4|order[payment_method_id]"
+      label: "Αντικαταβολή (+2,00€)"
+      label_translated: "Cash on delivery (+€2.00)"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_payment_method_id_6|order[payment_method_id]"
+      label: "Πληρωμή στο Φαρμακείο (ισχύει για παραγγελίες από 20€ και πάνω)"
+      label_translated: "Payment at the Pharmacy (applies to orders of €20 or more)"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_shipping_method_id_2|order[shipping_method_id]"
+      label: "Αποστολή με εταιρεία Courier Παράδοση σε 1-3 εργάσιμες ημέρες Πανελλαδικά"
+      label_translated: "Shipping by Courier Company Delivery in 1-3 working days Nationwide"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_shipping_method_id_11|order[shipping_method_id]"
+      label: "Αυθημερόν Παράδοση με SVUUM Παράδοση Δευτέρα-Παρασκευή (εκτός αργιών) από 14:00 έως 22:00"
+      label_translated: "Same Day Delivery with SVUUM Delivery Monday-Friday (excluding holidays) from 14:00 to 22:00"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_shipping_method_id_12|order[shipping_method_id]"
+      label: "Παράδοση την Επόμενη Ημέρα με Svuum Παράδοση Δευτέρα-Σάββατο (εκτός αργιών) από 10:00 έως 22:00"
+      label_translated: "Next Day Delivery with Svuum Delivery Monday-Saturday (excluding holidays) from 10:00 to 22:00"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_shipping_method_id_6|order[shipping_method_id]"
+      label: "ΔΩΡΕΑΝ παραλαβή από το PHARMACY 295  ΑΓΙΟΥ ΔΗΜΗΤΡΙΟΥ  - Αγίου Δημητρίου 295 - Άγιος Δημήτριος Τ.Κ. 1"
+      label_translated: "FREE pickup from PHARMACY 295 AGIOU DIMITRIOU - Agios Dimitriou 295 - Agios Dimitriou P.O. 1"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_shipping_method_id_7|order[shipping_method_id]"
+      label: "ΔΩΡΕΑΝ παραλαβή από το PHARMACY 295 ΚΗΦΙΣΙΑΣ - Κασσαβέτη 6  - Κηφισιά Τ.Κ. 14562 Ισχύει για παραγγελ"
+      label_translated: "FREE collection from PHARMACY 295 KIFISIAS - Kassaveti 6 - Kifisia P.O. 14562 Valid for order"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_shipping_method_id_10|order[shipping_method_id]"
+      label: "ΔΩΡΕΑΝ παραλαβή από το ΝΕΟ PHARMACY 295  ΕΛΛΗΝΙΚΟΥ- ΑΡΓΥΡΟΥΠΟΛΗΣ  – Τιτάνων 17 Ελληνικό Τ.Κ. 16777 Ι"
+      label_translated: "FREE pickup from NEO PHARMACY 295 ELLINIKOU- ARGYROUPOLIS – Titanon 17 Elliniko P.O. 16777 I"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_notes|order[notes]"
+      label: "Γράψτε κάτι αν πρέπει να γνωρίζουμε για την παραγγελία σας"
+      label_translated: "Write something if we need to know about your order"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order_courier_notes|order[courier_notes]"
+      label: "Παρατηρήσεις για courier"
+      label_translated: "Remarks for courier"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "code|code"
+      label: "Εισάγετε κωδικό"
+      label_translated: "Enter code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|commit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "code|code"
+      label: "Εισάγετε κωδικό"
+      label_translated: "Enter code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|commit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

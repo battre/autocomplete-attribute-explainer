@@ -1,0 +1,228 @@
+site_examples {
+  url: "https://www.celestino.gr"
+  is_structured: true
+  locale {
+    country: "GR"
+    language: "el"
+  }
+  sequences {
+    fields {
+      name: "__LASTFOCUS|__LASTFOCUS"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "__VIEWSTATE|__VIEWSTATE"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "__VIEWSTATEGENERATOR|__VIEWSTATEGENERATOR"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "__EVENTTARGET|__EVENTTARGET"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "__EVENTARGUMENT|__EVENTARGUMENT"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "__EVENTVALIDATION|__EVENTVALIDATION"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|fakeusernameremembered"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|fakepasswordremembered"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|fakenameremembered"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|fakesurnameremembered"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|faketelremembered"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|fakeemailremembered"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|fakezipremembered"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|fakeaddressremembered"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ContentPlaceHolder1_nametext|ctl00$ContentPlaceHolder1$nametext"
+      label: "Όνομα*"
+      label_translated: "Name*"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "lrjZeZfaqA"
+      section: NAME
+    }
+    fields {
+      name: "|surname"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ContentPlaceHolder1_surnametext|ctl00$ContentPlaceHolder1$surnametext"
+      label: "Επώνυμο*"
+      label_translated: "Last name*"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "IGhsRD7KQr"
+      section: NAME
+    }
+    fields {
+      name: "|mobile"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ContentPlaceHolder1_mobiletext|ctl00$ContentPlaceHolder1$mobiletext"
+      label: "Κινητό Τηλέφωνο*"
+      label_translated: "Mobile phone*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "7Cn6apfJRY"
+      section: PHONE
+    }
+    fields {
+      name: "|email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ContentPlaceHolder1_emailtext|ctl00$ContentPlaceHolder1$emailtext"
+      label: "Διεύθυνση email*"
+      label_translated: "Email Address*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "6RrKVFiOsv"
+      section: OTHER
+    }
+    fields {
+      name: "|address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ContentPlaceHolder1_addresstext|ctl00$ContentPlaceHolder1$addresstext"
+      label: "Oδός*"
+      label_translated: "street*"
+      control_type: INPUT
+      concepts: "street-name"
+      autocomplete_attribute: "a1tSHVFy1t"
+      section: ADDRESS
+    }
+    fields {
+      name: "|addressnumber"
+      control_type: INPUT
+      concepts: "street-name"
+      section: OTHER
+    }
+    fields {
+      name: "adrno|"
+      label: "Αρ."
+      label_translated: "No."
+      control_type: INPUT
+      concepts: "house-number"
+      autocomplete_attribute: "9OAmKgMU4h"
+      section: ADDRESS
+    }
+    fields {
+      name: "|zip"
+      label: "Οι παραγγελίες παραδίδονται με βάση την διεύθυνση σου. Εάν δεν εμφανίζεται σωστά στο χάρτη μετακίνησ"
+      label_translated: "Orders are delivered based on your address. If it does not appear correctly on the traffic map"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ContentPlaceHolder1_tktext|ctl00$ContentPlaceHolder1$tktext"
+      label: "Τ.Κ.*"
+      label_translated: "Postal Code*"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "VSgafgVrTd"
+      section: ADDRESS
+    }
+    fields {
+      name: "|city"
+      label: "Οι παραγγελίες παραδίδονται με βάση την διεύθυνση σου. Εάν δεν εμφανίζεται σωστά στο χάρτη μετακίνησ"
+      label_translated: "Orders are delivered based on your address. If it does not appear correctly on the traffic map"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ContentPlaceHolder1_citytext|ctl00$ContentPlaceHolder1$citytext"
+      label: "Πόλη*"
+      label_translated: "City*"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "GCVLBxRGDi"
+      section: ADDRESS
+    }
+    fields {
+      name: "ContentPlaceHolder1_countryDropDown|ctl00$ContentPlaceHolder1$countryDropDown"
+      label: "Χώρα:"
+      label_translated: "Country:"
+      control_type: SELECT
+      concepts: "country"
+      autocomplete_attribute: "sI3FCHWUsQ"
+      section: ADDRESS
+    }
+  }
+}
+

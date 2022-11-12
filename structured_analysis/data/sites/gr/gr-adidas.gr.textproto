@@ -1,0 +1,177 @@
+site_examples {
+  url: "https://www.adidas.gr"
+  is_structured: false
+  locale {
+    country: "GR"
+    language: "el"
+  }
+  sequences {
+    fields {
+      name: "shippingAddress-firstName|shippingAddress.firstName"
+      label: "Όνομα"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "shippingAddress-lastName|shippingAddress.lastName"
+      label: "Επώνυμο"
+      label_translated: "Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "shippingAddress-address1|shippingAddress.address1"
+      label: "Πρώτη γραμμή διεύθυνσης"
+      label_translated: "First line of address"
+      control_type: INPUT
+      concepts: "address-line1"
+      autocomplete_attribute: "street-address address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress-address2|shippingAddress.address2"
+      label: "Επιπρόσθετες πληροφορίες"
+      label_translated: "Further information"
+      control_type: INPUT
+      concepts: "address-line2"
+      autocomplete_attribute: "street-address address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress-zipcode|shippingAddress.zipcode"
+      label: "Ταχυδρομικός Κώδικας"
+      label_translated: "Postcodes"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress-city|shippingAddress.city"
+      label: "Πόλη"
+      label_translated: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "contact-emailAddress|shippingAddress.emailAddress"
+      label: "Email"
+      label_translated: "E-mail"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "home email"
+      section: OTHER
+    }
+    fields {
+      name: "contact-phoneNumber|shippingAddress.phoneNumber"
+      label: "Τηλεφωνο (προαιρετικα)"
+      label_translated: "Phone (optional)"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "home tel"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddress-vatCode|additionalBillingAddress.vatCode"
+      label: "A.ɸ.M."
+      label_translated: "A.ɸ.M."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|shouldUseShippingAddressForBilling"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "doc-mrkt-email-checkout|"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "doc-mrkt-paidmedia|"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "login-email|login-email"
+      label: "Email"
+      label_translated: "E-mail"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "login-password|login-password"
+      label: "Κωδικός"
+      label_translated: "Code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|persistentLogin"
+      label: "Να παραμένω σε σύνδεση.Περισσότερες πληροφορίες"
+      label_translated: "Stay connected. More information"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "coupon-input|coupon"
+      label: "Εισαγωγή κωδικού προσφοράς"
+      label_translated: "Enter promo code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|pid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|u_scsid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|u_sclid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "fileSelector|file"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|filename"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

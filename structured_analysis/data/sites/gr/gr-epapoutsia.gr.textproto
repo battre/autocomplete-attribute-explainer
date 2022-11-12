@@ -1,0 +1,231 @@
+site_examples {
+  url: "	https://epapoutsia.gr"
+  is_structured: true
+  locale {
+    country: "GR"
+    language: "el"
+  }
+  sequences {
+    fields {
+      name: "billing__customer-type-private-person|customer-type"
+      label: "Ιδιώτης"
+      label_translated: "Private"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billing__customer-type-company|customer-type"
+      label: "Εταιρεία"
+      label_translated: "Company"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billing__email|email"
+      label: "Διεύθυνση email*"
+      label_translated: "Email Address*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billing__firstname|firstname"
+      label: "Όνομα*"
+      label_translated: "Name*"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "billing__lastname|lastname"
+      label: "Επώνυμο*"
+      label_translated: "Last name*"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "billing__telephone|telephone"
+      label: "Αριθμός τηλεφώνου*"
+      label_translated: "Phone number*"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "billing__street-0|street-0"
+      label: "Οδός*"
+      label_translated: "Street*"
+      control_type: INPUT
+      concepts: "street-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "billing__street-1|street-1"
+      label: "Αριθμός*"
+      label_translated: "Number*"
+      control_type: INPUT
+      concepts: "house-number"
+      section: ADDRESS
+    }
+    fields {
+      name: "billing__postcode|postcode"
+      label: "Ταχυδρομικός κώδικας*"
+      label_translated: "Postcodes*"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "billing__city|city"
+      label: "Πόλη/Χωριό*"
+      label_translated: "City/Village*"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "shipping-to-another-address|shipping-to-another-address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping__customer-type-private-person|customer-type"
+      label: "Ιδιώτης"
+      label_translated: "Private"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping__customer-type-company|customer-type"
+      label: "Εταιρεία"
+      label_translated: "Company"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping__firstname|firstname"
+      label: "Όνομα*"
+      label_translated: "Name*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping__lastname|lastname"
+      label: "Επώνυμο*"
+      label_translated: "Last name*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping__telephone|telephone"
+      label: "Αριθμός τηλεφώνου*"
+      label_translated: "Phone number*"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "shipping__street-0|street-0"
+      label: "Οδός*"
+      label_translated: "Street*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping__street-1|street-1"
+      label: "Αριθμός*"
+      label_translated: "Number*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping__postcode|postcode"
+      label: "Ταχυδρομικός κώδικας*"
+      label_translated: "Postcodes*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping__city|city"
+      label: "Πόλη/Χωριό*"
+      label_translated: "City/Village*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkbox-create-account|checkbox-create-account"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "custom01|custom01"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "genikitachydromiki|genikitachydromiki"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "paypal_express|paypal_express"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cashondelivery|cashondelivery"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payu_gateway_card|payu_gateway_card"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "code|code"
+      label: "Εισάγαγε τον κωδικό"
+      label_translated: "Enter the code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "is_subscribed_phone|is_subscribed_phone"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "is_subscribed|is_subscribed"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "terms|terms"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

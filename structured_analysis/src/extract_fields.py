@@ -42,11 +42,18 @@ def extract_autofill_information(element):
 # a form control. You can enable this strategy with the --label-follows-field
 # command line parameter.
 def extract_label_after_field(element):
-  element = element.next_sibling
-  if not element:
-    return ""
-  if element.string and element.string.strip():
-    return element.string.strip()
+  for attempt in range(1, 3):
+    element = element.next_sibling
+    if not element:
+      return ""
+    if element.string and element.string.strip():
+      return element.string.strip()
+    if isinstance(element, bs4.element.NavigableString) and element.strip():
+      return element
+    if not isinstance(element, bs4.element.NavigableString):
+      contents = u' '.join(element.findAll(text=True)).strip()
+      if contents:
+        return contents
   return ""
 
 def extract_label_before_field(element):
