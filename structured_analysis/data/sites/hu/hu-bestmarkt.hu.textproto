@@ -1,0 +1,235 @@
+site_examples {
+  url: "https://www.bestmarkt.hu"
+  is_structured: false
+  locale {
+    country: "HU"
+    language: "hu"
+  }
+  sequences {
+    fields {
+      name: "delivery-2|Shipping"
+      label: "Személyes átvétellel szaküzletünkben"
+      label_translated: "With personal collection in our specialty store"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "delivery-1|Shipping"
+      label: "Házhoz szállítás futárszolgálattal"
+      label_translated: "Home delivery by courier service"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "delivery-5|Shipping"
+      label: "Személyes átvétellel GLS Csomagponton"
+      label_translated: "With personal collection at GLS Parcel Point"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "delivery-4|Shipping"
+      label: "Személyes átvétellel FoxPost automatából"
+      label_translated: "With personal collection from a FoxPost machine"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "deliveryStates-1|state"
+      label: "Város *"
+      label_translated: "City *"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "deliveryPoint-1|deliveryPoint"
+      label: "Átvételi pont *"
+      label_translated: "Pickup point *"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "deliveryStates-2|state"
+      label: "Város *"
+      label_translated: "City *"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "deliveryPoint-2|deliveryPoint"
+      label: "Átvételi pont *"
+      label_translated: "Pickup point *"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "deliveryStates-3|state"
+      label: "Város *"
+      label_translated: "City *"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "deliveryPoint-3|deliveryPoint"
+      label: "Átvételi pont *"
+      label_translated: "Pickup point *"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payment-2|Payment"
+      label: "Készpénzzel"
+      label_translated: "With cash"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payment-1|Payment"
+      label: "Készpénzzel"
+      label_translated: "With cash"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payment-3|Payment"
+      label: "Előre utalással"
+      label_translated: "Advance transfer"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payment-4|Payment"
+      label: "Most bankkártyával"
+      label_translated: "Now with a bank card"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payment-5|Payment"
+      label: "Átvételkor bankkártyával"
+      label_translated: "With a bank card upon receipt"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingName|b_name"
+      label: "Név *"
+      label_translated: "Name *"
+      control_type: INPUT
+      concepts: "name"
+      section: NAME
+    }
+    fields {
+      name: "billingZip|b_address0"
+      label: "Irányítószám *"
+      label_translated: "Postal code *"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "billingCity|b_address1"
+      label: "Város *"
+      label_translated: "City *"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "billingStreet|b_address2"
+      label: "Utca, házszám *"
+      label_translated: "Street Address *"
+      control_type: INPUT
+      concepts: "street-address"
+      section: ADDRESS
+    }
+    fields {
+      name: "billingTax|b_vat_no"
+      label: "Adószám"
+      label_translated: "Tax number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "matches|matches"
+      label: "A számlázási és a szállítási adatok megegyeznek."
+      label_translated: "The billing and shipping information are the same."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "inputEmail|email"
+      label: "Email *"
+      label_translated: "Email *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "contactMobile|b_phone"
+      label: "Mobil *"
+      label_translated: "Mobile *"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "deliveryName|s_name"
+      label: "Név *"
+      label_translated: "Name *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "deliveryZip|s_address0"
+      label: "Irányítószám *"
+      label_translated: "Postal code *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "deliveryCity|s_address1"
+      label: "Város *"
+      label_translated: "City *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "deliveryStreet|s_address2"
+      label: "Utca, házszám *"
+      label_translated: "Street Address *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "deliveryPhone|s_phone"
+      label: "Telefonszám *"
+      label_translated: "Phone number *"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+  }
+}
+

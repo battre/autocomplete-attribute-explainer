@@ -1,0 +1,228 @@
+site_examples {
+  url: "https://bookline.hu"
+  is_structured: false
+  locale {
+    country: "HU"
+    language: "hu"
+  }
+  sequences {
+    fields {
+      name: "|page"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|searchfield"
+      example: "Keresés ..."
+      example_translated: "Search ..."
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "id_44554238|username"
+      label: "Felhasználónév vagy e-mail-cím"
+      label_translated: "Username or email address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "id_44554239|password"
+      label: "Jelszó"
+      label_translated: "Password"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "input_delivery_category_000_runner|deliveryCategory"
+      label: "Házhoz szállítást kérek 1 633 - 1 764 Ft"
+      label_translated: "I would like home delivery HUF 1,633 - HUF 1,764"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "input_delivery_category_000_personal|deliveryCategory"
+      label: "Átvételi pontba kérem 399 - 1 625 Ft"
+      label_translated: "399 - 1,625 HUF to the pick-up point, please"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "input_delivery_category_000_bookline|deliveryCategory"
+      label: "Bookline boltban veszem át Ingyenes"
+      label_translated: "I will pick it up at the Bookline store Free of charge"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|deliveryCategory"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|deliverySubCategory"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "id_44564351|countryId"
+      label: "Ország"
+      label_translated: "Country"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "id_44564352|zip"
+      label: "Irányítószám"
+      label_translated: "Postal code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "id_44564353|city"
+      label: "Város"
+      label_translated: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "id_44564354|street"
+      label: "Utcanév, házszám"
+      label_translated: "Street name, house number"
+      control_type: INPUT
+      concepts: "street-address"
+      section: ADDRESS
+    }
+    fields {
+      name: "pickup-1|deliveryMode"
+      label: "GLS Hungary Csomag-Logisztikai Kft."
+      label_translated: "GLS Hungary Package-Logistics Kft."
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "pickup-292|deliveryMode"
+      label: "Magyar Posta Zrt."
+      label_translated: "Magyar Posta Zrt."
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "pickup-168858|deliveryMode"
+      label: "Express One Hungary Kft."
+      label_translated: "Express One Hungary Kft."
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "pickup-32|deliveryMode"
+      label: "Sprinter Futárszolgálat Kft."
+      label_translated: "Sprinter Courier Service Kft."
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "id_44564355|billRemark"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "id_44564356|courierRemark"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "id_44564357|payDeliveryFromLoyaltyPoints"
+      label: "Szállítási költség fizetése törzsvásárlói pontokkal ( pont)"
+      label_translated: "Payment of delivery costs with loyalty points (points)"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0003|ot-group-id-C0003"
+      label: "Beállításokat tároló sütik"
+      label_translated: "Cookies that store settings"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0002|ot-group-id-C0002"
+      label: "A weboldal használhatóságát javító (\"statisztikai\") sütik"
+      label_translated: "Cookies that improve the usability of the website (&quot;statistics&quot;)."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0004|ot-group-id-C0004"
+      label: "Marketing célú sütik"
+      label_translated: "Cookies for marketing purposes"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "vendor-search-handler|vendor-search-handler"
+      label: "Vendor Search"
+      label_translated: "Vendor Search"
+      example: "Search..."
+      example_translated: "Search..."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "chkbox-id|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-hosts-groups-handler|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-vendor-groups-handler|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-vendor-leg-handler|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

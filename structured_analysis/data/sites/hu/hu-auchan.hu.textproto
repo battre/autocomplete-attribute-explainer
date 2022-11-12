@@ -92,10 +92,10 @@ site_examples {
       section: ADDRESS
     }
     fields {
-      name: "elevator90cb4883-4cbb-4971-b72b-eec6b448d338|input-checkbox-input-0"
+      name: "post_codef10240be-48f6-45e3-b6d5-0bd4c59fc9c1"
       label: "Irányítószám* 1023"
       label_translated: "Postal code*"
-      control_type: CHECKBOX
+      control_type: INPUT
       concepts: "postal-code"
       section: ADDRESS
     }

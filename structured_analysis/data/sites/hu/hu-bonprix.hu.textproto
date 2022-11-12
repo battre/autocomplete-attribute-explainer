@@ -1,0 +1,176 @@
+site_examples {
+  url: "https://www.bonprix.hu"
+  is_structured: true
+  locale {
+    country: "HU"
+    language: "hu"
+  }
+  sequences {
+    fields {
+      name: "16629759262200.wf6in8zpzwm|email"
+      label: "* E-mail"
+      label_translated: "* Email"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "email"
+      section: OTHER
+    }
+    fields {
+      name: "post|delivery-methods"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "magyar_office|delivery-methods"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "magyar_packstation|delivery-methods"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "16629759398600.j0lp1uuuxxl|lastName"
+      label: "* Vezetéknév"
+      label_translated: "* Surname"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "16629759398610.y3lu1jabkn|firstName"
+      label: "* Keresztnév"
+      label_translated: "* First name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "16629759398620.85dwwt25aqc|street"
+      label: "* Utca"
+      label_translated: "* Street"
+      control_type: INPUT
+      concepts: "street-name"
+      autocomplete_attribute: "shipping street-address"
+      section: ADDRESS
+    }
+    fields {
+      name: "16629759398620.1vs5tsnbe43|streetNumber"
+      label: "* Házszám"
+      label_translated: "* House number"
+      control_type: INPUT
+      concepts: "house-number"
+      autocomplete_attribute: "shipping address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "16629759398620.i25imjfctpa|flatNumber"
+      label: "Helyiség"
+      label_translated: "Room"
+      control_type: INPUT
+      concepts: "apartment"
+      autocomplete_attribute: "shipping address-line3"
+      section: ADDRESS
+    }
+    fields {
+      name: "16629759398630.w15t3felqi|postCode"
+      label: "* Irányítószám"
+      label_translated: "* Postal code"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "shipping postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "16629759398630.pg902rr2es|city"
+      label: "* Helység"
+      label_translated: "* Location"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "shipping address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "payment-computop_credit_card|payment-methods"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payment-cash_on_delivery|payment-methods"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "16629759262330.f04u6y4m1xv|email"
+      label: "* E-mail"
+      label_translated: "* Email"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "email"
+      section: OTHER
+    }
+    fields {
+      name: "|club"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|all"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|regulationsAgreement"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|privacyAgreement"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

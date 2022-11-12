@@ -803,7 +803,7 @@ for the city). E.g. www.boots.com
 
 ## Greece (GR)
 
-Greek address forms seem to be well covered by todayś autocomplete spec except
+Greek address forms seem to be well covered by today's autocomplete spec except
 that some address forms ask for a street name and house number.
 
 <table>
