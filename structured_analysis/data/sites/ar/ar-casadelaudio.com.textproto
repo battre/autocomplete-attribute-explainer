@@ -366,7 +366,7 @@ site_examples {
       label: "Entre calles*"
       label_translated: "Between streets*"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "between-streets"
       section: ADDRESS
     }
     fields {

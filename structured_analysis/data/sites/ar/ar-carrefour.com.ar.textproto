@@ -233,6 +233,7 @@ site_examples {
     }
     # This is from the second form.
     fields {
+      hide: true
       name: "|"
       label: "Código Postal"
       label_translated: "Postal Code"
@@ -326,7 +327,7 @@ site_examples {
       control_type: INPUT
       concepts: "given-name"
       autocomplete_attribute: "given-name"
-      section: ADDRESS
+      section: OTHER
     }
     fields {
       name: "client-last-name|"
@@ -335,7 +336,7 @@ site_examples {
       control_type: INPUT
       concepts: "family-name"
       autocomplete_attribute: "last-name"
-      section: ADDRESS
+      section: OTHER
     }
     fields {
       name: "client-document|"
@@ -504,6 +505,7 @@ site_examples {
       section: OTHER
     }
     fields {
+      hide: true
       name: "v-custom-ship-street|v-custom-street"
       label: "Dirección"
       label_translated: "Address"
@@ -517,6 +519,7 @@ site_examples {
       section: ADDRESS
     }
     fields {
+      hide: true
       name: "ship-number|v-custom-number"
       label: "Number"
       label_translated: "Number"
@@ -526,6 +529,7 @@ site_examples {
       section: ADDRESS
     }
     fields {
+      hide: true
       name: "ship-complement|v-custom-complement"
       example: "Dirección Complementaria"
       example_translated: "Supplementary Address"
@@ -535,6 +539,7 @@ site_examples {
       section: ADDRESS
     }
     fields {
+      hide: true
       name: "ship-country|v-custom-country"
       label: "Country"
       label_translated: "Country"
@@ -543,6 +548,7 @@ site_examples {
       section: ADDRESS
     }
     fields {
+      hide: true
       name: "ship-city|v-custom-city"
       label: "Ciudad"
       label_translated: "City"
@@ -552,6 +558,7 @@ site_examples {
       section: ADDRESS
     }
     fields {
+      hide: true
       name: "ship-state|v-custom-state"
       label: "Província"
       label_translated: "Province"
@@ -560,6 +567,7 @@ site_examples {
       section: ADDRESS
     }
     fields {
+      hide: true
       name: "ship-postalCode|receiver"
       label: "Postal Code"
       label_translated: "Postal Code"
@@ -570,20 +578,23 @@ site_examples {
     }
     fields {
       name: "ship-complement|complement"
+      label: "Piso o Apartamento (ej: 2A)"
+      label_translated: "Floor or apartment (e.g. 2A)"
+      label_comment: "The user has already entered their address into a search widget."
       example: "Dirección Complementaria"
       example_translated: "Supplementary Address"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "floor"
+      concepts: "apartment"
       autocomplete_attribute: "on"
       section: ADDRESS
     }
     fields {
-      hide: true
       name: "ship-neighborhood-checkbox|ship-neighborhood-checkbox"
       label: "Barrio Privado o Country"
       label_translated: "Private neighborhood or Country"
-      control_type: INPUT
-      concepts: "unset"
+      control_type: CHECKBOX
+      concepts: "gap"
       section: ADDRESS
     }
     fields {

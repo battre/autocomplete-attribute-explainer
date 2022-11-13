@@ -95,6 +95,13 @@ for file in args.input: # sys.argv[1:]:
   f.close()
   ontology.MergeFrom(ontology_in_file)
 
+# Load preamble and epilogue files:
+for country_data in ontology.country_data:
+  if country_data.site_examples_preamble_file:
+    country_data.site_examples_preamble_html = (
+        ''.join(open(country_data.site_examples_preamble_file, "r").readlines())
+    )
+
 # Remove everything that is hidden.
 remove_if_hidden(ontology.site_examples)
 for site_example in ontology.site_examples:

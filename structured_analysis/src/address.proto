@@ -155,6 +155,8 @@ message CountryData {
   // HTML to include before and after the side examples for a country.
   string site_examples_preamble_html = 3;
   string site_examples_epilog_html = 4;
+
+  string site_examples_preamble_file = 5;
 }
 
 // Top-level data structure.

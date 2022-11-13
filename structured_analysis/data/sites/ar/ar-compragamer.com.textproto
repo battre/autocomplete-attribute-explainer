@@ -139,7 +139,7 @@ site_examples {
       label: "Entrecalles*"
       label_translated: "Between streets*"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "between-streets"
       autocomplete_attribute: "off"
       section: ADDRESS
     }

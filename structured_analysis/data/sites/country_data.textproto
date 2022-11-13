@@ -8,44 +8,13 @@
 country_data {
   country: "AR"
   country_name: "Argentina 🇦🇷"
-  site_examples_preamble_html:
-    "<p>Argentinian address forms rely on street names and house numbers. "
-    "Every form asks for \"Piso\" and \"Departamento\", sometimes in a single "
-    "field sometimes in two fields. The forms ask for states/provinces and "
-    "localities/cities. One form asked for \"Partido\" <b>and</b> Localidad. "
-    "I don't understand this.</p>"
-    "<p>Often times the address form was filled via an address search box.</p>"
-    "<p>Frequently a DNI was requested (national identification number).</p>"
-    "<p>The following cases are currently missing in the autocomplete spec and "
-    "occurred on multiple sites:"
-    "<ul>"
-    "<li>street-name (calle)"
-    "<li>house-number (número)"
-    "<li>floor (piso)"
-    "<li>apartment (departamento)"
-    "<li>floor and/or apartment (piso y/o departamento)"
-    "<li>\"between streets\" (entrecalles) - either with one input field or with two"
-    "<li>additional information (datos adicionales/aclaración adicional/observations/Dirección Complementaria"
-    "</ul>"
-    "</p>"
+  site_examples_preamble_file: "data/sites/ar/_ar_preamble.html"
 }
 
 country_data {
   country: "AU"
   country_name: "Australia 🇦🇺"
-  site_examples_preamble_html:
-    "<p>Australia has largely simple addresses with<ul><li>address lines 1, 2, "
-    "3, or<li>street name, house number and up to one field for extra "
-    "information (apartment number, floor, etc.).</ul></p>"
-    "<p>The following cases are currently missing in the autocomplete spec and "
-    "occurred on multiple sites:"
-    "<ul>"
-    "<li>street-name"
-    "<li>house-number (also referred to as street no)"
-    "<li>part-of-building / building-and-subbuilding (Lvl, Apt or Unit No.; "
-    "    Building/Floor/Apartment/Unit; Suite, building, level, etc. (optional) "
-    "</ul>"
-    "</p>"
+  site_examples_preamble_file: "data/sites/au/_au_preamble.html"
 }
 
 country_data {

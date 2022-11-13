@@ -90,7 +90,7 @@ site_examples {
       example: "Ej. Lavander y Gurion"
       example_translated: "Ex. Lavender and Gurion"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "between-streets"
       section: ADDRESS
     }
     fields {

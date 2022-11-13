@@ -77,7 +77,8 @@ site_examples {
       example: "Ej: Entrecalles u otras referencias"
       example_translated: "eg \"between streets\" or other references"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "between-streets"
+      concepts: "landmark"
       section: ADDRESS
     }
     fields {

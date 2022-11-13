@@ -1,0 +1,147 @@
+site_examples {
+  url: "https://www.carrefour.com.ar/"
+  is_structured: true
+  locale {
+    country: "AR"
+    language: "es"
+  }
+  sequences {
+    fields {
+      name: "creditCardpayment-card-0Number|cardNumber"
+      label: "Número"
+      label_translated: "Number"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "creditCardselectedCard0cc-0|creditCardselectedCardFlag-0"
+      label: "Tarjeta Carrefour"
+      label_translated: "Carrefour Card"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "creditCardpayment-card-0Brand|"
+      label: "Cuotas disponíbles:"
+      label_translated: "Available quotas:"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "creditCardpayment-card-0Name|ccName"
+      label: "Nombre y Apellido como figura en la tarjeta"
+      label_translated: "Name and Surname as it appears on the card"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "creditCardpayment-card-0Month|cardExpirationMonth"
+      label: "Fecha de Vencimiento"
+      label_translated: "Expiration date"
+      control_type: SELECT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "creditCardpayment-card-0Year|cardExpirationYear"
+      label: "Fecha de Vencimiento/"
+      label_translated: "Expiration date/"
+      control_type: SELECT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "creditCardpayment-card-0Code|"
+      label: "Código de Seguridad"
+      label_translated: "Security code"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "holder-document-0|"
+      label: "DNI del pagador"
+      label_translated: "ID of the payer"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address-toggle-0|"
+      label: "La dirección de la factura de la tarjeta es Avenida Ingeniero Edua..."
+      label_translated: "The address on the card bill is Avenida Ingeniero Edua..."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payment-billing-address-all-countries-0|"
+      label: "País *"
+      label_translated: "Country *"
+      label_comment: "This is the billing address form, which is different from the shipping address form."
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "payment-billing-address-postalCode-0|"
+      label: "Código Postal *"
+      label_translated: "Postal Code *"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "nope"
+      section: ADDRESS
+    }
+    fields {
+      name: "payment-billing-address-street-0|"
+      label: "Calle *"
+      label_translated: "Street *"
+      control_type: INPUT
+      concepts: "street-name"
+      autocomplete_attribute: "nope"
+      section: ADDRESS
+    }
+    fields {
+      name: "payment-billing-address-number-0|"
+      label: "Número *"
+      label_translated: "Number *"
+      control_type: INPUT
+      concepts: "house-number"
+      autocomplete_attribute: "nope"
+      section: ADDRESS
+    }
+    fields {
+      name: "payment-billing-address-complement-0|"
+      example: "Opcional"
+      example_translated: "Optional"
+      control_type: INPUT
+      concepts: "address-overflow"
+      autocomplete_attribute: "nope"
+      section: ADDRESS
+    }
+    fields {
+      name: "payment-billing-address-state-0|"
+      label: "Provincia *"
+      label_translated: "Province *"
+      control_type: SELECT
+      concepts: "address-level1"
+      autocomplete_attribute: "nope"
+      section: ADDRESS
+    }
+    fields {
+      name: "payment-billing-address-city-0|"
+      label: "Ciudad *"
+      label_translated: "City *"
+      control_type: SELECT
+      concepts: "address-level2"
+      autocomplete_attribute: "nope"
+      section: ADDRESS
+    }
+  }
+}
+

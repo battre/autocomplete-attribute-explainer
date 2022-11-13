@@ -321,12 +321,29 @@ concepts {
 
 concepts {
   name: "care-of"
-  description: "care of"
+  description: "Care of"
   canonical_format_example: "Mrs. Example"
   label: "c/o"
   is_new: true
 }
 
+concepts {
+  name: "between-streets"
+  description: "Between streets"
+  canonical_format_example: "A street and B street"
+  label: "Between streets"
+  is_new: true
+}
+
+concepts {
+  name: "address-overflow"
+  description: "Address overflow"
+  canonical_format_example:
+    "[Often information within a building (e.g. floor, house number, or a c/o "
+    "or company name)]"
+  label: "n/a"
+  is_new: true
+}
 
 # Generic "street-name house-number" pattern.
 compound_concepts {
