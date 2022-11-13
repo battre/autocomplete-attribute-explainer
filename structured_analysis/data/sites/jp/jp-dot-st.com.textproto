@@ -253,7 +253,7 @@ site_examples {
       example: "〇〇ビル〇〇号室"
       example_translated: "〇〇 building room 〇〇"
       control_type: INPUT
-      concepts: "building-and-part-of-building"
+      concepts: "building-and-location-in-building"
       autocomplete_attribute: "address-line3"
       section: ADDRESS
     }

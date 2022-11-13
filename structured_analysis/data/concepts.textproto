@@ -386,7 +386,7 @@ compound_concepts {
 }
 
 compound_concepts {
-  name: "part-of-building"
+  name: "location-in-building"
   description: "All fields within a building, depending on the country. "
     "E.g. apartment number, floor, stair case, ..."
   tokens {
@@ -395,8 +395,8 @@ compound_concepts {
 }
 
 compound_concepts {
-  name: "building-and-part-of-building"
-  description: "Name of a building plus part-of-building information"
+  name: "building-and-location-in-building"
+  description: "Name of a building plus location-in-building information"
   tokens {
     concept_name: "building"
   }
@@ -404,14 +404,14 @@ compound_concepts {
     separator_value: ", "
   }
   tokens {
-    concept_name: "part-of-building"
+    concept_name: "location-in-building"
   }
 }
 
 compound_concepts {
   name: "address-search"
   description: "An address search widget, typically accepting information down "
-    "to the building level, but no name or part-of-building information. "
+    "to the building level, but no name or location-in-building information. "
     "E.g. 32 Vassar Street, Cambridge, MA, USA"
   label: "n/a: this would not be shown in the UI."
 

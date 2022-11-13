@@ -139,7 +139,7 @@ site_examples {
       name: "suiteBuilding|suiteBuilding"
       label: "Suite, building, level, etc. (optional)"
       control_type: INPUT
-      concepts: "building-and-part-of-building"
+      concepts: "building-and-location-in-building"
       concepts_comment: "This could also be an address-line2"
       section: ADDRESS
     }

@@ -73,7 +73,7 @@ site_examples {
       label_translated: "Apartment, internal number, Building Access Code"
       control_type: INPUT
       concepts: "address-line2"
-      concepts_comment: "Could be part-of-building or building access code"
+      concepts_comment: "Could be location-in-building or building access code"
       autocomplete_attribute: "address-line2"
       low_certainty: true
       section: ADDRESS

@@ -166,7 +166,7 @@ site_examples {
       example: "例：ソリッドスクエア東館20F"
       example_translated: "Example: Solid Square East Building 20F"
       control_type: INPUT
-      concepts: "building-and-part-of-building"
+      concepts: "building-and-location-in-building"
       section: ADDRESS
     }
     fields {

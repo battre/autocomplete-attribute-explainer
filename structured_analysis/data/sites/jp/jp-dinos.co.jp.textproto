@@ -127,7 +127,7 @@ site_examples {
       example: "例：中野坂上セントラルハイツ２０１"
       example_translated: "Example: Nakano Sakaue Central Heights 201"
       control_type: INPUT
-      concepts: "building-and-part-of-building"
+      concepts: "building-and-location-in-building"
       section: ADDRESS
     }
     fields {

@@ -194,7 +194,7 @@ site_examples {
       example: "(例) ○○マンション101号"
       example_translated: "(Example) ○○ Mansion No. 101"
       control_type: INPUT
-      concepts: "part-of-building"
+      concepts: "location-in-building"
       section: ADDRESS
     }
     fields {

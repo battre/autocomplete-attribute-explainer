@@ -98,7 +98,7 @@ site_examples {
       example: "例: 〇〇ビル１２３号室"
       example_translated: "Example: 〇〇 Building Room 123"
       control_type: INPUT
-      concepts: "building-and-part-of-building"
+      concepts: "building-and-location-in-building"
       section: ADDRESS
     }
     fields {
