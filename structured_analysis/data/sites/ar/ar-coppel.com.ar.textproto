@@ -298,8 +298,9 @@ site_examples {
       example: "Opcional"
       example_translated: "Optional"
       control_type: INPUT
-      concepts: "floor"
-      concepts: "apartment"
+      # concepts: "floor"
+      # concepts: "apartment"
+      concepts: "location-in-building"
       autocomplete_attribute: "on"
       section: ADDRESS
     }

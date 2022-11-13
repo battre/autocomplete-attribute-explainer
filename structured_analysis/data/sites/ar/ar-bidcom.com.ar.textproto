@@ -68,8 +68,9 @@ site_examples {
       example: "Ej. 2 A"
       example_translated: "Ex. 2 A"
       control_type: INPUT
-      concepts: "floor"
-      concepts: "apartment"
+      # concepts: "floor"
+      # concepts: "apartment"
+      concepts: "location-in-building"
       autocomplete_attribute: "off"
       section: ADDRESS
     }

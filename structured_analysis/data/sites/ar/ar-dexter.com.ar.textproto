@@ -101,8 +101,9 @@ site_examples {
       label: "Piso y/o Dpto"
       label_translated: "Floor and/or Apartment"
       control_type: INPUT
-      concepts: "floor"
-      concepts: "apartment"
+      # concepts: "floor"
+      # concepts: "apartment"
+      concepts: "location-in-building"
       autocomplete_attribute: "shipping family-name"
       section: ADDRESS
     }
