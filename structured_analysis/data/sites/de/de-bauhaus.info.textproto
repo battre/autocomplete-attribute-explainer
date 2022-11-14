@@ -123,7 +123,7 @@ site_examples {
       label: "Adresszusatz (c/o)"
       label_translated: "Additional address information (c/o)"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "address-overflow"
       section: ADDRESS
     }
     fields {

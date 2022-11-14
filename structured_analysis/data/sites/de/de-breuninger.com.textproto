@@ -85,7 +85,7 @@ site_examples {
       label: "Adresszusatz optional"
       label_translated: "Additional address information (optional)"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "address-overflow"
       section: ADDRESS
     }
     fields {

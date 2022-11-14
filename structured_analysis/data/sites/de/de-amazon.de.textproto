@@ -59,7 +59,7 @@ site_examples {
       label: "Unternehmensname, Post- Fach, c/o, Pakadoo PAK-ID usw."
       label_translated: "Company name, PO Box, c/o, Pakadoo PAK-ID, etc."
       control_type: INPUT
-      concepts: "gap"
+      concepts: "address-overflow"
       autocomplete_attribute: "address-ui-widgets-enterAddressLine1"
       section: ADDRESS
     }

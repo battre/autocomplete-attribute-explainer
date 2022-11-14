@@ -38,10 +38,9 @@ site_examples {
       label: "Wohnung/Firma/Empfänger"
       label_translated: "Residence/company/recipient"
       control_type: INPUT
-      concepts: "apartment"
-      concepts: "organization"
-      concepts: "gap"
-      concepts_comment: "This could be an address line 2 but typically one "
+      concepts: "address-overflow"
+      concepts_comment: "This could be an address line 2 (the website labeled "
+        "the field as address-line2) but typically one "
         "would put all of this information above the street name and house "
         "number."
       low_certainty: true

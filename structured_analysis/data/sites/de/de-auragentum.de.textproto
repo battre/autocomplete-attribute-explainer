@@ -201,7 +201,7 @@ site_examples {
       label: "Adresszusatz"
       label_translated: "address supplement"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "address-overflow"
       autocomplete_attribute: "section-billing billing organization-title"
       section: ADDRESS
     }
