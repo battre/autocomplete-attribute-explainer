@@ -7,6 +7,8 @@ import argparse
 from typing import Generator
 from google.protobuf import text_format
 from jinja2 import Environment, FileSystemLoader, select_autoescape
+from jinja2.filters import FILTERS, pass_context
+from jinja2.runtime import Context
 import os
 import sys
 
@@ -78,6 +80,19 @@ def remove_if_hidden(container) -> None:
   for item in items_to_remove:
     container.remove(item)
 
+
+# Jinja2 filter that generates the list of CSS classes for a concept name
+@pass_context
+def css_classes_for_concept(context:Context, concept_name:str) -> str:
+  if concept_name in ('gap', 'unset', 'unsure'):
+    return concept_name
+  if concept_name not in context.resolve('known_concepts'):
+    return 'unknown-concept new-concept'
+  if concept_name in context.resolve('new_concepts'):
+    return 'new-concept'
+  return ''
+
+FILTERS['css_classes_for_concept'] = css_classes_for_concept
 
 # The main program.
 

@@ -42,11 +42,7 @@
     {% if field.concepts | length > 1 %}[{% endif %}
     <span id="concept_{{field.internal_id}}">
     {% for concept in field.concepts %}<code
-    class="{{'unknown-concept new-concept' if concept not in known_concepts else ''}}
-    {{'low-certainty' if field.low_certainty else ''}}
-    {{'gap' if concept == 'gap' else ''}}
-    {{'unset' if concept == 'unset' else ''}}
-    {{'new-concept' if concept in new_concepts else ''}}">
+    class="{{concept|css_classes_for_concept}} {{'low-certainty' if field.low_certainty else ''}}">
       {{entry("", concept, "", "", field.concepts_comment, "left")}}
     </code>{% endfor %}
     </span>
@@ -154,6 +150,7 @@ code.new-concept.unset {
   background-color: blanchedalmond;
 }
 code.gap,
+code.unsure,
 code.new-concept.gap {
   background-color: blanchedalmond;
 }
@@ -192,7 +189,7 @@ useful for more countries.
 {% for concept in ontology.concepts %}
   {% if not concept.specialization %}
   <tr>
-    <td><code class="{{'new-concept' if concept.name in new_concepts else ''}}">
+    <td><code class="{{concept.name|css_classes_for_concept}}">
       {{concept.name}}
     </code></td>
     <td>{{concept.description|safe}}</td>
@@ -216,15 +213,14 @@ which I have not done yet.
   </thead>
 {% for concept in ontology.compound_concepts %}
 <tr>
-  <td><code class="new-concept">
-    {{concept.name}}
-  </code>
-  {% for specialization in concept.specialization %}
-    { {{ specialization.country|join(', ') }} }
-    x
-    { {{ specialization.language|join(', ') }} }
-    {{ ", " if not loop.last else "" }}
-  {% endfor %}
+  <td>
+    <code class="{{concept.name|css_classes_for_concept}}">{{concept.name}}</code>
+    {% for specialization in concept.specialization -%}
+      { {{ specialization.country|join(', ') }} }
+      x
+      { {{ specialization.language|join(', ') }} }
+      {{ ", " if not loop.last else "" }}
+    {%- endfor -%}
   </td>
   <td>{{concept.description|safe}}</td>
   <td>{{concept.label|safe}}</td>
@@ -232,7 +228,7 @@ which I have not done yet.
   <td>
     {% for token in concept.tokens -%}
       {%- if token.concept_name -%}
-        <code class="{{'new-concept' if token.concept_name in new_concepts else ''}}">{{token.concept_name}}</code>
+        <code class="{{concept.name|css_classes_for_concept}}">{{token.concept_name}}</code>
       {%- endif -%}
       {%- if token.separator_value -%}
         <code>{{token.separator_value}}</code>
