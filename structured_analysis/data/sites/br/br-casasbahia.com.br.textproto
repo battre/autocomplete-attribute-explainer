@@ -46,7 +46,7 @@ site_examples {
       example: "Nome de lugar ou descrição de fachada perto do endereço"
       example_translated: "Place name or facade description near the address"
       control_type: TEXTAREA
-      concepts: "gap"
+      concepts: "landmark"
       section: ADDRESS
     }
     fields {

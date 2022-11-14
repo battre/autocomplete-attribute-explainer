@@ -267,7 +267,8 @@ site_examples {
       example: "Opcional"
       example_translated: "Optional"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "building-and-location-in-building"
+      concepts: "landmark"
       section: ADDRESS
     }
     fields {

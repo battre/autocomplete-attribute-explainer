@@ -50,7 +50,7 @@ site_examples {
       example: "Apto/Bloco/Casa"
       example_translated: "Apartment/Block/House"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "building-and-location-in-building"
       section: ADDRESS
     }
     fields {

@@ -260,7 +260,7 @@ site_examples {
       example: "Nº do apartamento, Bloco, etc."
       example_translated: "apartment number, block"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "building-and-location-in-building"
       section: ADDRESS
     }
     fields {
@@ -298,7 +298,7 @@ site_examples {
       label: "Referência"
       label_translated: "Reference"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "landmark"
       section: ADDRESS
     }
     fields {

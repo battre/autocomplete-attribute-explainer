@@ -116,6 +116,10 @@ for country_data in ontology.country_data:
     country_data.site_examples_preamble_html = (
         ''.join(open(country_data.site_examples_preamble_file, "r").readlines())
     )
+  if country_data.site_examples_epilog_file:
+    country_data.site_examples_epilog_html = (
+        ''.join(open(country_data.site_examples_epilog_file, "r").readlines())
+    )
 
 # Remove everything that is hidden.
 remove_if_hidden(ontology.site_examples)

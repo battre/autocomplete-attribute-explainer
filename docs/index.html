@@ -19275,7 +19275,43 @@ attribute that meets the requirements of real-world websites.
   
   
   
-  <p>Brazil relies heavily on structured addresses. Basically every form has separate fields for street name, house number and often an complement (for apartments, blocks, ...). Often times, a lot of information is derived from the CEP (postal code).<p>The following cases are currently missing in the autocomplete spec and occurred on multiple sites:<ul><li>street-name (endereço)<li>house-number (número)<li>additional information (Informações adicionais; Complemento (opcional)   (Apartamento, sala, conjunto, edifício, andar, etc.); Complemento;   Complemento e referência (Opcional); Complemento (Nº do apartamento,   Bloco, etc.); Complemento (Apto/Bloco/Casa))<br> Informationen going   into this are:  <ul>  <li>apartment, room, suite  <li>building, block, house - often times people live in gated       communities where the entire community has the same street name and       house number. The Bloco identifies the building within the       community.  <li>floor  </ul><li> reference-point (landmark?) (Referência;  Complemento e referência;      Ponto de referência) - e.g. people would put 'same street as Church      xyz' there to help the delivery person find the location.</ul></p>
+  <div>Brazil relies heavily on structured addresses. Basically every form
+has separate fields for street name, house number and often an complement
+(for apartments, blocks, ...). Oftentimes, a lot of information is
+derived from the CEP (postal code).</div>
+
+<h4>Missing field type</h4>
+<div>The following cases are currently missing in the autocomplete spec and
+occurred on multiple sites:
+<ul>
+<li>street-name (endereço)
+<li>house-number (número)
+<li>additional information (Informações adicionais; Complemento (opcional)
+  (Apartamento, sala, conjunto, edifício, andar, etc.); Complemento;
+  Complemento e referência (Opcional); Complemento (Nº do apartamento,
+  Bloco, etc.); Complemento (Apto/Bloco/Casa))<br> Informationen going
+  into this are:
+  <ul>
+  <li>apartment, room, suite
+  <li>building, block, house - often times people live in gated
+      communities where the entire community has the same street name and
+      house number. The Bloco identifies the building within the
+      community.
+  <li>floor
+  </ul>
+<li>reference-point (landmark?) (Referência;  Complemento e referência;
+  Ponto de referência) - e.g. people would put 'same street as Church
+  xyz' there to help the delivery person find the location.
+</ul>
+</div>
+
+<h4>Open questions</h4>
+<ul>
+  <li>I have modeled the additional information as
+    "building-and-location-in-building" and reference-point as "landmark".
+    Any concerns about this? It will require some localization in the UI
+    because Brasilians probably don't think of landmarks as reference-points.</li>
+</ul>
   
   
   
@@ -22582,10 +22618,10 @@ attribute that meets the requirements of real-world websites.
     
     <span id="concept_field_681">
     <code
-    class="gap ">
+    class="new-concept ">
       
   
-    <span id="">gap</span>
+    <span id="">building-and-location-in-building</span>
   
 
     </code>
@@ -22835,10 +22871,10 @@ attribute that meets the requirements of real-world websites.
     
     <span id="concept_field_764">
     <code
-    class="gap ">
+    class="new-concept ">
       
   
-    <span id="">gap</span>
+    <span id="">building-and-location-in-building</span>
   
 
     </code>
@@ -23006,7 +23042,9 @@ attribute that meets the requirements of real-world websites.
     class=" low-certainty">
       
   
-    <span id="">address-line1</span>
+    <span class="entry-with-tooltip" id="">address-line1
+      <div class="tooltip tooltip-left">We could also use street-location for this.</div>
+    </span>
   
 
     </code>
@@ -23020,7 +23058,9 @@ attribute that meets the requirements of real-world websites.
     class=" low-certainty">
       
   
-    <span id="">address-line2</span>
+    <span class="entry-with-tooltip" id="">address-line2
+      <div class="tooltip tooltip-left">We could also use building-and-location-in-building for this.</div>
+    </span>
   
 
     </code>
@@ -23296,10 +23336,10 @@ attribute that meets the requirements of real-world websites.
     
     <span id="concept_field_803">
     <code
-    class="gap ">
+    class="new-concept ">
       
   
-    <span id="">gap</span>
+    <span id="">building-and-location-in-building</span>
   
 
     </code>
@@ -23324,10 +23364,10 @@ attribute that meets the requirements of real-world websites.
     
     <span id="concept_field_805">
     <code
-    class="gap ">
+    class="new-concept ">
       
   
-    <span id="">gap</span>
+    <span id="">landmark</span>
   
 
     </code>
@@ -23556,18 +23596,25 @@ attribute that meets the requirements of real-world websites.
     
   
     |
-    
+    [
     <span id="concept_field_826">
     <code
-    class="gap ">
+    class="new-concept ">
       
   
-    <span id="">gap</span>
+    <span id="">building-and-location-in-building</span>
+  
+
+    </code><code
+    class="new-concept ">
+      
+  
+    <span id="">landmark</span>
   
 
     </code>
     </span>
-    
+    ]
   
     |
     
@@ -23736,10 +23783,10 @@ attribute that meets the requirements of real-world websites.
     
     <span id="concept_field_833">
     <code
-    class="gap ">
+    class="new-concept ">
       
   
-    <span id="">gap</span>
+    <span id="">landmark</span>
   
 
     </code>
@@ -23922,18 +23969,25 @@ attribute that meets the requirements of real-world websites.
     
   
     |
-    
+    [
     <span id="concept_field_898">
     <code
-    class="gap ">
+    class="new-concept ">
       
   
-    <span id="">gap</span>
+    <span id="">building-and-location-in-building</span>
+  
+
+    </code><code
+    class="new-concept ">
+      
+  
+    <span id="">landmark</span>
   
 
     </code>
     </span>
-    
+    ]
   
     |
     
@@ -24160,10 +24214,10 @@ attribute that meets the requirements of real-world websites.
     
     <span id="concept_field_956">
     <code
-    class="gap ">
+    class="new-concept ">
       
   
-    <span id="">gap</span>
+    <span id="">building-and-location-in-building</span>
   
 
     </code>
@@ -24216,10 +24270,10 @@ attribute that meets the requirements of real-world websites.
     
     <span id="concept_field_960">
     <code
-    class="gap ">
+    class="new-concept ">
       
   
-    <span id="">gap</span>
+    <span id="">landmark</span>
   
 
     </code>
@@ -24407,10 +24461,10 @@ attribute that meets the requirements of real-world websites.
     
     <span id="concept_field_991">
     <code
-    class="gap ">
+    class="new-concept ">
       
   
-    <span id="">gap</span>
+    <span id="">building-and-location-in-building</span>
   
 
     </code>
@@ -24558,10 +24612,10 @@ attribute that meets the requirements of real-world websites.
     
     <span id="concept_field_1002">
     <code
-    class="gap ">
+    class="new-concept ">
       
   
-    <span id="">gap</span>
+    <span id="">building-and-location-in-building</span>
   
 
     </code>
@@ -26422,8 +26476,34 @@ attribute that meets the requirements of real-world websites.
   
   
   
-  <p>The capital city of Brasilia is divided into sectors. The sectors appear as abbreviations in the address (three to four capital letters). A sector is divided into quadras, which are themselves divided into blocks (<a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/braEn.pdf">source</a>).<p><p>While most cities seem to follow a "street name, house number" schema, the capital Brasilia uses "sector, quadra, block, floor", e.g. SBN – Quadra 13 – Bloco B – 8º andar. <a href="https://goo.gl/maps/Nru1v31DUeKCwXvc7">Here</a> is an image of "Superquadra Sul (sector) 303 (quadra)", where each building is called a block. The address refers to block B and floor number 8.<p><p>I looked up a zip code in Brasilia (70670-503) and a website (casasbahia.com.br) translated this into a two-line Endereço: <pre>CLSW 101 Bloco C
-Setor Sudoeste - Brasília - DF</pre></p><p>It is pretty common that the website only asks for the zip code (CEP), derives the Endereço, and then asks the user to enter Número (house number). For an address in Brasilia, I suppose that you would specify "s/n" as the number (as you don't have one - s/n = "sem número" = without number; some websites have a checkbox for this).</p><p>For these reasons, I am not sure whether Bloco in a Complemento field refers to a block in Brasilia or needs to be supported as a separate field type.</p>
+  <div>The capital city of Brasilia is divided into sectors. The sectors appear as
+  abbreviations in the address (three to four capital letters). A sector is
+  divided into quadras, which are themselves divided into blocks (<a
+    href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/braEn.pdf">source</a>).</div>
+
+<div>While most cities seem to follow a "street name, house number" schema, the
+  capital Brasilia uses "sector, quadra, block, floor", e.g. SBN – Quadra 13 –
+  Bloco B – 8º andar.
+  <a href="https://goo.gl/maps/Nru1v31DUeKCwXvc7">Here</a> is an image of
+  "Superquadra Sul (sector) 303 (quadra)", where each building is called
+  a block. The address refers to block B and floor number 8.
+</div>
+
+<div>I looked up a zip code in Brasilia (70670-503) and a website
+  (casasbahia.com.br) translated this into a two-line Endereço:
+  <pre>CLSW 101 Bloco Cn
+Setor Sudoeste - Brasília - DF</pre>
+</div>
+
+<div>It is pretty common that the website only asks for the zip code (CEP),
+  derives the Endereço, and then asks the user to enter Número (house number). For
+  an address in Brasilia, I suppose that you would specify "s/n" as the number (as
+  you don't have one - s/n = "sem número" = without number; some websites have a
+  checkbox for this).</div>
+
+<div>For these reasons, I am not sure whether Bloco in a Complemento field
+  refers to a block in Brasilia or needs to be supported as a separate
+  field type.</div>
   
   
   

@@ -156,7 +156,9 @@ message CountryData {
   string site_examples_preamble_html = 3;
   string site_examples_epilog_html = 4;
 
+  // Same as the previous two but via a link to an HTML file.
   string site_examples_preamble_file = 5;
+  string site_examples_epilog_file = 6;
 }
 
 // Top-level data structure.
