@@ -37,23 +37,7 @@ country_data {
 country_data {
   country: "DE"
   country_name: "Germany 🇩🇪"
-  site_examples_preamble_html:
-    "<p>German sites often ask for street name and house number in a single "
-    "designated filed or two separate fields. This is often complemented by an "
-    "address extension (\"Addresszusatz\"), a catch all field that can list an "
-    "apartment number (rare), c/o person or a company name.<p>"
-    "<p>German address forms are special in that they often ask for gender, "
-    "saluation, and social / academic titles.<p>"
-    "<p>The following cases are currently missing in the autocomplete spec and "
-    "occurred on multiple sites:"
-    "<ul>"
-    "<li>street-name (Straße)"
-    "<li>house-number (Hausnummer)"
-    "<li>address extension (Addresszusatz)"
-    "<li>salutation (Herr/Frau - Mr./Mrs.)"
-    "<li>academic title (Titel)"
-    "</ul>"
-    "</p>"
+  site_examples_preamble_file: "data/sites/de/_de_preamble.html"
 }
 
 country_data {

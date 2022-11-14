@@ -83,11 +83,13 @@ site_examples {
     }
     fields {
       name: "salutation|register[personal][salutation]"
-      label: "Ich bin Neukunde"
-      label_translated: "I am a new customer"
+      label: "Anrede"
+      label_translated: "Salutation"
+      example: "Herr, Frau"
+      example_translated: "Mr., Mrs."
       control_type: SELECT
-      concepts: "unset"
-      section: OTHER
+      concepts: "honorific-prefix"
+      section: NAME
     }
     fields {
       name: "title|register[personal][title]"
@@ -95,8 +97,8 @@ site_examples {
       label_translated: "title"
       control_type: INPUT
       concepts: "honorific-prefix"
-      concepts_comment: "The website has separate fields for the gender and "
-        "honorific prefix."
+      concepts_comment: "The website has select element for Mr./Mrs. and this "
+        "free text field, e.g. for academic or noble titles."
       low_certainty: true
       autocomplete_attribute: "section-personal title"
       section: NAME

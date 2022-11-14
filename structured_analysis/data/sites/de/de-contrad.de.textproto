@@ -13,7 +13,7 @@ site_examples {
       example: "Herr / Frau"
       example_translated: "Mr. / Mrs."
       control_type: SELECT
-      concepts: "gap"
+      concepts: "honorific-prefix"
       section: NAME
     }
     fields {
@@ -21,7 +21,8 @@ site_examples {
       label: "Titel (optional)"
       label_translated: "Academic title"
       control_type: SELECT
-      concepts: "gap"
+      concepts: "honorific-prefix"
+      low_certainty: true
       section: NAME
     }
     fields {

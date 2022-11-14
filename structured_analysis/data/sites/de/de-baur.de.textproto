@@ -85,7 +85,7 @@ site_examples {
       label: "Frau"
       label_translated: "Mrs"
       control_type: RADIO
-      concepts: "gap"
+      concepts: "honorific-prefix"
       section: NAME
     }
     fields {
@@ -93,7 +93,7 @@ site_examples {
       label: "Herr"
       label_translated: "Mr"
       control_type: RADIO
-      concepts: "gap"
+      concepts: "honorific-prefix"
       section: NAME
     }
     fields {
