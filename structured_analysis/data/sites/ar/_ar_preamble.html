@@ -1,50 +1,45 @@
-<div>Argentinian address forms rely on <b>street names</b>, <b>house numbers</b>,
+<p>Argentinian address forms rely on <b>street names</b>, <b>house numbers</b>,
   <b>floors</b> (Piso) and <b>apartments</b> (Departamento). Floors and
   apartments can be requested in a single input field or in two separate fields.
-</div>
 
-<div>On the street address level, we frequently see <b>between streets</b>, i.e.
+<p>On the street address level, we frequently see <b>between streets</b>, i.e.
   a field in which one specifies the names of two crossing streets to help
-  locate the house number.</div>
+  locate the house number.
 
-<div>The forms ask for states/provinces and localities/cities.</div>
+<p>The forms ask for states/provinces and localities/cities.
 
-<div>Oftentimes the address form was filled via an address search box.</div>
+<p>Oftentimes the address form was filled via an address search box.
 
-<div>Frequently a DNI was requested (national identification number).</div>
+<p>Frequently a DNI was requested (national identification number).
 
 <h4>Missing field type</h4>
-<div>The following cases are currently missing in the autocomplete spec and
-  occurred on multiple sites:
-  <ul>
-    <li>street-name (calle)
-    <li>house-number (número)
-    <li>floor (piso)
-    <li>apartment (departamento)
-    <li>floor and/or apartment (piso y/o departamento)
-    <li>"between streets" (entrecalles) - either with one input field or with
-      two
-    <li>additional information (datos adicionales/aclaración
-      adicional/observations/Dirección Complementaria
-  </ul>
-</div>
+The following cases are currently missing in the autocomplete spec and
+occurred on multiple sites:
+<ul>
+  <li>street-name (calle)
+  <li>house-number (número)
+  <li>floor (piso)
+  <li>apartment (departamento)
+  <li>floor and/or apartment (piso y/o departamento)
+  <li>"between streets" (entrecalles) - either with one input field or with
+    two
+  <li>additional information (datos adicionales/aclaración
+    adicional/observations/Dirección Complementaria
+</ul>
 
 <h4>Open questions</h4>
 <ul>
   <li>How do we deal with address-overflow? Oftentimes, this seems to ask for
     information within a building - floor and apartment - but theoretically it
     could be more flexible. Do we want to rely on "location-in-building"?
-  </li>
   <li>Do we want to support entrecalles (between streets) which are split across
-    two fields? - Do we want to combine this with "landmark"?</li>
+    two fields? - Do we want to combine this with "landmark"?
   <li>Two forms asked for a "Lote" - a piece of land (a lot / parcel of land).
-  </li>
   <li>One form asked for a "Torre", which literally means a tower but in this context
     it would refer to a part of a building (e.g. front-building, a wing of a
-    building, ...). </li>
+    building, ...).
   <li>The concept of "partido" is not fully clear to me. One form asked for
     (provincia, partido, localidad), which I see as (province, part of a city,
     city). Another form asked for (partido, provincia) but no city. Maybe this was
     implied by the zip code?
-  </li>
 </ul>

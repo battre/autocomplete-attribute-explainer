@@ -23,7 +23,7 @@
           --font-size: 18px;
       }
     }
-    h1, h2, h3, h4, h5 {
+    h1, h2, h3, h4, h5, p, ul {
       --typography-spacing-vertical: 0.5rem;
     }
     h1, h2, h3 {
@@ -3577,55 +3577,50 @@ attribute that meets the requirements of real-world websites.
     
   </h3>
   
-  <div>Argentinian address forms rely on <b>street names</b>, <b>house numbers</b>,
+  <p>Argentinian address forms rely on <b>street names</b>, <b>house numbers</b>,
   <b>floors</b> (Piso) and <b>apartments</b> (Departamento). Floors and
   apartments can be requested in a single input field or in two separate fields.
-</div>
 
-<div>On the street address level, we frequently see <b>between streets</b>, i.e.
+<p>On the street address level, we frequently see <b>between streets</b>, i.e.
   a field in which one specifies the names of two crossing streets to help
-  locate the house number.</div>
+  locate the house number.
 
-<div>The forms ask for states/provinces and localities/cities.</div>
+<p>The forms ask for states/provinces and localities/cities.
 
-<div>Oftentimes the address form was filled via an address search box.</div>
+<p>Oftentimes the address form was filled via an address search box.
 
-<div>Frequently a DNI was requested (national identification number).</div>
+<p>Frequently a DNI was requested (national identification number).
 
 <h4>Missing field type</h4>
-<div>The following cases are currently missing in the autocomplete spec and
-  occurred on multiple sites:
-  <ul>
-    <li>street-name (calle)
-    <li>house-number (número)
-    <li>floor (piso)
-    <li>apartment (departamento)
-    <li>floor and/or apartment (piso y/o departamento)
-    <li>"between streets" (entrecalles) - either with one input field or with
-      two
-    <li>additional information (datos adicionales/aclaración
-      adicional/observations/Dirección Complementaria
-  </ul>
-</div>
+The following cases are currently missing in the autocomplete spec and
+occurred on multiple sites:
+<ul>
+  <li>street-name (calle)
+  <li>house-number (número)
+  <li>floor (piso)
+  <li>apartment (departamento)
+  <li>floor and/or apartment (piso y/o departamento)
+  <li>"between streets" (entrecalles) - either with one input field or with
+    two
+  <li>additional information (datos adicionales/aclaración
+    adicional/observations/Dirección Complementaria
+</ul>
 
 <h4>Open questions</h4>
 <ul>
   <li>How do we deal with address-overflow? Oftentimes, this seems to ask for
     information within a building - floor and apartment - but theoretically it
     could be more flexible. Do we want to rely on "location-in-building"?
-  </li>
   <li>Do we want to support entrecalles (between streets) which are split across
-    two fields? - Do we want to combine this with "landmark"?</li>
+    two fields? - Do we want to combine this with "landmark"?
   <li>Two forms asked for a "Lote" - a piece of land (a lot / parcel of land).
-  </li>
   <li>One form asked for a "Torre", which literally means a tower but in this context
     it would refer to a part of a building (e.g. front-building, a wing of a
-    building, ...). </li>
+    building, ...).
   <li>The concept of "partido" is not fully clear to me. One form asked for
     (provincia, partido, localidad), which I see as (province, part of a city,
     city). Another form asked for (partido, provincia) but no city. Maybe this was
     implied by the zip code?
-  </li>
 </ul>
   
   
@@ -12250,24 +12245,22 @@ attribute that meets the requirements of real-world websites.
   
   
   
-  <div>Australia has largely simple addresses with
-  <ul>
-    <li>address lines 1, 2, 3, or
-    <li>street name, house number and up to one field for extra information
-      (apartment number, floor, etc.).
-  </ul>
-</div>
+  Australia has largely simple addresses with
+<ul>
+  <li>address lines 1, 2, 3, or
+  <li>street name, house number and up to one field for extra information
+    (apartment number, floor, etc.).
+</ul>
 
 <h4>Missing field type</h4>
-<div>The following cases are currently missing in the autocomplete spec and
-  occurred on multiple sites:
-  <ul>
-    <li>street-name
-    <li>house-number (also referred to as street no)
-    <li>location-in-building / building-and-location-in-building (Lvl, Apt or Unit No.;
-      Building/Floor/Apartment/Unit; Suite, building, level, etc. (optional)
-  </ul>
-</div>
+The following cases are currently missing in the autocomplete spec and
+occurred on multiple sites:
+<ul>
+  <li>street-name
+  <li>house-number (also referred to as street no)
+  <li>location-in-building / building-and-location-in-building (Lvl, Apt or Unit No.;
+    Building/Floor/Apartment/Unit; Suite, building, level, etc. (optional)
+</ul>
 
 <h4>Open questions</h4>
 <ul>
@@ -19286,42 +19279,41 @@ attribute that meets the requirements of real-world websites.
   
   
   
-  <div>Brazil relies heavily on structured addresses. Basically every form
+  Brazil relies heavily on structured addresses. Basically every form
 has separate fields for street name, house number and often an complement
 (for apartments, blocks, ...). Oftentimes, a lot of information is
-derived from the CEP (postal code).</div>
+derived from the CEP (postal code).
 
 <h4>Missing field type</h4>
-<div>The following cases are currently missing in the autocomplete spec and
+The following cases are currently missing in the autocomplete spec and
 occurred on multiple sites:
 <ul>
-<li>street-name (endereço)
-<li>house-number (número)
-<li>additional information (Informações adicionais; Complemento (opcional)
-  (Apartamento, sala, conjunto, edifício, andar, etc.); Complemento;
-  Complemento e referência (Opcional); Complemento (Nº do apartamento,
-  Bloco, etc.); Complemento (Apto/Bloco/Casa))<br> Informationen going
-  into this are:
-  <ul>
-  <li>apartment, room, suite
-  <li>building, block, house - often times people live in gated
-      communities where the entire community has the same street name and
-      house number. The Bloco identifies the building within the
-      community.
-  <li>floor
-  </ul>
-<li>reference-point (landmark?) (Referência;  Complemento e referência;
-  Ponto de referência) - e.g. people would put 'same street as Church
-  xyz' there to help the delivery person find the location.
+  <li>street-name (endereço)
+  <li>house-number (número)
+  <li>additional information (Informações adicionais; Complemento (opcional)
+    (Apartamento, sala, conjunto, edifício, andar, etc.); Complemento;
+    Complemento e referência (Opcional); Complemento (Nº do apartamento,
+    Bloco, etc.); Complemento (Apto/Bloco/Casa))<br> Informationen going
+    into this are:
+    <ul>
+      <li>apartment, room, suite
+      <li>building, block, house - often times people live in gated
+        communities where the entire community has the same street name and
+        house number. The Bloco identifies the building within the
+        community.
+      <li>floor
+    </ul>
+  <li>reference-point (landmark?) (Referência; Complemento e referência;
+    Ponto de referência) - e.g. people would put 'same street as Church
+    xyz' there to help the delivery person find the location.
 </ul>
-</div>
 
 <h4>Open questions</h4>
 <ul>
   <li>I have modeled the additional information as
     "building-and-location-in-building" and reference-point as "landmark".
     Any concerns about this? It will require some localization in the UI
-    because Brasilians probably don't think of landmarks as reference-points.</li>
+    because Brasilians probably don't think of landmarks as reference-points.
 </ul>
   
   
@@ -26487,34 +26479,32 @@ occurred on multiple sites:
   
   
   
-  <div>The capital city of Brasilia is divided into sectors. The sectors appear as
+  <p>The capital city of Brasilia is divided into sectors. The sectors appear as
   abbreviations in the address (three to four capital letters). A sector is
   divided into quadras, which are themselves divided into blocks (<a
-    href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/braEn.pdf">source</a>).</div>
+    href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/braEn.pdf">source</a>).
 
-<div>While most cities seem to follow a "street name, house number" schema, the
+<p>While most cities seem to follow a "street name, house number" schema, the
   capital Brasilia uses "sector, quadra, block, floor", e.g. SBN – Quadra 13 –
   Bloco B – 8º andar.
   <a href="https://goo.gl/maps/Nru1v31DUeKCwXvc7">Here</a> is an image of
   "Superquadra Sul (sector) 303 (quadra)", where each building is called
   a block. The address refers to block B and floor number 8.
-</div>
 
-<div>I looked up a zip code in Brasilia (70670-503) and a website
+<p>I looked up a zip code in Brasilia (70670-503) and a website
   (casasbahia.com.br) translated this into a two-line Endereço:
-  <pre>CLSW 101 Bloco Cn
+<pre>CLSW 101 Bloco Cn
 Setor Sudoeste - Brasília - DF</pre>
-</div>
 
-<div>It is pretty common that the website only asks for the zip code (CEP),
+<p>It is pretty common that the website only asks for the zip code (CEP),
   derives the Endereço, and then asks the user to enter Número (house number). For
   an address in Brasilia, I suppose that you would specify "s/n" as the number (as
   you don't have one - s/n = "sem número" = without number; some websites have a
-  checkbox for this).</div>
+  checkbox for this).
 
-<div>For these reasons, I am not sure whether Bloco in a Complemento field
+<p>For these reasons, I am not sure whether Bloco in a Complemento field
   refers to a block in Brasilia or needs to be supported as a separate
-  field type.</div>
+  field type.
   
   
   
