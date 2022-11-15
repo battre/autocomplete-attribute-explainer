@@ -228,7 +228,7 @@ which I have not done yet.
   <td>
     {% for token in concept.tokens -%}
       {%- if token.concept_name -%}
-        <code class="{{concept.name|css_classes_for_concept}}">{{token.concept_name}}</code>
+        <code class="{{token.concept_name|css_classes_for_concept}}">{{token.concept_name}}</code>
       {%- endif -%}
       {%- if token.separator_value -%}
         <code>{{token.separator_value}}</code>
