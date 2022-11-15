@@ -165,11 +165,36 @@ code.new-concept {
 <h1>Extending the autocomplete attribute</h1>
 
 <p>This is an effort to analyze the structures of address forms in a somewhat
-machine readable way.</p>
+machine readable way.
 
-<p>Note that this is work in progress.</p>
+<p>This work is based on the following assumptions:
+<ul>
+  <li>The autocomplete spec was written with the intent to find a lowest common
+    denominator that should work for all countries. An analysis of real-world
+    web-forms indicates that those forms cannot be properly annotated with
+    today's autocomplete attribute because it lacks expressiveness. Probably
+    many site owners don't have a choice because shipping companies or local
+    customs tell them how an address form should look like.
+  <li>There are certain aspects that just apply to a few countries (e.g. Japan
+    has phonetic names, Spain has paternal and maternal last names, Hungary
+    splits the name of a street from the type of a street). The fact that these
+    concepts only apply to a few countries does not make them go away. We should
+    allow storing a few extra fields for Japanese, Spanish, Hungarian, ...
+    addresses (i.e. decide which fields to offer based on the country of an
+    address) because oftentimes customers and merchants are in the same
+    country and share the same cultural norms when it comes to address forms.
+  <li>I don't think that we can immediately fix autofill for all countries
+    and this analysis does not cover all countries. I hope that this document
+    leads to an architecture that can be extended.
+  <li>We may need to combine certain atomic pieces of information into a single
+    field (e.g. a house number and an apartment number). This process is
+    probably very locale specific and needs to grow over time. The fact that
+    we don't know how to combine two fields into one fillable string for
+    some countries yet, hopefully does not invalidate the overall idea.
+</ul>
 
-<p>-Dominic Battr&eacute; (battre at google . com)</p>
+<p>Note that this is work in progress. Feedback is highly appreciated.
+<p>-Dominic Battr&eacute; (battre at google . com)
 
 <section>
 <h2>Concepts</h2>
@@ -294,6 +319,8 @@ The following icons are used below:
     street ("Ave", "Pkwy", "Blvd", ...). I haven't seen this anywhere else.
     It's essential to fill Hungarian address forms but we should not offer this
     to all users.
+  <li>Do we allow forms to specify an encoding? E.g. Japanese forms are picky
+    about ASCII, full-width or half-width characters.
 </ul>
 
 </section>
