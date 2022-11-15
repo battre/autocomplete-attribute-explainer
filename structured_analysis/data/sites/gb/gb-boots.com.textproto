@@ -162,6 +162,7 @@ site_examples {
       control_type: INPUT
       concepts: "house-number"
       concepts: "building"
+      concepts: "apartment"
       section: ADDRESS
     }
     fields {
