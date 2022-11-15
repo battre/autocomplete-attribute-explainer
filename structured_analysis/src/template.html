@@ -272,12 +272,26 @@ The following icons are used below:
 </section>
 
 <section>
-  <h2>Global questions</h2>
+  <h2>Big and global questions</h2>
 <ul>
-  <li>How do we model the information that don't have a dedicated field?
-    address-overflow? address-supplement? building-and-location-in-building?
-    (the latter may be too narrow because it does not cover a company name
-    or c/o).
+  <li>Do we want to support multiple field concurrent types? E.g. I see
+    "name or company" fields. I don't see an obvious syntax for adding this
+    capability to the autocomplee attribute. If you search for '[' below
+    you can find examples where a website requested one (or more) of multiple
+    field types.
+  <li>How do we model the "everything else" field type? Do we want to call it
+    "address-overflow", "address-supplement" (this seems to be a term that is
+    quite common in many countries), "building-and-location-in-building" (also
+    common)? The latter may be too narrow because it does not cover a company
+    name or c/o. Some websites would not want a company or c/o in their
+    "everything else" fileds while others would want them.<br>
+    Instead of an "everything else" type we could ask websites to enumerate
+    what should go into the list (see the previous bullet point).
+  <li>Are we ok with introducing country specific concepts? E.g. Hungary
+    separates the name of a street (e.g. "Amphitheatre") from the type of the
+    street ("Ave", "Pkwy", "Blvd", ...). I haven't seen this anywhere else.
+    It's essential to fill Hungarian address forms but we should not offer this
+    to all users.
 </ul>
 
 </section>
