@@ -335,16 +335,6 @@ concepts {
   is_new: true
 }
 
-concepts {
-  name: "address-overflow"
-  description: "Address overflow"
-  canonical_format_example:
-    "[Often information within a building (e.g. floor, house number, or a c/o "
-    "or company name)]"
-  label: "n/a"
-  is_new: true
-}
-
 # Generic "street-name house-number" pattern.
 compound_concepts {
   name: "street-location"
@@ -439,5 +429,16 @@ compound_concepts {
   specialization {
     country: "US"
     language: "en"
+  }
+}
+
+compound_concepts {
+  name: "address-overflow"
+  description: "Address overflow. Often information within a building (e.g. "
+    "floor, house number, or a c/o or company name). This may be very country "
+    "specific."
+  label: "TBD"
+  tokens {
+    concept_name: "gap"
   }
 }
