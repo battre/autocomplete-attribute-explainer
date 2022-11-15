@@ -50,7 +50,7 @@ site_examples {
       label_translated: "Mrs."
       label_comment: "autocomplete attribute is 'sex'"
       control_type: RADIO
-      concepts: "sex"
+      concepts: "honorific-prefix"
       autocomplete_attribute: "sex"
       section: NAME
     }
@@ -59,7 +59,7 @@ site_examples {
       label: "Monsieur"
       label_translated: "Mr."
       control_type: RADIO
-      concepts: "sex"
+      concepts: "honorific-prefix"
       autocomplete_attribute: "sex"
       section: NAME
     }
@@ -124,7 +124,7 @@ site_examples {
       label_comment: "A \"Lieu dit\" is a small place that often does not have "
         "street names. People  would typically fill this into address line 1."
       control_type: INPUT
-      concepts: "gap"
+      concepts: "address-level3"
       autocomplete_attribute: "address-level1"
       section: ADDRESS
     }

@@ -89,7 +89,7 @@ site_examples {
       label: "Madame"
       label_translated: "Mrs."
       control_type: RADIO
-      concepts: "sex"
+      concepts: "honorific-prefix"
       section: NAME
     }
     fields {
@@ -97,7 +97,7 @@ site_examples {
       label: "Monsieur"
       label_translated: "Sir"
       control_type: RADIO
-      concepts: "sex"
+      concepts: "honorific-prefix"
       section: NAME
     }
     fields {
@@ -157,7 +157,7 @@ site_examples {
       label: "Ville"
       label_translated: "Town"
       control_type: INPUT
-      concepts: "unset"
+      concepts: "address-level2"
       autocomplete_attribute: "address-level2"
       section: ADDRESS
     }

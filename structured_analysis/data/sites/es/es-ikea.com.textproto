@@ -61,7 +61,7 @@ site_examples {
       label: "Primer apellido"
       label_translated: "Surname"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "first-family-name"
       autocomplete_attribute: "family-name"
       section: NAME
     }
@@ -70,7 +70,7 @@ site_examples {
       label: "Segundo apellido"
       label_translated: "Second surname"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "second-family-name"
       autocomplete_attribute: "family-name"
       section: NAME
     }

@@ -82,7 +82,7 @@ site_examples {
       label: "Lieu-dit (facultatif)"
       label_translated: "Location (optional)"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "address-level3"
       autocomplete_attribute: "off"
       section: ADDRESS
     }
@@ -92,7 +92,6 @@ site_examples {
       label_translated: "Address *"
       control_type: INPUT
       concepts: "street-name"
-      low_certainty: true
       autocomplete_attribute: "off"
       section: ADDRESS
     }
@@ -102,7 +101,6 @@ site_examples {
       label_translated: "Lane number (optional)"
       control_type: INPUT
       concepts: "house-number"
-      low_certainty: true
       autocomplete_attribute: "off"
       section: ADDRESS
     }

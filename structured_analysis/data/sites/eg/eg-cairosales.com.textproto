@@ -26,14 +26,14 @@ site_examples {
       name: "customer_id_gender_1|id_gender"
       label: "Mr."
       control_type: RADIO
-      concepts: "gap"
+      concepts: "honorific-prefix"
       section: NAME
     }
     fields {
       name: "customer_id_gender_2|id_gender"
       label: "Mrs."
       control_type: RADIO
-      concepts: "gap"
+      concepts: "honorific-prefix"
       section: NAME
     }
     fields {

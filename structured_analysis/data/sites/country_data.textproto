@@ -27,11 +27,7 @@ country_data {
 country_data {
   country: "CA"
   country_name: "Canada 🇨🇦"
-  site_examples_preamble_html:
-    "<p>The sample of forms analyzed for Canada all shared the same structure. "
-    "While the sites mentioned examples of information to be put into "
-    "address lines 1 and 2 it looked like the fields were genuinely treated as "
-    "unstructured address lines 1 and 2.</p>"
+  site_examples_preamble_file: "data/sites/ca/_ca_preamble.html"
 }
 
 country_data {
@@ -43,111 +39,28 @@ country_data {
 country_data {
   country: "EG"
   country_name: "Egypt 🇪🇬"
-  site_examples_preamble_html:
-    "<p>By and large, Egyptian address forms seem to be compatible with "
-    "today's autocomplete attribute.</p>"
+  site_examples_preamble_file: "data/sites/eg/_eg_preamble.html"
 }
 
 country_data {
   country: "ES"
   country_name: "Spain 🇪🇸"
-  site_examples_preamble_html:
-    "<p>Spanish addresses ask for street name and house number in either one or "
-    "two input fields. Spain is special because some websites ask for "
-    "ultra-detailed information (one field for each of):"
-    "<ul>"
-    "<li>Type of street"
-    "<li>Stair case"
-    "<li>Floor"
-    "<li>Apartment"
-    "<li>Gate ('Puerta' - might refer to an apartment)"
-    "<li>Residential area (?)"
-    "</ul>"
-    "This information can also be requested in a single address overflow "
-    "field.</p>"
-  site_examples_epilog_html:
-    "<p><a href=\"https://forum.wordreference.com/threads/portal-escalera-planta-puerta-address.2822669/\">"
-    "This page</a> describes the meanings of a website's provided select elements for "
-    "portal, escalera, planta, puerta with the following options "
-    "(translation by Google Translate):"
-    "<ul>"
-    "<li> Portal (Select Almacen, Bloque, Casa, Edificio, Estacion, Garage, Chalet, "
-    "  Pabellon, Nave, Parcela, Grupo, Secont, Torre, Zone) "
-    "  <ul>"
-    "  <li> Portal = type of building"
-    "  <li> Google Translate: Portal (Select Warehouse, Block, House, Building, Station, "
-    "    Garage, Chalet, Pavilion, Warehouse, Plot, Group, Secont, Tower, Zone)"
-    "  </ul>"
-    "<li> Escalera (Escalera unica, Izquierda, Derecha, Centra, Interior, Exterior)"
-    "  <ul>"
-    "  <li> Escalera = stairs (where the stairs are in relation to the building)"
-    "  <li> Staircase (Single Stair, Left, Right, Center, Inside, Outside)"
-    "  </ul>"
-    "<li> Planta (Sin Planta, Altillo, Amacen, Ascensor, Atico, Bajo, Bungalow, Chalet, "
-    "  Duplex, Entresuelo, Entreplanta, Garaje, Kiosko, Local, Modulo, Nave, Oficina, "
-    "  Principal, Puesto, Sobreatico, Semisotano, Sotano, Sotano 1 etc, Terraza, "
-    "  Tienda, semisotano 1 etc)"
-    "  <ul>"
-    "  <li> Planta = floor (where the dwelling is located in relation to the street, and "
-    "    what kind of dwelling it is)"
-    "  <li> Floor (No Floor, Attic, Warehouse, Elevator, Attic, Ground Floor, Bungalow, "
-    "    Chalet, Duplex, Mezzanine, Mezzanine, Garage, Kiosk, Local, Module, "
-    "    Warehouse, Office, Main, Post, Over-attic, Semi-basement, Basement, Basement "
-    "    1 etc. , Terrace, Store, basement 1 etc)"
-    "  </ul>"
-    "<li> Puerta (Sin Puerta, Apartamento, Centro, Derecha, despacho, Exterior, "
-    "  Gabitacion, Izquerda, Interior, Local, Oficina, Puesto, Tienda)"
-    "  <ul>"
-    "  <li> Puerta = access (what the door looks like when you're standing in front of "
-    "    it)"
-    "  <li> Door (No Door, Apartment, Center, Right, Office, Exterior, Room, Left, "
-    "    Interior, Local, Office, Stall, Store)"
-    "  </ul>"
-    "</ul>"
+  site_examples_preamble_file: "data/sites/es/_es_preamble.html"
+  site_examples_epilog_file:  "data/sites/es/_es_epilog.html"
 }
 
 country_data {
   country: "FR"
   country_name: "France 🇫🇷"
-  site_examples_preamble_html:
-    "<p>French websites often work well with an address-line1 and 2. The "
-    "websites may specify what to put into each line but it looks like "
-    "address-line1 always gets the street name and house number. <p>"
-    "<p>Some websites ask for a street name and house number and then also "
-    "have overflow fields.<p>"
-    "<p>Many websites asked for a (binary) gener.<p>"
-    "<p>The following cases are currently missing in the autocomplete spec and "
-    "occurred on multiple sites:"
-    "<ul>"
-    "<li>street name (Numéro)"
-    "<li>house number (Voie)"
-    "<li>building (Bâtiment)"
-    "<li>floor (Étage)"
-    "<li>stair case (Escalier) - just once in the sample"
-    "<li>door (Porte) - just once in the sample"
-    "<li>academic title (Titel)"
-    "</ul>"
-    "</p>"
+  site_examples_preamble_file: "data/sites/fr/_fr_preamble.html"
 }
 
 country_data {
   country: "GB"
   country_name: "Great Britain 🇬🇧"
-  site_examples_preamble_html:
-    "<p>British houses have either numbers or names.<p>"
-    "<p>The following cases are currently missing in the autocomplete spec and "
-    "occurred on multiple sites:"
-    "<ul>"
-    "<li>street name"
-    "<li>house number"
-    "<li>house name"
-    "<li>town (separate field from a city - probably referring to a postal town)."
-    "Occurred once in the sample set."
-    "</ul>"
-    "Street name + house number/name are often combined with another overflow "
-    "field."
-    "</p>"
+  site_examples_preamble_file: "data/sites/gb/_gb_preamble.html"
 }
+
 country_data {
   country: "ID"
   country_name: "Indonesia 🇮🇩"
@@ -363,11 +276,7 @@ country_data {
 country_data {
   country: "DK"
   country_name: "Denmark 🇩🇰"
-  site_examples_preamble_html:
-    "<p>I have checked ~15 danish address forms and they consistently fit "
-    "into the unstructured address types of the existing autocomplete spec "
-    "(asking for a street-address/address-linesX, a postal code and a city). "
-    "This is why I have not transcribed more sites.</p>"
+  site_examples_preamble_file: "data/sites/dk/_dk_preamble.html"
 }
 
 country_data {
@@ -402,12 +311,7 @@ country_data {
 country_data {
   country: "GR"
   country_name: "Greece 🇬🇷"
-  site_examples_preamble_html:
-    "<p>Greek address forms seem to be well covered by today's autocomplete "
-    "spec except that some address forms ask for a street name and house "
-    "number. I don't fully understand the concepts of ΠΕΡΙΟΧΗ (region in a "
-    "city?) and ΝΟΜΟ (equivalent of a state?)</p>"
-
+  site_examples_preamble_file: "data/sites/gr/_gr_preamble.html"
 }
 
 country_data {

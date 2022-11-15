@@ -123,6 +123,8 @@ code.new-concept {
 <p>This is an effort to analyze the structures of address forms in a somewhat
 machine readable way.</p>
 
+<p>Note that this is work in progress.</p>
+
 <p>-Dominic Battr&eacute; (battre at google . com)</p>
 
 <section>
@@ -524,6 +526,26 @@ useful for more countries.
     </code></td>
     <td>Between streets</td>
     <td>A street and B street</td>
+  </tr>
+  
+
+  
+  <tr>
+    <td><code class="new-concept">
+      first-family-name
+    </code></td>
+    <td>First family name (Primer Apellido)</td>
+    <td>Ruiz</td>
+  </tr>
+  
+
+  
+  <tr>
+    <td><code class="new-concept">
+      second-family-name
+    </code></td>
+    <td>Second family name (Segundo Apellido)</td>
+    <td>Picasso</td>
   </tr>
   
 
@@ -3607,7 +3629,7 @@ attribute that meets the requirements of real-world websites.
 
 <p>Frequently a DNI was requested (national identification number).
 
-<h4>Missing field type</h4>
+<h4>Missing field types</h4>
 The following cases are currently missing in the autocomplete spec and
 occurred on multiple sites:
 <ul>
@@ -3638,6 +3660,8 @@ occurred on multiple sites:
     city). Another form asked for (partido, provincia) but no city. Maybe this was
     implied by the zip code?
 </ul>
+
+<p>Progress: ☑ First round of cleanup, ☐ Discussed with a (former) resident
   
   
   
@@ -12268,7 +12292,7 @@ occurred on multiple sites:
     (apartment number, floor, etc.).
 </ul>
 
-<h4>Missing field type</h4>
+<h4>Missing field types</h4>
 The following cases are currently missing in the autocomplete spec and
 occurred on multiple sites:
 <ul>
@@ -12282,6 +12306,8 @@ occurred on multiple sites:
 <ul>
   <li>none?</li>
 </ul>
+
+<p>Progress: ☑ First round of cleanup, ☐ Discussed with a (former) resident
   
   
   
@@ -19300,7 +19326,7 @@ has separate fields for street name, house number and often an complement
 (for apartments, blocks, ...). Oftentimes, a lot of information is
 derived from the CEP (postal code).
 
-<h4>Missing field type</h4>
+<h4>Missing field types</h4>
 The following cases are currently missing in the autocomplete spec and
 occurred on multiple sites:
 <ul>
@@ -19331,6 +19357,8 @@ occurred on multiple sites:
     Any concerns about this? It will require some localization in the UI
     because Brasilians probably don't think of landmarks as reference-points.
 </ul>
+
+<p>Progress: ☑ First round of cleanup, ☑ Discussed with a (former) resident
   
   
   
@@ -26747,7 +26775,12 @@ Setor Sudoeste - Brasília - DF</pre>
   
   
   
-  <p>The sample of forms analyzed for Canada all shared the same structure. While the sites mentioned examples of information to be put into address lines 1 and 2 it looked like the fields were genuinely treated as unstructured address lines 1 and 2.</p>
+  The sample of forms analyzed for Canada all shared the same structure.
+While the sites mentioned examples of information to be put into
+address lines 1 and 2 it looked like the fields were genuinely treated as
+unstructured address lines 1 and 2.
+
+<p>Progress: ☑ First round of cleanup, ☐ Discussed with a (former) resident
   
   
   
@@ -32238,7 +32271,7 @@ apartment number (rare), c/o person or a company name.
 <p>German address forms are special in that they often ask for gender,
 saluation, and social / academic titles.
 
-<h4>Missing field type</h4>
+<h4>Missing field types</h4>
 <p>The following cases are currently missing in the autocomplete spec and
 occurred on multiple sites:
 <ul>
@@ -32251,8 +32284,11 @@ occurred on multiple sites:
 
 <h4>Open questions</h4>
 <ul>
-  <li>Should we distinguish the salutation from an academic or noble title?</li>
+  <li>Should we distinguish the salutation from an academic or noble title?
+  <li>How do we model the address-supplement field?
 </ul>
+
+<p>Progress: ☑ First round of cleanup, ☑ Discussed with a (former) resident
   
   
   
@@ -39504,7 +39540,12 @@ occurred on multiple sites:
   
   
   
-  <p>I have checked ~15 danish address forms and they consistently fit into the unstructured address types of the existing autocomplete spec (asking for a street-address/address-linesX, a postal code and a city). This is why I have not transcribed more sites.</p>
+  I have checked ~15 danish address forms and they consistently fit
+into the unstructured address types of the existing autocomplete spec
+(asking for a street-address/address-linesX, a postal code and a city).
+This is why I have not transcribed more sites.
+
+<p>Progress: ☑ First round of cleanup, ☐ Discussed with a (former) resident
   
   
   
@@ -44841,7 +44882,10 @@ occurred on multiple sites:
   
   
   
-  <p>By and large, Egyptian address forms seem to be compatible with today's autocomplete attribute.</p>
+  By and large, Egyptian address forms seem to be compatible with
+today's autocomplete attribute.
+
+<p>Progress: ☑ First round of cleanup, ☑ Discussed with a (former) resident
   
   
   
@@ -45845,10 +45889,10 @@ occurred on multiple sites:
     
     <span id="concept_field_1676">
     <code
-    class="gap ">
+    class=" ">
       
   
-    <span id="">gap</span>
+    <span id="">honorific-prefix</span>
   
 
     </code>
@@ -45859,10 +45903,10 @@ occurred on multiple sites:
     
     <span id="concept_field_1677">
     <code
-    class="gap ">
+    class=" ">
       
   
-    <span id="">gap</span>
+    <span id="">honorific-prefix</span>
   
 
     </code>
@@ -51798,7 +51842,23 @@ occurred on multiple sites:
   
   
   
-  <p>Spanish addresses ask for street name and house number in either one or two input fields. Spain is special because some websites ask for ultra-detailed information (one field for each of):<ul><li>Type of street<li>Stair case<li>Floor<li>Apartment<li>Gate ('Puerta' - might refer to an apartment)<li>Residential area (?)</ul>This information can also be requested in a single address overflow field.</p>
+  Spanish addresses ask for street name and house number in either one or
+two input fields. Spain is special because some websites ask for
+ultra-detailed information (one field for each of):
+<ul>
+<li>Type of street
+<li>Stair case
+<li>Floor
+<li>Apartment
+<li>Gate ('Puerta' - might refer to an apartment)
+<li>Residential area (?)
+</ul>
+
+This information can also be requested in a single address overflow
+field.
+
+<p>Progress: I need to speak to a resident first to better understand the
+  details of Spanish addresses.
   
   
   
@@ -53104,10 +53164,10 @@ occurred on multiple sites:
     
     <span id="concept_field_2918">
     <code
-    class="gap ">
+    class="new-concept ">
       
   
-    <span id="">gap</span>
+    <span id="">first-family-name</span>
   
 
     </code>
@@ -53118,10 +53178,10 @@ occurred on multiple sites:
     
     <span id="concept_field_2919">
     <code
-    class="gap ">
+    class="new-concept ">
       
   
-    <span id="">gap</span>
+    <span id="">second-family-name</span>
   
 
     </code>
@@ -53215,10 +53275,10 @@ occurred on multiple sites:
     
     <span id="concept_field_2953">
     <code
-    class="gap ">
+    class="new-concept ">
       
   
-    <span id="">gap</span>
+    <span id="">first-family-name</span>
   
 
     </code>
@@ -53229,10 +53289,10 @@ occurred on multiple sites:
     
     <span id="concept_field_2954">
     <code
-    class="gap ">
+    class="new-concept ">
       
   
-    <span id="">gap</span>
+    <span id="">second-family-name</span>
   
 
     </code>
@@ -53326,10 +53386,10 @@ occurred on multiple sites:
     
     <span id="concept_field_2977">
     <code
-    class="gap ">
+    class=" ">
       
   
-    <span id="">gap</span>
+    <span id="">honorific-prefix</span>
   
 
     </code>
@@ -53340,10 +53400,10 @@ occurred on multiple sites:
     
     <span id="concept_field_2978">
     <code
-    class="gap ">
+    class=" ">
       
   
-    <span id="">gap</span>
+    <span id="">honorific-prefix</span>
   
 
     </code>
@@ -53394,10 +53454,10 @@ occurred on multiple sites:
     
     
     <tr>
-      <td id="1-httpswww.elcorteingles.es" style="padding: 0"><a href="#1-httpswww.elcorteingles.es" title="https://www.elcorteingles.es">#</a>
+      <td id="1-httpswww.hipercor.es" style="padding: 0"><a href="#1-httpswww.hipercor.es" title="https://www.hipercor.es">#</a>
       <span title="Structured address"><b>S</b></span>
       
-      <a href="https://www.elcorteingles.es" target="_blank">🔗</a>
+      <a href="https://www.hipercor.es" target="_blank">🔗</a>
       </td>
       <td >
   
@@ -53467,10 +53527,10 @@ occurred on multiple sites:
     
     <span id="concept_field_3007">
     <code
-    class="gap ">
+    class="new-concept ">
       
   
-    <span id="">gap</span>
+    <span id="">first-family-name</span>
   
 
     </code>
@@ -53481,10 +53541,10 @@ occurred on multiple sites:
     
     <span id="concept_field_3008">
     <code
-    class="gap ">
+    class="new-concept ">
       
   
-    <span id="">gap</span>
+    <span id="">second-family-name</span>
   
 
     </code>
@@ -53655,10 +53715,10 @@ occurred on multiple sites:
     
     <span id="concept_field_3050">
     <code
-    class="gap ">
+    class="new-concept ">
       
   
-    <span id="">gap</span>
+    <span id="">first-family-name</span>
   
 
     </code>
@@ -53669,10 +53729,10 @@ occurred on multiple sites:
     
     <span id="concept_field_3051">
     <code
-    class="gap ">
+    class="new-concept ">
       
   
-    <span id="">gap</span>
+    <span id="">second-family-name</span>
   
 
     </code>
@@ -58295,10 +58355,10 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
     
     
     <tr>
-      <td id="2-httpswww.elcorteingles.es" style="padding: 0"><a href="#2-httpswww.elcorteingles.es" title="https://www.elcorteingles.es">#</a>
+      <td id="2-httpswww.hipercor.es" style="padding: 0"><a href="#2-httpswww.hipercor.es" title="https://www.hipercor.es">#</a>
       <span title="Structured address"><b>S</b></span>
       
-      <a href="https://www.elcorteingles.es" target="_blank">🔗</a>
+      <a href="https://www.hipercor.es" target="_blank">🔗</a>
       </td>
       <td >
   
@@ -60646,7 +60706,44 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
   
   
   
-  <p><a href="https://forum.wordreference.com/threads/portal-escalera-planta-puerta-address.2822669/">This page</a> describes the meanings of a website's provided select elements for portal, escalera, planta, puerta with the following options (translation by Google Translate):<ul><li> Portal (Select Almacen, Bloque, Casa, Edificio, Estacion, Garage, Chalet,   Pabellon, Nave, Parcela, Grupo, Secont, Torre, Zone)   <ul>  <li> Portal = type of building  <li> Google Translate: Portal (Select Warehouse, Block, House, Building, Station,     Garage, Chalet, Pavilion, Warehouse, Plot, Group, Secont, Tower, Zone)  </ul><li> Escalera (Escalera unica, Izquierda, Derecha, Centra, Interior, Exterior)  <ul>  <li> Escalera = stairs (where the stairs are in relation to the building)  <li> Staircase (Single Stair, Left, Right, Center, Inside, Outside)  </ul><li> Planta (Sin Planta, Altillo, Amacen, Ascensor, Atico, Bajo, Bungalow, Chalet,   Duplex, Entresuelo, Entreplanta, Garaje, Kiosko, Local, Modulo, Nave, Oficina,   Principal, Puesto, Sobreatico, Semisotano, Sotano, Sotano 1 etc, Terraza,   Tienda, semisotano 1 etc)  <ul>  <li> Planta = floor (where the dwelling is located in relation to the street, and     what kind of dwelling it is)  <li> Floor (No Floor, Attic, Warehouse, Elevator, Attic, Ground Floor, Bungalow,     Chalet, Duplex, Mezzanine, Mezzanine, Garage, Kiosk, Local, Module,     Warehouse, Office, Main, Post, Over-attic, Semi-basement, Basement, Basement     1 etc. , Terrace, Store, basement 1 etc)  </ul><li> Puerta (Sin Puerta, Apartamento, Centro, Derecha, despacho, Exterior,   Gabitacion, Izquerda, Interior, Local, Oficina, Puesto, Tienda)  <ul>  <li> Puerta = access (what the door looks like when you're standing in front of     it)  <li> Door (No Door, Apartment, Center, Right, Office, Exterior, Room, Left,     Interior, Local, Office, Stall, Store)  </ul></ul>
+  <a href=\"https://forum.wordreference.com/threads/portal-escalera-planta-puerta-address.2822669/\">
+This page</a> describes the meanings of a website's provided select elements for
+portal, escalera, planta, puerta with the following options
+(translation by Google Translate):
+<ul>
+<li> Portal (Select Almacen, Bloque, Casa, Edificio, Estacion, Garage, Chalet,
+  Pabellon, Nave, Parcela, Grupo, Secont, Torre, Zone)
+  <ul>
+  <li> Portal = type of building
+  <li> Google Translate: Portal (Select Warehouse, Block, House, Building, Station,
+    Garage, Chalet, Pavilion, Warehouse, Plot, Group, Secont, Tower, Zone)
+  </ul>
+<li> Escalera (Escalera unica, Izquierda, Derecha, Centra, Interior, Exterior)
+  <ul>
+  <li> Escalera = stairs (where the stairs are in relation to the building)
+  <li> Staircase (Single Stair, Left, Right, Center, Inside, Outside)
+  </ul>
+<li> Planta (Sin Planta, Altillo, Amacen, Ascensor, Atico, Bajo, Bungalow, Chalet,
+  Duplex, Entresuelo, Entreplanta, Garaje, Kiosko, Local, Modulo, Nave, Oficina,
+  Principal, Puesto, Sobreatico, Semisotano, Sotano, Sotano 1 etc, Terraza,
+  Tienda, semisotano 1 etc)
+  <ul>
+  <li> Planta = floor (where the dwelling is located in relation to the street, and
+    what kind of dwelling it is)
+  <li> Floor (No Floor, Attic, Warehouse, Elevator, Attic, Ground Floor, Bungalow,
+    Chalet, Duplex, Mezzanine, Mezzanine, Garage, Kiosk, Local, Module,
+    Warehouse, Office, Main, Post, Over-attic, Semi-basement, Basement, Basement
+    1 etc. , Terrace, Store, basement 1 etc)
+  </ul>
+<li> Puerta (Sin Puerta, Apartamento, Centro, Derecha, despacho, Exterior,
+  Gabitacion, Izquerda, Interior, Local, Oficina, Puesto, Tienda)
+  <ul>
+  <li> Puerta = access (what the door looks like when you're standing in front of
+    it)
+  <li> Door (No Door, Apartment, Center, Right, Office, Exterior, Room, Left,
+    Interior, Local, Office, Stall, Store)
+  </ul>
+</ul>
   
   
   
@@ -60873,7 +60970,39 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
   
   
   
-  <p>French websites often work well with an address-line1 and 2. The websites may specify what to put into each line but it looks like address-line1 always gets the street name and house number. <p><p>Some websites ask for a street name and house number and then also have overflow fields.<p><p>Many websites asked for a (binary) gener.<p><p>The following cases are currently missing in the autocomplete spec and occurred on multiple sites:<ul><li>street name (Numéro)<li>house number (Voie)<li>building (Bâtiment)<li>floor (Étage)<li>stair case (Escalier) - just once in the sample<li>door (Porte) - just once in the sample<li>academic title (Titel)</ul></p>
+  French websites often work well with an address-line1 and 2. The
+websites may specify what to put into each line but it looks like
+address-line1 always gets the street name and house number.
+
+<p>Some websites ask for a street name and house number and then also
+have overflow fields.
+
+<p>Many websites asked for a (binary) gender.
+
+<h4>Missing field types</h4>
+The following cases are currently missing in the autocomplete spec and
+occurred on multiple sites:
+<ul>
+<li>street name (Numéro)
+<li>house number (Voie)
+<li>building (Bâtiment)
+<li>floor (Étage)
+<li>stair case (Escalier) - just once in the sample
+<li>door (Porte) - just once in the sample
+<li>academic title (Titel)
+</ul>
+
+<h4>Open questions</h4>
+<ul>
+  <li>Do we want to use lieu-dit for address-level3? Some cities have multiple
+    sub-cities. A lieu-dit is the name of a subdivision of the city, usually
+    very small (2-3 houses). Typically you would would put the lieu-dit into the
+    street-address/address-lineX field because you don’t have street/house
+    numbers in a lieu-dit.
+  <li>Do we want to support door codes?
+</ul>
+
+<p>Progress: ☑ First round of cleanup, ☑ Discussed with a (former) resident
   
   
   
@@ -61837,10 +61966,10 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
     
     <span id="concept_field_3269">
     <code
-    class="gap ">
+    class=" ">
       
   
-    <span id="">gap</span>
+    <span id="">honorific-prefix</span>
   
 
     </code>
@@ -61851,10 +61980,10 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
     
     <span id="concept_field_3270">
     <code
-    class="gap ">
+    class=" ">
       
   
-    <span id="">gap</span>
+    <span id="">honorific-prefix</span>
   
 
     </code>
@@ -62083,10 +62212,10 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
     
     <span id="concept_field_3322">
     <code
-    class="gap ">
+    class=" ">
       
   
-    <span id="">gap</span>
+    <span id="">honorific-prefix</span>
   
 
     </code>
@@ -62097,10 +62226,10 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
     
     <span id="concept_field_3323">
     <code
-    class="gap ">
+    class=" ">
       
   
-    <span id="">gap</span>
+    <span id="">honorific-prefix</span>
   
 
     </code>
@@ -62227,7 +62356,7 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
     class=" ">
       
   
-    <span id="">sex</span>
+    <span id="">honorific-prefix</span>
   
 
     </code>
@@ -62241,7 +62370,7 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
     class=" ">
       
   
-    <span id="">sex</span>
+    <span id="">honorific-prefix</span>
   
 
     </code>
@@ -62363,7 +62492,7 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
     class=" ">
       
   
-    <span id="">sex</span>
+    <span id="">honorific-prefix</span>
   
 
     </code>
@@ -62377,7 +62506,7 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
     class=" ">
       
   
-    <span id="">sex</span>
+    <span id="">honorific-prefix</span>
   
 
     </code>
@@ -62584,7 +62713,7 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
     class=" ">
       
   
-    <span id="">sex</span>
+    <span id="">honorific-prefix</span>
   
 
     </code>
@@ -62598,7 +62727,7 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
     class=" ">
       
   
-    <span id="">sex</span>
+    <span id="">honorific-prefix</span>
   
 
     </code>
@@ -62723,7 +62852,7 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
     class=" ">
       
   
-    <span id="">sex</span>
+    <span id="">honorific-prefix</span>
   
 
     </code>
@@ -62737,7 +62866,7 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
     class=" ">
       
   
-    <span id="">sex</span>
+    <span id="">honorific-prefix</span>
   
 
     </code>
@@ -62861,7 +62990,7 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
     class=" ">
       
   
-    <span id="">sex</span>
+    <span id="">honorific-prefix</span>
   
 
     </code>
@@ -62875,7 +63004,7 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
     class=" ">
       
   
-    <span id="">sex</span>
+    <span id="">honorific-prefix</span>
   
 
     </code>
@@ -63067,7 +63196,7 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
     class=" ">
       
   
-    <span id="">sex</span>
+    <span id="">honorific-prefix</span>
   
 
     </code>
@@ -66221,10 +66350,10 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
     
     <span id="concept_field_3354">
     <code
-    class="gap ">
+    class=" ">
       
   
-    <span id="">gap</span>
+    <span id="">address-level3</span>
   
 
     </code>
@@ -66649,10 +66778,10 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
     
     <span id="concept_field_3384">
     <code
-    class="gap ">
+    class=" ">
       
   
-    <span id="">gap</span>
+    <span id="">address-level3</span>
   
 
     </code>
@@ -66663,7 +66792,7 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
     
     <span id="concept_field_3385">
     <code
-    class="new-concept low-certainty">
+    class="new-concept ">
       
   
     <span id="">street-name</span>
@@ -66677,7 +66806,7 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
     
     <span id="concept_field_3386">
     <code
-    class="new-concept low-certainty">
+    class="new-concept ">
       
   
     <span id="">house-number</span>
@@ -66890,10 +67019,10 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
     
     <span id="concept_field_3416">
     <code
-    class="unset ">
+    class=" ">
       
   
-    <span id="">unset</span>
+    <span id="">address-level2</span>
   
 
     </code>
@@ -69400,7 +69529,33 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
   
   
   
-  <p>British houses have either numbers or names.<p><p>The following cases are currently missing in the autocomplete spec and occurred on multiple sites:<ul><li>street name<li>house number<li>house name<li>town (separate field from a city - probably referring to a postal town).Occurred once in the sample set.</ul>Street name + house number/name are often combined with another overflow field.</p>
+  British houses have either numbers or names, or even both. As per <a
+href="https://ideal-postcodes.co.uk/guides/good-addressing-guidelines">this</a>,
+a full address should contain a premise identifier, street details, post town
+and the postcode. The premise identifier requires at least one of the 4 premise
+elements: Company name, Building number, Building name, Sub building name.
+
+
+<h4>Missing field types</h4>
+<p>The following cases are currently missing in the autocomplete spec and
+occurred on multiple sites:
+<ul>
+<li>street name
+<li>house number
+<li>house name
+<li>town (separate field from a city - probably referring to a postal town).
+Occurred once in the sample set.
+</ul>
+Street name + house number/name are often combined with another overflow
+field.
+
+<h4>Open questions</h4>
+<ul>
+  <li>This requires some checking with a British resident. My proposals are too
+    much guess work.
+</ul>
+
+<p>Progress: ☑ First round of cleanup, ☐ Discussed with a (former) resident
   
   
   
@@ -70599,10 +70754,10 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
     
     <span id="concept_field_3708">
     <code
-    class="gap ">
+    class=" ">
       
   
-    <span id="">gap</span>
+    <span id="">honorific-prefix</span>
   
 
     </code>
@@ -70888,10 +71043,10 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
     
     <span id="concept_field_3887">
     <code
-    class="unset ">
+    class=" ">
       
   
-    <span id="">unset</span>
+    <span id="">honorific-prefix</span>
   
 
     </code>
@@ -71080,10 +71235,10 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
     
     <span id="concept_field_3949">
     <code
-    class="unset ">
+    class=" ">
       
   
-    <span id="">unset</span>
+    <span id="">honorific-prefix</span>
   
 
     </code>
@@ -73948,10 +74103,10 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
     
     <span id="concept_field_3715">
     <code
-    class="gap ">
+    class="new-concept ">
       
   
-    <span id="">gap</span>
+    <span id="">address-overflow</span>
   
 
     </code>
@@ -74686,7 +74841,9 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
     <span class="separator">|</span>
     
   
-    <span id="term_field_3894">House or building name</span>
+    <span class="entry-with-tooltip" id="term_field_3894">House or building name
+      <div class="tooltip tooltip-right">A lookup for ZIP code SW1W 9TQ produces the following data: Hosuse or buliding name: Belgrave House, House number: 76, Address line 1: Buckingham Palace Road. On an envelope you would have a single line Belgrave House, 76 Buckingham Palace Road.</div>
+    </span>
   
 
   
@@ -74700,9 +74857,7 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
     <span class="separator">|</span>
     
   
-    <span class="entry-with-tooltip" id="term_field_3896">Address Line 1
-      <div class="tooltip tooltip-right">This site asks for an address line 1 in addition to the street name and house number.</div>
-    </span>
+    <span id="term_field_3896">Address Line 1</span>
   
 
   
@@ -74863,10 +75018,10 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
     
     <span id="concept_field_3896">
     <code
-    class=" ">
+    class="new-concept ">
       
   
-    <span id="">address-line1</span>
+    <span id="">street-name</span>
   
 
     </code>
@@ -74877,10 +75032,10 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
     
     <span id="concept_field_3897">
     <code
-    class=" ">
+    class="new-concept ">
       
   
-    <span id="">address-line2</span>
+    <span id="">address-overflow</span>
   
 
     </code>
@@ -75705,11 +75860,11 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
     
     <span id="concept_field_3991">
     <code
-    class="gap ">
+    class="new-concept ">
       
   
-    <span class="entry-with-tooltip" id="">gap
-      <div class="tooltip tooltip-left">'Gap' because a structured house-name/street-name pair is combined with address line 2.</div>
+    <span class="entry-with-tooltip" id="">address-overflow
+      <div class="tooltip tooltip-left">'address-overflow' because a structured house-name/street-name pair is combined with address line 2.</div>
     </span>
   
 
@@ -77270,7 +77425,22 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
   
   
   
-  <p>Greek address forms seem to be well covered by today's autocomplete spec except that some address forms ask for a street name and house number. I don't fully understand the concepts of ΠΕΡΙΟΧΗ (region in a city?) and ΝΟΜΟ (equivalent of a state?)</p>
+  <h4>Missing field types</h4>
+<p>The following cases are currently missing in the autocomplete spec and
+occurred on multiple sites:
+<ul>
+  <li>street name
+  <li>house number
+  <li>delivery-instructions
+</ul>
+
+<h4>Open questions</h4>
+<ul>
+  <li>TI don't fully understand the concepts of ΠΕΡΙΟΧΗ (region in a
+    city?) and ΝΟΜΟ (equivalent of a state?)
+</ul>
+
+<p>Progress: ☑ First round of cleanup, ☐ Discussed with a (former) resident
   
   
   

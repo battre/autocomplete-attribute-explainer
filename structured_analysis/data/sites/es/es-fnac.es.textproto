@@ -33,7 +33,7 @@ site_examples {
       label: "Señora"
       label_translated: "Mrs"
       control_type: RADIO
-      concepts: "gap"
+      concepts: "honorific-prefix"
       section: NAME
     }
     fields {
@@ -41,7 +41,7 @@ site_examples {
       label: "Señor"
       label_translated: "Mister"
       control_type: RADIO
-      concepts: "gap"
+      concepts: "honorific-prefix"
       section: NAME
     }
     fields {

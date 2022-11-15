@@ -54,8 +54,8 @@ site_examples {
       name: "delivery-address-line-2|deliveryAddress.addressLine2"
       label: "Address 2"
       control_type: INPUT
-      concepts: "gap"
-      concepts_comment: "'Gap' because a structured house-name/street-name pair "
+      concepts: "address-overflow"
+      concepts_comment: "'address-overflow' because a structured house-name/street-name pair "
         "is combined with address line 2."
       section: ADDRESS
     }

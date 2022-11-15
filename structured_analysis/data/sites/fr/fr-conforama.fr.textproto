@@ -166,7 +166,7 @@ site_examples {
       label: "Mr"
       label_translated: "Mr."
       control_type: RADIO
-      concepts: "sex"
+      concepts: "honorific-prefix"
       section: NAME
     }
     fields {
@@ -174,7 +174,7 @@ site_examples {
       label: "Mme"
       label_translated: "Mrs"
       control_type: RADIO
-      concepts: "sex"
+      concepts: "honorific-prefix"
       section: NAME
     }
     fields {

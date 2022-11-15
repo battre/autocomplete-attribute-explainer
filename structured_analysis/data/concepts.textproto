@@ -335,6 +335,22 @@ concepts {
   is_new: true
 }
 
+concepts {
+  name: "first-family-name"
+  description: "First family name (Primer Apellido)"
+  canonical_format_example: "Ruiz"
+  label: "First family name"
+  is_new: true
+}
+
+concepts {
+  name: "second-family-name"
+  description: "Second family name (Segundo Apellido)"
+  canonical_format_example: "Picasso"
+  label: "Second family name"
+  is_new: true
+}
+
 # Generic "street-name house-number" pattern.
 compound_concepts {
   name: "street-location"

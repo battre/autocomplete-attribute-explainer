@@ -28,7 +28,7 @@ site_examples {
       name: "|Address2"
       label: "Street 2 (optional)"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "address-overflow"
       section: ADDRESS
     }
     fields {

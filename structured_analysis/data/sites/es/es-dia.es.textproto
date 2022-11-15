@@ -140,7 +140,7 @@ site_examples {
       label: "Primer Apellido"
       label_translated: "First surname"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "first-family-name"
       section: NAME
     }
     fields {
@@ -148,7 +148,7 @@ site_examples {
       label: "Segundo Apellido"
       label_translated: "Second surname"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "second-family-name"
       section: NAME
     }
     fields {

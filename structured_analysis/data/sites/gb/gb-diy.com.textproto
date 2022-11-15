@@ -11,7 +11,7 @@ site_examples {
       label: "Title (optional)"
       example: "Miss, Mr, Ms, Mrs, Dr"
       control_type: SELECT
-      concepts: "unset"
+      concepts: "honorific-prefix"
       section: NAME
     }
     fields {
@@ -65,6 +65,10 @@ site_examples {
     fields {
       name: "|houseName"
       label: "House or building name"
+      label_comment: "A lookup for ZIP code SW1W 9TQ produces the following "
+        "data: Hosuse or buliding name: Belgrave House, House number: 76, "
+        "Address line 1: Buckingham Palace Road. On an envelope you would have "
+        "a single line Belgrave House, 76 Buckingham Palace Road."
       control_type: INPUT
       concepts: "building"
       autocomplete_attribute: "house_name"
@@ -80,11 +84,9 @@ site_examples {
     }
     fields {
       name: "|addressLine1"
-      label_comment: "This site asks for an address line 1 in addition to the "
-        "street name and house number."
       label: "Address Line 1"
       control_type: INPUT
-      concepts: "address-line1"
+      concepts: "street-name"
       autocomplete_attribute: "address_line1"
       section: ADDRESS
     }
@@ -92,7 +94,7 @@ site_examples {
       name: "|addressLine2"
       label: "Address Line 2 (optional)"
       control_type: INPUT
-      concepts: "address-line2"
+      concepts: "address-overflow"
       autocomplete_attribute: "address_line2"
       section: ADDRESS
     }

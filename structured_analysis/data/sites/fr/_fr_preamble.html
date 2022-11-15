@@ -1,0 +1,33 @@
+French websites often work well with an address-line1 and 2. The
+websites may specify what to put into each line but it looks like
+address-line1 always gets the street name and house number.
+
+<p>Some websites ask for a street name and house number and then also
+have overflow fields.
+
+<p>Many websites asked for a (binary) gender.
+
+<h4>Missing field types</h4>
+The following cases are currently missing in the autocomplete spec and
+occurred on multiple sites:
+<ul>
+<li>street name (Numéro)
+<li>house number (Voie)
+<li>building (Bâtiment)
+<li>floor (Étage)
+<li>stair case (Escalier) - just once in the sample
+<li>door (Porte) - just once in the sample
+<li>academic title (Titel)
+</ul>
+
+<h4>Open questions</h4>
+<ul>
+  <li>Do we want to use lieu-dit for address-level3? Some cities have multiple
+    sub-cities. A lieu-dit is the name of a subdivision of the city, usually
+    very small (2-3 houses). Typically you would would put the lieu-dit into the
+    street-address/address-lineX field because you don’t have street/house
+    numbers in a lieu-dit.
+  <li>Do we want to support door codes?
+</ul>
+
+<p>Progress: ☑ First round of cleanup, ☑ Discussed with a (former) resident

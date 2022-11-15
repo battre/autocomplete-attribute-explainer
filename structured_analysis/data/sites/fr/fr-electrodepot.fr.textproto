@@ -17,7 +17,7 @@ site_examples {
       label: "Genre*"
       label_translated: "Gender*"
       control_type: INPUT
-      concepts: "sex"
+      concepts: "honorific-prefix"
       section: NAME
     }
     fields {

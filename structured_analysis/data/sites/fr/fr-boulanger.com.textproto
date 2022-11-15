@@ -17,7 +17,7 @@ site_examples {
       label: "Madame"
       label_translated: "Mrs."
       control_type: RADIO
-      concepts: "sex"
+      concepts: "honorific-prefix"
       section: NAME
     }
     fields {
@@ -25,7 +25,7 @@ site_examples {
       label: "Monsieur"
       label_translated: "Sir"
       control_type: RADIO
-      concepts: "sex"
+      concepts: "honorific-prefix"
       section: NAME
     }
     fields {

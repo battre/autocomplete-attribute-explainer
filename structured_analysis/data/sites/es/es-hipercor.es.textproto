@@ -1,5 +1,5 @@
 site_examples {
-  url: "https://www.elcorteingles.es"
+  url: "https://www.hipercor.es"
   is_structured: true
   locale {
     country: "ES"
@@ -154,7 +154,7 @@ site_examples {
       label: "Apellido *"
       label_translated: "Surname *"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "first-family-name"
       autocomplete_attribute: "new-surname"
       section: NAME
     }
@@ -163,7 +163,7 @@ site_examples {
       label: "Segundo Apellido"
       label_translated: "Second surname"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "second-family-name"
       autocomplete_attribute: "new-surname2"
       section: NAME
     }

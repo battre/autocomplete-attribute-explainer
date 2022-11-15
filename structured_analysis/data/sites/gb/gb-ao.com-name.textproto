@@ -18,7 +18,7 @@ site_examples {
       label: "Title *"
       example: "Mr, Mrs, Miss, Ms, Dr, Mx"
       control_type: SELECT
-      concepts: "gap"
+      concepts: "honorific-prefix"
       section: NAME
     }
     fields {
