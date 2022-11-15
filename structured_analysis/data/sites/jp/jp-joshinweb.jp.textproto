@@ -103,7 +103,7 @@ site_examples {
       label: "セイ"
       label_translated: "Family name (phonetic)"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "phonetic-family-name"
       section: NAME
     }
     fields {
@@ -111,7 +111,7 @@ site_examples {
       label: "メイ"
       label_translated: "Given name (phonetic)"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "phonetic-given-name"
       section: NAME
     }
     fields {
@@ -267,7 +267,7 @@ site_examples {
       label: "男性"
       label_translated: "male"
       control_type: RADIO
-      concepts: "sex"
+      concepts: "honorific-prefix"
       section: NAME
     }
     fields {
@@ -275,7 +275,7 @@ site_examples {
       label: "女性"
       label_translated: "Woman"
       control_type: RADIO
-      concepts: "sex"
+      concepts: "honorific-prefix"
       section: NAME
     }
     fields {

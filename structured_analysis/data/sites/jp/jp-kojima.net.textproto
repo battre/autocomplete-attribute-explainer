@@ -35,7 +35,7 @@ site_examples {
       example: "例）コジマ"
       example_translated: "Example) Kojima"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "phonetic-family-name"
       autocomplete_attribute: "off"
       section: NAME
     }
@@ -46,7 +46,7 @@ site_examples {
       example: "例）タロウ"
       example_translated: "Example) Taro"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "phonetic-given-name"
       autocomplete_attribute: "off"
       section: NAME
     }

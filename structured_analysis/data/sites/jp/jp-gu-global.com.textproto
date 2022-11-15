@@ -33,7 +33,7 @@ site_examples {
       example: "セイを入力してください。"
       example_translated: "Please enter sei."
       control_type: INPUT
-      concepts: "gap"
+      concepts: "phonetic-family-name"
       section: NAME
     }
     fields {
@@ -43,7 +43,7 @@ site_examples {
       example: "メイを入力してください。"
       example_translated: "Please enter Mei."
       control_type: INPUT
-      concepts: "gap"
+      concepts: "phonetic-given-name"
       section: NAME
     }
     fields {

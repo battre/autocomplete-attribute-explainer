@@ -81,7 +81,7 @@ site_examples {
       label: "セイ"
       label_translated: "Family name (Phonetic)"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "phonetic-family-name"
       section: NAME
     }
     fields {
@@ -89,7 +89,7 @@ site_examples {
       label: "メイ"
       label_translated: "Given name (Phonetic)"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "phonetic-given-name"
       section: NAME
     }
     fields {

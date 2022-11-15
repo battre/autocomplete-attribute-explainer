@@ -70,7 +70,7 @@ site_examples {
       label_translated: "Department name/Store name"
       control_type: INPUT
       concepts: "unset"
-      section: NAME
+      section: OTHER
     }
     fields {
       name: "DataModel-ShippingContact-LastName|DataModel-ShippingContact-LastName"
@@ -99,7 +99,7 @@ site_examples {
       example: "*例：デル"
       example_translated: "*Example: Dell"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "phonetic-family-name"
       section: NAME
     }
     fields {
@@ -109,7 +109,7 @@ site_examples {
       example: "*例：タロウ"
       example_translated: "*Example: Taro"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "phonetic-given-name"
       section: NAME
     }
     fields {
@@ -304,7 +304,7 @@ site_examples {
       label: "姓（カナ）"
       label_translated: "Surname (kana)"
       control_type: INPUT
-      concepts: "unset"
+      concepts: "phonetic-family-name"
       section: OTHER
     }
     fields {
@@ -312,7 +312,7 @@ site_examples {
       label: "名（カナ）"
       label_translated: "First name (kana)"
       control_type: INPUT
-      concepts: "unset"
+      concepts: "phonetic-given-name"
       section: OTHER
     }
     fields {
@@ -413,7 +413,7 @@ site_examples {
       label_translated: "name (optional)"
       control_type: INPUT
       concepts: "unset"
-      section: NAME
+      section: OTHER
     }
     fields {
       name: "DataModel-PriceLegalCertificateDataModel-IsStandardPriceCertificateSelected|DataModel-PriceLegalCertificateDataModel-IsStandardPriceCertificateSelected"

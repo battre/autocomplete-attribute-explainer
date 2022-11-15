@@ -351,6 +351,23 @@ concepts {
   is_new: true
 }
 
+concepts {
+  name: "phonetic-given-name"
+  description: "Phonetic spelling of given name (メイ in JP)"
+  canonical_format_example: "タロウ"
+  label: "Phonetic spelling of given name"
+  is_new: true
+}
+
+concepts {
+  name: "phonetic-family-name"
+  description: "Phonetic spelling of family name (セイ in JP)"
+  canonical_format_example: "デル"
+  label: "Phonetic spelling of family name"
+  is_new: true
+}
+
+
 # Generic "street-name house-number" pattern.
 compound_concepts {
   name: "street-location"

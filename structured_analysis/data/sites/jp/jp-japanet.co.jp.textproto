@@ -119,7 +119,7 @@ site_examples {
       example: "（例）たかた"
       example_translated: "(Example) Takata"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "phonetic-family-name"
       section: NAME
     }
     fields {
@@ -129,7 +129,7 @@ site_examples {
       example: "（例）たろう"
       example_translated: "(Example) Taro"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "phonetic-given-name"
       section: NAME
     }
     fields {
@@ -289,7 +289,7 @@ site_examples {
       label_translated: "Surname"
       control_type: INPUT
       concepts: "unset"
-      section: NAME
+      section: OTHER
     }
     fields {
       name: "|kfirstName"
@@ -297,7 +297,7 @@ site_examples {
       label_translated: "May"
       control_type: INPUT
       concepts: "unset"
-      section: NAME
+      section: OTHER
     }
     fields {
       name: "|year"

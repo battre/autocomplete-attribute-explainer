@@ -101,7 +101,7 @@ site_examples {
       label: "男性"
       label_translated: "male"
       control_type: RADIO
-      concepts: "sex"
+      concepts: "honorific-prefix"
       section: NAME
     }
     fields {
@@ -109,7 +109,7 @@ site_examples {
       label: "女性"
       label_translated: "woman"
       control_type: RADIO
-      concepts: "sex"
+      concepts: "honorific-prefix"
       section: NAME
     }
     fields {

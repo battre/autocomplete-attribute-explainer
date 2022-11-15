@@ -365,7 +365,7 @@ site_examples {
       label: "セイ（カナ）"
       label_translated: "Family name (Kana)"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "phonetic-family-name"
       section: NAME
     }
     fields {
@@ -379,7 +379,7 @@ site_examples {
       label: "メイ（カナ）"
       label_translated: "Given name (Kana)"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "phonetic-given-name"
       section: NAME
     }
     fields {
