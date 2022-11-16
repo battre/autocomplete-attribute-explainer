@@ -224,7 +224,6 @@ site_examples {
       control_type: INPUT
       concepts: "address-level1"
       autocomplete_attribute: "nope"
-      low_certainty: true
       section: ADDRESS
     }
     fields {

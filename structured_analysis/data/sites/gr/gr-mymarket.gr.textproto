@@ -85,6 +85,9 @@ site_examples {
       label_translated: "Name on bell/floor"
       control_type: INPUT
       concepts: "care-of"
+      concepts: "floor"
+      concepts_comment: "As per native speaker this is a delivery-instruction "
+        "like the next field, but with a nudge about what the courier will need."
       section: ADDRESS
     }
     fields {

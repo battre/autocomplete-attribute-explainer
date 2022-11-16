@@ -312,6 +312,7 @@ country_data {
   country: "GR"
   country_name: "Greece 🇬🇷"
   site_examples_preamble_file: "data/sites/gr/_gr_preamble.html"
+  site_examples_epilog_file: "data/sites/gr/_gr_epilog.html"
 }
 
 country_data {
