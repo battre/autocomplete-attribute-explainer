@@ -341,6 +341,10 @@ concepts {
   canonical_format_example: "Ruiz"
   label: "First family name"
   is_new: true
+  # This concept should not be offered in all countries.
+  limited_to_countries: "ES"
+  limited_to_countries: "MX"
+  limited_to_countries: "more?"
 }
 
 concepts {
@@ -349,6 +353,10 @@ concepts {
   canonical_format_example: "Picasso"
   label: "Second family name"
   is_new: true
+  # This concept should not be offered in all countries.
+  limited_to_countries: "ES"
+  limited_to_countries: "MX"
+  limited_to_countries: "more?"
 }
 
 concepts {
@@ -357,6 +365,8 @@ concepts {
   canonical_format_example: "タロウ"
   label: "Phonetic spelling of given name"
   is_new: true
+  # This concept should not be offered in all countries.
+  limited_to_countries: "JA"
 }
 
 concepts {
@@ -365,8 +375,27 @@ concepts {
   canonical_format_example: "デル"
   label: "Phonetic spelling of family name"
   is_new: true
+  # This concept should not be offered in all countries.
+  limited_to_countries: "JA"
 }
 
+concepts {
+  name: "patronymic-name"
+  description: "Patronymic name"
+  canonical_format_example: "Іван, Ян, Иван"
+  label: "Patronymic name"
+  is_new: true
+  limited_to_countries: "BY"  # Belarus
+  limited_to_countries: "GE"  # Georgia
+  limited_to_countries: "GR"  # Greece
+  limited_to_countries: "KG"  # Kyrgyzstan
+  limited_to_countries: "KZ"  # Kazakhstan
+  limited_to_countries: "RU"  # Russia
+  limited_to_countries: "TM"  # Turkmenistan
+  limited_to_countries: "UA"  # Ukraine
+  limited_to_countries: "UZ"  # Uzbekistan
+  limited_to_countries: "more?"
+}
 
 # Generic "street-name house-number" pattern.
 compound_concepts {

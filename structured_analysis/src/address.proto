@@ -40,11 +40,13 @@ message Concept {
   // A tag shown in product UI to users.
   string label = 5;
 
-  repeated Locales specialization = 6;
+  repeated string limited_to_countries = 6;
+
+  repeated Locales specialization = 7;
 
   // Whether this is a new concept not defined in the current autocomplete
   // spec.
-  bool is_new = 7;
+  bool is_new = 8;
 }
 
 // TODO: Definition of higher level constructs.

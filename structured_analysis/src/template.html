@@ -218,11 +218,15 @@ useful for more countries.
   <tr>
     <td><code class="{{concept.name|css_classes_for_concept}}">
       {{concept.name}}
-    </code></td>
+    </code>
+      {%-if concept.limited_to_countries %}
+      ({{ concept.limited_to_countries|join(', ') }})
+      {%- endif -%}
+    </td>
     <td>{{concept.description|safe}}</td>
     <td>{{concept.canonical_format_example|safe}}</td>
   </tr>
-  {% endif %}
+  {%- endif %}
 {% endfor %}
 </table>
 
@@ -321,6 +325,13 @@ The following icons are used below:
     to all users.
   <li>Do we allow forms to specify an encoding? E.g. Japanese forms are picky
     about ASCII, full-width or half-width characters.
+  <li>TODO: <a href="https://en.wikipedia.org/wiki/Eastern_Slavic_naming_customs">
+    Eastern Slavic naming customs</a> often add a patronymic name, which is
+    not well investigated yet. Relevant countries:  Russia, Belarus, Ukraine,
+    Kazakhstan, Turkmenistan, Uzbekistan, and to an extent in Kyrgyzstan,
+    Georgia and Greece. The patronymic name is is based on
+    the first name of the father and is written in all legal and identity
+    documents.
 </ul>
 
 </section>
