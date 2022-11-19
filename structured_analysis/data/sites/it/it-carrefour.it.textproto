@@ -541,7 +541,7 @@ site_examples {
       label: "Scala"
       label_translated: "Stair case"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "staircase"
       autocomplete_attribute: "nope"
       section: ADDRESS
     }

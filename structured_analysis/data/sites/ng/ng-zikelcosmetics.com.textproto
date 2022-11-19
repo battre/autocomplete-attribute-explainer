@@ -94,7 +94,7 @@ site_examples {
       name: "IShipping_CareOf|IShipping.CareOf"
       label: "Drop In-Care Of Person Name"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "care-of"
       section: ADDRESS
     }
     fields {

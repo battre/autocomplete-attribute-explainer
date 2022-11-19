@@ -271,7 +271,7 @@ site_examples {
     fields {
       name: "cpsal-mrsb|oxaddress__oxsal"
       label: "Género: M"
-      label_translated: "Género: M"
+      label_translated: "Sex: M"
       control_type: RADIO
       concepts: "sex"
       section: NAME
@@ -315,7 +315,8 @@ site_examples {
       example: "(entre calles o puntos de referencia)"
       example_translated: "(between streets or landmarks)"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "between-streets"
+      concepts: "landmark"
       section: ADDRESS
     }
     fields {

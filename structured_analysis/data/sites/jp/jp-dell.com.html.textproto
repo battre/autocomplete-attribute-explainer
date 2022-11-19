@@ -45,6 +45,7 @@ site_examples {
       example: "例：デル"
       example_translated: "Example: Dell"
       control_type: INPUT
+      concepts: "name"
       concepts: "organization"
       section: ADDRESS
     }
@@ -53,7 +54,8 @@ site_examples {
       label: "会社名・氏名（カナ）"
       label_translated: "Company name/Name (Kana)"
       control_type: INPUT
-      concepts: "organization"
+      concepts: "phonetic-name"
+      concepts: "phonetic-organization"
       section: ADDRESS
     }
     fields {

@@ -12,7 +12,7 @@ site_examples {
       label_translated: "Name*"
       control_type: INPUT
       concepts: "given-name"
-      section: NAME
+      section: OTHER
     }
     fields {
       name: "checkoutRegisterUserLastname|"
@@ -20,7 +20,7 @@ site_examples {
       label_translated: "Surnames*"
       control_type: INPUT
       concepts: "family-name"
-      section: NAME
+      section: OTHER
     }
     fields {
       name: "checkoutRegisterUserEmail|"
@@ -67,7 +67,7 @@ site_examples {
       label: "Nombre Destinatario*"
       label_translated: "Recipient Name*"
       control_type: INPUT
-      concepts: "unset"
+      concepts: "given-name"
       section: NAME
     }
     fields {
@@ -75,7 +75,7 @@ site_examples {
       label: "Apellidos Destinatario*"
       label_translated: "Recipient Surname*"
       control_type: INPUT
-      concepts: "unset"
+      concepts: "family-name"
       section: NAME
     }
     fields {

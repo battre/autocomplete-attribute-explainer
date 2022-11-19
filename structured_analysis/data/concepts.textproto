@@ -259,83 +259,6 @@ concepts {
 # New concepts
 
 concepts {
-  name: "street-name"
-  description: "Name of a street"
-  canonical_format_example: "Vassar Street"
-  label: "Street name"
-  is_new: true
-}
-
-concepts {
-  name: "house-number"
-  description:
-    "Numeric identifier of a house in a street. Can sometimes contain "
-    "characters as well"
-  canonical_format_example: "32"
-  label: "House number"
-  is_new: true
-}
-
-concepts {
-  name: "apartment"
-  description:
-    "Identifier for an apartment, often numeric."
-  canonical_format_example: "201"
-  label: "Apartment"
-  is_new: true
-}
-
-concepts {
-  name: "floor"
-  description:
-    "Identifier for floor, often numeric."
-  canonical_format_example: "2"
-  label: "Floor"
-  is_new: true
-}
-
-
-concepts {
-  name: "building"
-  description: "Name of a building"
-  canonical_format_example: "Stata Center"
-  label: "Building name"
-  is_new: true
-}
-
-concepts {
-  name: "landmark"
-  description: "Landmark"
-  canonical_format_example: "Near the police station"
-  label: "Landmark"
-  is_new: true
-}
-
-concepts {
-  name: "delivery-instructions"
-  description: "Delivery instructions"
-  canonical_format_example: "Dial 312 123 1234 when you are there."
-  label: "Delivery instructions"
-  is_new: true
-}
-
-concepts {
-  name: "care-of"
-  description: "Care of"
-  canonical_format_example: "Mrs. Example"
-  label: "c/o"
-  is_new: true
-}
-
-concepts {
-  name: "between-streets"
-  description: "Between streets"
-  canonical_format_example: "A street and B street"
-  label: "Between streets"
-  is_new: true
-}
-
-concepts {
   name: "first-family-name"
   description: "First family name (Primer Apellido)"
   canonical_format_example: "Ruiz"
@@ -380,6 +303,26 @@ concepts {
 }
 
 concepts {
+  name: "phonetic-name"
+  description: "Phonetic spelling of name (氏名（カナ） in JP)"
+  canonical_format_example: "デル"
+  label: "Phonetic spelling of name"
+  is_new: true
+  # This concept should not be offered in all countries.
+  limited_to_countries: "JA"
+}
+
+concepts {
+  name: "phonetic-organization"
+  description: "Phonetic spelling of an organization (会社名（カナ）in JP)"
+  canonical_format_example: ""
+  label: "Phonetic spelling of an organization"
+  is_new: true
+  # This concept should not be offered in all countries.
+  limited_to_countries: "JA"
+}
+
+concepts {
   name: "patronymic-name"
   description: "Patronymic name"
   canonical_format_example: "Іван, Ян, Иван"
@@ -395,6 +338,123 @@ concepts {
   limited_to_countries: "UA"  # Ukraine
   limited_to_countries: "UZ"  # Uzbekistan
   limited_to_countries: "more?"
+}
+
+concepts {
+  name: "street-name"
+  description: "Name of a street"
+  canonical_format_example: "Vassar Street"
+  label: "Street name"
+  is_new: true
+}
+
+concepts {
+  name: "house-number"
+  description:
+    "Numeric identifier of a house in a street. Can sometimes contain "
+    "characters as well"
+  canonical_format_example: "32"
+  label: "House number"
+  is_new: true
+}
+
+concepts {
+  name: "street-name-name"
+  description: "Name part of a Hungarian street (Közterület neve). "
+    "Together with street-name-type (Közterület jellege), these two result in "
+    "a street-name."
+  canonical_format_example: "Amphitheatre (translated to English)"
+  label: "Name part of a public place (Közterület neve)"
+  is_new: true
+  # This concept should not be offered in all countries.
+  limited_to_countries: "HU"
+}
+
+concepts {
+  name: "street-name-type"
+  description: "Type part of a Hungarian street (Közterület jellege). "
+    "Together with street-name-name (Közterület neve), these two result in a "
+    "street-name."
+  canonical_format_example: "Blvd., Pkwy., Ln., Ave. (translated to English)"
+  label: "Type of a street"
+  is_new: true
+  # This concept should not be offered in all countries.
+  limited_to_countries: "HU"
+}
+
+concepts {
+  name: "apartment"
+  description:
+    "Identifier for an apartment, often numeric."
+  canonical_format_example: "201"
+  label: "Apartment"
+  is_new: true
+}
+
+concepts {
+  name: "floor"
+  description:
+    "Identifier for floor, often numeric."
+  canonical_format_example: "2"
+  label: "Floor"
+  is_new: true
+}
+
+concepts {
+  name: "staircase"
+  description:
+    "Staircase"
+  canonical_format_example: "2"
+  label: "Staircase"
+  is_new: true
+}
+
+concepts {
+  name: "building"
+  description: "Name of a building"
+  canonical_format_example: "Stata Center"
+  label: "Building name"
+  is_new: true
+}
+
+concepts {
+  name: "landmark"
+  description: "Landmark"
+  canonical_format_example: "Near the police station"
+  label: "Landmark"
+  is_new: true
+}
+
+concepts {
+  name: "delivery-instructions"
+  description: "Delivery instructions"
+  canonical_format_example: "Dial 312 123 1234 when you are there."
+  label: "Delivery instructions"
+  is_new: true
+}
+
+concepts {
+  name: "care-of"
+  description: "Care of"
+  canonical_format_example: "Mrs. Example"
+  label: "c/o"
+  is_new: true
+}
+
+concepts {
+  name: "between-streets"
+  description: "Between streets"
+  canonical_format_example: "A street and B street"
+  label: "Between streets"
+  is_new: true
+}
+
+concepts {
+  name: "address-line4"
+  description: "Street address (one line per field) "
+  canonical_format_example: ""
+  label: "Address line 4"
+  is_new: true
 }
 
 # Generic "street-name house-number" pattern.

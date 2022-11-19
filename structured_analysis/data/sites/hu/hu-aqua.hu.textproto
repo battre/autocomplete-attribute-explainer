@@ -226,7 +226,7 @@ site_examples {
       label: "Közterület neve (utca)"
       label_translated: "Name of public space (street)"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "street-name-name"
       autocomplete_attribute: "1bcy2wep"
       section: ADDRESS
     }
@@ -235,7 +235,7 @@ site_examples {
       label: "Közterület jellege"
       label_translated: "Nature of public space"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "street-name-type"
       autocomplete_attribute: "1bcy2wep"
       section: ADDRESS
     }

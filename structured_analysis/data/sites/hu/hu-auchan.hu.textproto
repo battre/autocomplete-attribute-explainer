@@ -47,7 +47,7 @@ site_examples {
       label: "Közterület neve*"
       label_translated: "Name of public area*"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "street-name-name"
       autocomplete_attribute: "off"
       section: ADDRESS
     }
@@ -56,7 +56,7 @@ site_examples {
       label: "Közterület jellege"
       label_translated: "Nature of public space"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "street-name-type"
       section: ADDRESS
     }
     fields {

@@ -1,0 +1,28 @@
+<p>Every address form asks for a
+<a href=\"https://en.wikipedia.org/wiki/Colonia_(Mexico)\">colonia</a>,
+which is a neighborhood in a Mexican city (which has no jurisdictional
+autonomy or representation) or a gated community. It is interesting that
+some cities have a municipality, but not all. This <b>probably</b> means
+that we treat a colonia as an address-level4 to have a fixed assignment.
+If there is no address-level3 fields, we probaby want to combine it with
+the city field (address-level2). Alternatively, we would need to be able
+to split a city into the city and delegacion. This is one of the cases
+where I don't know how ot read the autocomplete spec.
+
+<h4>Missing field types</h4>
+<p>The following cases are currently missing in the autocomplete spec and
+occurred on multiple sites:
+<ul>
+<li>street-name
+<li>external number (house number)
+<li>internal number (apartment number)
+<li>entre calles (between streets) or landmark
+<li>Colonia and sometimes Delegación o Municipio (Delegation or Municipality)
+</ul>
+
+<h4>Open questions</h4>
+<ul>
+  <li>How to deal with address-level3 or address-level4 for colonia (see above)
+</ul>
+
+<p>Progress: ☑ First round of cleanup, ☐ Discussed with a (former) resident

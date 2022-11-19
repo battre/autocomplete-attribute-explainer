@@ -1,10 +1,10 @@
 {% macro entry(prefix, text, suffix, id, tooltip, position) %}
   {% if tooltip %}
-    <span class="entry-with-tooltip" id="{{id}}">{{prefix}}{{text}}{{suffix}}
+    <span class="entry-with-tooltip" id="{{id}}">{{prefix|safe}}{{text}}{{suffix|safe}}
       <div class="tooltip tooltip-{{position}}">{{tooltip|safe}}</div>
     </span>
   {% else %}
-    <span id="{{id}}">{{prefix if text}}{{text}}{{suffix if text}}</span>
+    <span id="{{id}}">{{prefix|safe if text}}{{text}}{{suffix|safe if text}}</span>
   {% endif %}
 {% endmacro %}
 
@@ -17,7 +17,7 @@
         "",
         field.label + (" (" + field.example + ")" if field.example else ""),
         " ▽" if field.control_type == address_pb2.ControlType.SELECT else
-        " 🤷" if field.control_type == address_pb2.ControlType.CUSTOM else "",
+        " <span title=\"custom element\">[🤷]</span>" if field.control_type == address_pb2.ControlType.CUSTOM else "",
         "term_" + field.internal_id, field.label_comment, "right")}}
   {% endfor %}
 {% endmacro %}
@@ -31,7 +31,7 @@
         "",
         field.label_translated + (" (" + field.example_translated + ")" if field.example_translated else ""),
         " ▽" if field.control_type == address_pb2.ControlType.SELECT else
-        " 🤷" if field.control_type == address_pb2.ControlType.CUSTOM else "",
+        " <span title=\"custom element\">[🤷]</span>" if field.control_type == address_pb2.ControlType.CUSTOM else "",
         "translated_term_" + field.internal_id, field.label_translated_comment, "bottom")}}
   {% endfor %}
 {% endmacro %}
@@ -335,6 +335,14 @@ The following icons are used below:
     Kyrgyzstan, Georgia. But the list of
     <a href="https://en.wikipedia.org/wiki/Patronymic">affected countries</a>
     is longer.
+  <li>Many naming questions...
+    <ul>
+      <li>How do we call the location information to find
+        a place inside a building? "location-in-building"? "sub-building"?
+      <li>How do we name things that are very country/culture specific
+        (Hungary's separation between street name and street type, entrecalles,
+        ...)?
+    </ul>
 </ul>
 
 </section>

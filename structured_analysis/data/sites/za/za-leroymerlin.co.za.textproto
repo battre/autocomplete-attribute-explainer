@@ -70,21 +70,21 @@ site_examples {
       name: "1|ko_unique_1"
       label: "Mr"
       control_type: RADIO
-      concepts: "gap"
+      concepts: "honorific-prefix"
       section: NAME
     }
     fields {
       name: "2|ko_unique_2"
       label: "Mrs"
       control_type: RADIO
-      concepts: "gap"
+      concepts: "honorific-prefix"
       section: NAME
     }
     fields {
       name: "3|ko_unique_3"
       label: "Ms"
       control_type: RADIO
-      concepts: "gap"
+      concepts: "honorific-prefix"
       section: NAME
     }
     fields {

@@ -365,7 +365,8 @@ site_examples {
       label: "¿Entre qué calles está el domicilio? Referencias, ¿qué se encuentra cerca?"
       label_translated: "Between which streets is the address? References, what is nearby?"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "between-streets"
+      concepts: "landmark"
       autocomplete_attribute: "new-address1"
       section: ADDRESS
     }

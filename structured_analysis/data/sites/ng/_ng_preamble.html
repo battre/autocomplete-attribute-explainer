@@ -1,0 +1,25 @@
+<p>Practically all websites I have seen relied on unstructured addresses.
+I observed that most websites I saw were hosted via WooCommerce which may
+be a common practice or a sampling bias. I saw a single exceptional website
+which asked for the LGA (Local Government Area). As per official
+guidelines, addresses have the following order of elements (see page 28 of
+<a href="https://www.nipost.gov.ng/Site_Downloads/NIGERIAN-NATIONAL-ADDRESSING-STANDARD-AND-GUIDELINES.pdf">here</a>):
+District, Postcode, City, Local Government Area, State,
+Country. This means that a city would need to be address-level3. In
+practice my sample of sites did not ask for LGAs frequently (except for one
+page) so there would be a high chance of confusion if we supported this
+field as address-level2.
+
+<h4>Missing field types</h4>
+<p>The following cases are currently missing in the autocomplete spec and
+occurred on multiple sites:
+<ul>
+<li>delivery-instructions
+</ul>
+
+<h4>Open questions</h4>
+<ul>
+  <li>How to deal with LGA (see above)?
+</ul>
+
+<p>Progress: ☑ First round of cleanup, ☐ Discussed with a (former) resident

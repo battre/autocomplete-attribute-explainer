@@ -64,213 +64,74 @@ country_data {
 country_data {
   country: "ID"
   country_name: "Indonesia 🇮🇩"
-  site_examples_preamble_html:
-    "<p>Indonesian addresses are special because of their depth, using all of "
-    "address-level1 through address-level4. Sometimes the higher address levels "
-    "(3 and 4) need to be entered into a textarea along with the street address "
-    "or into address-lineX fields. The address-levels are:"
-    "<ul>"
-    "<li>address-level1: Provinsi (Province)"
-    "<li>address-level2: Kota (City)"
-    "<li>address-level3: Kecamatan (District, part of a city or regency)"
-    "<li>address-level4: Kelurahan (Subdistrict, part of a district)"
-    "</ul>"
-    "Indonesian addresses often rely on &lt;select&gt; elements. The values "
-    "of one &lt;select&gt; element may only be populated after the user filled "
-    "the previous one. Sites also ship their own custom &lt;select&gt; elements."
-    "</p>"
+  site_examples_preamble_file: "data/sites/id/_id_preamble.html"
 }
 
 country_data {
   country: "IN"
   country_name: "India 🇮🇳"
-  site_examples_preamble_html:
-    "<p>Indian addresses forms have surprising naming conventions. Forms "
-    "commonly ask for a 'House no/Apartment name'. The 'house number' is an "
-    "apartment number (not the sequence of a house in a street) and the "
-    "apartment name is the name of a building (most buildings have a name; this "
-    "is not referring to the name of an apartment).</p>"
-    "<p>Another important aspect that is not common in other countries is a "
-    "'locality' (sometimes referred to as 'area details'). An example would be "
-    "'HITEC City' in Hyderabad. It's a name for an area that people know and use "
-    "for orientation. Another example would be 'old town'.</p>"
-    "<p>A 'Colony' is a named group of buildings that belong to each other, "
-    "e.g. sharing amenities. Also serves as a landmark.</p>"
-    "<p>The following cases are currently missing in the autocomplete spec and "
-    "occurred on multiple sites:"
-    "<ul>"
-    "<li>landmark"
-    "<li>building (apartment name)"
-    "<li>apartment (house no)"
-    "<li>street name"
-    "</ul>"
-    "</p>"
+  site_examples_preamble_file: "data/sites/in/_in_preamble.html"
 }
 
 country_data {
   country: "IT"
   country_name: "Italy 🇮🇹"
+  site_examples_preamble_file: "data/sites/it/_it_preamble.html"
 }
 
 country_data {
   country: "JP"
   country_name: "Japan 🇯🇵"
-  site_examples_preamble_html: "<p>Japanese address forms are special in that the "
-    "Postal Code is often spread across two input fields and users are often "
-    "asked to enter their name twice (once in phonetic spelling). Also Websites "
-    "often specify whether to use full-width or half-widths characters/numbers."
-    "</p>"
-    "<p>Within a city, buildings are often identified by a sequence of 3 numbers "
-    "[chome / city district]-[city block]-[building number] a forth number "
-    "can be appended for the apartment number, but often times there is a special "
-    "field for the building name and apartment number. See "
-    "<a href=\"https://en.wikipedia.org/wiki/Japanese_addressing_system\">Wikipedia</a>"
-    "</p>"
-    "<p>A certain complexity arises from the chome/city district (丁目), which "
-    "is sometimes grouped in the format 1-2-3 and sometimes apears together with "
-    "a city (<a href=\"#2-httpswww.dinos.co.jp\">example</a>). "
-    "I haven't understood whether the chome is just represented by the number "
-    "or also comes with a name.</p>"
-    "<p>The municipality is often expressed with the following terms (spaces "
-    "added by me for the western eye that cannot parse kanji characters):"
-    "<ul>"
-    "<li>市 区 町 村:<br>"
-    " (市 = shi = large city)<br>"
-    " (区 = ku = ward (sub division of a large city))<br>"
-    " (町 = chō or machi (town))<br>"
-    " (村 = mura or son (village))"
-    "<li>市 区 町 村 名:<br>"
-    " as first + 名 ???"
-    "<li>市 区 町 村 番地:<br>"
-    " as first + (番地 = banchi (lot number used in some rural and older city areas)"
-    "<li>市区郡　町村名／丁目:<br>"
-    " (市 = shi = large city)<br>"
-    " (区 = ku = ward (sub division of a large city))<br>"
-    " (郡 = gun (district; in Japan, a city is separate from districts, which contain towns and villages))<br>"
-    " (町 = chō or machi (town))<br>"
-    " (村 = mura or son (village))<br>"
-    " (名 = ???)<br>"
-    " (丁目 = chōme (city district))<br>"
-    "</ul></p>"
-    "<p>The following cases are currently missing in the autocomplete spec and "
-    "occurred on multiple sites:"
-    "<ul>"
-    "<li>phonetic family and given name"
-    "<li>street-location (chorme, city block, house number)"
-    "<li>building-and-location-in-building (building name and apartment number)"
-    "<li>postal-codes are often spread across two fields"
-    "</ul></p>"
-
-  site_examples_epilog_html: "Placeholder attributes often show the symbol "
-    "〇, meaning 'to correct/confirm'. I also found that ✖, 〇 and △ mean "
-    "false, correct, and somewhere in the middle. This might be a way to "
-    "express the preferred format."
+  site_examples_preamble_file: "data/sites/jp/_jp_preamble.html"
+  site_examples_epilog_file:  "data/sites/jp/_jp_epilog.html"
 }
 
 country_data {
   country: "MX"
   country_name: "Mexico 🇲🇽"
-  site_examples_preamble_html:
-    "<p>Every address form asks for a "
-    "<a href=\"https://en.wikipedia.org/wiki/Colonia_(Mexico)\">colonia</a>, "
-    "which is a neighborhood in a Mexican city (which has no jurisdictional "
-    "autonomy or representation) or a gated community. It is interesting that "
-    "some cities have a municipality, but not all. This <b>probably</b> means "
-    "that we treat a colonia as an address-level4 to have a fixed assignment. "
-    "If there is no address-level3 fields, we probaby want to combine it with "
-    "the city field (address-level2). Alternatively, we would need to be able "
-    "to split a city into the city and delegacion. This is one of the cases "
-    "where I don't know how ot read the autocomplete spec.<p>"
-    "<p>The following cases are currently missing in the autocomplete spec and "
-    "occurred on multiple sites:"
-    "<ul>"
-    "<li>street-name"
-    "<li>external number (house number)"
-    "<li>internal number (apartment number)"
-    "<li>entre calles (between streets) or landmark"
-    "<li>Colonia and sometimes Delegación o Municipio (Delegation or Municipality)"
-    "</ul></p>"
+  site_examples_preamble_file: "data/sites/mx/_mx_preamble.html"
 }
 
 country_data {
   country: "MY"
   country_name: "Malaysia 🇲🇾"
-  site_examples_preamble_html:
-    "<p>Malaysian addresses forms are very simple, typically with address "
-    "lines 1, 2 and sometimes \"additional address information\". TBH most "
-    "websites tested looked like international websites and those that looked "
-    "more local could not be tested because they required a local phone number."
-    "For this reason only few websites are listed here. All others looked the"
-    "same.</p>"
+  site_examples_preamble_file: "data/sites/my/_my_preamble.html"
 }
 
 country_data {
   country: "NG"
   country_name: "Nigeria 🇳🇬"
-  site_examples_preamble_html:
-    "<p>Practically all websites I have seen relied on unstructured addresses. "
-    "I observed that most websites I saw were hosted via WooCommerce which may "
-    "be a common practice or a sampling bias. I saw a single exceptional website "
-    "which asked for the LGA (Local Government Area). As per official "
-    "guidelines, addresses have the following order of elements (see page 28 of "
-    "<a href=\"https://www.nipost.gov.ng/Site_Downloads/NIGERIAN-NATIONAL-ADDRESSING-STANDARD-AND-GUIDELINES.pdf\">here</a>): "
-    "District, Postcode, City, Local Government Area, State, "
-    "Country. This means that a city would need to be address-level3. In "
-    "practice my sample of sites did not ask for LGAs frequently (except for one "
-    "page) so there would be a high chance of confusion if we supported this "
-    "field as address-level2."
-    "</p>"
+  site_examples_preamble_file: "data/sites/ng/_ng_preamble.html"
 }
 
 country_data {
   country: "PL"
   country_name: "Poland 🇵🇱"
-  site_examples_preamble_html:
-    "<p>Polish addresses rely on address-line1, 2, 3 or separate fields for street "
-    "name, house number and apartment number.</p>"
+  site_examples_preamble_file: "data/sites/pl/_pl_preamble.html"
 }
 
 country_data {
   country: "TR"
   country_name: "Turkey 🇹🇷"
-  site_examples_preamble_html:
-    "<p>Turkish addresses are special because the concept translated to "
-    "a city (Şehir/Il) is more comparable to states in other countries. We have "
-    "the following granularities:"
-    "<ul>"
-    "<li>Şehir/Il: City (note: this is more comparable to states in other countries) - address-level1"
-    "<li>İlçe: District (note: this is more comparable to cities in other countries) - address-level2"
-    "<li>Mahalle/Köy: Neighborhood/Village (a neighborhood in the country side) - address-level3"
-    "</ul>"
-    "</p>"
-    "<p>The majority of addresses seem to be unstructured addresses (I haven't copied them all).</p>"
+  site_examples_preamble_file: "data/sites/tr/_tr_preamble.html"
 }
 
 country_data {
   country: "US"
   country_name: "United States of America 🇺🇸"
-  site_examples_preamble_html:
-    "<p>All US websites I tested followed the same address form structure "
-    "shown below with the one exception that sometimes there was a single "
-    "street-address field.</p>"
+  site_examples_preamble_file: "data/sites/us/_us_preamble.html"
 }
 
 country_data {
   country: "ZA"
   country_name: "South Africa 🇿🇦"
-  site_examples_preamble_html:
-    "<p>South Africa has a mixed set of structured and unstructured address "
-    "forms.</p>"
+  site_examples_preamble_file: "data/sites/za/_za_preamble.html"
 }
 
 country_data {
   country: "HR"
   country_name: "Croatia 🇭🇷"
-  site_examples_preamble_html:
-    "<p>Croatian address forms seem to be largely compatible with the "
-    "autocomplete spec, except that some forms asked for street name and house "
-    "number in separate fields. At last one form asked for an OIB (social "
-    "security number).</p>"
+  site_examples_preamble_file: "data/sites/hr/_hr_preamble.html"
 }
 
 country_data {
@@ -282,30 +143,8 @@ country_data {
 country_data {
   country: "HU"
   country_name: "Hungary 🇭🇺"
-  site_examples_preamble_html:
-    "<p>Hungary seems to have a mix of unstructured address forms and "
-    "ultra-detailed address forms, similar to some Hispanic/Latinx countries.</p>"
-  site_examples_epilog_html:
-    "<p>\"Közterület jellege\" is a \"street type\", such as {street, road, "
-    "drive, avenue, boulevard, square, etc.}. While in most languages the "
-    "street name emcompasses the name and the street type, in Hungarian they "
-    "are often separated in official records. \"Közterület neve\" could be "
-    "\"Amphitheatre\", \"Közterület jellege\" could be \"Pkwy\".</p>"
-    ""
-    "<p>\"Épület\" (Building): is only used when multiple buildings share the "
-    "same house number, so it identifies which one. Can be another number or "
-    "letter.</p>"
-    ""
-    "<p>\"Lépcsőház\" (Staircase): serves a similar purpose as \"Épület\" "
-    "(Building) when there are multiple entrances to a single building, and "
-    "there are mailboxes next to each."
-    ""
-    "<p>\"Emelet\" (Floor) / \"Ajtó\" (Door): These are a more structured way "
-    "to refer to an \"apartment number\", \"flat number\", or \"room number\" "
-    "in an office. These historically have the structure of \"floor / door\", "
-    "e.g. \"3/1\", meaning 3rd floor, 1st apartment within that floor. The "
-    "\"door number\" is most often a locally unique identifier within the "
-    "floor, not within the building as common in the US.<o>"
+  site_examples_preamble_file: "data/sites/hu/_hu_preamble.html"
+  site_examples_epilog_file: "data/sites/hu/_hu_epilog.html"
 }
 
 country_data {

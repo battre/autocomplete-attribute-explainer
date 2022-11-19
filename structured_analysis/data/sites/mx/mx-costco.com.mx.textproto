@@ -171,15 +171,15 @@ site_examples {
       label: "Apellido paterno"
       label_translated: "Last name"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "first-family-name"
       section: NAME
     }
     fields {
       name: "maternalLastName|maternalLastName"
       label: "Apellido materno"
-      label_translated: "Mother&#39;s last name"
+      label_translated: "Mother's last name"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "second-family-name"
       section: NAME
     }
     fields {
@@ -286,7 +286,7 @@ site_examples {
       label: "Referencias adicionales"
       label_translated: "Additional references"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "landmark"
       section: ADDRESS
     }
     fields {
@@ -582,7 +582,7 @@ site_examples {
       label: "Nombre"
       label_translated: "Name"
       control_type: INPUT
-      concepts: "unset"
+      concepts: "name"
       section: OTHER
     }
     fields {
@@ -590,7 +590,7 @@ site_examples {
       label: "Apellido paterno"
       label_translated: "Last name"
       control_type: INPUT
-      concepts: "unset"
+      concepts: "first-family-name"
       section: OTHER
     }
     fields {
@@ -598,8 +598,8 @@ site_examples {
       label: "Apellido materno"
       label_translated: "Mother&#39;s last name"
       control_type: INPUT
-      concepts: "unset"
-      section: NAME
+      concepts: "second-family-name"
+      section: OTHER
     }
     fields {
       name: "spouseSuffix|spouseSuffix"

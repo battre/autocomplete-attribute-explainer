@@ -438,6 +438,76 @@ useful for more countries.
   
   <tr>
     <td><code class="new-concept">
+      first-family-name
+    </code>
+      (ES, MX, more?)</td>
+    <td>First family name (Primer Apellido)</td>
+    <td>Ruiz</td>
+  </tr>
+
+  
+  <tr>
+    <td><code class="new-concept">
+      second-family-name
+    </code>
+      (ES, MX, more?)</td>
+    <td>Second family name (Segundo Apellido)</td>
+    <td>Picasso</td>
+  </tr>
+
+  
+  <tr>
+    <td><code class="new-concept">
+      phonetic-given-name
+    </code>
+      (JA)</td>
+    <td>Phonetic spelling of given name (メイ in JP)</td>
+    <td>タロウ</td>
+  </tr>
+
+  
+  <tr>
+    <td><code class="new-concept">
+      phonetic-family-name
+    </code>
+      (JA)</td>
+    <td>Phonetic spelling of family name (セイ in JP)</td>
+    <td>デル</td>
+  </tr>
+
+  
+  <tr>
+    <td><code class="new-concept">
+      phonetic-name
+    </code>
+      (JA)</td>
+    <td>Phonetic spelling of name (氏名（カナ） in JP)</td>
+    <td>デル</td>
+  </tr>
+
+  
+  <tr>
+    <td><code class="new-concept">
+      phonetic-organization
+    </code>
+      (JA)</td>
+    <td>Phonetic spelling of an organization (会社名（カナ）in JP)</td>
+    <td></td>
+  </tr>
+
+  
+  <tr>
+    <td><code class="new-concept">
+      patronymic-name
+    </code>
+      (BY, GE, GR, KG, KZ, RU, TM, UA, UZ, more?)</td>
+    <td>Patronymic name</td>
+    <td>Іван, Ян, Иван</td>
+  </tr>
+
+  
+  <tr>
+    <td><code class="new-concept">
       street-name
     </code></td>
     <td>Name of a street</td>
@@ -456,6 +526,26 @@ useful for more countries.
   
   <tr>
     <td><code class="new-concept">
+      street-name-name
+    </code>
+      (HU)</td>
+    <td>Name part of a Hungarian street (Közterület neve). Together with street-name-type (Közterület jellege), these two result in a street-name.</td>
+    <td>Amphitheatre (translated to English)</td>
+  </tr>
+
+  
+  <tr>
+    <td><code class="new-concept">
+      street-name-type
+    </code>
+      (HU)</td>
+    <td>Type part of a Hungarian street (Közterület jellege). Together with street-name-name (Közterület neve), these two result in a street-name.</td>
+    <td>Blvd., Pkwy., Ln., Ave. (translated to English)</td>
+  </tr>
+
+  
+  <tr>
+    <td><code class="new-concept">
       apartment
     </code></td>
     <td>Identifier for an apartment, often numeric.</td>
@@ -468,6 +558,15 @@ useful for more countries.
       floor
     </code></td>
     <td>Identifier for floor, often numeric.</td>
+    <td>2</td>
+  </tr>
+
+  
+  <tr>
+    <td><code class="new-concept">
+      staircase
+    </code></td>
+    <td>Staircase</td>
     <td>2</td>
   </tr>
 
@@ -519,51 +618,10 @@ useful for more countries.
   
   <tr>
     <td><code class="new-concept">
-      first-family-name
-    </code>
-      (ES, MX, more?)</td>
-    <td>First family name (Primer Apellido)</td>
-    <td>Ruiz</td>
-  </tr>
-
-  
-  <tr>
-    <td><code class="new-concept">
-      second-family-name
-    </code>
-      (ES, MX, more?)</td>
-    <td>Second family name (Segundo Apellido)</td>
-    <td>Picasso</td>
-  </tr>
-
-  
-  <tr>
-    <td><code class="new-concept">
-      phonetic-given-name
-    </code>
-      (JA)</td>
-    <td>Phonetic spelling of given name (メイ in JP)</td>
-    <td>タロウ</td>
-  </tr>
-
-  
-  <tr>
-    <td><code class="new-concept">
-      phonetic-family-name
-    </code>
-      (JA)</td>
-    <td>Phonetic spelling of family name (セイ in JP)</td>
-    <td>デル</td>
-  </tr>
-
-  
-  <tr>
-    <td><code class="new-concept">
-      patronymic-name
-    </code>
-      (BY, GE, GR, KG, KZ, RU, TM, UA, UZ, more?)</td>
-    <td>Patronymic name</td>
-    <td>Іван, Ян, Иван</td>
+      address-line4
+    </code></td>
+    <td>Street address (one line per field) </td>
+    <td></td>
   </tr>
 
 </table>
@@ -726,6 +784,14 @@ The following icons are used below:
     Kyrgyzstan, Georgia. But the list of
     <a href="https://en.wikipedia.org/wiki/Patronymic">affected countries</a>
     is longer.
+  <li>Many naming questions...
+    <ul>
+      <li>How do we call the location information to find
+        a place inside a building? "location-in-building"? "sub-building"?
+      <li>How do we name things that are very country/culture specific
+        (Hungary's separation between street name and street type, entrecalles,
+        ...)?
+    </ul>
 </ul>
 
 </section>
@@ -9023,7 +9089,7 @@ occurred on multiple sites:
     
     
   
-    <span id="term_field_328">Tipo domicilio 🤷</span>
+    <span id="term_field_328">Tipo domicilio <span title="custom element">[🤷]</span></span>
   
 
   
@@ -9083,14 +9149,14 @@ occurred on multiple sites:
     <span class="separator">|</span>
     
   
-    <span id="term_field_336">Provincia 🤷</span>
+    <span id="term_field_336">Provincia <span title="custom element">[🤷]</span></span>
   
 
   
     <span class="separator">|</span>
     
   
-    <span id="term_field_337">Localidad 🤷</span>
+    <span id="term_field_337">Localidad <span title="custom element">[🤷]</span></span>
   
 
   
@@ -9107,7 +9173,7 @@ occurred on multiple sites:
     
     
   
-    <span id="translated_term_field_328">Type of address 🤷</span>
+    <span id="translated_term_field_328">Type of address <span title="custom element">[🤷]</span></span>
   
 
   
@@ -9163,14 +9229,14 @@ occurred on multiple sites:
     <span class="separator">|</span>
     
   
-    <span id="translated_term_field_336">Province 🤷</span>
+    <span id="translated_term_field_336">Province <span title="custom element">[🤷]</span></span>
   
 
   
     <span class="separator">|</span>
     
   
-    <span id="translated_term_field_337">Locality 🤷</span>
+    <span id="translated_term_field_337">Locality <span title="custom element">[🤷]</span></span>
   
 
   
@@ -23052,7 +23118,7 @@ occurred on multiple sites:
     <span class="separator">|</span>
     
   
-    <span id="term_field_791">Estado 🤷</span>
+    <span id="term_field_791">Estado <span title="custom element">[🤷]</span></span>
   
 
   
@@ -23097,7 +23163,7 @@ occurred on multiple sites:
     <span class="separator">|</span>
     
   
-    <span id="translated_term_field_791">State 🤷</span>
+    <span id="translated_term_field_791">State <span title="custom element">[🤷]</span></span>
   
 
   
@@ -57321,7 +57387,7 @@ field.
     <span class="separator">|</span>
     
   
-    <span id="term_field_2874">Ciudad * : 🤷</span>
+    <span id="term_field_2874">Ciudad * : <span title="custom element">[🤷]</span></span>
   
 
   
@@ -57352,7 +57418,7 @@ field.
     <span class="separator">|</span>
     
   
-    <span id="translated_term_field_2874">City * : 🤷</span>
+    <span id="translated_term_field_2874">City * : <span title="custom element">[🤷]</span></span>
   
 
   
@@ -67577,7 +67643,7 @@ occurred on multiple sites:
     
     <span id="concept_field_3521">
     <code
-    class="unknown-concept new-concept ">
+    class="new-concept ">
       
   
     <span id="">staircase</span>
@@ -69585,6 +69651,9 @@ field.
     much guess work.
   <li>Do we want to distinguish between postal town and city?
 </ul>
+
+<a href="http://www.paulplowman.com/stuff/uk-address-oddities/">This</a> is an
+entertaining article on the oddities of UK addresses.
 
 <p>Progress: ☑ First round of cleanup, ☐ Discussed with a (former) resident
   
@@ -84647,7 +84716,11 @@ incorrectly conflates this with middle names, which also exist.
   
   
   
-  <p>Croatian address forms seem to be largely compatible with the autocomplete spec, except that some forms asked for street name and house number in separate fields. At last one form asked for an OIB (social security number).</p>
+  Croatian address forms seem to be largely compatible with the autocomplete spec,
+except that some forms asked for street name and house number in separate
+fields. At last one form asked for an OIB (social security number).
+
+<p>Progress: ☑ First round of cleanup, ☐ Discussed with a (former) resident
   
   
   
@@ -88655,7 +88728,7 @@ incorrectly conflates this with middle names, which also exist.
     <span class="separator">|</span>
     
   
-    <span class="entry-with-tooltip" id="term_field_4592">Unesite poštanski broj ili naziv mjesta/grada... 🤷
+    <span class="entry-with-tooltip" id="term_field_4592">Unesite poštanski broj ili naziv mjesta/grada... <span title="custom element">[🤷]</span>
       <div class="tooltip tooltip-right">Custom select element that renders [zip code] - [city] - [district]</div>
     </span>
   
@@ -88674,7 +88747,7 @@ incorrectly conflates this with middle names, which also exist.
     <span class="separator">|</span>
     
   
-    <span id="translated_term_field_4592">Enter a zip code or town/city name... 🤷</span>
+    <span id="translated_term_field_4592">Enter a zip code or town/city name... <span title="custom element">[🤷]</span></span>
   
 
   
@@ -90861,7 +90934,30 @@ incorrectly conflates this with middle names, which also exist.
   
   
   
-  <p>Hungary seems to have a mix of unstructured address forms and ultra-detailed address forms, similar to some Hispanic/Latinx countries.</p>
+  <p>Hungary seems to have a mix of unstructured address forms and
+ultra-detailed address forms, similar to some Hispanic/Latinx countries.
+
+<h4>Missing field types</h4>
+<p>The following cases are currently missing in the autocomplete spec and
+occurred on multiple sites:
+<ul>
+  <li>name of public space (Közterület neve)
+  <li>nature of public space (Közterület jellege)
+  <li>street name (Utca Kötelezően) - the combination of the previous two field types
+  <li>house number
+  <li>building
+  <li>floor
+  <li>apartment
+  <li>staircase
+  <li>delivery-instructions
+</ul>
+
+<h4>Open questions</h4>
+<ul>
+  <li>How to name the particles of a street name.
+</ul>
+
+<p>Progress: ☑ First round of cleanup, ☑ Discussed with a (former) resident
   
   
   
@@ -94854,10 +94950,10 @@ incorrectly conflates this with middle names, which also exist.
     
     <span id="concept_field_4810">
     <code
-    class="gap ">
+    class="new-concept ">
       
   
-    <span id="">gap</span>
+    <span id="">street-name-name</span>
   
 
     </code>
@@ -94868,10 +94964,10 @@ incorrectly conflates this with middle names, which also exist.
     
     <span id="concept_field_4811">
     <code
-    class="gap ">
+    class="new-concept ">
       
   
-    <span id="">gap</span>
+    <span id="">street-name-type</span>
   
 
     </code>
@@ -95506,10 +95602,10 @@ incorrectly conflates this with middle names, which also exist.
     
     <span id="concept_field_4933">
     <code
-    class="gap ">
+    class="new-concept ">
       
   
-    <span id="">gap</span>
+    <span id="">street-name-name</span>
   
 
     </code>
@@ -95520,10 +95616,10 @@ incorrectly conflates this with middle names, which also exist.
     
     <span id="concept_field_4934">
     <code
-    class="gap ">
+    class="new-concept ">
       
   
-    <span id="">gap</span>
+    <span id="">street-name-type</span>
   
 
     </code>
@@ -95562,7 +95658,7 @@ incorrectly conflates this with middle names, which also exist.
     
     <span id="concept_field_4937">
     <code
-    class="unknown-concept new-concept ">
+    class="new-concept ">
       
   
     <span id="">staircase</span>
@@ -95747,10 +95843,10 @@ incorrectly conflates this with middle names, which also exist.
     
     <span id="concept_field_4958">
     <code
-    class="gap ">
+    class="new-concept ">
       
   
-    <span id="">gap</span>
+    <span id="">street-name-name</span>
   
 
     </code>
@@ -95761,10 +95857,10 @@ incorrectly conflates this with middle names, which also exist.
     
     <span id="concept_field_4959">
     <code
-    class="gap ">
+    class="new-concept ">
       
   
-    <span id="">gap</span>
+    <span id="">street-name-type</span>
   
 
     </code>
@@ -97314,7 +97410,28 @@ incorrectly conflates this with middle names, which also exist.
   
   
   
-  <p>"Közterület jellege" is a "street type", such as {street, road, drive, avenue, boulevard, square, etc.}. While in most languages the street name emcompasses the name and the street type, in Hungarian they are often separated in official records. "Közterület neve" could be "Amphitheatre", "Közterület jellege" could be "Pkwy".</p><p>"Épület" (Building): is only used when multiple buildings share the same house number, so it identifies which one. Can be another number or letter.</p><p>"Lépcsőház" (Staircase): serves a similar purpose as "Épület" (Building) when there are multiple entrances to a single building, and there are mailboxes next to each.<p>"Emelet" (Floor) / "Ajtó" (Door): These are a more structured way to refer to an "apartment number", "flat number", or "room number" in an office. These historically have the structure of "floor / door", e.g. "3/1", meaning 3rd floor, 1st apartment within that floor. The "door number" is most often a locally unique identifier within the floor, not within the building as common in the US.<o>
+  <p>Feedback from a native Hungarian:
+
+<p>"Közterület jellege" is a "street type", such as {street, road,
+drive, avenue, boulevard, square, etc.}. While in most languages the
+street name emcompasses the name and the street type, in Hungarian they
+are often separated in official records. "Közterület neve" could be
+"Amphitheatre", "Közterület jellege" could be "Pkwy".
+
+<p>"Épület" (Building): is only used when multiple buildings share the
+same house number, so it identifies which one. Can be another number or
+letter.
+
+<p>"Lépcsőház" (Staircase): serves a similar purpose as "Épület"
+(Building) when there are multiple entrances to a single building, and
+there are mailboxes next to each.
+
+<p>"Emelet" (Floor) / "Ajtó" (Door): These are a more structured way
+to refer to an "apartment number", "flat number", or "room number"
+in an office. These historically have the structure of "floor / door",
+e.g. "3/1", meaning 3rd floor, 1st apartment within that floor. The
+"door number" is most often a locally unique identifier within the
+floor, not within the building as common in the US.
   
   
   
@@ -97513,7 +97630,33 @@ incorrectly conflates this with middle names, which also exist.
   
   
   
-  <p>Indonesian addresses are special because of their depth, using all of address-level1 through address-level4. Sometimes the higher address levels (3 and 4) need to be entered into a textarea along with the street address or into address-lineX fields. The address-levels are:<ul><li>address-level1: Provinsi (Province)<li>address-level2: Kota (City)<li>address-level3: Kecamatan (District, part of a city or regency)<li>address-level4: Kelurahan (Subdistrict, part of a district)</ul>Indonesian addresses often rely on &lt;select&gt; elements. The values of one &lt;select&gt; element may only be populated after the user filled the previous one. Sites also ship their own custom &lt;select&gt; elements.</p>
+  <p>Indonesian addresses are special because of their depth, using all of
+address-level1 through address-level4. Sometimes the higher address levels
+(3 and 4) need to be entered into a textarea along with the street address
+or into address-lineX fields. The address-levels are:
+<ul>
+<li>address-level1: Provinsi (Province)
+<li>address-level2: Kota (City)
+<li>address-level3: Kecamatan (District, part of a city or regency)
+<li>address-level4: Kelurahan (Subdistrict, part of a district)
+</ul>
+Indonesian addresses often rely on &lt;select&gt; elements. The values
+of one &lt;select&gt; element may only be populated after the user filled
+the previous one. Sites also ship their own custom &lt;select&gt; elements.
+
+<h4>Missing field types</h4>
+<p>The following cases are currently missing in the autocomplete spec and
+occurred on multiple sites:
+<ul>
+  <li>One form had an address line 4
+</ul>
+
+<h4>Open questions</h4>
+<ul>
+  <li>n/a
+</ul>
+
+<p>Progress: ☑ First round of cleanup, ☐ Discussed with a (former) resident
   
   
   
@@ -101679,7 +101822,7 @@ incorrectly conflates this with middle names, which also exist.
     
     <span id="concept_field_5098">
     <code
-    class="unknown-concept new-concept ">
+    class="new-concept ">
       
   
     <span id="">address-line4</span>
@@ -102885,7 +103028,7 @@ incorrectly conflates this with middle names, which also exist.
     <span class="separator">|</span>
     
   
-    <span id="term_field_5425">Kota &amp; Kecamatan * : 🤷</span>
+    <span id="term_field_5425">Kota &amp; Kecamatan * : <span title="custom element">[🤷]</span></span>
   
 
   
@@ -102909,7 +103052,7 @@ incorrectly conflates this with middle names, which also exist.
     <span class="separator">|</span>
     
   
-    <span id="translated_term_field_5425">City &amp; District * : 🤷</span>
+    <span id="translated_term_field_5425">City &amp; District * : <span title="custom element">[🤷]</span></span>
   
 
   
@@ -103182,14 +103325,14 @@ incorrectly conflates this with middle names, which also exist.
     <span class="separator">|</span>
     
   
-    <span id="term_field_5456">Kota/Kecamatan 🤷</span>
+    <span id="term_field_5456">Kota/Kecamatan <span title="custom element">[🤷]</span></span>
   
 
   
     <span class="separator">|</span>
     
   
-    <span id="term_field_5457">Kode Pos 🤷</span>
+    <span id="term_field_5457">Kode Pos <span title="custom element">[🤷]</span></span>
   
 
   
@@ -103227,14 +103370,14 @@ incorrectly conflates this with middle names, which also exist.
     <span class="separator">|</span>
     
   
-    <span id="translated_term_field_5456">City/District 🤷</span>
+    <span id="translated_term_field_5456">City/District <span title="custom element">[🤷]</span></span>
   
 
   
     <span class="separator">|</span>
     
   
-    <span id="translated_term_field_5457">Postal code 🤷</span>
+    <span id="translated_term_field_5457">Postal code <span title="custom element">[🤷]</span></span>
   
 
   
@@ -104494,7 +104637,37 @@ incorrectly conflates this with middle names, which also exist.
   
   
   
-  <p>Indian addresses forms have surprising naming conventions. Forms commonly ask for a 'House no/Apartment name'. The 'house number' is an apartment number (not the sequence of a house in a street) and the apartment name is the name of a building (most buildings have a name; this is not referring to the name of an apartment).</p><p>Another important aspect that is not common in other countries is a 'locality' (sometimes referred to as 'area details'). An example would be 'HITEC City' in Hyderabad. It's a name for an area that people know and use for orientation. Another example would be 'old town'.</p><p>A 'Colony' is a named group of buildings that belong to each other, e.g. sharing amenities. Also serves as a landmark.</p><p>The following cases are currently missing in the autocomplete spec and occurred on multiple sites:<ul><li>landmark<li>building (apartment name)<li>apartment (house no)<li>street name</ul></p>
+  <p>Indian addresses forms have surprising naming conventions. Forms
+commonly ask for a 'House no/Apartment name'. The 'house number' is an
+apartment number (not the sequence of a house in a street) and the
+apartment name is the name of a building (most buildings have a name; this
+is not referring to the name of an apartment).
+
+<p>Another important aspect that is not common in other countries is a
+'locality' (sometimes referred to as 'area details'). An example would be
+'HITEC City' in Hyderabad. It's a name for an area that people know and use
+for orientation. Another example would be 'old town'.
+
+<p>A 'Colony' is a named group of buildings that belong to each other,
+e.g. sharing amenities. Also serves as a landmark.
+
+<h4>Missing field types</h4>
+<p>The following cases are currently missing in the autocomplete spec and
+occurred on multiple sites:
+<ul>
+<li>landmark
+<li>building (apartment name)
+<li>apartment (house no)
+<li>street name
+</ul>
+
+<h4>Open questions</h4>
+<ul>
+  <li>Should we support towers?
+</ul>
+
+<p>Progress: ☑ First round of cleanup, ☑ Discussed with a (former) resident
+   - but India is large and there could be multiple different conventions.
   
   
   
@@ -109921,7 +110094,7 @@ incorrectly conflates this with middle names, which also exist.
     
     
   
-    <span id="term_field_5651">Country/region 🤷</span>
+    <span id="term_field_5651">Country/region <span title="custom element">[🤷]</span></span>
   
 
   
@@ -112602,7 +112775,24 @@ incorrectly conflates this with middle names, which also exist.
   
   
   
-  
+  <p>Italian address forms often ask for a street name and house number in
+separate fields.
+
+<h4>Missing field types</h4>
+<p>The following cases are currently missing in the autocomplete spec and
+occurred on multiple sites:
+<ul>
+<li>street name
+<li>house number
+</ul>
+
+<h4>Open questions</h4>
+<ul>
+  <li>Some forms seem to assume that address-line1 contains the street name and
+  house number. Is that a valid assumption?
+</ul>
+
+<p>Progress: ☑ First round of cleanup, ☐ Discussed with a (former) resident
   
   
   
@@ -119349,10 +119539,10 @@ incorrectly conflates this with middle names, which also exist.
     
     <span id="concept_field_6464">
     <code
-    class="gap ">
+    class="new-concept ">
       
   
-    <span id="">gap</span>
+    <span id="">staircase</span>
   
 
     </code>
@@ -120479,7 +120669,61 @@ incorrectly conflates this with middle names, which also exist.
   
   
   
-  <p>Japanese address forms are special in that the Postal Code is often spread across two input fields and users are often asked to enter their name twice (once in phonetic spelling). Also Websites often specify whether to use full-width or half-widths characters/numbers.</p><p>Within a city, buildings are often identified by a sequence of 3 numbers [chome / city district]-[city block]-[building number] a forth number can be appended for the apartment number, but often times there is a special field for the building name and apartment number. See <a href="https://en.wikipedia.org/wiki/Japanese_addressing_system">Wikipedia</a></p><p>A certain complexity arises from the chome/city district (丁目), which is sometimes grouped in the format 1-2-3 and sometimes apears together with a city (<a href="#2-httpswww.dinos.co.jp">example</a>). I haven't understood whether the chome is just represented by the number or also comes with a name.</p><p>The municipality is often expressed with the following terms (spaces added by me for the western eye that cannot parse kanji characters):<ul><li>市 区 町 村:<br> (市 = shi = large city)<br> (区 = ku = ward (sub division of a large city))<br> (町 = chō or machi (town))<br> (村 = mura or son (village))<li>市 区 町 村 名:<br> as first + 名 ???<li>市 区 町 村 番地:<br> as first + (番地 = banchi (lot number used in some rural and older city areas)<li>市区郡　町村名／丁目:<br> (市 = shi = large city)<br> (区 = ku = ward (sub division of a large city))<br> (郡 = gun (district; in Japan, a city is separate from districts, which contain towns and villages))<br> (町 = chō or machi (town))<br> (村 = mura or son (village))<br> (名 = ???)<br> (丁目 = chōme (city district))<br></ul></p><p>The following cases are currently missing in the autocomplete spec and occurred on multiple sites:<ul><li>phonetic family and given name<li>street-location (chorme, city block, house number)<li>building-and-location-in-building (building name and apartment number)<li>postal-codes are often spread across two fields</ul></p>
+  <p>Japanese address forms are special in that the
+Postal Code is often spread across two input fields and users are often
+asked to enter their name twice (once in phonetic spelling). Also Websites
+often specify whether to use full-width or half-widths characters/numbers.
+
+<p>Within a city, buildings are often identified by a sequence of 3 numbers
+[chome / city district]-[city block]-[building number] a forth number
+can be appended for the apartment number, but often times there is a special
+field for the building name and apartment number. See
+<a href="https://en.wikipedia.org/wiki/Japanese_addressing_system">Wikipedia</a>
+
+<p>A certain complexity arises from the chome/city district (丁目), which
+is sometimes grouped in the format 1-2-3 and sometimes apears together with
+a city (<a href="#2-httpswww.dinos.co.jp">example</a>).
+I haven't understood whether the chome is just represented by the number
+or also comes with a name.
+
+<p>The municipality is often expressed with the following terms (spaces
+added by me for the western eye that cannot parse kanji characters):
+<ul>
+<li>市 区 町 村:<br>
+ (市 = shi = large city)<br>
+ (区 = ku = ward (sub division of a large city))<br>
+ (町 = chō or machi (town))<br>
+ (村 = mura or son (village))
+<li>市 区 町 村 名:<br>
+ as first + 名 ???
+<li>市 区 町 村 番地:<br>
+ as first + (番地 = banchi (lot number used in some rural and older city areas)
+<li>市区郡　町村名／丁目:<br>
+ (市 = shi = large city)<br>
+ (区 = ku = ward (sub division of a large city))<br>
+ (郡 = gun (district; in Japan, a city is separate from districts, which contain towns and villages))<br>
+ (町 = chō or machi (town))<br>
+ (村 = mura or son (village))<br>
+ (名 = ???)<br>
+ (丁目 = chōme (city district))<br>
+</ul>
+
+<h4>Missing field types</h4>
+<p>The following cases are currently missing in the autocomplete spec and
+occurred on multiple sites:
+<ul>
+<li>phonetic family and given name
+<li>street-location (chorme, city block, house number)
+<li>building-and-location-in-building (building name and apartment number)
+<li>postal-codes are often spread across two fields
+</ul>
+
+<h4>Open questions</h4>
+<ul>
+  <li>...
+</ul>
+
+<p>Progress: ☑ First round of cleanup, ☐ Discussed with a (former) resident
   
   
   
@@ -127128,23 +127372,16 @@ incorrectly conflates this with middle names, which also exist.
       <td>
   
     
-    
+    [
     <span id="concept_field_6653">
     <code
     class=" ">
       
   
-    <span id="">organization</span>
+    <span id="">name</span>
   
 
-    </code>
-    </span>
-    
-  
-    |
-    
-    <span id="concept_field_6654">
-    <code
+    </code><code
     class=" ">
       
   
@@ -127153,7 +127390,28 @@ incorrectly conflates this with middle names, which also exist.
 
     </code>
     </span>
-    
+    ]
+  
+    |
+    [
+    <span id="concept_field_6654">
+    <code
+    class="new-concept ">
+      
+  
+    <span id="">phonetic-name</span>
+  
+
+    </code><code
+    class="new-concept ">
+      
+  
+    <span id="">phonetic-organization</span>
+  
+
+    </code>
+    </span>
+    ]
   
     |
     
@@ -129275,7 +129533,9 @@ incorrectly conflates this with middle names, which also exist.
   
   
   
-  Placeholder attributes often show the symbol 〇, meaning 'to correct/confirm'. I also found that ✖, 〇 and △ mean false, correct, and somewhere in the middle. This might be a way to express the preferred format.
+  Placeholder attributes often show the symbol 〇, meaning 'to correct/confirm'. I
+also found that ✖, 〇 and △ mean false, correct, and somewhere in the middle.
+This might be a way to express the preferred format.
   
   
   
@@ -129502,7 +129762,34 @@ incorrectly conflates this with middle names, which also exist.
   
   
   
-  <p>Every address form asks for a <a href="https://en.wikipedia.org/wiki/Colonia_(Mexico)">colonia</a>, which is a neighborhood in a Mexican city (which has no jurisdictional autonomy or representation) or a gated community. It is interesting that some cities have a municipality, but not all. This <b>probably</b> means that we treat a colonia as an address-level4 to have a fixed assignment. If there is no address-level3 fields, we probaby want to combine it with the city field (address-level2). Alternatively, we would need to be able to split a city into the city and delegacion. This is one of the cases where I don't know how ot read the autocomplete spec.<p><p>The following cases are currently missing in the autocomplete spec and occurred on multiple sites:<ul><li>street-name<li>external number (house number)<li>internal number (apartment number)<li>entre calles (between streets) or landmark<li>Colonia and sometimes Delegación o Municipio (Delegation or Municipality)</ul></p>
+  <p>Every address form asks for a
+<a href=\"https://en.wikipedia.org/wiki/Colonia_(Mexico)\">colonia</a>,
+which is a neighborhood in a Mexican city (which has no jurisdictional
+autonomy or representation) or a gated community. It is interesting that
+some cities have a municipality, but not all. This <b>probably</b> means
+that we treat a colonia as an address-level4 to have a fixed assignment.
+If there is no address-level3 fields, we probaby want to combine it with
+the city field (address-level2). Alternatively, we would need to be able
+to split a city into the city and delegacion. This is one of the cases
+where I don't know how ot read the autocomplete spec.
+
+<h4>Missing field types</h4>
+<p>The following cases are currently missing in the autocomplete spec and
+occurred on multiple sites:
+<ul>
+<li>street-name
+<li>external number (house number)
+<li>internal number (apartment number)
+<li>entre calles (between streets) or landmark
+<li>Colonia and sometimes Delegación o Municipio (Delegation or Municipality)
+</ul>
+
+<h4>Open questions</h4>
+<ul>
+  <li>How to deal with address-level3 or address-level4 for colonia (see above)
+</ul>
+
+<p>Progress: ☑ First round of cleanup, ☐ Discussed with a (former) resident
   
   
   
@@ -131656,6 +131943,8 @@ incorrectly conflates this with middle names, which also exist.
     
     
     
+    
+    
     <tr>
       <td id="1-httpswww.casadellibro.com" style="padding: 0"><a href="#1-httpswww.casadellibro.com" title="https://www.casadellibro.com">#</a>
       <span title="Unstructured address">U</span>
@@ -131666,28 +131955,14 @@ incorrectly conflates this with middle names, which also exist.
     
     
   
-    <span id="term_field_7506">Nombre*</span>
+    <span id="term_field_7529">Nombre Destinatario*</span>
   
 
   
     <span class="separator">|</span>
     
   
-    <span id="term_field_7507">Apellidos*</span>
-  
-
-  
-    <span class="separator">|</span>
-    
-  
-    <span id="term_field_7508">Nombre Destinatario*</span>
-  
-
-  
-    <span class="separator">|</span>
-    
-  
-    <span id="term_field_7509">Apellidos Destinatario*</span>
+    <span id="term_field_7530">Apellidos Destinatario*</span>
   
 
   
@@ -131697,28 +131972,14 @@ incorrectly conflates this with middle names, which also exist.
     
     
   
-    <span id="translated_term_field_7506">Name*</span>
+    <span id="translated_term_field_7529">Recipient Name*</span>
   
 
   
     <span class="separator">|</span>
     
   
-    <span id="translated_term_field_7507">Surnames*</span>
-  
-
-  
-    <span class="separator">|</span>
-    
-  
-    <span id="translated_term_field_7508">Recipient Name*</span>
-  
-
-  
-    <span class="separator">|</span>
-    
-  
-    <span id="translated_term_field_7509">Recipient Surname*</span>
+    <span id="translated_term_field_7530">Recipient Surname*</span>
   
 
   
@@ -131727,7 +131988,7 @@ incorrectly conflates this with middle names, which also exist.
   
     
     
-    <span id="concept_field_7506">
+    <span id="concept_field_7529">
     <code
     class=" ">
       
@@ -131741,7 +132002,7 @@ incorrectly conflates this with middle names, which also exist.
   
     |
     
-    <span id="concept_field_7507">
+    <span id="concept_field_7530">
     <code
     class=" ">
       
@@ -131753,38 +132014,8 @@ incorrectly conflates this with middle names, which also exist.
     </span>
     
   
-    |
-    
-    <span id="concept_field_7508">
-    <code
-    class="unset ">
-      
-  
-    <span id="">unset</span>
-  
-
-    </code>
-    </span>
-    
-  
-    |
-    
-    <span id="concept_field_7509">
-    <code
-    class="unset ">
-      
-  
-    <span id="">unset</span>
-  
-
-    </code>
-    </span>
-    
-  
 </td>
     </tr>
-    
-    
     
     
     
@@ -131890,49 +132121,42 @@ incorrectly conflates this with middle names, which also exist.
     
     
   
-    <span id="term_field_7744">Prefijo ▽</span>
+    <span id="term_field_7745">Prefijo ▽</span>
   
 
   
     <span class="separator">|</span>
     
   
-    <span id="term_field_7745">Nombre</span>
+    <span id="term_field_7746">Nombre</span>
   
 
   
     <span class="separator">|</span>
     
   
-    <span id="term_field_7746">Apellido paterno</span>
+    <span id="term_field_7747">Apellido paterno</span>
   
 
   
     <span class="separator">|</span>
     
   
-    <span id="term_field_7747">Apellido materno</span>
+    <span id="term_field_7748">Apellido materno</span>
   
 
   
     <span class="separator">|</span>
     
   
-    <span id="term_field_7748">Sufijo ▽</span>
+    <span id="term_field_7749">Sufijo ▽</span>
   
 
   
     <span class="separator">|</span>
     
   
-    <span id="term_field_7749">Género ▽</span>
-  
-
-  
-    <span class="separator">|</span>
-    
-  
-    <span id="term_field_7750">Apellido materno</span>
+    <span id="term_field_7750">Género ▽</span>
   
 
   
@@ -131942,49 +132166,42 @@ incorrectly conflates this with middle names, which also exist.
     
     
   
-    <span id="translated_term_field_7744">Prefix ▽</span>
+    <span id="translated_term_field_7745">Prefix ▽</span>
   
 
   
     <span class="separator">|</span>
     
   
-    <span id="translated_term_field_7745">Name</span>
+    <span id="translated_term_field_7746">Name</span>
   
 
   
     <span class="separator">|</span>
     
   
-    <span id="translated_term_field_7746">Last name</span>
+    <span id="translated_term_field_7747">Last name</span>
   
 
   
     <span class="separator">|</span>
     
   
-    <span id="translated_term_field_7747">Mother&amp;#39;s last name</span>
+    <span id="translated_term_field_7748">Mother&#39;s last name</span>
   
 
   
     <span class="separator">|</span>
     
   
-    <span id="translated_term_field_7748">Suffix ▽</span>
+    <span id="translated_term_field_7749">Suffix ▽</span>
   
 
   
     <span class="separator">|</span>
     
   
-    <span id="translated_term_field_7749">Gender ▽</span>
-  
-
-  
-    <span class="separator">|</span>
-    
-  
-    <span id="translated_term_field_7750">Mother&amp;#39;s last name</span>
+    <span id="translated_term_field_7750">Gender ▽</span>
   
 
   
@@ -131993,7 +132210,7 @@ incorrectly conflates this with middle names, which also exist.
   
     
     
-    <span id="concept_field_7744">
+    <span id="concept_field_7745">
     <code
     class=" ">
       
@@ -132007,7 +132224,7 @@ incorrectly conflates this with middle names, which also exist.
   
     |
     
-    <span id="concept_field_7745">
+    <span id="concept_field_7746">
     <code
     class=" ">
       
@@ -132021,26 +132238,12 @@ incorrectly conflates this with middle names, which also exist.
   
     |
     
-    <span id="concept_field_7746">
-    <code
-    class="gap ">
-      
-  
-    <span id="">gap</span>
-  
-
-    </code>
-    </span>
-    
-  
-    |
-    
     <span id="concept_field_7747">
     <code
-    class="gap ">
+    class="new-concept ">
       
   
-    <span id="">gap</span>
+    <span id="">first-family-name</span>
   
 
     </code>
@@ -132051,10 +132254,10 @@ incorrectly conflates this with middle names, which also exist.
     
     <span id="concept_field_7748">
     <code
-    class=" ">
+    class="new-concept ">
       
   
-    <span id="">honorific-suffix</span>
+    <span id="">second-family-name</span>
   
 
     </code>
@@ -132068,7 +132271,7 @@ incorrectly conflates this with middle names, which also exist.
     class=" ">
       
   
-    <span id="">sex</span>
+    <span id="">honorific-suffix</span>
   
 
     </code>
@@ -132079,10 +132282,10 @@ incorrectly conflates this with middle names, which also exist.
     
     <span id="concept_field_7750">
     <code
-    class="unset ">
+    class=" ">
       
   
-    <span id="">unset</span>
+    <span id="">sex</span>
   
 
     </code>
@@ -132248,7 +132451,7 @@ incorrectly conflates this with middle names, which also exist.
     <span class="separator">|</span>
     
   
-    <span id="translated_term_field_7856">⊙ Género: M</span>
+    <span id="translated_term_field_7856">⊙ Sex: M</span>
   
 
   
@@ -135604,10 +135807,10 @@ incorrectly conflates this with middle names, which also exist.
     
     <span id="concept_field_7500">
     <code
-    class="gap ">
+    class="new-concept ">
       
   
-    <span id="">gap</span>
+    <span id="">between-streets</span>
   
 
     </code>
@@ -135681,7 +135884,7 @@ incorrectly conflates this with middle names, which also exist.
     <span class="separator">|</span>
     
   
-    <span id="term_field_7535">Selecciona tu ciudad, población o urbanización* 🤷</span>
+    <span id="term_field_7535">Selecciona tu ciudad, población o urbanización* <span title="custom element">[🤷]</span></span>
   
 
   
@@ -135719,7 +135922,7 @@ incorrectly conflates this with middle names, which also exist.
     <span class="separator">|</span>
     
   
-    <span id="translated_term_field_7535">Select your city, population or urbanization* 🤷</span>
+    <span id="translated_term_field_7535">Select your city, population or urbanization* <span title="custom element">[🤷]</span></span>
   
 
   
@@ -135850,7 +136053,7 @@ incorrectly conflates this with middle names, which also exist.
     <span class="separator">|</span>
     
   
-    <span id="term_field_7636">Colonia: (Elegir) 🤷</span>
+    <span id="term_field_7636">Colonia: (Elegir) <span title="custom element">[🤷]</span></span>
   
 
   
@@ -135916,7 +136119,7 @@ incorrectly conflates this with middle names, which also exist.
     <span class="separator">|</span>
     
   
-    <span id="translated_term_field_7636">Colonia: (To choose) 🤷</span>
+    <span id="translated_term_field_7636">Colonia: (To choose) <span title="custom element">[🤷]</span></span>
   
 
   
@@ -136064,18 +136267,25 @@ incorrectly conflates this with middle names, which also exist.
     
   
     |
-    
+    [
     <span id="concept_field_7640">
     <code
-    class="gap ">
+    class="new-concept ">
       
   
-    <span id="">gap</span>
+    <span id="">between-streets</span>
+  
+
+    </code><code
+    class="new-concept ">
+      
+  
+    <span id="">landmark</span>
   
 
     </code>
     </span>
-    
+    ]
   
 </td>
     </tr>
@@ -136260,10 +136470,10 @@ incorrectly conflates this with middle names, which also exist.
     
     <span id="concept_field_7756">
     <code
-    class="gap ">
+    class="new-concept ">
       
   
-    <span id="">gap</span>
+    <span id="">landmark</span>
   
 
     </code>
@@ -136385,10 +136595,10 @@ incorrectly conflates this with middle names, which also exist.
     
     <span id="concept_field_7768">
     <code
-    class="gap ">
+    class="new-concept ">
       
   
-    <span id="">gap</span>
+    <span id="">between-streets</span>
   
 
     </code>
@@ -136663,18 +136873,25 @@ incorrectly conflates this with middle names, which also exist.
     
   
     |
-    
+    [
     <span id="concept_field_7863">
     <code
-    class="gap ">
+    class="new-concept ">
       
   
-    <span id="">gap</span>
+    <span id="">between-streets</span>
+  
+
+    </code><code
+    class="new-concept ">
+      
+  
+    <span id="">landmark</span>
   
 
     </code>
     </span>
-    
+    ]
   
     |
     
@@ -137411,7 +137628,19 @@ incorrectly conflates this with middle names, which also exist.
   
   
   
-  <p>Malaysian addresses forms are very simple, typically with address lines 1, 2 and sometimes "additional address information". TBH most websites tested looked like international websites and those that looked more local could not be tested because they required a local phone number.For this reason only few websites are listed here. All others looked thesame.</p>
+  <p>Malaysian addresses forms are very simple, typically with address
+lines 1, 2 and sometimes "additional address information". TBH most
+websites tested looked like international websites and those that looked
+more local could not be tested because they required a local phone number.
+For this reason only few websites are listed here. All others looked the
+same.
+
+<h4>Open questions</h4>
+<ul>
+  <li>Did I have a representative sample of loal websites?
+</ul>
+
+<p>Progress: ☑ First round of cleanup, ☐ Discussed with a (former) resident
   
   
   
@@ -142002,7 +142231,7 @@ incorrectly conflates this with middle names, which also exist.
     
     <span id="concept_field_7936">
     <code
-    class="unknown-concept new-concept ">
+    class="new-concept ">
       
   
     <span id="">address-line4</span>
@@ -143496,7 +143725,31 @@ incorrectly conflates this with middle names, which also exist.
   
   
   
-  <p>Practically all websites I have seen relied on unstructured addresses. I observed that most websites I saw were hosted via WooCommerce which may be a common practice or a sampling bias. I saw a single exceptional website which asked for the LGA (Local Government Area). As per official guidelines, addresses have the following order of elements (see page 28 of <a href="https://www.nipost.gov.ng/Site_Downloads/NIGERIAN-NATIONAL-ADDRESSING-STANDARD-AND-GUIDELINES.pdf">here</a>): District, Postcode, City, Local Government Area, State, Country. This means that a city would need to be address-level3. In practice my sample of sites did not ask for LGAs frequently (except for one page) so there would be a high chance of confusion if we supported this field as address-level2.</p>
+  <p>Practically all websites I have seen relied on unstructured addresses.
+I observed that most websites I saw were hosted via WooCommerce which may
+be a common practice or a sampling bias. I saw a single exceptional website
+which asked for the LGA (Local Government Area). As per official
+guidelines, addresses have the following order of elements (see page 28 of
+<a href="https://www.nipost.gov.ng/Site_Downloads/NIGERIAN-NATIONAL-ADDRESSING-STANDARD-AND-GUIDELINES.pdf">here</a>):
+District, Postcode, City, Local Government Area, State,
+Country. This means that a city would need to be address-level3. In
+practice my sample of sites did not ask for LGAs frequently (except for one
+page) so there would be a high chance of confusion if we supported this
+field as address-level2.
+
+<h4>Missing field types</h4>
+<p>The following cases are currently missing in the autocomplete spec and
+occurred on multiple sites:
+<ul>
+<li>delivery-instructions
+</ul>
+
+<h4>Open questions</h4>
+<ul>
+  <li>How to deal with LGA (see above)?
+</ul>
+
+<p>Progress: ☑ First round of cleanup, ☐ Discussed with a (former) resident
   
   
   
@@ -149298,10 +149551,10 @@ incorrectly conflates this with middle names, which also exist.
     
     <span id="concept_field_8424">
     <code
-    class="gap ">
+    class="new-concept ">
       
   
-    <span id="">gap</span>
+    <span id="">care-of</span>
   
 
     </code>
@@ -149875,7 +150128,24 @@ incorrectly conflates this with middle names, which also exist.
   
   
   
-  <p>Polish addresses rely on address-line1, 2, 3 or separate fields for street name, house number and apartment number.</p>
+  <p>Polish addresses rely on address-line1, 2, 3 or separate fields for street
+name, house number and apartment number.
+
+<h4>Missing field types</h4>
+<p>The following cases are currently missing in the autocomplete spec and
+occurred on multiple sites:
+<ul>
+<li>street-name
+<li>house-number
+<li>apartment
+</ul>
+
+<h4>Open questions</h4>
+<ul>
+  <li>n/a
+</ul>
+
+<p>Progress: ☑ First round of cleanup, ☐ Discussed with a (former) resident
   
   
   
@@ -156938,7 +157208,30 @@ incorrectly conflates this with middle names, which also exist.
   
   
   
-  <p>Turkish addresses are special because the concept translated to a city (Şehir/Il) is more comparable to states in other countries. We have the following granularities:<ul><li>Şehir/Il: City (note: this is more comparable to states in other countries) - address-level1<li>İlçe: District (note: this is more comparable to cities in other countries) - address-level2<li>Mahalle/Köy: Neighborhood/Village (a neighborhood in the country side) - address-level3</ul></p><p>The majority of addresses seem to be unstructured addresses (I haven't copied them all).</p>
+  <p>Turkish addresses are special because the concept translated to
+a city (Şehir/Il) is more comparable to states in other countries. We have
+the following granularities:
+<ul>
+<li>Şehir/Il: City (note: this is more comparable to states in other countries) - address-level1
+<li>İlçe: District (note: this is more comparable to cities in other countries) - address-level2
+<li>Mahalle/Köy: Neighborhood/Village (a neighborhood in the country side) - address-level3
+</ul>
+
+<p>The majority of addresses seem to be unstructured addresses (I haven't copied them all).
+
+<h4>Missing field types</h4>
+<p>The following cases are currently missing in the autocomplete spec and
+occurred on multiple sites:
+<ul>
+<li> TODO after getting this the annotations checked
+</ul>
+
+<h4>Open questions</h4>
+<ul>
+  <li>I have low confidence in some of the translations.
+</ul>
+
+<p>Progress: ☑ First round of cleanup, ☐ Discussed with a (former) resident
   
   
   
@@ -163450,7 +163743,9 @@ incorrectly conflates this with middle names, which also exist.
   
   
   
-  <p>All US websites I tested followed the same address form structure shown below with the one exception that sometimes there was a single street-address field.</p>
+  <p>All US websites I tested followed the same address form structure
+shown below with the one exception that sometimes there was a single
+street-address field.
   
   
   
@@ -168423,7 +168718,23 @@ incorrectly conflates this with middle names, which also exist.
   
   
   
-  <p>South Africa has a mixed set of structured and unstructured address forms.</p>
+  <p>South Africa has a mixed set of structured and unstructured address forms.
+
+<h4>Missing field types</h4>
+<p>The following cases are currently missing in the autocomplete spec and
+occurred on multiple sites:
+<ul>
+<li>street-name
+<li>house-number
+<li>apartment
+</ul>
+
+<h4>Open questions</h4>
+<ul>
+  <li>n/a
+</ul>
+
+<p>Progress: ☑ First round of cleanup, ☐ Discussed with a (former) resident
   
   
   
@@ -171252,10 +171563,10 @@ incorrectly conflates this with middle names, which also exist.
     
     <span id="concept_field_9894">
     <code
-    class="gap ">
+    class=" ">
       
   
-    <span id="">gap</span>
+    <span id="">honorific-prefix</span>
   
 
     </code>
@@ -171471,10 +171782,10 @@ incorrectly conflates this with middle names, which also exist.
     
     <span id="concept_field_10124">
     <code
-    class="gap ">
+    class=" ">
       
   
-    <span id="">gap</span>
+    <span id="">honorific-prefix</span>
   
 
     </code>
@@ -171485,10 +171796,10 @@ incorrectly conflates this with middle names, which also exist.
     
     <span id="concept_field_10125">
     <code
-    class="gap ">
+    class=" ">
       
   
-    <span id="">gap</span>
+    <span id="">honorific-prefix</span>
   
 
     </code>
@@ -171499,10 +171810,10 @@ incorrectly conflates this with middle names, which also exist.
     
     <span id="concept_field_10126">
     <code
-    class="gap ">
+    class=" ">
       
   
-    <span id="">gap</span>
+    <span id="">honorific-prefix</span>
   
 
     </code>
@@ -175284,14 +175595,14 @@ incorrectly conflates this with middle names, which also exist.
     <span class="separator">|</span>
     
   
-    <span id="term_field_9891">Province 🤷</span>
+    <span id="term_field_9891">Province <span title="custom element">[🤷]</span></span>
   
 
   
     <span class="separator">|</span>
     
   
-    <span id="term_field_9892">Town / suburb 🤷</span>
+    <span id="term_field_9892">Town / suburb <span title="custom element">[🤷]</span></span>
   
 
   
