@@ -79,47 +79,47 @@ concepts {
 
 ## Other naming fields
 
-concepts {
-  name: "nickname"
-  description: "Nickname, screen name, handle: a typically short name used instead of the full name"
-  canonical_format_example: "Tim"
-  label: "Nickname"
-}
-
-concepts {
-  name: "organization-title"
-  description: "Job title (e.g. \"Software Engineer\", \"Senior Vice President\", \"Deputy Managing Director\")"
-  canonical_format_example: "Professor"
-  label: "Job title"
-}
-
-concepts {
-  name: "username"
-  description: "A username"
-  canonical_format_example: "timbl"
-  label: "Username"
-}
-
-concepts {
-  name: "new-password"
-  description: "A new password (e.g. when creating an account or changing a password)"
-  canonical_format_example: "GUMFXbadyrS3"
-  label: "New password"
-}
-
-concepts {
-  name: "current-password"
-  description: "The current password for the account identified by the username field (e.g. when logging in)"
-  canonical_format_example: "qwerty"
-  label: "Password"
-}
-
-concepts {
-  name: "one-time-code"
-  description: "One-time code used for verifying user identity"
-  canonical_format_example: "123456"
-  label: "One time code"
-}
+# concepts {
+#   name: "nickname"
+#   description: "Nickname, screen name, handle: a typically short name used instead of the full name"
+#   canonical_format_example: "Tim"
+#   label: "Nickname"
+# }
+#
+# concepts {
+#   name: "organization-title"
+#   description: "Job title (e.g. \"Software Engineer\", \"Senior Vice President\", \"Deputy Managing Director\")"
+#   canonical_format_example: "Professor"
+#   label: "Job title"
+# }
+#
+# concepts {
+#   name: "username"
+#   description: "A username"
+#   canonical_format_example: "timbl"
+#   label: "Username"
+# }
+#
+# concepts {
+#   name: "new-password"
+#   description: "A new password (e.g. when creating an account or changing a password)"
+#   canonical_format_example: "GUMFXbadyrS3"
+#   label: "New password"
+# }
+#
+# concepts {
+#   name: "current-password"
+#   description: "The current password for the account identified by the username field (e.g. when logging in)"
+#   canonical_format_example: "qwerty"
+#   label: "Password"
+# }
+#
+# concepts {
+#   name: "one-time-code"
+#   description: "One-time code used for verifying user identity"
+#   canonical_format_example: "123456"
+#   label: "One time code"
+# }
 
 concepts {
   name: "organization"
@@ -221,12 +221,12 @@ concepts {
 
 # TODO: Credit card fields and more.
 
-concepts {
-  name: "email"
-  description: "Email address"
-  canonical_format_example: "timbl@w3.org"
-  label: "Email address"
-}
+# concepts {
+#   name: "email"
+#   description: "Email address"
+#   canonical_format_example: "timbl@w3.org"
+#   label: "Email address"
+# }
 
 concepts {
   name: "sex"
@@ -546,7 +546,7 @@ compound_concepts {
   description: "All fields within a building, depending on the country. "
     "E.g. apartment number, floor, stair case, ..."
   tokens {
-    concept_name: "gap"
+    concept_name: "very country specific"
   }
 }
 
@@ -605,6 +605,6 @@ compound_concepts {
     "specific."
   label: "TBD"
   tokens {
-    concept_name: "gap"
+    concept_name: "very country specific"
   }
 }

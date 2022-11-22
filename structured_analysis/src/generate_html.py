@@ -188,12 +188,13 @@ for site_example in ontology.site_examples:
       compound_concept_frequencies[concepts_key]["countries"].add(country)
 
 # Build a mpa of "$country" -> number tested sites
-sites_in_country = {}
+sites_in_country = {"total": 0}
 for site_example in ontology.site_examples:
   country = site_example.locale.country
   if country not in sites_in_country:
     sites_in_country[country] = 0
   sites_in_country[country] += 1
+  sites_in_country["total"] += 1
 
 # Give every field a unique id.
 assign_ids_to_fields(ontology)

@@ -452,7 +452,7 @@ attribute that meets the requirements of real-world websites.
   {% for country in countries|sort -%}
   <th>({{sites_in_country[country]}})</th>
   {%- endfor %}
-  <th></th>
+  <th>({{sites_in_country["total"]}})</th>
 </tr>
 {% endif %}
 
