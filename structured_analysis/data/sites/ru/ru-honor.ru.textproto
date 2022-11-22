@@ -1,0 +1,869 @@
+site_examples {
+  url: "https://www.honor.ru"
+  is_structured: true
+  locale {
+    country: "RU"
+    language: "ru"
+  }
+  sequences {
+    fields {
+      name: "is-edit-mode|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ec-url-cartLink|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ec-url-orderListLink|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ec-url-accountLink|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ec-url-goShopping|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ec-url-checkoutLink|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ec-url-productOptionPageLink|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ec-url-addressListPageLink|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ec-url-returnLink|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ec-url-orderDetailLink|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ec-url-paymentResultLink|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ec-url-returnFeedbackLink|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ec-url-viewOrderPageLink|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ec-url-loginLink|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ec-url-returnDetail|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ec-url-offerPageLink|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ec-url-rmaListLink|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ec-url-refundListLink|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ec-url-couponListLink|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ec-url-productForCouponLink|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ec-url-returnListLink|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ec-url-reviewListLink|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ec-url-orderReviewLink|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "invoice-company-config|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "invoice-taxNum-config|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "zipcode-config|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "return-tips|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "tradeInPageText|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "tradeInPageLink|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "tradeInHelpText|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "tradeInPrivacy|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "showTradeInCheckbox|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "reviewPrivacyContent|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "offer-page-type|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "offer-home-page|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "aem-run-mode|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "attachmentUrl|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "softPath|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "isNewCommodity|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "casUrl|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "isVsearch|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "vsearchAPIUrl|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Введите здесь ключевые слова для поиска"
+      label_translated: "Enter your search keywords here"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|updateFrequency"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|popUpIntervalTime"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|language"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|countryCode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|branchId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|confirmText"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|cancelText"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|serverAddress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|yoyoAdress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|amsAdress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|protocolList"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|firstSigningList"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|updateSigningList"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|language"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|countryCode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|serverAddress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|amsAdress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|protocolList"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "referralAgreement|"
+      label: "Я хотел(а) бы получить последнюю информацию о компании и продуктах HONOR."
+      label_translated: "I would like to receive the latest information about the HONOR company and products."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ec-dialog-invoiceHelpLabel|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ec-dialog-invoiceHelpLink|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ec-hideClickAndCollect|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "oco_privacy_Statement|"
+      label: "Оформление"
+      label_translated: "Decor"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ec-dialog-campaignId|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ec-dialog-groupId|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "choosehomedelivery|choosemethod"
+      label: "1. Адрес"
+      label_translated: "1. Address"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "choosecollect|choosemethod"
+      label: "1. Адрес"
+      label_translated: "1. Address"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "creatcity|city"
+      label: "Адрес доставки"
+      label_translated: "Delivery address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "creatState|province"
+      label: "Адрес доставки"
+      label_translated: "Delivery address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "creatAliasProvinceName|aliasProvinceName"
+      label: "Адрес доставки"
+      label_translated: "Delivery address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "creatDistrict|district"
+      label: "Адрес доставки"
+      label_translated: "Delivery address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "creatfullname|fullName"
+      label: "Полное имя*"
+      label_translated: "Full name*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: NAME
+    }
+    fields {
+      name: "creatmobile|mobile"
+      label: "Номер телефона*"
+      label_translated: "Phone number*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PHONE
+    }
+    fields {
+      name: "creatProvince|provinceName"
+      label: "Регион*"
+      label_translated: "Region*"
+      control_type: INPUT
+      concepts: "address-level1"
+      autocomplete_attribute: "select-province"
+      section: ADDRESS
+    }
+    fields {
+      name: "creatCity|cityName"
+      label: "Город*"
+      label_translated: "City*"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "select-city"
+      section: ADDRESS
+    }
+    fields {
+      name: "creatzipcode|zipCode"
+      label: "Почтовый индекс*"
+      label_translated: "Postcode*"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "creatStreet|aliasStreetName"
+      label: "Улица*"
+      label_translated: "Street"
+      control_type: INPUT
+      concepts: "street-name"
+      autocomplete_attribute: "select-street"
+      section: ADDRESS
+    }
+    fields {
+      name: "creataddress|"
+      label: "Номер дома*"
+      label_translated: "House number*"
+      control_type: INPUT
+      concepts: "house-number"
+      autocomplete_attribute: "select-house"
+      section: ADDRESS
+    }
+    fields {
+      name: "creatapartment|apartment"
+      label: "Квартира"
+      label_translated: "Flat"
+      control_type: INPUT
+      concepts: "apartment"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "createmail|email"
+      label: "Адрес электронной почты*"
+      label_translated: "E-mail address*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "same-as-shipaddr|"
+      label: "Как адрес доставки"
+      label_translated: "as shipping address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "creatcity|city"
+      label: "Адрес выставления счета"
+      label_translated: "Billing address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "creatState|province"
+      label: "Адрес выставления счета"
+      label_translated: "Billing address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "creatfullname|fullName"
+      label: "Полное имя*"
+      label_translated: "Full name*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "creatmobile|mobile"
+      label: "Номер телефона"
+      label_translated: "Phone number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PHONE
+    }
+    fields {
+      name: "creatProvince|provinceName"
+      label: "Страна*province"
+      label_translated: "Country*province"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "select-province"
+      section: OTHER
+    }
+    fields {
+      name: "creatCity|cityName"
+      label: "Город*"
+      label_translated: "City*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "select-city"
+      section: OTHER
+    }
+    fields {
+      name: "creatzipcode|zipCode"
+      label: "Почтовый индекс*"
+      label_translated: "Postcode*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "creatStreet|aliasStreetName"
+      label: "Улица*"
+      label_translated: "The outside*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "select-street"
+      section: OTHER
+    }
+    fields {
+      name: "creataddress|"
+      label: "Номер дома*"
+      label_translated: "House number*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "creatapartment|apartment"
+      label: "Квартира"
+      label_translated: "Flat"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "createmail|email"
+      label: "Адрес электронной почты*"
+      label_translated: "E-mail address*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "personal-invoice|invoice"
+      label: "Счет для физического лица"
+      label_translated: "Account for a natural person"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "company-invoice|invoice"
+      label: "Счет компании"
+      label_translated: "Company account"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "invoiceLimited|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "invoice-personaltaxnum|personalTaxNum"
+      label: "Удостоверение личности (DNI, NIE, NIF или паспорт)"
+      label_translated: "Identity card (DNI, NIE, NIF or passport)"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Удостоверение личности (DNI, NIE, NIF или паспорт)"
+      label_translated: "Identity card (DNI, NIE, NIF or passport)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "invoice-companyname|companyName"
+      label: "Наименование компании"
+      label_translated: "Company name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "invoice-companytaxnum|companyTaxNum"
+      label: "Номер плательщика НДС"
+      label_translated: "VAT number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "invoice-companykvknum|companykvkNum"
+      label: "KvK-номер"
+      label_translated: "KvK number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "invoice-companyTelephone|companyTelephone"
+      label: "Телефон компании"
+      label_translated: "Company phone"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PHONE
+    }
+    fields {
+      name: "invoice-companyAddress|companyAddress"
+      label: "Адрес компании"
+      label_translated: "Company address"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|pick-up-fullName"
+      label: "Полное имя*"
+      label_translated: "Full name*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|email"
+      label: "Адрес электронной почты*"
+      label_translated: "E-mail address*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|pick-up-phone"
+      label: "Номер телефона"
+      label_translated: "Phone number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PHONE
+    }
+    fields {
+      name: "|pick-up-verif-code"
+      label: "Введите код с картинки*"
+      label_translated: "Enter the code from the image*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|pick-up-sms-verif"
+      label: "Введите код подтверждения*"
+      label_translated: "Enter confirmation code*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Введите ваш e-mail"
+      label_translated: "Enter your e-mail"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cookieSwichBtn|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cookiedomain|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cookieBePath|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ec-phonesRule|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "fbLiveChatName|"
+      label: "Укажите, пожалуйста, Ваше имя:"
+      label_translated: "Please enter your name:"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "fbServiceID|"
+      label: "Сервис"
+      label_translated: "Service"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "fbLiveChatQuestion|"
+      label: "Введите телефон"
+      label_translated: "Enter phone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "av-file-input|imageFile"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "av_chat_input|"
+      label: "Введите здесь Ваше сообщение"
+      label_translated: "Enter your message here"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

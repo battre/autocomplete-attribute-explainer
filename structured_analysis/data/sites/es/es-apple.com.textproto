@@ -68,7 +68,9 @@ site_examples {
       label: "Nombre o Número del Edificio y Nombre de la Calle"
       label_translated: "Building Name or Number and Street Name"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "building"
+      concepts: "street-location"
+      low_certainty: true
       autocomplete_attribute: "address-line1"
       section: ADDRESS
     }
@@ -77,7 +79,8 @@ site_examples {
       label: "Piso, escalera, cód. acceso (opc.)"
       label_translated: "Floor, stairs, code access (opt.)"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "address-overflow"
+      low_certainty: true
       autocomplete_attribute: "address-line2"
       section: ADDRESS
     }
@@ -86,7 +89,8 @@ site_examples {
       label: "Información Adicional Sobre la Dirección (Opcional)"
       label_translated: "Additional Address Information (Optional)"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "address-overflow"
+      low_certainty: true
       autocomplete_attribute: "address-line3"
       section: ADDRESS
     }

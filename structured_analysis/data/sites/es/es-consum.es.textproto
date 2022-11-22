@@ -1380,7 +1380,7 @@ site_examples {
       label: "Escalera - Bloque"
       label_translated: "Staircase - Block"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "staircase"
       concepts: "gap"
       section: ADDRESS
     }
@@ -1390,7 +1390,8 @@ site_examples {
       label_translated: "Gate"
       label_comment: "The HTML field name refers to a 'letter'."
       control_type: INPUT
-      concepts: "gap"
+      low_certainty: true
+      concepts: "entrance"
       section: ADDRESS
     }
     fields {

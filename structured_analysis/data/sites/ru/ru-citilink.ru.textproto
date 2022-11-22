@@ -1,0 +1,185 @@
+site_examples {
+  url: "https://www.citilink.ru/"
+  is_structured: true
+  locale {
+    country: "RU"
+    language: "ru"
+  }
+  sequences {
+    fields {
+      name: "|firstName"
+      label: "Имя"
+      label_translated: "Name"
+      example: "Введите ваше имя"
+      example_translated: "Enter your name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "no"
+      section: NAME
+    }
+    fields {
+      name: "|lastName"
+      label: "Фамилия"
+      label_translated: "Surname"
+      example: "Введите вашу фамилию"
+      example_translated: "Enter your last name"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "no"
+      section: NAME
+    }
+    fields {
+      name: "|phone"
+      label: "Телефон"
+      label_translated: "Telephone"
+      example: "+7"
+      example_translated: "+7"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|additionalPhone"
+      label: "Телефон, если не дозвонимся"
+      label_translated: "Phone if we don&#39;t get through"
+      example: "+7"
+      example_translated: "+7"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|city-1658317550759"
+      label: "Город"
+      label_translated: "City"
+      example: "Введите название города"
+      example_translated: "Enter the name of the city"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "no"
+      section: ADDRESS
+    }
+    fields {
+      name: "|street-1658317550759"
+      label: "Улица"
+      label_translated: "The outside"
+      example: "Введите улицу"
+      example_translated: "Enter the street"
+      control_type: INPUT
+      concepts: "street-name"
+      autocomplete_attribute: "no"
+      section: ADDRESS
+    }
+    fields {
+      name: "|house"
+      label: "Дом"
+      label_translated: "House"
+      control_type: INPUT
+      concepts: "house-number"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "|building"
+      label: "Строение"
+      label_translated: "Building (stroenie)"
+      control_type: INPUT
+      concepts: "stroenie"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "|corpus"
+      label: "Корпус"
+      label_translated: "Building (korpus)"
+      control_type: INPUT
+      concepts: "korpus"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "|porch"
+      label: "Подъезд"
+      label_translated: "Entrance"
+      control_type: INPUT
+      concepts: "entrance"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "|floor"
+      label: "Этаж"
+      label_translated: "Floor"
+      control_type: INPUT
+      concepts: "floor"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "|flat"
+      label: "Квартира"
+      label_translated: "Flat"
+      control_type: INPUT
+      concepts: "apartment"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "comment|comment"
+      label: "Комментарий к заказу"
+      label_translated: "Comment to the order"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|paymentTypeId"
+      label: "Наличными или картой при получении"
+      label_translated: "Cash or card upon receipt"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|paymentTypeId"
+      label: "Банковской картой онлайн"
+      label_translated: "Bank card online"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|paymentTypeId"
+      label: "В кредит"
+      label_translated: "On credit"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|paymentTypeId"
+      label: "ЮMoney"
+      label_translated: "YuMoney"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|paymentTypeId"
+      label: "Система быстрых платежей - QR Code"
+      label_translated: "Fast payment system - QR Code"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      example: "Промокод"
+      example_translated: "promo code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

@@ -270,7 +270,7 @@ site_examples {
       label_translated: "Stair case"
       label_comment: "The HTML code refers to deliveryAddress.building"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "staircase"
       section: ADDRESS
     }
     fields {
@@ -278,7 +278,7 @@ site_examples {
       label: "Piso"
       label_translated: "Floor"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "floor"
       section: ADDRESS
     }
     fields {

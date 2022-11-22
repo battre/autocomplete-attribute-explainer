@@ -1,0 +1,91 @@
+site_examples {
+  url: "https://leroymerlin.ru"
+  is_structured: true
+  locale {
+    country: "RU"
+    language: "ru"
+  }
+  sequences {
+    fields {
+      name: "|"
+      label: "Я физическое лицоЯ юридическое лицо"
+      label_translated: "I am an individualI am a legal entity"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Я физическое лицоЯ юридическое лицо"
+      label_translated: "I am an individualI am a legal entity"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "id_RLkm_|"
+      label: "Фамилия"
+      label_translated: "Surname"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "id_4O6E-|"
+      label: "Имя"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "id_AHbnn|"
+      label: "Телефон"
+      label_translated: "Telephone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "id_NpmuE|"
+      label: "Электронная почта"
+      label_translated: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Я хочу получать рекламные сообщения и новости о товарах и услугах"
+      label_translated: "I want to receive promotional messages and news about products and services"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "id_PQLPC|"
+      label: "Населённый пункт, улица и дом"
+      label_translated: "Locality, street and house"
+      control_type: INPUT
+      concepts: "address-search"
+      section: ADDRESS
+    }
+    fields {
+      name: "id_EuGcp|"
+      label: "Кв. или офис"
+      label_translated: "apartment or office"
+      control_type: INPUT
+      concepts: "apartment"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "Комментарий к доставке"
+      label_translated: "Delivery comment"
+      control_type: TEXTAREA
+      concepts: "delivery-instructions"
+      section: OTHER
+    }
+  }
+}
+

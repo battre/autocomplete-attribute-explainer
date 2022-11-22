@@ -1556,7 +1556,7 @@ site_examples {
       label: "Escalera"
       label_translated: "Staircase"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "staircase"
       autocomplete_attribute: "off"
       section: ADDRESS
     }

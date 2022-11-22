@@ -38,7 +38,10 @@ site_examples {
       label: "Escalera/Piso/Letra/Empresa"
       label_translated: "Staircase/Floor/Letter/Company"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "staircase"
+      concepts: "floor"
+      concepts: "entrance"
+      concepts: "organization"
       autocomplete_attribute: "street-address address-line2"
       section: ADDRESS
     }

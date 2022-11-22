@@ -254,7 +254,7 @@ site_examples {
       label: "Complément d\'adresse"
       label_translated: "Additional address"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "address-overflow"
       autocomplete_attribute: "chrome-off"
       section: ADDRESS
     }

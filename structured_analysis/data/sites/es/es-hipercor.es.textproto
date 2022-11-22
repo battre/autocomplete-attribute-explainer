@@ -103,7 +103,7 @@ site_examples {
       label: "Edificio"
       label_translated: "Building"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "building"
       section: ADDRESS
     }
     fields {
@@ -111,7 +111,7 @@ site_examples {
       label: "Escalera"
       label_translated: "Staircase"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "staircase"
       section: ADDRESS
     }
     fields {
@@ -119,7 +119,7 @@ site_examples {
       label: "Piso"
       label_translated: "Floor"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "floor"
       section: ADDRESS
     }
     fields {
@@ -127,7 +127,7 @@ site_examples {
       label: "Puerta"
       label_translated: "Gate"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "entrance"
       section: ADDRESS
     }
     fields {
@@ -137,7 +137,7 @@ site_examples {
       example: "Ej: el edificio está dentro de una urbanización"
       example_translated: "Ex: the building is within an urbanization"
       control_type: TEXTAREA
-      concepts: "gap"
+      concepts: "delivery-instructions"
       section: ADDRESS
     }
     fields {

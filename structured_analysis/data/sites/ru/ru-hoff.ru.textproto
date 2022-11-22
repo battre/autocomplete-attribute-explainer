@@ -1,0 +1,189 @@
+site_examples {
+  url: "https://hoff.ru"
+  is_structured: true
+  locale {
+    country: "RU"
+    language: "ru"
+  }
+  sequences {
+    fields {
+      name: "|nomer_carti"
+      label: "11__ или +7"
+      label_translated: "11__ or +7"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "new-password"
+      section: OTHER
+    }
+    fields {
+      name: "|last_name"
+      label: "Фамилия"
+      label_translated: "Surname"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "|first_name"
+      label: "Имя"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "|phone"
+      label: "+7"
+      label_translated: "+7"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: PHONE
+    }
+    fields {
+      name: "|email"
+      label: "Email"
+      label_translated: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "on"
+      section: OTHER
+    }
+    fields {
+      name: "|delivery-type"
+      label: "Courier delivery from 1799 R"
+      label_translated: "Courier delivery from 1799R"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|delivery-type"
+      label: "Pickup from the warehouse Is free"
+      label_translated: "Pickup from the warehouse Is free"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|payment"
+      label: "Cash or card upon receipt"
+      label_translated: "Cash or card upon receipt"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|payment"
+      label: "By card online"
+      label_translated: "By card online"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|payment"
+      label: "By QR code via SBP"
+      label_translated: "By QR code via SBP"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|payment"
+      label: "Split the payment into parts"
+      label_translated: "Split the payment into parts"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|payment"
+      label: "Cashless payment for legal entities persons"
+      label_translated: "Cashless payment for legal entities persons"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|payment"
+      label: "Payment"
+      label_translated: "payment"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|payment"
+      label: "Installment and credit"
+      label_translated: "Installation and credit"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "creditLine|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address"
+      label: "City, street and house"
+      label_translated: "City, street and house"
+      control_type: TEXTAREA
+      concepts: "address-search"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "|address"
+      label: "Город, улица и дом"
+      label_translated: "City, street and house"
+      label_comment: "This is some kind of search widget"
+      control_type: INPUT
+      concepts: "address-search"
+      autocomplete_attribute: "nope"
+      section: ADDRESS
+    }
+    fields {
+      name: "|apartment"
+      label: "Квартира"
+      label_translated: "Flat"
+      control_type: INPUT
+      concepts: "apartment"
+      autocomplete_attribute: "nope"
+      section: ADDRESS
+    }
+    fields {
+      name: "|entrance"
+      label: "Подъезд"
+      label_translated: "Entrance"
+      control_type: INPUT
+      concepts: "entrance"
+      autocomplete_attribute: "nope"
+      section: ADDRESS
+    }
+    fields {
+      name: "|level"
+      label: "Этаж"
+      label_translated: "floor"
+      control_type: INPUT
+      concepts: "floor"
+      autocomplete_attribute: "nope"
+      section: ADDRESS
+    }
+    fields {
+      name: "|intercom"
+      label: "Лифт"
+      label_translated: "intercom"
+      control_type: INPUT
+      concepts: "door-code"
+      autocomplete_attribute: "nope"
+      section: ADDRESS
+    }
+  }
+}
+

@@ -161,7 +161,7 @@ site_examples {
       label: "Porte"
       label_translated: "Door"
       control_type: INPUT
-      concepts: "door"
+      concepts: "entrance"
       autocomplete_attribute: "none"
       section: ADDRESS
     }

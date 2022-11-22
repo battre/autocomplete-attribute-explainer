@@ -120,7 +120,7 @@ site_examples {
       label_translated: "Digicode (optional)"
       label_comment: "Door code"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "door-code"
       section: ADDRESS
     }
     fields {

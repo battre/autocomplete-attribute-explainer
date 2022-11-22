@@ -111,6 +111,12 @@ country_data {
 }
 
 country_data {
+  country: "RU"
+  country_name: "Russia 🇷🇺"
+  site_examples_preamble_file: "data/sites/ru/_ru_preamble.html"
+}
+
+country_data {
   country: "TR"
   country_name: "Turkey 🇹🇷"
   site_examples_preamble_file: "data/sites/tr/_tr_preamble.html"

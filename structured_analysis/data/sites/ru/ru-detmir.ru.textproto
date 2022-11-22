@@ -1,0 +1,244 @@
+site_examples {
+  url: "https://www.detmir.ru"
+  is_structured: true
+  locale {
+    country: "RU"
+    language: "ru"
+  }
+  sequences {
+    fields {
+      name: "|"
+      label: "Выбрать все"
+      label_translated: "Choose all"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "city|city"
+      label: "Населённый пункт получения"
+      label_translated: "Pickup location"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|delivery_strategy"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|delivery_strategy"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|delivery_strategy"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|payment_method"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|payment_method"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|payment_method"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|payment_method"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|payment_method"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "name|name"
+      label: "Имя"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "name"
+      section: NAME
+    }
+    fields {
+      name: "phone|phone"
+      label: "Телефон"
+      label_translated: "Telephone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "email|email"
+      label: "Электронная почта"
+      label_translated: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Войдите или зарегистрируйтесь,Продолжить без регистрации"
+      label_translated: "Login or register, Continue without registering"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Выберите время получения"
+      label_translated: "Choose pick up time"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Выберите время получения"
+      label_translated: "Choose pick up time"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Выберите время получения"
+      label_translated: "Choose pick up time"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Выберите время получения"
+      label_translated: "Choose pick up time"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Выберите время получения"
+      label_translated: "Choose pick up time"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Выберите время получения"
+      label_translated: "Choose pick up time"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Выберите время получения"
+      label_translated: "Choose pick up time"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "promoCode-approve|promoCode-approve"
+      label: "Промокод"
+      label_translated: "promo code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "street|street"
+      label: "Улица и дом *"
+      label_translated: "Street and house *"
+      control_type: INPUT
+      concepts: "street-location"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "apartment|apartment"
+      label: "Кв. или офис"
+      label_translated: "Apartment or office"
+      control_type: INPUT
+      concepts: "apartment"
+      section: ADDRESS
+    }
+    fields {
+      name: "entrance|entrance"
+      label: "Подъезд"
+      label_translated: "Entrance"
+      control_type: INPUT
+      concepts: "entrance"
+      section: ADDRESS
+    }
+    fields {
+      name: "floor|floor"
+      label: "Этаж"
+      label_translated: "Floor"
+      control_type: INPUT
+      concepts: "floor"
+      section: ADDRESS
+    }
+    fields {
+      name: "details|details"
+      label: "Код домофона и другая полезная информация для курьера"
+      label_translated: "Intercom code and other useful information for the courier"
+      control_type: TEXTAREA
+      concepts: "delivery-instructions"
+      low_certainty: true
+      section: ADDRESS
+    }
+    fields {
+      name: "|payment_method"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|payment_method"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|payment_method"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|payment_method"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|payment_method"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+
