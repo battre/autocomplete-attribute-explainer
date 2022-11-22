@@ -9,6 +9,7 @@ from google.protobuf import text_format
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from jinja2.filters import FILTERS, pass_context
 from jinja2.runtime import Context
+from typing import Union, List
 import os
 import sys
 
@@ -93,6 +94,14 @@ def css_classes_for_concept(context:Context, concept_name:str) -> str:
   return ''
 
 FILTERS['css_classes_for_concept'] = css_classes_for_concept
+
+# iterable of address_pb2.Concept|address_pb2.CompoundConcept
+def ignore_specialized_concept(
+    concepts: Union[List[address_pb2.Concept], List[address_pb2.CompoundConcept]]
+  ) -> Union[List[address_pb2.Concept], List[address_pb2.CompoundConcept]]:
+  return [concept for concept in concepts if not concept.specialization]
+
+FILTERS['ignore_specialized_concept'] = ignore_specialized_concept
 
 # The main program.
 
