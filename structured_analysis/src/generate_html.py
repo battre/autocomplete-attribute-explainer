@@ -135,6 +135,8 @@ for site_example in ontology.site_examples:
 
 # Build a map of "$country-$concept" -> frequency
 country_concept_frequencies = {}
+# Build map of "$concept" -> frequency
+concept_frequencies = {}
 for site_example in ontology.site_examples:
   country = site_example.locale.country
   for sequence in site_example.sequences:
@@ -147,6 +149,10 @@ for site_example in ontology.site_examples:
         if not key in country_concept_frequencies:
           country_concept_frequencies[key] = 0
         country_concept_frequencies[key] += 1
+
+        if not concept in concept_frequencies:
+          concept_frequencies[concept] = 0
+        concept_frequencies[concept] += 1
 
 # Build a mpa of "$country" -> number tested sites
 sites_in_country = {}
@@ -187,7 +193,8 @@ result = template.render(
     known_concepts=known_concepts,
     new_concepts=new_concepts,
     country_concept_frequencies=country_concept_frequencies,
-    sites_in_country=sites_in_country)
+    sites_in_country=sites_in_country,
+    concept_frequencies=concept_frequencies)
 f = open(args.output, "w")
 f.write(result)
 f.close()
