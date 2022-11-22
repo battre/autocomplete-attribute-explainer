@@ -132,6 +132,17 @@ code.new-concept,
 .frequencies-summary tr:hover {
   background-color: rgb(245, 245, 245);
 }
+.frequencies-summary tr th,
+.frequencies-summary tr td {
+  padding: 4px 4px;
+  border-right: var(--border-width) solid var(--table-border-color);;
+}
+
+.scrollable-div {
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: visible;
+}
   </style>
 </head>
 <body>
@@ -27935,6 +27946,7 @@ occurred on multiple sites:
 <section>
 <h2>Summary</h2>
 <h3 id="frequencies_of_concepts">Frequencies of concepts</h3>
+<div class="scrollable-div">
 <table class="frequencies-summary">
 
 <tr class="header">
@@ -28223,6 +28235,8 @@ occurred on multiple sites:
 </tr>
 
 </table>
+</div>
+</section>
 
 <h3 id="frequencies_of_named_compound_concepts">Frequencies of named compound concepts</h3>
 <table role="grid">
