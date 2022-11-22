@@ -1,16 +1,16 @@
 {% macro entry(prefix, text, suffix, id, tooltip, position) %}
-  {% if tooltip %}
+  {% if tooltip -%}
     <span class="entry-with-tooltip" id="{{id}}">{{prefix|safe}}{{text}}{{suffix|safe}}
       <div class="tooltip tooltip-{{position}}">{{tooltip|safe}}</div>
     </span>
-  {% else %}
+  {%- else -%}
     <span id="{{id}}">{{prefix|safe if text}}{{text}}{{suffix|safe if text}}</span>
-  {% endif %}
+  {%- endif %}
 {% endmacro %}
 
 {% macro terms(sequence) %}
-  {% for field in sequence.fields %}
-    {% if loop.index0 > 0 %}<span class="separator">|</span>{% endif %}
+  {% for field in sequence.fields -%}
+    {%- if loop.index0 > 0 %}<span class="separator">|</span>{% endif -%}
     {{entry(
         "☑ " if field.control_type == address_pb2.ControlType.CHECKBOX else
         "⊙ " if field.control_type == address_pb2.ControlType.RADIO else
@@ -19,12 +19,12 @@
         " ▽" if field.control_type == address_pb2.ControlType.SELECT else
         " <span title=\"custom element\">[🤷]</span>" if field.control_type == address_pb2.ControlType.CUSTOM else "",
         "term_" + field.internal_id, field.label_comment, "right")}}
-  {% endfor %}
+  {%- endfor %}
 {% endmacro %}
 
 {% macro translated_terms(sequence) %}
-  {% for field in sequence.fields %}
-    {% if loop.index0 > 0 %}<span class="separator">|</span>{% endif %}
+  {% for field in sequence.fields -%}
+    {%- if loop.index0 > 0 %}<span class="separator">|</span>{% endif -%}
     {{entry(
         "☑ " if field.control_type == address_pb2.ControlType.CHECKBOX else
         "⊙ " if field.control_type == address_pb2.ControlType.RADIO else
@@ -33,21 +33,21 @@
         " ▽" if field.control_type == address_pb2.ControlType.SELECT else
         " <span title=\"custom element\">[🤷]</span>" if field.control_type == address_pb2.ControlType.CUSTOM else "",
         "translated_term_" + field.internal_id, field.label_translated_comment, "bottom")}}
-  {% endfor %}
+  {%- endfor %}
 {% endmacro %}
 
 {% macro concepts(sequence) %}
-  {% for field in sequence.fields %}
-    {% if loop.index0 > 0 %}|{% endif %}
-    {% if field.concepts | length > 1 %}[{% endif %}
+  {% for field in sequence.fields -%}
+    {%- if loop.index0 > 0 %}|{% endif -%}
+    {%- if field.concepts | length > 1 %}[{% endif -%}
     <span id="concept_{{field.internal_id}}">
-    {% for concept in field.concepts %}<code
+    {%- for concept in field.concepts -%}<code
     class="{{concept|css_classes_for_concept}} {{'low-certainty' if field.low_certainty else ''}}">
       {{entry("", concept, "", "", field.concepts_comment, "left")}}
-    </code>{% endfor %}
+    </code>{%- endfor -%}
     </span>
     {% if field.concepts | length > 1 %}]{% endif %}
-  {% endfor %}
+  {%- endfor %}
 {% endmacro %}
 
 <html>
@@ -374,12 +374,12 @@ attribute that meets the requirements of real-world websites.
 
 <p> <!-- Table of contents -->
   <ol>
-    {% for country in countries|sort %}
+    {% for country in countries|sort -%}
     <li>
       <a href="#{{country}}">{{country}}
-      {% for country_data in ontology.country_data %}
+      {%- for country_data in ontology.country_data -%}
         {{"- " + country_data.country_name if country_data.country == country}}
-      {% endfor %}
+      {%- endfor -%}
       </a>
     </li>
     {% endfor %}
@@ -388,13 +388,13 @@ attribute that meets the requirements of real-world websites.
 
 {% for country in countries|sort %}
   <h3 id="{{country}}"><a href="#{{country}}">#</a> {{country}}
-    {% for country_data in ontology.country_data %}
+    {%- for country_data in ontology.country_data -%}
       {{"- " + country_data.country_name if country_data.country == country}}
-    {% endfor %}
+    {%- endfor -%}
   </h3>
-  {% for country_data in ontology.country_data %}
+  {% for country_data in ontology.country_data -%}
   {{country_data.site_examples_preamble_html|safe if country_data.country == country}}
-  {% endfor %}
+  {%- endfor %}
   {% for section in [address_pb2.ExampleSequenceSection.NAME, address_pb2.ExampleSequenceSection.ADDRESS] %}
   <h4 id="{{country}}-{{section}}"> <!-- <a href="#{{country}}-{{section}}">#</a> -->
   {% if section == address_pb2.ExampleSequenceSection.NAME %}Names ({{country}}){% endif %}
@@ -407,9 +407,9 @@ attribute that meets the requirements of real-world websites.
       <th>Translation</th>
       <th>Recommnended annotation</th>
     </thead>
-    {% for site in ontology.site_examples %}
-    {% for sequence in site.sequences %}
-    {% if site.locale.country == country and sequence.section == section %}
+    {% for site in ontology.site_examples -%}
+    {%- for sequence in site.sequences -%}
+    {%- if site.locale.country == country and sequence.section == section -%}
     <tr>
       <td id="{{section}}-{{site.url|replace('/','')|replace(':', '')|replace('?', '')}}" style="padding: 0"><a href="#{{section}}-{{site.url|replace('/','')|replace(':', '')|replace('?', '')}}" title="{{site.url}}">#</a>
       {%if site.is_structured %}<span title="Structured address"><b>S</b></span>
@@ -420,14 +420,14 @@ attribute that meets the requirements of real-world websites.
       <td>{{translated_terms(sequence)}}</td>
       <td>{{concepts(sequence)}}</td>
     </tr>
-    {% endif %}
-    {% endfor %}
+    {%- endif -%}
+    {%- endfor -%}
     {% endfor %}
   </table>
   {% endfor %}
-  {% for country_data in ontology.country_data %}
+  {% for country_data in ontology.country_data -%}
   {{country_data.site_examples_epilog_html|safe if country_data.country == country}}
-  {% endfor %}
+  {%- endfor %}
 {% endfor %}
 
 </section>
@@ -437,7 +437,7 @@ attribute that meets the requirements of real-world websites.
 <h3 id="frequencies_of_concepts">Frequencies of concepts</h3>
 <table class="frequencies-summary">
 {% for concept in ontology.concepts|ignore_specialized_concept %}
-{% if loop.index0 % 10 == 0 %}
+{%- if loop.index0 % 10 == 0 %}
 <tr class="header">
   <th>Concept</th>
   {% for country in countries|sort -%}
@@ -452,13 +452,13 @@ attribute that meets the requirements of real-world websites.
   {%- endfor %}
   <th>({{sites_in_country["total"]}})</th>
 </tr>
-{% endif %}
+{% endif -%}
 
 <tr class="{{concept.name|css_classes_for_concept}}">
   <th>{{concept.name}}</th>
-  {% for country in countries|sort %}
+  {% for country in countries|sort -%}
   <td>{{country_concept_frequencies[country + "-" + concept.name]}}</td>
-  {% endfor %}
+  {%- endfor %}
   <td>({{concept_frequencies[concept.name]}})</td>
 </tr>
 {% endfor %}
@@ -478,18 +478,14 @@ attribute that meets the requirements of real-world websites.
     <code class="{{concept.name|css_classes_for_concept}}">{{concept.name}}</code>
   </td>
   <td>
-    {% for token in concept.tokens -%}
+    {%- for token in concept.tokens -%}
       {%- if token.concept_name -%}
         <code class="{{token.concept_name|css_classes_for_concept}}">{{token.concept_name}}</code>
       {%- endif -%}
-    {%- endfor %}
+    {%- endfor -%}
   </td>
-  <td>
-    {{concept_frequencies[concept.name]}}
-  </td>
-  <td>
-    {{concept_countries[concept.name]|sort|join(', ')}}
-  </td>
+  <td>{{concept_frequencies[concept.name]}}</td>
+  <td>{{concept_countries[concept.name]|sort|join(', ')}}</td>
 </tr>
 {% endfor %}
 </table>
@@ -502,19 +498,13 @@ attribute that meets the requirements of real-world websites.
   <th>Frequency</th>
   <th>Countries</th>
 </thead>
-{% for entry in compound_concept_frequencies.keys()|sort %}
+{% for entry in compound_concept_frequencies.keys()|sort -%}
 <tr>
-  <td>
-    {{compound_concept_frequencies[entry].concepts|join(', ')}}
-  </td>
-  <td>
-    {{compound_concept_frequencies[entry].total_frequency}}
-  </td>
-  <td>
-    {{compound_concept_frequencies[entry].countries|sort|join(', ')}}
-  </td>
+  <td>{{compound_concept_frequencies[entry].concepts|join(', ')}}</td>
+  <td>{{compound_concept_frequencies[entry].total_frequency}}</td>
+  <td>{{compound_concept_frequencies[entry].countries|sort|join(', ')}}</td>
 </tr>
-{% endfor %}
+{%- endfor %}
 </table>
 
 </section>
