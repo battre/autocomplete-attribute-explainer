@@ -456,14 +456,16 @@ attribute that meets the requirements of real-world websites.
 </tr>
 {% endif %}
 
+{% if not concept.specialization %}
 <tr class="{{concept.name|css_classes_for_concept}}">
   <th>{{concept.name}}</th>
   {% for country in countries|sort %}
   <td>{{country_concept_frequencies[country + "-" + concept.name]}}</td>
   {% endfor %}
   <td>({{concept_frequencies[concept.name]}})</td>
-{% endfor %}
 </tr>
+{% endif %}
+{% endfor %}
 </table>
 
 <h3 id="frequencies_of_named_compound_concepts">Frequencies of named compound concepts</h3>
@@ -475,6 +477,7 @@ attribute that meets the requirements of real-world websites.
     <th>Countries</th>
   </thead>
 {% for concept in ontology.compound_concepts %}
+{% if not concept.specialization %}
 <tr>
   <td>
     <code class="{{concept.name|css_classes_for_concept}}">{{concept.name}}</code>
@@ -493,6 +496,7 @@ attribute that meets the requirements of real-world websites.
     {{concept_countries[concept.name]|sort|join(', ')}}
   </td>
 </tr>
+{% endif %}
 {% endfor %}
 </table>
 
