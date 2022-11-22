@@ -479,7 +479,7 @@ site_examples {
       label: "Полное имя*"
       label_translated: "Full name*"
       control_type: INPUT
-      concepts: "unset"
+      concepts: "name"
       autocomplete_attribute: "off"
       section: NAME
     }
