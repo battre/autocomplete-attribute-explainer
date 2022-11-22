@@ -137,6 +137,8 @@ for site_example in ontology.site_examples:
 country_concept_frequencies = {}
 # Build map of "$concept" -> frequency
 concept_frequencies = {}
+# Build map of "$councept" -> set(countries)
+concept_countries = {}
 for site_example in ontology.site_examples:
   country = site_example.locale.country
   for sequence in site_example.sequences:
@@ -153,6 +155,37 @@ for site_example in ontology.site_examples:
         if not concept in concept_frequencies:
           concept_frequencies[concept] = 0
         concept_frequencies[concept] += 1
+
+        if not concept in concept_countries:
+          concept_countries[concept] = set()
+        concept_countries[concept].add(country)
+
+# Build a map of "compound_concepts_key" ->
+# {
+#   concepts: list
+#   total_frequency: integer
+#   countries: set
+# }
+compound_concept_frequencies = {}
+for site_example in ontology.site_examples:
+  country = site_example.locale.country
+  for sequence in site_example.sequences:
+    for field in sequence.fields:
+      if field.section not in (address_pb2.ExampleSequenceSection.NAME,
+          address_pb2.ExampleSequenceSection.ADDRESS):
+        continue
+      if len(field.concepts) < 2:
+        continue
+      concepts = sorted(field.concepts)
+      concepts_key = "_".join(concepts)
+      if concepts_key not in compound_concept_frequencies:
+        compound_concept_frequencies[concepts_key] = {
+          "concepts": concepts,
+          "total_frequency": 0,
+          "countries": set()
+        }
+      compound_concept_frequencies[concepts_key]["total_frequency"] += 1
+      compound_concept_frequencies[concepts_key]["countries"].add(country)
 
 # Build a mpa of "$country" -> number tested sites
 sites_in_country = {}
@@ -194,7 +227,9 @@ result = template.render(
     new_concepts=new_concepts,
     country_concept_frequencies=country_concept_frequencies,
     sites_in_country=sites_in_country,
-    concept_frequencies=concept_frequencies)
+    concept_frequencies=concept_frequencies,
+    compound_concept_frequencies=compound_concept_frequencies,
+    concept_countries=concept_countries)
 f = open(args.output, "w")
 f.write(result)
 f.close()

@@ -465,6 +465,60 @@ attribute that meets the requirements of real-world websites.
 {% endfor %}
 </tr>
 </table>
+
+<h3 id="frequencies_of_named_compound_concepts">Frequencies of named compound concepts</h3>
+<table role="grid">
+  <thead>
+    <th>Compound concept name</th>
+    <th>Tokens</th>
+    <th>Frequency</th>
+    <th>Countries</th>
+  </thead>
+{% for concept in ontology.compound_concepts %}
+<tr>
+  <td>
+    <code class="{{concept.name|css_classes_for_concept}}">{{concept.name}}</code>
+  </td>
+  <td>
+    {% for token in concept.tokens -%}
+      {%- if token.concept_name -%}
+        <code class="{{token.concept_name|css_classes_for_concept}}">{{token.concept_name}}</code>
+      {%- endif -%}
+    {%- endfor %}
+  </td>
+  <td>
+    {{concept_frequencies[concept.name]}}
+  </td>
+  <td>
+    {{concept_countries[concept.name]|sort|join(', ')}}
+  </td>
+</tr>
+{% endfor %}
+</table>
+
+
+<h3 id="frequencies_of_unnamed_compound_concepts">Frequencies of unnamed compound concepts</h3>
+<table role="grid">
+<thead>
+  <th>Concepts</th>
+  <th>Frequency</th>
+  <th>Countries</th>
+</thead>
+{% for entry in compound_concept_frequencies.keys()|sort %}
+<tr>
+  <td>
+    {{compound_concept_frequencies[entry].concepts|join(', ')}}
+  </td>
+  <td>
+    {{compound_concept_frequencies[entry].total_frequency}}
+  </td>
+  <td>
+    {{compound_concept_frequencies[entry].countries|sort|join(', ')}}
+  </td>
+</tr>
+{% endfor %}
+</table>
+
 </section>
 
 </main>
