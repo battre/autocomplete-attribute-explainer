@@ -151,12 +151,30 @@ code.new-concept.unset {
 }
 code.gap,
 code.unsure,
-code.new-concept.gap {
+code.new-concept.gap,
+.frequencies-summary .gap td:not(:empty),
+.frequencies-summary .unset td:not(:empty),
+.frequencies-summary .unsure td:not(:empty) {
   background-color: blanchedalmond;
 }
-code.new-concept {
+code.new-concept,
+.frequencies-summary .new-concept td:not(:empty)
+ {
   color: black;
   background-color: lightgreen;
+}
+
+.frequencies-summary .header {
+  background-color: rgb(230, 230, 230);
+}
+.frequencies-summary .header.sites-in-country th {
+  font-size: x-small;
+}
+.frequencies-summary td {
+  text-align: right;
+}
+.frequencies-summary tr:hover {
+  background-color: rgb(245, 245, 245);
 }
   </style>
 </head>
@@ -414,6 +432,36 @@ attribute that meets the requirements of real-world websites.
   {% endfor %}
 {% endfor %}
 
+</section>
+
+<section>
+<h2>Summary</h2>
+<h3>Frequencies of concepts</h3>
+<table class="frequencies-summary">
+{% for concept in ontology.concepts %}
+{% if loop.index0 % 10 == 0 %}
+<tr class="header">
+  <th>Concept</th>
+  {% for country in countries|sort -%}
+  <th>{{country}}</th>
+  {%- endfor %}
+</tr>
+<tr class="header sites-in-country">
+  <th>(tested sites)</th>
+  {% for country in countries|sort -%}
+  <th>({{sites_in_country[country]}})</th>
+  {%- endfor %}
+</tr>
+{% endif %}
+
+<tr class="{{concept.name|css_classes_for_concept}}">
+  <th>{{concept.name}}</th>
+  {% for country in countries|sort %}
+  <td>{{country_concept_frequencies[country + "-" + concept.name]}}</td>
+  {% endfor %}
+{% endfor %}
+</tr>
+</table>
 </section>
 
 </main>

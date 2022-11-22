@@ -133,6 +133,29 @@ for site_example in ontology.site_examples:
 for site_example in ontology.site_examples:
   split_sequences(site_example)
 
+# Build a map of "$country-$concept" -> frequency
+country_concept_frequencies = {}
+for site_example in ontology.site_examples:
+  country = site_example.locale.country
+  for sequence in site_example.sequences:
+    for field in sequence.fields:
+      if field.section not in (address_pb2.ExampleSequenceSection.NAME,
+          address_pb2.ExampleSequenceSection.ADDRESS):
+        continue
+      for concept in field.concepts:
+        key = country + "-" + concept
+        if not key in country_concept_frequencies:
+          country_concept_frequencies[key] = 0
+        country_concept_frequencies[key] += 1
+
+# Build a mpa of "$country" -> number tested sites
+sites_in_country = {}
+for site_example in ontology.site_examples:
+  country = site_example.locale.country
+  if country not in sites_in_country:
+    sites_in_country[country] = 0
+  sites_in_country[country] += 1
+
 # Give every field a unique id.
 assign_ids_to_fields(ontology)
 
@@ -162,7 +185,9 @@ result = template.render(
     address_pb2=address_pb2,
     rtl_languages=set(["ar"]),
     known_concepts=known_concepts,
-    new_concepts=new_concepts)
+    new_concepts=new_concepts,
+    country_concept_frequencies=country_concept_frequencies,
+    sites_in_country=sites_in_country)
 f = open(args.output, "w")
 f.write(result)
 f.close()
