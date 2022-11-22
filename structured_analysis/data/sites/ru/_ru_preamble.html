@@ -32,6 +32,8 @@ A Russian colleague clarified this as follows:
   into several. In that case a building may receive “korpus”. Example: Moscow,
   Ulitsa Rogova, 12 korpus 2 stroenie 1. Many government documents have just one
   field “korpus/stroenie”. Then you will fill in with “k.2 s.1”.
+  <p>If a website does not have fields for korpus/stroenie, this information
+    would go into the "dom"/"дома" field.
 </blockquote>
 
 Finally, <a
@@ -42,13 +44,25 @@ is handy because it contains a number of abbreviation and translations.
 <p>The following cases are currently missing in the autocomplete spec and
 occurred on multiple sites:
 <ul>
-<li>TODO
+<li>address-search - Many websites have an interactive address widget into which
+  you fill city, street and house information
+<li>street-name
+<li>house-number
+<li>stroenie
+<li>korpus
+<li>entrance
+<li>floor
+<li>apartment
+<li>door-code
+<li>delivery-instructions
 </ul>
 
 <h4>Open questions</h4>
 <ul>
   <li>Do we want a field type for the "ouside-address" to be filled into address search fields?
-  <li>Where would you put korpus and stroenie on mvideo.ru?
+  <li>Do we want to have different types for handling the situation that a "dom"
+    field needs to represent the "korpus"/"stroenie” as well because there are
+    no separate fields for those?
 </ul>
 
 <p>Progress: ☑ First round of cleanup, ☐ Discussed with a (former) resident

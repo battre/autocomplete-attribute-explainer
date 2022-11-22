@@ -1,0 +1,102 @@
+site_examples {
+  url: "https://my-shop.ru"
+  is_structured: true
+  locale {
+    country: "RU"
+    language: "ru"
+  }
+  sequences {
+    fields {
+      name: "inputText8638|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "inputText9565|"
+      label: "Улица, дом, корпус (обязательно)"
+      label_translated: "Street, house, building (required)"
+      control_type: TEXTAREA
+      concepts: "address-search"
+      section: ADDRESS
+    }
+    fields {
+      name: "inputText6473|"
+      label: "Кв/офис"
+      label_translated: "Apartment/office"
+      control_type: INPUT
+      concepts: "apartment"
+      section: ADDRESS
+    }
+    fields {
+      name: "inputText5641|"
+      label: "Подъезд"
+      label_translated: "Entrance"
+      control_type: INPUT
+      concepts: "entrance"
+      section: ADDRESS
+    }
+    fields {
+      name: "inputText8775|"
+      label: "Домофон"
+      label_translated: "intercom"
+      control_type: INPUT
+      concepts: "door-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "inputText3265|"
+      label: "Этаж"
+      label_translated: "Floor"
+      control_type: INPUT
+      concepts: "floor"
+      section: ADDRESS
+    }
+    fields {
+      name: "inputText1302|"
+      label: "Комментарий для курьера"
+      label_translated: "Comment for the courier"
+      control_type: TEXTAREA
+      concepts: "delivery-instructions"
+      section: ADDRESS
+    }
+    fields {
+      name: "inputText|"
+      label: "Телефон"
+      label_translated: "Telephone"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "on"
+      section: OTHER
+    }
+    fields {
+      name: "inputText8857|"
+      label: "Имя"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "inputText7868|"
+      label: "Фамилия"
+      label_translated: "Surname"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "|payment-radio"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|payment-radio"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+
