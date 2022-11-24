@@ -568,6 +568,19 @@ compound_concepts {
   name: "address-search"
   description: "An address search widget, typically accepting information down "
     "to the building level, but no name or location-in-building information. "
+    "It's conceivable to have an autocomplete=\"address-search\" paired with "
+    "a second attribute address-search-items=\"zip address-line1\" to tell the "
+    "browser which information to enter into the address search field."
+  label: "n/a: this would not be shown in the UI."
+  tokens {
+    concept_name: "very country specific"
+  }
+}
+
+compound_concepts {
+  name: "address-search"
+  description: "An address search widget, typically accepting information down "
+    "to the building level, but no name or location-in-building information. "
     "E.g. 32 Vassar Street, Cambridge, MA, USA"
   label: "n/a: this would not be shown in the UI."
 

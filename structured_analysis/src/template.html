@@ -416,7 +416,7 @@ attribute that meets the requirements of real-world websites.
       <th style="padding: 0; width: 60px"></th>
       <th>Term</th>
       <th>Translation</th>
-      <th>Recommnended annotation</th>
+      <th>Recommended annotation</th>
     </thead>
     {% for site in ontology.site_examples -%}
     {%- for sequence in site.sequences -%}
@@ -448,7 +448,7 @@ attribute that meets the requirements of real-world websites.
 <h3 id="frequencies_of_concepts">Frequencies of concepts</h3>
 <div class="scrollable-div">
 <table class="frequencies-summary">
-{% for concept in ontology.concepts|ignore_specialized_concept %}
+{% for concept in ontology.concepts|ignore_specialized_concept|list + ontology.compound_concepts|ignore_specialized_concept|list %}
 {%- if loop.index0 % 10 == 0 %}
 <tr class="header">
   <th>Concept</th>
