@@ -1,0 +1,123 @@
+site_examples {
+  url: "https://shop.coles.com.au"
+  is_structured: false
+  locale {
+    country: "AU"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "localisation-search|location"
+      label: "Enter your postcode or suburb"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "searchTerm|searchTerm"
+      label: "Search for a product e.g. milk in Home"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "colesB2bFeatureSwitchEnabledFlag|"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "isColesB2bdomain|"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "colB2bStaticPageURL|"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "street-address-input|txtStreetAddress"
+      label: "Street Address"
+      control_type: INPUT
+      concepts: "street-address"
+      autocomplete_attribute: "txtStreetAddress"
+      section: ADDRESS
+    }
+    fields {
+      name: "suburb-input|txtSuburb"
+      label: "Suburb"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "txtSuburb"
+      section: ADDRESS
+    }
+    fields {
+      name: "postcode-input|txtPostcode"
+      label: "Post code"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "txtPostcode"
+      section: ADDRESS
+    }
+    fields {
+      name: "state-selection|txtState"
+      label: "State"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "nickname-input|nickname"
+      label: "Give this address a name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nickname"
+      section: OTHER
+    }
+    fields {
+      name: "delivery-instructions-input|txtDeliveryInstructions"
+      label: "Delivery instructions (optional)"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "isB2BFooter|"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "currentHostName|"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "g-recaptcha-response-100000|g-recaptcha-response"
+      label: "Skip to content View trolley & checkout"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "entry|entry"
+      label: "Type your question here"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+  }
+}
+

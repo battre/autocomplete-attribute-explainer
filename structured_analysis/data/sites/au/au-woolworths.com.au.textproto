@@ -1,0 +1,40 @@
+site_examples {
+  url: "https://www.woolworths.com.au/"
+  is_structured: true
+  locale {
+    country: "AU"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "wx-headerSearch|headerSearch"
+      example: "Search products, recipes & ideas"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "marketDeliveryAddressSelector|marketDeliveryAddressSelector"
+      label: "Everyday Market shipping address"
+      label_comment: "The only way to specify an address is a search widget."
+      control_type: INPUT
+      concepts: "address-search"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

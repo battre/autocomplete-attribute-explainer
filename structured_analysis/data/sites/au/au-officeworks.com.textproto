@@ -1,0 +1,74 @@
+site_examples {
+  url: "https://www.officeworks.com.au"
+  is_structured: true
+  locale {
+    country: "AU"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "|businessName"
+      label: "Business Name (Door signage name)"
+      control_type: INPUT
+      concepts: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "|building"
+      label: "Building / Suite / Floor"
+      control_type: INPUT
+      concepts: "building-and-location-in-building"
+      section: ADDRESS
+    }
+    fields {
+      name: "|streetAddress"
+      label: "Street Address *"
+      control_type: INPUT
+      concepts: "street-address"
+      section: ADDRESS
+    }
+    fields {
+      name: "|postcode"
+      label: "Postcode *"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "Suburb *"
+      control_type: SELECT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "|state"
+      label: "State *"
+      control_type: INPUT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "|instructions"
+      label: "Additional instructions for the driver (optional)"
+      control_type: TEXTAREA
+      concepts: "delivery-instructions"
+      section: ADDRESS
+    }
+    fields {
+      name: "|poNumber"
+      label: "Customer reference / purchase order number(optional)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|loyaltyNumber"
+      label: "6008 9400 0000 0000"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+
