@@ -122,6 +122,9 @@ site_example.is_structured = True
 
 translate_client = translate.Client()
 
+form_counter = 0
+form_sig_to_counter = {}
+
 sequence = site_example.sequences.add()
 sequence.section = address_pb2.ExampleSequenceSection.UNDEFINED
 sequence.hide = False
@@ -184,6 +187,20 @@ for html_field in soup.find_all(["input", "select", "textarea"]):
   elif "PHONE" in overall_type:
     field.section = address_pb2.ExampleSequenceSection.PHONE
   elif "EMAIL" in overall_type:
+    field.section = address_pb2.ExampleSequenceSection.OTHER
+
+  form_sig = (
+      html_field["form_signature"] if html_field.has_attr("form_signature") else "")
+  if not form_sig in form_sig_to_counter:
+    form_counter += 1
+    form_sig_to_counter[form_sig] = form_counter
+
+  field.html_comment = "Form {}".format(form_sig_to_counter[form_sig])
+
+  testerfreezeat = (
+    html_field["testerfreezeat"] if html_field.has_attr("testerfreezeat") else "")
+  if "\"width\":0,\"height\":0" in testerfreezeat:
+    field.html_comment += ", invisible field"
     field.section = address_pb2.ExampleSequenceSection.OTHER
 
 

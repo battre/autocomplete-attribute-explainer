@@ -118,6 +118,9 @@ message ExampleField {
 
   // Ignore. This is only used for internal book keeping.
   string internal_id = 15;
+
+  // A comment from the HTML extraction.
+  string html_comment = 16;
 }
 
 enum ExampleSequenceSection {
