@@ -1,0 +1,1026 @@
+site_examples {
+  url: "https://www.suning.com"
+  is_structured: false
+  locale {
+    country: "CN"
+    language: "zh"
+  }
+  sequences {
+    fields {
+      name: "resourceType|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "pagename|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "delivery01|adress"
+      example: "配送上门"
+      example_translated: "home delivery"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "delivery02|adress"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "delivery03|adress"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "sh_receive_name|new_icart2_add_addnew_shr_bjk"
+      example: "收货人姓名"
+      example_translated: "Consignee name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "sh_receive_mobile|new_icart2_add_addnew_sj_bjk"
+      example: "收货人手机号码"
+      example_translated: "Consignee&#39;s mobile phone number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "sh_receive_bakMobile|new_icart2_add_addnew_bysj_bjk"
+      example: "收货人备用手机号选填"
+      example_translated: "The consignee&#39;s alternate mobile phone number is optional"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "sh_receive_address|new_icart2_add_addnew_xxdz_bjk"
+      example: "详细地址"
+      example_translated: "Address"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|new_icart2_addressType_others"
+      example: "自定义标签"
+      example_translated: "custom label"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "set-default|new_icart2_add_addnew_swmr_gx"
+      example: "设为默认收货地址"
+      example_translated: "Set as default shipping address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|new_icart2_add_addnew_zt_shr_bjk"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|new_icart2_add_addnew_zt_sj_bjk"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "pickup01|adress"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "pickup02|adress"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "addressbox|"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "delivery01|adress"
+      example: "配送上门"
+      example_translated: "home delivery"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "delivery02|adress"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "delivery03|adress"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "sh_receive_name|new_icart2_add_addnew_shr_bjk"
+      label: "*收货人："
+      label_translated: "*Receiver:"
+      example: "收货人姓名"
+      example_translated: "Consignee name"
+      control_type: INPUT
+      concepts: "name"
+      autocomplete_attribute: "off"
+      section: NAME
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "sh_receive_mobile|new_icart2_add_addnew_sj_bjk"
+      label: "手机："
+      example: "收货人手机号码"
+      example_translated: "Consignee&#39;s mobile phone number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "sh_receive_bakMobile|new_icart2_add_addnew_bysj_bjk"
+      label: "备用手机："
+      example: "收货人备用手机号选填"
+      example_translated: "The consignee&#39;s alternate mobile phone number is optional"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "custom input"
+      label: "所在地区"
+      label_translated: "location"
+      example: "请选择省 请选择市 请选择区 请选择乡镇"
+      example_translated: "Please select a province Please select a city Please select a district Please select a township"
+      control_type: CUSTOM
+      section: ADDRESS
+      concepts: "gap"
+    }
+    fields {
+      name: "sh_receive_address|new_icart2_add_addnew_xxdz_bjk"
+      label: "详细地址"
+      label_translated: "Address"
+      example: "街道、小区、楼牌号等，无须重复填写省市区"
+      example_translated: "Street, residential area, building number, etc., no need to fill in the province, city and city repeatedly"
+      control_type: INPUT
+      concepts: "street-address"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|new_icart2_addressType_others"
+      example: "自定义标签"
+      example_translated: "custom label"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "set-default|new_icart2_add_addnew_swmr_gx"
+      example: "设为默认收货地址"
+      example_translated: "Set as default shipping address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|new_icart2_add_addnew_zt_shr_bjk"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|new_icart2_add_addnew_zt_sj_bjk"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "pickup01|adress"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "pickup02|adress"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "commodityType_ID|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "overSeaFlag_ID|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "onlyOverSea_ID|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "donateTotalAmount|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "warrantyTotalAmount|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "onlyServiceProduct_ID|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "isOrderMemo_ID|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "saOrderInfo120050462762522632457854|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "saOrderInfo|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "Js_Consume|"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "otherPayCheck|new_icart2_account_daifu"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "diamondFlag|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "creditInfoId|creditInfo"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "saUrlId|saUrl"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "orderId|orderId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|payChannel"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "payFlagId|payFlag"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "dfpTokenId|dfpToken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "detectId|detect"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "directFlag|directFlag"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "paidFlag|paidFlag"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "isShowPaidTip|isShowPaidTip"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "promtionDesc|promtionDesc"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "cart2_num|cart2_num"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "cart2No|cart2No"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "supportedSelfPickUp|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "deliveryType|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "payType|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "comTypeFlag|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "otherPaySwitch|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "otherPay|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "anotherPaySwitch|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "anotherPayTip|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "footballProduct|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "addressUpSwitch|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "payPeriods|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "saveAddressCityCode|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "pPromotionSwitch|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "pPromotionMsg|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "addressFuzzyMatchingSwitch|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "mapPlatformSwitch|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "showPickFlag|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "overSeaIdentitySwitch|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "overSeaIdentityFlag|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "wulingMotorsFlag|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "isInvestmentGoods|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "dfptoken|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "selectAddressFlag|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "deliveryToVillageTip|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "cloudDiamondSillSwitch|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "cloudDiamondSillCount|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "cloudDiamondSillMoney|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "cloudDiamondLimitSwitch|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "centerPickUpType|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "centerPickUpSwitch|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "displayAddrDetail|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "cartTwoDelayDesc|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "cartType|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "deliveryJudgeFlag|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "needShowBroadband|needShowBroadband"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "displayFreightVoucherCopy|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "hasBasicFare|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "gaoDeAddressAssociationSwitch|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "gaoDeGrayscaleCity|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "cardCommodityMark|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "pcFreeShippingCopydownSwitch|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "supportCard|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "taxCouponAmountTemp|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "transportCouponAmountTemp|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "cShopLeaseFlag|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "vZeroMeetingFlag|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "appleEducationDiscount|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "appleEducationDiscountTips|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "merchantNo|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "onlyOverSeaOrOnlyServiceProduct|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "hasCShopWarranty|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "mergeHwgCmmdyFlag|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "carO2oCartFlag|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "serviceo2oStoreCode|serviceo2oStoreCode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "addressAssemblyChange|addressAssemblyChange"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "queryEntNameSwitch|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "queryVatEntNameSwitch|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "characterFlag|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "invoiceTypeSelected|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "overSeaAndCartcertVailFlag|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "electricFlag|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "payeeType|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "levelNum|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "payTypeId|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "superBonusTitle|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "isSuperBonusUse|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "isCtgry|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "categoryInvoiceSwitch|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "consumeBonusUse|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "invoice4FieldSwitch|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+  }
+}
+

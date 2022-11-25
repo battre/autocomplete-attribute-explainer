@@ -205,8 +205,7 @@ country_data {
 country_data {
   country: "CN"
   country_name: "China 🇨🇳"
-  site_examples_preamble_html:
-    ""
+  site_examples_preamble_file: "data/sites/cn/_cn_preamble.html"
 }
 
 country_data {
