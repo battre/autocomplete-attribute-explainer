@@ -134,6 +134,8 @@ for html_field in soup.find_all(["input", "select", "textarea"]):
                 (html_field["name"] if html_field.has_attr("name") else ""))
   placeholder = (
       html_field["placeholder"] if html_field.has_attr("placeholder") else "")
+  arialabel = (
+      html_field["aria-label"] if html_field.has_attr("aria-label") else "")
   autocomplete = (
       html_field["autocomplete"] if html_field.has_attr("autocomplete") else "")
 
@@ -150,6 +152,8 @@ for html_field in soup.find_all(["input", "select", "textarea"]):
     translation = translate_client.translate(
         field.label, target_language="en", source_language=args.language)
     field.label_translated = translation["translatedText"]
+  if not (placeholder and placeholder.strip()) and (arialabel and arialabel.strip()):
+    placeholder = arialabel
   if placeholder and placeholder.strip():
     field.example = placeholder.strip()
     if field.example == field.label:
