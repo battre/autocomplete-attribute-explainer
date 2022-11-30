@@ -364,9 +364,9 @@ The following icons are used below:
     is longer.
   <li>Many naming questions...
     <ul>
-      <li>How do we call the location information to find
+      <li>What do we call the location information to find
         a place inside a building? "location-in-building"? "sub-building"?
-      <li>How do we name things that are very country/culture specific
+      <li>What do we name things that are very country/culture specific
         (Hungary's separation between street name and street type, entrecalles,
         ...)?
     </ul>
@@ -388,7 +388,7 @@ attribute that meets the requirements of real-world websites.
     {% for country in countries|sort -%}
     <li>
       <a href="#{{country}}">{{country}}
-      {%- for country_data in ontology.country_data -%}
+      {% for country_data in ontology.country_data -%}
         {{"- " + country_data.country_name if country_data.country == country}}
       {%- endfor -%}
       </a>
