@@ -1,0 +1,276 @@
+site_examples {
+  url: "https://www.apple.com"
+  is_structured: true
+  locale {
+    country: "CN"
+    language: "zh"
+  }
+  sequences {
+    fields {
+      name: "ac-gn-menustate|"
+      label: "Global Nav 打开菜单 \n \n \n Global Nav 关闭菜单 \n \n \n \n \n \n \n \n \n \n \n \n \n Apple \n \n \n \n \n \n 购物袋 \n \n \n \n \n + \n \n \n \n \n \n \n \n \n \n \n \n \n 搜索 apple.com.cn \n \n \n \n 取消 \n \n \n \n \n \n \n \n \n Apple \n \n \n \n \n 商店 \n \n \n \n \n Mac \n \n \n \n \n iPad \n \n \n \n \n iPhone \n \n \n \n \n Watch \n \n \n \n \n AirPods \n \n \n \n \n 家居 \n \n \n \n \n Apple 独家 \n \n \n \n \n 配件 \n \n \n \n \n 技术支持 \n \n \n \n \n \n \n \n \n 购物袋 \n \n \n \n \n + \n \n \n \n \n \n \n \n \n \n \n \n \n \n   \n \n \n \n \n \n \n \n\t\t\t\t\t\t\t\t取消"
+      label_translated: "Global Nav Open Menu Global Nav Close Menu Apple Shopping Bag + Search apple.com.cn Cancel Apple Store Mac iPad iPhone Watch AirPods Home Apple Exclusives Tech Support Shopping Bag + Cancel"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "ac-gn-searchform-input|"
+      example: "搜索 apple.com.cn"
+      example_translated: "Search apple.com.cn"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+      html_comment: "Form 2"
+    }
+    fields {
+      name: "ac-gn-searchform-src|src"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 3"
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.lastName|lastName"
+      label: "姓氏"
+      label_translated: "surname"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.firstName|firstName"
+      label: "名字"
+      label_translated: "name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.stateCitySelectorForCheckout.provinceCityDistrict|provinceCityDistrict"
+      label: "收货地址："
+      label_translated: "Shipping address:"
+      label_comment: "The HTML ID is 'provinceCityDistrict' and this is rendered as a custom select element with an input field."
+      example: "北京 海淀区"
+      example_translated: "Beijing Haidian District"
+      control_type: INPUT
+      concepts: "address-level1"
+      concepts: "address-level2"
+      concepts: "address-level3"
+      section: ADDRESS
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.street|street"
+      label: "详细地址"
+      label_translated: "Address"
+      control_type: INPUT
+      concepts: "address-line1"
+      autocomplete_attribute: "address-line1"
+      section: ADDRESS
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.street2|street2"
+      label: "附加详细地址"
+      label_translated: "Additional address details"
+      control_type: INPUT
+      concepts: "address-line2"
+      autocomplete_attribute: "address-line2"
+      section: ADDRESS
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.countryCode|countryCode"
+      label: "国家/地区"
+      label_translated: "country / region"
+      label_comment: "This is a custom select element with an input field."
+      example: "中国"
+      example_translated: "China"
+      control_type: INPUT
+      concepts: "country"
+      section: ADDRESS
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.copyContact.fullDaytimePhone|fullDaytimePhone"
+      label: "收件人手机号码"
+      label_translated: "Recipient&#39;s mobile phone number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "tel"
+      section: PHONE
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "checkout.shipping.addressContactEmail.address.emailAddress|emailAddress"
+      label: "电子邮件地址"
+      label_translated: "Email address"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "email"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "checkout.shipping.addressContactPhone.address.mobilePhone|mobilePhone"
+      label: "联系人电话号码 (手机号优先)"
+      label_translated: "Contact phone number (mobile phone number is preferred)"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "tel-local"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "checkout.shipping.addressNotification.address.emailAddress|emailAddress"
+      label: "电子邮件地址（可选）"
+      label_translated: "email address (optional)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "checkout.shipping.eFapiaoSelector.selectFapiao-none|checkout.shipping.eFapiaoSelector.selectFapiao"
+      label: "无需发票"
+      label_translated: "no invoice required"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "checkout.shipping.eFapiaoSelector.selectFapiao-e_personal|checkout.shipping.eFapiaoSelector.selectFapiao"
+      label: "电子普通发票 - 个人抬头"
+      label_translated: "Electronic ordinary invoice - personal payable"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "checkout.shipping.eFapiaoSelector.selectFapiao-enterprise|checkout.shipping.eFapiaoSelector.selectFapiao"
+      label: "电子普通发票 - 其他抬头"
+      label_translated: "Electronic ordinary invoice - other title"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "checkout.shipping.eFapiaoSelector.otherPersonFapiao.invoiceHeader|"
+      label: "发票抬头"
+      label_translated: "Invoice"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "checkout.shipping.eFapiaoSelector.selectFapiao-e_company|checkout.shipping.eFapiaoSelector.selectFapiao"
+      label: "电子普通发票 - 企业抬头"
+      label_translated: "Electronic ordinary invoice - business name"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "checkout.shipping.eFapiaoSelector.eCompanyFapiao.companyName|"
+      label: "企业注册名称"
+      label_translated: "Business registration name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "checkout.shipping.eFapiaoSelector.eCompanyFapiao.taxPayerIdPersonal|"
+      label: "纳税人识别号"
+      label_translated: "Taxpayer Identification Number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "checkout.shipping.eFapiaoSelector.eCompanyFapiao.eFapiaoAddress.address.stateCitySelectorForCheckout.provinceCityDistrict|provinceCityDistrict"
+      label: "公司注册地址"
+      label_translated: "Company registered address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "checkout.shipping.eFapiaoSelector.eCompanyFapiao.eFapiaoAddress.address.street|street"
+      label: "详细地址"
+      label_translated: "Address"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "address-line1"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "checkout.shipping.eFapiaoSelector.eCompanyFapiao.eFapiaoAddress.address.street2|street2"
+      label: "附加详细地址"
+      label_translated: "Additional address details"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "address-line2"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "checkout.shipping.eFapiaoSelector.eCompanyFapiao.eFapiaoAddress.address.countryCode|countryCode"
+      label: "国家/地区"
+      label_translated: "country / region"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "checkout.shipping.eFapiaoSelector.eCompanyFapiao.eFapiaoAddress.address.fullDaytimePhone|fullDaytimePhone"
+      label: "公司注册电话"
+      label_translated: "Company Registration Phone"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "tel"
+      section: PHONE
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "checkout.shipping.eFapiaoSelector.eCompanyFapiao.bankInfo.bankAccountName|"
+      label: "开户行名称"
+      label_translated: "Bank name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "checkout.shipping.eFapiaoSelector.eCompanyFapiao.bankInfo.bankAccountNumber|"
+      label: "银行账号"
+      label_translated: "Bank Account"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+  }
+}
+

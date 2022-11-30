@@ -1,0 +1,177 @@
+site_examples {
+  url: "https://www.dangdang.com"
+  is_structured: true
+  locale {
+    country: "CN"
+    language: "zh"
+  }
+  sequences {
+    fields {
+      name: "hideShipType|hideShipType"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "sltDeliveryTime_0_0|"
+      label: "配送时间"
+      label_translated: "Delivery Time"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 2"
+    }
+    fields {
+      name: "giftCardType|giftCardType"
+      label: "您可以使用"
+      label_translated: "you can use it"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 2"
+    }
+    fields {
+      name: "allCategory|allCategory"
+      label: "您的账户中 了解礼品卡使用规则 移动积分卡 全品类卡为2016年8月24日之前出售的部分礼品卡，使用范围为全场通用（除1号店、当当礼品卡、海外购商品外），全品类卡已经于2016年8月23日停止出售 当"
+      label_translated: "Know the usage rules of gift cards in your account. All types of mobile point cards are some gift cards sold before August 24, 2016. The scope of use is universal (except No. 1 Store, Dangdang gift cards, and overseas shopping products) , the sale of all types of cards has been stopped on August 23, 2016"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 2"
+    }
+    fields {
+      name: "bookCategory|bookCategory"
+      label: "使用"
+      label_translated: "use"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 2"
+    }
+    fields {
+      name: "vCardType|vCardType"
+      label: "您可以使用"
+      label_translated: "you can use it"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 2"
+    }
+    fields {
+      name: "vCard|vCard"
+      label: "您的账户中 了解当当V卡使用规则 当当V卡不支持海外购、移动积分卡、当当礼品卡、图书专用卡及等部分商家商品使用，具体请详见单品页面标识"
+      label_translated: "Know the usage rules of Dangdang V card in your account. Dangdang V card does not support overseas purchases, mobile point cards, Dangdang gift cards, special book cards and other merchant products. For details, please refer to the individual product page logo"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 2"
+    }
+    fields {
+      name: "couponCodeValue|"
+      label: "使用"
+      label_translated: "use"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 2"
+    }
+    fields {
+      name: "txt_ship_name_edit|"
+      label: "收货人"
+      label_translated: "Receiver"
+      control_type: INPUT
+      concepts: "name"
+      section: NAME
+      html_comment: "Form 3"
+    }
+    fields {
+      name: "txt_ship_mb_edit|"
+      label: "手机号码"
+      label_translated: "cellphone number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 3"
+    }
+    fields {
+      name: "txt_ship_tel_edit|"
+      label: "手机号码"
+      label_translated: "cellphone number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 3"
+    }
+    fields {
+      name: "Custom element"
+      control_type: CUSTOM
+      label: "所在地区"
+      label_translated: "location"
+      example: "请选择"
+      example_translated: "please_choose"
+      section: ADDRESS
+      concepts_comment: "The form contains the invisible fields selected_country_id, selected_province_id, selected_city_id, selected_town_id, selected_quarter_id"
+      concepts: "country"
+      concepts: "address-level1"
+      concepts: "address-level2"
+      concepts: "address-level3"
+      concepts: "address-level4"
+    }
+    fields {
+      name: "selected_country_id|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "selected_province_id|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "selected_city_id|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "selected_town_id|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "selected_quarter_id|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "txt_ship_address_edit|"
+      label: "详细地址"
+      label_translated: "Address"
+      control_type: INPUT
+      concepts: "street-address"
+      section: ADDRESS
+      html_comment: "Form 3"
+    }
+    fields {
+      name: "txt_ship_zip_edit|"
+      hide: true
+      label: "邮编"
+      label_translated: "post code"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+      html_comment: "Form 3"
+    }
+  }
+}
+

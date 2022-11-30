@@ -1,0 +1,82 @@
+site_examples {
+  url: "https://gome.com.cn"
+  is_structured: true
+  locale {
+    country: "CN"
+    language: "zh"
+  }
+  sequences {
+    fields {
+      name: "|"
+      label: "工作日、双休日与假日送"
+      label_translated: "Delivery on weekdays, weekends and holidays"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|"
+      label: "最多输入30个字"
+      label_translated: "Enter up to 30 characters"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|consignee"
+      label: "* 收货人："
+      label_translated: "* Receiver:"
+      control_type: INPUT
+      concepts: "name"
+      section: NAME
+      html_comment: "Form 1"
+    }
+    fields {
+      label: "所在地"
+      label_translated: "location"
+      control_type: CUSTOM
+      concepts: "gap"
+      concepts_comment: "It is not aparent which information is being asked for"
+      section: ADDRESS
+    }
+    fields {
+      name: "|detailAddress"
+      label: "* 详细地址："
+      label_translated: "* Address:"
+      control_type: INPUT
+      concepts: "street-address"
+      section: ADDRESS
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|phone"
+      label: "* 手机号码："
+      label_translated: "* cellphone number:"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|call"
+      label: "固定电话："
+      label_translated: "Fixed telephone:"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|email"
+      label: "邮件："
+      label_translated: "mail:"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+  }
+}
+

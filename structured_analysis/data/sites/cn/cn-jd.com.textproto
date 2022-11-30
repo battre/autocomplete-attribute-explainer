@@ -1,6 +1,6 @@
 site_examples {
   url: "https://jd.com"
-  is_structured: false
+  is_structured: true
   locale {
     country: "CN"
     language: "zh"
