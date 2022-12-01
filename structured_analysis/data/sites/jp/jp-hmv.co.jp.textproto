@@ -57,6 +57,7 @@ site_examples {
       example: "例）品川区大崎一丁目11番2号"
       example_translated: "Example) 1-11-2 Osaki, Shinagawa-ku"
       control_type: INPUT
+      concepts: "address-level2"
       concepts: "street-location"
       section: ADDRESS
     }

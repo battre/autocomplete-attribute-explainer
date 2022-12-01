@@ -3,6 +3,68 @@ Postal Code is often spread across two input fields and users are often
 asked to enter their name twice (once in phonetic spelling). Also Websites
 often specify whether to use full-width or half-widths characters/numbers.
 
+<p>
+  The structure of Japanese addresses is the following from biggest to largest
+  (from the <a href="https://de.wikipedia.org/wiki/Postadressen_in_Japan">German Wikipedia</a>):
+  <ul>
+    <li>Prefecture (label: 都道府県) with suffix (都/-to, 道/-dō, 府/-fu or 県/-ken)</li>
+    <li>Large municipality:
+      <ul>
+        <li>City: shi, 市</li>
+        <li>Very large cities (&gt;500,000 residents, "designated cities") are subdivided:
+          <ul>
+            <li>wards (ku, 区) (in Tokyo 23 wards are designated at special ward (特別区, tokubetsu-ku))</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>For smaller municipalities:
+      <ul>
+        <li>District with suffix (郡/-gun)</li>
+        <li>Town (chō or machi, 町) or Villiges (mura or son, 村)</li>
+      </ul>
+    <li>In Japan, a city is separate from districts, which contain towns and villages</li>
+    <li>A municipality is divided into
+      <ul>
+        <li><span style="color: orange">Town (machi, 町)</span>, followed by</li>
+        <li><span style="color: red;">City districts (丁目 chōme)</span> - These are numbered districts</li>
+        <li>Example:
+          <span style="color: blue">台東区</span>[<span style="color: orange">浅草</span><span style="color: red;">四丁目</span>]
+          (<span style="color: blue">Taito-ku</span>, [<span style="color: orange">Asakusa</span>, <span style="color: red;">4-chōme</span>])<br>
+        </li>
+      </ul>
+    </li>
+    <li>The next subdivision has an old and new system:
+      <ul>
+        <li>New system (jūkyo hyōji, 住居表示): used by the majority of the country
+          <ul>
+            <li>City block (街区 gaiku)</li>
+            <li>Building number (番号 bangō)</li>
+            <li>Apartment number (部屋番号 heya bangō) - optional</li>
+            <li>Example: <span style="color: teal">Building 10</span>
+              in <span style="color: purple">block 5</span>:
+              <span style="color: purple">5番</span><span style="color: teal">10号</span>
+              (<span style="color: purple">5-ban</span> <span style="color: teal">10-gō</span>)
+            </li>
+            <li>Example: + apartment 103: 5番10-103号</li>
+          </ul>
+        </li>
+        <li>Old system (chiban, 地番): used in some rural and older city areas
+          <ul>
+            <li>lot number (番地 banchi)</li>
+            <li>lot number extension (formally shigō (支号), more often edaban (枝版) - optional</li>
+          </ul>
+        </li>
+      </ul>
+      Starting at the chōme, both systems are numeric, a common style is
+      to write them as "<span style="color: orange">Asakusa</span>
+      <span style="color: red;">4</span>-<span style="color: purple">5</span>-<span style="color: teal">10</span>".
+      An apartment number may be appended as well:
+      <span style="color: red;">4</span>-<span style="color: purple">5</span>-<span style="color: teal">10</span>-103".
+
+    </li>
+  </ul>
+
 <p>Within a city, buildings are often identified by a sequence of 3 numbers
 [chome / city district]-[city block]-[building number] a forth number
 can be appended for the apartment number, but often times there is a special
@@ -15,7 +77,7 @@ a city (<a href="#2-httpswww.dinos.co.jp">example</a>).
 I haven't understood whether the chome is just represented by the number
 or also comes with a name.
 
-<p>The municipality is often expressed with the following terms (spaces
+<p>The locality is often expressed with the following terms (spaces
 added by me for the western eye that cannot parse kanji characters):
 <ul>
 <li>市 区 町 村:<br>
@@ -24,7 +86,7 @@ added by me for the western eye that cannot parse kanji characters):
  (町 = chō or machi (town))<br>
  (村 = mura or son (village))
 <li>市 区 町 村 名:<br>
- as first + 名 ???
+ as first + 名 (name)
 <li>市 区 町 村 番地:<br>
  as first + (番地 = banchi (lot number used in some rural and older city areas)
 <li>市区郡　町村名／丁目:<br>
@@ -33,9 +95,15 @@ added by me for the western eye that cannot parse kanji characters):
  (郡 = gun (district; in Japan, a city is separate from districts, which contain towns and villages))<br>
  (町 = chō or machi (town))<br>
  (村 = mura or son (village))<br>
- (名 = ???)<br>
+ (名 = name)<br>
  (丁目 = chōme (city district))<br>
 </ul>
+
+<p>
+  We observe the following field groups:<br>
+  <img src="jp-fieldgroups.png">
+  <!-- go/tyaso -->
+</p>
 
 <h4>Missing field types</h4>
 <p>The following cases are currently missing in the autocomplete spec and
