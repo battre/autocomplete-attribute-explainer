@@ -105,6 +105,47 @@ added by me for the western eye that cannot parse kanji characters):
   <!-- go/tyaso -->
 </p>
 
+<p>There are many different ways to define field types. For example:</p>
+<ul>
+  <li>
+  <img src="jp-possible-representations.png"><br>
+  I have to admit that it is not a proper reflection of what an address-levelX
+  should be (a shi, gun and machi should be different levels from a political
+  perspective). It's rater a reflection of what websites need. It also relies on
+  the slightly awkward grouping of address-level3 and street-location into an
+  address-line1 (typically address-levelX would not be part of an
+  address-lineX).
+  </li>
+  <li>
+  Following the information from the
+  <a href="https://www.sljfaq.org/afaq/addresses.html">sci.lang.japan FAQ</a>,
+  there can be 5 levels from Prefecture to Chōme. We might call
+  these address-level[1-5] and then ask websites to label their fields with
+  multiple levels.
+  </li>
+  <li>
+  We could decide to only support the break down used by apple.com, dell.com,
+  dot-st.com, gu-global.com, kojima.jp and consider the four components
+  address-level1, address-level2, street-address1, street-address2.
+  </li>
+  <li>
+  We could go fully custom and have a different field type naming scheme for
+  Japan.
+  </li>
+</ul>
+<p>
+  I'd be curious to hear ideas of other representations.
+</p>
+
+<p>
+  The following are recommended reading on Japanese addresses:
+</p>
+<ul>
+  <li><a href="https://www.sljfaq.org/afaq/addresses.html">sci.lang.japan FAQ</a></li>
+  <li><a href="https://help.sap.com/doc/7ac66320ca514acc89396a367db6dba8/4.2.10/en-US/e54130a47ee51014a997d681b0e91070.html">SAP Data Quality Management SDK</a></li>
+  <li><a href="https://resources.realestate.co.jp/living/how-to-read-a-japanese-address">How to read a Japanese address</a></li>
+</li>
+
 <h4>Missing field types</h4>
 <p>The following cases are currently missing in the autocomplete spec and
 occurred on multiple sites:
