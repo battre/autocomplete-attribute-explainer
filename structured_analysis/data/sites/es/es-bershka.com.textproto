@@ -85,7 +85,7 @@ site_examples {
     fields {
       name: "|address"
       label: "Dirección (debes indicar calle, portal, piso y letra)"
-      label_translated: "Address (you must indicate street, portal, floor and letter)"
+      label_translated: "Address (you must indicate street, portal, floor and apartment)"
       control_type: INPUT
       concepts: "street-address"
       section: ADDRESS
@@ -95,7 +95,7 @@ site_examples {
       label: "Completa tu dirección"
       label_translated: "Complete your address"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "address-overflow"
       section: ADDRESS
     }
     fields {

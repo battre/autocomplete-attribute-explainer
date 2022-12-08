@@ -36,11 +36,11 @@ site_examples {
     fields {
       name: "shippingAddress-address2|shippingAddress.address2"
       label: "Escalera/Piso/Letra/Empresa"
-      label_translated: "Staircase/Floor/Letter/Company"
+      label_translated: "Staircase/Floor/Apartment/Company"
       control_type: INPUT
       concepts: "staircase"
       concepts: "floor"
-      concepts: "entrance"
+      concepts: "apartment"
       concepts: "organization"
       autocomplete_attribute: "street-address address-line2"
       section: ADDRESS

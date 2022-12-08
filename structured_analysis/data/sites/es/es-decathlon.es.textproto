@@ -60,7 +60,7 @@ site_examples {
     fields {
       name: "line1-bcba4f13-a5a7-43d9-bb38-cde3cc8dc8db|line1"
       label: "Dirección completa (con número, portal, letra... Máximo 60 caracteres) * :"
-      label_translated: "Complete address (with number, portal, letter... Maximum 60 characters) * :"
+      label_translated: "Complete address (with number, portal, apartment... Maximum 60 characters) * :"
       control_type: INPUT
       concepts: "street-address"
       autocomplete_attribute: "shippingaddress-line1"

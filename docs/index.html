@@ -8980,8 +8980,45 @@ ultra-detailed information (one field for each of):
 This information can also be requested in a single address overflow
 field.
 
-<p>Progress: I need to speak to a resident first to better understand the
-  details of Spanish addresses.
+<p>First discussions with a Portuguese person indicated the following:
+<ul>
+  <li><s>Gate/Puerta/Porta (PT)/Door (EN) is the building/house number. Usually is next
+    to the door, that's why it is called just door.</s>
+    -- Note to self: There are some websites that seem to contradict this. I
+    will try to find more country experts.
+  </li>
+  <li>
+    The definition of letra was not quite clear. I have confirmed from multiple
+    sources that this refers to apartment numbers. E.g <a
+    href="https://forum.wordreference.com/threads/letra-bloque-portal-escalera.1768794/">here</a>:
+    "Letra, Doors in apartment blocks in spain sometimes have a letter rather
+    than a number........Bloque : Block .......... Portal, Door Escalera Some
+    big blocks have more than one entrance so each Stairs are given a letter
+    too". Also an the HTML name-attribute associated letra with apartment.
+  </li>
+  <li>
+    Floor/Stair case and Apartment. Apartments are usually numbered. It is not
+    like in Germany where you have your last name next to the doorbell. Each
+    apartment has a number. That number is composed by first the floor number
+    and then the number/side of the apartment on that floor. For example:
+    apartment "34" is the 4th apartment on the 3rd floor. Or apartment "3rd
+    left" is the apartment on the 3rd floor on the left side. Some websites have
+    separate fields for the floor number and apartment. So in the example prior
+    would be: Floor: 3; Apartment: 4 or Left. Sometimes they just say Apartment
+    number, you would just put 34 or 3rd left.
+  </li>
+  <li>
+    Urbanización is a small area of houses or buildings in a city. They may
+    be gated communities but don't have to be gated communities. They are
+    much smaller than a parish and just point to a general small area in a city.
+    An Urbanización is not official and usually doesn't need to filled in an
+    address form. I am still looking for an apropriate translation.
+    <a href="https://www.spanishdict.com/translate/Urbanizaci%C3%B3n">This</a>
+    suggests "(private) housing development". <a
+    href="https://www.wordreference.com/es/en/translation.asp?spen=Urbanizaci%C3%B3n">This</a>
+    also suggests "residential area".
+  </li>
+</ul>
   
   <h4 id="ES-1"> <!-- <a href="#ES-1">#</a> -->
   Names (ES)
@@ -9558,7 +9595,7 @@ field.
   
   <span id="translated_term_field_2413">Street/Avenue/Promenade, House number</span>
 <span class="separator">|</span>
-  <span id="translated_term_field_2414">Staircase/Floor/Letter/Company</span>
+  <span id="translated_term_field_2414">Staircase/Floor/Apartment/Company</span>
 <span class="separator">|</span>
   <span id="translated_term_field_2415">Postal Code</span>
 <span class="separator">|</span>
@@ -9585,7 +9622,7 @@ field.
     </code><code
     class="new-concept ">
       
-  <span id="">entrance</span>
+  <span id="">apartment</span>
 
     </code><code
     class=" ">
@@ -9781,7 +9818,7 @@ field.
 </td>
       <td>
   
-  <span id="translated_term_field_2490">Address (you must indicate street, portal, floor and letter)</span>
+  <span id="translated_term_field_2490">Address (you must indicate street, portal, floor and apartment)</span>
 <span class="separator">|</span>
   <span id="translated_term_field_2491">Complete your address</span>
 <span class="separator">|</span>
@@ -9800,9 +9837,9 @@ field.
 
     </code></span>
     |<span id="concept_field_2491"><code
-    class="gap ">
+    class="new-concept ">
       
-  <span id="">gap</span>
+  <span id="">address-overflow</span>
 
     </code></span>
     |<span id="concept_field_2492"><code
@@ -10104,7 +10141,7 @@ field.
   
   <span id="translated_term_field_3544">Country * : ▽</span>
 <span class="separator">|</span>
-  <span id="translated_term_field_3545">Complete address (with number, portal, letter... Maximum 60 characters) * :</span>
+  <span id="translated_term_field_3545">Complete address (with number, portal, apartment... Maximum 60 characters) * :</span>
 <span class="separator">|</span>
   <span id="translated_term_field_3546">Postal Code * :</span>
 <span class="separator">|</span>
@@ -10158,9 +10195,7 @@ field.
 <span class="separator">|</span>
   <span id="term_field_3598">Piso</span>
 <span class="separator">|</span>
-  <span class="entry-with-tooltip" id="term_field_3599">Letra
-      <div class="tooltip tooltip-right">The HTML code refers to deliveryAddress.apartment</div>
-    </span>
+  <span id="term_field_3599">Letra</span>
 <span class="separator">|</span>
   <span id="term_field_3600">País ▽</span>
 <span class="separator">|</span>
@@ -10187,7 +10222,7 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
 <span class="separator">|</span>
   <span id="translated_term_field_3598">Floor</span>
 <span class="separator">|</span>
-  <span id="translated_term_field_3599">Letter</span>
+  <span id="translated_term_field_3599">apartment</span>
 <span class="separator">|</span>
   <span id="translated_term_field_3600">Country ▽</span>
 <span class="separator">|</span>
@@ -10232,9 +10267,9 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
 
     </code></span>
     |<span id="concept_field_3599"><code
-    class="gap ">
+    class="new-concept ">
       
-  <span id="">gap</span>
+  <span id="">apartment</span>
 
     </code></span>
     |<span id="concept_field_3600"><code
@@ -10871,6 +10906,35 @@ portal, escalera, planta, puerta with the following options
     Interior, Local, Office, Stall, Store)
   </ul>
 </ul>
+
+<!--
+Hi Dominic! I was at the Tech Talk this morning and I might be able to help you
+with the Spain questions. I am not Spanish neither I have lived in Spain.
+However, I am from Portugal, and the questions that you have from Spain seem to
+point that addresses work similarly in Portugal.
+
+Gate/Puerta/Porta (PT)/Door (EN) is the building/house number. Usually is next
+to the door, that's way we call it just door.
+
+Floor/Stair case and Apartment. Apartments are usually numbered. It is not like
+in Germany where you have your last name next to the doorbell. Each apartment
+has a number. That number is composed by first the floor number and then the
+number/side of the apartment on that floor. For exemple: apartment 34 is the 4th
+apartment on the 3rd floor. Or apartment 3rd left is the apartment on the 3rd
+floor on the left side. Some companies have the fields for you to insert Floor
+and Apartment separately. So in the example prior would be: Floor: 3; Apartment:
+4 or Left. Sometimes they just say Apartment number, you would just put 34 or
+3rd left.
+
+Type of street I think sometimes they want you to differentiate between if it is
+an avenue, plaza or just a normal street.
+
+Residencial area. I think originally is Urbanización. This is not the correct
+translation. It is a small area of houses or buildings. It is not official and
+usually don't need to put it in the addresses. But it helps people find it.
+
+Letra is *probably* the apartment
+-->
 
   <h3 id="FR"><a href="#FR">#</a> FR
     - France 🇫🇷</h3>
@@ -23344,7 +23408,7 @@ occurred on multiple sites:
 </td>
       <td>
   
-  <span id="translated_term_field_8156">Address (you must indicate street, portal, floor and letter)</span>
+  <span id="translated_term_field_8156">Address (you must indicate street, portal, floor and apartment)</span>
 <span class="separator">|</span>
   <span id="translated_term_field_8157">Fill in your address</span>
 <span class="separator">|</span>
@@ -29605,8 +29669,8 @@ occurred on multiple sites:
 </tr>
 <tr class="gap">
   <th>gap</th>
-  <td>10</td><td></td><td>1</td><td></td><td>4</td><td></td><td></td><td></td><td>15</td><td>4</td><td>2</td><td></td><td>1</td><td></td><td></td><td>1</td><td>2</td><td>2</td><td></td><td></td><td>1</td><td></td><td></td><td></td><td></td><td>2</td>
-  <td>(45)</td>
+  <td>10</td><td></td><td>1</td><td></td><td>4</td><td></td><td></td><td></td><td>13</td><td>4</td><td>2</td><td></td><td>1</td><td></td><td></td><td>1</td><td>2</td><td>2</td><td></td><td></td><td>1</td><td></td><td></td><td></td><td></td><td>2</td>
+  <td>(43)</td>
 </tr>
 <tr class="unset">
   <th>unset</th>
@@ -29813,8 +29877,8 @@ occurred on multiple sites:
 </tr>
 <tr class="new-concept">
   <th>apartment</th>
-  <td>2</td><td></td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>1</td><td></td><td></td><td>5</td><td></td><td>3</td><td></td><td></td><td>6</td><td></td><td></td><td>4</td><td>8</td><td>2</td><td></td><td>2</td>
-  <td>(35)</td>
+  <td>2</td><td></td><td>1</td><td></td><td></td><td></td><td></td><td></td><td>2</td><td>1</td><td>1</td><td></td><td></td><td>5</td><td></td><td>3</td><td></td><td></td><td>6</td><td></td><td></td><td>4</td><td>8</td><td>2</td><td></td><td>2</td>
+  <td>(37)</td>
 </tr>
 <tr class="new-concept">
   <th>floor</th>
@@ -29833,8 +29897,8 @@ occurred on multiple sites:
 </tr>
 <tr class="new-concept">
   <th>entrance</th>
-  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>4</td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>6</td><td></td><td></td><td></td>
-  <td>(11)</td>
+  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>3</td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>6</td><td></td><td></td><td></td>
+  <td>(10)</td>
 </tr>
 
 <tr class="header">
@@ -29910,8 +29974,8 @@ occurred on multiple sites:
 </tr>
 <tr class="new-concept">
   <th>address-overflow</th>
-  <td>3</td><td></td><td></td><td></td><td></td><td>7</td><td></td><td></td><td>3</td><td>1</td><td>3</td><td></td><td></td><td></td><td></td><td></td><td>2</td><td></td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-  <td>(20)</td>
+  <td>3</td><td></td><td></td><td></td><td></td><td>7</td><td></td><td></td><td>4</td><td>1</td><td>3</td><td></td><td></td><td></td><td></td><td></td><td>2</td><td></td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  <td>(21)</td>
 </tr>
 
 </table>
@@ -29968,7 +30032,7 @@ occurred on multiple sites:
     <code class="new-concept">address-overflow</code>
   </td>
   <td><code class="unknown-concept new-concept">very country specific</code></td>
-  <td>20</td>
+  <td>21</td>
   <td>AR, DE, ES, FR, GB, IT, MX</td>
 </tr>
 
@@ -30031,6 +30095,10 @@ occurred on multiple sites:
   <td>1</td>
   <td>GB</td>
 </tr><tr>
+  <td>apartment, floor, organization, staircase</td>
+  <td>1</td>
+  <td>ES</td>
+</tr><tr>
   <td>apartment, house-number</td>
   <td>1</td>
   <td>TR</td>
@@ -30066,10 +30134,6 @@ occurred on multiple sites:
   <td>care-of, floor</td>
   <td>1</td>
   <td>GR</td>
-</tr><tr>
-  <td>entrance, floor, organization, staircase</td>
-  <td>1</td>
-  <td>ES</td>
 </tr><tr>
   <td>gap, staircase</td>
   <td>1</td>

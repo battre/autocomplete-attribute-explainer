@@ -87,7 +87,7 @@ site_examples {
     fields {
       name: "|address"
       label: "Dirección (debes indicar calle, portal, piso y letra)"
-      label_translated: "Address (you must indicate street, portal, floor and letter)"
+      label_translated: "Address (you must indicate street, portal, floor and apartment)"
       control_type: INPUT
       concepts: "address-line1"
       section: ADDRESS

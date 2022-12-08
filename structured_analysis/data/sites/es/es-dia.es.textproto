@@ -284,10 +284,9 @@ site_examples {
     fields {
       name: "address.apartment|deliveryAddress.apartment"
       label: "Letra"
-      label_translated: "Letter"
-      label_comment: "The HTML code refers to deliveryAddress.apartment"
+      label_translated: "apartment"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "apartment"
       section: ADDRESS
     }
     fields {
