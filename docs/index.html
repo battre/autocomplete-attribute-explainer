@@ -722,24 +722,29 @@ The following icons are used below:
 <section>
   <h2>Big and global questions</h2>
 <ul>
-  <li>Do we want to support multiple field concurrent types? E.g. I see
-    "name or company" fields. I don't see an obvious syntax for adding this
-    capability to the autocomplee attribute. If you search for '[' below
-    you can find examples where a website requested one (or more) of multiple
-    field types.
+  <li>Do we want to support multiple concurrent field types? For example a
+    single &lt;input&gt; field for "name or company". I don't see an obvious
+    syntax for adding this capability to the autocomplete attribute. If you search
+    for '[' below, you can find examples where a website requested one (or more)
+    of multiple field types. Several such cases are already expressed via new
+    compound field types like <pre>street-location</pre> (street name and house
+    number) that I am proposing here.
   <li>How do we model the "everything else" field type? Do we want to call it
     "address-overflow", "address-supplement" (this seems to be a term that is
     quite common in many countries), "building-and-location-in-building" (also
     common)? The latter may be too narrow because it does not cover a company
     name or c/o. Some websites would not want a company or c/o in their
-    "everything else" fileds while others would want them.<br>
+    "everything else" fields while others would want them.<br>
     Instead of an "everything else" type we could ask websites to enumerate
-    what should go into the list (see the previous bullet point).
+    what should go into these fields (see the previous bullet point).
   <li>Are we ok with introducing country specific concepts? E.g. Hungary
     separates the name of a street (e.g. "Amphitheatre") from the type of the
     street ("Ave", "Pkwy", "Blvd", ...). I haven't seen this anywhere else.
     It's essential to fill Hungarian address forms but we should not offer this
-    to all users.
+    to all users.<br>
+    How far do we go? In Spain we see the "Tipo de vía" but websites offer
+    different options to choose from. Do we want to prescribe a list of
+    supported road types?
   <li>Do we allow forms to specify an encoding? E.g. Japanese forms are picky
     about ASCII, full-width or half-width characters.
   <li>TODO:
@@ -754,11 +759,11 @@ The following icons are used below:
     is longer.
   <li>Many naming questions...
     <ul>
-      <li>What do we call the location information to find
-        a place inside a building? "location-in-building"? "sub-building"?
+      <li>What do we call the field type to find a place inside a building?
+        "location-in-building"? "sub-building"?
       <li>What do we name things that are very country/culture specific
         (Hungary's separation between street name and street type, entrecalles,
-        ...)?
+        stroenie/korpus, ...)?
     </ul>
 </ul>
 
@@ -9018,6 +9023,14 @@ field.
     href="https://www.wordreference.com/es/en/translation.asp?spen=Urbanizaci%C3%B3n">This</a>
     also suggests "residential area".
   </li>
+  <li>
+    Streets sometimes are long and have no numbers, indicated by "s/n" put in
+    the number field (sin numero). Instead of the number, buildings are then
+    referenced either by building name ("Edificio [name]") or sometimes groups
+    of buildings/gated communities are called Urbanización which also have a
+    name. Within the Urbanización, apartment buildings are then referenced by
+    staircase ("Escalera/Esc. [number]").
+  </li>
 </ul>
   
   <h4 id="ES-1"> <!-- <a href="#ES-1">#</a> -->
@@ -10906,35 +10919,6 @@ portal, escalera, planta, puerta with the following options
     Interior, Local, Office, Stall, Store)
   </ul>
 </ul>
-
-<!--
-Hi Dominic! I was at the Tech Talk this morning and I might be able to help you
-with the Spain questions. I am not Spanish neither I have lived in Spain.
-However, I am from Portugal, and the questions that you have from Spain seem to
-point that addresses work similarly in Portugal.
-
-Gate/Puerta/Porta (PT)/Door (EN) is the building/house number. Usually is next
-to the door, that's way we call it just door.
-
-Floor/Stair case and Apartment. Apartments are usually numbered. It is not like
-in Germany where you have your last name next to the doorbell. Each apartment
-has a number. That number is composed by first the floor number and then the
-number/side of the apartment on that floor. For exemple: apartment 34 is the 4th
-apartment on the 3rd floor. Or apartment 3rd left is the apartment on the 3rd
-floor on the left side. Some companies have the fields for you to insert Floor
-and Apartment separately. So in the example prior would be: Floor: 3; Apartment:
-4 or Left. Sometimes they just say Apartment number, you would just put 34 or
-3rd left.
-
-Type of street I think sometimes they want you to differentiate between if it is
-an avenue, plaza or just a normal street.
-
-Residencial area. I think originally is Urbanización. This is not the correct
-translation. It is a small area of houses or buildings. It is not official and
-usually don't need to put it in the addresses. But it helps people find it.
-
-Letra is *probably* the apartment
--->
 
   <h3 id="FR"><a href="#FR">#</a> FR
     - France 🇫🇷</h3>
