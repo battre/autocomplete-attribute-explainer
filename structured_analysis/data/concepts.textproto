@@ -487,7 +487,8 @@ concepts {
 
 concepts {
   name: "between-streets"
-  description: "Between streets"
+  description: "Between streets (TODO: Consider making this just a special "
+      "translation of the term 'landmark')"
   canonical_format_example: "A street and B street"
   label: "Between streets"
   is_new: true
