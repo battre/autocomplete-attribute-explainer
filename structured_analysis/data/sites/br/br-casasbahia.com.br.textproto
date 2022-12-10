@@ -35,8 +35,7 @@ site_examples {
       example: "Ex: Apto 123"
       example_translated: "Ex: Apt 123"
       control_type: INPUT
-      concepts: "apartment"
-      low_certainty: true
+      concepts: "address-overflow"
       section: ADDRESS
     }
     fields {

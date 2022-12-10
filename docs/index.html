@@ -4155,6 +4155,9 @@ occurred on multiple sites:
         community.
       <li>floor
     </ul>
+    Note that the sites I investigated agreed on the use of an "additional
+    information" field and never split the the apartment number and house name
+    into individual fields.
   <li>reference-point (landmark?) (Referência; Complemento e referência;
     Ponto de referência) - e.g. people would put 'same street as Church
     xyz' there to help the delivery person find the location.
@@ -4163,9 +4166,11 @@ occurred on multiple sites:
 <h4>Open questions</h4>
 <ul>
   <li>I have modeled the additional information as
-    "building-and-location-in-building" and reference-point as "landmark".
-    Any concerns about this? It will require some localization in the UI
+    "address-overflow" and reference-point as "landmark".
+    Any concerns about this? This will require some localization in the UI
     because Brasilians probably don't think of landmarks as reference-points.
+    Instead of "address-overflow", we could also choose
+    "building-and-location-in-building".
 </ul>
 
 <p>Progress: ☑ First round of cleanup, ☑ Discussed with a (former) resident
@@ -4551,7 +4556,7 @@ occurred on multiple sites:
     |<span id="concept_field_886"><code
     class="new-concept ">
       
-  <span id="">building-and-location-in-building</span>
+  <span id="">address-overflow</span>
 
     </code></span>
     |<span id="concept_field_887"><code
@@ -4646,7 +4651,7 @@ occurred on multiple sites:
     |<span id="concept_field_969"><code
     class="new-concept ">
       
-  <span id="">building-and-location-in-building</span>
+  <span id="">address-overflow</span>
 
     </code></span>
     |<span id="concept_field_970"><code
@@ -4823,7 +4828,7 @@ occurred on multiple sites:
     |<span id="concept_field_1008"><code
     class="new-concept ">
       
-  <span id="">building-and-location-in-building</span>
+  <span id="">address-overflow</span>
 
     </code></span>
     |<span id="concept_field_1009"><code
@@ -4924,7 +4929,7 @@ occurred on multiple sites:
     |[<span id="concept_field_1031"><code
     class="new-concept ">
       
-  <span id="">building-and-location-in-building</span>
+  <span id="">address-overflow</span>
 
     </code><code
     class="new-concept ">
@@ -4996,9 +5001,9 @@ occurred on multiple sites:
 
     </code></span>
     |<span id="concept_field_1037"><code
-    class="new-concept low-certainty">
+    class="new-concept ">
       
-  <span id="">apartment</span>
+  <span id="">address-overflow</span>
 
     </code></span>
     |<span id="concept_field_1038"><code
@@ -5075,7 +5080,7 @@ occurred on multiple sites:
     |[<span id="concept_field_1103"><code
     class="new-concept ">
       
-  <span id="">building-and-location-in-building</span>
+  <span id="">address-overflow</span>
 
     </code><code
     class="new-concept ">
@@ -5169,7 +5174,7 @@ occurred on multiple sites:
     |<span id="concept_field_1161"><code
     class="new-concept ">
       
-  <span id="">building-and-location-in-building</span>
+  <span id="">address-overflow</span>
 
     </code></span>
     |<span id="concept_field_1162"><code
@@ -5268,7 +5273,7 @@ occurred on multiple sites:
     |<span id="concept_field_1196"><code
     class="new-concept ">
       
-  <span id="">building-and-location-in-building</span>
+  <span id="">address-overflow</span>
 
     </code></span>
     |<span id="concept_field_1197"><code
@@ -5331,7 +5336,7 @@ occurred on multiple sites:
     |<span id="concept_field_1207"><code
     class="new-concept ">
       
-  <span id="">building-and-location-in-building</span>
+  <span id="">address-overflow</span>
 
     </code></span>
     
@@ -29861,8 +29866,8 @@ occurred on multiple sites:
 </tr>
 <tr class="new-concept">
   <th>apartment</th>
-  <td>2</td><td></td><td>1</td><td></td><td></td><td></td><td></td><td></td><td>2</td><td>1</td><td>1</td><td></td><td></td><td>5</td><td></td><td>3</td><td></td><td></td><td>6</td><td></td><td></td><td>4</td><td>8</td><td>2</td><td></td><td>2</td>
-  <td>(37)</td>
+  <td>2</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>2</td><td>1</td><td>1</td><td></td><td></td><td>5</td><td></td><td>3</td><td></td><td></td><td>6</td><td></td><td></td><td>4</td><td>8</td><td>2</td><td></td><td>2</td>
+  <td>(36)</td>
 </tr>
 <tr class="new-concept">
   <th>floor</th>
@@ -29937,8 +29942,8 @@ occurred on multiple sites:
 </tr>
 <tr class="new-concept">
   <th>building-and-location-in-building</th>
-  <td></td><td>3</td><td>8</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>8</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-  <td>(19)</td>
+  <td></td><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>8</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  <td>(11)</td>
 </tr>
 <tr class="new-concept">
   <th>address-search</th>
@@ -29958,8 +29963,8 @@ occurred on multiple sites:
 </tr>
 <tr class="new-concept">
   <th>address-overflow</th>
-  <td>3</td><td></td><td></td><td></td><td></td><td>7</td><td></td><td></td><td>4</td><td>1</td><td>3</td><td></td><td></td><td></td><td></td><td></td><td>2</td><td></td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-  <td>(21)</td>
+  <td>3</td><td></td><td>9</td><td></td><td></td><td>7</td><td></td><td></td><td>4</td><td>1</td><td>3</td><td></td><td></td><td></td><td></td><td></td><td>2</td><td></td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  <td>(30)</td>
 </tr>
 
 </table>
@@ -29998,8 +30003,8 @@ occurred on multiple sites:
     <code class="new-concept">building-and-location-in-building</code>
   </td>
   <td><code class="new-concept">building</code><code class="new-concept">location-in-building</code></td>
-  <td>19</td>
-  <td>AU, BR, JP</td>
+  <td>11</td>
+  <td>AU, JP</td>
 </tr>
 
 <tr>
@@ -30016,8 +30021,8 @@ occurred on multiple sites:
     <code class="new-concept">address-overflow</code>
   </td>
   <td><code class="unknown-concept new-concept">very country specific</code></td>
-  <td>21</td>
-  <td>AR, DE, ES, FR, GB, IT, MX</td>
+  <td>30</td>
+  <td>AR, BR, DE, ES, FR, GB, IT, MX</td>
 </tr>
 
 </table>
@@ -30071,6 +30076,10 @@ occurred on multiple sites:
   <td>2</td>
   <td>IN</td>
 </tr><tr>
+  <td>address-overflow, landmark</td>
+  <td>2</td>
+  <td>BR</td>
+</tr><tr>
   <td>apartment, building</td>
   <td>1</td>
   <td>IN</td>
@@ -30094,10 +30103,6 @@ occurred on multiple sites:
   <td>building-and-location-in-building, door-code</td>
   <td>1</td>
   <td>JP</td>
-</tr><tr>
-  <td>building-and-location-in-building, landmark</td>
-  <td>2</td>
-  <td>BR</td>
 </tr><tr>
   <td>building-and-location-in-building, street-location</td>
   <td>1</td>

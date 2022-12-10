@@ -56,7 +56,7 @@ site_examples {
       label: "Informações adicionais"
       label_translated: "Additional Information"
       control_type: INPUT
-      concepts: "building-and-location-in-building"
+      concepts: "address-overflow"
       autocomplete_attribute: "street-address address-line2"
       section: ADDRESS
     }

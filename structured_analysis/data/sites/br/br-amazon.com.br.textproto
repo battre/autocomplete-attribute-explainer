@@ -271,7 +271,7 @@ site_examples {
       example: "Apartamento, sala, conjunto, edifício, andar, etc."
       example_translated: "Apartment, room, suite, building, floor, etc."
       control_type: INPUT
-      concepts: "building-and-location-in-building"
+      concepts: "address-overflow"
       section: ADDRESS
     }
     fields {

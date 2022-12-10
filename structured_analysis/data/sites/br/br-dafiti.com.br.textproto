@@ -260,7 +260,7 @@ site_examples {
       example: "Nº do apartamento, Bloco, etc."
       example_translated: "apartment number, block"
       control_type: INPUT
-      concepts: "building-and-location-in-building"
+      concepts: "address-overflow"
       section: ADDRESS
     }
     fields {

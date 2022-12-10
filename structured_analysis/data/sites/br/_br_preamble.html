@@ -22,6 +22,9 @@ occurred on multiple sites:
         community.
       <li>floor
     </ul>
+    Note that the sites I investigated agreed on the use of an "additional
+    information" field and never split the the apartment number and house name
+    into individual fields.
   <li>reference-point (landmark?) (Referência; Complemento e referência;
     Ponto de referência) - e.g. people would put 'same street as Church
     xyz' there to help the delivery person find the location.
@@ -30,9 +33,11 @@ occurred on multiple sites:
 <h4>Open questions</h4>
 <ul>
   <li>I have modeled the additional information as
-    "building-and-location-in-building" and reference-point as "landmark".
-    Any concerns about this? It will require some localization in the UI
+    "address-overflow" and reference-point as "landmark".
+    Any concerns about this? This will require some localization in the UI
     because Brasilians probably don't think of landmarks as reference-points.
+    Instead of "address-overflow", we could also choose
+    "building-and-location-in-building".
 </ul>
 
 <p>Progress: ☑ First round of cleanup, ☑ Discussed with a (former) resident

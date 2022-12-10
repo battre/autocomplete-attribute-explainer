@@ -72,7 +72,7 @@ site_examples {
       label: "Complemento (opcional). Digite o apto, n° do bloco, condomínio"
       label_translated: "Add-on (optional). Enter the apartment, block number, condominium"
       control_type: INPUT
-      concepts: "building-and-location-in-building"
+      concepts: "address-overflow"
       section: ADDRESS
     }
     fields {
