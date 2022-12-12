@@ -86,7 +86,7 @@ site_examples {
     fields {
       name: "REGULAR-shipping-addressLine1|addressLine1"
       label: "Dirección: nombre de la calle, portal, escalera, piso y puerta."
-      label_translated: "Address: name of the street, portal, stairs, floor and door."
+      label_translated: "Address: name of the street, portal, stairs, floor and apartment."
       control_type: INPUT
       concepts: "address-line1"
       autocomplete_attribute: "new-password"

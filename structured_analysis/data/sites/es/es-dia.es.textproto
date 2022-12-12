@@ -245,7 +245,7 @@ site_examples {
         "SQUARE, VILLAGE , POLYGON, PROLONGATION, RAMBLA, RESIDENCE, RONDA, "
         "PATH, RISE, TORRENT, CROSSING, URBANIZATION, AREA"
       control_type: SELECT
-      concepts: "gap"
+      concepts: "street-name-type"
       section: ADDRESS
     }
     fields {
@@ -253,7 +253,7 @@ site_examples {
       label: "Nombre de la vía"
       label_translated: "Name of the road"
       control_type: INPUT
-      concepts: "street-name"
+      concepts: "street-name-name"
       section: ADDRESS
     }
     fields {

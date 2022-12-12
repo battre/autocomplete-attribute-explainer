@@ -195,7 +195,7 @@ site_examples {
         "Promenade, Plaza, Rambla, Ronda, Rise, Path, Crossing, Torrent, "
         "Urbanization"
       control_type: SELECT
-      concepts: "gap"
+      concepts: "street-name-type"
       section: ADDRESS
     }
     fields {
@@ -203,7 +203,7 @@ site_examples {
       label: "Nombre de vía"
       label_translated: "Street name"
       control_type: INPUT
-      concepts: "street-name"
+      concepts: "street-name-name"
       section: ADDRESS
     }
     fields {
@@ -218,7 +218,7 @@ site_examples {
       name: "without_number|without_number"
       label: "s/n"
       label_translated: "n/a"
-      example: "sem número"
+      example: "sin número"
       example_translated: "without house number"
       control_type: CHECKBOX
       concepts: "gap"
@@ -251,10 +251,10 @@ site_examples {
     fields {
       name: "door|door"
       label: "Puerta"
-      label_translated: "Gate"
+      label_translated: "Apartment"
       label_comment: "The HTML code referrs to a 'door'."
       control_type: INPUT
-      concepts: "entrance"
+      concepts: "apartment"
       section: ADDRESS
     }
     fields {

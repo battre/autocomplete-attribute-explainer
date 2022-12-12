@@ -458,8 +458,8 @@ useful for more countries.
     <td><code class="new-concept">
       street-name-name
     </code>
-      (HU)</td>
-    <td>Name part of a Hungarian street (Közterület neve). Together with street-name-type (Közterület jellege), these two result in a street-name.</td>
+      (ES, HU)</td>
+    <td>Name part of a Hungarian street (Közterület neve). Together with street-name-type (Közterület jellege), these two result in a street-name. Also in Spain websites split the name part from the type of the street.</td>
     <td>Amphitheatre (translated to English)</td>
   </tr>
 
@@ -467,8 +467,8 @@ useful for more countries.
     <td><code class="new-concept">
       street-name-type
     </code>
-      (HU)</td>
-    <td>Type part of a Hungarian street (Közterület jellege). Together with street-name-name (Közterület neve), these two result in a street-name.</td>
+      (ES, HU)</td>
+    <td>Type part of a Hungarian street (Közterület jellege). Together with street-name-name (Közterület neve), these two result in a street-name. Also in Spain websites split the name part from the type of the street.</td>
     <td>Blvd., Pkwy., Ln., Ave. (translated to English)</td>
   </tr>
 
@@ -8988,9 +8988,9 @@ ultra-detailed information (one field for each of):
 <li>Type of street
 <li>Stair case
 <li>Floor
-<li>Apartment
-<li>Gate ('Puerta' - might refer to an apartment)
-<li>Residential area (?)
+<li>Apartment (either 'letra' or 'puerta' which was once described as the
+delivery door but also refers to an apartment)
+<li>Urbanización
 </ul>
 
 This information can also be requested in a single address overflow
@@ -9028,7 +9028,9 @@ field.
     be gated communities but don't have to be gated communities. They are
     much smaller than a parish and just point to a general small area in a city.
     An Urbanización is not official and usually doesn't need to filled in an
-    address form. I am still looking for an apropriate translation.
+    address form. It often shares amenities (playground, swimming pool, garage)
+    among the residents and the construction of multiple houses belonging
+    to the Urbanización was led by the same company. I am still looking for an apropriate translation.
     <a href="https://www.spanishdict.com/translate/Urbanizaci%C3%B3n">This</a>
     suggests "(private) housing development". <a
     href="https://www.wordreference.com/es/en/translation.asp?spen=Urbanizaci%C3%B3n">This</a>
@@ -9041,6 +9043,21 @@ field.
     of buildings/gated communities are called Urbanización which also have a
     name. Within the Urbanización, apartment buildings are then referenced by
     staircase ("Escalera/Esc. [number]").
+  </li>
+  <li>
+    Tipo de vía (type of street) is often a &lt;select&gt; element with
+    many options. Different websites don't agree on a standard set. Maybe we
+    should just offer a limited set ("Calle", "Plaza", "Avenida" were mentioned
+    to me as the most popular ones) and "other". If the stored record is
+    "other", we don't fill. Or we fill the last observed value in case it is
+    found on the current website.<br>
+    If we fill a form which has a sparatent entry for "Tipo de vía" and we
+    select "Calle", we should not repeat that in the street name field. "Avenida
+    San Martín" becomes "Avenida" (type of street) and "San Martín" (name of
+    street).<br>
+    <a href="https://www.laputa.it/spanish-street-types/?lang=en">This</a> is
+    an interesting articule on Spanish street types. It states that the street
+    type is a prefix of the specific piece of a street name.
   </li>
 </ul>
   
@@ -10002,9 +10019,9 @@ field.
 
     </code></span>
     |<span id="concept_field_3314"><code
-    class="gap ">
+    class="new-concept ">
       
-  <span id="">gap</span>
+  <span id="">apartment</span>
 
     </code></span>
     |<span id="concept_field_3315"><code
@@ -10072,7 +10089,7 @@ field.
 <span class="separator">|</span>
   <span id="translated_term_field_3536">Staircase - Block</span>
 <span class="separator">|</span>
-  <span id="translated_term_field_3537">Gate</span>
+  <span id="translated_term_field_3537">Apartment</span>
 <span class="separator">|</span>
   <span id="translated_term_field_3538">Urbanization</span>
 
@@ -10097,15 +10114,15 @@ field.
 
     </code></span>
     |<span id="concept_field_3532"><code
-    class="gap ">
+    class="new-concept ">
       
-  <span id="">gap</span>
+  <span id="">street-name-type</span>
 
     </code></span>
     |<span id="concept_field_3533"><code
     class="new-concept ">
       
-  <span id="">street-name</span>
+  <span id="">street-name-name</span>
 
     </code></span>
     |<span id="concept_field_3534"><code
@@ -10132,9 +10149,9 @@ field.
 
     </code></span>
     ]|<span id="concept_field_3537"><code
-    class="new-concept low-certainty">
+    class="new-concept ">
       
-  <span id="">entrance</span>
+  <span id="">apartment</span>
 
     </code></span>
     |<span id="concept_field_3538"><code
@@ -10261,15 +10278,15 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
 </td>
       <td>
   <span id="concept_field_3594"><code
-    class="gap ">
+    class="new-concept ">
       
-  <span id="">gap</span>
+  <span id="">street-name-type</span>
 
     </code></span>
     |<span id="concept_field_3595"><code
     class="new-concept ">
       
-  <span id="">street-name</span>
+  <span id="">street-name-name</span>
 
     </code></span>
     |<span id="concept_field_3596"><code
@@ -10346,7 +10363,7 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
 <span class="separator">|</span>
   <span id="term_field_3632">Número</span>
 <span class="separator">|</span>
-  <span id="term_field_3633">☑ s/n (sem número)</span>
+  <span id="term_field_3633">☑ s/n (sin número)</span>
 <span class="separator">|</span>
   <span id="term_field_3634">Bloque/Edificio</span>
 <span class="separator">|</span>
@@ -10385,7 +10402,7 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
 <span class="separator">|</span>
   <span id="translated_term_field_3636">Floor</span>
 <span class="separator">|</span>
-  <span id="translated_term_field_3637">Gate</span>
+  <span id="translated_term_field_3637">Apartment</span>
 <span class="separator">|</span>
   <span id="translated_term_field_3638">Additional Information</span>
 <span class="separator">|</span>
@@ -10408,15 +10425,15 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
 
     </code></span>
     |<span id="concept_field_3630"><code
-    class="gap ">
+    class="new-concept ">
       
-  <span id="">gap</span>
+  <span id="">street-name-type</span>
 
     </code></span>
     |<span id="concept_field_3631"><code
     class="new-concept ">
       
-  <span id="">street-name</span>
+  <span id="">street-name-name</span>
 
     </code></span>
     |<span id="concept_field_3632"><code
@@ -10452,7 +10469,7 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
     |<span id="concept_field_3637"><code
     class="new-concept ">
       
-  <span id="">entrance</span>
+  <span id="">apartment</span>
 
     </code></span>
     |<span id="concept_field_3638"><code
@@ -10504,7 +10521,7 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
 <span class="separator">|</span>
   <span id="translated_term_field_3655">Other address information</span>
 <span class="separator">|</span>
-  <span id="translated_term_field_3656">Floor, door, portal...</span>
+  <span id="translated_term_field_3656">Floor, apartment, portal...</span>
 <span class="separator">|</span>
   <span id="translated_term_field_3657">Postal Code *</span>
 <span class="separator">|</span>
@@ -10623,7 +10640,7 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
 <span class="separator">|</span>
   <span id="translated_term_field_3672">Floor</span>
 <span class="separator">|</span>
-  <span id="translated_term_field_3673">Gate</span>
+  <span id="translated_term_field_3673">Apartment</span>
 <span class="separator">|</span>
   <span id="translated_term_field_3674">Any special indication? (Ex: the building is within an urbanization)</span>
 <span class="separator">|</span>
@@ -10656,15 +10673,15 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
 
     </code></span>
     |<span id="concept_field_3666"><code
-    class="gap ">
+    class="new-concept ">
       
-  <span id="">gap</span>
+  <span id="">street-name-type</span>
 
     </code></span>
     |<span id="concept_field_3667"><code
     class="new-concept ">
       
-  <span id="">street-name</span>
+  <span id="">street-name-name</span>
 
     </code></span>
     |<span id="concept_field_3668"><code
@@ -10700,7 +10717,7 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
     |<span id="concept_field_3673"><code
     class="new-concept ">
       
-  <span id="">entrance</span>
+  <span id="">apartment</span>
 
     </code></span>
     |<span id="concept_field_3674"><code
@@ -10787,7 +10804,7 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
 </td>
       <td>
   
-  <span id="translated_term_field_3727">Address: name of the street, portal, stairs, floor and door.</span>
+  <span id="translated_term_field_3727">Address: name of the street, portal, stairs, floor and apartment.</span>
 <span class="separator">|</span>
   <span id="translated_term_field_3728">Municipality</span>
 <span class="separator">|</span>
@@ -12139,9 +12156,9 @@ occurred on multiple sites:
 
     </code></span>
     |<span id="concept_field_4060"><code
-    class="gap low-certainty">
+    class="new-concept ">
       
-  <span id="">gap</span>
+  <span id="">address-overflow</span>
 
     </code></span>
     |<span id="concept_field_4061"><code
@@ -19910,9 +19927,9 @@ occurred on multiple sites:
 
     </code></span>
     |<span id="concept_field_6750"><code
-    class="gap ">
+    class="new-concept ">
       
-  <span id="">gap</span>
+  <span id="">care-of</span>
 
     </code></span>
     |<span id="concept_field_6751"><code
@@ -29664,8 +29681,8 @@ occurred on multiple sites:
 </tr>
 <tr class="gap">
   <th>gap</th>
-  <td>10</td><td></td><td>1</td><td></td><td>4</td><td></td><td></td><td></td><td>13</td><td>4</td><td>2</td><td></td><td>1</td><td></td><td></td><td>1</td><td>2</td><td>2</td><td></td><td></td><td>1</td><td></td><td></td><td></td><td></td><td>2</td>
-  <td>(43)</td>
+  <td>10</td><td></td><td>1</td><td></td><td>4</td><td></td><td></td><td></td><td>8</td><td>3</td><td>2</td><td></td><td>1</td><td></td><td></td><td>1</td><td>1</td><td>2</td><td></td><td></td><td>1</td><td></td><td></td><td></td><td></td><td>2</td>
+  <td>(36)</td>
 </tr>
 <tr class="unset">
   <th>unset</th>
@@ -29831,8 +29848,8 @@ occurred on multiple sites:
 </tr>
 <tr class="new-concept">
   <th>street-name</th>
-  <td>13</td><td>2</td><td>7</td><td></td><td></td><td>5</td><td></td><td>1</td><td>5</td><td>3</td><td>5</td><td>4</td><td>1</td><td>2</td><td></td><td>3</td><td>7</td><td></td><td>5</td><td>1</td><td></td><td>5</td><td>3</td><td>1</td><td></td><td>1</td>
-  <td>(74)</td>
+  <td>13</td><td>2</td><td>7</td><td></td><td></td><td>5</td><td></td><td>1</td><td>1</td><td>3</td><td>5</td><td>4</td><td>1</td><td>2</td><td></td><td>3</td><td>7</td><td></td><td>5</td><td>1</td><td></td><td>5</td><td>3</td><td>1</td><td></td><td>1</td>
+  <td>(70)</td>
 </tr>
 
 <tr class="header">
@@ -29852,13 +29869,13 @@ occurred on multiple sites:
 </tr>
 <tr class="new-concept">
   <th>street-name-name</th>
-  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-  <td>(3)</td>
+  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>4</td><td></td><td></td><td></td><td></td><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  <td>(7)</td>
 </tr>
 <tr class="new-concept">
   <th>street-name-type</th>
-  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-  <td>(3)</td>
+  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>4</td><td></td><td></td><td></td><td></td><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  <td>(7)</td>
 </tr>
 <tr class="new-concept">
   <th>stroenie</th>
@@ -29872,8 +29889,8 @@ occurred on multiple sites:
 </tr>
 <tr class="new-concept">
   <th>apartment</th>
-  <td>2</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>2</td><td>1</td><td>1</td><td></td><td></td><td>5</td><td></td><td>3</td><td></td><td></td><td>6</td><td></td><td></td><td>4</td><td>8</td><td>2</td><td></td><td>2</td>
-  <td>(36)</td>
+  <td>2</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>6</td><td>1</td><td>1</td><td></td><td></td><td>5</td><td></td><td>3</td><td></td><td></td><td>6</td><td></td><td></td><td>4</td><td>8</td><td>2</td><td></td><td>2</td>
+  <td>(40)</td>
 </tr>
 <tr class="new-concept">
   <th>floor</th>
@@ -29892,8 +29909,8 @@ occurred on multiple sites:
 </tr>
 <tr class="new-concept">
   <th>entrance</th>
-  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>3</td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>6</td><td></td><td></td><td></td>
-  <td>(10)</td>
+  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>6</td><td></td><td></td><td></td>
+  <td>(7)</td>
 </tr>
 
 <tr class="header">
@@ -29923,8 +29940,8 @@ occurred on multiple sites:
 </tr>
 <tr class="new-concept">
   <th>care-of</th>
-  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td><td></td><td></td><td></td><td></td><td></td>
-  <td>(2)</td>
+  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td><td></td><td></td><td></td><td></td><td>1</td><td></td><td></td><td></td><td>1</td><td></td><td></td><td></td><td></td><td></td>
+  <td>(3)</td>
 </tr>
 <tr class="new-concept">
   <th>between-streets</th>
@@ -29969,8 +29986,8 @@ occurred on multiple sites:
 </tr>
 <tr class="new-concept">
   <th>address-overflow</th>
-  <td>3</td><td></td><td>9</td><td></td><td></td><td>7</td><td></td><td></td><td>4</td><td>1</td><td>3</td><td></td><td></td><td></td><td></td><td></td><td>2</td><td></td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-  <td>(30)</td>
+  <td>3</td><td></td><td>9</td><td></td><td></td><td>7</td><td></td><td></td><td>4</td><td>2</td><td>3</td><td></td><td></td><td></td><td></td><td></td><td>2</td><td></td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  <td>(31)</td>
 </tr>
 
 </table>
@@ -30027,7 +30044,7 @@ occurred on multiple sites:
     <code class="new-concept">address-overflow</code>
   </td>
   <td><code class="unknown-concept new-concept">very country specific</code></td>
-  <td>30</td>
+  <td>31</td>
   <td>AR, BR, DE, ES, FR, GB, IT, MX</td>
 </tr>
 

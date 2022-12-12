@@ -83,7 +83,7 @@ site_examples {
     fields {
       name: "floor"
       label: "Piso, puerta, portal..."
-      label_translated: "Floor, door, portal..."
+      label_translated: "Floor, apartment, portal..."
       control_type: INPUT
       concepts: "address-line3"
       concepts_comment: "The website labels this as autocomplete=address-line3 "

@@ -1348,7 +1348,7 @@ site_examples {
       example: "Acceso, Anexo de via, Apartado, Apartamentos, Avenida, Bajada, Barrio,                                 Calle, Cami, Camino, Cap, Carretera, Entrada, Gran via, Grupo, Lista, Lugar, Partida, Pasaje, Paseo, Plaza, Prolongacion, Rambla, Residencial, Ronda, Senda, Travesia"
       example_translated: "Access, Via annex (extension building), PO box?, Apartments, Avenue, Descent, Neighborhood, Street, ?, Path, ?, Highway, Entrance, Gran via, Group, List, Place, Departure, Passage, Walk, Plaza, Prolongation, Rambla, Residential , Round, Path, Crossing"
       control_type: SELECT
-      concepts: "gap"
+      concepts: "street-name-type"
       section: ADDRESS
     }
     fields {
@@ -1356,7 +1356,7 @@ site_examples {
       label: "Dirección*"
       label_translated: "Address*"
       control_type: INPUT
-      concepts: "street-name"
+      concepts: "street-name-name"
       section: ADDRESS
     }
     fields {
@@ -1387,11 +1387,10 @@ site_examples {
     fields {
       name: "form-zip-formaddress--input-letter|"
       label: "Puerta"
-      label_translated: "Gate"
+      label_translated: "Apartment"
       label_comment: "The HTML field name refers to a 'letter'."
       control_type: INPUT
-      low_certainty: true
-      concepts: "entrance"
+      concepts: "apartment"
       section: ADDRESS
     }
     fields {

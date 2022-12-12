@@ -5,9 +5,9 @@ ultra-detailed information (one field for each of):
 <li>Type of street
 <li>Stair case
 <li>Floor
-<li>Apartment
-<li>Gate ('Puerta' - might refer to an apartment)
-<li>Residential area (?)
+<li>Apartment (either 'letra' or 'puerta' which was once described as the
+delivery door but also refers to an apartment)
+<li>Urbanización
 </ul>
 
 This information can also be requested in a single address overflow
@@ -45,7 +45,9 @@ field.
     be gated communities but don't have to be gated communities. They are
     much smaller than a parish and just point to a general small area in a city.
     An Urbanización is not official and usually doesn't need to filled in an
-    address form. I am still looking for an apropriate translation.
+    address form. It often shares amenities (playground, swimming pool, garage)
+    among the residents and the construction of multiple houses belonging
+    to the Urbanización was led by the same company. I am still looking for an apropriate translation.
     <a href="https://www.spanishdict.com/translate/Urbanizaci%C3%B3n">This</a>
     suggests "(private) housing development". <a
     href="https://www.wordreference.com/es/en/translation.asp?spen=Urbanizaci%C3%B3n">This</a>
@@ -58,5 +60,20 @@ field.
     of buildings/gated communities are called Urbanización which also have a
     name. Within the Urbanización, apartment buildings are then referenced by
     staircase ("Escalera/Esc. [number]").
+  </li>
+  <li>
+    Tipo de vía (type of street) is often a &lt;select&gt; element with
+    many options. Different websites don't agree on a standard set. Maybe we
+    should just offer a limited set ("Calle", "Plaza", "Avenida" were mentioned
+    to me as the most popular ones) and "other". If the stored record is
+    "other", we don't fill. Or we fill the last observed value in case it is
+    found on the current website.<br>
+    If we fill a form which has a sparatent entry for "Tipo de vía" and we
+    select "Calle", we should not repeat that in the street name field. "Avenida
+    San Martín" becomes "Avenida" (type of street) and "San Martín" (name of
+    street).<br>
+    <a href="https://www.laputa.it/spanish-street-types/?lang=en">This</a> is
+    an interesting articule on Spanish street types. It states that the street
+    type is a prefix of the specific piece of a street name.
   </li>
 </ul>

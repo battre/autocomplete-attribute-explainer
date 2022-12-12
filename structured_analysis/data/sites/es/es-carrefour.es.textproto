@@ -1574,7 +1574,7 @@ site_examples {
       label: "Puerta"
       label_translated: "Delivery door"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "apartment"
       autocomplete_attribute: "off"
       section: ADDRESS
     }
@@ -2045,7 +2045,7 @@ site_examples {
       label: "Dirección*"
       label_translated: "Address*"
       control_type: INPUT
-      concepts: "unset"
+      concepts: "street-name-name"
       autocomplete_attribute: "off"
       section: OTHER
     }
@@ -2054,7 +2054,7 @@ site_examples {
       label: "Tipo de Vía*"
       label_translated: "Type of road*"
       control_type: INPUT
-      concepts: "unset"
+      concepts: "street-name-type"
       section: OTHER
     }
     fields {

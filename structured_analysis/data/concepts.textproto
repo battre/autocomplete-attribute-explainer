@@ -362,11 +362,13 @@ concepts {
   name: "street-name-name"
   description: "Name part of a Hungarian street (Közterület neve). "
     "Together with street-name-type (Közterület jellege), these two result in "
-    "a street-name."
+    "a street-name. Also in Spain websites split the name part from the type "
+    "of the street."
   canonical_format_example: "Amphitheatre (translated to English)"
   label: "Name part of a public place (Közterület neve)"
   is_new: true
   # This concept should not be offered in all countries.
+  limited_to_countries: "ES"
   limited_to_countries: "HU"
 }
 
@@ -374,11 +376,13 @@ concepts {
   name: "street-name-type"
   description: "Type part of a Hungarian street (Közterület jellege). "
     "Together with street-name-name (Közterület neve), these two result in a "
-    "street-name."
+    "street-name. Also in Spain websites split the name part from the type "
+    "of the street."
   canonical_format_example: "Blvd., Pkwy., Ln., Ave. (translated to English)"
   label: "Type of a street"
   is_new: true
   # This concept should not be offered in all countries.
+  limited_to_countries: "ES"
   limited_to_countries: "HU"
 }
 

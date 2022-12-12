@@ -55,7 +55,7 @@ site_examples {
         "Promenade, Plaza, Small Square, Town, Polygon, Extension, Rambla, "
         "Ronda, Path, Ascent, Torrent, Crossing, Urbanization"
       control_type: SELECT
-      concepts: "gap"
+      concepts: "street-name-type"
       section: ADDRESS
     }
     fields {
@@ -63,7 +63,7 @@ site_examples {
       label: "Nombre de la vía *"
       label_translated: "Name of the road *"
       control_type: INPUT
-      concepts: "street-name"
+      concepts: "street-name-name"
       section: ADDRESS
     }
     fields {
@@ -125,9 +125,9 @@ site_examples {
     fields {
       name: "door|door"
       label: "Puerta"
-      label_translated: "Gate"
+      label_translated: "Apartment"
       control_type: INPUT
-      concepts: "entrance"
+      concepts: "apartment"
       section: ADDRESS
     }
     fields {
