@@ -109,8 +109,7 @@ site_examples {
       label: "Complément d\'adresse (facultatif)"
       label_translated: "Additional address (optional)"
       control_type: INPUT
-      concepts: "gap"
-      low_certainty: true
+      concepts: "address-overflow"
       autocomplete_attribute: "off"
       section: ADDRESS
     }

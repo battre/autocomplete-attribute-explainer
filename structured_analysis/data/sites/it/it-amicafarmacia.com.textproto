@@ -191,7 +191,7 @@ site_examples {
       label: "C/O Presso (azienda, interno, nome sul citofono etc.)"
       label_translated: "C/O At (company, extension, name on the intercom etc.)"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "care-of"
       section: ADDRESS
     }
     fields {
