@@ -337,7 +337,7 @@ The following icons are used below:
     syntax for adding this capability to the autocomplete attribute. If you search
     for '[' below, you can find examples where a website requested one (or more)
     of multiple field types. Several such cases are already expressed via new
-    compound field types like <pre>street-location</pre> (street name and house
+    compound field types like <code>street-location</code> (street name and house
     number) that I am proposing here.
   <li>How do we model the "everything else" field type? Do we want to call it
     "address-overflow", "address-supplement" (this seems to be a term that is
@@ -347,14 +347,14 @@ The following icons are used below:
     "everything else" fields while others would want them.<br>
     Instead of an "everything else" type we could ask websites to enumerate
     what should go into these fields (see the previous bullet point).
-  <li>Are we ok with introducing country specific concepts? E.g. Hungary
-    separates the name of a street (e.g. "Amphitheatre") from the type of the
-    street ("Ave", "Pkwy", "Blvd", ...). I haven't seen this anywhere else.
-    It's essential to fill Hungarian address forms but we should not offer this
-    to all users.<br>
-    How far do we go? In Spain we see the "Tipo de vía" but websites offer
-    different options to choose from. Do we want to prescribe a list of
-    supported road types?
+  <li>Are we ok with introducing country specific concepts? E.g. Hungary and
+    Spain separate the name of a street (e.g. "Amphitheatre") from the type of the
+    street ("Ave", "Pkwy", "Blvd", ...). I haven't seen this anywhere else. It's
+    essential to fill Hungarian and Spanish address forms but we should not offer
+    this to all users.<br>
+    How far do we go? In Spain we see the "Tipo de vía" as &lt;select&gt;
+    elements and websites offer different options to choose from. Do we want to
+    prescribe a list of supported road types?
   <li>Do we allow forms to specify an encoding? E.g. Japanese forms are picky
     about ASCII, full-width or half-width characters.
   <li>The <a href="https://en.wikipedia.org/wiki/Patronymic">patronymic name</a>
