@@ -763,6 +763,7 @@ The following icons are used below:
       <li>What do we name things that are very country/culture specific
         (Hungary's separation between street name and street type, entrecalles,
         stroenie/korpus, ...)?
+      <li>Apartment or Unit?</li>
     </ul>
   <li>How do we deal with websites whose address forms that centered around a
     search widget? Do we want to offer autofilling?</li>
@@ -27373,8 +27374,11 @@ occurred on multiple sites:
 a city (Şehir/Il) is more comparable to states in other countries. We have
 the following granularities:
 <ul>
-<li>Şehir/Il: City (note: this is more comparable to states in other countries) - address-level1
-<li>İlçe: District (note: this is more comparable to cities in other countries) - address-level2
+<li>Şehir/Il: Province (City) - many people refer to these as "city" and we see
+  "city" in the source code a lot. This is because often provinces share the name
+  of the big city. (note: this is more comparable to states in other countries) -
+  address-level1
+<li>İlçe: County/District (note: this is more comparable to cities in other countries) - address-level2
 <li>Mahalle/Köy: Neighborhood/Village (a neighborhood in the country side) - address-level3
 </ul>
 
@@ -27384,15 +27388,25 @@ the following granularities:
 <p>The following cases are currently missing in the autocomplete spec and
 occurred on multiple sites:
 <ul>
-<li> TODO after getting this the annotations checked
+<li> street-name
+<li> building (every building has a house number, some also have a name)
+<li> house-number
+<li> apartment
+<li> delivery instructions
 </ul>
 
 <h4>Open questions</h4>
 <ul>
-  <li>I have low confidence in some of the translations.
+  <li>n/a
 </ul>
 
-<p>Progress: ☑ First round of cleanup, ☐ Discussed with a (former) resident
+Note that a Turkish citizen shared that people often copy the
+Mahalle/Köy in the street-address field even if there is a separate field for
+that. Also in rural areas people put their phone number in the free-text field
+so that the delivery service can call them because the street-name and
+house-number are not sufficient to find houses in the country side.
+
+<p>Progress: ☑ First round of cleanup, ☑ Discussed with a (former) resident
   
   <h4 id="TR-1"> <!-- <a href="#TR-1">#</a> -->
   Names (TR)
@@ -28175,7 +28189,7 @@ occurred on multiple sites:
     |<span id="concept_field_10241"><code
     class=" ">
       
-  <span id="">address-level2</span>
+  <span id="">address-level3</span>
 
     </code></span>
     |<span id="concept_field_10242"><code
@@ -29767,13 +29781,13 @@ occurred on multiple sites:
 </tr>
 <tr class="">
   <th>address-level3</th>
-  <td>7</td><td></td><td>7</td><td></td><td>6</td><td></td><td></td><td>1</td><td></td><td>2</td><td></td><td>3</td><td></td><td></td><td>6</td><td>9</td><td>1</td><td>1</td><td>4</td><td></td><td></td><td></td><td></td><td>6</td><td></td><td>5</td>
-  <td>(58)</td>
+  <td>7</td><td></td><td>7</td><td></td><td>6</td><td></td><td></td><td>1</td><td></td><td>2</td><td></td><td>3</td><td></td><td></td><td>6</td><td>9</td><td>1</td><td>1</td><td>4</td><td></td><td></td><td></td><td></td><td>7</td><td></td><td>5</td>
+  <td>(59)</td>
 </tr>
 <tr class="">
   <th>address-level2</th>
-  <td>13</td><td>12</td><td>8</td><td>4</td><td>8</td><td>10</td><td>3</td><td>10</td><td>14</td><td>12</td><td>12</td><td>10</td><td>6</td><td>7</td><td>10</td><td>13</td><td>12</td><td>14</td><td>8</td><td>5</td><td>7</td><td>9</td><td>2</td><td>9</td><td>1</td><td>10</td>
-  <td>(229)</td>
+  <td>13</td><td>12</td><td>8</td><td>4</td><td>8</td><td>10</td><td>3</td><td>10</td><td>14</td><td>12</td><td>12</td><td>10</td><td>6</td><td>7</td><td>10</td><td>13</td><td>12</td><td>14</td><td>8</td><td>5</td><td>7</td><td>9</td><td>2</td><td>8</td><td>1</td><td>10</td>
+  <td>(228)</td>
 </tr>
 <tr class="">
   <th>address-level1</th>

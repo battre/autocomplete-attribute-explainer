@@ -91,7 +91,7 @@ site_examples {
       label: "Mahalle Seçiniz"
       label_translated: "Select Neighborhood"
       control_type: SELECT
-      concepts: "address-level2"
+      concepts: "address-level3"
       section: ADDRESS
     }
     fields {
