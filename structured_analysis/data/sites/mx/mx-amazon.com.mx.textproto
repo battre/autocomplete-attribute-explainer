@@ -95,7 +95,7 @@ site_examples {
       label: "Ciudad"
       label_translated: "City"
       control_type: INPUT
-      concepts: "address-level2"
+      concepts: "address-level3"
       section: ADDRESS
     }
     fields {
@@ -133,7 +133,6 @@ site_examples {
       label_translated: "Colonia"
       label_comment: "Internally this is called address-ui-widgets-enterAddressLine2"
       control_type: SELECT
-      low_certainty: true
       concepts: "address-level4"
       autocomplete_attribute: "off"
       section: ADDRESS

@@ -74,7 +74,7 @@ site_examples {
       label: "Ciudad *"
       label_translated: "City *"
       control_type: INPUT
-      concepts: "address-level2"
+      concepts: "address-level3"
       autocomplete_attribute: "address-level2"
       section: ADDRESS
     }

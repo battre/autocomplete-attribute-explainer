@@ -355,6 +355,14 @@ The following icons are used below:
     How far do we go? In Spain we see the "Tipo de vía" as &lt;select&gt;
     elements and websites offer different options to choose from. Do we want to
     prescribe a list of supported road types?
+  <li>How do we deal with probably wrong but widely used interpretations of the
+    autocomplete spec? Browsers (at least Chrome) used to sell address-level2 as
+    the city field. In Mexico, we have a hierarchy of state, municipality or
+    delegation, city, neighborhood - where the municipality is optional. I have
+    seen several websites that assign address-level1, nothing, address-level2,
+    nothing to the respective fields. Do we force websites to use address-level3
+    for cities? This breaks current behavior. Or do we introduce an
+    "address-level1.5" for countries that have a level between state and city?
   <li>Do we allow forms to specify an encoding? E.g. Japanese forms are picky
     about ASCII, full-width or half-width characters.
   <li>The <a href="https://en.wikipedia.org/wiki/Patronymic">patronymic name</a>
@@ -366,7 +374,7 @@ The following icons are used below:
     Kyrgyzstan, Georgia. But the list of
     <a href="https://en.wikipedia.org/wiki/Patronymic">affected countries</a>
     is longer.
-  <li>Many naming questions...
+    <li>Many naming questions...
     <ul>
       <li>What do we call the field type to find a place inside a building?
         "location-in-building"? "sub-building"?

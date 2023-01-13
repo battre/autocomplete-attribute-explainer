@@ -1,13 +1,42 @@
+<p><b>Warning:</b> The following is very preliminary and it is unclear whether
+it is correct because it contradicts common usage patterns we have today.
+
+<p>
+Mexican addresses are structured as follows:
+<ol>
+  <li>Estado (State, 32 states + federal district) - address-level1
+  <li>Municipio (Municipality - some have one city, others may have more cities;
+      a few are even divided into Delegaciónes) - address-level2
+  <li>Ciudad (City) - address-level3
+  <li>Colonia (Neighborhood, but not to be confused with Barrio, which is
+    smaller but not common in MX address forms) - address-level4
+</ol>
+
+<p>
+An exception is the federal district of Mexico City, which should be modeled as
+<ol>
+  <li>Estado (Mexico City) - address-level1
+  <li>Delegación - address-level2
+  <li>Mexico City is not divided into cities but e.g. <a
+  href="https://docs.informatica.com/data-as-a-service/address-verification/h2l/0918-address-verification-best-practices-for-mexico-addresses/mexico-addresses/address-format-and-address-structure.html">this</a>
+  suggests to put CIUDAD DE MÉXICO as the city and CDMEX as the state.
+  <a href="https://www.tripadvisor.com/ShowTopic-g150800-i164-k9337080-How_to_read_addresses-Mexico_City_Central_Mexico_and_Gulf_Coast.html">This</a>
+  selects Ciudad de México as the city and Distrito Federal as the state. Given
+  that the field is often mandatory, it makes sense to assume that Mexico City
+  is also a Ciudad. - address-level3
+  <li>Colonia (Neighborhood) - address-level4
+</ol>
+
+<p>
+The Municipio is typically not required in a shipping address, but the
+Delegación in Mexico City is mandatory. If a form does not have a field for
+Delegación, a resident of Mexico City would put the Delegación into the Ciudad
+field.
+
 <p>Every address form asks for a
 <a href=\"https://en.wikipedia.org/wiki/Colonia_(Mexico)\">colonia</a>,
 which is a neighborhood in a Mexican city (which has no jurisdictional
-autonomy or representation) or a gated community. It is interesting that
-some cities have a municipality, but not all. This <b>probably</b> means
-that we treat a colonia as an address-level4 to have a fixed assignment.
-If there is no address-level3 fields, we probaby want to combine it with
-the city field (address-level2). Alternatively, we would need to be able
-to split a city into the city and delegacion. This is one of the cases
-where I don't know how ot read the autocomplete spec.
+autonomy or representation) or a gated community.
 
 <h4>Missing field types</h4>
 <p>The following cases are currently missing in the autocomplete spec and
@@ -17,12 +46,17 @@ occurred on multiple sites:
 <li>external number (house number)
 <li>internal number (apartment number)
 <li>entre calles (between streets) or landmark
-<li>Colonia and sometimes Delegación o Municipio (Delegation or Municipality)
 </ul>
 
 <h4>Open questions</h4>
 <ul>
-  <li>How to deal with address-level3 or address-level4 for colonia (see above)
+<li><b>Warning:</b> It's an unsolved challenge that Mexico has the concept of
+  Delegación or Municipio because that puts Ciudad (city) to address-level3, while
+  websites use address-level2 for cities.<br>
+  If we assign a Ciudad to address-level3, we break many existing websites. If
+  we assign a Ciudad to address-level2 and introduce a new concept for
+  Delegación or Municipio, we render the definition of the address-levels ad
+  absurdum.
 </ul>
 
-<p>Progress: ☑ First round of cleanup, ☐ Discussed with a (former) resident
+<p>Progress: ☑ First round of cleanup, ☑ Discussed with a (former) resident

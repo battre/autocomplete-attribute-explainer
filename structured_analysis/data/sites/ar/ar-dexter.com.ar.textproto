@@ -130,7 +130,7 @@ site_examples {
       label: "Aclaración Adicional"
       label_translated: "Additional Clarification"
       control_type: INPUT
-      concepts: "gap"
+      concepts: "delivery-instructions"
       autocomplete_attribute: "shipping observation"
       section: ADDRESS
     }

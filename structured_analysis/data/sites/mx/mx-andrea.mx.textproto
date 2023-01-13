@@ -244,7 +244,6 @@ site_examples {
       label: "Colonia"
       label_translated: "Colonia"
       control_type: SELECT
-      low_certainty: true
       concepts: "address-level4"
       section: ADDRESS
     }

@@ -74,7 +74,6 @@ site_examples {
       label: "Colonia"
       label_translated: "Colonia"
       control_type: INPUT
-      low_certainty: true
       concepts: "address-level4"
       autocomplete_attribute: "street-address address-level2"
       section: ADDRESS
@@ -84,7 +83,7 @@ site_examples {
       label: "Delegación o Municipio"
       label_translated: "Delegation or Municipality"
       control_type: INPUT
-      concepts: "address-level3"
+      concepts: "address-level2"
       section: ADDRESS
     }
     fields {
@@ -92,7 +91,7 @@ site_examples {
       label: "Ciudad"
       label_translated: "City"
       control_type: INPUT
-      concepts: "address-level2"
+      concepts: "address-level3"
       autocomplete_attribute: "address-level2"
       section: ADDRESS
     }

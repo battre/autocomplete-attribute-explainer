@@ -745,6 +745,14 @@ The following icons are used below:
     How far do we go? In Spain we see the "Tipo de vía" as &lt;select&gt;
     elements and websites offer different options to choose from. Do we want to
     prescribe a list of supported road types?
+  <li>How do we deal with probably wrong but widely used interpretations of the
+    autocomplete spec? Browsers (at least Chrome) used to sell address-level2 as
+    the city field. In Mexico, we have a hierarchy of state, municipality or
+    delegation, city, neighborhood - where the municipality is optional. I have
+    seen several websites that assign address-level1, nothing, address-level2,
+    nothing to the respective fields. Do we force websites to use address-level3
+    for cities? This breaks current behavior. Or do we introduce an
+    "address-level1.5" for countries that have a level between state and city?
   <li>Do we allow forms to specify an encoding? E.g. Japanese forms are picky
     about ASCII, full-width or half-width characters.
   <li>The <a href="https://en.wikipedia.org/wiki/Patronymic">patronymic name</a>
@@ -756,7 +764,7 @@ The following icons are used below:
     Kyrgyzstan, Georgia. But the list of
     <a href="https://en.wikipedia.org/wiki/Patronymic">affected countries</a>
     is longer.
-  <li>Many naming questions...
+    <li>Many naming questions...
     <ul>
       <li>What do we call the field type to find a place inside a building?
         "location-in-building"? "sub-building"?
@@ -920,6 +928,14 @@ occurred on multiple sites:
     two
   <li>additional information (datos adicionales/aclaración
     adicional/observations/Dirección Complementaria
+  <li>lote/sector, some buildings may not be adjacent to a street but only
+    accessible by foot. In this case, the area is sub-divided into lote-s and
+    possibly further subdivided into sectors. A "sector" seems to be on the same
+    level as a house number.
+  <li>torre (tower) - especially in Buenos Aires you may have big apartment
+    complexes that share the same house number you you specify the tower you live
+    in. It could also refer to a part of a building (e.g. front-building, a wing
+    of a building, ...).
 </ul>
 
 <h4>Open questions</h4>
@@ -929,10 +945,6 @@ occurred on multiple sites:
     could be more flexible. Do we want to rely on "location-in-building"?
   <li>Do we want to support entrecalles (between streets) which are split across
     two fields? - Do we want to combine this with "landmark"?
-  <li>Two forms asked for a "Lote" - a piece of land (a lot / parcel of land).
-  <li>One form asked for a "Torre", which literally means a tower but in this context
-    it would refer to a part of a building (e.g. front-building, a wing of a
-    building, ...).
   <li>The concept of "partido" is not fully clear to me. One form asked for
     (provincia, partido, localidad), which I see as (province, part of a city,
     city). Another form asked for (partido, provincia) but no city. Maybe this was
@@ -944,7 +956,7 @@ occurred on multiple sites:
     "betreen streets or landmark". They serve the same purpose.
 </ul>
 
-<p>Progress: ☑ First round of cleanup, ☐ Discussed with a (former) resident
+<p>Progress: ☑ First round of cleanup, ☑ Discussed with a (former) resident
   
   <h4 id="AR-1"> <!-- <a href="#AR-1">#</a> -->
   Names (AR)
@@ -2376,9 +2388,9 @@ occurred on multiple sites:
 
     </code></span>
     |<span id="concept_field_338"><code
-    class="gap ">
+    class="new-concept ">
       
-  <span id="">gap</span>
+  <span id="">delivery-instructions</span>
 
     </code></span>
     
@@ -2550,9 +2562,9 @@ occurred on multiple sites:
 
     </code></span>
     |<span id="concept_field_436"><code
-    class="gap ">
+    class="new-concept ">
       
-  <span id="">gap</span>
+  <span id="">delivery-instructions</span>
 
     </code></span>
     |<span id="concept_field_437"><code
@@ -22678,16 +22690,45 @@ This might be a way to express the preferred format.
 
   <h3 id="MX"><a href="#MX">#</a> MX
     - Mexico 🇲🇽</h3>
-  <p>Every address form asks for a
+  <p><b>Warning:</b> The following is very preliminary and it is unclear whether
+it is correct because it contradicts common usage patterns we have today.
+
+<p>
+Mexican addresses are structured as follows:
+<ol>
+  <li>Estado (State, 32 states + federal district) - address-level1
+  <li>Municipio (Municipality - some have one city, others may have more cities;
+      a few are even divided into Delegaciónes) - address-level2
+  <li>Ciudad (City) - address-level3
+  <li>Colonia (Neighborhood, but not to be confused with Barrio, which is
+    smaller but not common in MX address forms) - address-level4
+</ol>
+
+<p>
+An exception is the federal district of Mexico City, which should be modeled as
+<ol>
+  <li>Estado (Mexico City) - address-level1
+  <li>Delegación - address-level2
+  <li>Mexico City is not divided into cities but e.g. <a
+  href="https://docs.informatica.com/data-as-a-service/address-verification/h2l/0918-address-verification-best-practices-for-mexico-addresses/mexico-addresses/address-format-and-address-structure.html">this</a>
+  suggests to put CIUDAD DE MÉXICO as the city and CDMEX as the state.
+  <a href="https://www.tripadvisor.com/ShowTopic-g150800-i164-k9337080-How_to_read_addresses-Mexico_City_Central_Mexico_and_Gulf_Coast.html">This</a>
+  selects Ciudad de México as the city and Distrito Federal as the state. Given
+  that the field is often mandatory, it makes sense to assume that Mexico City
+  is also a Ciudad. - address-level3
+  <li>Colonia (Neighborhood) - address-level4
+</ol>
+
+<p>
+The Municipio is typically not required in a shipping address, but the
+Delegación in Mexico City is mandatory. If a form does not have a field for
+Delegación, a resident of Mexico City would put the Delegación into the Ciudad
+field.
+
+<p>Every address form asks for a
 <a href=\"https://en.wikipedia.org/wiki/Colonia_(Mexico)\">colonia</a>,
 which is a neighborhood in a Mexican city (which has no jurisdictional
-autonomy or representation) or a gated community. It is interesting that
-some cities have a municipality, but not all. This <b>probably</b> means
-that we treat a colonia as an address-level4 to have a fixed assignment.
-If there is no address-level3 fields, we probaby want to combine it with
-the city field (address-level2). Alternatively, we would need to be able
-to split a city into the city and delegacion. This is one of the cases
-where I don't know how ot read the autocomplete spec.
+autonomy or representation) or a gated community.
 
 <h4>Missing field types</h4>
 <p>The following cases are currently missing in the autocomplete spec and
@@ -22697,15 +22738,20 @@ occurred on multiple sites:
 <li>external number (house number)
 <li>internal number (apartment number)
 <li>entre calles (between streets) or landmark
-<li>Colonia and sometimes Delegación o Municipio (Delegation or Municipality)
 </ul>
 
 <h4>Open questions</h4>
 <ul>
-  <li>How to deal with address-level3 or address-level4 for colonia (see above)
+<li><b>Warning:</b> It's an unsolved challenge that Mexico has the concept of
+  Delegación or Municipio because that puts Ciudad (city) to address-level3, while
+  websites use address-level2 for cities.<br>
+  If we assign a Ciudad to address-level3, we break many existing websites. If
+  we assign a Ciudad to address-level2 and introduce a new concept for
+  Delegación or Municipio, we render the definition of the address-levels ad
+  absurdum.
 </ul>
 
-<p>Progress: ☑ First round of cleanup, ☐ Discussed with a (former) resident
+<p>Progress: ☑ First round of cleanup, ☑ Discussed with a (former) resident
   
   <h4 id="MX-1"> <!-- <a href="#MX-1">#</a> -->
   Names (MX)
@@ -23209,7 +23255,7 @@ occurred on multiple sites:
 
     </code></span>
     |<span id="concept_field_8025"><code
-    class=" low-certainty">
+    class=" ">
       
   <span id="">address-level4</span>
 
@@ -23217,13 +23263,13 @@ occurred on multiple sites:
     |<span id="concept_field_8026"><code
     class=" ">
       
-  <span id="">address-level3</span>
+  <span id="">address-level2</span>
 
     </code></span>
     |<span id="concept_field_8027"><code
     class=" ">
       
-  <span id="">address-level2</span>
+  <span id="">address-level3</span>
 
     </code></span>
     |<span id="concept_field_8028"><code
@@ -23303,11 +23349,11 @@ occurred on multiple sites:
     |<span id="concept_field_8084"><code
     class=" ">
       
-  <span id="">address-level2</span>
+  <span id="">address-level3</span>
 
     </code></span>
     |<span id="concept_field_8085"><code
-    class=" low-certainty">
+    class=" ">
       
   <span id="">address-level4</span>
 
@@ -23390,7 +23436,7 @@ occurred on multiple sites:
 
     </code></span>
     |<span id="concept_field_8145"><code
-    class=" low-certainty">
+    class=" ">
       
   <span id="">address-level4</span>
 
@@ -23464,7 +23510,7 @@ occurred on multiple sites:
     |<span id="concept_field_8160"><code
     class=" ">
       
-  <span id="">address-level2</span>
+  <span id="">address-level3</span>
 
     </code></span>
     |<span id="concept_field_8161"><code
@@ -23476,7 +23522,7 @@ occurred on multiple sites:
     |<span id="concept_field_8162"><code
     class=" ">
       
-  <span id="">address-level3</span>
+  <span id="">address-level2</span>
 
     </code></span>
     
@@ -23567,13 +23613,13 @@ occurred on multiple sites:
     |<span id="concept_field_8170"><code
     class=" ">
       
-  <span id="">address-level3</span>
+  <span id="">address-level2</span>
 
     </code></span>
     |<span id="concept_field_8171"><code
     class=" ">
       
-  <span id="">address-level2</span>
+  <span id="">address-level3</span>
 
     </code></span>
     |<span id="concept_field_8172"><code
@@ -23826,9 +23872,9 @@ occurred on multiple sites:
 
     </code></span>
     |<span id="concept_field_8427"><code
-    class=" low-certainty">
+    class=" ">
       
-  <span id="">address-level3</span>
+  <span id="">address-level2</span>
 
     </code></span>
     |<span id="concept_field_8428"><code
@@ -23899,7 +23945,7 @@ occurred on multiple sites:
     |<span id="concept_field_8443"><code
     class=" ">
       
-  <span id="">address-level2</span>
+  <span id="">address-level3</span>
 
     </code></span>
     |<span id="concept_field_8444"><code
@@ -24013,7 +24059,7 @@ occurred on multiple sites:
     |<span id="concept_field_8539"><code
     class=" ">
       
-  <span id="">address-level2</span>
+  <span id="">address-level3</span>
 
     </code></span>
     |<span id="concept_field_8540"><code
@@ -29695,8 +29741,8 @@ occurred on multiple sites:
 </tr>
 <tr class="gap">
   <th>gap</th>
-  <td>10</td><td></td><td>1</td><td></td><td>4</td><td></td><td></td><td></td><td>8</td><td>3</td><td>2</td><td></td><td>1</td><td></td><td></td><td>1</td><td>1</td><td>2</td><td></td><td></td><td>1</td><td></td><td></td><td></td><td></td><td>2</td>
-  <td>(36)</td>
+  <td>8</td><td></td><td>1</td><td></td><td>4</td><td></td><td></td><td></td><td>8</td><td>3</td><td>2</td><td></td><td>1</td><td></td><td></td><td>1</td><td>1</td><td>2</td><td></td><td></td><td>1</td><td></td><td></td><td></td><td></td><td>2</td>
+  <td>(34)</td>
 </tr>
 <tr class="unset">
   <th>unset</th>
@@ -29781,13 +29827,13 @@ occurred on multiple sites:
 </tr>
 <tr class="">
   <th>address-level3</th>
-  <td>7</td><td></td><td>7</td><td></td><td>6</td><td></td><td></td><td>1</td><td></td><td>2</td><td></td><td>3</td><td></td><td></td><td>6</td><td>9</td><td>1</td><td>1</td><td>4</td><td></td><td></td><td></td><td></td><td>7</td><td></td><td>5</td>
-  <td>(59)</td>
+  <td>7</td><td></td><td>7</td><td></td><td>6</td><td></td><td></td><td>1</td><td></td><td>2</td><td></td><td>3</td><td></td><td></td><td>6</td><td>9</td><td>1</td><td>1</td><td>6</td><td></td><td></td><td></td><td></td><td>7</td><td></td><td>5</td>
+  <td>(61)</td>
 </tr>
 <tr class="">
   <th>address-level2</th>
-  <td>13</td><td>12</td><td>8</td><td>4</td><td>8</td><td>10</td><td>3</td><td>10</td><td>14</td><td>12</td><td>12</td><td>10</td><td>6</td><td>7</td><td>10</td><td>13</td><td>12</td><td>14</td><td>8</td><td>5</td><td>7</td><td>9</td><td>2</td><td>8</td><td>1</td><td>10</td>
-  <td>(228)</td>
+  <td>13</td><td>12</td><td>8</td><td>4</td><td>8</td><td>10</td><td>3</td><td>10</td><td>14</td><td>12</td><td>12</td><td>10</td><td>6</td><td>7</td><td>10</td><td>13</td><td>12</td><td>14</td><td>6</td><td>5</td><td>7</td><td>9</td><td>2</td><td>8</td><td>1</td><td>10</td>
+  <td>(226)</td>
 </tr>
 <tr class="">
   <th>address-level1</th>
@@ -29949,8 +29995,8 @@ occurred on multiple sites:
 </tr>
 <tr class="new-concept">
   <th>delivery-instructions</th>
-  <td></td><td>2</td><td></td><td></td><td></td><td></td><td></td><td></td><td>4</td><td>2</td><td></td><td>3</td><td></td><td>2</td><td>1</td><td></td><td></td><td>1</td><td>1</td><td>1</td><td>3</td><td></td><td>3</td><td>1</td><td></td><td>3</td>
-  <td>(27)</td>
+  <td>2</td><td>2</td><td></td><td></td><td></td><td></td><td></td><td></td><td>4</td><td>2</td><td></td><td>3</td><td></td><td>2</td><td>1</td><td></td><td></td><td>1</td><td>1</td><td>1</td><td>3</td><td></td><td>3</td><td>1</td><td></td><td>3</td>
+  <td>(29)</td>
 </tr>
 <tr class="new-concept">
   <th>care-of</th>

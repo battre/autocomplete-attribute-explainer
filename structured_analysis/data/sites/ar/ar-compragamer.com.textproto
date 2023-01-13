@@ -175,7 +175,7 @@ site_examples {
       label: "Observaciones"
       label_translated: "Observations"
       control_type: TEXTAREA
-      concepts: "gap"
+      concepts: "delivery-instructions"
       autocomplete_attribute: "off"
       section: ADDRESS
     }
