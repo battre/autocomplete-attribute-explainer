@@ -325,7 +325,7 @@ concepts {
 concepts {
   name: "patronymic-name"
   description: "Patronymic name"
-  canonical_format_example: "Іван, Ян, Иван"
+  canonical_format_example: "Іванович, Dragoljuba, Яковлевна"
   label: "Patronymic name"
   is_new: true
   limited_to_countries: "BY"  # Belarus
@@ -334,6 +334,7 @@ concepts {
   limited_to_countries: "KG"  # Kyrgyzstan
   limited_to_countries: "KZ"  # Kazakhstan
   limited_to_countries: "RU"  # Russia
+  limited_to_countries: "RS"  # Serbia
   limited_to_countries: "TM"  # Turkmenistan
   limited_to_countries: "UA"  # Ukraine
   limited_to_countries: "UZ"  # Uzbekistan
