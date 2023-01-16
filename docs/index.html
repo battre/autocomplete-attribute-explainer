@@ -26593,6 +26593,13 @@ occurred on multiple sites:
   <li>Do we want to have different types for handling the situation that a "dom"
     field needs to represent the "korpus"/"stroenie” as well because there are
     no separate fields for those?
+  <li>A Russian native speaker shared that a typical address consists of the
+  top-level administrative district (oblast, kray, etc), then optional region in
+  case it is a village, then city/town/village, street name, building number and
+  apartment number. This means that the city needs to be mapped to address-level3
+  instead of address-level2, which may cause breaking behavior of websites which
+  optimized to follow Chrome's behavior (I suspect that other browsers also
+  (incorrectly) assigned address-level2 to a city).
 </ul>
 
 <p>Progress: ☑ First round of cleanup, ☐ Discussed with a (former) resident
