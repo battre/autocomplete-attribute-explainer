@@ -206,7 +206,7 @@ site_examples {
       control_type: INPUT
       concepts: "postal-code"
       autocomplete_attribute: "shipping postal-code"
-      section: OTHER
+      section: ADDRESS
     }
     fields {
       name: "checkout_shipping_address_phone|checkout[shipping_address][phone]"
