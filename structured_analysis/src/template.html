@@ -397,7 +397,114 @@ The following are examples of real-world address forms. The purpose is to see
 frequent structures and learn requirements for a more powerful autocomplete
 attribute that meets the requirements of real-world websites.
 </p>
+<script>
+class Website {
+  // `id` is an identifier for a website
+  // `fields` is an array of concepts. Combined concepts need to be concatenated.
+  constructor(id, fields) {
+    this.id = id;
+    this.fields = fields;
+  }
 
+  // Returns -1 if field1 appears before field2, +1 if field1 appears after
+  // field2. 0 if either is missing.
+  orderOfFields(field1, field2) {
+    const index1 = this.fields.indexOf(field1);
+    const index2 = this.fields.indexOf(field2);
+    if (index1 < 0 || index2 < 0) {
+      return 0;
+    }
+    return index1 < index2 ? -1 : +1;
+  }
+}
+
+function getOrderOfFields(websites) {
+  const setOfFields = new Set();
+  for (const website of websites) {
+    for (const field of website.fields) {
+      setOfFields.add(field);
+    }
+  }
+  const listOfFields = [...setOfFields.keys()];
+  listOfFields.sort((field1, field2) => {
+    let sum = 0;
+    for (const website of websites) {
+      sum += website.orderOfFields(field1, field2);
+    }
+    return sum;
+  });
+
+  return listOfFields;
+}
+
+function buildTable(destinationID, orderOfFields, websites) {
+  function createNodeWithText(name, text) {
+    const node = document.createElement(name);
+    node.appendChild(document.createTextNode(text));
+    return node;
+  }
+  const table = document.createElement('table');
+  // Build the table head.
+  const tableHead = document.createElement('thead');
+  table.appendChild(tableHead);
+  tableHead.style = "position: sticky; top: 0; background: white;";
+  const headTableRow = document.createElement('tr');
+  tableHead.appendChild(headTableRow);
+  headTableRow.appendChild(createNodeWithText('th', 'Site'));
+  for (const field of orderOfFields) {
+    headTableRow.appendChild(createNodeWithText('th', field));
+  }
+
+  // Build the table body.
+  const tableBody = document.createElement('tbody');
+  table.appendChild(tableBody);
+
+  for (const website of websites) {
+    const tr = document.createElement('tr');
+    tableBody.appendChild(tr);
+    tr.appendChild(createNodeWithText('td', website.id));
+    for (const field of orderOfFields) {
+      if (website.fields.indexOf(field) >= 0) {
+        tr.appendChild(createNodeWithText('td', field));
+      } else {
+        tr.appendChild(createNodeWithText('td', ''));
+      }
+    }
+  }
+
+  const target = document.getElementById(destinationID);
+  while (target.hasChildNodes()) {target.removeChild(target.firstChild);}
+  target.append(table);
+}
+
+function clusterInOrderOfAppearance(destinationID, websites) {
+  const orderOfFields = getOrderOfFields(websites);
+
+  function partitionRecursively(orderOfFields, websites) {
+        if (websites.length <= 1 || orderOfFields.length == 0) {
+      return websites;
+    }
+    const partitionBy = orderOfFields[0];
+    const part1 = [];
+    const part2 = [];
+    for (website of websites) {
+      if (website.fields.indexOf(partitionBy) >= 0) {
+        part1.push(website);
+      } else {
+        part2.push(website);
+      }
+    }
+    const sortedPart1 = [...partitionRecursively(orderOfFields.slice(1), part1)];
+    const sortedPart2 = [...partitionRecursively(orderOfFields.slice(1), part2)];
+    return sortedPart1.concat(sortedPart2);
+  }
+  const sortedSites = partitionRecursively(orderOfFields, websites);
+  buildTable(destinationID, orderOfFields, sortedSites);
+}
+
+// Map of country code to a list of Websites
+const country_fields = {};
+</script>
 <p> <!-- Table of contents -->
   <ol>
     {% for country in countries|sort -%}
@@ -423,6 +530,7 @@ attribute that meets the requirements of real-world websites.
   {%- endfor %}
   {% for section in [address_pb2.ExampleSequenceSection.NAME, address_pb2.ExampleSequenceSection.ADDRESS] %}
   <h4 id="{{country}}-{{section}}"> <!-- <a href="#{{country}}-{{section}}">#</a> -->
+  <script>country_fields['{{country}}-{{section}}'] = [];</script>
   {% if section == address_pb2.ExampleSequenceSection.NAME %}Names ({{country}}){% endif %}
   {% if section == address_pb2.ExampleSequenceSection.ADDRESS %}Addresses ({{country}}){% endif %}
   </h4>
@@ -446,10 +554,31 @@ attribute that meets the requirements of real-world websites.
       <td>{{translated_terms(sequence)}}</td>
       <td>{{concepts(sequence)}}</td>
     </tr>
+    <script>
+      country_fields['{{country}}-{{section}}'].push(
+        new Website(
+          /*id=*/ "{{site.url}}",
+          /*fields=*/ [
+          {%- for field in sequence.fields -%}
+            {%- if loop.index0 > 0 %}, {% endif -%}"{{field.concepts|join("-")}}"
+          {%- endfor -%}
+          ]));
+    </script>
     {%- endif -%}
     {%- endfor -%}
     {% endfor %}
   </table>
+  <details open>
+    <summary>Field clustering</summary>
+    <div id="field_clustering_{{country}}-{{section}}">
+      <!--
+      <button onclick="clusterInOrderOfAppearance('field_clustering_result_{{country}}-{{section}}', country_fields['{{country}}-2'])">In order of appearnance</button>
+      <button onclick="cluster_with_recursive_bisect(country_fields['{{country}}-{{section}}'])">Recursive bisect</button>
+      -->
+      <div id="field_clustering_result_{{country}}-{{section}}"></div>
+      <script>clusterInOrderOfAppearance('field_clustering_result_{{country}}-{{section}}', country_fields['{{country}}-{{section}}']);</script>
+    </div>
+  </details>
   {% endfor %}
   {% for country_data in ontology.country_data -%}
   {{country_data.site_examples_epilog_html|safe if country_data.country == country}}
