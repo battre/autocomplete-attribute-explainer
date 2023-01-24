@@ -428,6 +428,10 @@ function getOrderOfFields(websites) {
   }
   const listOfFields = [...setOfFields.keys()];
   listOfFields.sort((field1, field2) => {
+    // Country always goes last because it's implied and does not really
+    // participate in clustering.
+    if (field1 == 'country') return 1;
+    if (field2 == 'country') return -1;
     let sum = 0;
     for (const website of websites) {
       sum += website.orderOfFields(field1, field2);
@@ -523,7 +527,8 @@ function clusterBiggestFrequenciesFirst(destinationID, websites) {
       }
       // console.log("Partition size with ", orderOfFields[i], " is ", sitesWithPartitionAttribute, "Max is", maxSitesWithPartitionAttribute);
       if (sitesWithPartitionAttribute != websites.length &&
-          sitesWithPartitionAttribute > maxSitesWithPartitionAttribute) {
+          sitesWithPartitionAttribute > maxSitesWithPartitionAttribute &&
+          orderOfFields[i] !== 'country') {
         // console.log("new winner");
         partitionBy = orderOfFields[i];
         maxSitesWithPartitionAttribute = sitesWithPartitionAttribute;

@@ -818,6 +818,10 @@ function getOrderOfFields(websites) {
   }
   const listOfFields = [...setOfFields.keys()];
   listOfFields.sort((field1, field2) => {
+    // Country always goes last because it's implied and does not really
+    // participate in clustering.
+    if (field1 == 'country') return 1;
+    if (field2 == 'country') return -1;
     let sum = 0;
     for (const website of websites) {
       sum += website.orderOfFields(field1, field2);
@@ -913,7 +917,8 @@ function clusterBiggestFrequenciesFirst(destinationID, websites) {
       }
       // console.log("Partition size with ", orderOfFields[i], " is ", sitesWithPartitionAttribute, "Max is", maxSitesWithPartitionAttribute);
       if (sitesWithPartitionAttribute != websites.length &&
-          sitesWithPartitionAttribute > maxSitesWithPartitionAttribute) {
+          sitesWithPartitionAttribute > maxSitesWithPartitionAttribute &&
+          orderOfFields[i] !== 'country') {
         // console.log("new winner");
         partitionBy = orderOfFields[i];
         maxSitesWithPartitionAttribute = sitesWithPartitionAttribute;
@@ -19800,21 +19805,25 @@ occurred on multiple sites:
       </td>
       <td >
   
-  <span id="term_field_6015">Country/Region code ▽</span>
+  <span id="term_field_6014">Country/Region code ▽</span>
 <span class="separator">|</span>
-  <span id="term_field_6016">Address</span>
+  <span id="term_field_6015">Address</span>
 <span class="separator">|</span>
-  <span class="entry-with-tooltip" id="term_field_6017">Subdistrict / Kecamatan
+  <span class="entry-with-tooltip" id="term_field_6016">Subdistrict / Kecamatan
       <div class="tooltip tooltip-right">This has an address-line2 autocomplete attribute, but it could make sense to put an [ address-level3 address-level4 ] here.</div>
     </span>
 <span class="separator">|</span>
-  <span id="term_field_6018">City</span>
+  <span id="term_field_6017">City</span>
 <span class="separator">|</span>
-  <span id="term_field_6019">Province ▽</span>
+  <span id="term_field_6018">Province ▽</span>
+<span class="separator">|</span>
+  <span id="term_field_6019">Postal code</span>
 
 </td>
       <td>
   
+  <span id="translated_term_field_6014"></span>
+<span class="separator">|</span>
   <span id="translated_term_field_6015"></span>
 <span class="separator">|</span>
   <span id="translated_term_field_6016"></span>
@@ -19827,34 +19836,40 @@ occurred on multiple sites:
 
 </td>
       <td>
-  <span id="concept_field_6015"><code
+  <span id="concept_field_6014"><code
     class=" ">
       
   <span id="">country</span>
 
     </code></span>
-    |<span id="concept_field_6016"><code
+    |<span id="concept_field_6015"><code
     class=" ">
       
   <span id="">address-line1</span>
 
     </code></span>
-    |<span id="concept_field_6017"><code
+    |<span id="concept_field_6016"><code
     class=" low-certainty">
       
   <span id="">address-line2</span>
 
     </code></span>
-    |<span id="concept_field_6018"><code
+    |<span id="concept_field_6017"><code
     class=" ">
       
   <span id="">address-level2</span>
 
     </code></span>
-    |<span id="concept_field_6019"><code
+    |<span id="concept_field_6018"><code
     class=" ">
       
   <span id="">address-level1</span>
+
+    </code></span>
+    |<span id="concept_field_6019"><code
+    class=" ">
+      
+  <span id="">postal-code</span>
 
     </code></span>
     
@@ -19864,7 +19879,7 @@ occurred on multiple sites:
       country_fields['ID-2'].push(
         new Website(
           /*id=*/ "https://bobobobo.com",
-          /*fields=*/ ["country", "address-line1", "address-line2", "address-level2", "address-level1"]));
+          /*fields=*/ ["country", "address-line1", "address-line2", "address-level2", "address-level1", "postal-code"]));
     </script><tr>
       <td id="2-httpswww.cottonink.co.id" style="padding: 0"><a href="#2-httpswww.cottonink.co.id" title="https://www.cottonink.co.id">#</a>
       <span title="Unstructured address">U</span>
@@ -33926,8 +33941,8 @@ occurred on multiple sites:
 </tr>
 <tr class="">
   <th>postal-code</th>
-  <td>15</td><td>10</td><td>10</td><td>4</td><td></td><td>10</td><td>3</td><td>4</td><td>13</td><td>12</td><td>11</td><td>10</td><td>6</td><td>8</td><td>9</td><td>14</td><td>12</td><td>18</td><td>9</td><td>5</td><td>4</td><td>10</td><td>1</td><td>4</td><td>1</td><td>10</td>
-  <td>(213)</td>
+  <td>15</td><td>10</td><td>10</td><td>4</td><td></td><td>10</td><td>3</td><td>4</td><td>13</td><td>12</td><td>11</td><td>10</td><td>6</td><td>8</td><td>10</td><td>14</td><td>12</td><td>18</td><td>9</td><td>5</td><td>4</td><td>10</td><td>1</td><td>4</td><td>1</td><td>10</td>
+  <td>(214)</td>
 </tr>
 <tr class="">
   <th>sex</th>
