@@ -403,7 +403,8 @@ class Website {
   // `fields` is an array of concepts. Combined concepts need to be concatenated.
   constructor(id, fields) {
     this.id = id;
-    this.fields = fields;
+    // Remove "gap" fields.
+    this.fields = fields.filter(entry => entry !== 'gap');
   }
 
   // Returns -1 if field1 appears before field2, +1 if field1 appears after
@@ -481,7 +482,8 @@ function clusterInOrderOfAppearance(destinationID, websites) {
   const orderOfFields = getOrderOfFields(websites);
 
   function partitionRecursively(orderOfFields, websites) {
-        if (websites.length <= 1 || orderOfFields.length == 0) {
+    // The order in which fields appear on websites.
+    if (websites.length <= 1 || orderOfFields.length == 0) {
       return websites;
     }
     const partitionBy = orderOfFields[0];
@@ -499,6 +501,53 @@ function clusterInOrderOfAppearance(destinationID, websites) {
     return sortedPart1.concat(sortedPart2);
   }
   const sortedSites = partitionRecursively(orderOfFields, websites);
+  buildTable(destinationID, orderOfFields, sortedSites);
+}
+
+function clusterBiggestFrequenciesFirst(destinationID, websites) {
+  // The order in which fields appear on websites.
+  const orderOfFields = getOrderOfFields(websites);
+
+  function partitionRecursively(orderOfFields, websites, depth) {
+    if (websites.length <= 1 || orderOfFields.length == 0) {
+      return websites;
+    }
+    let partitionBy = undefined;
+    let maxSitesWithPartitionAttribute = 0;
+    for (let i = 0; i < orderOfFields.length; ++i) {
+      let sitesWithPartitionAttribute = 0;
+      for (website of websites) {
+        if (website.fields.indexOf(orderOfFields[i]) >= 0) {
+          sitesWithPartitionAttribute++;
+        }
+      }
+      // console.log("Partition size with ", orderOfFields[i], " is ", sitesWithPartitionAttribute, "Max is", maxSitesWithPartitionAttribute);
+      if (sitesWithPartitionAttribute != websites.length &&
+          sitesWithPartitionAttribute > maxSitesWithPartitionAttribute) {
+        // console.log("new winner");
+        partitionBy = orderOfFields[i];
+        maxSitesWithPartitionAttribute = sitesWithPartitionAttribute;
+      }
+    }
+    // console.log(depth, partitionBy);
+    if (!partitionBy) {
+      // All fields are identical.
+      return websites;
+    }
+    const part1 = [];
+    const part2 = [];
+    for (website of websites) {
+      if (website.fields.indexOf(partitionBy) >= 0) {
+        part1.push(website);
+      } else {
+        part2.push(website);
+      }
+    }
+    const sortedPart1 = [...partitionRecursively(orderOfFields, part1, depth+1)];
+    const sortedPart2 = [...partitionRecursively(orderOfFields, part2, depth+1)];
+    return sortedPart1.concat(sortedPart2);
+  }
+  const sortedSites = partitionRecursively(orderOfFields, websites, 0);
   buildTable(destinationID, orderOfFields, sortedSites);
 }
 
@@ -560,7 +609,7 @@ const country_fields = {};
           /*id=*/ "{{site.url}}",
           /*fields=*/ [
           {%- for field in sequence.fields -%}
-            {%- if loop.index0 > 0 %}, {% endif -%}"{{field.concepts|join("-")}}"
+            {%- if loop.index0 > 0 %}, {% endif -%}"{{field.concepts|join("|")}}"
           {%- endfor -%}
           ]));
     </script>
@@ -572,11 +621,19 @@ const country_fields = {};
     <summary>Field clustering</summary>
     <div id="field_clustering_{{country}}-{{section}}">
       <!--
-      <button onclick="clusterInOrderOfAppearance('field_clustering_result_{{country}}-{{section}}', country_fields['{{country}}-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['{{country}}-{{section}}'])">Recursive bisect</button>
+      <button onclick="clusterInOrderOfAppearance('field_clustering_result_{{country}}-{{section}}', country_fields['{{country}}-{{section}}'])">In order of appearnance</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_{{country}}-{{section}}', country_fields['{{country}}-{{section}}'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_{{country}}-{{section}}', country_fields['{{country}}-{{section}}']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_{{country}}-{{section}}', country_fields['{{country}}-{{section}}'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_{{country}}-{{section}}"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_{{country}}-{{section}}', country_fields['{{country}}-{{section}}']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_{{country}}-{{section}}', country_fields['{{country}}-{{section}}']);</script>
     </div>
   </details>
   {% endfor %}

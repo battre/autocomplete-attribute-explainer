@@ -793,7 +793,8 @@ class Website {
   // `fields` is an array of concepts. Combined concepts need to be concatenated.
   constructor(id, fields) {
     this.id = id;
-    this.fields = fields;
+    // Remove "gap" fields.
+    this.fields = fields.filter(entry => entry !== 'gap');
   }
 
   // Returns -1 if field1 appears before field2, +1 if field1 appears after
@@ -871,7 +872,8 @@ function clusterInOrderOfAppearance(destinationID, websites) {
   const orderOfFields = getOrderOfFields(websites);
 
   function partitionRecursively(orderOfFields, websites) {
-        if (websites.length <= 1 || orderOfFields.length == 0) {
+    // The order in which fields appear on websites.
+    if (websites.length <= 1 || orderOfFields.length == 0) {
       return websites;
     }
     const partitionBy = orderOfFields[0];
@@ -889,6 +891,53 @@ function clusterInOrderOfAppearance(destinationID, websites) {
     return sortedPart1.concat(sortedPart2);
   }
   const sortedSites = partitionRecursively(orderOfFields, websites);
+  buildTable(destinationID, orderOfFields, sortedSites);
+}
+
+function clusterBiggestFrequenciesFirst(destinationID, websites) {
+  // The order in which fields appear on websites.
+  const orderOfFields = getOrderOfFields(websites);
+
+  function partitionRecursively(orderOfFields, websites, depth) {
+    if (websites.length <= 1 || orderOfFields.length == 0) {
+      return websites;
+    }
+    let partitionBy = undefined;
+    let maxSitesWithPartitionAttribute = 0;
+    for (let i = 0; i < orderOfFields.length; ++i) {
+      let sitesWithPartitionAttribute = 0;
+      for (website of websites) {
+        if (website.fields.indexOf(orderOfFields[i]) >= 0) {
+          sitesWithPartitionAttribute++;
+        }
+      }
+      // console.log("Partition size with ", orderOfFields[i], " is ", sitesWithPartitionAttribute, "Max is", maxSitesWithPartitionAttribute);
+      if (sitesWithPartitionAttribute != websites.length &&
+          sitesWithPartitionAttribute > maxSitesWithPartitionAttribute) {
+        // console.log("new winner");
+        partitionBy = orderOfFields[i];
+        maxSitesWithPartitionAttribute = sitesWithPartitionAttribute;
+      }
+    }
+    // console.log(depth, partitionBy);
+    if (!partitionBy) {
+      // All fields are identical.
+      return websites;
+    }
+    const part1 = [];
+    const part2 = [];
+    for (website of websites) {
+      if (website.fields.indexOf(partitionBy) >= 0) {
+        part1.push(website);
+      } else {
+        part2.push(website);
+      }
+    }
+    const sortedPart1 = [...partitionRecursively(orderOfFields, part1, depth+1)];
+    const sortedPart2 = [...partitionRecursively(orderOfFields, part2, depth+1)];
+    return sortedPart1.concat(sortedPart2);
+  }
+  const sortedSites = partitionRecursively(orderOfFields, websites, 0);
   buildTable(destinationID, orderOfFields, sortedSites);
 }
 
@@ -1523,11 +1572,19 @@ occurred on multiple sites:
     <summary>Field clustering</summary>
     <div id="field_clustering_AR-1">
       <!--
-      <button onclick="clusterInOrderOfAppearance('field_clustering_result_AR-1', country_fields['AR-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['AR-1'])">Recursive bisect</button>
+      <button onclick="clusterInOrderOfAppearance('field_clustering_result_AR-1', country_fields['AR-1'])">In order of appearnance</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_AR-1', country_fields['AR-1'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_AR-1', country_fields['AR-1']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_AR-1', country_fields['AR-1'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_AR-1"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_AR-1', country_fields['AR-1']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_AR-1', country_fields['AR-1']);</script>
     </div>
   </details>
   
@@ -1860,7 +1917,7 @@ occurred on multiple sites:
       country_fields['AR-2'].push(
         new Website(
           /*id=*/ "https://www.avon.com.ar",
-          /*fields=*/ ["address-level1", "address-level1", "address-level3", "postal-code", "street-name", "house-number", "location-in-building", "between-streets-landmark"]));
+          /*fields=*/ ["address-level1", "address-level1", "address-level3", "postal-code", "street-name", "house-number", "location-in-building", "between-streets|landmark"]));
     </script><tr>
       <td id="2-	httpswww.bidcom.com.ar" style="padding: 0"><a href="#2-	httpswww.bidcom.com.ar" title="	https://www.bidcom.com.ar">#</a>
       <span title="Structured address"><b>S</b></span>
@@ -2505,7 +2562,7 @@ occurred on multiple sites:
       country_fields['AR-2'].push(
         new Website(
           /*id=*/ "https://www.casadelaudio.com",
-          /*fields=*/ ["address-level1", "address-level2", "address-level3", "postal-code", "given-name-organization", "family-name", "street-name", "house-number", "location-in-building", "between-streets", "address-level1", "address-level3", "address-level2", "postal-code"]));
+          /*fields=*/ ["address-level1", "address-level2", "address-level3", "postal-code", "given-name|organization", "family-name", "street-name", "house-number", "location-in-building", "between-streets", "address-level1", "address-level3", "address-level2", "postal-code"]));
     </script><tr>
       <td id="2-	httpscompragamer.com" style="padding: 0"><a href="#2-	httpscompragamer.com" title="	https://compragamer.com">#</a>
       <span title="Structured address"><b>S</b></span>
@@ -3099,10 +3156,18 @@ occurred on multiple sites:
     <div id="field_clustering_AR-2">
       <!--
       <button onclick="clusterInOrderOfAppearance('field_clustering_result_AR-2', country_fields['AR-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['AR-2'])">Recursive bisect</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_AR-2', country_fields['AR-2'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_AR-2', country_fields['AR-2']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_AR-2', country_fields['AR-2'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_AR-2"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_AR-2', country_fields['AR-2']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_AR-2', country_fields['AR-2']);</script>
     </div>
   </details>
   
@@ -3561,11 +3626,19 @@ occurred on multiple sites:
     <summary>Field clustering</summary>
     <div id="field_clustering_AU-1">
       <!--
-      <button onclick="clusterInOrderOfAppearance('field_clustering_result_AU-1', country_fields['AU-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['AU-1'])">Recursive bisect</button>
+      <button onclick="clusterInOrderOfAppearance('field_clustering_result_AU-1', country_fields['AU-1'])">In order of appearnance</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_AU-1', country_fields['AU-1'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_AU-1', country_fields['AU-1']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_AU-1', country_fields['AU-1'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_AU-1"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_AU-1', country_fields['AU-1']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_AU-1', country_fields['AU-1']);</script>
     </div>
   </details>
   
@@ -4078,7 +4151,7 @@ occurred on multiple sites:
       country_fields['AU-2'].push(
         new Website(
           /*id=*/ "https://www.appliancesonline.com.au",
-          /*fields=*/ ["organization", "street-address", "address-level2-postal-code"]));
+          /*fields=*/ ["organization", "street-address", "address-level2|postal-code"]));
     </script><tr>
       <td id="2-httpssecure.asos.com" style="padding: 0"><a href="#2-httpssecure.asos.com" title="https://secure.asos.com/">#</a>
       <span title="Unstructured address">U</span>
@@ -4588,10 +4661,18 @@ occurred on multiple sites:
     <div id="field_clustering_AU-2">
       <!--
       <button onclick="clusterInOrderOfAppearance('field_clustering_result_AU-2', country_fields['AU-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['AU-2'])">Recursive bisect</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_AU-2', country_fields['AU-2'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_AU-2', country_fields['AU-2']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_AU-2', country_fields['AU-2'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_AU-2"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_AU-2', country_fields['AU-2']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_AU-2', country_fields['AU-2']);</script>
     </div>
   </details>
   
@@ -5009,11 +5090,19 @@ occurred on multiple sites:
     <summary>Field clustering</summary>
     <div id="field_clustering_BR-1">
       <!--
-      <button onclick="clusterInOrderOfAppearance('field_clustering_result_BR-1', country_fields['BR-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['BR-1'])">Recursive bisect</button>
+      <button onclick="clusterInOrderOfAppearance('field_clustering_result_BR-1', country_fields['BR-1'])">In order of appearnance</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_BR-1', country_fields['BR-1'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_BR-1', country_fields['BR-1']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_BR-1', country_fields['BR-1'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_BR-1"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_BR-1', country_fields['BR-1']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_BR-1', country_fields['BR-1']);</script>
     </div>
   </details>
   
@@ -5521,7 +5610,7 @@ occurred on multiple sites:
       country_fields['BR-2'].push(
         new Website(
           /*id=*/ "https://www.carrefour.com.br",
-          /*fields=*/ ["country-name", "postal-code", "street-name", "house-number", "address-overflow-landmark", "address-level3", "address-level2", "address-level1"]));
+          /*fields=*/ ["country-name", "postal-code", "street-name", "house-number", "address-overflow|landmark", "address-level3", "address-level2", "address-level1"]));
     </script><tr>
       <td id="2-httpswww.casasbahia.com.br" style="padding: 0"><a href="#2-httpswww.casasbahia.com.br" title="https://www.casasbahia.com.br">#</a>
       <span title="Structured address"><b>S</b></span>
@@ -5684,7 +5773,7 @@ occurred on multiple sites:
       country_fields['BR-2'].push(
         new Website(
           /*id=*/ "https://www.cea.com.br",
-          /*fields=*/ ["postal-code", "street-name", "house-number", "address-overflow-landmark", "address-level3", "address-level2", "address-level1"]));
+          /*fields=*/ ["postal-code", "street-name", "house-number", "address-overflow|landmark", "address-level3", "address-level2", "address-level1"]));
     </script><tr>
       <td id="2-httpswww.dafiti.com.br" style="padding: 0"><a href="#2-httpswww.dafiti.com.br" title="https://www.dafiti.com.br">#</a>
       <span title="Structured address"><b>S</b></span>
@@ -5943,10 +6032,18 @@ occurred on multiple sites:
     <div id="field_clustering_BR-2">
       <!--
       <button onclick="clusterInOrderOfAppearance('field_clustering_result_BR-2', country_fields['BR-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['BR-2'])">Recursive bisect</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_BR-2', country_fields['BR-2'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_BR-2', country_fields['BR-2']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_BR-2', country_fields['BR-2'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_BR-2"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_BR-2', country_fields['BR-2']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_BR-2', country_fields['BR-2']);</script>
     </div>
   </details>
   
@@ -6124,11 +6221,19 @@ unstructured address lines 1 and 2.
     <summary>Field clustering</summary>
     <div id="field_clustering_CA-1">
       <!--
-      <button onclick="clusterInOrderOfAppearance('field_clustering_result_CA-1', country_fields['CA-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['CA-1'])">Recursive bisect</button>
+      <button onclick="clusterInOrderOfAppearance('field_clustering_result_CA-1', country_fields['CA-1'])">In order of appearnance</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_CA-1', country_fields['CA-1'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_CA-1', country_fields['CA-1']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_CA-1', country_fields['CA-1'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_CA-1"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_CA-1', country_fields['CA-1']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_CA-1', country_fields['CA-1']);</script>
     </div>
   </details>
   
@@ -6391,10 +6496,18 @@ unstructured address lines 1 and 2.
     <div id="field_clustering_CA-2">
       <!--
       <button onclick="clusterInOrderOfAppearance('field_clustering_result_CA-2', country_fields['CA-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['CA-2'])">Recursive bisect</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_CA-2', country_fields['CA-2'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_CA-2', country_fields['CA-2']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_CA-2', country_fields['CA-2'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_CA-2"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_CA-2', country_fields['CA-2']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_CA-2', country_fields['CA-2']);</script>
     </div>
   </details>
   
@@ -6744,11 +6857,19 @@ unstructured address lines 1 and 2.
     <summary>Field clustering</summary>
     <div id="field_clustering_CN-1">
       <!--
-      <button onclick="clusterInOrderOfAppearance('field_clustering_result_CN-1', country_fields['CN-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['CN-1'])">Recursive bisect</button>
+      <button onclick="clusterInOrderOfAppearance('field_clustering_result_CN-1', country_fields['CN-1'])">In order of appearnance</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_CN-1', country_fields['CN-1'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_CN-1', country_fields['CN-1']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_CN-1', country_fields['CN-1'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_CN-1"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_CN-1', country_fields['CN-1']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_CN-1', country_fields['CN-1']);</script>
     </div>
   </details>
   
@@ -6908,7 +7029,7 @@ unstructured address lines 1 and 2.
       country_fields['CN-2'].push(
         new Website(
           /*id=*/ "https://www.apple.com",
-          /*fields=*/ ["address-level1-address-level2-address-level3", "address-line1", "address-line2", "country"]));
+          /*fields=*/ ["address-level1|address-level2|address-level3", "address-line1", "address-line2", "country"]));
     </script><tr>
       <td id="2-httpswww.dangdang.com" style="padding: 0"><a href="#2-httpswww.dangdang.com" title="https://www.dangdang.com">#</a>
       <span title="Structured address"><b>S</b></span>
@@ -6979,7 +7100,7 @@ unstructured address lines 1 and 2.
       country_fields['CN-2'].push(
         new Website(
           /*id=*/ "https://www.dangdang.com",
-          /*fields=*/ ["country-address-level1-address-level2-address-level3-address-level4", "street-address"]));
+          /*fields=*/ ["country|address-level1|address-level2|address-level3|address-level4", "street-address"]));
     </script><tr>
       <td id="2-httpsgome.com.cn" style="padding: 0"><a href="#2-httpsgome.com.cn" title="https://gome.com.cn">#</a>
       <span title="Structured address"><b>S</b></span>
@@ -7122,7 +7243,7 @@ unstructured address lines 1 and 2.
       country_fields['CN-2'].push(
         new Website(
           /*id=*/ "https://www.kaola.com",
-          /*fields=*/ ["address-level1-address-level2-address-level3", "street-address"]));
+          /*fields=*/ ["address-level1|address-level2|address-level3", "street-address"]));
     </script><tr>
       <td id="2-httpswww.midea.cn" style="padding: 0"><a href="#2-httpswww.midea.cn" title="https://www.midea.cn">#</a>
       <span title="Unstructured address">U</span>
@@ -7352,7 +7473,7 @@ unstructured address lines 1 and 2.
       country_fields['CN-2'].push(
         new Website(
           /*id=*/ "https://www.vmall.com",
-          /*fields=*/ ["address-level1-address-level2-address-level3-street-address", "gap"]));
+          /*fields=*/ ["address-level1|address-level2|address-level3|street-address", "gap"]));
     </script>
   </table>
   <details open>
@@ -7360,10 +7481,18 @@ unstructured address lines 1 and 2.
     <div id="field_clustering_CN-2">
       <!--
       <button onclick="clusterInOrderOfAppearance('field_clustering_result_CN-2', country_fields['CN-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['CN-2'])">Recursive bisect</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_CN-2', country_fields['CN-2'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_CN-2', country_fields['CN-2']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_CN-2', country_fields['CN-2'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_CN-2"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_CN-2', country_fields['CN-2']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_CN-2', country_fields['CN-2']);</script>
     </div>
   </details>
   
@@ -7895,11 +8024,19 @@ occurred on multiple sites:
     <summary>Field clustering</summary>
     <div id="field_clustering_DE-1">
       <!--
-      <button onclick="clusterInOrderOfAppearance('field_clustering_result_DE-1', country_fields['DE-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['DE-1'])">Recursive bisect</button>
+      <button onclick="clusterInOrderOfAppearance('field_clustering_result_DE-1', country_fields['DE-1'])">In order of appearnance</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_DE-1', country_fields['DE-1'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_DE-1', country_fields['DE-1']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_DE-1', country_fields['DE-1'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_DE-1"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_DE-1', country_fields['DE-1']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_DE-1', country_fields['DE-1']);</script>
     </div>
   </details>
   
@@ -8620,10 +8757,18 @@ occurred on multiple sites:
     <div id="field_clustering_DE-2">
       <!--
       <button onclick="clusterInOrderOfAppearance('field_clustering_result_DE-2', country_fields['DE-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['DE-2'])">Recursive bisect</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_DE-2', country_fields['DE-2'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_DE-2', country_fields['DE-2']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_DE-2', country_fields['DE-2'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_DE-2"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_DE-2', country_fields['DE-2']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_DE-2', country_fields['DE-2']);</script>
     </div>
   </details>
   
@@ -8776,11 +8921,19 @@ This is why I have not transcribed more sites.
     <summary>Field clustering</summary>
     <div id="field_clustering_DK-1">
       <!--
-      <button onclick="clusterInOrderOfAppearance('field_clustering_result_DK-1', country_fields['DK-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['DK-1'])">Recursive bisect</button>
+      <button onclick="clusterInOrderOfAppearance('field_clustering_result_DK-1', country_fields['DK-1'])">In order of appearnance</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_DK-1', country_fields['DK-1'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_DK-1', country_fields['DK-1']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_DK-1', country_fields['DK-1'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_DK-1"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_DK-1', country_fields['DK-1']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_DK-1', country_fields['DK-1']);</script>
     </div>
   </details>
   
@@ -9003,10 +9156,18 @@ This is why I have not transcribed more sites.
     <div id="field_clustering_DK-2">
       <!--
       <button onclick="clusterInOrderOfAppearance('field_clustering_result_DK-2', country_fields['DK-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['DK-2'])">Recursive bisect</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_DK-2', country_fields['DK-2'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_DK-2', country_fields['DK-2']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_DK-2', country_fields['DK-2'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_DK-2"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_DK-2', country_fields['DK-2']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_DK-2', country_fields['DK-2']);</script>
     </div>
   </details>
   
@@ -9377,11 +9538,19 @@ today's autocomplete attribute.
     <summary>Field clustering</summary>
     <div id="field_clustering_EG-1">
       <!--
-      <button onclick="clusterInOrderOfAppearance('field_clustering_result_EG-1', country_fields['EG-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['EG-1'])">Recursive bisect</button>
+      <button onclick="clusterInOrderOfAppearance('field_clustering_result_EG-1', country_fields['EG-1'])">In order of appearnance</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_EG-1', country_fields['EG-1'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_EG-1', country_fields['EG-1']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_EG-1', country_fields['EG-1'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_EG-1"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_EG-1', country_fields['EG-1']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_EG-1', country_fields['EG-1']);</script>
     </div>
   </details>
   
@@ -9592,7 +9761,7 @@ today's autocomplete attribute.
       country_fields['EG-2'].push(
         new Website(
           /*id=*/ "https://www.amazon.ae",
-          /*fields=*/ ["country", "street-name", "building-house-number", "address-level2", "address-level3", "address-level1", "landmark"]));
+          /*fields=*/ ["country", "street-name", "building|house-number", "address-level2", "address-level3", "address-level1", "landmark"]));
     </script><tr>
       <td id="2-httpswww.azzafahmy.com" style="padding: 0"><a href="#2-httpswww.azzafahmy.com" title="https://www.azzafahmy.com">#</a>
       <span title="Unstructured address">U</span>
@@ -10126,10 +10295,18 @@ today's autocomplete attribute.
     <div id="field_clustering_EG-2">
       <!--
       <button onclick="clusterInOrderOfAppearance('field_clustering_result_EG-2', country_fields['EG-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['EG-2'])">Recursive bisect</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_EG-2', country_fields['EG-2'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_EG-2', country_fields['EG-2']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_EG-2', country_fields['EG-2'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_EG-2"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_EG-2', country_fields['EG-2']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_EG-2', country_fields['EG-2']);</script>
     </div>
   </details>
   
@@ -10842,11 +11019,19 @@ field.
     <summary>Field clustering</summary>
     <div id="field_clustering_ES-1">
       <!--
-      <button onclick="clusterInOrderOfAppearance('field_clustering_result_ES-1', country_fields['ES-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['ES-1'])">Recursive bisect</button>
+      <button onclick="clusterInOrderOfAppearance('field_clustering_result_ES-1', country_fields['ES-1'])">In order of appearnance</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_ES-1', country_fields['ES-1'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_ES-1', country_fields['ES-1']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_ES-1', country_fields['ES-1'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_ES-1"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_ES-1', country_fields['ES-1']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_ES-1', country_fields['ES-1']);</script>
     </div>
   </details>
   
@@ -10937,7 +11122,7 @@ field.
       country_fields['ES-2'].push(
         new Website(
           /*id=*/ "https://www.adidas.es",
-          /*fields=*/ ["street-location", "staircase-floor-apartment-organization", "postal-code", "address-level2"]));
+          /*fields=*/ ["street-location", "staircase|floor|apartment|organization", "postal-code", "address-level2"]));
     </script><tr>
       <td id="2-httpswww.apple.com" style="padding: 0"><a href="#2-httpswww.apple.com" title="https://www.apple.com">#</a>
       <span title="Structured address"><b>S</b></span>
@@ -11023,7 +11208,7 @@ field.
       country_fields['ES-2'].push(
         new Website(
           /*id=*/ "https://www.apple.com",
-          /*fields=*/ ["building-street-location", "address-overflow", "address-overflow", "postal-code", "address-level2", "country-name"]));
+          /*fields=*/ ["building|street-location", "address-overflow", "address-overflow", "postal-code", "address-level2", "country-name"]));
     </script><tr>
       <td id="2-httpswww.asos.com" style="padding: 0"><a href="#2-httpswww.asos.com" title="https://www.asos.com">#</a>
       <span title="Unstructured address">U</span>
@@ -11444,7 +11629,7 @@ field.
       country_fields['ES-2'].push(
         new Website(
           /*id=*/ "https://www.consum.es",
-          /*fields=*/ ["postal-code", "address-level1", "address-level2", "street-name-type", "street-name-name", "house-number", "floor", "staircase-gap", "apartment", "gap"]));
+          /*fields=*/ ["postal-code", "address-level1", "address-level2", "street-name-type", "street-name-name", "house-number", "floor", "staircase|gap", "apartment", "gap"]));
     </script><tr>
       <td id="2-	httpswww.decathlon.es" style="padding: 0"><a href="#2-	httpswww.decathlon.es" title="	https://www.decathlon.es">#</a>
       <span title="Unstructured address">U</span>
@@ -12244,10 +12429,18 @@ Por favor, no hagas indicaciones de horarios de entrega aquí. Gracias.)</span>
     <div id="field_clustering_ES-2">
       <!--
       <button onclick="clusterInOrderOfAppearance('field_clustering_result_ES-2', country_fields['ES-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['ES-2'])">Recursive bisect</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_ES-2', country_fields['ES-2'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_ES-2', country_fields['ES-2']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_ES-2', country_fields['ES-2'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_ES-2"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_ES-2', country_fields['ES-2']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_ES-2', country_fields['ES-2']);</script>
     </div>
   </details>
   
@@ -12989,11 +13182,19 @@ occurred on multiple sites:
     <summary>Field clustering</summary>
     <div id="field_clustering_FR-1">
       <!--
-      <button onclick="clusterInOrderOfAppearance('field_clustering_result_FR-1', country_fields['FR-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['FR-1'])">Recursive bisect</button>
+      <button onclick="clusterInOrderOfAppearance('field_clustering_result_FR-1', country_fields['FR-1'])">In order of appearnance</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_FR-1', country_fields['FR-1'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_FR-1', country_fields['FR-1']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_FR-1', country_fields['FR-1'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_FR-1"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_FR-1', country_fields['FR-1']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_FR-1', country_fields['FR-1']);</script>
     </div>
   </details>
   
@@ -14083,10 +14284,18 @@ occurred on multiple sites:
     <div id="field_clustering_FR-2">
       <!--
       <button onclick="clusterInOrderOfAppearance('field_clustering_result_FR-2', country_fields['FR-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['FR-2'])">Recursive bisect</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_FR-2', country_fields['FR-2'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_FR-2', country_fields['FR-2']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_FR-2', country_fields['FR-2'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_FR-2"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_FR-2', country_fields['FR-2']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_FR-2', country_fields['FR-2']);</script>
     </div>
   </details>
   
@@ -14597,11 +14806,19 @@ entertaining article on the oddities of UK addresses.
     <summary>Field clustering</summary>
     <div id="field_clustering_GB-1">
       <!--
-      <button onclick="clusterInOrderOfAppearance('field_clustering_result_GB-1', country_fields['GB-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['GB-1'])">Recursive bisect</button>
+      <button onclick="clusterInOrderOfAppearance('field_clustering_result_GB-1', country_fields['GB-1'])">In order of appearnance</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_GB-1', country_fields['GB-1'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_GB-1', country_fields['GB-1']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_GB-1', country_fields['GB-1'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_GB-1"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_GB-1', country_fields['GB-1']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_GB-1', country_fields['GB-1']);</script>
     </div>
   </details>
   
@@ -14904,7 +15121,7 @@ entertaining article on the oddities of UK addresses.
       country_fields['GB-2'].push(
         new Website(
           /*id=*/ "https://www.ao.com",
-          /*fields=*/ ["house-number-building", "street-name", "address-overflow", "address-level2", "address-level1", "postal-code"]));
+          /*fields=*/ ["house-number|building", "street-name", "address-overflow", "address-level2", "address-level1", "postal-code"]));
     </script><tr>
       <td id="2-httpswww.boohoo.com" style="padding: 0"><a href="#2-httpswww.boohoo.com" title="https://www.boohoo.com/">#</a>
       <span title="Unstructured address">U</span>
@@ -15095,7 +15312,7 @@ entertaining article on the oddities of UK addresses.
       country_fields['GB-2'].push(
         new Website(
           /*id=*/ "https://www.boots.com",
-          /*fields=*/ ["address-search", "house-number-building-apartment", "street-name", "gap", "address-level2", "address-level1", "postal-code", "country"]));
+          /*fields=*/ ["address-search", "house-number|building|apartment", "street-name", "gap", "address-level2", "address-level1", "postal-code", "country"]));
     </script><tr>
       <td id="2-httpswww.debenhams.com" style="padding: 0"><a href="#2-httpswww.debenhams.com" title="https://www.debenhams.com">#</a>
       <span title="Unstructured address">U</span>
@@ -15383,7 +15600,7 @@ entertaining article on the oddities of UK addresses.
       country_fields['GB-2'].push(
         new Website(
           /*id=*/ "https://www.ebuyer.com/",
-          /*fields=*/ ["postal-code", "organization", "building-house-number", "street-name", "gap", "address-level2", "address-level1"]));
+          /*fields=*/ ["postal-code", "organization", "building|house-number", "street-name", "gap", "address-level2", "address-level1"]));
     </script><tr>
       <td id="2-httpswww.halfords.com" style="padding: 0"><a href="#2-httpswww.halfords.com" title="https://www.halfords.com">#</a>
       <span title="Unstructured address">U</span>
@@ -15632,7 +15849,7 @@ entertaining article on the oddities of UK addresses.
       country_fields['GB-2'].push(
         new Website(
           /*id=*/ "https://www.homebase.co.uk",
-          /*fields=*/ ["postal-code", "organization", "house-number-building", "street-name", "address-overflow", "address-level2", "address-level1"]));
+          /*fields=*/ ["postal-code", "organization", "house-number|building", "street-name", "address-overflow", "address-level2", "address-level1"]));
     </script>
   </table>
   <details open>
@@ -15640,10 +15857,18 @@ entertaining article on the oddities of UK addresses.
     <div id="field_clustering_GB-2">
       <!--
       <button onclick="clusterInOrderOfAppearance('field_clustering_result_GB-2', country_fields['GB-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['GB-2'])">Recursive bisect</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_GB-2', country_fields['GB-2'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_GB-2', country_fields['GB-2']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_GB-2', country_fields['GB-2'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_GB-2"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_GB-2', country_fields['GB-2']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_GB-2', country_fields['GB-2']);</script>
     </div>
   </details>
   
@@ -16092,11 +16317,19 @@ occurred on multiple sites:
     <summary>Field clustering</summary>
     <div id="field_clustering_GR-1">
       <!--
-      <button onclick="clusterInOrderOfAppearance('field_clustering_result_GR-1', country_fields['GR-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['GR-1'])">Recursive bisect</button>
+      <button onclick="clusterInOrderOfAppearance('field_clustering_result_GR-1', country_fields['GR-1'])">In order of appearnance</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_GR-1', country_fields['GR-1'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_GR-1', country_fields['GR-1']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_GR-1', country_fields['GR-1'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_GR-1"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_GR-1', country_fields['GR-1']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_GR-1', country_fields['GR-1']);</script>
     </div>
   </details>
   
@@ -16643,7 +16876,7 @@ occurred on multiple sites:
       country_fields['GR-2'].push(
         new Website(
           /*id=*/ "https://eshop.mymarket.gr/",
-          /*fields=*/ ["street-address", "postal-code", "address-level2", "care-of-floor", "delivery-instructions"]));
+          /*fields=*/ ["street-address", "postal-code", "address-level2", "care-of|floor", "delivery-instructions"]));
     </script><tr>
       <td id="2-httpswww.myshoe.gr" style="padding: 0"><a href="#2-httpswww.myshoe.gr" title="https://www.myshoe.gr/">#</a>
       <span title="Unstructured address">U</span>
@@ -16789,7 +17022,7 @@ occurred on multiple sites:
       country_fields['GR-2'].push(
         new Website(
           /*id=*/ "https://www.ofarmakopoiosmou.gr",
-          /*fields=*/ ["country", "street-address", "postal-code", "address-level2-address-level3"]));
+          /*fields=*/ ["country", "street-address", "postal-code", "address-level2|address-level3"]));
     </script><tr>
       <td id="2-httpswww.pharmacy295.gr" style="padding: 0"><a href="#2-httpswww.pharmacy295.gr" title="https://www.pharmacy295.gr">#</a>
       <span title="Structured address"><b>S</b></span>
@@ -16888,10 +17121,18 @@ occurred on multiple sites:
     <div id="field_clustering_GR-2">
       <!--
       <button onclick="clusterInOrderOfAppearance('field_clustering_result_GR-2', country_fields['GR-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['GR-2'])">Recursive bisect</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_GR-2', country_fields['GR-2'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_GR-2', country_fields['GR-2']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_GR-2', country_fields['GR-2'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_GR-2"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_GR-2', country_fields['GR-2']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_GR-2', country_fields['GR-2']);</script>
     </div>
   </details>
   
@@ -17178,7 +17419,7 @@ fields. At last one form asked for an OIB (social security number).
       country_fields['HR-1'].push(
         new Website(
           /*id=*/ "https://edigital.hr",
-          /*fields=*/ ["name-organization"]));
+          /*fields=*/ ["name|organization"]));
     </script><tr>
       <td id="1-httpswww.ekupi.hr" style="padding: 0"><a href="#1-httpswww.ekupi.hr" title="https://www.ekupi.hr">#</a>
       <span title="Unstructured address">U</span>
@@ -17235,11 +17476,19 @@ fields. At last one form asked for an OIB (social security number).
     <summary>Field clustering</summary>
     <div id="field_clustering_HR-1">
       <!--
-      <button onclick="clusterInOrderOfAppearance('field_clustering_result_HR-1', country_fields['HR-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['HR-1'])">Recursive bisect</button>
+      <button onclick="clusterInOrderOfAppearance('field_clustering_result_HR-1', country_fields['HR-1'])">In order of appearnance</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_HR-1', country_fields['HR-1'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_HR-1', country_fields['HR-1']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_HR-1', country_fields['HR-1'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_HR-1"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_HR-1', country_fields['HR-1']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_HR-1', country_fields['HR-1']);</script>
     </div>
   </details>
   
@@ -17706,10 +17955,18 @@ fields. At last one form asked for an OIB (social security number).
     <div id="field_clustering_HR-2">
       <!--
       <button onclick="clusterInOrderOfAppearance('field_clustering_result_HR-2', country_fields['HR-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['HR-2'])">Recursive bisect</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_HR-2', country_fields['HR-2'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_HR-2', country_fields['HR-2']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_HR-2', country_fields['HR-2'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_HR-2"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_HR-2', country_fields['HR-2']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_HR-2', country_fields['HR-2']);</script>
     </div>
   </details>
   
@@ -17901,7 +18158,7 @@ occurred on multiple sites:
       country_fields['HU-1'].push(
         new Website(
           /*id=*/ "https://aqua.hu",
-          /*fields=*/ ["name-organization"]));
+          /*fields=*/ ["name|organization"]));
     </script><tr>
       <td id="1-httpsonline.auchan.hu" style="padding: 0"><a href="#1-httpsonline.auchan.hu" title="https://online.auchan.hu/">#</a>
       <span title="Structured address"><b>S</b></span>
@@ -18020,11 +18277,19 @@ occurred on multiple sites:
     <summary>Field clustering</summary>
     <div id="field_clustering_HU-1">
       <!--
-      <button onclick="clusterInOrderOfAppearance('field_clustering_result_HU-1', country_fields['HU-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['HU-1'])">Recursive bisect</button>
+      <button onclick="clusterInOrderOfAppearance('field_clustering_result_HU-1', country_fields['HU-1'])">In order of appearnance</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_HU-1', country_fields['HU-1'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_HU-1', country_fields['HU-1']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_HU-1', country_fields['HU-1'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_HU-1"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_HU-1', country_fields['HU-1']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_HU-1', country_fields['HU-1']);</script>
     </div>
   </details>
   
@@ -18712,10 +18977,18 @@ occurred on multiple sites:
     <div id="field_clustering_HU-2">
       <!--
       <button onclick="clusterInOrderOfAppearance('field_clustering_result_HU-2', country_fields['HU-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['HU-2'])">Recursive bisect</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_HU-2', country_fields['HU-2'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_HU-2', country_fields['HU-2']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_HU-2', country_fields['HU-2'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_HU-2"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_HU-2', country_fields['HU-2']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_HU-2', country_fields['HU-2']);</script>
     </div>
   </details>
   
@@ -19080,11 +19353,19 @@ occurred on multiple sites:
     <summary>Field clustering</summary>
     <div id="field_clustering_ID-1">
       <!--
-      <button onclick="clusterInOrderOfAppearance('field_clustering_result_ID-1', country_fields['ID-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['ID-1'])">Recursive bisect</button>
+      <button onclick="clusterInOrderOfAppearance('field_clustering_result_ID-1', country_fields['ID-1'])">In order of appearnance</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_ID-1', country_fields['ID-1'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_ID-1', country_fields['ID-1']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_ID-1', country_fields['ID-1'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_ID-1"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_ID-1', country_fields['ID-1']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_ID-1', country_fields['ID-1']);</script>
     </div>
   </details>
   
@@ -19728,7 +20009,7 @@ occurred on multiple sites:
       country_fields['ID-2'].push(
         new Website(
           /*id=*/ "https://www.dinomarket.com/",
-          /*fields=*/ ["street-address", "address-level2-address-level3", "postal-code"]));
+          /*fields=*/ ["street-address", "address-level2|address-level3", "postal-code"]));
     </script><tr>
       <td id="2-httpswww.gramedia.com" style="padding: 0"><a href="#2-httpswww.gramedia.com" title="https://www.gramedia.com">#</a>
       <span title="Unstructured address">U</span>
@@ -19883,7 +20164,7 @@ occurred on multiple sites:
       country_fields['ID-2'].push(
         new Website(
           /*id=*/ "https://www.jakartanotebook.com",
-          /*fields=*/ ["address-line1", "address-line2", "address-line3", "address-level2-address-level3", "postal-code", "delivery-instructions"]));
+          /*fields=*/ ["address-line1", "address-line2", "address-line3", "address-level2|address-level3", "postal-code", "delivery-instructions"]));
     </script>
   </table>
   <details open>
@@ -19891,10 +20172,18 @@ occurred on multiple sites:
     <div id="field_clustering_ID-2">
       <!--
       <button onclick="clusterInOrderOfAppearance('field_clustering_result_ID-2', country_fields['ID-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['ID-2'])">Recursive bisect</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_ID-2', country_fields['ID-2'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_ID-2', country_fields['ID-2']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_ID-2', country_fields['ID-2'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_ID-2"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_ID-2', country_fields['ID-2']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_ID-2', country_fields['ID-2']);</script>
     </div>
   </details>
   
@@ -20445,11 +20734,19 @@ occurred on multiple sites:
     <summary>Field clustering</summary>
     <div id="field_clustering_IN-1">
       <!--
-      <button onclick="clusterInOrderOfAppearance('field_clustering_result_IN-1', country_fields['IN-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['IN-1'])">Recursive bisect</button>
+      <button onclick="clusterInOrderOfAppearance('field_clustering_result_IN-1', country_fields['IN-1'])">In order of appearnance</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_IN-1', country_fields['IN-1'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_IN-1', country_fields['IN-1']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_IN-1', country_fields['IN-1'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_IN-1"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_IN-1', country_fields['IN-1']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_IN-1', country_fields['IN-1']);</script>
     </div>
   </details>
   
@@ -20730,7 +21027,7 @@ occurred on multiple sites:
       country_fields['IN-2'].push(
         new Website(
           /*id=*/ "https://www.ajio.com/",
-          /*fields=*/ ["postal-code", "address-level3-street-name", "address-level3-street-name", "apartment-building", "landmark", "address-level2", "address-level1"]));
+          /*fields=*/ ["postal-code", "address-level3|street-name", "address-level3|street-name", "apartment|building", "landmark", "address-level2", "address-level1"]));
     </script><tr>
       <td id="2-httpswww.apollopharmacy.in" style="padding: 0"><a href="#2-httpswww.apollopharmacy.in" title="https://www.apollopharmacy.in">#</a>
       <span title="Unstructured address">U</span>
@@ -20887,7 +21184,7 @@ occurred on multiple sites:
       country_fields['IN-2'].push(
         new Website(
           /*id=*/ "https://secure4.store.apple.com/",
-          /*fields=*/ ["address-line1", "address-line2", "landmark", "postal-code", "address-level2-address-level1", "country"]));
+          /*fields=*/ ["address-line1", "address-line2", "landmark", "postal-code", "address-level2|address-level1", "country"]));
     </script><tr>
       <td id="2-httpsstore-usa.arduino.cc" style="padding: 0"><a href="#2-httpsstore-usa.arduino.cc" title="https://store-usa.arduino.cc">#</a>
       <span title="Unstructured address">U</span>
@@ -21440,7 +21737,7 @@ occurred on multiple sites:
       country_fields['IN-2'].push(
         new Website(
           /*id=*/ "https://www.jiomart.com",
-          /*fields=*/ ["apartment", "floor", "gap", "building", "street-address", "landmark-address-level3", "postal-code"]));
+          /*fields=*/ ["apartment", "floor", "gap", "building", "street-address", "landmark|address-level3", "postal-code"]));
     </script><tr>
       <td id="2-httpswww.medplusmart.com" style="padding: 0"><a href="#2-httpswww.medplusmart.com" title="https://www.medplusmart.com">#</a>
       <span title="Unstructured address">U</span>
@@ -21598,10 +21895,18 @@ occurred on multiple sites:
     <div id="field_clustering_IN-2">
       <!--
       <button onclick="clusterInOrderOfAppearance('field_clustering_result_IN-2', country_fields['IN-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['IN-2'])">Recursive bisect</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_IN-2', country_fields['IN-2'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_IN-2', country_fields['IN-2']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_IN-2', country_fields['IN-2'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_IN-2"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_IN-2', country_fields['IN-2']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_IN-2', country_fields['IN-2']);</script>
     </div>
   </details>
   
@@ -22124,11 +22429,19 @@ occurred on multiple sites:
     <summary>Field clustering</summary>
     <div id="field_clustering_IT-1">
       <!--
-      <button onclick="clusterInOrderOfAppearance('field_clustering_result_IT-1', country_fields['IT-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['IT-1'])">Recursive bisect</button>
+      <button onclick="clusterInOrderOfAppearance('field_clustering_result_IT-1', country_fields['IT-1'])">In order of appearnance</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_IT-1', country_fields['IT-1'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_IT-1', country_fields['IT-1']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_IT-1', country_fields['IT-1'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_IT-1"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_IT-1', country_fields['IT-1']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_IT-1', country_fields['IT-1']);</script>
     </div>
   </details>
   
@@ -23145,10 +23458,18 @@ occurred on multiple sites:
     <div id="field_clustering_IT-2">
       <!--
       <button onclick="clusterInOrderOfAppearance('field_clustering_result_IT-2', country_fields['IT-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['IT-2'])">Recursive bisect</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_IT-2', country_fields['IT-2'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_IT-2', country_fields['IT-2']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_IT-2', country_fields['IT-2'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_IT-2"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_IT-2', country_fields['IT-2']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_IT-2', country_fields['IT-2']);</script>
     </div>
   </details>
   
@@ -24243,11 +24564,19 @@ occurred on multiple sites:
     <summary>Field clustering</summary>
     <div id="field_clustering_JP-1">
       <!--
-      <button onclick="clusterInOrderOfAppearance('field_clustering_result_JP-1', country_fields['JP-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['JP-1'])">Recursive bisect</button>
+      <button onclick="clusterInOrderOfAppearance('field_clustering_result_JP-1', country_fields['JP-1'])">In order of appearnance</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_JP-1', country_fields['JP-1'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_JP-1', country_fields['JP-1']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_JP-1', country_fields['JP-1'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_JP-1"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_JP-1', country_fields['JP-1']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_JP-1', country_fields['JP-1']);</script>
     </div>
   </details>
   
@@ -24382,7 +24711,7 @@ occurred on multiple sites:
       country_fields['JP-2'].push(
         new Website(
           /*id=*/ "https://www.amazon.co.jp",
-          /*fields=*/ ["country", "postal-code", "postal-code", "address-level1", "address-level2", "street-location", "building-organization", "location-in-building", "delivery-instructions"]));
+          /*fields=*/ ["country", "postal-code", "postal-code", "address-level1", "address-level2", "street-location", "building|organization", "location-in-building", "delivery-instructions"]));
     </script><tr>
       <td id="2-httpswww.animate-onlineshop.jp" style="padding: 0"><a href="#2-httpswww.animate-onlineshop.jp" title="https://www.animate-onlineshop.jp">#</a>
       <span title="Unstructured address">U</span>
@@ -24528,7 +24857,7 @@ occurred on multiple sites:
       country_fields['JP-2'].push(
         new Website(
           /*id=*/ "https://www.apple.com",
-          /*fields=*/ ["address-level1", "address-level2", "street-location", "building-and-location-in-building-door-code", "country"]));
+          /*fields=*/ ["address-level1", "address-level2", "street-location", "building-and-location-in-building|door-code", "country"]));
     </script><tr>
       <td id="2-httpswww.beams.co.jp" style="padding: 0"><a href="#2-httpswww.beams.co.jp" title="https://www.beams.co.jp">#</a>
       <span title="Structured address"><b>S</b></span>
@@ -24604,7 +24933,7 @@ occurred on multiple sites:
       country_fields['JP-2'].push(
         new Website(
           /*id=*/ "https://www.beams.co.jp",
-          /*fields=*/ ["postal-code", "postal-code", "address-level1", "address-level2-street-location", "building"]));
+          /*fields=*/ ["postal-code", "postal-code", "address-level1", "address-level2|street-location", "building"]));
     </script><tr>
       <td id="2-httpswww.dell.com" style="padding: 0"><a href="#2-httpswww.dell.com" title="https://www.dell.com/">#</a>
       <span title="Structured address"><b>S</b></span>
@@ -24715,7 +25044,7 @@ occurred on multiple sites:
       country_fields['JP-2'].push(
         new Website(
           /*id=*/ "https://www.dell.com/",
-          /*fields=*/ ["name-organization", "phonetic-name-phonetic-organization", "postal-code", "address-level1", "address-level2", "address-level3", "street-location", "building-and-location-in-building"]));
+          /*fields=*/ ["name|organization", "phonetic-name|phonetic-organization", "postal-code", "address-level1", "address-level2", "address-level3", "street-location", "building-and-location-in-building"]));
     </script><tr>
       <td id="2-httpswww.dinos.co.jp" style="padding: 0"><a href="#2-httpswww.dinos.co.jp" title="https://www.dinos.co.jp">#</a>
       <span title="Structured address"><b>S</b></span>
@@ -25054,7 +25383,7 @@ occurred on multiple sites:
       country_fields['JP-2'].push(
         new Website(
           /*id=*/ "https://www.hmv.co.jp",
-          /*fields=*/ ["postal-code", "address-level1", "address-level2-street-location", "building-and-location-in-building"]));
+          /*fields=*/ ["postal-code", "address-level1", "address-level2|street-location", "building-and-location-in-building"]));
     </script><tr>
       <td id="2-httpswww.iherb.com" style="padding: 0"><a href="#2-httpswww.iherb.com" title="https://www.iherb.com">#</a>
       <span title="Structured address"><b>S</b></span>
@@ -25115,7 +25444,7 @@ occurred on multiple sites:
       country_fields['JP-2'].push(
         new Website(
           /*id=*/ "https://www.iherb.com",
-          /*fields=*/ ["postal-code", "address-level1-address-level2-street-location", "location-in-building"]));
+          /*fields=*/ ["postal-code", "address-level1|address-level2|street-location", "location-in-building"]));
     </script><tr>
       <td id="2-httpswww.japanet.co.jp" style="padding: 0"><a href="#2-httpswww.japanet.co.jp" title="https://www.japanet.co.jp">#</a>
       <span title="Structured address"><b>S</b></span>
@@ -25305,7 +25634,7 @@ occurred on multiple sites:
       country_fields['JP-2'].push(
         new Website(
           /*id=*/ "https://joshinweb.jp",
-          /*fields=*/ ["postal-code", "postal-code", "address-level1", "address-level2", "street-location-building-and-location-in-building"]));
+          /*fields=*/ ["postal-code", "postal-code", "address-level1", "address-level2", "street-location|building-and-location-in-building"]));
     </script><tr>
       <td id="2-httpswww.kojima.net" style="padding: 0"><a href="#2-httpswww.kojima.net" title="https://www.kojima.net">#</a>
       <span title="Structured address"><b>S</b></span>
@@ -25386,10 +25715,18 @@ occurred on multiple sites:
     <div id="field_clustering_JP-2">
       <!--
       <button onclick="clusterInOrderOfAppearance('field_clustering_result_JP-2', country_fields['JP-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['JP-2'])">Recursive bisect</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_JP-2', country_fields['JP-2'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_JP-2', country_fields['JP-2']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_JP-2', country_fields['JP-2'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_JP-2"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_JP-2', country_fields['JP-2']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_JP-2', country_fields['JP-2']);</script>
     </div>
   </details>
   
@@ -25937,11 +26274,19 @@ occurred on multiple sites:
     <summary>Field clustering</summary>
     <div id="field_clustering_MX-1">
       <!--
-      <button onclick="clusterInOrderOfAppearance('field_clustering_result_MX-1', country_fields['MX-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['MX-1'])">Recursive bisect</button>
+      <button onclick="clusterInOrderOfAppearance('field_clustering_result_MX-1', country_fields['MX-1'])">In order of appearnance</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_MX-1', country_fields['MX-1'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_MX-1', country_fields['MX-1']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_MX-1', country_fields['MX-1'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_MX-1"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_MX-1', country_fields['MX-1']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_MX-1', country_fields['MX-1']);</script>
     </div>
   </details>
   
@@ -26639,7 +26984,7 @@ occurred on multiple sites:
       country_fields['MX-2'].push(
         new Website(
           /*id=*/ "https://www.coppel.com",
-          /*fields=*/ ["street-name", "house-number", "apartment", "postal-code", "address-level4", "address-level1", "address-level2", "street-address", "between-streets-landmark"]));
+          /*fields=*/ ["street-name", "house-number", "apartment", "postal-code", "address-level4", "address-level1", "address-level2", "street-address", "between-streets|landmark"]));
     </script><tr>
       <td id="2-httpswww.costco.com.mx" style="padding: 0"><a href="#2-httpswww.costco.com.mx" title="https://www.costco.com.mx">#</a>
       <span title="Structured address"><b>S</b></span>
@@ -26917,7 +27262,7 @@ occurred on multiple sites:
       country_fields['MX-2'].push(
         new Website(
           /*id=*/ "thttps://www.cyberpuerta.mxodo",
-          /*fields=*/ ["organization", "street-name", "house-number", "apartment", "between-streets-landmark", "address-level4", "postal-code", "address-level3", "address-level1", "country"]));
+          /*fields=*/ ["organization", "street-name", "house-number", "apartment", "between-streets|landmark", "address-level4", "postal-code", "address-level3", "address-level1", "country"]));
     </script>
   </table>
   <details open>
@@ -26925,10 +27270,18 @@ occurred on multiple sites:
     <div id="field_clustering_MX-2">
       <!--
       <button onclick="clusterInOrderOfAppearance('field_clustering_result_MX-2', country_fields['MX-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['MX-2'])">Recursive bisect</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_MX-2', country_fields['MX-2'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_MX-2', country_fields['MX-2']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_MX-2', country_fields['MX-2'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_MX-2"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_MX-2', country_fields['MX-2']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_MX-2', country_fields['MX-2']);</script>
     </div>
   </details>
   
@@ -27159,11 +27512,19 @@ same.
     <summary>Field clustering</summary>
     <div id="field_clustering_MY-1">
       <!--
-      <button onclick="clusterInOrderOfAppearance('field_clustering_result_MY-1', country_fields['MY-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['MY-1'])">Recursive bisect</button>
+      <button onclick="clusterInOrderOfAppearance('field_clustering_result_MY-1', country_fields['MY-1'])">In order of appearnance</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_MY-1', country_fields['MY-1'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_MY-1', country_fields['MY-1']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_MY-1', country_fields['MY-1'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_MY-1"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_MY-1', country_fields['MY-1']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_MY-1', country_fields['MY-1']);</script>
     </div>
   </details>
   
@@ -27631,10 +27992,18 @@ same.
     <div id="field_clustering_MY-2">
       <!--
       <button onclick="clusterInOrderOfAppearance('field_clustering_result_MY-2', country_fields['MY-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['MY-2'])">Recursive bisect</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_MY-2', country_fields['MY-2'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_MY-2', country_fields['MY-2']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_MY-2', country_fields['MY-2'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_MY-2"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_MY-2', country_fields['MY-2']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_MY-2', country_fields['MY-2']);</script>
     </div>
   </details>
   
@@ -27926,11 +28295,19 @@ occurred on multiple sites:
     <summary>Field clustering</summary>
     <div id="field_clustering_NG-1">
       <!--
-      <button onclick="clusterInOrderOfAppearance('field_clustering_result_NG-1', country_fields['NG-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['NG-1'])">Recursive bisect</button>
+      <button onclick="clusterInOrderOfAppearance('field_clustering_result_NG-1', country_fields['NG-1'])">In order of appearnance</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_NG-1', country_fields['NG-1'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_NG-1', country_fields['NG-1']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_NG-1', country_fields['NG-1'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_NG-1"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_NG-1', country_fields['NG-1']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_NG-1', country_fields['NG-1']);</script>
     </div>
   </details>
   
@@ -28493,10 +28870,18 @@ occurred on multiple sites:
     <div id="field_clustering_NG-2">
       <!--
       <button onclick="clusterInOrderOfAppearance('field_clustering_result_NG-2', country_fields['NG-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['NG-2'])">Recursive bisect</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_NG-2', country_fields['NG-2'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_NG-2', country_fields['NG-2']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_NG-2', country_fields['NG-2'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_NG-2"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_NG-2', country_fields['NG-2']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_NG-2', country_fields['NG-2']);</script>
     </div>
   </details>
   
@@ -28966,11 +29351,19 @@ occurred on multiple sites:
     <summary>Field clustering</summary>
     <div id="field_clustering_PL-1">
       <!--
-      <button onclick="clusterInOrderOfAppearance('field_clustering_result_PL-1', country_fields['PL-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['PL-1'])">Recursive bisect</button>
+      <button onclick="clusterInOrderOfAppearance('field_clustering_result_PL-1', country_fields['PL-1'])">In order of appearnance</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_PL-1', country_fields['PL-1'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_PL-1', country_fields['PL-1']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_PL-1', country_fields['PL-1'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_PL-1"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_PL-1', country_fields['PL-1']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_PL-1', country_fields['PL-1']);</script>
     </div>
   </details>
   
@@ -29700,10 +30093,18 @@ occurred on multiple sites:
     <div id="field_clustering_PL-2">
       <!--
       <button onclick="clusterInOrderOfAppearance('field_clustering_result_PL-2', country_fields['PL-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['PL-2'])">Recursive bisect</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_PL-2', country_fields['PL-2'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_PL-2', country_fields['PL-2']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_PL-2', country_fields['PL-2'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_PL-2"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_PL-2', country_fields['PL-2']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_PL-2', country_fields['PL-2']);</script>
     </div>
   </details>
   
@@ -30072,11 +30473,19 @@ occurred on multiple sites:
     <summary>Field clustering</summary>
     <div id="field_clustering_RU-1">
       <!--
-      <button onclick="clusterInOrderOfAppearance('field_clustering_result_RU-1', country_fields['RU-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['RU-1'])">Recursive bisect</button>
+      <button onclick="clusterInOrderOfAppearance('field_clustering_result_RU-1', country_fields['RU-1'])">In order of appearnance</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_RU-1', country_fields['RU-1'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_RU-1', country_fields['RU-1']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_RU-1', country_fields['RU-1'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_RU-1"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_RU-1', country_fields['RU-1']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_RU-1', country_fields['RU-1']);</script>
     </div>
   </details>
   
@@ -30709,10 +31118,18 @@ occurred on multiple sites:
     <div id="field_clustering_RU-2">
       <!--
       <button onclick="clusterInOrderOfAppearance('field_clustering_result_RU-2', country_fields['RU-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['RU-2'])">Recursive bisect</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_RU-2', country_fields['RU-2'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_RU-2', country_fields['RU-2']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_RU-2', country_fields['RU-2'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_RU-2"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_RU-2', country_fields['RU-2']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_RU-2', country_fields['RU-2']);</script>
     </div>
   </details>
   
@@ -30874,7 +31291,7 @@ house-number are not sufficient to find houses in the country side.
       country_fields['TR-1'].push(
         new Website(
           /*id=*/ "https://www.beymen.com",
-          /*fields=*/ ["name-organization"]));
+          /*fields=*/ ["name|organization"]));
     </script><tr>
       <td id="1-httpswww2.e-bebek.com" style="padding: 0"><a href="#1-httpswww2.e-bebek.com" title="https://www2.e-bebek.com">#</a>
       <span title="Unstructured address">U</span>
@@ -31042,11 +31459,19 @@ house-number are not sufficient to find houses in the country side.
     <summary>Field clustering</summary>
     <div id="field_clustering_TR-1">
       <!--
-      <button onclick="clusterInOrderOfAppearance('field_clustering_result_TR-1', country_fields['TR-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['TR-1'])">Recursive bisect</button>
+      <button onclick="clusterInOrderOfAppearance('field_clustering_result_TR-1', country_fields['TR-1'])">In order of appearnance</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_TR-1', country_fields['TR-1'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_TR-1', country_fields['TR-1']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_TR-1', country_fields['TR-1'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_TR-1"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_TR-1', country_fields['TR-1']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_TR-1', country_fields['TR-1']);</script>
     </div>
   </details>
   
@@ -31528,7 +31953,7 @@ house-number are not sufficient to find houses in the country side.
       country_fields['TR-2'].push(
         new Website(
           /*id=*/ "https://www.evkur.com.tr/",
-          /*fields=*/ ["address-level1", "address-level2", "address-level3", "street-name", "house-number-apartment", "postal-code", "delivery-instructions", "organization"]));
+          /*fields=*/ ["address-level1", "address-level2", "address-level3", "street-name", "house-number|apartment", "postal-code", "delivery-instructions", "organization"]));
     </script><tr>
       <td id="2-httpswww2.hm.com" style="padding: 0"><a href="#2-httpswww2.hm.com" title="https://www2.hm.com">#</a>
       <span title="Unstructured address">U</span>
@@ -31666,10 +32091,18 @@ house-number are not sufficient to find houses in the country side.
     <div id="field_clustering_TR-2">
       <!--
       <button onclick="clusterInOrderOfAppearance('field_clustering_result_TR-2', country_fields['TR-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['TR-2'])">Recursive bisect</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_TR-2', country_fields['TR-2'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_TR-2', country_fields['TR-2']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_TR-2', country_fields['TR-2'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_TR-2"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_TR-2', country_fields['TR-2']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_TR-2', country_fields['TR-2']);</script>
     </div>
   </details>
   
@@ -31740,11 +32173,19 @@ street-address field.
     <summary>Field clustering</summary>
     <div id="field_clustering_US-1">
       <!--
-      <button onclick="clusterInOrderOfAppearance('field_clustering_result_US-1', country_fields['US-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['US-1'])">Recursive bisect</button>
+      <button onclick="clusterInOrderOfAppearance('field_clustering_result_US-1', country_fields['US-1'])">In order of appearnance</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_US-1', country_fields['US-1'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_US-1', country_fields['US-1']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_US-1', country_fields['US-1'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_US-1"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_US-1', country_fields['US-1']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_US-1', country_fields['US-1']);</script>
     </div>
   </details>
   
@@ -31848,10 +32289,18 @@ street-address field.
     <div id="field_clustering_US-2">
       <!--
       <button onclick="clusterInOrderOfAppearance('field_clustering_result_US-2', country_fields['US-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['US-2'])">Recursive bisect</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_US-2', country_fields['US-2'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_US-2', country_fields['US-2']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_US-2', country_fields['US-2'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_US-2"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_US-2', country_fields['US-2']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_US-2', country_fields['US-2']);</script>
     </div>
   </details>
   
@@ -32347,11 +32796,19 @@ occurred on multiple sites:
     <summary>Field clustering</summary>
     <div id="field_clustering_ZA-1">
       <!--
-      <button onclick="clusterInOrderOfAppearance('field_clustering_result_ZA-1', country_fields['ZA-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['ZA-1'])">Recursive bisect</button>
+      <button onclick="clusterInOrderOfAppearance('field_clustering_result_ZA-1', country_fields['ZA-1'])">In order of appearnance</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_ZA-1', country_fields['ZA-1'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_ZA-1', country_fields['ZA-1']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_ZA-1', country_fields['ZA-1'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_ZA-1"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_ZA-1', country_fields['ZA-1']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_ZA-1', country_fields['ZA-1']);</script>
     </div>
   </details>
   
@@ -33207,7 +33664,7 @@ occurred on multiple sites:
       country_fields['ZA-2'].push(
         new Website(
           /*id=*/ "https://www.home.co.za",
-          /*fields=*/ ["address-search", "organization-building", "street-address", "address-level3", "address-level2", "postal-code", "address-level1", "country"]));
+          /*fields=*/ ["address-search", "organization|building", "street-address", "address-level3", "address-level2", "postal-code", "address-level1", "country"]));
     </script><tr>
       <td id="2-httpsleroymerlin.co.za" style="padding: 0"><a href="#2-httpsleroymerlin.co.za" title="https://leroymerlin.co.za">#</a>
       <span title="Unstructured address">U</span>
@@ -33305,10 +33762,18 @@ occurred on multiple sites:
     <div id="field_clustering_ZA-2">
       <!--
       <button onclick="clusterInOrderOfAppearance('field_clustering_result_ZA-2', country_fields['ZA-2'])">In order of appearnance</button>
-      <button onclick="cluster_with_recursive_bisect(country_fields['ZA-2'])">Recursive bisect</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_ZA-2', country_fields['ZA-2'])">Biggest frequencies first</button>
       -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_ZA-2', country_fields['ZA-2']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_ZA-2', country_fields['ZA-2'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
       <div id="field_clustering_result_ZA-2"></div>
-      <script>clusterInOrderOfAppearance('field_clustering_result_ZA-2', country_fields['ZA-2']);</script>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_ZA-2', country_fields['ZA-2']);</script>
     </div>
   </details>
   
