@@ -35,14 +35,14 @@ site_examples {
       label: "* First name"
       control_type: INPUT
       concepts: "given-name"
-      section: ADDRESS
+      section: NAME
     }
     fields {
       name: "|lastname"
       label: "* Last name"
       control_type: INPUT
       concepts: "family-name"
-      section: ADDRESS
+      section: NAME
     }
     fields {
       hide: true
@@ -50,7 +50,7 @@ site_examples {
       label: "* Phone"
       control_type: INPUT
       concepts: "unset"
-      section: ADDRESS
+      section: OTHER
     }
     fields {
       name: "|city"

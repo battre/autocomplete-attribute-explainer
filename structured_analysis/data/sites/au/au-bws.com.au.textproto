@@ -1,5 +1,5 @@
 site_examples {
-  url: "todo"
+  url: "https://bws.com.au"
   is_structured: true
   locale {
     country: "AU"

@@ -1,5 +1,5 @@
 site_examples {
-  url: "todo"
+  url: "https://www.capeunionmart.co.za/"
   is_structured: true
   locale {
     country: "ZA"

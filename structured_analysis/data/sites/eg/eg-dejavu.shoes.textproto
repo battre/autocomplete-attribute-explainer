@@ -35,7 +35,7 @@ site_examples {
       control_type: INPUT
       concepts: "given-name"
       autocomplete_attribute: "shipping given-name"
-      section: ADDRESS
+      section: NAME
     }
     fields {
       name: "TextField1|lastName"
@@ -43,7 +43,7 @@ site_examples {
       control_type: INPUT
       concepts: "family-name"
       autocomplete_attribute: "shipping family-name"
-      section: ADDRESS
+      section: NAME
     }
     fields {
       name: "TextField2|address1"
