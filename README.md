@@ -1,6 +1,6 @@
 # Proposal for extending the autocomplete attribute
 
-**Written**: 2022-01-28, **Updated**: n/a
+**Written**: 2022-01-28, **Updated**: 2023-03-13
 
 ## tl;dr
 
@@ -41,84 +41,12 @@ to as **structured addresses** in which the individual components that would
 go into a street-address can be referenced individually, e.g. the street name,
 house number, apartment number, building name, delivery instructions, etc.
 
-## Metrics
+## Metrics and impact
 
-In order to assess the frequency of structured address information and also to
-add heuristic support for fields that ask for street names and house numbers, 
-Chrome has added simple heuristics for detecting these field types.
-
-Chrome applies the following regular expressions to human-visible labels
-(`placeholder` attribute, `label` tags, ..., all the way to what Chrome believes
-to be the human-visible label of an input element based on the DOM structure)
-and names (`name` or `id` attributes) of input elements. Only if both regular
-expressions match a label or name, it reports these matchs. This means that it
-is not sufficient to have an `<input name="number">` in isolation without
-something that matches a street name regular expression.
-
-```c++
-const char16_t kStreetNameRe[] =
-    u"stra(ss|ß)e"              // de
-    u"|street"                  // en
-    u"|улица|название.?улицы"   // ru
-    u"|rua|avenida"             // pt-PT, pt-BR
-    u"|((?<!do |de )endereço)"  // pt-BR
-    u"|calle";                  // es-MX
-const char16_t kHouseNumberRe[] =
-    u"(house.?|street.?|^)number"              // en
-    u"|(haus|^)(nummer|nr\\.?)"                // de
-    u"|^\\*?.?número(.?\\*?$| da residência)"  // pt-BR, pt-PT
-    u"|дом|номер.?дома"                        // ru
-    u"|exterior";                              // es-MX
-```
-
-On top of that we apply some crowdsourcing.
-
-The following statistics represent the ratios of *number of detected street name
-fields* over *number of detected city fields* of *submitted forms*. We have
-chosen these values to count the number of form submissions rather than the
-number of domains for assessing impact of this proposal. We have chosen the
-number of detected city fields as a baseline of how many address forms users
-submitted.
-
-| Country                 | Ratio |
-| :---------------------- | ----: |
-| Germany                 | 33.5% |
-| Brazil                  | 27.9% |
-| Mexico                  | 16.2% |
-| Russia                  | 15.3% |
-| Argentina               | 20.8% |
-| Belgium                 | 14.3% |
-| Poland                  | 11.1% |
-| Netherlands             |  9.5% |
-| Ukraine                 |  9.4% |
-| Chile                   |  6.8% |
-| Spain                   |  4.3% |
-| Great Britain           |  1.5% |
-| France                  |  1.1% |
-| USA                     |  0.2% |
-| Japan                   |    0% |
-| Across the entire world |  3.9% |
-
-The ratios of *house number* to *city* fields are typically in a similar range.
-A notable exception is Brazil, where many address forms ask for a *zip code* and
-a *house number* because the *street name* and other information can be derived
-from the *zip code*. The *house number* to *city* ratio in Brazil is 47.6%.
-
-> **Note:** These metrics are probably lower bounds:
-> 
-> We have selected only a few candidate countries for which we have created
-> regular expressions so far. E.g. for Poland we would only detect a *street 
-> name* / *house number* if the developer chose the English terms “street” and
-> “house number” as the `name` or `id` attribute of an `<input>` element. We 
-> would not detect those fields if the developer chose the merely the human
-> readable Polish labels “ulica” / “numer domu” in combination with generic
-> `name` or `id` attributes such as `field1`.
-> 
-> We have divided the number of submitted forms with street name fields by the
-> number of submitted forms with city fields. There are many forms that ask for
-> your city, but not for your full address (e.g. when selecting a nearby store).
-> If we were to consider only proper shipping address forms, the computed ratios
-> might be higher.
+The [Country
+Analysis](https://battre.github.io/autocomplete-attribute-explainer/index.html)
+looked at 26 different countries and identified that only a small minority of
+countries is well covered by today's autocomplete attribute.
 
 ## The case for adding new field types
 
@@ -148,181 +76,169 @@ Spec) are:
    them to the spec could be a win in the sense that forms are not filled
    instead of incorrectly filled.
 
-## Proposed syntax
+## Proposed strategy
 
-We don’t have strong feelings regarding the syntax. We believe that 
-`address-line1-street-name` (see comment
-[here](https://github.com/whatwg/html/issues/4986#issuecomment-542088516))
-might cause problems for other field types (e.g. apartment numbers) where there
-is no clear assignment to specific address line numbers.
+### Introducing a new attribute
 
-For this reason, we have a slight preference for “street-name” and 
-“apartment-number”. We went one step further to propose adding even more field
-types than "street name" and "house number". Here is the proposal:
+At a very high-level we propose to introduce a *new attribute* `autofill`, which
+is inteded to replace the current `autocomplete` attribute over time.
 
-<table>
-<tr style="vertical-align: top">
-  <th colspan=3>Field name</th>
-  <th>Meaning</th>
-  <th>Canonical Format</th>
-  <th>Canonical Format Example</th>
-  <th>Control group</th>
-</tr>
-<tr style="vertical-align: top">
-  <td colspan=3>"street-address"</td>
-  <td>Street address (multiple lines, newlines preserved)</td>
-  <td>Free-form text</td>
-  <td>32 Vassar Street<br />MIT Room 32-G524</td>
-  <td>Multiline
-</tr>
-<tr style="vertical-align: top">
-  <td></td>
-  <td colspan=2>"address-line1"</td>
-  <td rowspan=3>Street address (one line per field)</td>
-  <td>Free-form text, no newlines</td>
-  <td>32 Vassar Street</td>
-  <td>Text</td>
-</tr>
-<tr style="vertical-align: top">
-  <td></td>
-  <td colspan=2>"address-line2"</td>
-  <td>Free-form text, no newlines</td>
-  <td>MIT Room 32-G524</td>
-  <td>Text</td>
-</tr>
-<tr style="vertical-align: top">
-  <td></td>
-  <td colspan=2>"address-line3"</td>
-  <td>Free-form text, no newlines</td>
-  <td></td>
-  <td>Text</td>
-</tr>
-<tr style="vertical-align: top">
-  <td></td>
-  <td colspan=2>"street-name"</td>
-  <td>Name of a street<br /><br />(not to be combined with address-lineX)</td>
-  <td>Free-form text, no newlines</td>
-  <td>Vassar Street</td>
-  <td>Text</td>
-</tr>
-<tr style="vertical-align: top">
-  <td></td>
-  <td colspan=2>"house-number"</td>
-  <td>Predominantly numeric identifier for a house (where applicable)<br /><br />(not to be combined with address-lineX)</td>
-  <td>Free-form text, no newlines</td>
-  <td>32, could contain sub-units: 32-100, 32-a</td>
-  <td>Text</td>
-</tr>
-<tr style="vertical-align: top">
-  <td></td>
-  <td colspan=2>"premise" (or “building-name”?)</td>
-  <td>Building name (where applicable<br /><br />(not to be combined with address-lineX)</td>
-  <td>Free-form text, no newlines</td>
-  <td>32</td>
-  <td>Text</td>
-</tr>
-<tr style="vertical-align: top">
-  <td></td>
-  <td colspan=2>"staircase"</td>
-  <td>Name of a staircase<br /><br />(not to be combined with address-lineX)</td>
-  <td>Free-form text, no newlines</td>
-  <td>1</td>
-  <td>Text</td>
-</tr>
-<tr style="vertical-align: top">
-  <td></td>
-  <td colspan=2>"sub-premise" (or “sub-unit”?)</td>
-  <td>Identifier of sub-premise (e.g. apartment, room, ...) inside the building.<br />If a sub-premise has only a floor-number and no apartment (or vice versa), this would default to the non-empty value.<br /><br />(not to be combined with address-lineX)</td>
-  <td>Free-form text, no newlines</td>
-  <td>G524</td>
-  <td>Text</td>
-</tr>
-<tr style="vertical-align: top">
-  <td></td>
-  <td></td>
-  <td colspan=1>"floor-number"</td>
-  <td>Floor number<br /><br />(not to be combined with address-lineX)</td>
-  <td>Free-form text, no newlines</td>
-  <td>G, often times numeric: 4</td>
-  <td>Text</td>
-</tr>
-<tr style="vertical-align: top">
-  <td></td>
-  <td></td>
-  <td colspan=1>"apartment"</td>
-  <td>Apartment, room or door number<br /><br />(not to be combined with address-lineX)</td>
-  <td>Free-form text, no newlines</td>
-  <td>524</td>
-  <td>Text</td>
-</tr>
-<tr style="vertical-align: top">
-  <td></td>
-  <td colspan=2>"delivery-instructions"</td>
-  <td>Delivery instructions<br /><br />(not to be combined with address-lineX)</td>
-  <td>Free-form text</td>
-  <td>Use gate code: 3315</td>
-  <td>Text</td>
-</tr>
-</table>
+#### Advantages
 
-*We would suggest adding something like the following to elaborate:*
+Introducing a new attribute comes with a couple of advantages, in particular it
+means that we don't need to be backwards compatible.
 
-> ### Structured and unstructured street addresses.
-> 
-> A “street-address” can be broken down into multiple address lines
-> (“address-lineX”) or **alternatively** into more structured information
-> (“street-name”, “house-number”, ..., “delivery-instructions”). Because there
-> is no agreed-upon distribution of the various structured information into
-> address-lineX fields, a website should not mix these two types of fields. The
-> result would be unpredictable.
+* **Browser behavior influenced interpretation of the spec:** Google Chrome (and
+  possibly) other browsers did not implement the autocomplete spec correctly. It
+  implemented a hard-coded expectation that an `address-level1` corresponds to a
+  state and an `address-level2` corresponds to a city. This is an incorrect
+  assumption. In Mexico for example, the state ("Estado") is subdivided into
+  municipalities ("Municipio") or delegaciones in case of Mexico. The
+  municipalities are subdivided into cities ("Ciudad"). A correct mapping
+  according to the autocomplete spec would be:
+  * Estado = `address-level1`
+  * Municipio = `address-level2`
+  * Ciudad = `address-level3`
 
-> **TODO:**
+  However, because browsers did not support the concept of a Municipio and hard
+  coded a city as `address-level2`, many websites today have annotations like
+  the following:
+  ```
+  <input type="text" id="estado" autocomplete="address-level1">
+  <input type="text" id="municipio" between `address-level1` and `address-level2` in Mexico>
+  <input type="text" id="ciudad" autocomplete="address-level2">
+  ```
+  If browsers started interpreting `autocomplete="address-level2"` differently,
+  they would break these websites.
+
+* **No backwards compatible syntax / Support unions of field types:** We have
+  observed that websites allow users to enter multiple tokens of an address into
+  a single field. For example in Argentina we observe websites that have
+  separate fields for the floor ("Piso") and apartment ("Departamento") but we
+  also observed websites that accepted both entries in a single field ("Piso y
+  Departamento"). Another pattern we observed is that websites asked for
+  "Recipient name or Company".
+
+  A new `autofill` attribute allows us to be more flexible with the syntax and
+  would not throw off browsers that don't implement the new logic.
+
+* **Blank slate for autocomplete="off"**: The autocomplete spec contains the
+  `off` keyword which is set on many websites where one would not expect it.
+  Some browsers (e.g. Google Chrome) decided to ignore `autocomplete="off"`
+  because the autofill feature would feel broken from a user's specective. There
+  are probably a series of reasons to block autocomplete:
+  * The website never requests autofill because it is unlikely that the user
+    enters their personal information. E.g. if the user is working in a call
+    center and enters customer's data.
+  * The website would be happy to have an address filled but also has an
+    autocomplete feature which would collide with an autocomplete feature by the
+    browser.
+  * The website observed that browsers' autocomplete performed poorly (e.g.
+    because the website asked for a house number which was not supported by
+    most browsers).
+
+  A new autocomplete attribute enables a more fine grained handling by browsers.
+  Especially for the second case, the browser could offer treatment that does
+  not collide with the UI of the website and would not inherit the legacy of the
+  third case.
+
+#### Disadvantages
+
+* Introducing more APIs increases complexity.
+
+#### Conclusion
+
+> **Proposal:**
 >
-> Open question: Should there be some overflow field? Should we assume that a
-> merchant knows which pieces of information to ask for a reliable delivery? Or
-> should there be an overflow field. E.g. if the user specifies a staircase but
-> the website does not ask for it, we could add "Staircase: X" to that overflow
-> field. Or we could append/prepend such information to the delivery
-> instructions.
+> We propose a new attribute called `autofill` that takes precedence over
+> `autocomplete` if both are specified.
+>
+> The `autofill` attribute should provide a superset of the features of
+> `autocompelte` so that websites which choose to use unstructured addresses
+> get support for this.
 
-## Implementation by browsers
+> **Status:**
+>
+> Proposed but not discussed.
 
-As indicated above, today the behavior by browsers is pretty much random
-depending on how website authors choose to interpret the meanings of
-`address-line1` and `address-line2`. The number of websites asking for structured
-information indicates that a lack of support by the autocomplete attribute did
-not prevent websites from using this representation.
+### Lowest common denominator vs. framework with country specific profiles
 
-If we extend the specification in the proposed way, browser vendors can pursue
-at least the following strategies:
+The current `autocomplete` spec tried to nudge all websites to use a lowest
+common denominator for address formats. It suggested using a single full name
+field intead of using given and family name fields. It asked for unstructured
+address lines instead of asking for a house number and street name.
 
-* No filling of “street-name” and “house-number” (or other not-supported field
-  types)
-* Wrong - but consistently wrong - filling: E.g. fill “address-line1” into
-  “street-name” and nothing into “house-number” (other not-supported field types
-  could remain blank).
-* Ask the user for a structured representation and an unstructured
-  representation (i.e., address-line1, 2, 3). Learn “street-name”,
-  “apartment-number” and other structured data from “street-address”: If the
-  user stores a “street-address” in the browser and visits a website with
-  structured fields for the first time, nothing would be filled. The user would
-  type their information and the browser would see that the tokens of the
-  structured address can be found in the unstructured address and associate the
-  structured representation with the unstructured address. On the next filling,
-  the structured information would be available. Chrome has built some slightly
-  complex logic that tries to map between a street-address and more structured
-  information.
-  (https://source.chromium.org/chromium/chromium/src/+/main:components/autofill/core/browser/data_model/autofill_structured_address.h)
-* Ask the user to enter a structured and an anstructured representation of their
-  address.
+In theory this is a great strategy.
 
-Chrome would pursue the last two strategies.
+In practice it turns out that this approach suffered from two major challenges:
+* Many websites preferred to follow local customs or requirements of shipping
+  companies and did not ask for unstructured information but implemented the
+  form structure they desired and thereby did not support the autocomplete spec.
+* Concepts like `address-levelX` were not very clear and we are not aware
+  of any browsers that support `address-level3` or higher.
 
-## Follow-up work
+We propose that the `autofill` attribute follows a similar strategy as
+ISO 19160:
 
-We may want to introduce similar logic to names because it is pretty common in
-Hispanic/Latinx communities to have two last names. We see that websites ask for
-"primer apellido" and "segundo apellido" or "apellido paterno" and "apellido
-materno" in separate fields.
+A **core model** offers a modelling framework for addresses which is
+complemented by **country-specific profiles** which explain how to apply the
+model for specific countries.
+
+In practice, this means that the core model can contain concepts such as
+`address-level1`, `address-level2`, `address-level3` and the country-specific
+profile assigns meanings to these concepts. For example, in Mexico it would
+specify that `address-level1` corresponds to "Estado", `address-level2`
+corresponds to "Delegación o Municipio" and `address-level3` to "Ciudad".
+Besides assigning meaning to fields, this would also allow-list field types for
+countries. In many countries like the USA or Germany, an `address-level3` would
+be undefined. While it's conceivable to consider neighborhoods or villages as
+`address-level3` in the US or Germany, it is very uncommon that websites would
+ask for such fields.
+
+#### Advantages
+
+* For websites that target specific markets, developers can look up the country
+  profiles and get very specific information for how to build address forms for
+  their markets. For example, Germany has states but they are typically not used
+  on address forms. It is unclear whether that puts a city to `address-level1`
+  or `address-level2`.
+* Having country specific profiles allows adding complexity that is essential in
+  some countries but hide it for other countries. For example, Japan requires
+  phonetic names, which don't exist in most countries. Website developers for
+  other countries would not need to be bothered about such concepts.
+* The county-specific profile allows combining atomic data types into compound
+  types. For example a street name and house number are combined as `"${house
+  number} ${street name}"` in the US while German addresses use `"${street name}
+  ${house number}"`. Some countries may have muliple valid ways of expressing a
+  set of tokens.
+
+#### Disadvantages
+
+* It becomes much harder to build an address form that works for users from all
+  countries. If that's a priority websites should use unstructured
+
+#### Conclusion
+
+> **Proposal:**
+>
+> We will produce a higher-level architecture that supports generic concepts
+> and country specific profiles.
+>
+> The country specific profiles should be feature compatible with the current
+> autofill spec (i.e. for every country we should have a meaningful definition
+> of a street-address or an address-level1). The country specific profiles may
+> extend the current autofill spec by new field types (e.g. street names, house
+> numbers, etc.).
+>
+> To prevent problems in the future like the omission of "municipio" between
+> `address-level1` and `address-level2` in Mexico, the `autofill` must only be
+> used for countries that have a profile.
+>
+> The profile to use for an address form can be inferred from a country
+> `<select>` element or guessed via browser heuristics.
+
+> **Status:**
+>
+> Proposed but not discussed.
 
 [autocomplete attribute]: (https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill)
