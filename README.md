@@ -76,6 +76,123 @@ Spec) are:
    them to the spec could be a win in the sense that forms are not filled
    instead of incorrectly filled.
 
+## Goals and principles
+
+### Follow the needs of websites
+
+> **Context:**
+>
+> A company told us that their shipping label printer prescribes them the format
+> for addresses. They don’t want to be in the business of tokenizing address
+> strings.
+>
+> Our analysis tells us that the local customs and needs decide how websites
+> structure their address forms. Not the lowest common denominator proposed by
+> the HTML spec. A beautiful and pure standard is useless if it does not get
+> traction.
+
+> **Proposal:**
+>
+> Where possible and reasonable, we follow the customs of real-world websites we
+> can observe today. We don't try to coerce websites towards a lowest common
+> global denominator. "Reasonable" means that we aim at supporting trends in a
+> country, not every snow flake website.
+
+> **Status:**
+>
+> Proposed but not discussed.
+
+### Enable per-country specific extensions
+
+> **Context:**
+>
+> For example, Spanish and Hungarian address forms (sometimes) separate the type
+> of a street from the name of the street. Japanese websites ask for a phonetic
+> spelling of a name. Some countries employ landmarks.
+
+> **Proposal:**
+>
+> This is a corollary of "Follow the needs of websites": We want to support
+> field types that are popular (and required) in a small set of countries
+> (possibly a single country).
+>
+> In the beginning we will focus on names and addresses. In the future, new
+> field types like tax payer IDs, new forms of payments, etc. can be in scope.
+
+> **Status:**
+>
+> Proposed but not discussed.
+
+### Tell developers how to interpret concepts in different languages
+
+> **Context:**
+>
+> For example in Germany you don’t write a state on an envelope to get a letter
+> shipped. Yet, the concept of a state exists as a political entity. It's
+> unclear from the autocomplete spec, whether this makes the city an
+> `address-level1` field or an `address-level2` field. We should remove this
+> ambiguity.
+
+> **Proposal:**
+>
+> Many websites are optimized for local markets. We want to give these websites
+> (and browsers that support autofill on these websites) concrete hints about
+> the semantics of fields.
+
+> **Status:**
+>
+> Proposed but not discussed.
+
+### Support compound types of different granularities
+
+> **Context:**
+>
+> The some websites in country may ask users to break their address into atomic
+> tokens (e.g. by asking for a floor number and apartment number in separate
+> fields) while other websites in the same country ask the user may ask the user
+> to provide compound data (e.g. by asking to enter the floor number and
+> apartment number in a single field).
+
+> **Proposal:**
+>
+> We will analyze address forms in different countries and enable filling the
+> combinations of data we observe on a non-trivial set of sites (we may ignore
+> rare slowflakes).
+>
+> It is currently unclear whether it would be better to introduce a new field
+> type like `"floor_number_and_apartment"` or whether to introduce a union of
+> multiple types like `"floor_number + apartment"`.
+>
+> Websites must only use combinations of fields that have been blessed by the
+> spec so that browsers can get instructions on how to assemble the data for a
+> field with multiple atomic types.
+
+> **Status:**
+>
+> Proposed but not discussed.
+
+### Progress with confidence
+
+> **Context:**
+>
+> Understanding address formats from $N$ coutnries is a herculean task that is
+> easy to get wrong because of cultural biases. Past examples of such incorrect
+> assumptions in Google Chrome included "a last name consists of a single word",
+> "every country uses postal codes" or "there is no entity between a state and a
+> city".
+>
+> We have seen cases where websites adapted to the (incorrect) browser behavior
+> rather than the spec.
+
+> **Proposal:**
+> We should roll this out country by country with a reasonable high confidence
+> that we have modeled a country correctly, rather than aiming for an immediate
+> global launch.
+
+> **Status:**
+>
+> Proposed but not discussed.
+
 ## Proposed strategy
 
 ### Introducing a new attribute
@@ -105,7 +222,7 @@ means that we don't need to be backwards compatible.
   the following:
   ```
   <input type="text" id="estado" autocomplete="address-level1">
-  <input type="text" id="municipio" between `address-level1` and `address-level2` in Mexico>
+  <input type="text" id="municipio">
   <input type="text" id="ciudad" autocomplete="address-level2">
   ```
   If browsers started interpreting `autocomplete="address-level2"` differently,
