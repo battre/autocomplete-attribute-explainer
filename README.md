@@ -26,7 +26,8 @@ in many countries it is common to have specific fields asking for a street name
 and a house number. More examples of field types that are not supported by the
 autofill attribute follow below.
 
-This document proposes a second, alternative, way of describing addresses.
+This document proposes an alternative way to annotate form fields with their
+expected types of address information.
 
 ## Naming
 
@@ -37,16 +38,17 @@ in the `<input>` form controls. These addresses can be interpreted well by
 humans but not so well by computers.
 
 This document proposes an additional way of describing addresses that we refer
-to as **structured addresses** in which the individual components that would
-go into a street-address can be referenced individually, e.g. the street name,
-house number, apartment number, building name, delivery instructions, etc.
+to as **structured addresses** in which the individual components that constitue
+a street-address can be referenced individually, e.g. the street name, house
+number, apartment number, building name, delivery instructions, etc.
 
 ## Metrics and impact
 
 The [Country
 Analysis](https://battre.github.io/autocomplete-attribute-explainer/index.html)
-looked at 26 different countries and identified that only a small minority of
-countries is well covered by today's autocomplete attribute.
+looked at 26 different countries and identified that only in a small minority of
+countries the commonly used structures to express address forms are well
+supported by today's autocomplete attribute.
 
 ## The case for adding new field types
 
@@ -54,23 +56,25 @@ Our arguments for adding the new autocomplete types (“Field names” in the HT
 Spec) are:
 
 1. Giving website authors the chance to annotate address forms so that they can
-   collect data in a format they need, enables browser vendors faciliate a
+   collect data in a format they need, enables browser vendors to faciliate a
    better autofill experience.
 
-2. In our opinion the metrics above indicate that websites frequently ask for
-   street names and house numbers. They choose to use these formats despite a
-   lack of support by the autocomplete attribute, so we don’t expect that
-   nudging website authors towards an address representation with
-   `address-line1, 2, 3`, is likely to succeed (c/f
+2. The metrics above indicate to us that in multiple countries, websites
+   predominately ask for separate street name and house numbers rather than
+   street addresses or address lines as they are defined by the autocomplete
+   attribute. They choose to use these formats despite a lack of support by the
+   autocomplete attribute, so we don’t expect that nudging website authors
+   towards an address representation with `address-line1, 2, 3`, is likely to
+   succeed (c/f
    https://github.com/whatwg/html/issues/4986#issuecomment-552055169).
 
-3. We see that some websites try using autocomplete attributes for this use
-   case. They typically choose `address-line1` for the street name and
-   `address-line2` for the house number. The effect on Chrome was pretty random
-   from a user’s perspective, depending on the address profile stored. We also
-   see that website authors introduce unofficial/self-defined attributes like
-   `house-number` and pair them with official attributes like `given-name` and
-   `family-name`.
+3. We see that some websites try to borrow the existing autocomplete attributes
+   for this use case. They typically choose `address-line1` for the street name
+   and `address-line2` for the house number. The effect on Chrome is pretty
+   random from a user’s perspective, depending on the address profile stored. We
+   also see that website authors introduce unofficial/self-defined attributes
+   like `house-number` and pair them with official attributes like `given-name`
+   and `family-name`.
 
 4. Even if browsers decide not to support street names and house numbers, adding
    them to the spec could be a win in the sense that forms are not filled
@@ -94,7 +98,7 @@ Spec) are:
 > **Proposal:**
 >
 > Where possible and reasonable, we follow the customs of real-world websites we
-> can observe today. We don't try to coerce websites towards a lowest common
+> can observe today. We don't try to coerce websites towards the lowest common
 > global denominator. "Reasonable" means that we aim at supporting trends in a
 > country, not every snowflake website.
 
@@ -113,7 +117,7 @@ Spec) are:
 
 > **Proposal:**
 >
-> This is a corollary of "Follow the needs of websites": We want to support
+> This is a corollary of "Follow the needs of websites": We also want to support
 > field types that are popular (and required) in a small set of countries
 > (possibly a single country) and don't exist in other countries.
 >
@@ -121,7 +125,7 @@ Spec) are:
 > countries.
 >
 > In the beginning we will focus on names and addresses. In the future, new
-> field types like taxpayer IDs, new forms of payments, etc. can be in scope.
+> field types like taxpayer IDs, new types of payments, etc. can be in scope.
 
 > **Status:**
 >
@@ -133,7 +137,7 @@ Spec) are:
 >
 > For example in Germany you don’t write a state on an envelope to get a letter
 > shipped. Yet, the concept of a state exists as a political entity. It's
-> unclear from the autocomplete spec, whether this makes the city an
+> unclear from the autocomplete spec whether this makes the city an
 > `address-level1` field or an `address-level2` field. We should remove this
 > ambiguity.
 
@@ -153,11 +157,11 @@ Spec) are:
 
 > **Context:**
 >
-> The some websites in a country may ask users to break their address into
-> atomic tokens (e.g. by asking for a floor number and apartment number in
-> separate fields) while other websites in the same country ask the user may ask
-> the user to provide compound data (e.g. by asking to enter the floor number
-> and apartment number in a single field).
+> Depending on the country, some websites may ask users to break their address
+> into atomic tokens (e.g. by asking for the floor and apartment number in
+> separate fields) while other websites in the same country ask the user to
+> provide compound data (e.g. by asking to enter the floor number and apartment
+> number in a single field).
 
 > **Proposal:**
 >
@@ -170,8 +174,9 @@ Spec) are:
 > multiple types like `"floor_number + apartment"`.
 >
 > Websites must only use combinations of fields that have been blessed by the
-> spec so that browsers can get instructions on how to assemble the data for a
-> field with multiple atomic types.
+> spec so that browsers can get instructions from the country profiles generated
+> as part of this spec on how to assemble the data for a field with multiple
+> atomic types.
 
 > **Status:**
 >
@@ -194,8 +199,8 @@ Spec) are:
 > **Proposal:**
 >
 > We should roll this out country by country with a reasonable high confidence
-> that we have modeled a country correctly, rather than aiming for an immediate
-> global launch.
+> that we have modeled the selected contries correctly, rather than aiming for an
+> immediate global launch.
 
 > **Status:**
 >
@@ -601,7 +606,7 @@ of field types to be filled.
 > **Proposal:**
 >
 > Allow websites to request combinations of field types (e.g.
-> `unit-and-building-name` and `street`). Only allowlisted combintations will be
+> `unit-and-building-name` and `street`). Only allowlisted combinations will be
 > supported. Browsers will get meta information that help constructing such
 > combinations. This meta information could express that
 > `unit-and-building-name` and `street` are concatenated with a `,` in an
