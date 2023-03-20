@@ -371,4 +371,62 @@ The obvious question is why we don't just reuse ISO 19160. We should
 > Proposed but not discussed. ([Issue
 > #11](https://github.com/battre/autocomplete-attribute-explainer/issues/11))
 
+
+### Modelling states and cities
+
+The autocomplete spec relies on a single hierarchy (address-level1 to
+address-level4) to model states and cities.
+
+This comes with the challenge that the administrative areas may not overlap
+with the information hierarchy needed for the postal system.
+
+For example, Mexico is organized (ignoring Mexico City) into 32 states (estado).
+These states are organized into municipalities (municipio). *Some* of those
+(like [Tijuana](https://en.wikipedia.org/wiki/Tijuana_Municipality)) are
+organized into boroughs (delegaciónes), while others are not. The municipalities
+have cities (ciudad) that are broken into neighborhoods (colonia).
+
+Germany comprises 16 federal states (Länder) and several of those are broken
+into administrative districts (Regierungsbezirke). Neither of these are relevant
+for postal addresses, but sometimes the states are requested.
+
+I propose to introduce an admin-area1, ..., admin-area4 hierarchy, which one
+can think of as states and subdivisions, plus a locality1, ..., locality4
+hierarcy, which one can think of as cities, neighborhoods/districts, ...
+
+By splitting these two, we retain the freedom to introduce finer-level
+granularities in either of the two hierarchies retrospectively. The problem of
+omitting the `municipio` level in Chrome's address hierarchy could have been
+fixed this way.
+
+#### Advantages
+
+* Different states may have different levels of nesting. By splitting the
+  admin-area from the locality, we introduce a constant referency point for
+  cities, regardless of how many levels of depth a website requests on the
+  admin-areas.
+* We introduce a new concept (admin-areaX and localityX) which is different from
+  the old admin-levelX and enables a fresh start for countries where the spec
+  diverged from browser behavior (at least Chrome hard-coded admin-level2 to
+  cities and websites started to rely on that, which makes it hard to fix now).
+
+#### Disadvantages
+
+* In some countries there may be no clear intuition where an admin-area ends and
+  a locality starts.
+
+#### Conclusion
+
+> **Proposal:**
+>
+> We introduce two hierarchies:
+> * admin-area1, admin-area2, admin-area3, admin-area4
+> * locality1, locality2, locality3, locality4
+
+> **Status:**
+>
+> Proposed but not discussed. ([Issue
+> #12](https://github.com/battre/autocomplete-attribute-explainer/issues/12))
+
+
 [autocomplete attribute]: (https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill)
