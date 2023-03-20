@@ -78,7 +78,7 @@ Spec) are:
 
 ## Goals and principles
 
-### Follow the needs of websites (Issue #5)
+### Follow the needs of websites ([Issue #5](https://github.com/battre/autocomplete-attribute-explainer/issues/5))
 
 > **Context:**
 >
