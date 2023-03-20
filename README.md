@@ -399,6 +399,10 @@ granularities in either of the two hierarchies retrospectively. The problem of
 omitting the `municipio` level in Chrome's address hierarchy could have been
 fixed this way.
 
+The [List of administrative divisions by
+country](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country)
+by Wikipedia may help modelling the admin-areas.
+
 #### Advantages
 
 * Different states may have different levels of nesting. By splitting the
