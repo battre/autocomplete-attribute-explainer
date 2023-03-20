@@ -78,7 +78,7 @@ Spec) are:
 
 ## Goals and principles
 
-### Follow the needs of websites ([Issue #5](https://github.com/battre/autocomplete-attribute-explainer/issues/5))
+### Follow the needs of websites
 
 > **Context:**
 >
@@ -100,7 +100,8 @@ Spec) are:
 
 > **Status:**
 >
-> Proposed but not discussed.
+> Proposed but not discussed. ([Issue
+> #5](https://github.com/battre/autocomplete-attribute-explainer/issues/5))
 
 ### Enable per-country specific extensions
 
@@ -124,10 +125,10 @@ Spec) are:
 
 > **Status:**
 >
-> Proposed but not discussed.
+> Proposed but not discussed. ([Issue
+> #6](https://github.com/battre/autocomplete-attribute-explainer/issues/6))
 
 ### Tell developers how to interpret concepts in different languages
-
 > **Context:**
 >
 > For example in Germany you don’t write a state on an envelope to get a letter
@@ -144,7 +145,9 @@ Spec) are:
 
 > **Status:**
 >
-> Proposed but not discussed.
+> Proposed but not discussed. ([Issue
+> #7](https://github.com/battre/autocomplete-attribute-explainer/issues/7))
+
 
 ### Support compound types of different granularities
 
@@ -172,9 +175,10 @@ Spec) are:
 
 > **Status:**
 >
-> Proposed but not discussed.
+> Proposed but not discussed. ([Issue
+> #8](https://github.com/battre/autocomplete-attribute-explainer/issues/8))
 
-### Progress with confidence
+### Roll out iteratively
 
 > **Context:**
 >
