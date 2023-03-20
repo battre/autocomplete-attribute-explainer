@@ -68,7 +68,7 @@ Spec) are:
    case. They typically choose `address-line1` for the street name and
    `address-line2` for the house number. The effect on Chrome was pretty random
    from a user’s perspective, depending on the address profile stored. We also
-   see that website authors introduce inofficial/self-defined attributes like
+   see that website authors introduce unofficial/self-defined attributes like
    `house-number` and pair them with official attributes like `given-name` and
    `family-name`.
 
@@ -96,7 +96,7 @@ Spec) are:
 > Where possible and reasonable, we follow the customs of real-world websites we
 > can observe today. We don't try to coerce websites towards a lowest common
 > global denominator. "Reasonable" means that we aim at supporting trends in a
-> country, not every snow flake website.
+> country, not every snowflake website.
 
 > **Status:**
 >
@@ -121,7 +121,7 @@ Spec) are:
 > countries.
 >
 > In the beginning we will focus on names and addresses. In the future, new
-> field types like tax payer IDs, new forms of payments, etc. can be in scope.
+> field types like taxpayer IDs, new forms of payments, etc. can be in scope.
 
 > **Status:**
 >
@@ -163,7 +163,7 @@ Spec) are:
 >
 > We will analyze address forms in different countries and enable filling the
 > combinations of data we observe on a non-trivial set of sites (we may ignore
-> rare slowflakes).
+> rare snowflakes).
 >
 > It is currently unclear whether it would be better to introduce a new field
 > type like `"floor_number_and_apartment"` or whether to introduce a union of
@@ -207,7 +207,7 @@ Spec) are:
 ### Introducing a new attribute
 
 At a very high-level we propose to introduce a *new attribute* `autofill`, which
-is inteded to replace the current `autocomplete` attribute over time.
+is intended to replace the current `autocomplete` attribute over time.
 
 #### Advantages
 
@@ -251,8 +251,8 @@ means that we don't need to be backwards compatible.
 * **Blank slate for autocomplete="off"**: The autocomplete spec contains the
   `off` keyword which is set on many websites where one would not expect it.
   Some browsers (e.g. Google Chrome) decided to ignore `autocomplete="off"`
-  because the autofill feature would feel broken from a user's specective. There
-  are probably a series of reasons to block autocomplete:
+  because the autofill feature would feel broken from a user's perspective.
+  There are probably a series of reasons to block autocomplete:
   * The website never requests autofill because it is unlikely that the user
     enters their personal information. E.g. if the user is working in a call
     center and enters customer's data.
@@ -280,7 +280,7 @@ means that we don't need to be backwards compatible.
 > `autocomplete` if both are specified.
 >
 > The `autofill` attribute should provide a superset of the features of
-> `autocompelte` so that websites which choose to use unstructured addresses
+> `autocomplete` so that websites which choose to use unstructured addresses
 > get support for this.
 
 > **Status:**
@@ -416,7 +416,7 @@ by Wikipedia may help modeling the admin-areas.
   now).
 * We could introduce a concept like `admin-area2+` which would fill
   `admin-area2` through `admin-area4` (e.g. comma separated), depending on how
-  much information is available, but keep the city for a seapate field.
+  much information is available, but keep the city for a separate field.
 
 #### Disadvantages
 
@@ -439,7 +439,7 @@ by Wikipedia may help modeling the admin-areas.
 ### Modeling addresses at a street level
 
 A core aspect of this proposal is to introduce more fine grained information
-for address fields that is requested in many countries such as a street name
+for address fields that are requested in many countries such as a street name
 and a house number.
 
 > **Proposal:**
@@ -592,7 +592,7 @@ Unfortunately, we observed the following combinations of fields:
 * `unit-and-building-name` | `street` + `landmark` (2 fields)
 * `unit-and-building-name` + `street` | `landmark` (2 fields)
 
-There was no clearly predominant way to combining fields.
+There was no clearly predominant way to combine fields.
 
 In countries like India it may be very difficult to learn the address from a
 submitted form. We probably want to give websites the ability to request unions
