@@ -409,10 +409,14 @@ by Wikipedia may help modelling the admin-areas.
   admin-area from the locality, we introduce a constant referency point for
   cities, regardless of how many levels of depth a website requests on the
   admin-areas.
-* We introduce a new concept (admin-areaX and localityX) which is different from
-  the old admin-levelX and enables a fresh start for countries where the spec
-  diverged from browser behavior (at least Chrome hard-coded admin-level2 to
-  cities and websites started to rely on that, which makes it hard to fix now).
+* We introduce a new concept (`admin-areaX` and `localityX`) which is different
+  from the old `admin-levelX` and enables a fresh start for countries where the
+  spec diverged from browser behavior (at least Chrome hard-coded admin-level2
+  to cities and websites started to rely on that, which makes it hard to fix
+  now).
+* We could introduce a concept like `admin-area2+` which would fill
+  `admin-area2` through `admin-area4` (e.g. comma separated), depending on how
+  much information is available, but keep the city for a seapate field.
 
 #### Disadvantages
 
@@ -424,13 +428,103 @@ by Wikipedia may help modelling the admin-areas.
 > **Proposal:**
 >
 > We introduce two hierarchies:
-> * admin-area1, admin-area2, admin-area3, admin-area4
-> * locality1, locality2, locality3, locality4
+> * `admin-area1`, `admin-area2`, `admin-area3`, `admin-area4`
+> * `locality1`, `locality2`, `locality3`, `locality4`
 
 > **Status:**
 >
 > Proposed but not discussed. ([Issue
 > #12](https://github.com/battre/autocomplete-attribute-explainer/issues/12))
 
+### Modelling addresses at a street level
+
+A core aspect of this proposal is to introduce more fine grained information
+for address fields that is requested in many countries such as a street name
+and a house number.
+
+> **Proposal:**
+>
+> We propose to maintain the concept of a `street-address` and the
+> `address-lineX` fields (we may want to introduce an `address-line4` for extra
+> flexibility).
+>
+> On top of that we need to cater for the more structured usecases and propose
+> the following new types:
+>
+> * `street-location` - This is what frequently goes into an `address-line1` in
+>   other countries: The information that helps identifying a building in a
+>   street.
+>   * `street` - The name of the street.
+>     * `street-type` - Only a few countries split the name of the street from
+>       the type of the street. Examples are Spain and Hungary. The type of a
+>       street could be "Avenue" or "Road".
+>     * `street-name`
+>   * `house-number-or-building-name` - Fills either the `house-number` or
+>     `building-name`, or both, depending on what's defined. Note that this
+>     level will not exist in many countries.
+>     * `house-number` - The number assigned to a building in a street.
+>     * `building-name` - Some countries reference buildings by a name (e.g.
+>       India and sometimes Great Britain).
+>
+> **Note**: The hierarchy presented above is proposed in general. It is possible
+> to define country specific divergences, e.g. to separat a building-name out
+> of the street-location.
+>
+> For example the follwing might be a valid hierarchy in one country.
+>
+> * `street-location`
+>   * `street`
+>   * `house-number`
+> * `building-name`
+
+> **Status:**
+>
+> Proposed but not discussed. ([Issue
+> #13](https://github.com/battre/autocomplete-attribute-explainer/issues/13))
+
+### Modelling addresses at the buiding level
+
+An address does not end at the building. We propose the following concepts to
+route the delivery inside a building.
+
+> **Proposal:**
+>
+> * `in-building-location` - This should be the primary way to request the
+>   location within a building. This would be used for example if websites
+>   specify "Apt, Unit, etc.". Websites that decide to ask for more fine-grained
+>   information will use the fields below.
+>   * `entrance` - Entrance of the building
+>   * `floor` - Floor number of the apartment / unit.
+>   * `staircase` - Staircase within the building.
+>   * `unit` - e.g. "Apt 5". The fully spelled out apartment / unit, how it
+>     should appear in `in-building-location`.
+>     * `unit-type` - e.g. "Apt", "Room", "Store"
+>     * `unit-name` - e.g. "5"
+
+> **Status:**
+>
+> Proposed but not discussed. ([Issue
+> #14](https://github.com/battre/autocomplete-attribute-explainer/issues/14))
+
+### Modelling further routing information
+
+Several tokens don't fill well into the propose hierarchy:
+
+> **Proposal:**
+>
+> * `address-overflow` - In several countries (e.g. Brazil or Germany) this is
+>   field complements the `street-location` and is am atomic topic that is
+>   rarely seen split into smaller fragments. In these countries we often see
+>   the fields (`street`, `house-number`, `address-overflow`). The field is
+>   sometimes referred to as "additional information".
+> * `landmark` - This can be called a landmark, reference point, entrecalles
+> * `delivery-instructions` - Special instructions to a delivery person.
+> * `care-of` - The name of the intermediary who is responsible for transferring
+>   a piece of mail between the postal system and the final recipient.
+
+> **Status:**
+>
+> Proposed but not discussed. ([Issue
+> #15](https://github.com/battre/autocomplete-attribute-explainer/issues/15))
 
 [autocomplete attribute]: (https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill)
