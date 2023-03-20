@@ -545,15 +545,71 @@ in hierarchies:
     * `house-number`
     * `unit`
 
+#### Advantages
+
+* By making introducing `house-number-and-unit` as a first class citizen for
+  countries in which it is common to combine the house number and unit into a
+  single field, the internal data structure reflects reality. This makes it
+  probably much easier to maintain a consistent state if browsers try to observe
+  submitted address forms and use the data to update stored addresses.
+
+#### Disadvantages
+
+* In this example `house-number-and-unit` takes the functional role of
+  `house-number-or-building-name`. This makes it harder to translate addresses
+  stored for one country into the hierarchy of another country.
+
 > **Proposal:**
 >
 > We aim to have a single, predominant hierarchy for each country. This
-> hierarchy does not need to be the same for every country.
+> hierarchy does not need to be the same for every country. We may introduce
+> country-specific inner nodes for this.
 
 > **Status:**
 >
 > Proposed but not discussed. ([Issue
 > #16](https://github.com/battre/autocomplete-attribute-explainer/issues/16))
 
+### Compound field types
+
+We may run into situations in which the proposed hierarchy is insufficient to
+meet the needs of websites.
+
+In India it is very common to combine the flat number (unit) and building name
+in a single field, so the following address structure may be appropriate:
+
+* `street-location`
+  * `unit-and-building-name`
+    * `unit`
+    * `building-name`
+    * `house-number` - Not sure whether we want to include this, websites rarely
+      ask for a house number.
+  * `street`
+  * `landmark`
+
+Unfortunately, we observed the following combinations of fields:
+* `unit-and-building-name` | `street` | `landmark` (3 fields)
+* `unit-and-building-name` | `street` + `landmark` (2 fields)
+* `unit-and-building-name` + `street` | `landmark` (2 fields)
+
+There was no clearly predominant way to combining fields.
+
+In countries like India it may be very difficult to learn the address from a
+submitted form. We probably want to give websites the ability to request unions
+of field types to be filled.
+
+> **Proposal:**
+>
+> Allow websites to request combinations of field types (e.g.
+> `unit-and-building-name` and `street`). Only allowlisted combintations will be
+> supported. Browsers will get meta information that help constructing such
+> combinations. This meta information could express that
+> `unit-and-building-name` and `street` are concatenated with a `,` in an
+> `<input>` field and a `\n` in a `<textarea>`.
+
+> **Status:**
+>
+> Proposed but not discussed. ([Issue
+> #17](https://github.com/battre/autocomplete-attribute-explainer/issues/17))
 
 [autocomplete attribute]: (https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill)
