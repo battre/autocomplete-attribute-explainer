@@ -199,7 +199,8 @@ Spec) are:
 
 > **Status:**
 >
-> Proposed but not discussed.
+> Proposed but not discussed. ([Issue
+> #9](https://github.com/battre/autocomplete-attribute-explainer/issues/9))
 
 ## Proposed strategy
 
@@ -284,7 +285,8 @@ means that we don't need to be backwards compatible.
 
 > **Status:**
 >
-> Proposed but not discussed.
+> Proposed but not discussed. ([Issue
+> #10](https://github.com/battre/autocomplete-attribute-explainer/issues/10))
 
 ### Lowest common denominator vs. framework with country specific profiles
 
@@ -366,6 +368,7 @@ The obvious question is why we don't just reuse ISO 19160. We should
 
 > **Status:**
 >
-> Proposed but not discussed.
+> Proposed but not discussed. ([Issue
+> #11](https://github.com/battre/autocomplete-attribute-explainer/issues/11))
 
 [autocomplete attribute]: (https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill)
