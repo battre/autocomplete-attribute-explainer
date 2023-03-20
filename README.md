@@ -220,13 +220,13 @@ Introducing a new attribute comes with a couple of advantages, in particular it
 means that we don't need to be backwards compatible.
 
 * **Browser behavior influenced interpretation of the spec:** Google Chrome (and
-  possibly) other browsers did not implement the autocomplete spec correctly. It
-  implemented a hard-coded expectation that an `address-level1` corresponds to a
-  state and an `address-level2` corresponds to a city. This is an incorrect
-  assumption. In Mexico for example, the state ("Estado") is subdivided into
-  municipalities ("Municipio") or delegaciones in case of Mexico. The
-  municipalities are subdivided into cities ("Ciudad"). A correct mapping
-  according to the autocomplete spec would be:
+  possibly) other browsers did not implement the autocomplete spec correctly.
+  Chrome implemented a hard-coded expectation that an `address-level1`
+  corresponds to a state and an `address-level2` corresponds to a city. This is
+  an incorrect assumption. In Mexico for example, the state ("Estado") is
+  subdivided into municipalities ("Municipio") or boroughs ("Delegaciones") in
+  case of Mexico City. The municipalities are again subdivided into cities
+  ("Ciudad"). A correct mapping according to the autocomplete spec would be:
   * Estado = `address-level1`
   * Municipio = `address-level2`
   * Ciudad = `address-level3`
@@ -242,11 +242,11 @@ means that we don't need to be backwards compatible.
   If browsers started interpreting `autocomplete="address-level2"` differently,
   they would break these websites.
 
-* **No backwards compatible syntax / Support unions of field types:** We have
+* **No backwards compatible syntax / support unions of field types:** We have
   observed that websites allow users to enter multiple tokens of an address into
-  a single field. For example in Argentina we observe websites that have
+  a single field. For example, in Argentina we observe websites that have
   separate fields for the floor ("Piso") and apartment ("Departamento") but we
-  also observed websites that accepted both entries in a single field ("Piso y
+  also observe websites that accept both entries in a single field ("Piso y
   Departamento"). Another pattern we observed is that websites asked for
   "Recipient name or Company".
 
@@ -262,8 +262,8 @@ means that we don't need to be backwards compatible.
     enters their personal information. E.g. if the user is working in a call
     center and enters customer's data.
   * The website would be happy to have an address filled but also has an
-    autocomplete feature which would collide with an autocomplete feature by the
-    browser.
+    autocomplete feature on its own which would have a colliding UI with the
+    autocomplete feature by the browser.
   * The website observed that browsers' autocomplete performed poorly (e.g.
     because the website asked for a house number which was not supported by
     most browsers).
@@ -293,28 +293,29 @@ means that we don't need to be backwards compatible.
 > Proposed but not discussed. ([Issue
 > #10](https://github.com/battre/autocomplete-attribute-explainer/issues/10))
 
-### Lowest common denominator vs. framework with country specific profiles
+### Lowest common denominator vs. framework with country-specific profiles
 
-The current `autocomplete` spec tried to nudge all websites to use a lowest
+The current `autocomplete` spec tries to nudge all websites to use the lowest
 common denominator for address formats. It suggested using a single full name
-field intead of using given and family name fields. It asked for unstructured
+field instead of using given and family name fields. It asked for unstructured
 address lines instead of asking for a house number and street name.
 
 In theory this is a great strategy.
 
-In practice it turns out that this approach suffered from two major challenges:
-* Many websites preferred to follow local customs or requirements of shipping
-  companies and did not ask for unstructured information but implemented the
-  form structure they desired and thereby did not support the autocomplete spec.
-* Concepts like `address-levelX` were not very clear and we are not aware
+In practice it turns out that this approach suffers from two major challenges:
+* Many websites prefer to follow local customs or requirements of shipping
+  companies and do not ask for unstructured information but implement the
+  form structure they desire and thereby do not fully support the autocomplete
+  spec.
+* Concepts like `address-levelX` are not very clear and we are not aware
   of any browsers that support `address-level3` or higher.
 
 We propose that the `autofill` attribute follows a similar strategy as
 ISO 19160:
 
-A **core model** offers a modeling framework for addresses which is
-complemented by **country-specific profiles** which explain how to apply the
-model for specific countries.
+A **core model** offers a framework for describing addresses which is
+complemented by **country-specific profiles**. Those explain how to apply and
+adapt the framework for specific countries.
 
 In practice, this means that the core model can contain concepts such as
 `address-level1`, `address-level2`, `address-level3` and the country-specific
@@ -334,39 +335,44 @@ ask for such fields.
   their markets. For example, Germany has states but they are typically not used
   on address forms. It is unclear whether that puts a city to `address-level1`
   or `address-level2`.
-* Having country specific profiles allows adding complexity that is essential in
-  some countries but hide it for other countries. For example, Japan requires
+* Having country-specific profiles allows adding complexity that is essential in
+  some countries but hides it for other countries. For example, Japan requires
   phonetic names, which don't exist in most countries. Website developers for
   other countries would not need to be bothered about such concepts.
 * The county-specific profile allows combining atomic data types into compound
   types. For example a street name and house number are combined as `"${house
   number} ${street name}"` in the US while German addresses use `"${street name}
-  ${house number}"`. Some countries may have muliple valid ways of expressing a
+  ${house number}"`. Some countries may have multiple valid ways of expressing a
   set of tokens.
 
 #### Disadvantages
 
 * It becomes much harder to build an address form that works for users from all
-  countries. If that's a priority websites should use unstructured
+  countries. If that's a priority to support an international audience, websites
+  should use forms with unstructured addresses.
 
-The obvious question is why we don't just reuse ISO 19160. We should
+The obvious question is why we don't just reuse ISO 19160. ISO 19160 offers a
+lot of details but also a high degree of complexity, which exceeds the address
+forms we see on the internet. Many of the concepts defined in the standard are
+not used in any of the country profiles. As such, it should be possible to
+provide something simpler but sufficiently powerful.
 
 #### Conclusion
 
 > **Proposal:**
 >
 > We will produce a higher-level architecture that supports generic concepts
-> and country specific profiles.
+> and country-specific profiles.
 >
-> The country specific profiles should be feature compatible with the current
-> autofill spec (i.e. for every country we should have a meaningful definition
-> of a street-address or an address-level1). The country specific profiles may
-> extend the current autofill spec by new field types (e.g. street names, house
-> numbers, etc.).
+> The country-specific profiles should be feature compatible with the current
+> autocomplete spec (i.e. for every country we should have a meaningful
+> definition of a street-address or an address-level1). The country-specific
+> profiles may extend the current autocomplete spec by new field types (e.g. street
+> names, house numbers, etc.).
 >
 > To prevent problems in the future like the omission of "municipio" between
-> `address-level1` and `address-level2` in Mexico, the `autofill` must only be
-> used for countries that have a profile.
+> `address-level1` and `address-level2` in Mexico, the `autofill` attribute must
+> only be used for countries that have a profile.
 >
 > The profile to use for an address form can be inferred from a country
 > `<select>` element or guessed via browser heuristics.
@@ -393,11 +399,11 @@ have cities (ciudad) that are broken into neighborhoods (colonia).
 
 Germany comprises 16 federal states (Länder) and several of those are broken
 into administrative districts (Regierungsbezirke). Neither of these are relevant
-for postal addresses, but sometimes the states are requested.
+for postal addresses, but sometimes the states are requested on webforms.
 
-I propose to introduce an admin-area1, ..., admin-area4 hierarchy, which one
+We propose to introduce an admin-area1, ..., admin-area4 hierarchy, which one
 can think of as states and subdivisions, plus a locality1, ..., locality4
-hierarcy, which one can think of as cities, neighborhoods/districts, ...
+hierarchy, which one can think of as cities, neighborhoods/districts, ...
 
 By splitting these two, we retain the freedom to introduce finer-level
 granularities in either of the two hierarchies retrospectively. The problem of
@@ -411,7 +417,7 @@ by Wikipedia may help modeling the admin-areas.
 #### Advantages
 
 * Different states may have different levels of nesting. By splitting the
-  admin-area from the locality, we introduce a constant referency point for
+  admin-area from the locality, we introduce a constant reference point for
   cities, regardless of how many levels of depth a website requests on the
   admin-areas.
 * We introduce a new concept (`admin-areaX` and `localityX`) which is different
@@ -443,9 +449,9 @@ by Wikipedia may help modeling the admin-areas.
 
 ### Modeling addresses at a street level
 
-A core aspect of this proposal is to introduce more fine grained information
-for address fields that are requested in many countries such as a street name
-and a house number.
+A core aspect of this proposal is to introduce more fine grained information for
+address fields that are requested in many countries such as street name and
+house number fields.
 
 > **Proposal:**
 >
@@ -453,12 +459,11 @@ and a house number.
 > `address-lineX` fields (we may want to introduce an `address-line4` for extra
 > flexibility).
 >
-> On top of that we need to cater for the more structured usecases and propose
+> On top of that we need to cater for the more structured use cases and propose
 > the following new types:
 >
-> * `street-location` - This is what frequently goes into an `address-line1` in
->   other countries: The information that helps identifying a building in a
->   street.
+> * `street-location` - This is what frequently goes into an `address-line1`.
+>   The information that helps identifying a building in a street.
 >   * `street` - The name of the street.
 >     * `street-type` - Only a few countries split the name of the street from
 >       the type of the street. Examples are Spain and Hungary. The type of a
@@ -466,7 +471,7 @@ and a house number.
 >     * `street-name`
 >   * `house-number-or-building-name` - Fills either the `house-number` or
 >     `building-name`, or both, depending on what's defined. Note that this
->     level will not exist in many countries.
+>     intermediate level will not exist in many countries.
 >     * `house-number` - The number assigned to a building in a street.
 >     * `building-name` - Some countries reference buildings by a name (e.g.
 >       India and sometimes Great Britain).
@@ -506,8 +511,8 @@ Several tokens don't fill well into the propose hierarchy:
 
 > **Proposal:**
 >
-> * `address-overflow` - In several countries (e.g. Brazil or Germany) this is
->   field complements the `street-location` and is am atomic topic that is
+> * `address-overflow` - In several countries (e.g. Brazil or Germany) this
+>   field complements the `street-location` and is an atomic topic that is
 >   rarely seen split into smaller fragments. In these countries we often see
 >   the fields (`street`, `house-number`, `address-overflow`). The field is
 >   sometimes referred to as "additional information".
@@ -521,7 +526,7 @@ Several tokens don't fill well into the propose hierarchy:
 > Proposed but not discussed. ([Issue
 > #15](https://github.com/battre/autocomplete-attribute-explainer/issues/15))
 
-### Modeling country specific hierarchies
+### Modeling country-specific hierarchies
 
 Above we proposed the following hierarchy:
 
@@ -552,11 +557,11 @@ in hierarchies:
 
 #### Advantages
 
-* By making introducing `house-number-and-unit` as a first class citizen for
-  countries in which it is common to combine the house number and unit into a
-  single field, the internal data structure reflects reality. This makes it
-  probably much easier to maintain a consistent state if browsers try to observe
-  submitted address forms and use the data to update stored addresses.
+* By introducing `house-number-and-unit` as a first class citizen for countries
+  in which it is common to combine the house number and unit into a single
+  field, the internal data structure reflects reality. This makes it probably
+  much easier to maintain a consistent state if browsers try to observe
+  submitted address forms and use the data to update their stored addresses.
 
 #### Disadvantages
 
@@ -607,7 +612,7 @@ of field types to be filled.
 >
 > Allow websites to request combinations of field types (e.g.
 > `unit-and-building-name` and `street`). Only allowlisted combinations will be
-> supported. Browsers will get meta information that help constructing such
+> supported. Browsers will get meta information for constructing such
 > combinations. This meta information could express that
 > `unit-and-building-name` and `street` are concatenated with a `,` in an
 > `<input>` field and a `\n` in a `<textarea>`.
