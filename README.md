@@ -307,7 +307,7 @@ In practice it turns out that this approach suffered from two major challenges:
 We propose that the `autofill` attribute follows a similar strategy as
 ISO 19160:
 
-A **core model** offers a modelling framework for addresses which is
+A **core model** offers a modeling framework for addresses which is
 complemented by **country-specific profiles** which explain how to apply the
 model for specific countries.
 
@@ -401,7 +401,7 @@ fixed this way.
 
 The [List of administrative divisions by
 country](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country)
-by Wikipedia may help modelling the admin-areas.
+by Wikipedia may help modeling the admin-areas.
 
 #### Advantages
 
@@ -436,7 +436,7 @@ by Wikipedia may help modelling the admin-areas.
 > Proposed but not discussed. ([Issue
 > #12](https://github.com/battre/autocomplete-attribute-explainer/issues/12))
 
-### Modelling addresses at a street level
+### Modeling addresses at a street level
 
 A core aspect of this proposal is to introduce more fine grained information
 for address fields that is requested in many countries such as a street name
@@ -465,24 +465,13 @@ and a house number.
 >     * `house-number` - The number assigned to a building in a street.
 >     * `building-name` - Some countries reference buildings by a name (e.g.
 >       India and sometimes Great Britain).
->
-> **Note**: The hierarchy presented above is proposed in general. It is possible
-> to define country specific divergences, e.g. to separat a building-name out
-> of the street-location.
->
-> For example the follwing might be a valid hierarchy in one country.
->
-> * `street-location`
->   * `street`
->   * `house-number`
-> * `building-name`
 
 > **Status:**
 >
 > Proposed but not discussed. ([Issue
 > #13](https://github.com/battre/autocomplete-attribute-explainer/issues/13))
 
-### Modelling addresses at the buiding level
+### Modeling addresses at the buiding level
 
 An address does not end at the building. We propose the following concepts to
 route the delivery inside a building.
@@ -506,7 +495,7 @@ route the delivery inside a building.
 > Proposed but not discussed. ([Issue
 > #14](https://github.com/battre/autocomplete-attribute-explainer/issues/14))
 
-### Modelling further routing information
+### Modeling further routing information
 
 Several tokens don't fill well into the propose hierarchy:
 
@@ -526,5 +515,45 @@ Several tokens don't fill well into the propose hierarchy:
 >
 > Proposed but not discussed. ([Issue
 > #15](https://github.com/battre/autocomplete-attribute-explainer/issues/15))
+
+### Modeling country specific hierarchies
+
+Above we proposed the following hierarchy:
+
+* `street-location`
+  * `street`
+    * `street-type`
+    * `street-name`
+  * `house-number-or-building-name`
+    * `house-number`
+    * `building-name`
+* `in-building-location`
+  * `entrance`
+  * `floor`
+  * `staircase`
+  * `unit`
+    * `unit-type`
+    * `unit-name`
+
+In some countries it is common to have one field for the street name and one for
+the house number and apartment. In this case we should allow for flexibility
+in hierarchies:
+
+* `street-location`
+  * `street`
+  * `house-number-and-unit`
+    * `house-number`
+    * `unit`
+
+> **Proposal:**
+>
+> We aim to have a single, predominant hierarchy for each country. This
+> hierarchy does not need to be the same for every country.
+
+> **Status:**
+>
+> Proposed but not discussed. ([Issue
+> #16](https://github.com/battre/autocomplete-attribute-explainer/issues/16))
+
 
 [autocomplete attribute]: (https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill)
