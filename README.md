@@ -78,7 +78,7 @@ Spec) are:
 
 ## Goals and principles
 
-### Follow the needs of websites
+### Follow the needs of websites (Issue #5)
 
 > **Context:**
 >
@@ -114,7 +114,10 @@ Spec) are:
 >
 > This is a corollary of "Follow the needs of websites": We want to support
 > field types that are popular (and required) in a small set of countries
-> (possibly a single country).
+> (possibly a single country) and don't exist in other countries.
+>
+> We need to tell site authors which attributes are supported for different
+> countries.
 >
 > In the beginning we will focus on names and addresses. In the future, new
 > field types like tax payer IDs, new forms of payments, etc. can be in scope.
@@ -147,11 +150,11 @@ Spec) are:
 
 > **Context:**
 >
-> The some websites in country may ask users to break their address into atomic
-> tokens (e.g. by asking for a floor number and apartment number in separate
-> fields) while other websites in the same country ask the user may ask the user
-> to provide compound data (e.g. by asking to enter the floor number and
-> apartment number in a single field).
+> The some websites in a country may ask users to break their address into
+> atomic tokens (e.g. by asking for a floor number and apartment number in
+> separate fields) while other websites in the same country ask the user may ask
+> the user to provide compound data (e.g. by asking to enter the floor number
+> and apartment number in a single field).
 
 > **Proposal:**
 >
@@ -175,7 +178,7 @@ Spec) are:
 
 > **Context:**
 >
-> Understanding address formats from $N$ coutnries is a herculean task that is
+> Understanding address formats from $N$ countries is a herculean task that is
 > easy to get wrong because of cultural biases. Past examples of such incorrect
 > assumptions in Google Chrome included "a last name consists of a single word",
 > "every country uses postal codes" or "there is no entity between a state and a
@@ -185,6 +188,7 @@ Spec) are:
 > rather than the spec.
 
 > **Proposal:**
+>
 > We should roll this out country by country with a reasonable high confidence
 > that we have modeled a country correctly, rather than aiming for an immediate
 > global launch.
@@ -333,6 +337,8 @@ ask for such fields.
 
 * It becomes much harder to build an address form that works for users from all
   countries. If that's a priority websites should use unstructured
+
+The obvious question is why we don't just reuse ISO 19160. We should
 
 #### Conclusion
 
