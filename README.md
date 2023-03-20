@@ -372,7 +372,7 @@ The obvious question is why we don't just reuse ISO 19160. We should
 > #11](https://github.com/battre/autocomplete-attribute-explainer/issues/11))
 
 
-### Modelling states and cities
+### Modeling states and cities
 
 The autocomplete spec relies on a single hierarchy (address-level1 to
 address-level4) to model states and cities.
