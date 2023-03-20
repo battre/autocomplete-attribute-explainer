@@ -328,6 +328,9 @@ be undefined. While it's conceivable to consider neighborhoods or villages as
 `address-level3` in the US or Germany, it is very uncommon that websites would
 ask for such fields.
 
+We will define a way to specify the country profile that should be used. E.g.,
+the country profile to use could be defined via an attribute on the `<form>`.
+
 #### Advantages
 
 * For websites that target specific markets, developers can look up the country
@@ -449,7 +452,7 @@ by Wikipedia may help modeling the admin-areas.
 
 ### Modeling addresses at a street level
 
-A core aspect of this proposal is to introduce more fine grained information for
+A core aspect of this proposal is to introduce finer grained information for
 address fields that are requested in many countries such as street name and
 house number fields.
 
