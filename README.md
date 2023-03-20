@@ -471,7 +471,7 @@ and a house number.
 > Proposed but not discussed. ([Issue
 > #13](https://github.com/battre/autocomplete-attribute-explainer/issues/13))
 
-### Modeling addresses at the buiding level
+### Modeling addresses at the building level
 
 An address does not end at the building. We propose the following concepts to
 route the delivery inside a building.
