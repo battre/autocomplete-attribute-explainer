@@ -431,6 +431,11 @@ by Wikipedia may help modeling the admin-areas.
 * We could introduce a concept like `admin-area2+` which would fill
   `admin-area2` through `admin-area4` (e.g. comma separated), depending on how
   much information is available, but keep the city for a separate field.
+* Websites could ask for a state and city via `admin-area1` and `locality1` and
+  would get the data filled for US and Mexican addresses, where a correct
+  implementation of the current autocomplete spec would require the website to
+  ask for `address-level1` and `address-level2` for US addresses and
+  `address-level1` and `address-level3` for Mexican addresses.
 
 #### Disadvantages
 
