@@ -10,9 +10,9 @@ structures of address forms we can observe on today's web.
 A companion feature request exists at https://github.com/whatwg/html/issues/4986
 
 Today's [autocomplete attribute] provides an opinionated list of field names
-that prescribe how to structure an address/credit card form in order to be
-compatible with autofilling by the user agent. In particular it assumes a
-structure containing elements like
+that prescribe how to structure an address form (and other data types which are
+out of scope of this proposal) in order to be compatible with autofilling by the
+user agent. In particular it assumes a structure containing elements like
 * `name`
 * `street-address` (optionally broken down into `address-line1`,
   `address-line2`, `address-line3`)
@@ -27,28 +27,31 @@ and a house number. More examples of field types that are not supported by the
 autofill attribute follow below.
 
 This document proposes an alternative way to annotate form fields with their
-expected types of address information.
+expected types of address information:
+* We propose introducing an `autofill` attribute which takes precedence over
+  `autocomplete` for browsers that support it.
+* `autofill` supports the concepts of `autocomplete` but extends them.
+* `autofill` does not force websites to use the unstructured address format of
+  `autocomplete` (e.g. relying on address-lineX fields). It allows websites to
+  get browser-based autofill on their their forms which follow local customs or
+  requirements of local shipping companies. This may mean requesting fine
+  grained data types like a street name, house number, floor number, etc.
+* The `autofill` attribute is based on the idea of having a framework to
+  describe addresses in general. This framework is adapted to the needs of
+  different countries via country profiles (similarly to ISO 19160). This allows
+  us to support field types that are very common in some countries but
+  non-existent as individual fields in others.
+* The country profiles make it much easier for websites to associate meaning to
+  abstract terms (e.g. answering what's an address-level2) and fix incorrect
+  interpretations of the spec which have become the defacto standard on the web.
 
-## Naming
+## Motivation
 
-We refer to today's address representation via the [autocomplete attribute] as
-**unstructured addresses** because the `street-address`
-or the corresponding `address-lineX` entries don't assume a lot of semantics
-in the `<input>` form controls. These addresses can be interpreted well by
-humans but not so well by computers.
-
-This document proposes an additional way of describing addresses that we refer
-to as **structured addresses** in which the individual components that constitue
-a street-address can be referenced individually, e.g. the street name, house
-number, apartment number, building name, delivery instructions, etc.
-
-## Metrics and impact
-
-The [Country
+Our [Country
 Analysis](https://battre.github.io/autocomplete-attribute-explainer/index.html)
 looked at 26 different countries and identified that only in a small minority of
 countries the commonly used structures to express address forms are well
-supported by today's autocomplete attribute.
+supported by today's `autocomplete` attribute.
 
 ## The case for adding new field types
 
@@ -56,10 +59,10 @@ Our arguments for adding the new autocomplete types (“Field names” in the HT
 Spec) are:
 
 1. Giving website authors the chance to annotate address forms so that they can
-   collect data in a format they need, enables browser vendors to faciliate a
-   better autofill experience.
+   collect data in a format they need and enable browser vendors to faciliate a
+   better autofill experience for such forms.
 
-2. The metrics above indicate to us that in multiple countries, websites
+2. The metrics cited above indicate to us that in multiple countries, websites
    predominately ask for separate street name and house numbers rather than
    street addresses or address lines as they are defined by the autocomplete
    attribute. They choose to use these formats despite a lack of support by the
@@ -75,10 +78,6 @@ Spec) are:
    also see that website authors introduce unofficial/self-defined attributes
    like `house-number` and pair them with official attributes like `given-name`
    and `family-name`.
-
-4. Even if browsers decide not to support street names and house numbers, adding
-   them to the spec could be a win in the sense that forms are not filled
-   instead of incorrectly filled.
 
 ## Goals and principles
 
