@@ -53,13 +53,11 @@ looked at 26 different countries and identified that only in a small minority of
 countries the commonly used structures to express address forms are well
 supported by today's `autocomplete` attribute.
 
-## The case for adding new field types
-
 Our arguments for adding the new autocomplete types (“Field names” in the HTML
 Spec) are:
 
 1. Giving website authors the chance to annotate address forms so that they can
-   collect data in a format they need and enable browser vendors to faciliate a
+   collect data in a format they need and enable browser vendors to facilitate a
    better autofill experience for such forms.
 
 2. The metrics cited above indicate to us that in multiple countries, websites
@@ -73,11 +71,11 @@ Spec) are:
 
 3. We see that some websites try to borrow the existing autocomplete attributes
    for this use case. They typically choose `address-line1` for the street name
-   and `address-line2` for the house number. The effect on Chrome is pretty
-   random from a user’s perspective, depending on the address profile stored. We
-   also see that website authors introduce unofficial/self-defined attributes
-   like `house-number` and pair them with official attributes like `given-name`
-   and `family-name`.
+   and `address-line2` for the house number. The effect on Chrome (and possibly
+   other browsers) is pretty random from a user’s perspective, depending on the
+   address profile stored. We also see that website authors introduce
+   unofficial/self-defined attributes like `house-number` and pair them with
+   official attributes like `given-name` and `family-name`.
 
 ## Goals and principles
 
@@ -85,14 +83,17 @@ Spec) are:
 
 > **Context:**
 >
+> Our analysis tells us that the local customs and needs (e.g. for integrations
+> into 3P solutions like shipping companies) decide how websites structure their
+> address forms. Not the lowest common denominator proposed by the HTML spec. A
+> beautiful and pure standard is useless if it does not get traction.
+>
 > A company told us that their shipping label printer prescribes them the format
 > for addresses. They don’t want to be in the business of tokenizing address
 > strings.
 >
-> Our analysis tells us that the local customs and needs decide how websites
-> structure their address forms. Not the lowest common denominator proposed by
-> the HTML spec. A beautiful and pure standard is useless if it does not get
-> traction.
+> We should meet websites where it's convenient for them, not where it's
+> convenient for browsers.
 
 > **Proposal:**
 >
@@ -131,7 +132,8 @@ Spec) are:
 > Proposed but not discussed. ([Issue
 > #6](https://github.com/battre/autocomplete-attribute-explainer/issues/6))
 
-### Tell developers how to interpret concepts in different languages
+### Tell developers how to interpret concepts in different countries
+
 > **Context:**
 >
 > For example in Germany you don’t write a state on an envelope to get a letter
@@ -195,11 +197,17 @@ Spec) are:
 > We have seen cases where websites adapted to the (incorrect) browser behavior
 > rather than the spec.
 
+> **Concerns:**
+>
+> Could we find a way to roll this out by level of detail (e.g. add support for
+> street names and house numbers)? We don't know... Such a strategy comes with a
+> risk of manifesting incorrect assumptions that are hard to revert.
+
 > **Proposal:**
 >
 > We should roll this out country by country with a reasonable high confidence
-> that we have modeled the selected contries correctly, rather than aiming for an
-> immediate global launch.
+> that we have modeled the selected countries correctly, rather than aiming for
+> an immediate global launch.
 
 > **Status:**
 >
@@ -252,11 +260,12 @@ means that we don't need to be backwards compatible.
   A new `autofill` attribute allows us to be more flexible with the syntax and
   would not throw off browsers that don't implement the new logic.
 
-* **Blank slate for autocomplete="off"**: The autocomplete spec contains the
-  `off` keyword which is set on many websites where one would not expect it.
-  Some browsers (e.g. Google Chrome) decided to ignore `autocomplete="off"`
-  because the autofill feature would feel broken from a user's perspective.
-  There are probably a series of reasons to block autocomplete:
+* (out of scope for this proposal but possibly relevant:) **Blank slate for
+  autocomplete="off"**: The autocomplete spec contains the `off` keyword which
+  is set on many websites where one would not expect it. Some browsers (e.g.
+  Google Chrome) decided to ignore `autocomplete="off"` because the autofill
+  feature would feel broken from a user's perspective. There are probably a
+  series of reasons to block autocomplete:
   * The website never requests autofill because it is unlikely that the user
     enters their personal information. E.g. if the user is working in a call
     center and enters customer's data.
@@ -274,7 +283,8 @@ means that we don't need to be backwards compatible.
 
 #### Disadvantages
 
-* Introducing more APIs increases complexity.
+* Introducing more APIs increases complexity by growing the surface of the HTML
+  standard that developers may need to be aware of.
 
 #### Conclusion
 
@@ -299,8 +309,6 @@ common denominator for address formats. It suggested using a single full name
 field instead of using given and family name fields. It asked for unstructured
 address lines instead of asking for a house number and street name.
 
-In theory this is a great strategy.
-
 In practice it turns out that this approach suffers from two major challenges:
 * Many websites prefer to follow local customs or requirements of shipping
   companies and do not ask for unstructured information but implement the
@@ -310,7 +318,7 @@ In practice it turns out that this approach suffers from two major challenges:
   of any browsers that support `address-level3` or higher.
 
 We propose that the `autofill` attribute follows a similar strategy as
-ISO 19160:
+[ISO 19160](https://www.iso.org/standard/61710.html):
 
 A **core model** offers a framework for describing addresses which is
 complemented by **country-specific profiles**. Those explain how to apply and
