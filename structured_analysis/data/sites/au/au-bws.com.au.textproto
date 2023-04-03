@@ -54,7 +54,7 @@ site_examples {
       name: "Street1|Street1"
       label: "Street address line 1"
       control_type: INPUT
-      concepts: "address-level1"
+      concepts: "address-line1"
       autocomplete_attribute: "off"
       section: ADDRESS
     }
@@ -62,7 +62,7 @@ site_examples {
       name: "Street2|Street2"
       label: "Street address line 2"
       control_type: INPUT
-      concepts: "address-level2"
+      concepts: "address-line2"
       autocomplete_attribute: "off"
       section: ADDRESS
     }

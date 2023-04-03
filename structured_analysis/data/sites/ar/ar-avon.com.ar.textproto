@@ -19,7 +19,7 @@ site_examples {
       label: "Localidad"
       label_translated: "Location"
       control_type: INPUT
-      concepts: "address-level1"
+      concepts: "address-level2"
       autocomplete_attribute: "none"
       section: ADDRESS
     }
