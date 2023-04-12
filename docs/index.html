@@ -20206,33 +20206,96 @@ occurred on multiple sites:
 
   <h3 id="IN"><a href="#IN">#</a> IN
     - India 🇮🇳</h3>
-  <p>Indian addresses forms have surprising naming conventions. Forms
-commonly ask for a 'House no/Apartment name'. The 'house number' is an
-apartment number (not the sequence of a house in a street) and the
-apartment name is the name of a building (most buildings have a name; this
-is not referring to the name of an apartment).
+  <p>Indian addresses forms have some surprising naming conventions:
 
-<p>Another important aspect that is not common in other countries is a
-'locality' (sometimes referred to as 'area details'). An example would be
-'HITEC City' in Hyderabad. It's a name for an area that people know and use
-for orientation. Another example would be 'old town'.
+<p>Forms commonly ask for a 'House no/Apartment name'. The 'house number' is an
+apartment number (not the sequence of a house in a street) and the apartment
+name is the name of a building (most buildings have a name; this is not
+referring to the name of an apartment). Alternative labels for this field 'Flat
+no, Building' or 'Building name and flat number'. In most cases the house number
+and apartment name had to be filled into a common field, in rare cases they
+went into separate fields.
 
-<p>A 'Colony' is a named group of buildings that belong to each other,
-e.g. sharing amenities. Also serves as a landmark.
+<p>Websites sometimes ask for a colony 'Colony', which is a named group of
+buildings that belong to each other, e.g. sharing amenities. This is not very
+common. We saw two cases where the website asked to enter the colony in the
+'building and flat number' field and one cases where the website aked to enter
+the colony in the 'street' field.
+
+<p>Next websites typically ask for a street ("Street name or number", "Street
+address"). As house numbers (in the sense of an seqential number assigned to
+buildings in a street) are not very common, often times this only requires the
+name of a street.
+
+<p>Indian websites also ask for a 'locality' (sometimes referred to as 'area
+details'). An example would be 'HITEC City' in Hyderabad. It's a name for an
+area that people know and use for orientation. Another example would be 'old
+town'.
+
+<p>Also landmarks are common.
+
+<p>In total we have 4 different field types (building and apartment, street,
+locality, landmark) that succeed a recipient name and precede city/state/postal
+code. There is no common standard on how to fill these 4 field types into forms.
+Different websites group information differently. Here is a survey of 33
+websites (rows with the same shade go into a single input field):
+
+<table border="1">
+  <tr>
+    <th>Number of websites</th>
+    <th>6</th>
+    <th>10</th>
+    <th>8</th>
+    <th>5</th>
+    <th>2</th>
+    <th>2</th>
+  </tr>
+  <tr>
+    <td>Building + Apartment</td>
+    <td> </td>
+    <td rowspan="3"> </td>
+    <td rowspan="4"> </td>
+    <td> </td>
+    <td rowspan="2"></td>
+    <td rowspan="2"></td>
+  </tr>
+  <tr>
+    <td>Street-location</td>
+    <td rowspan="2" bgcolor="lightgrey"> </td>
+    <td rowspan="3" bgcolor="lightgrey"> </td>
+  </tr>
+  <tr>
+    <td>Locality</td>
+    <td rowspan="2" bgcolor="lightgrey"></td>
+    <td bgcolor="lightgrey"></td>
+  </tr>
+  <tr>
+    <td>Landmark</td>
+    <td bgcolor="grey"> </td>
+    <td bgcolor="lightgrey"> </td>
+    <td></td>
+  </tr>
+  </table>
+
+<p>Read this as 6 websites had a field for the "Building and Apartment",
+another field for "Street-location and Locality", and a third for "Landmark".
+In the last column, "Building and Apartment", "Street" and "Landmark" are
+combined in a single field.
 
 <h4>Missing field types</h4>
 <p>The following cases are currently missing in the autocomplete spec and
 occurred on multiple sites:
 <ul>
 <li>landmark
-<li>building (apartment name)
-<li>apartment (house no)
+<li>building (apartment name) (typically entered together with the apartment
+number in a single field)
+<li>apartment number (house no/flat no)
 <li>street name
 </ul>
 
 <h4>Open questions</h4>
 <ul>
-  <li>Should we support towers?
+  <li>Should we support towers? Only one website in the sample set asked for it.
 </ul>
 
 <p>Progress: ☑ First round of cleanup, ☑ Discussed with a (former) resident
