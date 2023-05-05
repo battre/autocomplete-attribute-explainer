@@ -71,8 +71,10 @@ Spec) are:
 
 3. We see that some websites try to borrow the existing autocomplete attributes
    for this use case. They typically choose `address-line1` for the street name
-   and `address-line2` for the house number. The effect on Chrome (and possibly
-   other browsers) is pretty random from a user’s perspective, depending on the
+   and `address-line2` for the house number. For a properly stored address, both
+   the street name and the house number will be in `address-line1` in most
+   countries. Therefore the information will be filled incorrectly and the filling
+   behavior is pretty random from a user’s perspective, depending on the
    address profile stored. We also see that website authors introduce
    unofficial/self-defined attributes like `house-number` and pair them with
    official attributes like `given-name` and `family-name`.
@@ -175,9 +177,9 @@ Spec) are:
 > multiple types like `"floor_number + apartment"`.
 >
 > Websites must only use combinations of fields that have been blessed by the
-> spec so that browsers can get instructions from the country profiles generated
-> as part of this spec on how to assemble the data for a field with multiple
-> atomic types.
+> spec either way. This is necessary so that browsers can get instructions from
+> the country profiles which are being generated as part of this spec and
+> explain how to assemble the data for a field with multiple atomic types.
 
 > **Status:**
 >
@@ -196,6 +198,12 @@ Spec) are:
 >
 > We have seen cases where websites adapted to the (incorrect) browser behavior
 > rather than the spec.
+>
+> We have recently tried to follow the principles outlined in the document and
+> created address hierarchies for the US, Brazil, Mexico and India. It was
+> very aparent that a lot of country knowledge is necessary to model addresses
+> for a country properly. Even with people who grew up in a country it was often
+> not aparent whether there was a single, clear best solution.
 
 > **Concerns:**
 >
@@ -205,9 +213,10 @@ Spec) are:
 
 > **Proposal:**
 >
-> We should roll this out country by country with a reasonable high confidence
-> that we have modeled the selected countries correctly, rather than aiming for
-> an immediate global launch.
+> We should model a small number of diverse countries upfront and then roll this
+> out country by country with a reasonable high confidence that we have modeled
+> the selected countries correctly, rather than aiming for an immediate global
+> launch.
 
 > **Status:**
 >
@@ -227,20 +236,20 @@ Introducing a new attribute comes with a couple of advantages, in particular it
 means that we don't need to be backwards compatible.
 
 * **Browser behavior influenced interpretation of the spec:** Google Chrome (and
-  possibly) other browsers did not implement the autocomplete spec correctly.
+  possibly other browsers) did not implement the autocomplete spec correctly.
   Chrome implemented a hard-coded expectation that an `address-level1`
   corresponds to a state and an `address-level2` corresponds to a city. This is
   an incorrect assumption. In Mexico for example, the state ("Estado") is
-  subdivided into municipalities ("Municipio") or boroughs ("Delegaciones") in
-  case of Mexico City. The municipalities are again subdivided into cities
+  subdivided into municipalities ("Municipio"), or in case of Mexico City into
+  boroughs ("Delegaciones"). The municipalities are again subdivided into cities
   ("Ciudad"). A correct mapping according to the autocomplete spec would be:
   * Estado = `address-level1`
   * Municipio = `address-level2`
   * Ciudad = `address-level3`
 
   However, because browsers did not support the concept of a Municipio and hard
-  coded a city as `address-level2`, many websites today have annotations like
-  the following:
+  coded a city as `address-level2`, we have seen websites today have annotations
+  like the following:
   ```
   <input type="text" id="estado" autocomplete="address-level1">
   <input type="text" id="municipio">
@@ -335,8 +344,18 @@ be undefined. While it's conceivable to consider neighborhoods or villages as
 `address-level3` in the US or Germany, it is very uncommon that websites would
 ask for such fields.
 
-We will define a way to specify the country profile that should be used. E.g.,
-the country profile to use could be defined via an attribute on the `<form>`.
+The obvious question is why we don't just reuse ISO 19160. ISO 19160 offers a
+lot of details but also a high degree of complexity, which exceeds the address
+forms we see on the internet. Many of the concepts defined in the standard are
+not used in any of the country profiles. As such, it should be possible to
+provide something simpler but sufficiently powerful.
+
+To ensure that websites which target an international audience, we will define
+a generic profile similar to today's `autocomplete` attribute (name,
+street address, address-levels, postal code) and ensure that any country
+profile as well as today's `autocomplete` attribute can be mapped to it. This
+generic profile won't support the new data types like streetnames and house
+house numbers.
 
 #### Advantages
 
@@ -355,18 +374,6 @@ the country profile to use could be defined via an attribute on the `<form>`.
   ${house number}"`. Some countries may have multiple valid ways of expressing a
   set of tokens.
 
-#### Disadvantages
-
-* It becomes much harder to build an address form that works for users from all
-  countries. If that's a priority to support an international audience, websites
-  should use forms with unstructured addresses.
-
-The obvious question is why we don't just reuse ISO 19160. ISO 19160 offers a
-lot of details but also a high degree of complexity, which exceeds the address
-forms we see on the internet. Many of the concepts defined in the standard are
-not used in any of the country profiles. As such, it should be possible to
-provide something simpler but sufficiently powerful.
-
 #### Conclusion
 
 > **Proposal:**
@@ -377,21 +384,42 @@ provide something simpler but sufficiently powerful.
 > The country-specific profiles should be feature compatible with the current
 > autocomplete spec (i.e. for every country we should have a meaningful
 > definition of a street-address or an address-level1). The country-specific
-> profiles may extend the current autocomplete spec by new field types (e.g. street
-> names, house numbers, etc.).
+> profiles may extend the current autocomplete spec by new field types (e.g.
+> street names, house numbers, etc.).
 >
 > To prevent problems in the future like the omission of "municipio" between
 > `address-level1` and `address-level2` in Mexico, the `autofill` attribute must
-> only be used for countries that have a profile.
+> only be used for countries that have a researched and well defined profile.
 >
-> The profile to use for an address form can be inferred from a country
-> `<select>` element or guessed via browser heuristics.
-
 > **Status:**
 >
 > Proposed but not discussed. ([Issue
 > #11](https://github.com/battre/autocomplete-attribute-explainer/issues/11))
 
+### Using country profiles at form filling and submission time
+
+At form *submission* time, knowing the country profile enables the browser to
+* parse submitted information (e.g. "1600 42nd street" can be broken into a
+  house number and street name by a parser that know that US addresses begin
+  with a house number followed by a street name).
+* tune the save prompts and address-edit UI (e.g. pick the right term for
+  address-level1, like state, province, parish, emirate, island, ...; show the
+  fields that are supported for a country and hide all others).
+* validate data (e.g. do plausibility checks on phone numbers).
+
+The browser can derive the country from a country `<select>` element. For
+websites that only deliver/serve a single country, it would be great to declare
+the address profile to use on the `<form>` tag.
+
+At form *filling* time, the browser needs to work with the addresses it has
+on file and the field types according to the autocomplete spec. If an address is
+stored for country X and needs to be filled into an address form that requests
+addresses for country Y, the filling will happen at best effort.
+
+> **Status:**
+>
+> Proposed but not discussed. ([Issue
+> #11](https://github.com/battre/autocomplete-attribute-explainer/issues/18))
 
 ### Modeling states and cities
 
