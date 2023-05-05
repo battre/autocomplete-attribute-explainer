@@ -419,7 +419,7 @@ addresses for country Y, the filling will happen at best effort.
 > **Status:**
 >
 > Proposed but not discussed. ([Issue
-> #11](https://github.com/battre/autocomplete-attribute-explainer/issues/18))
+> #18](https://github.com/battre/autocomplete-attribute-explainer/issues/18))
 
 ### Modeling states and cities
 
@@ -484,6 +484,16 @@ by Wikipedia may help modeling the admin-areas.
 > We introduce two hierarchies:
 > * `admin-area1`, `admin-area2`, `admin-area3`, `admin-area4`
 > * `locality1`, `locality2`, `locality3`, `locality4`
+>
+> It's up for debate whether we should go with the more inclusive `admin-areaX`
+> and `localityX` terms or whether whether we use the easier to understand but
+> possibly wrong terms `state`, `sub-state`, `???`; `city`, `district`,
+> `sub-district`. [A long time
+> ago](https://raw.githubusercontent.com/whatwg/html/1eb194f229a6e481f313320a396b9da99b9f0706/source)
+> the HTML spec had autocomplete values of `region` and `locality`. This was
+> removed
+> [here](https://github.com/whatwg/html/commit/8db70d1387817431f2a876d032ad77f2cd0a3f29);
+> [discussion](https://www.w3.org/Bugs/Public/show_bug.cgi?id=25235).
 
 > **Status:**
 >
@@ -503,7 +513,7 @@ house number fields.
 > flexibility).
 >
 > On top of that we need to cater for the more structured use cases and propose
-> the following new types:
+> the following new types (names TBD, the list of fields it not exhaustive):
 >
 > * `street-location` - This is what frequently goes into an `address-line1`.
 >   The information that helps identifying a building in a street.
@@ -512,12 +522,22 @@ house number fields.
 >       the type of the street. Examples are Spain and Hungary. The type of a
 >       street could be "Avenue" or "Road".
 >     * `street-name`
->   * `house-number-or-building-name` - Fills either the `house-number` or
->     `building-name`, or both, depending on what's defined. Note that this
->     intermediate level will not exist in many countries.
+>   * `building` - Fills either the `house-number` or `building-name`, or both,
+>     depending on what's defined.
 >     * `house-number` - The number assigned to a building in a street.
 >     * `building-name` - Some countries reference buildings by a name (e.g.
 >       India and sometimes Great Britain).
+>
+> An US website should use `street-location` or `street` and `building`: The
+> distinction between `street-type` and `street-name` is uncommon and should not
+> be brought infront of US users. If a Hungarian users tries to order somethingm
+> their `street-type` and `street-name` would automatically be filled into a
+> `street` field. For similar reasons, the website should just ask for a
+> `building` and get what it expects. Only few countries, like the UK, which
+> use a `house-number` *and* a `building-name` on address forms the distinction
+> matters. Only in those countries would we support a `house-number` and
+> `building-name`. This means, that browsers would not fill a building name or
+> house number of addresses that were stored for other countries.
 
 > **Status:**
 >
@@ -542,6 +562,16 @@ route the delivery inside a building.
 >     should appear in `in-building-location`.
 >     * `unit-type` - e.g. "Apt", "Room", "Store"
 >     * `unit-name` - e.g. "5"
+>
+> Websites should not ask for an `in-building-location` and a `floor` in the
+> same form.
+>
+> We introduced a split into `unit-type` and `unit-name` because some countries
+> expect a 1 to 3 digit number for an apartment. But if a website of the same
+> country asks for an unstructured street address we would still need to
+> generate a string like "Apt. 5", so we would need to know the apartment type.
+> Details need to be figured out in this space. This is only a first rough
+> sketch.
 
 > **Status:**
 >
@@ -555,11 +585,17 @@ Several tokens don't fill well into the propose hierarchy:
 > **Proposal:**
 >
 > * `address-overflow` - In several countries (e.g. Brazil or Germany) this
->   field complements the `street-location` and is an atomic topic that is
->   rarely seen split into smaller fragments. In these countries we often see
->   the fields (`street`, `house-number`, `address-overflow`). The field is
->   sometimes referred to as "additional information".
-> * `landmark` - This can be called a landmark, reference point, entrecalles
+>   field complements the `street-location`. In these countries we often see the
+>   fields (`street`, `house-number`, `address-overflow`). The field is
+>   sometimes referred to as "additional information". It may be used to fill
+>   information like an organization, a care-of, or serve as an overflow if the
+>   previous field was not long enough.
+> * `landmark` - This can be called a landmark or reference point.
+> * `cross-streets` Several hispanic countries use a pair of cross-streets
+>   (entre calles) to help locate a building. In theory this could be mapped to
+>   a landmark, but we observe that websites asks for a landmark *and*
+>   cross-streets and we observe, that some websites even split the
+>   cross-streets into two fields.
 > * `delivery-instructions` - Special instructions to a delivery person.
 > * `care-of` - The name of the intermediary who is responsible for transferring
 >   a piece of mail between the postal system and the final recipient.
@@ -577,7 +613,7 @@ Above we proposed the following hierarchy:
   * `street`
     * `street-type`
     * `street-name`
-  * `house-number-or-building-name`
+  * `building`
     * `house-number`
     * `building-name`
 * `in-building-location`
@@ -594,13 +630,13 @@ in hierarchies:
 
 * `street-location`
   * `street`
-  * `house-number-and-unit`
-    * `house-number`
+  * `building-and-unit`
+    * `building`
     * `unit`
 
 #### Advantages
 
-* By introducing `house-number-and-unit` as a first class citizen for countries
+* By introducing `building-and-unit` as a first class citizen for countries
   in which it is common to combine the house number and unit into a single
   field, the internal data structure reflects reality. This makes it probably
   much easier to maintain a consistent state if browsers try to observe
@@ -608,15 +644,15 @@ in hierarchies:
 
 #### Disadvantages
 
-* In this example `house-number-and-unit` takes the functional role of
-  `house-number-or-building-name`. This makes it harder to translate addresses
-  stored for one country into the hierarchy of another country.
+* It is much harder to translate addresses from one country to another if the
+  address hierarchy does not match.
 
 > **Proposal:**
 >
 > We aim to have a single, predominant hierarchy for each country. This
-> hierarchy does not need to be the same for every country. We may introduce
-> country-specific inner nodes for this.
+> hierarchy does not need to be the same for every country.
+>
+> We may introduce country-specific nodes for this.
 
 > **Status:**
 >
@@ -632,18 +668,16 @@ In India it is very common to combine the flat number (unit) and building name
 in a single field, so the following address structure may be appropriate:
 
 * `street-location`
-  * `unit-and-building-name`
+  * `unit-and-building`
     * `unit`
-    * `building-name`
-    * `house-number` - Not sure whether we want to include this, websites rarely
-      ask for a house number.
+    * `building`
   * `street`
   * `landmark`
 
 Unfortunately, we observed the following combinations of fields:
-* `unit-and-building-name` | `street` | `landmark` (3 fields)
-* `unit-and-building-name` | `street` + `landmark` (2 fields)
-* `unit-and-building-name` + `street` | `landmark` (2 fields)
+* `unit-and-building` | `street` | `landmark` (3 fields)
+* `unit-and-building` | `street` + `landmark` (2 fields)
+* `unit-and-building` + `street` | `landmark` (2 fields)
 
 There was no clearly predominant way to combine fields.
 
@@ -654,11 +688,15 @@ of field types to be filled.
 > **Proposal:**
 >
 > Allow websites to request combinations of field types (e.g.
-> `unit-and-building-name` and `street`). Only allowlisted combinations will be
+> `unit-and-building` and `street`). Only allowlisted combinations will be
 > supported. Browsers will get meta information for constructing such
 > combinations. This meta information could express that
-> `unit-and-building-name` and `street` are concatenated with a `,` in an
+> `unit-and-building` and `street` are concatenated with a `,` in an
 > `<input>` field and a `\n` in a `<textarea>`.
+>
+> The Chrome team has ideas for storing and updating alternative representations
+> of address trees which we may share as design documents or an open source
+> library if other browsers are interested in this.
 
 > **Status:**
 >
