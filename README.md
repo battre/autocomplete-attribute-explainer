@@ -1,6 +1,6 @@
 # Proposal for extending the autocomplete attribute
 
-**Written**: 2022-01-28, **Updated**: 2023-03-13
+**Last updated**: 2023-05-08
 
 ## tl;dr
 
