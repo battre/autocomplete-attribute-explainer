@@ -45,6 +45,20 @@ expected types of address information:
   abstract terms (e.g. answering what's an address-level2) and fix incorrect
   interpretations of the spec which have become the defacto standard on the web.
 
+An empirical attempt to model US, MX, BR and IN address forms with this strategy
+suggests that the proposed model seems feasible. However, the study revealed how
+much inherent complexity can be found in address forms of individual countries.
+While US and BR address forms were pretty regular, IN and MX address forms
+contained a lot of variance. MX address forms differed from site to site in
+their use of Municipio/Delegación and Ciudad fields (some websites asked for the
+former, some for the latter, others for both). IN address forms differed a lot
+in structure and labels. For the latter two countries we had to conduct
+interviews with residents to understand the meanings of fields and expectations
+for how to fill them.
+
+At this point we would like to check in on the directional alignment before
+figuring out details.
+
 ## Motivation
 
 Our [Country
