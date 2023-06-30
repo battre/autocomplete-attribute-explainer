@@ -1,9 +1,11 @@
 from modules.metadata import MetadataModule
 from modules.model import ParseCountryModelModule, ParseGlobalModelModule, RenderTokenIndexModule, ParseDescriptionsModelModule, RenderTokenChildrenModule
+from modules.abstract_module import AbstractModule
+from abstract_vendor_extension import AbstractVendorExtension
 from pathlib import Path
 from renderer import Renderer
 
-modules = [
+modules: list[AbstractModule] = [
     MetadataModule(),
     ParseGlobalModelModule(),
     ParseCountryModelModule(),
@@ -13,6 +15,23 @@ modules = [
 ]
 global_config_files = list(Path('.').glob('countries/*/global-*.yaml'))
 other_config_files = list(Path('.').glob('countries/*/??-*.yaml'))
+
+# If you would like to inject further modules that are vendor specific like
+# code generators you can symlink a directory "vendor" that contains a file
+# vendor_extension.py with a class VendorExtension that is derived from
+# AbstractVendorExtension. This can register new modules and even new config
+# files.
+try:
+  from vendor.vendor_extension import VendorExtension
+  extension: AbstractVendorExtension = VendorExtension()
+  modules = extension.modify_modules_list(modules)
+  global_config_files = extension.modify_files_list(global_config_files)
+  other_config_files = extension.modify_files_list(other_config_files)
+except ModuleNotFoundError:
+  pass
+except ImportError as e:
+  raise e
+
 renderer = Renderer()
 
 # Read files for the global file (make sure this is fully set up before
