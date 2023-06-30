@@ -1,0 +1,11 @@
+country: "global"
+overview: >
+  <p>The following tree of concepts serves as a baseline whichs gets adapted
+  for individual countries.
+  <p>For example <code>family-name-first</code> is a concept that is prevalent
+  in Spain and Mexico but not in the United states. It is a subconcept of
+  <code>family-name</code>. So users in Spain and Mexico could have a first
+  family name stored, but when they interact with Canadian websites, only the
+  aggregated <code>family-name</code> would be filled. Most Canadian website
+  developers and users probably have no idea what a first family name
+  represents and should not be bothered with the concept.

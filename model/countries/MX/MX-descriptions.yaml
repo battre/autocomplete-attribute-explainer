@@ -1,0 +1,74 @@
+short-descriptions:
+  name:
+    en: Full name
+    es: Nombre completo
+  given-name:
+    en: Given name
+    es: Nombre
+  additional-name:
+    en: Middle name
+    es: Segundo Nombre
+  family-name:
+    en: Family name
+    es: Apellidos
+  family-name-first:
+    en: Paternal name
+    es: Apellido Paterno
+  family-name-second:
+    en: Maternal name
+    es: Apellido Materno
+  admin-area:
+    en: State + Municipio/Delegación
+    es: Estado + Municipio/Delegación
+  admin-area1:
+    en: State
+    es: Estado
+  admin-area2:
+    en: Municipio/Delegación
+    es: Municipio/Delegación
+  country: 2-letter country code (e.g. "MX")
+  country-name:
+    en: Name of a country (e.g. "Mexico")
+    es: País
+  locality:
+    en: City/Neighborhood
+    es: Ciudad/Colonia
+  locality1:
+    en: City
+    es: Ciudad
+  locality2:
+    en: Neighborhood
+    es: Colonia
+  street:
+    en: Street name
+    es: Calle
+  building:
+    en: House number
+    es: Número exterior
+  unit:
+    en: Apartment
+    es: Número interior
+  landmark:
+    en: Landmark
+    es: Referencia
+  postal-code:
+    en: Postal code
+    es: Código postal
+  street-address:
+    en: Street address (street and location within the street)
+    es: Dirección/Calle y número
+  organization:
+    en: Name of an organization/company
+    es: Razón social
+  cross-streets:
+    en: Crossing streets
+    es: Entre calles
+  street-location:
+    en: Name of a street and identifier for the building
+    es: Calle y número
+  # address-overflow:
+  #   en: An overflow field for information that is not captured differently in a form
+  #   pt: Complemento
+  delivery-instructions:
+    en: Delivery instructions
+    es: Indicaciones adicionales

@@ -1,0 +1,10 @@
+country: IN
+flag: 🇮🇳
+
+overview: >
+  <p>India has a lot of variety in address forms compared to many other
+  countries. In particular the flat number, building name, street, landmark
+  and "area / locality" (modeled as locality2) seem to appear in every
+  in almost arbitrary combinations (e.g. flat number as a separate field, or
+  grouped with building name, or grouped with building name and street, ...).
+  <p>The structures below are structures we have least confidence in so far.

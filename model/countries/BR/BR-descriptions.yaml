@@ -1,0 +1,56 @@
+short-descriptions:
+  name:
+    en: Full name
+    pt: Destinatário
+  given-name:
+    en: First name
+    pt: Nome
+  additional-name: Middle name
+  family-name:
+    en: Last name
+    pt: Sobrenome
+  admin-area:
+    en: State
+    pt: Estado
+  country: 2-letter country code (e.g. "BR")
+  country-name:
+    en: Name of a country (e.g. "Brazil")
+    pt: País
+  locality:
+    en: City/Neighborhood
+    pt: Cidade/Bairro
+  locality1:
+    en: City
+    pt: Cidade
+  locality2:
+    en: Neighborhood
+    pt: Bairro
+  street:
+    en: Name of a street
+    pt: Endereço
+  building:
+    en: House number
+    pt: Número da residência
+  landmark:
+    en: Landmark
+    pt: Ponto de referência
+  unit:
+    en: Apartment
+    pt: Apto. (por exemplo "ap. 5")
+  postal-code:
+    en: Postal code
+    pt: CEP
+  street-address:
+    en: Street address (street and location within the street) - this is very rare on Brazilian websites.
+  street-type:
+    en: Type particle of a full street name or place
+    pt: Tipo de Endereço
+  organization:
+    en: Name of an organization/company
+    pt: Empresa
+  address-overflow:
+    en: An overflow field for information that is not captured differently in a form
+    pt: Complemento
+  delivery-instructions:
+    en: Delivery instructions
+    pt: Informações extras

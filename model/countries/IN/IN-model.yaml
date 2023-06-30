@@ -1,0 +1,71 @@
+extra-definitions:
+  street-location: # re-ordered the fields and added the in-building-location
+  - in-building-location
+  - building
+  - street
+
+  street-address-alternative-1:
+  - in-building-location
+  - building
+  - street
+  - organization
+  - landmark
+  - locality2
+
+  street-address-alternative-2:
+  - street-location
+  - organization
+  - landmark
+  - locality2
+
+  street-address-alternative-3:
+  - in-building-location
+  - building
+  - organization
+  - street-and-locality2
+  - landmark
+
+  street-and-locality2:
+  - street
+  - locality2
+
+  street-address-alternative-4:
+  - in-building-location
+  - building
+  - organization
+  - street-and-landmark
+  - locality2
+
+  street-and-landmark:
+  - street
+  - landmark
+
+  street-address-alternative-5:
+  - organization
+  - street-location-and-landmark
+  - locality2
+
+  street-location-and-landmark:
+  - street-location
+  - landmark
+
+  street-address-alternative-6:
+  - organization
+  - street-location-and-locality2
+  - landmark
+
+  street-location-and-locality2:
+  - street-location
+  - locality2
+
+  locality:
+  - locality1  # Biggest kind of locality
+  # locality2 is in the street address
+
+append-after:
+  street-address-alternative-1:
+  - street-address-alternative-2
+  - street-address-alternative-3
+  - street-address-alternative-4
+  - street-address-alternative-5
+  - street-address-alternative-6

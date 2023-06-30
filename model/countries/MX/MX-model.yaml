@@ -1,0 +1,30 @@
+cut-off-tokens:
+  # Many of these might exist but we haven't seen them commonly used in
+  # Mexico.
+  - honorific-prefix
+  # - additional-name
+  - honorific-suffix
+  - organization-title
+  - locality3
+  - locality4
+  - admin-area3
+  - admin-area4
+  - entrance
+  - staircase
+  - care-of
+cut-off-children:  # don't expose nodes below these levels
+  - street
+  - building
+  - tel-local
+extra-definitions:
+  street-address-alternative-1:
+  - street-location
+  - in-building-location
+  - address-overflow
+  address-overflow:
+  - landmark-and-cross-streets
+  - organization
+  - delivery-instructions
+  landmark-and-cross-streets:
+  - landmark
+  - cross-streets

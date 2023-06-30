@@ -1,0 +1,12 @@
+{% if not token.is_atomic_token() and token.children %}
+<div>
+<h4>Children:</h4>
+<ul>
+{% for child in token.children %}
+  <li>
+    <a href="#{{child}}">{{child}}</a>
+  </li>
+{% endfor %}
+</ul>
+</div>
+{% endif %}

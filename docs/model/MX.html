@@ -1,0 +1,1933 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="prototype for autofill attribute">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>Prototype for autofill attribute</title>
+  <link rel="shortcut icon" href="static/images/favicon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://www.gstatic.com/external_hosted/material_design_lite/mdl_css-cyan-light_blue-bundle.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script defer src="https://www.gstatic.com/external_hosted/material_design_lite/mdl_all_js_compiled.js"></script>
+  <style>
+    html, body {
+      font-family: 'Roboto', 'Helvetica', sans-serif;
+    }
+    a {
+      color: #3d5afe;
+    }
+    h3 { font-size: 20px; }
+    h4 { font-size: 18px; }
+    .example-form {
+      border: 1px black solid;
+      width: 600px;
+      margin: 4px;
+      padding: 4px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-gap: 10px;
+    }
+    .example-form span {
+      margin-right: 10px;
+    }
+
+    .navigation {
+      -webkit-flex-grow: 1;
+          -ms-flex-positive: 1;
+              flex-grow: 1;
+    }
+
+    .layout .navigation .mdl-navigation__link {
+      display: -webkit-flex !important;
+      display: -ms-flexbox !important;
+      display: flex !important;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      color: rgba(255, 255, 255, 0.56);
+      font-weight: 500;
+    }
+
+    .navigation .mdl-navigation__link .material-icons {
+      font-size: 24px;
+      color: rgba(255, 255, 255, 0.56);
+      margin-right: 12px;
+    }
+
+    .layout .navigation .mdl-navigation__link:hover {
+      background-color: #00bcd4;
+      color: #37474f;
+    }
+
+    .form {
+      margin: 8px;
+      padding: 4px;
+      border: 1px solid #37474f;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-column-gap: 10px;
+    }
+
+    .production_token {
+      border: 1px solid #00bcd4;
+      padding: 1px;
+      margin-right: 1px;
+      display: inline-block;
+    }
+
+    .production_token_separator, .production_token_prefix, .production_token_suffix {
+      font-family: 'Courier New', Courier, monospace;
+      padding: 1px;
+      margin: 1px;
+    }
+    .production_token_separator {
+      background-color: azure;
+    }
+    .production_token_prefix, .production_token_suffix {
+      background-color: beige;
+    }
+  </style>
+  
+    <style>
+    .concept {
+      border-style: solid;
+      border-width: 1px;
+      border-color: #EEE;
+    }
+    .concept-id {
+      padding: 4px;
+      background-color: #EEE;
+    }
+    .concept-content {
+      padding: 4px 4px 4px 16px ;
+    }
+    </style>
+    
+    <style>
+    .concept {
+      border-style: solid;
+      border-width: 1px;
+      border-color: #EEE;
+    }
+    .concept-id {
+      padding: 4px;
+      background-color: #EEE;
+    }
+    .concept-content {
+      padding: 4px 4px 4px 16px ;
+    }
+    </style>
+    
+</head>
+
+<body>
+  <div class="layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+    <header class="header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title">Country: MX</span>
+      </div>
+    </header>
+    <div class="mdl-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+      <span class="mdl-layout-title">Select a country:</span>
+      <nav class="navigation mdl-navigation mdl-color--blue-grey-800">
+        
+        <a class="mdl-navigation__link" href="global.html">
+          
+          <i class="mdl-color-text--blue-grey-400 material-icons"
+              role="presentation">south_america</i>
+          
+          <span>global</span></a>
+        
+        <a class="mdl-navigation__link" href="BR.html">
+          
+          <span class="mdl-color-text--blue-grey-400 material-icons"
+              style="font-family:'Roboto', 'Helvetica', sans-serif;">
+              🇧🇷</span>
+          
+          <span>BR</span></a>
+        
+        <a class="mdl-navigation__link" href="IN.html">
+          
+          <span class="mdl-color-text--blue-grey-400 material-icons"
+              style="font-family:'Roboto', 'Helvetica', sans-serif;">
+              🇮🇳</span>
+          
+          <span>IN</span></a>
+        
+        <a class="mdl-navigation__link" href="MX.html">
+          
+          <span class="mdl-color-text--blue-grey-400 material-icons"
+              style="font-family:'Roboto', 'Helvetica', sans-serif;">
+              🇲🇽</span>
+          
+          <span>MX</span></a>
+        
+        <a class="mdl-navigation__link" href="US.html">
+          
+          <span class="mdl-color-text--blue-grey-400 material-icons"
+              style="font-family:'Roboto', 'Helvetica', sans-serif;">
+              🇺🇸</span>
+          
+          <span>US</span></a>
+        
+      </nav>
+    </div>
+    <main class="mdl-layout__content mdl-color--grey-100">
+      <div id="content" class="content">
+        
+
+
+
+<div class="mdl-card mdl-shadow--2dp" style="width: 95%; margin: 8px">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Overview of concepts</h2>
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    
+    
+<div class="concept">
+  <div class="concept-id">
+    <a href="#full-address">full-address</a>
+    - Artificial concept, not to be used in HTML
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#name">name</a>
+    - Full name
+      
+        
+      
+        
+        | Nombre completo
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#given-name">given-name</a>
+    - Given name
+      
+        
+      
+        
+        | Nombre
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#additional-name">additional-name</a>
+    - Middle name
+      
+        
+      
+        
+        | Segundo Nombre
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#family-name">family-name</a>
+    - Family name
+      
+        
+      
+        
+        | Apellidos
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#family-name-first">family-name-first</a>
+    - Paternal name
+      
+        
+      
+        
+        | Apellido Paterno
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#family-name-conjunction">family-name-conjunction</a>
+    - Conjunction between the first and second part of the family name
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#family-name-second">family-name-second</a>
+    - Maternal name
+      
+        
+      
+        
+        | Apellido Materno
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#street-address">street-address</a>
+    - Street address (street and location within the street)
+      
+        
+      
+        
+        | Dirección/Calle y número
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#address-line1">address-line1</a>
+    - 1st line of street-address
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#address-line2">address-line2</a>
+    - 2nd line of street-address
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#address-line3">address-line3</a>
+    - 3rd line of street-address
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#address-line4">address-line4</a>
+    - 4th line of street-address
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#street-address-alternative-1">street-address-alternative-1</a>
+    - Artificial concept, not to be used in HTML; this is a structured representation of a street address
+
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#street-location">street-location</a>
+    - Name of a street and identifier for the building
+      
+        
+      
+        
+        | Calle y número
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#street">street</a>
+    - Street name
+      
+        
+      
+        
+        | Calle
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#building">building</a>
+    - House number
+      
+        
+      
+        
+        | Número exterior
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#in-building-location">in-building-location</a>
+    - Location of the adresse in a building
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#floor">floor</a>
+    - Floor number in the building
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#unit">unit</a>
+    - Apartment
+      
+        
+      
+        
+        | Número interior
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#unit-type">unit-type</a>
+    - Type of a unit (e.g. &#34;Apt&#34;, &#34;Room&#34;, &#34;Store&#34;)
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#unit-name">unit-name</a>
+    - Identifier of a unit (e.g. &#34;5&#34;)
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#address-overflow">address-overflow</a>
+    - An overflow field for information that is not captured differently in a form
+
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#landmark-and-cross-streets">landmark-and-cross-streets</a>
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#landmark">landmark</a>
+    - Landmark
+      
+        
+      
+        
+        | Referencia
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#cross-streets">cross-streets</a>
+    - Crossing streets
+      
+        
+      
+        
+        | Entre calles
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#cross-street1">cross-street1</a>
+    - First of two crossing streets.
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#cross-street2">cross-street2</a>
+    - Second of two crossing streets.
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#organization">organization</a>
+    - Name of an organization/company
+      
+        
+      
+        
+        | Razón social
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#delivery-instructions">delivery-instructions</a>
+    - Delivery instructions
+      
+        
+      
+        
+        | Indicaciones adicionales
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#locality">locality</a>
+    - City/Neighborhood
+      
+        
+      
+        
+        | Ciudad/Colonia
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#locality1">locality1</a>
+    - City
+      
+        
+      
+        
+        | Ciudad
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#locality2">locality2</a>
+    - Neighborhood
+      
+        
+      
+        
+        | Colonia
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#admin-area">admin-area</a>
+    - State + Municipio/Delegación
+      
+        
+      
+        
+        | Estado + Municipio/Delegación
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#admin-area1">admin-area1</a>
+    - State
+      
+        
+      
+        
+        | Estado
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#admin-area2">admin-area2</a>
+    - Municipio/Delegación
+      
+        
+      
+        
+        | Municipio/Delegación
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#postal-code">postal-code</a>
+    - Postal code
+      
+        
+      
+        
+        | Código postal
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#country">country</a>
+    - 2-letter country code (e.g. &#34;MX&#34;)
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#country-name">country-name</a>
+    - Name of a country (e.g. &#34;Mexico&#34;)
+      
+        
+      
+        
+        | País
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+    <div>&nbsp;</div>
+    
+    
+<div class="concept">
+  <div class="concept-id">
+    <a href="#credit-card">credit-card</a>
+    - Artificial concept, not to be used in HTML
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#cc-name">cc-name</a>
+    - Full name of credit card holder
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#cc-given-name">cc-given-name</a>
+    - Given name of credit card holder
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#cc-additional-name">cc-additional-name</a>
+    - Additional name of credit card holder
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#cc-family-name">cc-family-name</a>
+    - Family name of credit card holder
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#cc-number">cc-number</a>
+    - Credit card number
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#cc-exp-MMYY">cc-exp-MMYY</a>
+    - Credit card expiration date in format MM/YY
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#cc-exp-MM">cc-exp-MM</a>
+    - Credit card expiration month (2 digits)
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#cc-exp-YY">cc-exp-YY</a>
+    - Credit card expiration date in format YY (2 digits)
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#cc-exp-MMYYYY">cc-exp-MMYYYY</a>
+    - Credit card expiration date in format MM/YYYY
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#cc-exp-MM">cc-exp-MM</a>
+    - Credit card expiration month (2 digits)
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#cc-exp-YYYY">cc-exp-YYYY</a>
+    - Credit card expiration date in format YYYY (4 digits)
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#cc-csc">cc-csc</a>
+    - CSC/CVC/CVV number
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#cc-type">cc-type</a>
+    - Credit card type
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+    <div>&nbsp;</div>
+    
+    
+<div class="concept">
+  <div class="concept-id">
+    <a href="#tel">tel</a>
+    - Full telephone number
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#tel-country-code">tel-country-code</a>
+    - Country code component of the telephone number
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#tel-national">tel-national</a>
+    - Telephone number without the county code component, with a country-internal prefix applied if applicable
+
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#tel-area-code">tel-area-code</a>
+    - Area code component of the telephone number, with a country-internal prefix applied if applicable
+
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#tel-local">tel-local</a>
+    - Telephone number without the country code and area code components
+
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#tel-extension">tel-extension</a>
+    - Telephone number internal extension code
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+    <div>&nbsp;</div>
+    
+    
+<div class="concept">
+  <div class="concept-id">
+    <a href="#email">email</a>
+    - Email address
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+    <div>&nbsp;</div>
+    
+  </div>
+</div><div class="mdl-card mdl-shadow--2dp" style="width: 95%; margin: 8px">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Details</h2>
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <h3 id="name"><a href="#name">#</a> name</h3>
+<div style="margin-left: 20px;">
+
+Full name
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    <a href="#given-name">given-name</a>
+  </li>
+
+  <li>
+    <a href="#additional-name">additional-name</a>
+  </li>
+
+  <li>
+    <a href="#family-name">family-name</a>
+  </li>
+
+</ul>
+</div>
+
+</div><h3 id="given-name"><a href="#given-name">#</a> given-name</h3>
+<div style="margin-left: 20px;">
+
+Given name
+
+
+
+</div><h3 id="additional-name"><a href="#additional-name">#</a> additional-name</h3>
+<div style="margin-left: 20px;">
+
+Middle name
+
+
+
+</div><h3 id="family-name"><a href="#family-name">#</a> family-name</h3>
+<div style="margin-left: 20px;">
+
+Family name
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    <a href="#family-name-first">family-name-first</a>
+  </li>
+
+  <li>
+    <a href="#family-name-conjunction">family-name-conjunction</a>
+  </li>
+
+  <li>
+    <a href="#family-name-second">family-name-second</a>
+  </li>
+
+</ul>
+</div>
+
+</div><h3 id="family-name-first"><a href="#family-name-first">#</a> family-name-first</h3>
+<div style="margin-left: 20px;">
+
+Paternal name
+
+
+
+</div><h3 id="family-name-conjunction"><a href="#family-name-conjunction">#</a> family-name-conjunction</h3>
+<div style="margin-left: 20px;">
+
+Conjunction between the first and second part of the family name
+
+
+
+</div><h3 id="family-name-second"><a href="#family-name-second">#</a> family-name-second</h3>
+<div style="margin-left: 20px;">
+
+Maternal name
+
+
+
+</div><h3 id="street-address"><a href="#street-address">#</a> street-address</h3>
+<div style="margin-left: 20px;">
+
+Street address (street and location within the street)
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    <a href="#address-line1">address-line1</a>
+  </li>
+
+  <li>
+    <a href="#address-line2">address-line2</a>
+  </li>
+
+  <li>
+    <a href="#address-line3">address-line3</a>
+  </li>
+
+  <li>
+    <a href="#address-line4">address-line4</a>
+  </li>
+
+</ul>
+</div>
+
+</div><h3 id="address-line1"><a href="#address-line1">#</a> address-line1</h3>
+<div style="margin-left: 20px;">
+
+1st line of street-address
+
+
+
+</div><h3 id="address-line2"><a href="#address-line2">#</a> address-line2</h3>
+<div style="margin-left: 20px;">
+
+2nd line of street-address
+
+
+
+</div><h3 id="address-line3"><a href="#address-line3">#</a> address-line3</h3>
+<div style="margin-left: 20px;">
+
+3rd line of street-address
+
+
+
+</div><h3 id="address-line4"><a href="#address-line4">#</a> address-line4</h3>
+<div style="margin-left: 20px;">
+
+4th line of street-address
+
+
+
+</div><h3 id="street-address-alternative-1"><a href="#street-address-alternative-1">#</a> street-address-alternative-1</h3>
+<div style="margin-left: 20px;">
+
+Artificial concept, not to be used in HTML; this is a structured representation of a street address
+
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    <a href="#street-location">street-location</a>
+  </li>
+
+  <li>
+    <a href="#in-building-location">in-building-location</a>
+  </li>
+
+  <li>
+    <a href="#address-overflow">address-overflow</a>
+  </li>
+
+</ul>
+</div>
+
+</div><h3 id="street-location"><a href="#street-location">#</a> street-location</h3>
+<div style="margin-left: 20px;">
+
+Name of a street and identifier for the building
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    <a href="#street">street</a>
+  </li>
+
+  <li>
+    <a href="#building">building</a>
+  </li>
+
+</ul>
+</div>
+
+</div><h3 id="street"><a href="#street">#</a> street</h3>
+<div style="margin-left: 20px;">
+
+Street name
+
+
+
+</div><h3 id="building"><a href="#building">#</a> building</h3>
+<div style="margin-left: 20px;">
+
+House number
+
+
+
+</div><h3 id="in-building-location"><a href="#in-building-location">#</a> in-building-location</h3>
+<div style="margin-left: 20px;">
+
+Location of the adresse in a building
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    <a href="#floor">floor</a>
+  </li>
+
+  <li>
+    <a href="#unit">unit</a>
+  </li>
+
+</ul>
+</div>
+
+</div><h3 id="floor"><a href="#floor">#</a> floor</h3>
+<div style="margin-left: 20px;">
+
+Floor number in the building
+
+
+
+</div><h3 id="unit"><a href="#unit">#</a> unit</h3>
+<div style="margin-left: 20px;">
+
+Apartment
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    <a href="#unit-type">unit-type</a>
+  </li>
+
+  <li>
+    <a href="#unit-name">unit-name</a>
+  </li>
+
+</ul>
+</div>
+
+</div><h3 id="unit-type"><a href="#unit-type">#</a> unit-type</h3>
+<div style="margin-left: 20px;">
+
+Type of a unit (e.g. &#34;Apt&#34;, &#34;Room&#34;, &#34;Store&#34;)
+
+
+
+</div><h3 id="unit-name"><a href="#unit-name">#</a> unit-name</h3>
+<div style="margin-left: 20px;">
+
+Identifier of a unit (e.g. &#34;5&#34;)
+
+
+
+</div><h3 id="address-overflow"><a href="#address-overflow">#</a> address-overflow</h3>
+<div style="margin-left: 20px;">
+
+An overflow field for information that is not captured differently in a form
+
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    <a href="#landmark-and-cross-streets">landmark-and-cross-streets</a>
+  </li>
+
+  <li>
+    <a href="#organization">organization</a>
+  </li>
+
+  <li>
+    <a href="#delivery-instructions">delivery-instructions</a>
+  </li>
+
+</ul>
+</div>
+
+</div><h3 id="landmark-and-cross-streets"><a href="#landmark-and-cross-streets">#</a> landmark-and-cross-streets</h3>
+<div style="margin-left: 20px;">
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    <a href="#landmark">landmark</a>
+  </li>
+
+  <li>
+    <a href="#cross-streets">cross-streets</a>
+  </li>
+
+</ul>
+</div>
+
+</div><h3 id="landmark"><a href="#landmark">#</a> landmark</h3>
+<div style="margin-left: 20px;">
+
+Landmark
+
+
+
+</div><h3 id="cross-streets"><a href="#cross-streets">#</a> cross-streets</h3>
+<div style="margin-left: 20px;">
+
+Crossing streets
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    <a href="#cross-street1">cross-street1</a>
+  </li>
+
+  <li>
+    <a href="#cross-street2">cross-street2</a>
+  </li>
+
+</ul>
+</div>
+
+</div><h3 id="cross-street1"><a href="#cross-street1">#</a> cross-street1</h3>
+<div style="margin-left: 20px;">
+
+First of two crossing streets.
+
+
+
+</div><h3 id="cross-street2"><a href="#cross-street2">#</a> cross-street2</h3>
+<div style="margin-left: 20px;">
+
+Second of two crossing streets.
+
+
+
+</div><h3 id="organization"><a href="#organization">#</a> organization</h3>
+<div style="margin-left: 20px;">
+
+Name of an organization/company
+
+
+
+</div><h3 id="delivery-instructions"><a href="#delivery-instructions">#</a> delivery-instructions</h3>
+<div style="margin-left: 20px;">
+
+Delivery instructions
+
+
+
+</div><h3 id="locality"><a href="#locality">#</a> locality</h3>
+<div style="margin-left: 20px;">
+
+City/Neighborhood
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    <a href="#locality1">locality1</a>
+  </li>
+
+  <li>
+    <a href="#locality2">locality2</a>
+  </li>
+
+</ul>
+</div>
+
+</div><h3 id="locality1"><a href="#locality1">#</a> locality1</h3>
+<div style="margin-left: 20px;">
+
+City
+
+
+
+</div><h3 id="locality2"><a href="#locality2">#</a> locality2</h3>
+<div style="margin-left: 20px;">
+
+Neighborhood
+
+
+
+</div><h3 id="admin-area"><a href="#admin-area">#</a> admin-area</h3>
+<div style="margin-left: 20px;">
+
+State + Municipio/Delegación
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    <a href="#admin-area1">admin-area1</a>
+  </li>
+
+  <li>
+    <a href="#admin-area2">admin-area2</a>
+  </li>
+
+</ul>
+</div>
+
+</div><h3 id="admin-area1"><a href="#admin-area1">#</a> admin-area1</h3>
+<div style="margin-left: 20px;">
+
+State
+
+
+
+</div><h3 id="admin-area2"><a href="#admin-area2">#</a> admin-area2</h3>
+<div style="margin-left: 20px;">
+
+Municipio/Delegación
+
+
+
+</div><h3 id="postal-code"><a href="#postal-code">#</a> postal-code</h3>
+<div style="margin-left: 20px;">
+
+Postal code
+
+
+
+</div><h3 id="country"><a href="#country">#</a> country</h3>
+<div style="margin-left: 20px;">
+
+2-letter country code (e.g. &#34;MX&#34;)
+
+
+
+</div><h3 id="country-name"><a href="#country-name">#</a> country-name</h3>
+<div style="margin-left: 20px;">
+
+Name of a country (e.g. &#34;Mexico&#34;)
+
+
+
+</div><h3 id="cc-name"><a href="#cc-name">#</a> cc-name</h3>
+<div style="margin-left: 20px;">
+
+Full name of credit card holder
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    <a href="#cc-given-name">cc-given-name</a>
+  </li>
+
+  <li>
+    <a href="#cc-additional-name">cc-additional-name</a>
+  </li>
+
+  <li>
+    <a href="#cc-family-name">cc-family-name</a>
+  </li>
+
+</ul>
+</div>
+
+</div><h3 id="cc-given-name"><a href="#cc-given-name">#</a> cc-given-name</h3>
+<div style="margin-left: 20px;">
+
+Given name of credit card holder
+
+
+
+</div><h3 id="cc-additional-name"><a href="#cc-additional-name">#</a> cc-additional-name</h3>
+<div style="margin-left: 20px;">
+
+Additional name of credit card holder
+
+
+
+</div><h3 id="cc-family-name"><a href="#cc-family-name">#</a> cc-family-name</h3>
+<div style="margin-left: 20px;">
+
+Family name of credit card holder
+
+
+
+</div><h3 id="cc-number"><a href="#cc-number">#</a> cc-number</h3>
+<div style="margin-left: 20px;">
+
+Credit card number
+
+
+
+</div><h3 id="cc-exp-MMYY"><a href="#cc-exp-MMYY">#</a> cc-exp-MMYY</h3>
+<div style="margin-left: 20px;">
+
+Credit card expiration date in format MM/YY
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    <a href="#cc-exp-MM">cc-exp-MM</a>
+  </li>
+
+  <li>
+    <a href="#cc-exp-YY">cc-exp-YY</a>
+  </li>
+
+</ul>
+</div>
+
+</div><h3 id="cc-exp-MM"><a href="#cc-exp-MM">#</a> cc-exp-MM</h3>
+<div style="margin-left: 20px;">
+
+Credit card expiration month (2 digits)
+
+
+
+</div><h3 id="cc-exp-YY"><a href="#cc-exp-YY">#</a> cc-exp-YY</h3>
+<div style="margin-left: 20px;">
+
+Credit card expiration date in format YY (2 digits)
+
+
+
+</div><h3 id="cc-exp-MMYYYY"><a href="#cc-exp-MMYYYY">#</a> cc-exp-MMYYYY</h3>
+<div style="margin-left: 20px;">
+
+Credit card expiration date in format MM/YYYY
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    <a href="#cc-exp-MM">cc-exp-MM</a>
+  </li>
+
+  <li>
+    <a href="#cc-exp-YYYY">cc-exp-YYYY</a>
+  </li>
+
+</ul>
+</div>
+
+</div><h3 id="cc-exp-YYYY"><a href="#cc-exp-YYYY">#</a> cc-exp-YYYY</h3>
+<div style="margin-left: 20px;">
+
+Credit card expiration date in format YYYY (4 digits)
+
+
+
+</div><h3 id="cc-csc"><a href="#cc-csc">#</a> cc-csc</h3>
+<div style="margin-left: 20px;">
+
+CSC/CVC/CVV number
+
+
+
+</div><h3 id="cc-type"><a href="#cc-type">#</a> cc-type</h3>
+<div style="margin-left: 20px;">
+
+Credit card type
+
+
+
+</div><h3 id="tel-country-code"><a href="#tel-country-code">#</a> tel-country-code</h3>
+<div style="margin-left: 20px;">
+
+Country code component of the telephone number
+
+
+
+</div><h3 id="tel-national"><a href="#tel-national">#</a> tel-national</h3>
+<div style="margin-left: 20px;">
+
+Telephone number without the county code component, with a country-internal prefix applied if applicable
+
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    <a href="#tel-area-code">tel-area-code</a>
+  </li>
+
+  <li>
+    <a href="#tel-local">tel-local</a>
+  </li>
+
+</ul>
+</div>
+
+</div><h3 id="tel-area-code"><a href="#tel-area-code">#</a> tel-area-code</h3>
+<div style="margin-left: 20px;">
+
+Area code component of the telephone number, with a country-internal prefix applied if applicable
+
+
+
+
+</div><h3 id="tel-local"><a href="#tel-local">#</a> tel-local</h3>
+<div style="margin-left: 20px;">
+
+Telephone number without the country code and area code components
+
+
+
+
+</div><h3 id="tel-extension"><a href="#tel-extension">#</a> tel-extension</h3>
+<div style="margin-left: 20px;">
+
+Telephone number internal extension code
+
+
+
+</div>
+  </div>
+</div>
+      </div>
+    </main>
+  </div>
+  
+</body>
+</html>

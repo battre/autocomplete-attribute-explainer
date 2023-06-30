@@ -1,0 +1,44 @@
+country: BR
+flag: 🇧🇷
+
+overview: |
+    Addresses in Brazil typically follow the following structure:<br>
+    <table style="border: 1px black solid;">
+    <tr>
+    <td width="15%">{name}</td>
+    <td width="15%">Destinatário</td>
+    <td>The name is often split into {first-name} (Nome) and {family-name} (Sobrenome).</td>
+    </tr>
+    <tr>
+    <td>{street}, {building}</td>
+    <td>Endereço, Número</td>
+    <td>The street name and house-number typically appear as separate fields.</td>
+    </tr>
+    <tr>
+    <td>{address-overflow} {landmark}</td>
+    <td>Complemento e Ponto de referência</td>
+    <td>Address forms often contain a field for extra information that is optional and can be used for apartments (apto), block numbers (bloco), room numbers (sala), floor numbers (andar).
+    Address forms also often contain a landmark field ("Ponto de referência"). Some forms combine both into a single field.
+    </td>
+    </tr>
+    <tr>
+    <td>{locality2}</td>
+    <td>Bairro</td>
+    <td>Most address forms contain a field for the neighborhood.</td>
+    </tr>
+    <tr>
+    <td>{locality1} - {admin-area}</td>
+    <td>Cidade - Estado</td>
+    <td>Most address forms contain a field for the neighborhood and state.</td>
+    </tr>
+    <tr>
+    <td>{postal-code}</td>
+    <td>CEP</td>
+    <td>Most address forms contain a postal code field.</td>
+    </tr>
+    <tr>
+    <td>{country}</td>
+    <td>País/Região</td>
+    <td>Some address forms contain a country field.</td>
+    </tr>
+    </table>

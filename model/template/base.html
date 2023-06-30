@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="prototype for autofill attribute">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>Prototype for autofill attribute</title>
+  <link rel="shortcut icon" href="static/images/favicon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://www.gstatic.com/external_hosted/material_design_lite/mdl_css-cyan-light_blue-bundle.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script defer src="https://www.gstatic.com/external_hosted/material_design_lite/mdl_all_js_compiled.js"></script>
+  <style>
+    html, body {
+      font-family: 'Roboto', 'Helvetica', sans-serif;
+    }
+    a {
+      color: #3d5afe;
+    }
+    h3 { font-size: 20px; }
+    h4 { font-size: 18px; }
+    .example-form {
+      border: 1px black solid;
+      width: 600px;
+      margin: 4px;
+      padding: 4px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-gap: 10px;
+    }
+    .example-form span {
+      margin-right: 10px;
+    }
+
+    .navigation {
+      -webkit-flex-grow: 1;
+          -ms-flex-positive: 1;
+              flex-grow: 1;
+    }
+
+    .layout .navigation .mdl-navigation__link {
+      display: -webkit-flex !important;
+      display: -ms-flexbox !important;
+      display: flex !important;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      color: rgba(255, 255, 255, 0.56);
+      font-weight: 500;
+    }
+
+    .navigation .mdl-navigation__link .material-icons {
+      font-size: 24px;
+      color: rgba(255, 255, 255, 0.56);
+      margin-right: 12px;
+    }
+
+    .layout .navigation .mdl-navigation__link:hover {
+      background-color: #00bcd4;
+      color: #37474f;
+    }
+
+    .form {
+      margin: 8px;
+      padding: 4px;
+      border: 1px solid #37474f;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-column-gap: 10px;
+    }
+
+    .production_token {
+      border: 1px solid #00bcd4;
+      padding: 1px;
+      margin-right: 1px;
+      display: inline-block;
+    }
+
+    .production_token_separator, .production_token_prefix, .production_token_suffix {
+      font-family: 'Courier New', Courier, monospace;
+      padding: 1px;
+      margin: 1px;
+    }
+    .production_token_separator {
+      background-color: azure;
+    }
+    .production_token_prefix, .production_token_suffix {
+      background-color: beige;
+    }
+  </style>
+  {{css|safe}}
+</head>
+
+<body>
+  <div class="layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+    <header class="header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title">Country: {{country}}</span>
+      </div>
+    </header>
+    <div class="mdl-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+      <span class="mdl-layout-title">Select a country:</span>
+      <nav class="navigation mdl-navigation mdl-color--blue-grey-800">
+        {% for country in countries %}
+        <a class="mdl-navigation__link" href="{{country}}.html">
+          {% if not country_data[country]["MetadataModule"].get("flag") %}
+          <i class="mdl-color-text--blue-grey-400 material-icons"
+              role="presentation">south_america</i>
+          {%else%}
+          <span class="mdl-color-text--blue-grey-400 material-icons"
+              style="font-family:'Roboto', 'Helvetica', sans-serif;">
+              {{country_data[country]["MetadataModule"].get("flag")}}</span>
+          {%endif%}
+          <span>{{country}}</span></a>
+        {% endfor %}
+      </nav>
+    </div>
+    <main class="mdl-layout__content mdl-color--grey-100">
+      <div id="content" class="content">
+        {{content|safe}}
+      </div>
+    </main>
+  </div>
+  {{javascript|safe}}
+</body>
+</html>

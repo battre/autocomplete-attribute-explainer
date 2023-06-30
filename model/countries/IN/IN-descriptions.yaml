@@ -1,0 +1,24 @@
+short-descriptions:
+  given-name: First name
+  additional-name: Middle name
+  family-name: Last name
+  admin-area: State
+  country: 2-letter country code (e.g. "IN")
+  country-name: Name of a country (e.g. "India")
+  locality: City
+  locality1: City
+  locality2: Locality
+  street-location: Building name and apartment, House number, Street
+  building-and-unit: >
+    Building name and flat number (possibly floor and other details)
+  building: House number / Building name / Apartment name (e.g. "House 9" or "Sunshine Apartments")
+  in-building-location: Flat number (possibly floor and other details)
+  postal-code: PIN code
+  structured-street-address-without-landmark: >
+    Full street address except for a landmark
+  street-address-alternative-1: "Artificial concept, not to be used in HTML; 4 fields: house number, street, landmark, locality2"
+  street-address-alternative-2: "Artificial concept, not to be used in HTML; 3 fields: (house number, street), landmark, locality2"
+  street-address-alternative-3: "Artificial concept, not to be used in HTML; 3 fields: house number, (street, locality2), landmark"
+  street-address-alternative-4: "Artificial concept, not to be used in HTML; 3 fields: house number, (street, landmark), locality2"
+  street-address-alternative-5: "Artificial concept, not to be used in HTML; 2 fields: (house number, street, landmark), locality2"
+  street-address-alternative-6: "Artificial concept, not to be used in HTML; 2 fields: (house number, street, locality2), landmark"

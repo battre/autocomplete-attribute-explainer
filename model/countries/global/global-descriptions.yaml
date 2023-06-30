@@ -1,0 +1,94 @@
+short-descriptions:
+  full-address: Artificial concept, not to be used in HTML
+  name: Full name
+  honorific-prefix: Honorific prefix
+  given-name: Given namen (in Western cultures the first name)
+  additional-name: Additional given name (in Western cultures the middle name)
+  family-name: Family name (in Western cultures the last name)
+  family-name-first: First part of a family name (e.g. the paternal name)
+  family-name-conjunction: Conjunction between the first and second part of the family name
+  family-name-second: Second part of a famiily name (e.g. the maternal name)
+  honorific-suffix: Honorific suffix
+  organization-title: Title of a person within an organization
+  country: 2-letter country code
+  country-name: Name of a country
+  postal-code: Postal code
+  admin-area: Administrative area (e.g. a state, emirate, ...); maybe a concatenation of multiple smaller types of admin areas if a country uses those
+  admin-area1: Biggest type of admin area if a country has multiple levels
+  admin-area2: 2nd biggest type of admin area if a country has multiple levels
+  admin-area3: 3rd biggest type of admin area if a country has multiple levels
+  admin-area4: 4th biggest type of admin area if a country has multiple levels
+  locality: Typically a city; may be a concatenation of multiple smaller types
+  locality1: Biggest sub type of a locality, often a city
+  locality2: 2nd biggest type of a locality, e.g. a suburb
+  locality3: 3rd biggest type of a locality
+  locality4: 4th biggest type of a locality
+  street-address: Street address (street and location within the street)
+  address-line1: 1st line of street-address
+  address-line2: 2nd line of street-address
+  address-line3: 3rd line of street-address
+  address-line4: 4th line of street-address
+  street-address-alternative-1: >
+    Artificial concept, not to be used in HTML; this is a structured
+    representation of a street address
+  street-location: Name of a street and identifier for the building
+  street: Name of a street
+  street-type: >
+    Type particle of a full street name or place (in countries that split the
+    full street name into particles)
+  street-name: >
+    Name particle of a full street name or place (in countries that split the
+    full street name into particles)
+  building: House number (in a street or block) or name of a building.
+  house-number: "Numeric identifier of a house (rare: only used in countries that ask for a house number and building in separate fields)"
+  building-name: "Name of a building (rare: only used in countries that ask for a house number and building in separate fields)"
+  organization: Name of an organization/company
+  cross-streets: >
+    Names of two streets crossing the street of the house, used to help
+    finding the house.
+  cross-street1: First of two crossing streets.
+  cross-street2: Second of two crossing streets.
+  in-building-location: Location of the adresse in a building
+  entrance: Entrance of a building
+  floor: Floor number in the building
+  staircase: Stair case in the building
+  unit: Unit in a building (e.g. "Apartment 5", "Suite 12")
+  unit-type: Type of a unit (e.g. "Apt", "Room", "Store")
+  unit-name: Identifier of a unit (e.g. "5")
+  address-overflow: >
+    An overflow field for information that is not captured differently in a
+    form
+  landmark: Landmark to help finding a building
+  delivery-instructions: Delivery instructions
+  care-of: Final recipient of a delivery
+  credit-card: Artificial concept, not to be used in HTML
+  cc-name: Full name of credit card holder
+  cc-given-name: Given name of credit card holder
+  cc-additional-name: Additional name of credit card holder
+  cc-family-name: Family name of credit card holder
+  cc-number: Credit card number
+  cc-exp-MMYY: Credit card expiration date in format MM/YY
+  cc-exp-MMYYYY: Credit card expiration date in format MM/YYYY
+  cc-exp-MM: Credit card expiration month (2 digits)
+  cc-exp-YY: Credit card expiration date in format YY (2 digits)
+  cc-exp-YYYY: Credit card expiration date in format YYYY (4 digits)
+  cc-csc: CSC/CVC/CVV number
+  cc-type: Credit card type
+  tel: Full telephone number
+  tel-country-code: Country code component of the telephone number
+  tel-national: >
+    Telephone number without the county code component, with a
+    country-internal prefix applied if applicable
+  tel-area-code: >
+    Area code component of the telephone number, with a country-internal
+    prefix applied if applicable
+  tel-local: >
+    Telephone number without the country code and area code components
+  tel-local-prefix: >
+    First part of the component of the telephone number that follows the
+    area code, when that component is split into two components
+  tel-local-suffix: >
+    Second part of the component of the telephone number that follows the area
+    code, when that component is split into two components
+  tel-extension: Telephone number internal extension code
+  email: Email address

@@ -1,0 +1,13 @@
+cut-off-tokens:
+  - street-address-alternative-1
+  - address-overflow
+  - landmark
+  - cross-streets
+  - honorific-prefix
+  - honorific-suffix
+  - organization-title
+cut-off-children:  # don't expose nodes below these levels
+  - locality
+  - admin-area
+  - street
+  - family-name
