@@ -27,6 +27,7 @@ class AbstractModule(ABC):
       try:
         schema.validate(yaml)
       except SchemaError as se:
+        print(f"Failed verifying schema of {file} with content:\n{yaml}")
         raise se
 
     return yaml
