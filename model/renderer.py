@@ -1,15 +1,21 @@
 from collections import defaultdict
+from typing import Optional
 from jinja2 import Environment, FileSystemLoader, Template, select_autoescape
 import os
 
 
 class Renderer:
+  output_dir: Optional[str] = None
+
   # Key/value pairs exposed to the renderer.
   data = dict()
   # Key/value paris exposed to the renderer, where the key is a country code.
   country_data = defaultdict(dict)
 
   countries = []
+
+  def __init__(self, output_dir: Optional[str] = None):
+    self.output_dir = output_dir
 
   def add_country(self, country: str) -> None:
     if country in self.countries:
@@ -47,6 +53,9 @@ class Renderer:
         content=content,
         javascript=javascript)
 
-    f = open(f"out/{country}.html", "w")
+    dir = "out"
+    if self.output_dir:
+      dir = self.output_dir
+    f = open(f"{dir}/{country}.html", "w")
     f.write(result)
     f.close()

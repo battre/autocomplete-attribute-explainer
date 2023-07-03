@@ -1,3 +1,4 @@
+import argparse
 from modules.metadata import MetadataModule
 from modules.model import ParseCountryModelModule, ParseGlobalModelModule, RenderTokenIndexModule, ParseDescriptionsModelModule, RenderTokenChildrenModule
 from modules.abstract_module import AbstractModule
@@ -16,23 +17,33 @@ modules: list[AbstractModule] = [
 global_config_files = list(Path('.').glob('countries/*/global-*.yaml'))
 other_config_files = list(Path('.').glob('countries/*/??-*.yaml'))
 
+parser = argparse.ArgumentParser()
+parser.add_argument(
+    '--use_vendor_extension',
+    required=False,
+    action='store_true',
+    help='run vendor extension modules')
+parser.add_argument('--out', required=False, help='output directory')
+args = parser.parse_args()
+
 # If you would like to inject further modules that are vendor specific like
 # code generators you can symlink a directory "vendor" that contains a file
 # vendor_extension.py with a class VendorExtension that is derived from
 # AbstractVendorExtension. This can register new modules and even new config
 # files.
-try:
-  from vendor.vendor_extension import VendorExtension
-  extension: AbstractVendorExtension = VendorExtension()
-  modules = extension.modify_modules_list(modules)
-  global_config_files = extension.modify_files_list(global_config_files)
-  other_config_files = extension.modify_files_list(other_config_files)
-except ModuleNotFoundError:
-  pass
-except ImportError as e:
-  raise e
+if args.use_vendor_extension:
+  try:
+    from vendor.vendor_extension import VendorExtension
+    extension: AbstractVendorExtension = VendorExtension()
+    modules = extension.modify_modules_list(modules)
+    global_config_files = extension.modify_files_list(global_config_files)
+    other_config_files = extension.modify_files_list(other_config_files)
+  except ModuleNotFoundError:
+    pass
+  except ImportError as e:
+    raise e
 
-renderer = Renderer()
+renderer = Renderer(args.out)
 
 # Read files for the global file (make sure this is fully set up before
 # proceeding to the files for other countries).
