@@ -124,15 +124,11 @@ class Model:
   def pre_order_only_uniques(self) -> Iterator[AtomicOrCompoundToken]:
     """Pre-order traversal that shows each node only once"""
     seen = set()
-    for root_concept in self.root_concepts:
-      if root_concept in seen:
+    for entry in self.pre_order():
+      if entry.id in seen:
         continue
-      seen.add(root_concept)
-      for entry in self.concepts[root_concept].pre_order():
-        if entry.id in seen:
-          continue
-        seen.add(entry.id)
-        yield entry
+      seen.add(entry.id)
+      yield entry
 
   def pre_order_descend_only_once(self) -> Iterator[AtomicOrCompoundToken]:
     descended = set()
