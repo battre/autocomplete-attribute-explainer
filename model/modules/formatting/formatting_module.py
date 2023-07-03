@@ -23,6 +23,8 @@ class FormattingModule(AbstractModule):
                 {"prefix": str},
                 {"suffix": str},
                 {"reference": str},  # Reference to a rule
+                # Item that should be skipped w/o generating an error:
+                {"skip": str},
             )
         ]
     }
@@ -160,8 +162,10 @@ class FormattingModule(AbstractModule):
 
     # Children of the token in the model.
     children_of_token = set(token.children)
-    # Tokens that are used during formatting.
+    # Tokens that are used during formatting or explicitly skipped.
     input_tokens = set([t['token'] for t in inputs if 'token' in t])
+    input_tokens = input_tokens.union(
+        set([t['skip'] for t in inputs if 'skip' in t]))
 
     errors = []
     for t in input_tokens - children_of_token:

@@ -1,4 +1,37 @@
 formatting-rules:
-  name:
-  - given-name
-  - family-name
+  full-address:
+  - name
+  - separator: "\n"
+  - street-address-alternative-1
+  - separator: "\n"
+  - locality
+  - separator: ", "
+  - admin-area
+  - postal-code
+  - separator: "\n"
+  - country-name
+  - skip: country  # redundant with country-name
+  - skip: street-address  # redundant with street-address-alternative-1
+
+  street-address-alternative-1:
+  - street-location
+  - separator: "\n"
+  - address-overflow-and-landmark
+
+  address-overflow-and-landmark:
+  - address-overflow
+  - separator: "\n"
+  - landmark
+
+  address-overflow:
+  - in-building-location
+  - separator: ", "
+  - organization
+
+  credit-card:
+  - skip: cc-name
+  - skip: cc-number
+  - skip: cc-exp-MMYY
+  - skip: cc-exp-MMYYYY
+  - skip: cc-csc
+  - skip: cc-type
