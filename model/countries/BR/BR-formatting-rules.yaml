@@ -1,0 +1,4 @@
+formatting-rules:
+  name:
+  - given-name
+  - family-name

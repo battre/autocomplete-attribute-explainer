@@ -9,6 +9,7 @@ from typing import Optional, List
 import os
 from renderer import Renderer
 from jinja2 import Environment, FileSystemLoader, select_autoescape
+import copy
 
 
 class FormattingModule(AbstractModule):
@@ -44,7 +45,7 @@ class FormattingModule(AbstractModule):
       margin-right: 2px;
       display: inline-block;
     }
-    .formatting_token_separator, .formatting_token_prefix,.formatting_token_suffix {
+    .formatting_token_separator, .formatting_token_prefix, .formatting_token_suffix {
       font-family: 'Courier New', Courier, monospace;
       padding: 2px;
       margin: 1px;
@@ -86,9 +87,23 @@ class FormattingModule(AbstractModule):
           if type(input[i]) == str:
             input[i] = {'token': input[i]}
 
-    renderer.country_data[country]['named-formatting-rules'] = (
-        named_formatting_rules)
-    renderer.country_data[country]['formatting-rules'] = formatting_rules
+    # Inherit global rules.
+    if country != 'global':
+      renderer.country_data[country]['named-formatting-rules'] = copy.deepcopy(
+        renderer.country_data['global']['named-formatting-rules']
+      )
+      renderer.country_data[country]['formatting-rules'] = copy.deepcopy(
+        renderer.country_data['global']['formatting-rules']
+      )
+    else:
+      renderer.country_data[country]['named-formatting-rules'] = {}
+      renderer.country_data[country]['formatting-rules'] = {}
+
+    # Now copy the new rules to the existing ones.
+    for key, value in named_formatting_rules.items():
+      renderer.country_data[country]['named-formatting-rules'][key] = value
+    for key, value in formatting_rules.items():
+      renderer.country_data[country]['formatting-rules'][key] = value
 
   def validate(self, token_id: str, inputs: List[dict],
                model: Model) -> List[str]:
