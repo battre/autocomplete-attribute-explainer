@@ -1231,21 +1231,6 @@ Last name
 
 
 
-<h4>Formatting:</h4>
-<div>
-<span class="formatting_token">family-name</span> =
-<span class="formatting_token">family-name-first</span><span class="formatting_token">family-name-conjunction</span><span class="formatting_token">family-name-second</span>
-</div>
-<div class="formatting_errors">
-  <h5>Errors:</h5>
-  <ul>
-    <li>&#39;family-name-second&#39; exists in the rule but is not a child of &#39;family-name&#39; in the model.</li>
-    <li>&#39;family-name-conjunction&#39; exists in the rule but is not a child of &#39;family-name&#39; in the model.</li>
-    <li>&#39;family-name-first&#39; exists in the rule but is not a child of &#39;family-name&#39; in the model.</li>
-    
-  </ul>
-</div>
-
 </div><h3 id="street-address"><a href="#street-address">#</a> street-address</h3>
 <div style="margin-left: 20px;">
 
@@ -1366,40 +1351,12 @@ Name of a street
 
 
 
-<h4>Formatting:</h4>
-<div>
-<span class="formatting_token">street</span> =
-<span class="formatting_token">street-type</span><span class="formatting_token">street-name</span>
-</div>
-<div class="formatting_errors">
-  <h5>Errors:</h5>
-  <ul>
-    <li>&#39;street-type&#39; exists in the rule but is not a child of &#39;street&#39; in the model.</li>
-    <li>&#39;street-name&#39; exists in the rule but is not a child of &#39;street&#39; in the model.</li>
-    
-  </ul>
-</div>
-
 </div><h3 id="building"><a href="#building">#</a> building</h3>
 <div style="margin-left: 20px;">
 
 House number
 
 
-
-<h4>Formatting:</h4>
-<div>
-<span class="formatting_token">building</span> =
-<span class="formatting_token">house-number</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">building-name</span>
-</div>
-<div class="formatting_errors">
-  <h5>Errors:</h5>
-  <ul>
-    <li>&#39;building-name&#39; exists in the rule but is not a child of &#39;building&#39; in the model.</li>
-    <li>&#39;house-number&#39; exists in the rule but is not a child of &#39;building&#39; in the model.</li>
-    
-  </ul>
-</div>
 
 </div><h3 id="address-overflow-and-landmark"><a href="#address-overflow-and-landmark">#</a> address-overflow-and-landmark</h3>
 <div style="margin-left: 20px;">
@@ -1468,17 +1425,8 @@ Location of the adresse in a building
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">in-building-location</span> =
-<span class="formatting_token_prefix">Entrance </span><span class="formatting_token">entrance</span><span class="formatting_token_separator">,␣</span><span class="formatting_token_prefix">Floor </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token_prefix">Staircase </span><span class="formatting_token">staircase</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit</span>
+<span class="formatting_token_prefix">Floor </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit</span>
 </div>
-<div class="formatting_errors">
-  <h5>Errors:</h5>
-  <ul>
-    <li>&#39;entrance&#39; exists in the rule but is not a child of &#39;in-building-location&#39; in the model.</li>
-    <li>&#39;staircase&#39; exists in the rule but is not a child of &#39;in-building-location&#39; in the model.</li>
-    
-  </ul>
-</div>
-
 </div><h3 id="floor"><a href="#floor">#</a> floor</h3>
 <div style="margin-left: 20px;">
 
@@ -1566,17 +1514,8 @@ City/Neighborhood
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">locality</span> =
-<span class="formatting_token">locality1</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">locality2</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">locality3</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">locality4</span>
+<span class="formatting_token">locality1</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">locality2</span>
 </div>
-<div class="formatting_errors">
-  <h5>Errors:</h5>
-  <ul>
-    <li>&#39;locality4&#39; exists in the rule but is not a child of &#39;locality&#39; in the model.</li>
-    <li>&#39;locality3&#39; exists in the rule but is not a child of &#39;locality&#39; in the model.</li>
-    
-  </ul>
-</div>
-
 </div><h3 id="locality1"><a href="#locality1">#</a> locality1</h3>
 <div style="margin-left: 20px;">
 
@@ -1597,22 +1536,6 @@ Neighborhood
 State
 
 
-
-<h4>Formatting:</h4>
-<div>
-<span class="formatting_token">admin-area</span> =
-<span class="formatting_token">admin-area1</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area2</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area3</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area4</span>
-</div>
-<div class="formatting_errors">
-  <h5>Errors:</h5>
-  <ul>
-    <li>&#39;admin-area2&#39; exists in the rule but is not a child of &#39;admin-area&#39; in the model.</li>
-    <li>&#39;admin-area4&#39; exists in the rule but is not a child of &#39;admin-area&#39; in the model.</li>
-    <li>&#39;admin-area1&#39; exists in the rule but is not a child of &#39;admin-area&#39; in the model.</li>
-    <li>&#39;admin-area3&#39; exists in the rule but is not a child of &#39;admin-area&#39; in the model.</li>
-    
-  </ul>
-</div>
 
 </div><h3 id="postal-code"><a href="#postal-code">#</a> postal-code</h3>
 <div style="margin-left: 20px;">
@@ -1902,20 +1825,6 @@ Telephone number without the country code and area code components
 
 
 
-
-<h4>Formatting:</h4>
-<div>
-<span class="formatting_token">tel-local</span> =
-<span class="formatting_token">tel-local-prefix</span><span class="formatting_token">tel-local-suffix</span>
-</div>
-<div class="formatting_errors">
-  <h5>Errors:</h5>
-  <ul>
-    <li>&#39;tel-local-suffix&#39; exists in the rule but is not a child of &#39;tel-local&#39; in the model.</li>
-    <li>&#39;tel-local-prefix&#39; exists in the rule but is not a child of &#39;tel-local&#39; in the model.</li>
-    
-  </ul>
-</div>
 
 </div><h3 id="tel-extension"><a href="#tel-extension">#</a> tel-extension</h3>
 <div style="margin-left: 20px;">

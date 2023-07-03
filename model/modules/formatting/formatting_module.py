@@ -105,6 +105,53 @@ class FormattingModule(AbstractModule):
     for key, value in formatting_rules.items():
       renderer.country_data[country]['formatting-rules'][key] = value
 
+    self._apply_cut_off_children(country, renderer)
+    self._apply_cut_off_tokens(country, renderer)
+
+
+  def _apply_cut_off_children(self, country: str, renderer: Renderer):
+    """Removes cut-off-childen token.
+
+    If a token is registered to have it's children removed, we can remove the
+    formatting rules.
+    """
+    cut_off_children = renderer.country_data[country].get(
+        'cut-off-children', set())
+
+    for cut_off in cut_off_children:
+      del renderer.country_data[country]['formatting-rules'][cut_off]
+
+
+  def _apply_cut_off_tokens(self, country: str, renderer: Renderer):
+    """Removes cutt-off-tokens.
+
+    If a token is registered to be removed from the model, we can removed it
+    plus preceding separator/prefix and succeding suffix from the formatting
+    rules.
+    """
+
+    def index_of_first(lst, pred):
+      for i, v in enumerate(lst):
+        if pred(v):
+          return i
+      return None
+
+    cut_off_tokens = renderer.country_data[country].get('cut-off-tokens', set())
+    for _, input in renderer.country_data[country]['formatting-rules'].items():
+      for cut_off in cut_off_tokens:
+        index = index_of_first(input, lambda x: x.get('token') == cut_off)
+        if index is None:
+          continue
+        delete_from = index
+        delete_to = index
+        while delete_from > 0 and (input[delete_from - 1].get('prefix') or
+                                   input[delete_from - 1].get('separator')):
+          delete_from -= 1
+        while delete_to < len(input) - 1 and input[delete_to + 1].get('suffix'):
+          delete_to += 1
+        input[delete_from:delete_to + 1] = []
+
+
   def validate(self, token_id: str, inputs: List[dict],
                model: Model) -> List[str]:
     """Returns a list of errors to be shown when validating the formatting rule."""

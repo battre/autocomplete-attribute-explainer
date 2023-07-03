@@ -84,4 +84,10 @@ class ParseCountryModelModule(AbstractModule):
     self._add_extra_definitions(model, yaml)
     self._apply_append_after(model, yaml)
 
+    # Persist the cut-offs so that other modules can apply them as well.
+    renderer.country_data[country]['cut-off-tokens'] = set(
+        yaml.get('cut-off-tokens', []))
+    renderer.country_data[country]['cut-off-children'] = set(
+        yaml.get('cut-off-children', []))
+
     renderer.country_data[country]["model"] = model
