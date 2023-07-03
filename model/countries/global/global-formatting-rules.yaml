@@ -1,0 +1,125 @@
+# By default, tokens are separated by space.
+# A separator is bound to the following field:
+# Assume a, b, c are fields and s1 and s2 are separators, then "a s1 b s2 c"
+# leads to "{a}{s1}{b}{s2}{c}" if all fields are non-empty, but if "b" is
+# empty, it leads to "{a}{s2}{c}".
+# A field prefix or field suffixs to the following/preceding field.
+# "{a}{prefix}{b}{suffix}{c}" evaluates to "{a}{c}" if "b" is empty.
+
+named-formatting-rules:
+  building_first_street_location:
+    street-location:
+    - building
+    - street
+
+formatting-rules:
+  name:
+  - honorific-prefix
+  - given-name
+  - additional-name
+  - family-name
+  - honorific-suffix
+  - separator: ", "
+  - organization-title
+
+  family-name:
+  - family-name-first
+  - family-name-conjunction
+  - family-name-last
+
+  admin-area:
+  - admin-area1
+  - separator: ", "
+  - admin-area2
+  - separator: ", "
+  - admin-area3
+  - separator: ", "
+  - admin-area4
+
+  locality:
+  - locality1
+  - separator: ", "
+  - locality2
+  - separator: ", "
+  - locality3
+  - separator: ", "
+  - locality4
+
+  street-address:
+  - address-line1
+  - separator: "\n"
+  - address-line2
+  - separator: "\n"
+  - address-line3
+  - separator: "\n"
+  - address-line4
+
+  street:
+  - street-type
+  - street-name
+
+  building:
+  - house-number
+  - separator: ", "
+  - building-name
+
+  cross-streets:
+  - cross-street1
+  - separator: ", "
+  - cross-street2
+
+  street-location:
+  - street
+  - building
+  # For some countries that follow a "<house number> <street>" schema, this
+  # would look as follows:
+  # - reference: building_first_street_location
+
+  in-building-location:
+  - prefix: "Entrance "
+  - entrance
+  - separator: ", "
+  - prefix: "Floor "
+  - floor
+  - separator: ", "
+  - prefix: "Staircase "
+  - staircase
+  - separator: ", "
+  - unit
+
+  unit:
+  - unit-type
+  - unit-name
+
+  cc-name:
+  - cc-given-name
+  - cc-additional-name
+  - cc-family-name
+
+  cc-exp-MMYY:
+  - cc-exp-MM
+  - separator: "/"
+  - cc-exp-YY
+
+  cc-exp-MMYYYY:
+  - cc-exp-MM
+  - separator: "/"
+  - cc-exp-YYYY
+
+  tel:
+  - prefix: "+"
+  - tel-country-code
+  - separator: ""
+  - tel-national
+  - separator: "-"
+  - tel-extension
+
+  tel-national:
+  - tel-area-code
+  - separator: ""
+  - tel-local
+
+  tel-local:
+  - tel-local-prefix
+  - separator: ""
+  - tel-local-suffix

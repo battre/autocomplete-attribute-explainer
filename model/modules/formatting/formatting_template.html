@@ -1,0 +1,20 @@
+{% if inputs %}
+<div>
+<h4>Formatting:</h4>
+<span class="formatting_token">{{token_id}}</span> =
+{% for token in inputs -%}
+    {%- if token.separator and loop.index0 != 0 -%}
+      <span class="formatting_token_separator">{{token.separator.replace(" ", "␣").replace("\n", "⏎")}}</span>
+    {%- endif -%}
+    {%- if token.prefix -%}
+      <span class="formatting_token_prefix">{{token.prefix}}</span>
+    {%- endif -%}
+    {%- if token.token -%}
+      <span class="formatting_token">{{token.token}}</span>
+    {%- endif -%}
+    {%- if token.suffix -%}
+      <span class="formatting_token_suffix">{{token.suffix}}</span>
+    {%- endif -%}
+{%- endfor %}
+</div>
+{% endif %}
