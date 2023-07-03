@@ -6,7 +6,9 @@ from renderer import Renderer
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from modules.model.model import AtomicOrCompoundToken
 
+
 class RenderTokenIndexModule(AbstractModule):
+
   def css(self) -> Optional[str]:
     return """
     <style>
@@ -25,11 +27,13 @@ class RenderTokenIndexModule(AbstractModule):
     </style>
     """
 
-  def render_token_index(self, country: str, renderer: Renderer) -> Optional[str]:
+  def render_token_index(self, country: str,
+                         renderer: Renderer) -> Optional[str]:
     env = Environment(
         extensions=['jinja2.ext.do'],
         loader=FileSystemLoader(os.path.join(os.path.dirname(__file__))),
         autoescape=select_autoescape())
     template = env.get_template("token_index_template.html")
     model = renderer.country_data[country]["model"]
-    return template.render(model=model)
+    return template.render(
+        model=model, country_data=renderer.country_data[country])

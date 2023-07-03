@@ -11,5 +11,9 @@ class AbstractVendorExtension(ABC):
     pass
 
   @abstractmethod
-  def modify_files_list(self, files: list[Path]) -> list[Path]:
+  def modify_global_files_list(self, files: list[Path]) -> list[Path]:
+    pass
+
+  @abstractmethod
+  def modify_other_files_list(self, files: list[Path]) -> list[Path]:
     pass

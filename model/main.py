@@ -36,8 +36,9 @@ if args.use_vendor_extension:
     from vendor.vendor_extension import VendorExtension
     extension: AbstractVendorExtension = VendorExtension()
     modules = extension.modify_modules_list(modules)
-    global_config_files = extension.modify_files_list(global_config_files)
-    other_config_files = extension.modify_files_list(other_config_files)
+    global_config_files = extension.modify_global_files_list(
+        global_config_files)
+    other_config_files = extension.modify_other_files_list(other_config_files)
   except ModuleNotFoundError:
     pass
   except ImportError as e:
