@@ -13,7 +13,6 @@ import copy
 
 
 class FormattingModule(AbstractModule):
-
   def schema(self):
     formatting_rule = {
         #
@@ -90,11 +89,9 @@ class FormattingModule(AbstractModule):
     # Inherit global rules.
     if country != 'global':
       renderer.country_data[country]['named-formatting-rules'] = copy.deepcopy(
-        renderer.country_data['global']['named-formatting-rules']
-      )
+          renderer.country_data['global']['named-formatting-rules'])
       renderer.country_data[country]['formatting-rules'] = copy.deepcopy(
-        renderer.country_data['global']['formatting-rules']
-      )
+          renderer.country_data['global']['formatting-rules'])
     else:
       renderer.country_data[country]['named-formatting-rules'] = {}
       renderer.country_data[country]['formatting-rules'] = {}
@@ -108,7 +105,6 @@ class FormattingModule(AbstractModule):
     self._apply_cut_off_children(country, renderer)
     self._apply_cut_off_tokens(country, renderer)
 
-
   def _apply_cut_off_children(self, country: str, renderer: Renderer):
     """Removes cut-off-childen token.
 
@@ -120,7 +116,6 @@ class FormattingModule(AbstractModule):
 
     for cut_off in cut_off_children:
       del renderer.country_data[country]['formatting-rules'][cut_off]
-
 
   def _apply_cut_off_tokens(self, country: str, renderer: Renderer):
     """Removes cutt-off-tokens.
@@ -144,13 +139,12 @@ class FormattingModule(AbstractModule):
           continue
         delete_from = index
         delete_to = index
-        while delete_from > 0 and (input[delete_from - 1].get('prefix') or
-                                   input[delete_from - 1].get('separator')):
+        while delete_from > 0 and (input[delete_from - 1].get('prefix')
+                                   or input[delete_from - 1].get('separator')):
           delete_from -= 1
         while delete_to < len(input) - 1 and input[delete_to + 1].get('suffix'):
           delete_to += 1
         input[delete_from:delete_to + 1] = []
-
 
   def validate(self, token_id: str, inputs: List[dict],
                model: Model) -> List[str]:
@@ -171,7 +165,9 @@ class FormattingModule(AbstractModule):
 
     errors = []
     for t in input_tokens - children_of_token:
-      errors.append(f"'{t}' exists in the rule but is not a child of '{token_id}' in the model.")
+      errors.append(
+          f"'{t}' exists in the rule but is not a child of '{token_id}' in the model."
+      )
 
     for t in children_of_token - input_tokens:
       errors.append(f"'{t}' is a child of {token_id} but missing in the rule.")
@@ -180,10 +176,10 @@ class FormattingModule(AbstractModule):
 
   def render_token_details(self, country: str, token_id: str,
                            renderer: Renderer) -> Optional[str]:
-    env = Environment(
-        extensions=['jinja2.ext.do'],
-        loader=FileSystemLoader(os.path.join(os.path.dirname(__file__))),
-        autoescape=select_autoescape())
+    env = Environment(extensions=['jinja2.ext.do'],
+                      loader=FileSystemLoader(
+                          os.path.join(os.path.dirname(__file__))),
+                      autoescape=select_autoescape())
     template = env.get_template("formatting_template.html")
     model = renderer.country_data[country]["model"]
 
@@ -191,10 +187,10 @@ class FormattingModule(AbstractModule):
     if not token or token.is_atomic_token():
       return
 
-    named_formatting_rules = (
-        renderer.country_data[country].get('named-formatting-rules', {}))
-    formatting_rules = (
-        renderer.country_data[country].get('formatting-rules', {}))
+    named_formatting_rules = (renderer.country_data[country].get(
+        'named-formatting-rules', {}))
+    formatting_rules = (renderer.country_data[country].get(
+        'formatting-rules', {}))
 
     FLAG_MISSING_RULES = False
     if FLAG_MISSING_RULES:
@@ -213,5 +209,7 @@ class FormattingModule(AbstractModule):
       print(f"Formatting errors for {token_id}: {errors}")
       print(model.find_token(token_id))
 
-    return template.render(
-        model=model, token_id=token_id, inputs=inputs, errors=errors)
+    return template.render(model=model,
+                           token_id=token_id,
+                           inputs=inputs,
+                           errors=errors)

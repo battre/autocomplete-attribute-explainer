@@ -134,7 +134,7 @@ class Model:
     descended = set()
 
     def recursion(node: AtomicOrCompoundToken
-                 ) -> Iterator[AtomicOrCompoundToken]:
+                  ) -> Iterator[AtomicOrCompoundToken]:
       yield node
       if not node.is_atomic_token() and node.id not in descended:
         descended.add(node.id)
@@ -148,4 +148,3 @@ class Model:
 
   def find_token(self, id) -> Optional[AtomicOrCompoundToken]:
     return self.concepts[id]
-

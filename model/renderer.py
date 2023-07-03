@@ -25,11 +25,10 @@ class Renderer:
     self.countries.sort(key=lambda c: "" if c == "global" else c)
 
   def _load_template(self, filename) -> Template:
-    env = Environment(
-        extensions=['jinja2.ext.do'],
-        loader=FileSystemLoader(
-            os.path.join(os.path.dirname(__file__), "template")),
-        autoescape=select_autoescape())
+    env = Environment(extensions=['jinja2.ext.do'],
+                      loader=FileSystemLoader(
+                          os.path.join(os.path.dirname(__file__), "template")),
+                      autoescape=select_autoescape())
     return env.get_template(filename)
 
   def wrap_token_details(self, id, model, content) -> str:
@@ -44,14 +43,13 @@ class Renderer:
                      javascript: str) -> None:
     template = self._load_template("base.html")
 
-    result = template.render(
-        country=country,
-        countries=self.countries,
-        data=self.data,
-        country_data=self.country_data,
-        css=css,
-        content=content,
-        javascript=javascript)
+    result = template.render(country=country,
+                             countries=self.countries,
+                             data=self.data,
+                             country_data=self.country_data,
+                             css=css,
+                             content=content,
+                             javascript=javascript)
 
     dir = "out"
     if self.output_dir:

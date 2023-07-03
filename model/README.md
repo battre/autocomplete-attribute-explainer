@@ -62,3 +62,7 @@ that read operations can happen before output generation for example.
 
 ## Check type information
 Run `pytype main.py` to verify that all type annotations are correct.
+
+## Code formatting
+Run `yapf -i -r .` before checking in code using
+[yapf](https://github.com/google/yapf).

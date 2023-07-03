@@ -10,7 +10,6 @@ from modules.model.model import Model, Translation
 
 
 class ParseDescriptionsModelModule(AbstractModule):
-
   def schema(self):
     return Schema({
         schema.Optional("short-descriptions"): {
@@ -24,7 +23,8 @@ class ParseDescriptionsModelModule(AbstractModule):
       model.short_descriptions[field] = Translation(translation)
 
   def observe_file(self, path: Path, renderer: Renderer):
-    match = re.fullmatch(r'(?P<country>..|global)-descriptions\.yaml', path.name)
+    match = re.fullmatch(r'(?P<country>..|global)-descriptions\.yaml',
+                         path.name)
     if not match:
       return
     country = match.groupdict()['country']

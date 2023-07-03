@@ -20,11 +20,10 @@ global_config_files = list(Path('.').glob('countries/*/global-*.yaml'))
 other_config_files = list(Path('.').glob('countries/*/??-*.yaml'))
 
 parser = argparse.ArgumentParser()
-parser.add_argument(
-    '--use_vendor_extension',
-    required=False,
-    action='store_true',
-    help='run vendor extension modules')
+parser.add_argument('--use_vendor_extension',
+                    required=False,
+                    action='store_true',
+                    help='run vendor extension modules')
 parser.add_argument('--out', required=False, help='output directory')
 args = parser.parse_args()
 

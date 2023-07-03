@@ -7,7 +7,6 @@ from renderer import Renderer
 
 
 class AbstractModule(ABC):
-
   def name(self) -> str:
     """Returns the name of the """
     return self.__class__.__name__

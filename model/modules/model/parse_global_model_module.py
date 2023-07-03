@@ -9,6 +9,7 @@ from renderer import Renderer
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from modules.model.model import AtomicOrCompoundToken, AtomicToken, CompoundToken, Model
 
+
 class ParseGlobalModelModule(AbstractModule):
   def schema(self):
     return Schema({

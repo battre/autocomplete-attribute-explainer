@@ -11,7 +11,6 @@ from renderer import Renderer
 
 
 class ParseCountryModelModule(AbstractModule):
-
   def schema(self):
     return Schema({
         schema.Optional("cut-off-tokens"): [str],
@@ -64,9 +63,8 @@ class ParseCountryModelModule(AbstractModule):
           continue
         if anchor in parent.children:
           insert_idx = parent.children.index(anchor)
-          parent.children = (
-              parent.children[:insert_idx + 1] + nodes +
-              parent.children[insert_idx + 1:])
+          parent.children = (parent.children[:insert_idx + 1] + nodes +
+                             parent.children[insert_idx + 1:])
 
   def observe_file(self, path: Path, renderer: Renderer):
     match = re.fullmatch(r'(?P<country>..)-model\.yaml', path.name)

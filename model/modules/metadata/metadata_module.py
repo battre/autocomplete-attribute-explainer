@@ -11,18 +11,17 @@ import os
 
 
 class MetadataModule(AbstractModule):
-
   def schema(self):
     return Schema({
         # The country name as a two letter code
         "country":
-            str,
+        str,
         # A flag as a UTF-8 symbol
         schema.Optional("flag"):
-            str,
+        str,
         # HTML code to be rendered as the overview of a country
         schema.Optional("overview"):
-            str
+        str
     })
 
   def observe_file(self, path: Path, renderer: Renderer):
@@ -36,9 +35,9 @@ class MetadataModule(AbstractModule):
     renderer.add_country(country)
 
   def render_preamble(self, country: str, renderer: Renderer) -> Optional[str]:
-    env = Environment(
-        extensions=['jinja2.ext.do'],
-        loader=FileSystemLoader(os.path.join(os.path.dirname(__file__))),
-        autoescape=select_autoescape())
+    env = Environment(extensions=['jinja2.ext.do'],
+                      loader=FileSystemLoader(
+                          os.path.join(os.path.dirname(__file__))),
+                      autoescape=select_autoescape())
     template = env.get_template("template.html")
     return template.render(yaml=renderer.country_data[country][self.name()])
