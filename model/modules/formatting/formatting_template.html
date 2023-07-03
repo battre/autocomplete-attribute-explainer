@@ -1,9 +1,9 @@
 {% if inputs %}
-<div>
 <h4>Formatting:</h4>
+<div>
 <span class="formatting_token">{{token_id}}</span> =
 {% for token in inputs -%}
-    {%- if token.separator and loop.index0 != 0 -%}
+{%- if token.separator and loop.index0 != 0 -%}
       <span class="formatting_token_separator">{{token.separator.replace(" ", "␣").replace("\n", "⏎")}}</span>
     {%- endif -%}
     {%- if token.prefix -%}
@@ -17,4 +17,14 @@
     {%- endif -%}
 {%- endfor %}
 </div>
+{%- if errors %}
+<div class="formatting_errors">
+  <h5>Errors:</h5>
+  <ul>
+    {%for error in errors %}
+    <li>{{error}}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif -%}
 {% endif %}

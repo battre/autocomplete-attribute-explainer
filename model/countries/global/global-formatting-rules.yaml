@@ -30,7 +30,7 @@ formatting-rules:
   family-name:
   - family-name-first
   - family-name-conjunction
-  - family-name-last
+  - family-name-second
 
   admin-area:
   - admin-area1

@@ -1,14 +1,14 @@
 from modules.abstract_module import AbstractModule
+from modules.model.model import Model
 from pathlib import Path
 import re
 from renderer import Renderer
 from schema import Schema
 import schema
-from typing import Optional
+from typing import Optional, List
 import os
 from renderer import Renderer
 from jinja2 import Environment, FileSystemLoader, select_autoescape
-from collections import defaultdict
 
 
 class FormattingModule(AbstractModule):
@@ -44,7 +44,7 @@ class FormattingModule(AbstractModule):
       margin-right: 2px;
       display: inline-block;
     }
-    .formatting_token_separator, .formatting_token_prefix, .formatting_token_suffix {
+    .formatting_token_separator, .formatting_token_prefix,.formatting_token_suffix {
       font-family: 'Courier New', Courier, monospace;
       padding: 2px;
       margin: 1px;
@@ -54,6 +54,9 @@ class FormattingModule(AbstractModule):
     }
     .formatting_token_prefix, .formatting_token_suffix {
       background-color: beige;
+    }
+    .formatting_errors {
+      color: red;
     }
     </style>
     """
@@ -87,6 +90,32 @@ class FormattingModule(AbstractModule):
         named_formatting_rules)
     renderer.country_data[country]['formatting-rules'] = formatting_rules
 
+  def validate(self, token_id: str, inputs: List[dict],
+               model: Model) -> List[str]:
+    """Returns a list of errors to be shown when validating the formatting rule."""
+
+    # Ignore tokens that don't exist in the model.
+    token = model.find_token(token_id)
+    if not token:
+      return []
+
+    if token.is_atomic_token() and inputs:
+      return ["You cannot provide rules for atomic tokens"]
+
+    # Children of the token in the model.
+    children_of_token = set(token.children)
+    # Tokens that are used during formatting.
+    input_tokens = set([t['token'] for t in inputs if 'token' in t])
+
+    errors = []
+    for t in input_tokens - children_of_token:
+      errors.append(f"'{t}' exists in the rule but is not a child of '{token_id}' in the model.")
+
+    for t in children_of_token - input_tokens:
+      errors.append(f"'{t}' is a child of {token_id} but missing in the rule.")
+
+    return errors
+
   def render_token_details(self, country: str, token_id: str,
                            renderer: Renderer) -> Optional[str]:
     env = Environment(
@@ -113,4 +142,10 @@ class FormattingModule(AbstractModule):
       rule = named_formatting_rules.get(inputs[0]['reference'], [])
       inputs = rule.get(token_id, None)
 
-    return template.render(model=model, token_id=token_id, inputs=inputs)
+    errors = self.validate(token_id, inputs, model)
+    if errors:
+      print(f"Formatting errors for {token_id}: {errors}")
+      print(model.find_token(token_id))
+
+    return template.render(
+        model=model, token_id=token_id, inputs=inputs, errors=errors)
