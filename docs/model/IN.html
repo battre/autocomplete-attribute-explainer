@@ -186,8 +186,10 @@
   <div class="mdl-card__title">
     <h2 class="mdl-card__title-text">About the country</h2>
   </div>
-  <div style="margin: 8px"><p>India has a lot of variety in address forms compared to many other countries. In particular the flat number, building name, street, landmark and "area / locality" (modeled as locality2) seem to appear in every in almost arbitrary combinations (e.g. flat number as a separate field, or grouped with building name, or grouped with building name and street, ...). <p>The structures below are structures we have least confidence in so far.
+  <div class="mdl-card__actions mdl-card--border">
+    <div style="margin: 8px"><p>India has a lot of variety in address forms compared to many other countries. In particular the flat number, building name, street, landmark and "area / locality" (modeled as locality2) seem to appear in every in almost arbitrary combinations (e.g. flat number as a separate field, or grouped with building name, or grouped with building name and street, ...). <p>The structures below are structures we have least confidence in so far.
 </div>
+  </div>
 </div>
 
 
@@ -1820,7 +1822,73 @@
     <h2 class="mdl-card__title-text">Details</h2>
   </div>
   <div class="mdl-card__actions mdl-card--border">
-    <h3 id="name"><a href="#name">#</a> name</h3>
+    <h3 id="full-address"><a href="#full-address">#</a> full-address</h3>
+<div style="margin-left: 20px;">
+
+Artificial concept, not to be used in HTML
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    <a href="#name">name</a>
+  </li>
+
+  <li>
+    <a href="#street-address">street-address</a>
+  </li>
+
+  <li>
+    <a href="#street-address-alternative-1">street-address-alternative-1</a>
+  </li>
+
+  <li>
+    <a href="#street-address-alternative-2">street-address-alternative-2</a>
+  </li>
+
+  <li>
+    <a href="#street-address-alternative-3">street-address-alternative-3</a>
+  </li>
+
+  <li>
+    <a href="#street-address-alternative-4">street-address-alternative-4</a>
+  </li>
+
+  <li>
+    <a href="#street-address-alternative-5">street-address-alternative-5</a>
+  </li>
+
+  <li>
+    <a href="#street-address-alternative-6">street-address-alternative-6</a>
+  </li>
+
+  <li>
+    <a href="#locality">locality</a>
+  </li>
+
+  <li>
+    <a href="#admin-area">admin-area</a>
+  </li>
+
+  <li>
+    <a href="#postal-code">postal-code</a>
+  </li>
+
+  <li>
+    <a href="#country">country</a>
+  </li>
+
+  <li>
+    <a href="#country-name">country-name</a>
+  </li>
+
+</ul>
+</div>
+
+</div><h3 id="name"><a href="#name">#</a> name</h3>
 <div style="margin-left: 20px;">
 
 Full name
@@ -2578,6 +2646,44 @@ Name of a country (e.g. &#34;India&#34;)
 
 
 
+</div><h3 id="credit-card"><a href="#credit-card">#</a> credit-card</h3>
+<div style="margin-left: 20px;">
+
+Artificial concept, not to be used in HTML
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    <a href="#cc-name">cc-name</a>
+  </li>
+
+  <li>
+    <a href="#cc-number">cc-number</a>
+  </li>
+
+  <li>
+    <a href="#cc-exp-MMYY">cc-exp-MMYY</a>
+  </li>
+
+  <li>
+    <a href="#cc-exp-MMYYYY">cc-exp-MMYYYY</a>
+  </li>
+
+  <li>
+    <a href="#cc-csc">cc-csc</a>
+  </li>
+
+  <li>
+    <a href="#cc-type">cc-type</a>
+  </li>
+
+</ul>
+</div>
+
 </div><h3 id="cc-name"><a href="#cc-name">#</a> cc-name</h3>
 <div style="margin-left: 20px;">
 
@@ -2711,6 +2817,32 @@ Credit card type
 
 
 
+</div><h3 id="tel"><a href="#tel">#</a> tel</h3>
+<div style="margin-left: 20px;">
+
+Full telephone number
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    <a href="#tel-country-code">tel-country-code</a>
+  </li>
+
+  <li>
+    <a href="#tel-national">tel-national</a>
+  </li>
+
+  <li>
+    <a href="#tel-extension">tel-extension</a>
+  </li>
+
+</ul>
+</div>
+
 </div><h3 id="tel-country-code"><a href="#tel-country-code">#</a> tel-country-code</h3>
 <div style="margin-left: 20px;">
 
@@ -2792,6 +2924,13 @@ Second part of the component of the telephone number that follows the area code,
 <div style="margin-left: 20px;">
 
 Telephone number internal extension code
+
+
+
+</div><h3 id="email"><a href="#email">#</a> email</h3>
+<div style="margin-left: 20px;">
+
+Email address
 
 
 
