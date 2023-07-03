@@ -3,6 +3,9 @@
 <div class="concept">
   <div class="concept-id">
     <a href="#{{c.id}}">{{c.id}}</a>
+    {%- if c.id in country_data.get('token-index-suffix', {}) %}
+    ({{", ".join(country_data['token-index-suffix'][c.id])}})
+    {%- endif -%}
     {%- if c.id in c.model.short_descriptions %}
     - {{c.model.short_descriptions[c.id].get("en")}}
       {% for lang in c.model.short_descriptions[c.id].locales() %}
