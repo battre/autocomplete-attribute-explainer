@@ -134,9 +134,13 @@ class FormattingModule(AbstractModule):
     formatting_rules = (
         renderer.country_data[country].get('formatting-rules', {}))
 
-    inputs = formatting_rules.get(token_id, None)
-    if not inputs:
-      return None
+    FLAG_MISSING_RULES = False
+    if FLAG_MISSING_RULES:
+      inputs = formatting_rules.get(token_id, [])
+    else:
+      inputs = formatting_rules.get(token_id, None)
+      if not inputs:
+        return None
 
     if len(inputs) == 1 and 'reference' in inputs[0]:
       rule = named_formatting_rules.get(inputs[0]['reference'], [])
