@@ -12,6 +12,11 @@ named-formatting-rules:
     - building
     - street
 
+  street_first_street_location:
+    street-location:
+    - street
+    - building
+
 formatting-rules:
   name:
   - honorific-prefix
@@ -69,8 +74,7 @@ formatting-rules:
   - cross-street2
 
   street-location:
-  - street
-  - building
+  - reference: street_first_street_location
   # For some countries that follow a "<house number> <street>" schema, this
   # would look as follows:
   # - reference: building_first_street_location
