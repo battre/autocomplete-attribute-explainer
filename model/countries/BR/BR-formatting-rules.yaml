@@ -4,7 +4,7 @@ formatting-rules:
   - separator: "\n"
   - street-address-alternative-1
   - separator: "\n"
-  - locality
+  - locality # TODO: This is incorrect the order should be: locality2\npostal-code locality1
   - separator: ", "
   - admin-area
   - postal-code
@@ -27,6 +27,11 @@ formatting-rules:
   - in-building-location
   - separator: ", "
   - organization
+
+  locality:
+  - locality2
+  - separator: "\n"
+  - locality1
 
   credit-card:
   - skip: cc-name

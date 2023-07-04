@@ -1,3 +1,54 @@
+{% macro RenderTokens(token_id, rule_inputs) %}
+  {%- for token in rule_inputs -%}
+    {%- if token.separator and loop.index0 != 0 -%}
+      <span class="formatting_token_separator">{{token.separator.replace(" ", "␣").replace("\n", "<br>") | safe}}</span>
+    {%- endif -%}
+    {%- if token.prefix -%}
+      <span class="formatting_token_prefix">{{token.prefix}}</span>
+    {%- endif -%}
+    {%- if token.token -%}
+      {%- if formatting_rules.get(token.token) -%}
+        {{RecursiveFlattening(token.token)}}
+      {%- else -%}
+        <span class="formatting_token">{{token.token}}</span>
+      {%- endif -%}
+    {%- endif -%}
+    {%- if token.suffix -%}
+      <span class="formatting_token_suffix">{{token.suffix}}</span>
+    {%- endif -%}
+    {%- if token.reference -%}
+      {{FlattenReference(token_id, token.reference)}}
+    {%- endif -%}
+  {%- endfor -%}
+{% endmacro %}
+
+{% macro FlattenReference(token_id, reference_name) -%}
+  {%- set rule = named_formatting_rules.get(reference_name) -%}
+  {%- if rule -%}
+    {%- set rule_inputs = rule.get(token_id) -%}
+    {%- if not rule_inputs -%}
+      <span class="formatting_token_error">
+        Named rule {{reference_name}} does not contain {{token_id}}.
+      </span>
+    {%- else -%}
+      {{RenderTokens(toke_id, rule_inputs)}}
+    {%- endif -%}
+  {%- else -%}
+    <span class="formatting_token_error">
+      Named rule {{reference_name}} could not be found.
+    </span>
+  {%- endif -%}
+{%- endmacro %}
+
+{% macro RecursiveFlattening(token_id) -%}
+  {%- set rule_inputs = formatting_rules.get(token_id) -%}
+  {%- if rule_inputs -%}
+    {{RenderTokens(token_id, rule_inputs)}}
+  {%- else -%}
+    <span class="formatting_token">Rule could not be found for {{token_id}}.</span>
+  {%- endif -%}
+{%- endmacro %}
+
 {% if inputs or errors %}
 <h4>Formatting:</h4>
 <div>
@@ -17,7 +68,7 @@
     {%- endif -%}
 {%- endfor %}
 </div>
-{%- if errors %}
+{% if errors %}
 <div class="formatting_errors">
   <h5>Errors:</h5>
   <ul>
@@ -26,5 +77,10 @@
     {% endfor %}
   </ul>
 </div>
-{% endif -%}
+{% endif %}
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">{{token_id}}</span> =<br>
+{{RecursiveFlattening(token_id)}}
+</div>
 {% endif %}

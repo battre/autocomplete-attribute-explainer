@@ -1519,11 +1519,24 @@ Full name
 </ul>
 </div>
 
+
+
+
+
+
+
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">name</span> =
 <span class="formatting_token">honorific-prefix</span><span class="formatting_token">given-name</span><span class="formatting_token">additional-name</span><span class="formatting_token">family-name</span><span class="formatting_token">honorific-suffix</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">organization-title</span>
 </div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">name</span> =<br>
+<span class="formatting_token">honorific-prefix</span><span class="formatting_token">given-name</span><span class="formatting_token">additional-name</span><span class="formatting_token">family-name-first</span><span class="formatting_token">family-name-conjunction</span><span class="formatting_token">family-name-second</span><span class="formatting_token">honorific-suffix</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">organization-title</span>
+</div>
+
 </div><h3 id="honorific-prefix"><a href="#honorific-prefix">#</a> honorific-prefix</h3>
 <div style="margin-left: 20px;">
 
@@ -1571,11 +1584,24 @@ Family name (in Western cultures the last name)
 </ul>
 </div>
 
+
+
+
+
+
+
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">family-name</span> =
 <span class="formatting_token">family-name-first</span><span class="formatting_token">family-name-conjunction</span><span class="formatting_token">family-name-second</span>
 </div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">family-name</span> =<br>
+<span class="formatting_token">family-name-first</span><span class="formatting_token">family-name-conjunction</span><span class="formatting_token">family-name-second</span>
+</div>
+
 </div><h3 id="family-name-first"><a href="#family-name-first">#</a> family-name-first</h3>
 <div style="margin-left: 20px;">
 
@@ -1641,11 +1667,24 @@ Street address (street and location within the street)
 </ul>
 </div>
 
+
+
+
+
+
+
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">street-address</span> =
 <span class="formatting_token">address-line1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">address-line2</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">address-line3</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">address-line4</span>
 </div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">street-address</span> =<br>
+<span class="formatting_token">address-line1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">address-line2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">address-line3</span><span class="formatting_token_separator"><br></span><span class="formatting_token">address-line4</span>
+</div>
+
 </div><h3 id="address-line1"><a href="#address-line1">#</a> address-line1</h3>
 <div style="margin-left: 20px;">
 
@@ -1743,11 +1782,24 @@ Name of a street and identifier for the building
 </ul>
 </div>
 
+
+
+
+
+
+
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">street-location</span> =
 <span class="formatting_token">street</span><span class="formatting_token">building</span>
 </div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">street-location</span> =<br>
+<span class="formatting_token">street-type</span><span class="formatting_token">street-name</span><span class="formatting_token">house-number</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">building-name</span>
+</div>
+
 </div><h3 id="street"><a href="#street">#</a> street</h3>
 <div style="margin-left: 20px;">
 
@@ -1770,11 +1822,24 @@ Name of a street
 </ul>
 </div>
 
+
+
+
+
+
+
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">street</span> =
 <span class="formatting_token">street-type</span><span class="formatting_token">street-name</span>
 </div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">street</span> =<br>
+<span class="formatting_token">street-type</span><span class="formatting_token">street-name</span>
+</div>
+
 </div><h3 id="street-type"><a href="#street-type">#</a> street-type</h3>
 <div style="margin-left: 20px;">
 
@@ -1813,11 +1878,24 @@ House number (in a street or block) or name of a building.
 </ul>
 </div>
 
+
+
+
+
+
+
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">building</span> =
 <span class="formatting_token">house-number</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">building-name</span>
 </div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">building</span> =<br>
+<span class="formatting_token">house-number</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">building-name</span>
+</div>
+
 </div><h3 id="house-number"><a href="#house-number">#</a> house-number</h3>
 <div style="margin-left: 20px;">
 
@@ -1862,11 +1940,24 @@ Names of two streets crossing the street of the house, used to help finding the 
 </ul>
 </div>
 
+
+
+
+
+
+
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">cross-streets</span> =
 <span class="formatting_token">cross-street1</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">cross-street2</span>
 </div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">cross-streets</span> =<br>
+<span class="formatting_token">cross-street1</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">cross-street2</span>
+</div>
+
 </div><h3 id="cross-street1"><a href="#cross-street1">#</a> cross-street1</h3>
 <div style="margin-left: 20px;">
 
@@ -1911,11 +2002,24 @@ Location of the adresse in a building
 </ul>
 </div>
 
+
+
+
+
+
+
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">in-building-location</span> =
 <span class="formatting_token_prefix">Entrance </span><span class="formatting_token">entrance</span><span class="formatting_token_separator">,␣</span><span class="formatting_token_prefix">Floor </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token_prefix">Staircase </span><span class="formatting_token">staircase</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit</span>
 </div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">in-building-location</span> =<br>
+<span class="formatting_token_prefix">Entrance </span><span class="formatting_token">entrance</span><span class="formatting_token_separator">,␣</span><span class="formatting_token_prefix">Floor </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token_prefix">Staircase </span><span class="formatting_token">staircase</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span>
+</div>
+
 </div><h3 id="entrance"><a href="#entrance">#</a> entrance</h3>
 <div style="margin-left: 20px;">
 
@@ -1959,11 +2063,24 @@ Unit in a building (e.g. &#34;Apartment 5&#34;, &#34;Suite 12&#34;)
 </ul>
 </div>
 
+
+
+
+
+
+
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">unit</span> =
 <span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span>
 </div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">unit</span> =<br>
+<span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span>
+</div>
+
 </div><h3 id="unit-type"><a href="#unit-type">#</a> unit-type</h3>
 <div style="margin-left: 20px;">
 
@@ -2037,11 +2154,24 @@ Typically a city; may be a concatenation of multiple smaller types
 </ul>
 </div>
 
+
+
+
+
+
+
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">locality</span> =
 <span class="formatting_token">locality1</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">locality2</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">locality3</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">locality4</span>
 </div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">locality</span> =<br>
+<span class="formatting_token">locality1</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">locality2</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">locality3</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">locality4</span>
+</div>
+
 </div><h3 id="locality1"><a href="#locality1">#</a> locality1</h3>
 <div style="margin-left: 20px;">
 
@@ -2100,11 +2230,24 @@ Administrative area (e.g. a state, emirate, ...); maybe a concatenation of multi
 </ul>
 </div>
 
+
+
+
+
+
+
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">admin-area</span> =
 <span class="formatting_token">admin-area1</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area2</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area3</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area4</span>
 </div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">admin-area</span> =<br>
+<span class="formatting_token">admin-area1</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area2</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area3</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area4</span>
+</div>
+
 </div><h3 id="admin-area1"><a href="#admin-area1">#</a> admin-area1</h3>
 <div style="margin-left: 20px;">
 
@@ -2218,11 +2361,24 @@ Full name of credit card holder
 </ul>
 </div>
 
+
+
+
+
+
+
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">cc-name</span> =
 <span class="formatting_token">cc-given-name</span><span class="formatting_token">cc-additional-name</span><span class="formatting_token">cc-family-name</span>
 </div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">cc-name</span> =<br>
+<span class="formatting_token">cc-given-name</span><span class="formatting_token">cc-additional-name</span><span class="formatting_token">cc-family-name</span>
+</div>
+
 </div><h3 id="cc-given-name"><a href="#cc-given-name">#</a> cc-given-name</h3>
 <div style="margin-left: 20px;">
 
@@ -2273,11 +2429,24 @@ Credit card expiration date in format MM/YY
 </ul>
 </div>
 
+
+
+
+
+
+
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">cc-exp-MMYY</span> =
 <span class="formatting_token">cc-exp-MM</span><span class="formatting_token_separator">/</span><span class="formatting_token">cc-exp-YY</span>
 </div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">cc-exp-MMYY</span> =<br>
+<span class="formatting_token">cc-exp-MM</span><span class="formatting_token_separator">/</span><span class="formatting_token">cc-exp-YY</span>
+</div>
+
 </div><h3 id="cc-exp-MM"><a href="#cc-exp-MM">#</a> cc-exp-MM</h3>
 <div style="margin-left: 20px;">
 
@@ -2314,11 +2483,24 @@ Credit card expiration date in format MM/YYYY
 </ul>
 </div>
 
+
+
+
+
+
+
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">cc-exp-MMYYYY</span> =
 <span class="formatting_token">cc-exp-MM</span><span class="formatting_token_separator">/</span><span class="formatting_token">cc-exp-YYYY</span>
 </div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">cc-exp-MMYYYY</span> =<br>
+<span class="formatting_token">cc-exp-MM</span><span class="formatting_token_separator">/</span><span class="formatting_token">cc-exp-YYYY</span>
+</div>
+
 </div><h3 id="cc-exp-YYYY"><a href="#cc-exp-YYYY">#</a> cc-exp-YYYY</h3>
 <div style="margin-left: 20px;">
 
@@ -2366,11 +2548,24 @@ Full telephone number
 </ul>
 </div>
 
+
+
+
+
+
+
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">tel</span> =
 <span class="formatting_token_prefix">+</span><span class="formatting_token">tel-country-code</span><span class="formatting_token">tel-national</span><span class="formatting_token_separator">-</span><span class="formatting_token">tel-extension</span>
 </div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">tel</span> =<br>
+<span class="formatting_token_prefix">+</span><span class="formatting_token">tel-country-code</span><span class="formatting_token">tel-area-code</span><span class="formatting_token">tel-local-prefix</span><span class="formatting_token">tel-local-suffix</span><span class="formatting_token_separator">-</span><span class="formatting_token">tel-extension</span>
+</div>
+
 </div><h3 id="tel-country-code"><a href="#tel-country-code">#</a> tel-country-code</h3>
 <div style="margin-left: 20px;">
 
@@ -2401,11 +2596,24 @@ Telephone number without the county code component, with a country-internal pref
 </ul>
 </div>
 
+
+
+
+
+
+
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">tel-national</span> =
 <span class="formatting_token">tel-area-code</span><span class="formatting_token">tel-local</span>
 </div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">tel-national</span> =<br>
+<span class="formatting_token">tel-area-code</span><span class="formatting_token">tel-local-prefix</span><span class="formatting_token">tel-local-suffix</span>
+</div>
+
 </div><h3 id="tel-area-code"><a href="#tel-area-code">#</a> tel-area-code</h3>
 <div style="margin-left: 20px;">
 
@@ -2437,11 +2645,24 @@ Telephone number without the country code and area code components
 </ul>
 </div>
 
+
+
+
+
+
+
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">tel-local</span> =
 <span class="formatting_token">tel-local-prefix</span><span class="formatting_token">tel-local-suffix</span>
 </div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">tel-local</span> =<br>
+<span class="formatting_token">tel-local-prefix</span><span class="formatting_token">tel-local-suffix</span>
+</div>
+
 </div><h3 id="tel-local-prefix"><a href="#tel-local-prefix">#</a> tel-local-prefix</h3>
 <div style="margin-left: 20px;">
 

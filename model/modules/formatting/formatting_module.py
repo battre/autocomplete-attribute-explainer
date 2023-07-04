@@ -216,4 +216,6 @@ class FormattingModule(AbstractModule):
     return template.render(model=model,
                            token_id=token_id,
                            inputs=inputs,
-                           errors=errors)
+                           errors=errors,
+                           named_formatting_rules=named_formatting_rules,
+                           formatting_rules=formatting_rules)
