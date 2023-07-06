@@ -3,6 +3,7 @@ from modules.abstract_module import AbstractModule
 from modules.metadata import MetadataModule
 from modules.model import ParseCountryModelModule, ParseGlobalModelModule, RenderTokenIndexModule, ParseDescriptionsModelModule, RenderTokenChildrenModule
 from modules.formatting import FormattingModule
+from modules.graphs import GraphsModule
 from abstract_vendor_extension import AbstractVendorExtension
 from pathlib import Path
 from renderer import Renderer
@@ -15,6 +16,7 @@ modules: list[AbstractModule] = [
     RenderTokenIndexModule(),
     RenderTokenChildrenModule(),
     FormattingModule(),
+    GraphsModule(),
 ]
 global_config_files = list(Path('.').glob('countries/*/global-*.yaml'))
 other_config_files = list(Path('.').glob('countries/*/??-*.yaml'))
