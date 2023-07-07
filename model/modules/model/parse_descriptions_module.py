@@ -31,7 +31,7 @@ class ParseDescriptionsModelModule(AbstractModule):
     renderer.add_country(country)
 
     # It's guaranteed that the models have been loaded already.
-    model = renderer.country_data[country]["model"]
+    model = renderer.get_model(country)
     yaml = self.read_yaml(path)
 
     self._parse_short_descriptions(model, yaml)

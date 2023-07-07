@@ -63,4 +63,4 @@ class ParseGlobalModelModule(AbstractModule):
       id = self._parse_token_and_insert_to_model(yaml_token, model)
       model.root_concepts.append(id)
 
-    renderer.country_data[country]["model"] = model
+    renderer.set_model(country, model)

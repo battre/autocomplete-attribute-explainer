@@ -1,5 +1,5 @@
 from collections import defaultdict
-from typing import Optional
+from typing import Optional, Any
 from jinja2 import Environment, FileSystemLoader, Template, select_autoescape
 import os
 
@@ -23,6 +23,12 @@ class Renderer:
     self.countries.append(country)
     # Put "global" first.
     self.countries.sort(key=lambda c: "" if c == "global" else c)
+
+  def get_model(self, country: str) -> Any:
+    return self.country_data[country]["model"]
+
+  def set_model(self, country: str, model: Any):
+    self.country_data[country]["model"] = model
 
   def _load_template(self, filename) -> Template:
     env = Environment(extensions=['jinja2.ext.do'],

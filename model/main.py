@@ -89,14 +89,15 @@ for country in countries:
     content += field_index
 
   all_token_content = ""
-  for token in renderer.country_data[country]["model"].pre_order_only_uniques():
+  for token in renderer.get_model(country).pre_order_only_uniques():
     token_content = ""
     for module in modules:
       if new_token_conent := module.render_token_details(
           country, token.id, renderer):
         token_content += new_token_conent
-    token_content = renderer.wrap_token_details(
-        token.id, renderer.country_data[country]["model"], token_content)
+    token_content = renderer.wrap_token_details(token.id,
+                                                renderer.get_model(country),
+                                                token_content)
     all_token_content += token_content
   if all_token_content:
     all_token_content = renderer.wrap_all_token_details(all_token_content)

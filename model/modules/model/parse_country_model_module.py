@@ -88,4 +88,4 @@ class ParseCountryModelModule(AbstractModule):
     renderer.country_data[country]['cut-off-children'] = set(
         yaml.get('cut-off-children', []))
 
-    renderer.country_data[country]["model"] = model
+    renderer.set_model(country, model)

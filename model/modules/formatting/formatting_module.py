@@ -243,7 +243,7 @@ class FormattingModule(AbstractModule):
 
   def collect_details_for_formatting(self, country: str, token_id: str,
                                      renderer: Renderer) -> Optional[dict]:
-    model = renderer.country_data[country]["model"]
+    model = renderer.get_model(country)
 
     token = model.find_token(token_id)
     if not token or token.is_atomic_token():
@@ -314,7 +314,7 @@ class FormattingModule(AbstractModule):
     if token_id in data and data[token_id]:
       return str(data[token_id])
 
-    model = renderer.country_data[country]["model"]
+    model = renderer.get_model(country)
 
     token = model.find_token(token_id)
     if not token or token.is_atomic_token() or not token.children:
@@ -391,12 +391,11 @@ class FormattingModule(AbstractModule):
         if expectation and (expectation['show']
                             or expectation['text'] != actual_output):
           delta = '\n'.join(
-              difflib.unified_diff(
-                  expectation['text'].splitlines(),
-                  actual_output.splitlines(),
-                  fromfile='expected_output',
-                  tofile='actual_output',
-                  lineterm=''))
+              difflib.unified_diff(expectation['text'].splitlines(),
+                                   actual_output.splitlines(),
+                                   fromfile='expected_output',
+                                   tofile='actual_output',
+                                   lineterm=''))
           results.append({
               'errors': errors,
               'output_token': output_token,

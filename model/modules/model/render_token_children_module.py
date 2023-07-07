@@ -33,5 +33,5 @@ class RenderTokenChildrenModule(AbstractModule):
                           os.path.join(os.path.dirname(__file__))),
                       autoescape=select_autoescape())
     template = env.get_template("token_children.html")
-    model = renderer.country_data[country]["model"]
+    model = renderer.get_model(country)
     return template.render(token=model.find_token(token_id))

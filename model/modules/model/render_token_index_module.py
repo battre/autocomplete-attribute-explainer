@@ -33,6 +33,6 @@ class RenderTokenIndexModule(AbstractModule):
                           os.path.join(os.path.dirname(__file__))),
                       autoescape=select_autoescape())
     template = env.get_template("token_index_template.html")
-    model = renderer.country_data[country]["model"]
+    model = renderer.get_model(country)
     return template.render(model=model,
                            country_data=renderer.country_data[country])
