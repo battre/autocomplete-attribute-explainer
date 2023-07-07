@@ -6,10 +6,11 @@ formatting-rules:
   - separator: "\n"
   - locality2
   - separator: "\n"
-  - postal-code
   - locality1
-  - separator: ", "
+  - separator: " - "
   - admin-area
+  - separator: "\n"
+  - postal-code
   - separator: "\n"
   - country-name
   - skip: country  # redundant with country-name
@@ -87,5 +88,6 @@ examples:
         Andar 1, Apto. 12, Clube dos Preenchedores Automáticos
         Ponto de referência: Theatro Municipal do Rio de Janeiro
         Centro
-        20230-153 Rio de Janeiro, RJ
+        Rio de Janeiro - RJ
+        20230-153
         Brasil
