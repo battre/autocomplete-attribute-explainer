@@ -80,6 +80,10 @@ class FormattingModule(AbstractModule):
       border: 1px solid black;
       padding: 6px;
     }
+    .formatting_example_overview_table td {
+      vertical-align: top;
+      padding: 0 10px;
+    }
     .formatting_example_overview_table > tbody > tr > td {
       padding: 6px;
     }

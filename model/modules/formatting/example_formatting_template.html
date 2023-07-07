@@ -14,7 +14,7 @@
       {% for token in model.pre_order_only_uniques() %}
         {% if token.id in example.data %}
         <tr>
-          <td>{{token.id}}</td><td>{{example.data[token.id]}}</td>
+          <td>{{token.id}}</td><td><pre style="margin:0">{{example.data[token.id]}}</pre></td>
         </tr>
         {% endif %}
       {% endfor %}

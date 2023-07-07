@@ -152,6 +152,10 @@
       border: 1px solid black;
       padding: 6px;
     }
+    .formatting_example_overview_table td {
+      vertical-align: top;
+      padding: 0 10px;
+    }
     .formatting_example_overview_table > tbody > tr > td {
       padding: 6px;
     }
@@ -2114,39 +2118,13 @@ granular tokens.
       
         
         <tr>
-          <td>given-name</td><td>Maria Alice</td>
+          <td>given-name</td><td><pre style="margin:0">Maria Alice</pre></td>
         </tr>
         
       
         
         <tr>
-          <td>family-name</td><td>da Silva</td>
-        </tr>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-        <tr>
-          <td>street</td><td>Avenida Mem de Sá</td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>building</td><td>1234</td>
+          <td>family-name</td><td><pre style="margin:0">da Silva</pre></td>
         </tr>
         
       
@@ -2157,8 +2135,34 @@ granular tokens.
         
       
         
+      
+        
+      
+        
+      
+        
+      
+        
         <tr>
-          <td>floor</td><td>1</td>
+          <td>street</td><td><pre style="margin:0">Avenida Mem de Sá</pre></td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>building</td><td><pre style="margin:0">1234</pre></td>
+        </tr>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+        <tr>
+          <td>floor</td><td><pre style="margin:0">1</pre></td>
         </tr>
         
       
@@ -2166,25 +2170,25 @@ granular tokens.
       
         
         <tr>
-          <td>unit-type</td><td>Apto.</td>
+          <td>unit-type</td><td><pre style="margin:0">Apto.</pre></td>
         </tr>
         
       
         
         <tr>
-          <td>unit-name</td><td>12</td>
+          <td>unit-name</td><td><pre style="margin:0">12</pre></td>
         </tr>
         
       
         
         <tr>
-          <td>organization</td><td>Clube dos Preenchedores Automáticos</td>
+          <td>organization</td><td><pre style="margin:0">Clube dos Preenchedores Automáticos</pre></td>
         </tr>
         
       
         
         <tr>
-          <td>landmark</td><td>Theatro Municipal do Rio de Janeiro</td>
+          <td>landmark</td><td><pre style="margin:0">Theatro Municipal do Rio de Janeiro</pre></td>
         </tr>
         
       
@@ -2192,37 +2196,37 @@ granular tokens.
       
         
         <tr>
-          <td>locality1</td><td>Rio de Janeiro</td>
+          <td>locality1</td><td><pre style="margin:0">Rio de Janeiro</pre></td>
         </tr>
         
       
         
         <tr>
-          <td>locality2</td><td>Centro</td>
+          <td>locality2</td><td><pre style="margin:0">Centro</pre></td>
         </tr>
         
       
         
         <tr>
-          <td>admin-area</td><td>RJ</td>
+          <td>admin-area</td><td><pre style="margin:0">RJ</pre></td>
         </tr>
         
       
         
         <tr>
-          <td>postal-code</td><td>20230-153</td>
+          <td>postal-code</td><td><pre style="margin:0">20230-153</pre></td>
         </tr>
         
       
         
         <tr>
-          <td>country</td><td>BR</td>
+          <td>country</td><td><pre style="margin:0">BR</pre></td>
         </tr>
         
       
         
         <tr>
-          <td>country-name</td><td>Brasil</td>
+          <td>country-name</td><td><pre style="margin:0">Brasil</pre></td>
         </tr>
         
       
@@ -2313,48 +2317,13 @@ address-overflow trumps the leaf node values of unit-type, unit-name, etc.
       
         
         <tr>
-          <td>given-name</td><td>Maria Alice</td>
+          <td>given-name</td><td><pre style="margin:0">Maria Alice</pre></td>
         </tr>
         
       
         
         <tr>
-          <td>family-name</td><td>da Silva</td>
-        </tr>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-        <tr>
-          <td>street</td><td>Avenida Mem de Sá</td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>building</td><td>1234</td>
-        </tr>
-        
-      
-        
-      
-        
-        <tr>
-          <td>address-overflow</td><td>1º andar, ap 12
-Clube dos Preenchedores Automáticos</td>
+          <td>family-name</td><td><pre style="margin:0">da Silva</pre></td>
         </tr>
         
       
@@ -2365,26 +2334,22 @@ Clube dos Preenchedores Automáticos</td>
         
       
         
+      
+        
+      
+        
+      
+        
+      
+        
         <tr>
-          <td>unit-type</td><td>Apto.</td>
+          <td>street</td><td><pre style="margin:0">Avenida Mem de Sá</pre></td>
         </tr>
         
       
         
         <tr>
-          <td>unit-name</td><td>12</td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>organization</td><td>Clube dos Preenchedores Automáticos</td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>landmark</td><td>Theatro Municipal do Rio de Janeiro</td>
+          <td>building</td><td><pre style="margin:0">1234</pre></td>
         </tr>
         
       
@@ -2392,37 +2357,76 @@ Clube dos Preenchedores Automáticos</td>
       
         
         <tr>
-          <td>locality1</td><td>Rio de Janeiro</td>
+          <td>address-overflow</td><td><pre style="margin:0">1º andar, ap 12
+Clube dos Preenchedores Automáticos</pre></td>
+        </tr>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+        <tr>
+          <td>unit-type</td><td><pre style="margin:0">Apto.</pre></td>
         </tr>
         
       
         
         <tr>
-          <td>locality2</td><td>Centro</td>
+          <td>unit-name</td><td><pre style="margin:0">12</pre></td>
         </tr>
         
       
         
         <tr>
-          <td>admin-area</td><td>RJ</td>
+          <td>organization</td><td><pre style="margin:0">Clube dos Preenchedores Automáticos</pre></td>
         </tr>
         
       
         
         <tr>
-          <td>postal-code</td><td>20230-153</td>
+          <td>landmark</td><td><pre style="margin:0">Theatro Municipal do Rio de Janeiro</pre></td>
+        </tr>
+        
+      
+        
+      
+        
+        <tr>
+          <td>locality1</td><td><pre style="margin:0">Rio de Janeiro</pre></td>
         </tr>
         
       
         
         <tr>
-          <td>country</td><td>BR</td>
+          <td>locality2</td><td><pre style="margin:0">Centro</pre></td>
         </tr>
         
       
         
         <tr>
-          <td>country-name</td><td>Brasil</td>
+          <td>admin-area</td><td><pre style="margin:0">RJ</pre></td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>postal-code</td><td><pre style="margin:0">20230-153</pre></td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>country</td><td><pre style="margin:0">BR</pre></td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>country-name</td><td><pre style="margin:0">Brasil</pre></td>
         </tr>
         
       
@@ -2514,51 +2518,13 @@ uses a different addressing system.
       
         
         <tr>
-          <td>given-name</td><td>Maria Alice</td>
+          <td>given-name</td><td><pre style="margin:0">Maria Alice</pre></td>
         </tr>
         
       
         
         <tr>
-          <td>family-name</td><td>da Silva</td>
-        </tr>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-        <tr>
-          <td>street</td><td>SCS – Quadra 6</td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>building</td><td>Bloco A</td>
-        </tr>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-        <tr>
-          <td>floor</td><td>4</td>
+          <td>family-name</td><td><pre style="margin:0">da Silva</pre></td>
         </tr>
         
       
@@ -2575,8 +2541,46 @@ uses a different addressing system.
         
       
         
+      
+        
         <tr>
-          <td>locality1</td><td>Brasília</td>
+          <td>street</td><td><pre style="margin:0">SCS – Quadra 6</pre></td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>building</td><td><pre style="margin:0">Bloco A</pre></td>
+        </tr>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+        <tr>
+          <td>floor</td><td><pre style="margin:0">4</pre></td>
+        </tr>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+        <tr>
+          <td>locality1</td><td><pre style="margin:0">Brasília</pre></td>
         </tr>
         
       
@@ -2584,25 +2588,25 @@ uses a different addressing system.
       
         
         <tr>
-          <td>admin-area</td><td>DF</td>
+          <td>admin-area</td><td><pre style="margin:0">DF</pre></td>
         </tr>
         
       
         
         <tr>
-          <td>postal-code</td><td>70297-400</td>
+          <td>postal-code</td><td><pre style="margin:0">70297-400</pre></td>
         </tr>
         
       
         
         <tr>
-          <td>country</td><td>BR</td>
+          <td>country</td><td><pre style="margin:0">BR</pre></td>
         </tr>
         
       
         
         <tr>
-          <td>country-name</td><td>Brasil</td>
+          <td>country-name</td><td><pre style="margin:0">Brasil</pre></td>
         </tr>
         
       
