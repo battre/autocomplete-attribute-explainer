@@ -66,3 +66,6 @@ Run `pytype main.py` to verify that all type annotations are correct.
 ## Code formatting
 Run `yapf -i -r .` before checking in code using
 [yapf](https://github.com/google/yapf).
+
+## Running unittests
+Run `python3 -m unittest discover -p "*_test.py"` to execute unittests.
