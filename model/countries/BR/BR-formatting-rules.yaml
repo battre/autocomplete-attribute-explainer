@@ -23,6 +23,7 @@ formatting-rules:
   address-overflow-and-landmark:
   - address-overflow
   - separator: "\n"
+  - prefix: "Ponto de referência: "
   - landmark
 
   address-overflow:
@@ -30,10 +31,21 @@ formatting-rules:
   - separator: ", "
   - organization
 
+  in-building-location:
+    - prefix: "Andar "
+    - floor
+    - separator: ", "
+    - unit
+
   locality:
   - locality2
   - separator: "\n"
   - locality1
+
+  street-location:
+  - street
+  - separator: ", "
+  - building
 
   credit-card:
   - skip: cc-name
@@ -42,3 +54,38 @@ formatting-rules:
   - skip: cc-exp-MMYYYY
   - skip: cc-csc
   - skip: cc-type
+
+examples:
+- id: full-address
+  attributes:
+    given-name: Maria Alice
+    family-name: da Silva
+    street: Avenida Mem de Sá
+    building: 1234
+    floor: 1
+    unit-type: Apto.
+    unit-name: 12
+    organization: Clube dos Preenchedores Automáticos
+    landmark: Theatro Municipal do Rio de Janeiro
+    locality1: Rio de Janeiro
+    locality2: Centro
+    admin-area: RJ
+    postal-code: 20230-153
+    country: BR
+    country-name: Brasil
+
+  output:
+    name:
+      show: false
+      text: Maria Alice da Silva
+
+    full-address:
+      show: true
+      text: |
+        Maria Alice da Silva
+        Avenida Mem de Sá, 1234
+        Andar 1, Apto. 12, Clube dos Preenchedores Automáticos
+        Ponto de referência: Theatro Municipal do Rio de Janeiro
+        Centro
+        20230-153 Rio de Janeiro, RJ
+        Brasil

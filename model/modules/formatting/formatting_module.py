@@ -9,6 +9,7 @@ from typing import Optional, List
 import os
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 import copy
+import difflib
 
 
 class FormattingModule(AbstractModule):
@@ -32,7 +33,21 @@ class FormattingModule(AbstractModule):
         schema.Optional("named-formatting-rules"): {
             str: formatting_rule
         },
-        schema.Optional("formatting-rules"): formatting_rule
+        schema.Optional("formatting-rules"):
+        formatting_rule,
+        schema.Optional("examples"): [{
+            "id": str,
+            schema.Optional("attributes"): {
+                str: schema.Optional(schema.Or(str, int))
+            },
+            schema.Optional("inherit-from"): str,  # Reference to an "id"
+            schema.Optional("output"): {
+                str: {
+                    "show": bool,  # Whether to produce the output in the HTML
+                    "text": str  # The expected content.
+                }
+            },
+        }]
     })
 
   def css(self) -> str:
@@ -58,6 +73,14 @@ class FormattingModule(AbstractModule):
     }
     .formatting_errors {
       color: red;
+    }
+
+    .formatting_example_textbox {
+      border: 1px solid black;
+      padding: 6px;
+    }
+    .formatting_example_overview_table > tbody > tr > td {
+      padding: 6px;
     }
     </style>
     """
@@ -105,6 +128,9 @@ class FormattingModule(AbstractModule):
 
     self._apply_cut_off_children(country, renderer)
     self._apply_cut_off_tokens(country, renderer)
+
+    renderer.country_data[country]['formatting-examples'] = yaml.get(
+        'examples', [])
 
   def _apply_cut_off_children(self, country: str, renderer: Renderer):
     """Removes cut-off-childen token.
@@ -263,12 +289,12 @@ class FormattingModule(AbstractModule):
       print(model.find_token(token_id))
 
     return {
-        "model": model,
-        "token_id": token_id,
-        "inputs": inputs,
-        "errors": errors,
-        "named_formatting_rules": named_formatting_rules,
-        "formatting_rules": formatting_rules
+        'model': model,
+        'token_id': token_id,
+        'inputs': inputs,
+        'errors': errors,
+        'named_formatting_rules': named_formatting_rules,
+        'formatting_rules': formatting_rules,
     }
 
   def render_token_details(self, country: str, token_id: str,
@@ -279,6 +305,123 @@ class FormattingModule(AbstractModule):
                       autoescape=select_autoescape())
     template = env.get_template("formatting_template.html")
     kwargs = self.collect_details_for_formatting(country, token_id, renderer)
+    if kwargs:
+      return template.render(**kwargs)
+    return None
+
+  def apply_formatting(self, country: str, token_id: str, data: dict,
+                       renderer: Renderer, errors: List[str]) -> str:
+    if token_id in data and data[token_id]:
+      return str(data[token_id])
+
+    model = renderer.country_data[country]["model"]
+
+    token = model.find_token(token_id)
+    if not token or token.is_atomic_token() or not token.children:
+      return ""
+
+    named_formatting_rules = (renderer.country_data[country].get(
+        'named-formatting-rules', {}))
+    formatting_rules = (renderer.country_data[country].get(
+        'formatting-rules', {}))
+
+    inputs = formatting_rules.get(token_id)
+    if not inputs:
+      errors.append(f"Could not find a rule for {token_id}")
+
+    while len(inputs) == 1 and 'reference' in inputs[0]:
+      rule = named_formatting_rules.get(inputs[0]['reference'], None)
+      if rule:
+        inputs = rule.get(token_id, None)
+      else:
+        errors.append(f"No named-rule {inputs[0]['reference']} found")
+        inputs = []
+
+    result = ""
+    for i in range(len(inputs)):
+      input = inputs[i]
+      if 'token' in input:
+        # The default separator is a whitespace but it's not rendered at the
+        # beginning of a line.
+        separator = ' '
+        if len(result) == 0 or result[-1] == '\n':
+          separator = ''
+        prefix = ''
+        suffix = ''
+        # Detect separator, prefix and suffix specifications
+        j = i - 1
+        while j >= 0 and ('separator' in inputs[j] or 'prefix' in inputs[j]):
+          if 'separator' in inputs[j]:
+            separator = inputs[j]['separator']
+          if 'prefix' in inputs[j]:
+            prefix = inputs[j]['prefix']
+          j -= 1
+        j = i + 1
+        value = self.apply_formatting(country, input['token'], data, renderer,
+                                      errors)
+        while j < len(inputs) and 'suffix' in inputs[j]:
+          suffix = inputs[j]['suffix']
+          j += 1
+        result += separator + prefix + value + suffix
+      elif 'separator' in input or 'prefix' in input or 'suffix' in input:
+        # These will be handled by the token if the token exists
+        pass
+      elif 'reference' in input:
+        errors.append(f"Unexpected reference in {token_id}")
+        pass
+      elif 'skip' in input:
+        pass
+    return result
+
+  def collect_details_for_example_addresses(self, country: str,
+                                            renderer: Renderer) -> list:
+    examples = renderer.country_data[country].get('formatting-examples')
+    if not examples:
+      return None
+
+    collected_details = []
+    for example in examples:
+      data = example['attributes']
+      output = example['output']
+      results = []
+      for output_token, expectation in output.items():
+        errors = []
+        actual_output = self.apply_formatting(country, output_token, data,
+                                              renderer, errors)
+        if expectation and (expectation['show']
+                            or expectation['text'] != actual_output):
+          delta = '\n'.join(
+              difflib.unified_diff(
+                  expectation['text'].splitlines(),
+                  actual_output.splitlines(),
+                  fromfile='expected_output',
+                  tofile='actual_output',
+                  lineterm=''))
+          results.append({
+              'errors': errors,
+              'output_token': output_token,
+              'output': actual_output,
+              'expected_output': expectation['text'],
+              'delta': delta,
+          })
+
+      collected_details.append({
+          'id': example['id'],
+          'data': data,
+          'results': results
+      })
+    return {
+        'examples': collected_details,
+        'model': renderer.country_data[country]['model']
+    }
+
+  def render_epilogue(self, country: str, renderer: Renderer) -> Optional[str]:
+    env = Environment(extensions=['jinja2.ext.do'],
+                      loader=FileSystemLoader(
+                          os.path.join(os.path.dirname(__file__))),
+                      autoescape=select_autoescape())
+    template = env.get_template("example_formatting_template.html")
+    kwargs = self.collect_details_for_example_addresses(country, renderer)
     if kwargs:
       return template.render(**kwargs)
     return None

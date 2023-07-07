@@ -147,6 +147,14 @@
     .formatting_errors {
       color: red;
     }
+
+    .formatting_example_textbox {
+      border: 1px solid black;
+      padding: 6px;
+    }
+    .formatting_example_overview_table > tbody > tr > td {
+      padding: 6px;
+    }
     </style>
     
 </head>
@@ -1199,13 +1207,13 @@ Artificial concept, not to be used in HTML
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">full-address</span> =
-<span class="formatting_token">name</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">street-address-alternative-1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">locality</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area</span><span class="formatting_token">postal-code</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">country-name</span>
+<span class="formatting_token">name</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">street-address-alternative-1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">locality2</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">postal-code</span><span class="formatting_token">locality1</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">country-name</span>
 </div>
 
 <h5>Flattened formatting:</h5>
 <div>
 <span class="formatting_token">full-address</span> =<br>
-<span class="formatting_token">given-name</span><span class="formatting_token">family-name</span><span class="formatting_token_separator"><br></span><span class="formatting_token">street</span><span class="formatting_token">building</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Floor </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">organization</span><span class="formatting_token_separator"><br></span><span class="formatting_token">landmark</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality1</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area</span><span class="formatting_token">postal-code</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country-name</span>
+<span class="formatting_token">given-name</span><span class="formatting_token">family-name</span><span class="formatting_token_separator"><br></span><span class="formatting_token">street</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">building</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Andar </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">organization</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Ponto de referência: </span><span class="formatting_token">landmark</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">postal-code</span><span class="formatting_token">locality1</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country-name</span>
 </div>
 
 </div><h3 id="name"><a href="#name">#</a> name</h3>
@@ -1376,7 +1384,7 @@ Artificial concept, not to be used in HTML; this is a structured representation 
 <h5>Flattened formatting:</h5>
 <div>
 <span class="formatting_token">street-address-alternative-1</span> =<br>
-<span class="formatting_token">street</span><span class="formatting_token">building</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Floor </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">organization</span><span class="formatting_token_separator"><br></span><span class="formatting_token">landmark</span>
+<span class="formatting_token">street</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">building</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Andar </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">organization</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Ponto de referência: </span><span class="formatting_token">landmark</span>
 </div>
 
 </div><h3 id="street-location"><a href="#street-location">#</a> street-location</h3>
@@ -1410,13 +1418,13 @@ Name of a street and identifier for the building
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">street-location</span> =
-<span class="formatting_token">street</span><span class="formatting_token">building</span>
+<span class="formatting_token">street</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">building</span>
 </div>
 
 <h5>Flattened formatting:</h5>
 <div>
 <span class="formatting_token">street-location</span> =<br>
-<span class="formatting_token">street</span><span class="formatting_token">building</span>
+<span class="formatting_token">street</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">building</span>
 </div>
 
 </div><h3 id="street"><a href="#street">#</a> street</h3>
@@ -1462,13 +1470,13 @@ House number
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">address-overflow-and-landmark</span> =
-<span class="formatting_token">address-overflow</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">landmark</span>
+<span class="formatting_token">address-overflow</span><span class="formatting_token_separator">⏎</span><span class="formatting_token_prefix">Ponto de referência: </span><span class="formatting_token">landmark</span>
 </div>
 
 <h5>Flattened formatting:</h5>
 <div>
 <span class="formatting_token">address-overflow-and-landmark</span> =<br>
-<span class="formatting_token_prefix">Floor </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">organization</span><span class="formatting_token_separator"><br></span><span class="formatting_token">landmark</span>
+<span class="formatting_token_prefix">Andar </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">organization</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Ponto de referência: </span><span class="formatting_token">landmark</span>
 </div>
 
 </div><h3 id="address-overflow"><a href="#address-overflow">#</a> address-overflow</h3>
@@ -1508,7 +1516,7 @@ An overflow field for information that is not captured differently in a form
 <h5>Flattened formatting:</h5>
 <div>
 <span class="formatting_token">address-overflow</span> =<br>
-<span class="formatting_token_prefix">Floor </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">organization</span>
+<span class="formatting_token_prefix">Andar </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">organization</span>
 </div>
 
 </div><h3 id="in-building-location"><a href="#in-building-location">#</a> in-building-location</h3>
@@ -1542,13 +1550,13 @@ Location of the adresse in a building
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">in-building-location</span> =
-<span class="formatting_token_prefix">Floor </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit</span>
+<span class="formatting_token_prefix">Andar </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit</span>
 </div>
 
 <h5>Flattened formatting:</h5>
 <div>
 <span class="formatting_token">in-building-location</span> =<br>
-<span class="formatting_token_prefix">Floor </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span>
+<span class="formatting_token_prefix">Andar </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span>
 </div>
 
 </div><h3 id="floor"><a href="#floor">#</a> floor</h3>
@@ -2074,6 +2082,205 @@ Email address
 
 
 </div>
+  </div>
+</div>
+
+<div class="mdl-card mdl-shadow--2dp" style="width: 95%; margin: 8px">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Example addresses</h2>
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <ul>
+      
+      
+<table class="formatting_example_overview_table">
+<tr>
+  <th>Input</th>
+  <th>Output</th>
+</tr>
+<tr>
+  <td valign="top">
+    <table>
+      
+        
+      
+        
+      
+        
+        <tr>
+          <td>given-name</td><td>Maria Alice</td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>family-name</td><td>da Silva</td>
+        </tr>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+        <tr>
+          <td>street</td><td>Avenida Mem de Sá</td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>building</td><td>1234</td>
+        </tr>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+        <tr>
+          <td>floor</td><td>1</td>
+        </tr>
+        
+      
+        
+      
+        
+        <tr>
+          <td>unit-type</td><td>Apto.</td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>unit-name</td><td>12</td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>organization</td><td>Clube dos Preenchedores Automáticos</td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>landmark</td><td>Theatro Municipal do Rio de Janeiro</td>
+        </tr>
+        
+      
+        
+      
+        
+        <tr>
+          <td>locality1</td><td>Rio de Janeiro</td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>locality2</td><td>Centro</td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>admin-area</td><td>RJ</td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>postal-code</td><td>20230-153</td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>country</td><td>BR</td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>country-name</td><td>Brasil</td>
+        </tr>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </table>
+  </td>
+  <td valign="top">
+    
+      Output for "full-address":<br>
+      <pre class="formatting_example_textbox">Maria Alice da Silva
+Avenida Mem de Sá, 1234
+Andar 1, Apto. 12, Clube dos Preenchedores Automáticos
+Ponto de referência: Theatro Municipal do Rio de Janeiro
+Centro
+20230-153 Rio de Janeiro, RJ
+Brasil</pre>
+      
+      
+    
+  </td>
+</tr>
+</table>
+
+      
+    </ul>
   </div>
 </div>
       </div>
