@@ -1,5 +1,4 @@
 {% macro RenderExample(example) %}
-<table class="formatting_example_overview_table">
 <tr>
   <th>Input</th>
   <th>Output</th>
@@ -43,7 +42,6 @@
     {% endfor %}
   </td>
 </tr>
-</table>
 {% endmacro %}
 
 <div class="mdl-card mdl-shadow--2dp" style="width: 95%; margin: 8px">
@@ -51,10 +49,10 @@
     <h2 class="mdl-card__title-text">Example addresses</h2>
   </div>
   <div class="mdl-card__actions mdl-card--border">
-    <ul>
+    <table class="formatting_example_overview_table">
       {% for example in examples %}
       {{RenderExample(example)}}
       {% endfor %}
-    </ul>
+    </table>
   </div>
 </div>
