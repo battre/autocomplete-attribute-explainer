@@ -92,6 +92,44 @@ examples:
         20230-153
         Brasil
 
+- id: full-address-with-inner-nodes
+  attributes:
+    given-name: Maria Alice
+    family-name: da Silva
+    street: Avenida Mem de Sá
+    building: 1234
+    address-overflow: |-
+      1º andar, ap 12
+      Clube dos Preenchedores Automáticos
+    unit-type: Apto.
+    unit-name: 12
+    organization: Clube dos Preenchedores Automáticos
+    landmark: Theatro Municipal do Rio de Janeiro
+    locality1: Rio de Janeiro
+    locality2: Centro
+    admin-area: RJ
+    postal-code: 20230-153
+    country: BR
+    country-name: Brasil
+
+  output:
+    name:
+      show: false
+      text: Maria Alice da Silva
+
+    full-address:
+      show: true
+      text: |
+        Maria Alice da Silva
+        Avenida Mem de Sá, 1234
+        1º andar, ap 12
+        Clube dos Preenchedores Automáticos
+        Ponto de referência: Theatro Municipal do Rio de Janeiro
+        Centro
+        Rio de Janeiro - RJ
+        20230-153
+        Brasil
+
 - id: full-address-in-brasilia
   attributes:
     given-name: Maria Alice
