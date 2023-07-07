@@ -88,6 +88,12 @@ for country in countries:
       field_index += new_field_index
     content += field_index
 
+  after_token_index = ""
+  for module in modules:
+    if new_after_token_index := module.render_after_token_index(country, renderer):
+      after_token_index += new_after_token_index
+  content += after_token_index
+
   all_token_content = ""
   for token in renderer.get_model(country).pre_order_only_uniques():
     token_content = ""

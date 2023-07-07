@@ -421,7 +421,7 @@ class FormattingModule(AbstractModule):
         'model': renderer.country_data[country]['model']
     }
 
-  def render_epilogue(self, country: str, renderer: Renderer) -> Optional[str]:
+  def render_after_token_index(self, country: str, renderer: Renderer) -> Optional[str]:
     env = Environment(extensions=['jinja2.ext.do'],
                       loader=FileSystemLoader(
                           os.path.join(os.path.dirname(__file__))),

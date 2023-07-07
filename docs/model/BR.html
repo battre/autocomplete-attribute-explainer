@@ -1151,6 +1151,594 @@ Address forms also often contain a landmark field ("Ponto de referência"). Some
     <div>&nbsp;</div>
     
   </div>
+</div>
+
+<div class="mdl-card mdl-shadow--2dp" style="width: 95%; margin: 8px">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Example addresses</h2>
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <table class="formatting_example_overview_table">
+      
+      
+<tr>
+  <td colspan="2">
+    <b>full-address</b>: This is an example of a full address in Brazil specified by the most
+granular tokens.
+
+  </td>
+</tr>
+<tr>
+  <th>Input</th>
+  <th>Output</th>
+</tr>
+<tr>
+  <td valign="top">
+    <table>
+      
+        
+      
+        
+      
+        
+        <tr>
+          <td>given-name</td><td><pre style="margin:0">Maria Alice</pre></td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>family-name</td><td><pre style="margin:0">da Silva</pre></td>
+        </tr>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+        <tr>
+          <td>street</td><td><pre style="margin:0">Avenida Mem de Sá</pre></td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>building</td><td><pre style="margin:0">1234</pre></td>
+        </tr>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+        <tr>
+          <td>floor</td><td><pre style="margin:0">1</pre></td>
+        </tr>
+        
+      
+        
+      
+        
+        <tr>
+          <td>unit-type</td><td><pre style="margin:0">Apto.</pre></td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>unit-name</td><td><pre style="margin:0">12</pre></td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>organization</td><td><pre style="margin:0">Clube dos Preenchedores Automáticos</pre></td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>landmark</td><td><pre style="margin:0">Theatro Municipal do Rio de Janeiro</pre></td>
+        </tr>
+        
+      
+        
+      
+        
+        <tr>
+          <td>locality1</td><td><pre style="margin:0">Rio de Janeiro</pre></td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>locality2</td><td><pre style="margin:0">Centro</pre></td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>admin-area</td><td><pre style="margin:0">RJ</pre></td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>postal-code</td><td><pre style="margin:0">20230-153</pre></td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>country</td><td><pre style="margin:0">BR</pre></td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>country-name</td><td><pre style="margin:0">Brasil</pre></td>
+        </tr>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </table>
+  </td>
+  <td valign="top">
+    
+      Output for "full-address":<br>
+      <pre class="formatting_example_textbox">Maria Alice da Silva
+Avenida Mem de Sá, 1234
+Andar 1, Apto. 12, Clube dos Preenchedores Automáticos
+Ponto de referência: Theatro Municipal do Rio de Janeiro
+Centro
+Rio de Janeiro - RJ
+20230-153
+Brasil</pre>
+      
+      
+    
+  </td>
+</tr>
+<tr>
+  <td span="2">
+    &nbsp;
+  </td>
+</tr>
+
+      
+      
+<tr>
+  <td colspan="2">
+    <b>full-address-with-inner-nodes</b>: This example illustrates how specifying an explicit value for
+address-overflow trumps the leaf node values of unit-type, unit-name, etc.
+
+  </td>
+</tr>
+<tr>
+  <th>Input</th>
+  <th>Output</th>
+</tr>
+<tr>
+  <td valign="top">
+    <table>
+      
+        
+      
+        
+      
+        
+        <tr>
+          <td>given-name</td><td><pre style="margin:0">Maria Alice</pre></td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>family-name</td><td><pre style="margin:0">da Silva</pre></td>
+        </tr>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+        <tr>
+          <td>street</td><td><pre style="margin:0">Avenida Mem de Sá</pre></td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>building</td><td><pre style="margin:0">1234</pre></td>
+        </tr>
+        
+      
+        
+      
+        
+        <tr>
+          <td>address-overflow</td><td><pre style="margin:0">1º andar, ap 12
+Clube dos Preenchedores Automáticos</pre></td>
+        </tr>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+        <tr>
+          <td>unit-type</td><td><pre style="margin:0">Apto.</pre></td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>unit-name</td><td><pre style="margin:0">12</pre></td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>organization</td><td><pre style="margin:0">Clube dos Preenchedores Automáticos</pre></td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>landmark</td><td><pre style="margin:0">Theatro Municipal do Rio de Janeiro</pre></td>
+        </tr>
+        
+      
+        
+      
+        
+        <tr>
+          <td>locality1</td><td><pre style="margin:0">Rio de Janeiro</pre></td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>locality2</td><td><pre style="margin:0">Centro</pre></td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>admin-area</td><td><pre style="margin:0">RJ</pre></td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>postal-code</td><td><pre style="margin:0">20230-153</pre></td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>country</td><td><pre style="margin:0">BR</pre></td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>country-name</td><td><pre style="margin:0">Brasil</pre></td>
+        </tr>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </table>
+  </td>
+  <td valign="top">
+    
+      Output for "full-address":<br>
+      <pre class="formatting_example_textbox">Maria Alice da Silva
+Avenida Mem de Sá, 1234
+1º andar, ap 12
+Clube dos Preenchedores Automáticos
+Ponto de referência: Theatro Municipal do Rio de Janeiro
+Centro
+Rio de Janeiro - RJ
+20230-153
+Brasil</pre>
+      
+      
+    
+  </td>
+</tr>
+<tr>
+  <td span="2">
+    &nbsp;
+  </td>
+</tr>
+
+      
+      
+<tr>
+  <td colspan="2">
+    <b>full-address-in-brasilia</b>: This example illustrates how an address in Brasília can be expressed, which
+uses a different addressing system.
+
+  </td>
+</tr>
+<tr>
+  <th>Input</th>
+  <th>Output</th>
+</tr>
+<tr>
+  <td valign="top">
+    <table>
+      
+        
+      
+        
+      
+        
+        <tr>
+          <td>given-name</td><td><pre style="margin:0">Maria Alice</pre></td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>family-name</td><td><pre style="margin:0">da Silva</pre></td>
+        </tr>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+        <tr>
+          <td>street</td><td><pre style="margin:0">SCS – Quadra 6</pre></td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>building</td><td><pre style="margin:0">Bloco A</pre></td>
+        </tr>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+        <tr>
+          <td>floor</td><td><pre style="margin:0">4</pre></td>
+        </tr>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+        <tr>
+          <td>locality1</td><td><pre style="margin:0">Brasília</pre></td>
+        </tr>
+        
+      
+        
+      
+        
+        <tr>
+          <td>admin-area</td><td><pre style="margin:0">DF</pre></td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>postal-code</td><td><pre style="margin:0">70297-400</pre></td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>country</td><td><pre style="margin:0">BR</pre></td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>country-name</td><td><pre style="margin:0">Brasil</pre></td>
+        </tr>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </table>
+  </td>
+  <td valign="top">
+    
+      Output for "full-address":<br>
+      <pre class="formatting_example_textbox">Maria Alice da Silva
+SCS – Quadra 6, Bloco A
+Andar 4
+Brasília - DF
+70297-400
+Brasil</pre>
+      
+      
+    
+  </td>
+</tr>
+<tr>
+  <td span="2">
+    &nbsp;
+  </td>
+</tr>
+
+      
+    </table>
+  </div>
 </div><div class="mdl-card mdl-shadow--2dp" style="width: 95%; margin: 8px">
   <div class="mdl-card__title">
     <h2 class="mdl-card__title-text">Details</h2>
@@ -2086,594 +2674,6 @@ Email address
 
 
 </div>
-  </div>
-</div>
-
-<div class="mdl-card mdl-shadow--2dp" style="width: 95%; margin: 8px">
-  <div class="mdl-card__title">
-    <h2 class="mdl-card__title-text">Example addresses</h2>
-  </div>
-  <div class="mdl-card__actions mdl-card--border">
-    <table class="formatting_example_overview_table">
-      
-      
-<tr>
-  <td colspan="2">
-    <b>full-address</b>: This is an example of a full address in Brazil specified by the most
-granular tokens.
-
-  </td>
-</tr>
-<tr>
-  <th>Input</th>
-  <th>Output</th>
-</tr>
-<tr>
-  <td valign="top">
-    <table>
-      
-        
-      
-        
-      
-        
-        <tr>
-          <td>given-name</td><td><pre style="margin:0">Maria Alice</pre></td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>family-name</td><td><pre style="margin:0">da Silva</pre></td>
-        </tr>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-        <tr>
-          <td>street</td><td><pre style="margin:0">Avenida Mem de Sá</pre></td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>building</td><td><pre style="margin:0">1234</pre></td>
-        </tr>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-        <tr>
-          <td>floor</td><td><pre style="margin:0">1</pre></td>
-        </tr>
-        
-      
-        
-      
-        
-        <tr>
-          <td>unit-type</td><td><pre style="margin:0">Apto.</pre></td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>unit-name</td><td><pre style="margin:0">12</pre></td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>organization</td><td><pre style="margin:0">Clube dos Preenchedores Automáticos</pre></td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>landmark</td><td><pre style="margin:0">Theatro Municipal do Rio de Janeiro</pre></td>
-        </tr>
-        
-      
-        
-      
-        
-        <tr>
-          <td>locality1</td><td><pre style="margin:0">Rio de Janeiro</pre></td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>locality2</td><td><pre style="margin:0">Centro</pre></td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>admin-area</td><td><pre style="margin:0">RJ</pre></td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>postal-code</td><td><pre style="margin:0">20230-153</pre></td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>country</td><td><pre style="margin:0">BR</pre></td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>country-name</td><td><pre style="margin:0">Brasil</pre></td>
-        </tr>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </table>
-  </td>
-  <td valign="top">
-    
-      Output for "full-address":<br>
-      <pre class="formatting_example_textbox">Maria Alice da Silva
-Avenida Mem de Sá, 1234
-Andar 1, Apto. 12, Clube dos Preenchedores Automáticos
-Ponto de referência: Theatro Municipal do Rio de Janeiro
-Centro
-Rio de Janeiro - RJ
-20230-153
-Brasil</pre>
-      
-      
-    
-  </td>
-</tr>
-<tr>
-  <td span="2">
-    &nbsp;
-  </td>
-</tr>
-
-      
-      
-<tr>
-  <td colspan="2">
-    <b>full-address-with-inner-nodes</b>: This example illustrates how specifying an explicit value for
-address-overflow trumps the leaf node values of unit-type, unit-name, etc.
-
-  </td>
-</tr>
-<tr>
-  <th>Input</th>
-  <th>Output</th>
-</tr>
-<tr>
-  <td valign="top">
-    <table>
-      
-        
-      
-        
-      
-        
-        <tr>
-          <td>given-name</td><td><pre style="margin:0">Maria Alice</pre></td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>family-name</td><td><pre style="margin:0">da Silva</pre></td>
-        </tr>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-        <tr>
-          <td>street</td><td><pre style="margin:0">Avenida Mem de Sá</pre></td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>building</td><td><pre style="margin:0">1234</pre></td>
-        </tr>
-        
-      
-        
-      
-        
-        <tr>
-          <td>address-overflow</td><td><pre style="margin:0">1º andar, ap 12
-Clube dos Preenchedores Automáticos</pre></td>
-        </tr>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-        <tr>
-          <td>unit-type</td><td><pre style="margin:0">Apto.</pre></td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>unit-name</td><td><pre style="margin:0">12</pre></td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>organization</td><td><pre style="margin:0">Clube dos Preenchedores Automáticos</pre></td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>landmark</td><td><pre style="margin:0">Theatro Municipal do Rio de Janeiro</pre></td>
-        </tr>
-        
-      
-        
-      
-        
-        <tr>
-          <td>locality1</td><td><pre style="margin:0">Rio de Janeiro</pre></td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>locality2</td><td><pre style="margin:0">Centro</pre></td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>admin-area</td><td><pre style="margin:0">RJ</pre></td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>postal-code</td><td><pre style="margin:0">20230-153</pre></td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>country</td><td><pre style="margin:0">BR</pre></td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>country-name</td><td><pre style="margin:0">Brasil</pre></td>
-        </tr>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </table>
-  </td>
-  <td valign="top">
-    
-      Output for "full-address":<br>
-      <pre class="formatting_example_textbox">Maria Alice da Silva
-Avenida Mem de Sá, 1234
-1º andar, ap 12
-Clube dos Preenchedores Automáticos
-Ponto de referência: Theatro Municipal do Rio de Janeiro
-Centro
-Rio de Janeiro - RJ
-20230-153
-Brasil</pre>
-      
-      
-    
-  </td>
-</tr>
-<tr>
-  <td span="2">
-    &nbsp;
-  </td>
-</tr>
-
-      
-      
-<tr>
-  <td colspan="2">
-    <b>full-address-in-brasilia</b>: This example illustrates how an address in Brasília can be expressed, which
-uses a different addressing system.
-
-  </td>
-</tr>
-<tr>
-  <th>Input</th>
-  <th>Output</th>
-</tr>
-<tr>
-  <td valign="top">
-    <table>
-      
-        
-      
-        
-      
-        
-        <tr>
-          <td>given-name</td><td><pre style="margin:0">Maria Alice</pre></td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>family-name</td><td><pre style="margin:0">da Silva</pre></td>
-        </tr>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-        <tr>
-          <td>street</td><td><pre style="margin:0">SCS – Quadra 6</pre></td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>building</td><td><pre style="margin:0">Bloco A</pre></td>
-        </tr>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-        <tr>
-          <td>floor</td><td><pre style="margin:0">4</pre></td>
-        </tr>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-        <tr>
-          <td>locality1</td><td><pre style="margin:0">Brasília</pre></td>
-        </tr>
-        
-      
-        
-      
-        
-        <tr>
-          <td>admin-area</td><td><pre style="margin:0">DF</pre></td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>postal-code</td><td><pre style="margin:0">70297-400</pre></td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>country</td><td><pre style="margin:0">BR</pre></td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>country-name</td><td><pre style="margin:0">Brasil</pre></td>
-        </tr>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </table>
-  </td>
-  <td valign="top">
-    
-      Output for "full-address":<br>
-      <pre class="formatting_example_textbox">Maria Alice da Silva
-SCS – Quadra 6, Bloco A
-Andar 4
-Brasília - DF
-70297-400
-Brasil</pre>
-      
-      
-    
-  </td>
-</tr>
-<tr>
-  <td span="2">
-    &nbsp;
-  </td>
-</tr>
-
-      
-    </table>
   </div>
 </div>
       </div>

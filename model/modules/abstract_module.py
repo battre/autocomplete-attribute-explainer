@@ -52,6 +52,9 @@ class AbstractModule(ABC):
                          renderer: Renderer) -> Optional[str]:
     return None
 
+  def render_after_token_index(self, country: str, renderer: Renderer) -> Optional[str]:
+    return None
+
   def render_token_details(self, country: str, token_id: str,
                            renderer: Renderer) -> Optional[str]:
     return None
