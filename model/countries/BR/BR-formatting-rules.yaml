@@ -91,3 +91,27 @@ examples:
         Rio de Janeiro - RJ
         20230-153
         Brasil
+
+- id: full-address-in-brasilia
+  attributes:
+    given-name: Maria Alice
+    family-name: da Silva
+    street: SCS – Quadra 6
+    building: Bloco A
+    floor: 4
+    locality1: Brasília
+    admin-area: DF
+    postal-code: 70297-400
+    country: BR
+    country-name: Brasil
+
+  output:
+    full-address:
+      show: true
+      text: |
+        Maria Alice da Silva
+        SCS – Quadra 6, Bloco A
+        Andar 4
+        Brasília - DF
+        70297-400
+        Brasil
