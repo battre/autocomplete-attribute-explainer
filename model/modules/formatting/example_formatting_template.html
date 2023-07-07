@@ -1,5 +1,10 @@
 {% macro RenderExample(example) %}
 <tr>
+  <td colspan="2">
+    <b>{{example.id}}</b>: {{example.comment}}
+  </td>
+</tr>
+<tr>
   <th>Input</th>
   <th>Output</th>
 </tr>
@@ -40,6 +45,11 @@
         </p>
       {% endif %}
     {% endfor %}
+  </td>
+</tr>
+<tr>
+  <td span="2">
+    &nbsp;
   </td>
 </tr>
 {% endmacro %}

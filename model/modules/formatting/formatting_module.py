@@ -37,6 +37,7 @@ class FormattingModule(AbstractModule):
         formatting_rule,
         schema.Optional("examples"): [{
             "id": str,
+            schema.Optional("comment"): str,
             schema.Optional("attributes"): {
                 str: schema.Optional(schema.Or(str, int))
             },
@@ -407,6 +408,7 @@ class FormattingModule(AbstractModule):
 
       collected_details.append({
           'id': example['id'],
+          'comment': example.get('comment'),
           'data': data,
           'results': results
       })

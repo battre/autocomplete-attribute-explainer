@@ -58,6 +58,9 @@ formatting-rules:
 
 examples:
 - id: full-address
+  comment: |
+    This is an example of a full address in Brazil specified by the most
+    granular tokens.
   attributes:
     given-name: Maria Alice
     family-name: da Silva
@@ -93,6 +96,9 @@ examples:
         Brasil
 
 - id: full-address-with-inner-nodes
+  comment: |
+    This example illustrates how specifying an explicit value for
+    address-overflow trumps the leaf node values of unit-type, unit-name, etc.
   attributes:
     given-name: Maria Alice
     family-name: da Silva
@@ -131,6 +137,9 @@ examples:
         Brasil
 
 - id: full-address-in-brasilia
+  comment: |
+    This example illustrates how an address in Brasília can be expressed, which
+    uses a different addressing system.
   attributes:
     given-name: Maria Alice
     family-name: da Silva
