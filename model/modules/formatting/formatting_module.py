@@ -362,7 +362,8 @@ class FormattingModule(AbstractModule):
         while j < len(inputs) and 'suffix' in inputs[j]:
           suffix = inputs[j]['suffix']
           j += 1
-        result += separator + prefix + value + suffix
+        if value:
+          result += separator + prefix + value + suffix
       elif 'separator' in input or 'prefix' in input or 'suffix' in input:
         # These will be handled by the token if the token exists
         pass
