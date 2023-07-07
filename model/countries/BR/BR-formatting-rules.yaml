@@ -4,10 +4,12 @@ formatting-rules:
   - separator: "\n"
   - street-address-alternative-1
   - separator: "\n"
-  - locality # TODO: This is incorrect the order should be: locality2\npostal-code locality1
+  - locality2
+  - separator: "\n"
+  - postal-code
+  - locality1
   - separator: ", "
   - admin-area
-  - postal-code
   - separator: "\n"
   - country-name
   - skip: country  # redundant with country-name
