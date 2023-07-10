@@ -1,0 +1,97 @@
+formatting-rules:
+  full-address:
+  - name
+  - separator: "\n"
+  - street-address-alternative-1
+  - separator: "\n"
+  # {neighborhood}
+  - locality2
+  - separator: "\n"
+  # {post-code} {city}, {state}
+  - postal-code
+  - locality1
+  - separator: ", "
+  - admin-area
+  - separator: "\n"
+  # {country}
+  - country-name
+  - skip: country  # redundant with country-name
+  - skip: street-address  # redundant with street-address-alternative-1
+
+  street-location:
+  - reference: street_first_street_location
+
+  street-address-alternative-1:
+  - street-location
+  - separator: ", "
+  - in-building-location
+  - separator: "\n"
+  - address-overflow
+
+  # Apartamento 5A, Piso 10
+  in-building-location:
+  - unit
+  - separator: ", "
+  - prefix: "Piso "
+  - floor
+
+  address-overflow:
+  - organization
+  - separator: "\n"
+  - landmark-and-cross-streets
+  - separator: "\n"
+  - delivery-instructions
+
+  landmark-and-cross-streets:
+  - prefix: "Entre Calles "
+  - cross-streets
+  - separator: "\n"
+  - landmark
+
+  cross-streets:
+  - cross-street1
+  - separator: " y "
+  - cross-street2
+
+examples:
+- id: full-address
+  comment: |
+    This is an example of a full address in Mexico specified by the most
+    granular tokens.
+  attributes:
+    given-name: Pablo
+    family-name-first: Ruiz
+    family-name-conjunction: y
+    family-name-second: Picasso
+    street: Avenida Álvaro Obregón
+    building: 1234
+    floor: 10
+    unit-type: Apartamento
+    unit-name: 5A
+    landmark: Cerca del Parque España
+    cross-street1: Tonalá
+    cross-street2: Monterrey
+    organization: Club de Autocompletadores
+    locality1: Ciudad de México
+    locality2: Roma Nte.
+    admin-area: CDMX
+    postal-code: "06140"
+    country: MX
+    country-name: Mexico
+
+  output:
+    name:
+      show: false
+      text: Pablo Ruiz y Picasso
+
+    full-address:
+      show: true
+      text: |
+        Pablo Ruiz y Picasso
+        Avenida Álvaro Obregón 1234, Apartamento 5A, Piso 10
+        Club de Autocompletadores
+        Entre Calles Tonalá y Monterrey
+        Cerca del Parque España
+        Roma Nte.
+        06140 Ciudad de México, CDMX
+        Mexico
