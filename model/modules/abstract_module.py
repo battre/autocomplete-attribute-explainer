@@ -61,3 +61,6 @@ class AbstractModule(ABC):
 
   def render_epilogue(self, country: str, renderer: Renderer) -> Optional[str]:
     return None
+
+  def post_processing(self, renderer: Renderer):
+    return None

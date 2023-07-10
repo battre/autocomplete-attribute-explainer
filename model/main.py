@@ -116,3 +116,6 @@ for country in countries:
   content += epilogue
 
   renderer.render_country(country, css, content, javascript)
+
+for module in modules:
+  module.post_processing(renderer)
