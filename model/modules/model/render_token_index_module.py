@@ -8,6 +8,7 @@ from modules.model.model import AtomicOrCompoundToken
 
 
 class RenderTokenIndexModule(AbstractModule):
+
   def css(self) -> Optional[str]:
     return """
     <style>

@@ -4,9 +4,10 @@ from pathlib import Path
 
 
 class AbstractVendorExtension(ABC):
+
   @abstractmethod
-  def modify_modules_list(self, modules: list[AbstractModule]
-                          ) -> list[AbstractModule]:
+  def modify_modules_list(
+      self, modules: list[AbstractModule]) -> list[AbstractModule]:
     pass
 
   @abstractmethod

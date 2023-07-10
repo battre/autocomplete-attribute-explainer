@@ -90,7 +90,8 @@ for country in countries:
 
   after_token_index = ""
   for module in modules:
-    if new_after_token_index := module.render_after_token_index(country, renderer):
+    if new_after_token_index := module.render_after_token_index(
+        country, renderer):
       after_token_index += new_after_token_index
   content += after_token_index
 

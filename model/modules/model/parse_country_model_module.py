@@ -11,6 +11,7 @@ from renderer import Renderer
 
 
 class ParseCountryModelModule(AbstractModule):
+
   def schema(self):
     return Schema({
         schema.Optional("cut-off-tokens"): [str],

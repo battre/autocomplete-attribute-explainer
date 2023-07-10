@@ -10,6 +10,7 @@ from modules.model.model import Model, Translation
 
 
 class ParseDescriptionsModelModule(AbstractModule):
+
   def schema(self):
     return Schema({
         schema.Optional("short-descriptions"): {
