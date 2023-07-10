@@ -334,6 +334,7 @@ class FormattingModule(AbstractModule):
     inputs = formatting_rules.get(token_id)
     if not inputs:
       errors.append(f"Could not find a rule for {token_id}")
+      return ""
 
     while len(inputs) == 1 and 'reference' in inputs[0]:
       rule = named_formatting_rules.get(inputs[0]['reference'], None)
@@ -347,11 +348,7 @@ class FormattingModule(AbstractModule):
     for i in range(len(inputs)):
       input = inputs[i]
       if 'token' in input:
-        # The default separator is a whitespace but it's not rendered at the
-        # beginning of a line.
         separator = ' '
-        if len(result) == 0 or result[-1] == '\n':
-          separator = ''
         prefix = ''
         suffix = ''
         # Detect separator, prefix and suffix specifications
@@ -368,6 +365,9 @@ class FormattingModule(AbstractModule):
         while j < len(inputs) and 'suffix' in inputs[j]:
           suffix = inputs[j]['suffix']
           j += 1
+        # The separator is not rendered at the beginning of a line.
+        if len(result) == 0 or result[-1] == '\n':
+          separator = ''
         if value:
           result += separator + prefix + value + suffix
       elif 'separator' in input or 'prefix' in input or 'suffix' in input:
