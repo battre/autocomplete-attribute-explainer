@@ -11,6 +11,7 @@ from modules.model.model import AtomicOrCompoundToken, AtomicToken, CompoundToke
 
 
 class ParseGlobalModelModule(AbstractModule):
+
   def schema(self):
     return Schema({
         # Recursive structure of concepts.

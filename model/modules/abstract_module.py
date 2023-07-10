@@ -7,6 +7,7 @@ from renderer import Renderer
 
 
 class AbstractModule(ABC):
+
   def name(self) -> str:
     """Returns the name of the """
     return self.__class__.__name__
@@ -52,7 +53,8 @@ class AbstractModule(ABC):
                          renderer: Renderer) -> Optional[str]:
     return None
 
-  def render_after_token_index(self, country: str, renderer: Renderer) -> Optional[str]:
+  def render_after_token_index(self, country: str,
+                               renderer: Renderer) -> Optional[str]:
     return None
 
   def render_token_details(self, country: str, token_id: str,

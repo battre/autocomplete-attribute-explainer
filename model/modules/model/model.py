@@ -133,8 +133,8 @@ class Model:
   def pre_order_descend_only_once(self) -> Iterator[AtomicOrCompoundToken]:
     descended = set()
 
-    def recursion(node: AtomicOrCompoundToken
-                  ) -> Iterator[AtomicOrCompoundToken]:
+    def recursion(
+        node: AtomicOrCompoundToken) -> Iterator[AtomicOrCompoundToken]:
       yield node
       if not node.is_atomic_token() and node.id not in descended:
         descended.add(node.id)

@@ -21,6 +21,7 @@ concepts:
 
 
 class OpenMock:
+
   def __init__(self):
     self.read = self
     self.formatting_file_content = ""
@@ -30,6 +31,7 @@ class OpenMock:
 
 
 class TestFormattingModule(unittest.TestCase):
+
   def setUp(self):
     self.renderer = Renderer()
 

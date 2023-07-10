@@ -11,6 +11,7 @@ import os
 
 
 class MetadataModule(AbstractModule):
+
   def schema(self):
     return Schema({
         # The country name as a two letter code
