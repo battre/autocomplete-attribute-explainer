@@ -23,7 +23,7 @@ class AbstractModule(ABC):
     yaml = YAML(typ='safe').load(open(file, "rb").read())
 
     schema = self.schema()
-    if schema:
+    if schema and yaml:
       try:
         schema.validate(yaml)
       except SchemaError as se:

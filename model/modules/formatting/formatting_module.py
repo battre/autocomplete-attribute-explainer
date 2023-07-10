@@ -99,7 +99,7 @@ class FormattingModule(AbstractModule):
     country = match.groupdict()['country']
     renderer.add_country(country)
 
-    yaml = self.read_yaml(path)
+    yaml = self.read_yaml(path) or {}
 
     named_formatting_rules = yaml.get('named-formatting-rules', {})
     formatting_rules = yaml.get('formatting-rules', {})
