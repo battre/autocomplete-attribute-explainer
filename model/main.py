@@ -2,6 +2,7 @@ import argparse
 from modules.abstract_module import AbstractModule
 from modules.metadata import MetadataModule
 from modules.model import ParseCountryModelModule, ParseGlobalModelModule, RenderTokenIndexModule, ParseDescriptionsModelModule, RenderTokenChildrenModule
+from modules.parsing import ParsingModule
 from modules.formatting import FormattingModule
 from modules.graphs import GraphsModule
 from abstract_vendor_extension import AbstractVendorExtension
@@ -13,6 +14,7 @@ modules: list[AbstractModule] = [
     ParseGlobalModelModule(),
     ParseCountryModelModule(),
     ParseDescriptionsModelModule(),
+    ParsingModule(),
     RenderTokenIndexModule(),
     RenderTokenChildrenModule(),
     FormattingModule(),

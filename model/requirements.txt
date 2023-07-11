@@ -1,2 +1,3 @@
 schema
 jinja2
+StrEnum
