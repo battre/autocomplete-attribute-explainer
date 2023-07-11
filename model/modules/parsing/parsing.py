@@ -1,8 +1,9 @@
 import re
 from dataclasses import dataclass, field
-from typing import Any, Dict, List, Union, Optional, Iterator, Set
+from typing import Dict, List, Union
 # using strenum for backwards compatibility
 from strenum import StrEnum
+from modules.model.model import Model
 
 ### The following are low-level tools to create simple regular expressions.
 
@@ -65,6 +66,9 @@ class RegexFragment:
   def to_regex(self, engine: "ParsingEngine") -> str:
     return self.value
 
+  def validate(self, engine: "ParsingEngine", model: Model, errors: List[str]):
+    pass
+
 
 @dataclass
 class RegexReference:
@@ -82,6 +86,10 @@ class RegexReference:
 
   def to_regex(self, engine: "ParsingEngine") -> str:
     return engine.regexes[self.name].to_regex(engine)
+
+  def validate(self, engine: "ParsingEngine", model: Model, errors: List[str]):
+    if self.name not in engine.regexes:
+      errors.append(f"Undefined reference {self.name}")
 
 
 """A part of a compound regex."""
@@ -117,6 +125,9 @@ class RegexConcat:
       return "(?:" + result + ")"
     return result
 
+  def validate(self, engine: "ParsingEngine", model: Model, errors: List[str]):
+    pass
+
 
 ### Captures components: higher-level, more powerful regex
 
@@ -133,6 +144,11 @@ class CaptureReference:
       return engine.capture_patterns_constants[self.name].to_regex(engine)
 
     return engine.regexes[self.name].to_regex(engine)
+
+  def validate(self, engine: "ParsingEngine", model: Model, errors: List[str]):
+    if (self.name not in engine.regexes
+        and self.name not in engine.capture_patterns_constants):
+      errors.append(f"Undefined reference {self.name}")
 
 
 class MatchQuantifier(StrEnum):
@@ -166,6 +182,14 @@ class CaptureOptions:
   # Indicates if the group is required, optional or even lazy optional.
   quantifier: MatchQuantifier = MatchQuantifier.MATCH_REQUIRED
 
+  def validate(self, engine: "ParsingEngine", model: Model, errors: List[str]):
+    if not self.separator:
+      errors.append("CaptureOptions misses a separator")
+    else:
+      self.separator.validate(engine, model, errors)
+    if not self.quantifier:
+      errors.append("CaptureOptions misses a quantifier")
+
 
 @dataclass
 class NoCapturePattern:
@@ -191,6 +215,14 @@ class NoCapturePattern:
     quantifier = MatchQuantifier.to_regex_suffix(self.options.quantifier)
     return f"(?:{pattern_regex}(?:{separator})+){quantifier}"
 
+  def validate(self, engine: "ParsingEngine", model: Model, errors: List[str]):
+    if not self.pattern:
+      self.errors.append("Missing a pattern")
+    if not self.options:
+      self.errors.append("Missing options")
+    else:
+      self.options.validate(engine, model, errors)
+
 
 @dataclass
 class CaptureTypeWithPattern:
@@ -212,6 +244,18 @@ class CaptureTypeWithPattern:
     return f"(?i:{prefix}(?P<{output}>{pattern_regex}){suffix}" + \
            f"(?:{separator})+){quantifier}"
 
+  def validate(self, engine: "ParsingEngine", model: Model, errors: List[str]):
+    if not self.output:
+      errors.append("Invalid output")
+    if self.output not in model.concepts:
+      errors.append("Undefined output type '{self.output}'")
+    for part in self.parts:
+      part.validate(engine, model, errors)
+    if not self.options:
+      self.errors.append("Missing options")
+    else:
+      self.options.validate(engine, model, errors)
+
 
 @dataclass
 class CaptureTypeWithPatternCascade:
@@ -224,6 +268,15 @@ class CaptureTypeWithPatternCascade:
   def to_regex_list(self, engine: "ParsingEngine") -> str:
     return [p.to_regex(engine) for p in self.patterns]
 
+  def validate(self, engine: "ParsingEngine", model: Model, errors: List[str]):
+    if not self.output:
+      errors.append("Invalid output")
+    if self.output not in model.concepts:
+      errors.append("Undefined output type '{self.output}'")
+    for pattern in self.patterns:
+      pattern.validate(engine, model, errors)
+      if pattern.output != self.output:
+        errors.append(f"Mismatching outputs: {pattern.output} vs {self.output}")
 
 @dataclass
 class ParsingEngine:
@@ -233,3 +286,14 @@ class ParsingEngine:
   capture_patterns: Dict[str, Union[CaptureTypeWithPattern,
                                     CaptureTypeWithPatternCascade]] = field(
                                         default_factory=dict)
+
+  def validate(self, model: Model):
+    def _validate(name, container):
+      for key, value in container.items():
+        errors = []
+        value.validate(self, model, errors)
+        if errors:
+          print(f"Error(s) in {name}[{key}]: {errors}")
+    _validate("regexes", self.regexes)
+    _validate("capture_patterns_constants", self.capture_patterns_constants)
+    _validate("capture_patterns", self.capture_patterns)

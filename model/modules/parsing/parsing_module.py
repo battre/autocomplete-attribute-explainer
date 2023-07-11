@@ -211,6 +211,9 @@ class ParsingModule(AbstractModule):
     self.import_capture_pattern_constants(yaml, engine)
     self.import_capture_patterns(yaml, engine)
 
+    model = renderer.get_model(country)
+    engine.validate(model)
+
   # def render_preamble(self, country: str, renderer: Renderer) -> Optional[str]:
   #   env = Environment(extensions=['jinja2.ext.do'],
   #                     loader=FileSystemLoader(
