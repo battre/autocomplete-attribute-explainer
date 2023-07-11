@@ -1,7 +1,7 @@
 from renderer import Renderer
 from modules.abstract_module import AbstractModule
 from pathlib import Path
-from typing import Any, Optional, Dict
+from typing import Any, Optional, Dict, Union
 from schema import Schema
 import schema
 import re
@@ -60,17 +60,20 @@ class ParsingModule(AbstractModule):
         }
     }
     capture_type_with_pattern['capture_type_with_pattern']['parts'] = [
-        schema.Or(capture_reference, no_capture_pattern,
+        schema.Or(regex_fragment, regex_reference, regex_concat,
+                  capture_reference, no_capture_pattern,
                   capture_type_with_pattern)
     ]
 
     capture_type_with_pattern_cascade = {
-        'output':
-        str,  # type name, e.g. 'given-name'
-        'patterns': [
-            schema.Or(capture_reference, no_capture_pattern,
-                      capture_type_with_pattern)
-        ]
+        'capture_type_with_pattern_cascade': {
+            'output':
+            str,  # type name, e.g. 'given-name'
+            'patterns': [
+                # Reference needs to point to a capture_type_with_pattern
+                schema.Or(capture_reference, capture_type_with_pattern)
+            ]
+        }
     }
 
     return Schema({
@@ -128,9 +131,14 @@ class ParsingModule(AbstractModule):
     if 'separator' in yaml:
       pattern = self.parse_regex_component(yaml['separator'])
       kwargs['separator'] = pattern
-    return CaptureOptions(*kwargs)
+    return CaptureOptions(**kwargs)
 
-  def parse_capture_pattern_constant(self, yaml) -> CaptureComponent:
+  def parse_capture_pattern_constant(
+      self, yaml) -> Union[CaptureComponent, RegexComponent]:
+    if ('regex_fragment' in yaml or 'regex_reference' in yaml
+        or 'regex_concat' in yaml):
+      return self.parse_regex_component(yaml)
+
     if 'capture_reference' in yaml:
       return CaptureReference(yaml['capture_reference'])
 
@@ -144,7 +152,9 @@ class ParsingModule(AbstractModule):
       yaml = yaml['capture_type_with_pattern']
       output = yaml['output']
       options = self.parse_capture_options(yaml.get('options', {}))
-      parts = [self.parse_capture_pattern(part) for part in yaml['parts']]
+      parts = [
+          self.parse_capture_pattern_constant(part) for part in yaml['parts']
+      ]
       return CaptureTypeWithPattern(output=output, parts=parts, options=options)
 
     assert False, f"Invalid component definition {yaml}"
@@ -154,17 +164,21 @@ class ParsingModule(AbstractModule):
       engine.capture_patterns_constants[
           key] = self.parse_capture_pattern_constant(definition)
 
-  def parse_capture_pattern(self, yaml) -> CaptureComponent:
+  def parse_capture_pattern(self, yaml) -> RegexComponent:
     if 'capture_reference' in yaml:
       return CaptureReference(yaml['capture_reference'])
 
     if 'capture_type_with_pattern' in yaml:
+      yaml = yaml['capture_type_with_pattern']
       output = yaml['output']
       options = self.parse_capture_options(yaml.get('options', {}))
-      parts = [self.parse_capture_pattern(part) for part in yaml['parts']]
+      parts = [
+          self.parse_capture_pattern_constant(part) for part in yaml['parts']
+      ]
       return CaptureTypeWithPattern(output=output, parts=parts, options=options)
 
     if 'capture_type_with_pattern_cascade' in yaml:
+      yaml = yaml['capture_type_with_pattern_cascade']
       output = yaml['output']
       patterns = [
           self.parse_capture_pattern_constant(pattern)
@@ -195,6 +209,7 @@ class ParsingModule(AbstractModule):
     engine = renderer.country_data[country]["ParsingEngine"]
     self.import_regex_constants(yaml, engine)
     self.import_capture_pattern_constants(yaml, engine)
+    self.import_capture_patterns(yaml, engine)
 
   # def render_preamble(self, country: str, renderer: Renderer) -> Optional[str]:
   #   env = Environment(extensions=['jinja2.ext.do'],

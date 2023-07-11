@@ -128,6 +128,12 @@ CaptureComponent = Union["NoCapturePattern", "CaptureTypeWithPattern",
 class CaptureReference:
   name: str
 
+  def to_regex(self, engine: "ParsingEngine") -> str:
+    if self.name in engine.capture_patterns_constants:
+      return engine.capture_patterns_constants[self.name].to_regex(engine)
+
+    return engine.regexes[self.name].to_regex(engine)
+
 
 class MatchQuantifier(StrEnum):
   # The capture group is required.
@@ -137,6 +143,16 @@ class MatchQuantifier(StrEnum):
   # The capture group is lazy optional meaning that it is avoided if an overall
   # match is possible.
   MATCH_LAZY_OPTIONAL = "MATCH_LAZY_OPTIONAL"
+
+  def to_regex_suffix(self) -> str:
+    if (self == MatchQuantifier.MATCH_REQUIRED):
+      return ""
+    elif (self == MatchQuantifier.MATCH_OPTIONAL):
+      return "?"
+    elif (self == MatchQuantifier.MATCH_LAZY_OPTIONAL):
+      return "??"
+    else:
+      assert (False)
 
 
 @dataclass
@@ -169,14 +185,32 @@ class NoCapturePattern:
   pattern: RegexComponent
   options: CaptureOptions
 
+  def to_regex(self, engine: "ParsingEngine") -> str:
+    pattern_regex = self.pattern.to_regex(engine)
+    separator = self.options.separator.to_regex(engine)
+    quantifier = MatchQuantifier.to_regex_suffix(self.options.quantifier)
+    return f"(?:{pattern_regex}(?:{separator})+){quantifier}"
+
 
 @dataclass
 class CaptureTypeWithPattern:
   """A capturing regex pattern"""
   output: str  # Field-type e.g. given-name
   parts: List[Union[CaptureReference, NoCapturePattern,
-                    "CaptureTypeWithPattern"]]
+                    "CaptureTypeWithPattern", RegexFragment, RegexReference,
+                    RegexConcat]]
   options: CaptureOptions
+
+  def to_regex(self, engine: "ParsingEngine") -> str:
+    output = self.output
+    pattern_regex = "".join(
+        [pattern.to_regex(engine) for pattern in self.parts])
+    separator = self.options.separator.to_regex(engine)
+    quantifier = MatchQuantifier.to_regex_suffix(self.options.quantifier)
+    prefix = ""
+    suffix = ""
+    return f"(?i:{prefix}(?P<{output}>{pattern_regex}){suffix}" + \
+           f"(?:{separator})+){quantifier}"
 
 
 @dataclass
@@ -186,6 +220,9 @@ class CaptureTypeWithPatternCascade:
   # all patterns need to generate this FieldType and share the same `out` value.
   output: str
   patterns: List[CaptureTypeWithPattern]
+
+  def to_regex_list(self, engine: "ParsingEngine") -> str:
+    return [p.to_regex(engine) for p in self.patterns]
 
 
 @dataclass

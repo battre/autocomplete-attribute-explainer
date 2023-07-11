@@ -143,7 +143,63 @@ class TestFormattingModule(unittest.TestCase):
                 - capture_reference: kNoCapturePattern
               # options remain empty and should be default options
         """))
-    # TODO: verify
+
+    result = self.parsing_engine.capture_patterns_constants.get('kReference')
+    self.assertIsNotNone(result)
+    self.assertEqual(result.to_regex(self.parsing_engine), "ab")
+
+    result = self.parsing_engine.capture_patterns_constants.get(
+        'kNoCapturePattern')
+    self.assertIsNotNone(result)
+    self.assertEqual(result.to_regex(self.parsing_engine), "(?:ab(?:sep)+)?")
+
+    result = self.parsing_engine.capture_patterns_constants.get(
+        'kCaptureTypeWithPattern')
+    self.assertIsNotNone(result)
+    self.assertEqual(result.to_regex(self.parsing_engine),
+                     "(?i:(?P<B>ab(?:ab(?:sep)+)?)(?:,|\s+|$)+)")
+
+  def test_parsing_capture_cascade(self):
+    self.setUpModel(dedent(DEFAULT_GLOBAL_MODEL))
+    # Test that a named rule is resolved.
+    self.setUpParsing(
+        dedent("""\
+        regex_constants:
+          kFragment:
+            regex_fragment: ab
+
+        capture_pattnern_constants:
+          kP1:
+            capture_type_with_pattern:
+              output: A
+              parts:
+                - regex_fragment: a.*a
+          kP2:
+            capture_type_with_pattern:
+              output: A
+              parts:
+                - regex_fragment: b.*b
+
+        capture_patterns:
+          kP3:
+            capture_type_with_pattern_cascade:
+              output: A
+              patterns:
+                - capture_reference: kP1
+                - capture_reference: kP2
+                - capture_type_with_pattern:
+                    output: A
+                    parts:
+                      - regex_fragment: c.*c
+        """))
+
+    result = self.parsing_engine.capture_patterns.get('kP3')
+    self.assertIsNotNone(result)
+    self.assertEqual(result.to_regex_list(self.parsing_engine), [
+        '(?i:(?P<A>a.*a)(?:,|\\s+|$)+)',
+        '(?i:(?P<A>b.*b)(?:,|\\s+|$)+)',
+        '(?i:(?P<A>c.*c)(?:,|\\s+|$)+)',
+    ])
 
 
 if __name__ == '__main__':
