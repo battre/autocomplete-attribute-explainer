@@ -278,6 +278,7 @@ class CaptureTypeWithPatternCascade:
       if pattern.output != self.output:
         errors.append(f"Mismatching outputs: {pattern.output} vs {self.output}")
 
+
 @dataclass
 class ParsingEngine:
   regexes: Dict[str, RegexComponent] = field(default_factory=dict)
@@ -288,12 +289,14 @@ class ParsingEngine:
                                         default_factory=dict)
 
   def validate(self, model: Model):
+
     def _validate(name, container):
       for key, value in container.items():
         errors = []
         value.validate(self, model, errors)
         if errors:
           print(f"Error(s) in {name}[{key}]: {errors}")
+
     _validate("regexes", self.regexes)
     _validate("capture_patterns_constants", self.capture_patterns_constants)
     _validate("capture_patterns", self.capture_patterns)
