@@ -473,7 +473,7 @@ test_capture_pattnern_constants:
     given-name: 德明
     family-name: 孫
 
-test_parsing:
+test_capture_patterns:
 - id: Name starting with a last name, followed by a comma and the first and middle name.
   type: name
   input: "Mueller, Hans Peter"

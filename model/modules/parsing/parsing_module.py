@@ -92,7 +92,7 @@ class ParsingModule(AbstractModule):
         }
     }
 
-    test_parsing = {
+    test_capture_patterns = {
         'id': str,
         'type': str,
         'input': str,
@@ -120,7 +120,7 @@ class ParsingModule(AbstractModule):
         },
         schema.Optional("test_capture_pattnern_constants"):
         [test_capture_pattnern_constants],
-        schema.Optional("test_parsing"): [test_parsing],
+        schema.Optional("test_capture_patterns"): [test_capture_patterns],
     })
 
   def parse_regex_component(self, definition: Dict) -> RegexComponent:
@@ -281,8 +281,8 @@ class ParsingModule(AbstractModule):
       self.test_capture_pattnern_constants(
           yaml['test_capture_pattnern_constants'], engine)
 
-    if 'test_parsing' in yaml:
-      self.test_capture_patterns(yaml['test_parsing'], engine)
+    if 'test_capture_patterns' in yaml:
+      self.test_capture_patterns(yaml['test_capture_patterns'], engine)
 
   # def render_preamble(self, country: str, renderer: Renderer) -> Optional[str]:
   #   env = Environment(extensions=['jinja2.ext.do'],
