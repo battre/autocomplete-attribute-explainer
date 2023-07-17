@@ -2,7 +2,7 @@ import unittest
 
 from renderer import Renderer
 from unittest.mock import patch, mock_open
-from modules.model import ParseGlobalModelModule
+from modules.model import ParseGlobalModelModule, ParseCountryModelModule
 from modules.parsing import ParsingModule
 from pathlib import Path
 from textwrap import dedent
@@ -35,19 +35,28 @@ class TestFormattingModule(unittest.TestCase):
   def setUp(self):
     self.renderer = Renderer()
 
-  def setUpModel(self, model_file_content):
+  def setUpCountryModel(self, country, model_file_content):
     with patch("builtins.open", new_callable=OpenMock) as mock:
       mock.file_content = model_file_content
-      ParseGlobalModelModule().observe_file(Path(GLOBAL_MODEL_FILENAME),
-                                            self.renderer)
+      path = Path(f"test/{country}-model.yaml")
+      if country == 'global':
+        ParseGlobalModelModule().observe_file(path, self.renderer)
+      else:
+        ParseCountryModelModule().observe_file(path, self.renderer)
 
-  def setUpParsing(self, file_content):
+  def setUpModel(self, model_file_content):
+    self.setUpCountryModel('global', model_file_content)
+
+  def setUpCountryParsing(self, country, file_content):
     self.parsing = ParsingModule()
     with patch("builtins.open", new_callable=OpenMock) as mock:
       mock.file_content = file_content
-      self.parsing.observe_file(Path(GLOBAL_PARSING_FILENAME), self.renderer)
-      self.parsing_engine = self.renderer.country_data['global'][
-          'ParsingEngine']
+      self.parsing.observe_file(Path(f"test/{country}-parsing-rules.yaml"),
+                                self.renderer)
+      self.parsing_engine = self.renderer.country_data[country]['ParsingEngine']
+
+  def setUpParsing(self, file_content):
+    self.setUpCountryParsing('global', file_content)
 
   def test_new_lines_in_regex_constant(self):
     # Test that a named rule is resolved.
@@ -124,7 +133,7 @@ class TestFormattingModule(unittest.TestCase):
           kFragment:
             regex_fragment: ab
 
-        capture_pattnern_constants:
+        capture_pattern_constants:
           kReference:
             capture_reference: kFragment
           kNoCapturePattern:
@@ -168,7 +177,7 @@ class TestFormattingModule(unittest.TestCase):
           kFragment:
             regex_fragment: ab
 
-        capture_pattnern_constants:
+        capture_pattern_constants:
           kP1:
             capture_type_with_pattern:
               output: A
@@ -200,6 +209,92 @@ class TestFormattingModule(unittest.TestCase):
         '(?i:(?P<A>b.*b)(?:,|\\s+|$)+)',
         '(?i:(?P<A>c.*c)(?:,|\\s+|$)+)',
     ])
+
+  def test_pruning(self):
+    # This is a complex test where a global model is set up which is then
+    # modified by a country model that prunes some of the types used in capture
+    # patterns.
+    self.setUpModel(
+        dedent("""\
+      concepts:
+      - A:
+        - B:
+          - C
+          - D
+        - E:
+          - F
+          - G
+      """))
+    self.setUpCountryModel(
+        "XX",
+        dedent("""\
+      cut-off-children:
+      - B
+      cut-off-tokens:
+      - G
+      """))
+    self.setUpParsing(
+        dedent("""\
+      capture_pattern_constants:
+        kB:
+          capture_type_with_pattern:
+            output: B
+            parts:
+            - capture_type_with_pattern:
+                output: C
+                parts:
+                - regex_fragment: C
+                options:
+                  separator: {regex_fragment: "_"}
+            - capture_type_with_pattern:
+                output: D
+                parts:
+                - regex_fragment: D
+                options:
+                  # TODO: This is not ideal: Both B and D end with a separator
+                  # and we don't dedupe.
+                  separator: {regex_fragment: ""}
+        kE:
+          capture_type_with_pattern:
+            output: E
+            parts:
+            - capture_type_with_pattern:
+                output: F
+                parts:
+                - regex_fragment: F
+                options:
+                  separator: {regex_fragment: "_"}
+            - capture_type_with_pattern:
+                output: G
+                parts:
+                - regex_fragment: G
+        kA:
+          capture_type_with_pattern:
+            output: A
+            parts:
+            - capture_reference: kB
+            - capture_reference: kE
+      capture_patterns:
+        A:
+          capture_reference: kA
+      """))
+    result = self.parsing_engine.capture_patterns['A'].evaluate(
+        "C_D F_G", self.parsing_engine)
+    self.assertEqual(
+        {
+            'A': 'C_D F_G',
+            'B': 'C_D',
+            'C': 'C',
+            'D': 'D',
+            'E': 'F_G',
+            'F': 'F',
+            'G': 'G'
+        }, result)
+
+    self.setUpCountryParsing("XX", "")
+    result = self.parsing_engine.capture_patterns['A'].evaluate(
+        "C_D F_G", self.parsing_engine)
+    self.assertEqual({'A': 'C_D F_G', 'B': 'C_D', 'E': 'F_G', 'F': 'F'}, result)
 
 
 if __name__ == '__main__':

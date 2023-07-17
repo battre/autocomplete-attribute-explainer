@@ -6,7 +6,7 @@ import re
 from renderer import Renderer
 from schema import Schema
 import schema
-from typing import Any
+from typing import Any, Set
 from renderer import Renderer
 
 
@@ -24,7 +24,7 @@ class ParseCountryModelModule(AbstractModule):
         },
     })
 
-  def _apply_cut_offs(self, model: Model, yaml: Any) -> None:
+  def _apply_cut_offs(self, model: Model, yaml: Any) -> Set[str]:
     # Tokens that should be removed from the entrie tree:
     cut_off_tokens = set(yaml.get('cut-off-tokens', []))
     # Child tokens that should be removed
@@ -51,6 +51,9 @@ class ParseCountryModelModule(AbstractModule):
 
       if token.id in cut_off_tokens:
         del model.concepts[token_id]
+
+    token_ids_afterwards = [token.id for token in model.pre_order()]
+    return set(token_ids) - set(token_ids_afterwards)
 
   def _add_extra_definitions(self, model: Model, yaml: Any) -> None:
     for id, children_ids in yaml.get('extra-definitions', {}).items():
@@ -79,7 +82,7 @@ class ParseCountryModelModule(AbstractModule):
 
     yaml = self.read_yaml(path)
 
-    self._apply_cut_offs(model, yaml)
+    all_removed_tokens = self._apply_cut_offs(model, yaml)
     self._add_extra_definitions(model, yaml)
     self._apply_append_after(model, yaml)
 
@@ -88,5 +91,6 @@ class ParseCountryModelModule(AbstractModule):
         yaml.get('cut-off-tokens', []))
     renderer.country_data[country]['cut-off-children'] = set(
         yaml.get('cut-off-children', []))
+    renderer.country_data[country]['all-removed-tokens'] = all_removed_tokens
 
     renderer.set_model(country, model)

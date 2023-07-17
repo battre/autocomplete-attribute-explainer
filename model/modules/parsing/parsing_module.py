@@ -91,9 +91,9 @@ class ParsingModule(AbstractModule):
                       capture_type_with_pattern_cascade)
         ]
 
-    test_capture_pattnern_constants = {
+    test_capture_pattern_constants = {
         'id': str,
-        'capture_pattnern_constant': str,
+        'capture_pattern_constant': str,
         'input': str,
         'output': {
             str: str
@@ -114,7 +114,7 @@ class ParsingModule(AbstractModule):
             # Constant name -> regular expression
             str: regex_component
         },
-        schema.Optional("capture_pattnern_constants"): {
+        schema.Optional("capture_pattern_constants"): {
             # Constant name -> capture pattern expression
             str:
             schema.Or(capture_reference, no_capture_pattern,
@@ -126,8 +126,8 @@ class ParsingModule(AbstractModule):
             schema.Or(capture_reference, capture_type_with_pattern,
                       capture_type_with_pattern_cascade)
         },
-        schema.Optional("test_capture_pattnern_constants"):
-        [test_capture_pattnern_constants],
+        schema.Optional("test_capture_pattern_constants"):
+        [test_capture_pattern_constants],
         schema.Optional("test_capture_patterns"): [test_capture_patterns],
     })
 
@@ -198,7 +198,7 @@ class ParsingModule(AbstractModule):
     assert False, f"Invalid component definition {yaml}"
 
   def import_capture_pattern_constants(self, yaml, engine: ParsingEngine):
-    for key, definition in yaml.get('capture_pattnern_constants', {}).items():
+    for key, definition in yaml.get('capture_pattern_constants', {}).items():
       engine.capture_patterns_constants[
           key] = self.parse_capture_pattern_constant(definition)
 
@@ -234,15 +234,15 @@ class ParsingModule(AbstractModule):
     for key, definition in yaml.get('capture_patterns', {}).items():
       engine.capture_patterns[key] = self.parse_capture_pattern(definition)
 
-  def test_capture_pattnern_constants(self, yaml, engine: ParsingEngine):
+  def test_capture_pattern_constants(self, yaml, engine: ParsingEngine):
     for test in yaml:
       if not test[
-          'capture_pattnern_constant'] in engine.capture_patterns_constants:
-        print(f"Failed test '{test.id}': Invalid capture_pattnern_constant: " +
-              test['capture_pattnern_constant'])
+          'capture_pattern_constant'] in engine.capture_patterns_constants:
+        print(f"Failed test '{test.id}': Invalid capture_pattern_constant: " +
+              test['capture_pattern_constant'])
         return
       pattern = engine.capture_patterns_constants[
-          test['capture_pattnern_constant']]
+          test['capture_pattern_constant']]
       result = pattern.evaluate(test['input'], engine)
       if test['output'] != result:
         print(f"Test failed: {test}")
@@ -272,6 +272,8 @@ class ParsingModule(AbstractModule):
 
     country = match.groupdict()['country']
     yaml = self.read_yaml(path)
+    if not yaml:
+      yaml = {}
 
     renderer.country_data[country][self.name()] = yaml
     renderer.add_country(country)
@@ -287,13 +289,17 @@ class ParsingModule(AbstractModule):
     self.import_capture_pattern_constants(yaml, engine)
     self.import_capture_patterns(yaml, engine)
 
+    all_removed_tokens = renderer.country_data[country].get(
+        'all-removed-tokens', {})
+    engine.prune_output_types(all_removed_tokens)
+
     model = renderer.get_model(country)
     if not engine.validate(model):
       return
 
-    if 'test_capture_pattnern_constants' in yaml:
+    if 'test_capture_pattern_constants' in yaml:
       self.test_capture_pattnern_constants(
-          yaml['test_capture_pattnern_constants'], engine)
+          yaml['test_capture_pattern_constants'], engine)
 
     if 'test_capture_patterns' in yaml:
       self.test_capture_patterns(yaml['test_capture_patterns'], engine)

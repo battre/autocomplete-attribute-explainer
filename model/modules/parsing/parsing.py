@@ -170,6 +170,9 @@ class CaptureReference:
         what = engine.capture_patterns_constants[what.name]
     return what
 
+  def evaluate(self, data, engine) -> Dict:
+    return self.resolve(engine).evaluate(data, engine)
+
 
 class MatchQuantifier(StrEnum):
   # The capture group is required.
@@ -242,8 +245,6 @@ class CaptureTypeWithPattern:
             f"(?:{separator})+){quantifier}"
 
   def validate(self, engine: "ParsingEngine", model: Model, errors: List[str]):
-    if not self.output:
-      errors.append("Invalid output")
     if self.output and self.output not in model.concepts:
       errors.append(f"Undefined output type '{self.output}'")
     for part in self.parts:
@@ -277,9 +278,7 @@ class CaptureTypeWithPatternCascade:
     return [p.to_regex(engine) for p in self.patterns]
 
   def validate(self, engine: "ParsingEngine", model: Model, errors: List[str]):
-    if not self.output:
-      errors.append("Invalid output")
-    if self.output not in model.concepts:
+    if self.output and self.output not in model.concepts:
       errors.append("Undefined output type '{self.output}'")
     if self.condition:
       self.condition.validate(engine, model, errors)
@@ -336,3 +335,28 @@ class ParsingEngine:
     if not _validate("capture_patterns", self.capture_patterns):
       return False
     return True
+
+  def prune_output_types(self, types_to_prune):
+
+    def _helper(node):
+      if type(node) == CaptureTypeWithPatternCascade:
+        if node.output in types_to_prune:
+          node.output = None
+        for p in node.patterns:
+          _helper(p)
+      if type(node) == CaptureTypeWithPattern:
+        if node.output in types_to_prune:
+          node.output = None
+        for p in node.parts:
+          _helper(p)
+      if type(node) == CaptureReference:
+        if node.name in self.capture_patterns:
+          _helper(self.capture_patterns[node.name])
+
+    for _, p in self.capture_patterns_constants.items():
+      _helper(p)
+    for _, p in self.capture_patterns.items():
+      _helper(p)
+    for t in types_to_prune:
+      if t in self.capture_patterns:
+        del self.capture_patterns[t]
