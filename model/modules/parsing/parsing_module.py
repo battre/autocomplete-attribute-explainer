@@ -47,8 +47,9 @@ class ParsingModule(AbstractModule):
 
     no_capture_pattern = {
         'no_capture_pattern': {
-            'pattern': regex_component,
-            schema.Optional('options'): capture_options
+            # 'parts' are added below due to recursion
+            schema.Optional('options'):
+            capture_options
         }
     }
 
@@ -62,6 +63,12 @@ class ParsingModule(AbstractModule):
         }
     }
     capture_type_with_pattern['capture_type_with_pattern']['parts'] = [
+        schema.Or(regex_fragment, regex_reference, regex_concat,
+                  capture_reference, no_capture_pattern,
+                  capture_type_with_pattern)
+    ]
+
+    no_capture_pattern['no_capture_pattern']['parts'] = [
         schema.Or(regex_fragment, regex_reference, regex_concat,
                   capture_reference, no_capture_pattern,
                   capture_type_with_pattern)
@@ -173,9 +180,11 @@ class ParsingModule(AbstractModule):
 
     if 'no_capture_pattern' in yaml:
       yaml = yaml['no_capture_pattern']
-      pattern = self.parse_regex_component(yaml['pattern'])
+      parts = [
+          self.parse_capture_pattern_constant(part) for part in yaml['parts']
+      ]
       options = self.parse_capture_options(yaml.get('options', {}))
-      return NoCapturePattern(pattern=pattern, options=options)
+      return NoCapturePattern(parts=parts, options=options)
 
     if 'capture_type_with_pattern' in yaml:
       yaml = yaml['capture_type_with_pattern']
@@ -271,9 +280,7 @@ class ParsingModule(AbstractModule):
       renderer.country_data[country]['ParsingEngine'] = ParsingEngine()
     else:
       renderer.country_data[country]['ParsingEngine'] = copy.deepcopy(
-        renderer.country_data['global']['ParsingEngine']
-      )
-
+          renderer.country_data['global']['ParsingEngine'])
 
     engine = renderer.country_data[country]["ParsingEngine"]
     self.import_regex_constants(yaml, engine)

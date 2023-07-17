@@ -129,8 +129,8 @@ class TestFormattingModule(unittest.TestCase):
             capture_reference: kFragment
           kNoCapturePattern:
             no_capture_pattern:
-              pattern:
-                regex_reference: kFragment
+              parts:
+                - regex_reference: kFragment
               options:
                 quantifier: MATCH_OPTIONAL
                 separator:

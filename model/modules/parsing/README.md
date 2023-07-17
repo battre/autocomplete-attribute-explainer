@@ -138,6 +138,7 @@ capture_patterns:
     # See above. Note that the output MUST match the "field_type name" of this
     # capture pattern.
     capture_type_with_pattern:
+      ...
 
     # A sequence of capture patterns. If `condition` matches the current string
     # the `patterns` are matched one after another. The first pattern that

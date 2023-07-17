@@ -219,27 +219,28 @@ class NoCapturePattern:
 
   E.g.
   NoCapturePattern:
-    pattern:
-      - regex_concat:
-          parts:
-          - regex: 'Foo'
-          - regex: '|'
-          - regex_reference: 'kOtherRegex'
+    parts:
+      - regex: 'Foo'
+      - regex: '|'
+      - regex_reference: 'kOtherRegex'
 
   Evaluates to the concatenation of all pattern evaluations.
   """
-  pattern: RegexComponent
+  parts: List[Union[CaptureReference, "NoCapturePattern",
+                    "CaptureTypeWithPattern", RegexFragment, RegexReference,
+                    RegexConcat]]
   options: CaptureOptions
 
   def to_regex(self, engine: "ParsingEngine") -> str:
-    pattern_regex = self.pattern.to_regex(engine)
+    pattern_regex = "".join(
+        [pattern.to_regex(engine) for pattern in self.parts])
     separator = self.options.separator.to_regex(engine)
     quantifier = MatchQuantifier.to_regex_suffix(self.options.quantifier)
     return f"(?:{pattern_regex}(?:{separator})+){quantifier}"
 
   def validate(self, engine: "ParsingEngine", model: Model, errors: List[str]):
-    if not self.pattern:
-      self.errors.append("Missing a pattern")
+    for part in self.parts:
+      part.validate(engine, model, errors)
     if not self.options:
       self.errors.append("Missing options")
     else:

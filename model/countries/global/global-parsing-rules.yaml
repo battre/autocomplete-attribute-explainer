@@ -279,8 +279,8 @@ capture_pattnern_constants:
       parts:
       # Divergence form Chrome:
       # - no_capture_pattern:
-      #     pattern:
-      #       regex_reference: kHonorificPrefixRe
+      #     parts:
+      #       - regex_reference: kHonorificPrefixRe
       #     options:
       #       quantifier: MATCH_OPTIONAL
       - capture_type_with_pattern:
@@ -321,8 +321,8 @@ capture_pattnern_constants:
       parts:
       # Divergence form Chrome:
       # - no_capture_pattern:
-      #     pattern:
-      #       regex_reference: kHonorificPrefixRe
+      #     parts:
+      #       - regex_reference: kHonorificPrefixRe
       #     options:
       #       quantifier: MATCH_OPTIONAL
       - capture_type_with_pattern:
@@ -389,8 +389,8 @@ capture_pattnern_constants:
       parts:
         # Divergence form Chrome:
         # - no_capture_pattern:
-        #     pattern:
-        #       regex_reference: kHonorificPrefixRe
+        #     parts:
+        #       - regex_reference: kHonorificPrefixRe
         #     options:
         #       quantifier: MATCH_OPTIONAL
         - capture_type_with_pattern:
