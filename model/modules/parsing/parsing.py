@@ -1,6 +1,6 @@
-import re
+import re2
 from dataclasses import dataclass, field
-from typing import Dict, List, Union
+from typing import Dict, List, Union, Optional
 # using strenum for backwards compatibility
 from strenum import StrEnum
 from modules.model.model import Model
@@ -67,7 +67,10 @@ class RegexFragment:
     return self.value
 
   def validate(self, engine: "ParsingEngine", model: Model, errors: List[str]):
-    pass
+    try:
+      re2.compile(self.to_regex(engine))
+    except Exception as e:
+      errors.append(e.str())
 
 
 @dataclass
@@ -90,6 +93,12 @@ class RegexReference:
   def validate(self, engine: "ParsingEngine", model: Model, errors: List[str]):
     if self.name not in engine.regexes:
       errors.append(f"Undefined reference {self.name}")
+
+  def resolve(self, engine: "ParsingEngine") -> "RegexComponent":
+    what = self
+    while type(what) == RegexReference:
+      what = engine.regexes[what.name]
+    return what
 
 
 """A part of a compound regex."""
@@ -126,7 +135,10 @@ class RegexConcat:
     return result
 
   def validate(self, engine: "ParsingEngine", model: Model, errors: List[str]):
-    pass
+    try:
+      re2.compile(self.to_regex(engine))
+    except Exception as e:
+      errors.append(e.str())
 
 
 ### Captures components: higher-level, more powerful regex
@@ -149,6 +161,15 @@ class CaptureReference:
     if (self.name not in engine.regexes
         and self.name not in engine.capture_patterns_constants):
       errors.append(f"Undefined reference {self.name}")
+
+  def resolve(self, engine: "ParsingEngine") -> "RegexComponent":
+    what = self
+    while type(what) in (RegexReference, CaptureReference):
+      if type(what) == RegexReference:
+        what = what.resolve(engine)
+      elif type(what) == CaptureReference:
+        what = engine.capture_patterns_constants[what.name]
+    return what
 
 
 class MatchQuantifier(StrEnum):
@@ -234,7 +255,9 @@ class CaptureTypeWithPattern:
   options: CaptureOptions
 
   def to_regex(self, engine: "ParsingEngine") -> str:
-    output = self.output
+    # RE2 does not allow '-' in capture groups, so we replace it with an
+    # underscore and do the inverse in evaluate().
+    output = self.output.replace('-', '_')
     pattern_regex = "".join(
         [pattern.to_regex(engine) for pattern in self.parts])
     separator = self.options.separator.to_regex(engine)
@@ -256,6 +279,16 @@ class CaptureTypeWithPattern:
     else:
       self.options.validate(engine, model, errors)
 
+  def evaluate(self, data, engine) -> Dict:
+    """Evaluates the `CaptureTypeWithPattern` on `data`."""
+    regex = self.to_regex(engine)
+    if regex_result := re2.fullmatch(regex, data):
+      return {
+          k.replace('_', '-'): v
+          for k, v in regex_result.groupdict().items()
+      }
+    return {}
+
 
 @dataclass
 class CaptureTypeWithPatternCascade:
@@ -263,6 +296,7 @@ class CaptureTypeWithPatternCascade:
   # The output of this cascade. This is just for documentation purposes because
   # all patterns need to generate this FieldType and share the same `out` value.
   output: str
+  condition: Optional[RegexComponent]
   patterns: List[CaptureTypeWithPattern]
 
   def to_regex_list(self, engine: "ParsingEngine") -> str:
@@ -273,10 +307,30 @@ class CaptureTypeWithPatternCascade:
       errors.append("Invalid output")
     if self.output not in model.concepts:
       errors.append("Undefined output type '{self.output}'")
+    if self.condition:
+      self.condition.validate(engine, model, errors)
     for pattern in self.patterns:
+      if type(pattern) in (CaptureReference, RegexReference):
+        pattern = pattern.resolve(engine)
       pattern.validate(engine, model, errors)
       if pattern.output != self.output:
-        errors.append(f"Mismatching outputs: {pattern.output} vs {self.output}")
+        errors.append(
+            f"Mismatching outputs: {self.output} vs. {pattern.output}" +
+            f"in {self} vs. {pattern}")
+
+  def evaluate(self, data, engine) -> Dict:
+    # If we have a condition but it's not fulfilled, don't return anything.
+    if self.condition:
+      # Wrap in () to make sure that we have capture something
+      regex = self.condition.to_regex(engine)
+      if not re2.search(regex, data):
+        return {}
+    for p in self.patterns:
+      while type(p) in (RegexReference, CaptureReference):
+        p = p.resolve(engine)
+      if result := p.evaluate(data, engine):
+        return result
+    return {}
 
 
 @dataclass
@@ -288,15 +342,23 @@ class ParsingEngine:
                                     CaptureTypeWithPatternCascade]] = field(
                                         default_factory=dict)
 
-  def validate(self, model: Model):
+  def validate(self, model: Model) -> bool:
+    # Returns true if the rules seem valid.
 
     def _validate(name, container):
       for key, value in container.items():
         errors = []
         value.validate(self, model, errors)
         if errors:
-          print(f"Error(s) in {name}[{key}]: {errors}")
+          print(f"Error(s) in {name}['{key}']: {errors}")
+          return False
+      return True
 
-    _validate("regexes", self.regexes)
-    _validate("capture_patterns_constants", self.capture_patterns_constants)
-    _validate("capture_patterns", self.capture_patterns)
+    if not _validate("regexes", self.regexes):
+      return False
+    if not _validate("capture_patterns_constants",
+                     self.capture_patterns_constants):
+      return False
+    if not _validate("capture_patterns", self.capture_patterns):
+      return False
+    return True

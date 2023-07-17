@@ -4,10 +4,11 @@ from pathlib import Path
 from typing import Any, Optional, Dict, Union
 from schema import Schema
 import schema
-import re
+import re2 as re
 from renderer import Renderer
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 import os
+import pprint
 from .parsing import (RegexFragment, RegexReference, RegexConcat, ParsingEngine,
                       RegexComponent, CaptureOptions, CaptureReference,
                       CaptureComponent, CaptureTypeWithPattern,
@@ -69,11 +70,35 @@ class ParsingModule(AbstractModule):
         'capture_type_with_pattern_cascade': {
             'output':
             str,  # type name, e.g. 'given-name'
-            'patterns': [
-                # Reference needs to point to a capture_type_with_pattern
-                schema.Or(capture_reference, capture_type_with_pattern)
-            ]
+            # Only evaluate the patters if the condition matches.
+            schema.Optional('condition'):
+            regex_component,
+            # 'patters' are added below due to recursion
         }
+    }
+    capture_type_with_pattern_cascade['capture_type_with_pattern_cascade'][
+        'patterns'] = [
+            # Reference needs to point to a capture_type_with_pattern
+            schema.Or(capture_reference, capture_type_with_pattern,
+                      capture_type_with_pattern_cascade)
+        ]
+
+    test_capture_pattnern_constants = {
+        'id': str,
+        'capture_pattnern_constant': str,
+        'input': str,
+        'output': {
+            str: str
+        }
+    }
+
+    test_parsing = {
+        'id': str,
+        'type': str,
+        'input': str,
+        'output': {
+            str: str
+        },
     }
 
     return Schema({
@@ -92,7 +117,10 @@ class ParsingModule(AbstractModule):
             str:
             schema.Or(capture_reference, capture_type_with_pattern,
                       capture_type_with_pattern_cascade)
-        }
+        },
+        schema.Optional("test_capture_pattnern_constants"):
+        [test_capture_pattnern_constants],
+        schema.Optional("test_parsing"): [test_parsing],
     })
 
   def parse_regex_component(self, definition: Dict) -> RegexComponent:
@@ -181,16 +209,50 @@ class ParsingModule(AbstractModule):
       yaml = yaml['capture_type_with_pattern_cascade']
       output = yaml['output']
       patterns = [
-          self.parse_capture_pattern_constant(pattern)
-          for pattern in yaml['patterns']
+          self.parse_capture_pattern(pattern) for pattern in yaml['patterns']
       ]
-      return CaptureTypeWithPatternCascade(output=output, patterns=patterns)
+      condition = None
+      if 'condition' in yaml:
+        condition = self.parse_regex_component(yaml['condition'])
+      return CaptureTypeWithPatternCascade(output=output,
+                                           condition=condition,
+                                           patterns=patterns)
 
     assert False, f"Invalid component definition {yaml}"
 
   def import_capture_patterns(self, yaml, engine: ParsingEngine):
     for key, definition in yaml.get('capture_patterns', {}).items():
       engine.capture_patterns[key] = self.parse_capture_pattern(definition)
+
+  def test_capture_pattnern_constants(self, yaml, engine: ParsingEngine):
+    for test in yaml:
+      if not test[
+          'capture_pattnern_constant'] in engine.capture_patterns_constants:
+        print(f"Failed test '{test.id}': Invalid capture_pattnern_constant: " +
+              test['capture_pattnern_constant'])
+        return
+      pattern = engine.capture_patterns_constants[
+          test['capture_pattnern_constant']]
+      result = pattern.evaluate(test['input'], engine)
+      if test['output'] != result:
+        print(f"Test failed: {test}")
+        print(f"{result} was actual output")
+        print(f"{test['output']} was expected output")
+        break
+
+  def test_capture_patterns(self, yaml, engine: ParsingEngine):
+    for test in yaml:
+      token_type = test['type']
+      pattern = engine.capture_patterns[token_type]
+      result = pattern.evaluate(test['input'], engine)
+      result = {k: v for k, v in result.items() if v}
+      expected = {k: v for k, v in test['output'].items() if v != ""}
+      expected[token_type] = test['input']
+      if expected != result:
+        print(f"Test failed: {test}")
+        print(f"{pprint.saferepr(result)} was actual output")
+        print(f"{pprint.saferepr(expected)} was expected output")
+        break
 
   def observe_file(self, path: Path, renderer: Renderer):
     match = re.fullmatch(r'(?P<country>..|global)-parsing-rules\.yaml',
@@ -212,7 +274,15 @@ class ParsingModule(AbstractModule):
     self.import_capture_patterns(yaml, engine)
 
     model = renderer.get_model(country)
-    engine.validate(model)
+    if not engine.validate(model):
+      return
+
+    if 'test_capture_pattnern_constants' in yaml:
+      self.test_capture_pattnern_constants(
+          yaml['test_capture_pattnern_constants'], engine)
+
+    if 'test_parsing' in yaml:
+      self.test_capture_patterns(yaml['test_parsing'], engine)
 
   # def render_preamble(self, country: str, renderer: Renderer) -> Optional[str]:
   #   env = Environment(extensions=['jinja2.ext.do'],
