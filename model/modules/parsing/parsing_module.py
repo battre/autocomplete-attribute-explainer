@@ -9,6 +9,7 @@ from renderer import Renderer
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 import os
 import pprint
+import copy
 from .parsing import (RegexFragment, RegexReference, RegexConcat, ParsingEngine,
                       RegexComponent, CaptureOptions, CaptureReference,
                       CaptureComponent, CaptureTypeWithPattern,
@@ -266,7 +267,13 @@ class ParsingModule(AbstractModule):
     renderer.country_data[country][self.name()] = yaml
     renderer.add_country(country)
 
-    renderer.country_data[country]["ParsingEngine"] = ParsingEngine()
+    if country == 'global':
+      renderer.country_data[country]['ParsingEngine'] = ParsingEngine()
+    else:
+      renderer.country_data[country]['ParsingEngine'] = copy.deepcopy(
+        renderer.country_data['global']['ParsingEngine']
+      )
+
 
     engine = renderer.country_data[country]["ParsingEngine"]
     self.import_regex_constants(yaml, engine)

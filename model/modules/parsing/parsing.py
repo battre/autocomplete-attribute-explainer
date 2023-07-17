@@ -272,7 +272,7 @@ class CaptureTypeWithPattern:
     if not self.output:
       errors.append("Invalid output")
     if self.output not in model.concepts:
-      errors.append("Undefined output type '{self.output}'")
+      errors.append(f"Undefined output type '{self.output}'")
     for part in self.parts:
       part.validate(engine, model, errors)
     if not self.options:
