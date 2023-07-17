@@ -198,7 +198,8 @@ class CaptureOptions:
   # By default, a group must be either followed by a space-like character (\s)
   # or it must be the last group in the line. The separator is allowed to be
   # empty.
-  separator: Union["RegexFragment", "RegexReference"] = RegexFragment(',|\s+|$')
+  separator: Union["RegexFragment", "RegexReference"] = field(
+      default_factory=lambda: RegexFragment(',|\s+|$'))
 
   # Indicates if the group is required, optional or even lazy optional.
   quantifier: MatchQuantifier = MatchQuantifier.MATCH_REQUIRED
