@@ -143,8 +143,7 @@ class RegexConcat:
 
 ### Captures components: higher-level, more powerful regex
 
-CaptureComponent = Union["NoCapturePattern", "CaptureTypeWithPattern",
-                         "CaptureTypeWithPattern"]
+CaptureComponent = Union["CaptureTypeWithPattern", "CaptureReference"]
 
 
 @dataclass
@@ -214,65 +213,38 @@ class CaptureOptions:
 
 
 @dataclass
-class NoCapturePattern:
-  """A non-capturing regex pattern that consists of a concatenation of RegexComponents.
-
-  E.g.
-  NoCapturePattern:
-    parts:
-      - regex: 'Foo'
-      - regex: '|'
-      - regex_reference: 'kOtherRegex'
-
-  Evaluates to the concatenation of all pattern evaluations.
-  """
-  parts: List[Union[CaptureReference, "NoCapturePattern",
-                    "CaptureTypeWithPattern", RegexFragment, RegexReference,
-                    RegexConcat]]
-  options: CaptureOptions
-
-  def to_regex(self, engine: "ParsingEngine") -> str:
-    pattern_regex = "".join(
-        [pattern.to_regex(engine) for pattern in self.parts])
-    separator = self.options.separator.to_regex(engine)
-    quantifier = MatchQuantifier.to_regex_suffix(self.options.quantifier)
-    return f"(?:{pattern_regex}(?:{separator})+){quantifier}"
-
-  def validate(self, engine: "ParsingEngine", model: Model, errors: List[str]):
-    for part in self.parts:
-      part.validate(engine, model, errors)
-    if not self.options:
-      self.errors.append("Missing options")
-    else:
-      self.options.validate(engine, model, errors)
-
-
-@dataclass
 class CaptureTypeWithPattern:
-  """A capturing regex pattern"""
-  output: str  # Field-type e.g. given-name
-  parts: List[Union[CaptureReference, NoCapturePattern,
-                    "CaptureTypeWithPattern", RegexFragment, RegexReference,
-                    RegexConcat]]
+  """A capturing regex pattern
+
+  If the "output" is specified, the regex contains a capture group for the
+  specified name. Otherwise, this describes a "no_capture_pattern".
+  """
+  output: Optional[str]  # Field-type e.g. given-name
+  parts: List[Union[CaptureReference, "CaptureTypeWithPattern", RegexFragment,
+                    RegexReference, RegexConcat]]
   options: CaptureOptions
 
   def to_regex(self, engine: "ParsingEngine") -> str:
     # RE2 does not allow '-' in capture groups, so we replace it with an
     # underscore and do the inverse in evaluate().
-    output = self.output.replace('-', '_')
     pattern_regex = "".join(
         [pattern.to_regex(engine) for pattern in self.parts])
     separator = self.options.separator.to_regex(engine)
     quantifier = MatchQuantifier.to_regex_suffix(self.options.quantifier)
     prefix = ""
     suffix = ""
-    return f"(?i:{prefix}(?P<{output}>{pattern_regex}){suffix}" + \
-           f"(?:{separator})+){quantifier}"
+    if self.output:
+      output = self.output.replace('-', '_')
+      return f"(?i:{prefix}(?P<{output}>{pattern_regex}){suffix}" + \
+            f"(?:{separator})+){quantifier}"
+    else:
+      return f"(?i:{prefix}{pattern_regex}{suffix}" + \
+            f"(?:{separator})+){quantifier}"
 
   def validate(self, engine: "ParsingEngine", model: Model, errors: List[str]):
     if not self.output:
       errors.append("Invalid output")
-    if self.output not in model.concepts:
+    if self.output and self.output not in model.concepts:
       errors.append(f"Undefined output type '{self.output}'")
     for part in self.parts:
       part.validate(engine, model, errors)

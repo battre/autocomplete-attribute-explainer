@@ -13,7 +13,7 @@ import copy
 from .parsing import (RegexFragment, RegexReference, RegexConcat, ParsingEngine,
                       RegexComponent, CaptureOptions, CaptureReference,
                       CaptureComponent, CaptureTypeWithPattern,
-                      CaptureTypeWithPatternCascade, NoCapturePattern)
+                      CaptureTypeWithPatternCascade)
 
 
 class ParsingModule(AbstractModule):
@@ -184,15 +184,15 @@ class ParsingModule(AbstractModule):
           self.parse_capture_pattern_constant(part) for part in yaml['parts']
       ]
       options = self.parse_capture_options(yaml.get('options', {}))
-      return NoCapturePattern(parts=parts, options=options)
+      return CaptureTypeWithPattern(output=None, parts=parts, options=options)
 
     if 'capture_type_with_pattern' in yaml:
       yaml = yaml['capture_type_with_pattern']
       output = yaml['output']
-      options = self.parse_capture_options(yaml.get('options', {}))
       parts = [
           self.parse_capture_pattern_constant(part) for part in yaml['parts']
       ]
+      options = self.parse_capture_options(yaml.get('options', {}))
       return CaptureTypeWithPattern(output=output, parts=parts, options=options)
 
     assert False, f"Invalid component definition {yaml}"

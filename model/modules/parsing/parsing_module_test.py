@@ -151,13 +151,13 @@ class TestFormattingModule(unittest.TestCase):
     result = self.parsing_engine.capture_patterns_constants.get(
         'kNoCapturePattern')
     self.assertIsNotNone(result)
-    self.assertEqual(result.to_regex(self.parsing_engine), "(?:ab(?:sep)+)?")
+    self.assertEqual(result.to_regex(self.parsing_engine), "(?i:ab(?:sep)+)?")
 
     result = self.parsing_engine.capture_patterns_constants.get(
         'kCaptureTypeWithPattern')
     self.assertIsNotNone(result)
     self.assertEqual(result.to_regex(self.parsing_engine),
-                     "(?i:(?P<B>ab(?:ab(?:sep)+)?)(?:,|\s+|$)+)")
+                     "(?i:(?P<B>ab(?i:ab(?:sep)+)?)(?:,|\s+|$)+)")
 
   def test_parsing_capture_cascade(self):
     self.setUpModel(dedent(DEFAULT_GLOBAL_MODEL))
