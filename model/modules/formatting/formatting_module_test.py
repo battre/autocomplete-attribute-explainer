@@ -4,6 +4,7 @@ from renderer import Renderer
 from unittest.mock import patch, mock_open
 from modules.model import ParseGlobalModelModule
 from modules.formatting import FormattingModule
+from modules.formatting.formatting_utils import collect_details_for_formatting
 from pathlib import Path
 from textwrap import dedent
 
@@ -66,8 +67,7 @@ class TestFormattingModule(unittest.TestCase):
         A:
         - reference: "rule-name"
       """))
-    result = self.formatting.collect_details_for_formatting(
-        "global", "A", self.renderer)
+    result = collect_details_for_formatting("global", "A", self.renderer)
     self.assertEqual(result["inputs"], [{"token": "B"}])
 
     # Expect an error if a named rule does not exist.
@@ -77,8 +77,7 @@ class TestFormattingModule(unittest.TestCase):
         A:
         - reference: "rule-name"
       """))
-    result = self.formatting.collect_details_for_formatting(
-        "global", "A", self.renderer)
+    result = collect_details_for_formatting("global", "A", self.renderer)
     self.assertNotEqual(result["errors"], [])
 
     # Verify that a rule can have only one reference
@@ -93,8 +92,7 @@ class TestFormattingModule(unittest.TestCase):
         - reference: "rule-name"
         - reference: "rule-name"
       """))
-    result = self.formatting.collect_details_for_formatting(
-        "global", "A", self.renderer)
+    result = collect_details_for_formatting("global", "A", self.renderer)
     self.assertNotEqual(result["errors"], [])
 
   def test_validate(self):
@@ -109,8 +107,7 @@ class TestFormattingModule(unittest.TestCase):
         - separator: ", "
         - E
       """))
-    result = self.formatting.collect_details_for_formatting(
-        "global", "A", self.renderer)
+    result = collect_details_for_formatting("global", "A", self.renderer)
     self.assertEqual(result["errors"], [])
 
     # A rule replaces a token (B) with that token's descendants (D, E).
@@ -122,8 +119,7 @@ class TestFormattingModule(unittest.TestCase):
         - D
         - E
       """))
-    result = self.formatting.collect_details_for_formatting(
-        "global", "A", self.renderer)
+    result = collect_details_for_formatting("global", "A", self.renderer)
     self.assertEqual(result["errors"], [])
 
     # It's a bug if a token (B) is only replaced with a subset of the
@@ -135,8 +131,7 @@ class TestFormattingModule(unittest.TestCase):
         - C
         - E
       """))
-    result = self.formatting.collect_details_for_formatting(
-        "global", "A", self.renderer)
+    result = collect_details_for_formatting("global", "A", self.renderer)
     self.assertNotEqual(result["errors"], [])
 
     # It's a bug if a token (B) has an input that is not a member of the
@@ -149,8 +144,7 @@ class TestFormattingModule(unittest.TestCase):
         - E
         - F
       """))
-    result = self.formatting.collect_details_for_formatting(
-        "global", "A", self.renderer)
+    result = collect_details_for_formatting("global", "A", self.renderer)
     self.assertNotEqual(result["errors"], [])
 
   def test_formatting(self):
