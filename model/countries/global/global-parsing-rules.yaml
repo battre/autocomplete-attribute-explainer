@@ -165,7 +165,7 @@ regex_constants:
     regex_fragment: |-
       ^(?:[A-Z]\.?(?:(?:\s|-)?[A-Z]\.?)*)$
 
-capture_pattnern_constants:
+capture_pattern_constants:
   # Returns an expression to parse a CJK name that includes one separator.
   # The full name is parsed into |name|, the part of the name before the
   # separator is parsed into |family_name| and the part after the separator is
@@ -464,9 +464,9 @@ capture_patterns:
             - capture_reference: ParseLastCommaFirstMiddleNameExpression
             - capture_reference: ParseFirstMiddleLastNameExpression
 
-test_capture_pattnern_constants:
+test_capture_pattern_constants:
 - id: "Chinese name, Unihan"
-  capture_pattnern_constant: ParseSeparatedCjkNameExpression
+  capture_pattern_constant: ParseSeparatedCjkNameExpression
   input: 孫 德明
   output:
     name: 孫 德明
