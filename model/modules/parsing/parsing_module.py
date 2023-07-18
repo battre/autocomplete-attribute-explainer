@@ -298,7 +298,7 @@ class ParsingModule(AbstractModule):
       return
 
     if 'test_capture_pattern_constants' in yaml:
-      self.test_capture_pattnern_constants(
+      self.test_capture_pattern_constants(
           yaml['test_capture_pattern_constants'], engine)
 
     if 'test_capture_patterns' in yaml:

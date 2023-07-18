@@ -73,19 +73,19 @@ Capture patterns are a higher level concept that is built on top of regular
 expressions. They can be parameterized for eager and lazy matching and used to
 capture different parts of a string in a dictionary.
 
-The purpose of capture_pattnern_constants is to create named entities that can
+The purpose of capture_pattern_constants is to create named entities that can
 be referenced, reused and overriden by country specific rules.
 
-### Syntax for `capture_pattnern_constants`
+### Syntax for `capture_pattern_constants`
 ```yaml
 # optional
-capture_pattnern_constants:
-  "capture_pattnern_constants name:"
+capture_pattern_constants:
+  "capture_pattern_constants name:"
     # one of capture_reference, no_capture_pattern or capture_type_with_pattern.
 
-    # Creates an alias for a capture_pattnern_constants.
+    # Creates an alias for a capture_pattern_constants.
     capture_reference:
-      "capture_pattnern_constants name"
+      "capture_pattern_constants name"
 
     capture_type_with_pattern:
       # The type that will be captured from this capture pattern, e.g.
@@ -133,7 +133,7 @@ capture_patterns:
     # (or to another capture_reference that resovles to a
     # capture_type_with_pattern)
     capture_reference:
-      "capture_pattnern_constants name"
+      "capture_pattern_constants name"
 
     # See above. Note that the output MUST match the "field_type name" of this
     # capture pattern.
@@ -153,15 +153,15 @@ capture_patterns:
       - capture_type_with_pattern_cascade: ...
 ```
 
-## Tests for `capture_pattnern_constants`
+## Tests for `capture_pattern_constants`
 These tests are executed with `python3 main.py`.
 
 ```yaml
 # optional
-test_capture_pattnern_constants:
+test_capture_pattern_constants:
 # A list of tests, each with the following structure.
 - id: "ID or description of the test (printed in case of failure)"
-  capture_pattern_constant: "capture_pattnern_constants name"
+  capture_pattern_constant: "capture_pattern_constants name"
   input: "Text matched by the capture pattern"
   # Dictionary with the captured output values.
   output:

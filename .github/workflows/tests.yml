@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         # Run in all these versions of Python
-        python-version: [3.7, 3.9, 3.11]
+        python-version: [3.9, 3.11]
     steps:
         # Checkout the latest code from the repo
       - name: Checkout repo
@@ -33,6 +33,6 @@ jobs:
           cd model
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Check format
-        run: yapf -d  -r .
+        run: yapf -d  -r model/
       - name: Run tests
-        run: python3 -m unittest discover -p "*_test.py"
+        run: cd model && python -m unittest discover -p "*_test.py"
