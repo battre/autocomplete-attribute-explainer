@@ -99,7 +99,7 @@ regex_constants:
         - regex_fragment: '|'
         - regex_reference: kHispanicLastNameConjunctionCharacteristicsRe
 
-  HasCjkNameCharacteristics:
+  kHasCjkNameCharacteristics:
     regex_concat:
       parts:
         # Must contain one or more CJK characters
@@ -444,7 +444,7 @@ capture_patterns:
       - capture_type_with_pattern_cascade:
           output: name
           condition:
-            regex_reference: HasCjkNameCharacteristics
+            regex_reference: kHasCjkNameCharacteristics
           patterns:
             - capture_reference: ParseSeparatedCjkNameExpression
             - capture_reference: ParseKoreanTwoCharacterLastNameExpression
