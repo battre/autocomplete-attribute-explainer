@@ -96,7 +96,7 @@ class ParsingModule(AbstractModule):
         'capture_pattern_constant': str,
         'input': str,
         'output': {
-            str: str
+            schema.Optional(str): str
         }
     }
 
