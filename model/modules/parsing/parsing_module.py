@@ -304,10 +304,53 @@ class ParsingModule(AbstractModule):
     if 'test_capture_patterns' in yaml:
       self.test_capture_patterns(yaml['test_capture_patterns'], engine)
 
-  # def render_preamble(self, country: str, renderer: Renderer) -> Optional[str]:
-  #   env = Environment(extensions=['jinja2.ext.do'],
-  #                     loader=FileSystemLoader(
-  #                         os.path.join(os.path.dirname(__file__))),
-  #                     autoescape=select_autoescape())
-  #   template = env.get_template("template.html")
-  #   return template.render(yaml=renderer.country_data[country][self.name()])
+  def render_token_details(self, country: str, token_id: str,
+                           renderer: Renderer) -> Optional[str]:
+    env = Environment(extensions=['jinja2.ext.do'],
+                      loader=FileSystemLoader(
+                          os.path.join(os.path.dirname(__file__))),
+                      autoescape=select_autoescape())
+    if "ParsingEngine" not in renderer.country_data[country]:
+      return None
+
+    engine = renderer.country_data[country]["ParsingEngine"]
+    template = env.get_template("parsing_template.html")
+    return template.render(
+        engine=engine,
+        token_id=token_id,
+        CaptureTypeWithPattern=CaptureTypeWithPattern,
+        CaptureTypeWithPatternCascade=CaptureTypeWithPatternCascade)
+
+  def css(self) -> str:
+    return """
+    <style>
+    .parsing details {
+        border: 1px solid #aaa;
+        border-radius: 4px;
+        padding: 0.5em 0.5em 0;
+    }
+
+    .parsing summary {
+        font-weight: bold;
+        margin: -0.5em -0.5em 0;
+        padding: 0.5em;
+    }
+
+    .parsing details[open] {
+        padding: 0.5em;
+    }
+
+    .parsing details[open].summary {
+        border-bottom: 1px solid #aaa;
+        margin-bottom: 0.5em;
+    }
+
+    .parsing-regexfragment {
+        overflow-wrap: anywhere;
+        font-family: 'Courier New', Courier, monospace;
+        padding: 2px;
+        margin: 1px;
+        background-color: beige;
+    }
+    </style>
+    """

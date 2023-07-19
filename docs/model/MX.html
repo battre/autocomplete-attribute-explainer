@@ -97,6 +97,37 @@
   </style>
   
     <style>
+    .parsing details {
+        border: 1px solid #aaa;
+        border-radius: 4px;
+        padding: 0.5em 0.5em 0;
+    }
+
+    .parsing summary {
+        font-weight: bold;
+        margin: -0.5em -0.5em 0;
+        padding: 0.5em;
+    }
+
+    .parsing details[open] {
+        padding: 0.5em;
+    }
+
+    .parsing details[open].summary {
+        border-bottom: 1px solid #aaa;
+        margin-bottom: 0.5em;
+    }
+
+    .parsing-regexfragment {
+        overflow-wrap: anywhere;
+        font-family: 'Courier New', Courier, monospace;
+        padding: 2px;
+        margin: 1px;
+        background-color: beige;
+    }
+    </style>
+    
+    <style>
     .concept {
       border-style: solid;
       border-width: 1px;
