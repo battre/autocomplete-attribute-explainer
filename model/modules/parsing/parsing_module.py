@@ -55,11 +55,11 @@ class ParsingModule(AbstractModule):
 
     capture_type_with_pattern = {
         'capture_type_with_pattern': {
-            'output':
-            str,  # type name, e.g. 'given-name'
+            'output': str,  # type name, e.g. 'given-name'
             # 'parts' are added below due to recursion
-            schema.Optional('options'):
-            capture_options,
+            schema.Optional('options'): capture_options,
+            schema.Optional('prefix'): regex_component,
+            schema.Optional('suffix'): regex_component,
         }
     }
     capture_type_with_pattern['capture_type_with_pattern']['parts'] = [
@@ -201,7 +201,17 @@ class ParsingModule(AbstractModule):
           self.parse_capture_pattern_constant(part) for part in yaml['parts']
       ]
       options = self.parse_capture_options(yaml.get('options', {}))
-      return CaptureTypeWithPattern(output=output, parts=parts, options=options)
+      prefix = None
+      if 'prefix' in yaml:
+        prefix = self.parse_regex_component(yaml['prefix'])
+      suffix = None
+      if 'suffix' in yaml:
+        suffix = self.parse_regex_component(yaml['suffix'])
+      return CaptureTypeWithPattern(output=output,
+                                    parts=parts,
+                                    options=options,
+                                    prefix=prefix,
+                                    suffix=suffix)
 
     assert False, f"Invalid component definition {yaml}"
 
@@ -221,7 +231,17 @@ class ParsingModule(AbstractModule):
       parts = [
           self.parse_capture_pattern_constant(part) for part in yaml['parts']
       ]
-      return CaptureTypeWithPattern(output=output, parts=parts, options=options)
+      prefix = None
+      if 'prefix' in yaml:
+        prefix = self.parse_regex_component(yaml['prefix'])
+      suffix = None
+      if 'suffix' in yaml:
+        suffix = self.parse_regex_component(yaml['suffix'])
+      return CaptureTypeWithPattern(output=output,
+                                    parts=parts,
+                                    options=options,
+                                    prefix=prefix,
+                                    suffix=suffix)
 
     if 'capture_type_with_pattern_cascade' in yaml:
       yaml = yaml['capture_type_with_pattern_cascade']

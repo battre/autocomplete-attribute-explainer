@@ -1905,7 +1905,7 @@ Full name
 
 
 <details>
-  <summary>Regex Reference: <code>HasCjkNameCharacteristics</code></summary>
+  <summary>Regex Reference: <code>kHasCjkNameCharacteristics</code></summary>
   
 
 
@@ -4024,6 +4024,208 @@ Name of a street and identifier for the building
 
 
 
+<h4>Parsing:</h4>
+<div class="parsing">
+
+
+
+
+<details>
+  <summary>
+    
+      Capture Type <code>street-location</code>
+    
+  </summary>
+  
+    
+
+Options: Separator: 
+
+
+Regex Fragment: <code class="parsing-regexfragment">,|\s+|$</code>
+
+
+, Quantifier: MATCH_REQUIRED
+
+<br>
+  
+    Parts: <br>
+    <ul>
+      
+      <li>
+
+
+<details>
+  <summary>Capture Reference: <code>ParseStreetLocation</code></summary>
+  
+    
+
+
+<details>
+  <summary>
+    
+      Capture Type <code>street-location</code>
+    
+  </summary>
+  
+    
+
+Options: Separator: 
+
+
+Regex Fragment: <code class="parsing-regexfragment">,|\s+|$</code>
+
+
+, Quantifier: MATCH_REQUIRED
+
+<br>
+  
+    Parts: <br>
+    <ul>
+      
+      <li>
+
+
+<details>
+  <summary>
+    
+      Capture Type <code>street</code>
+    
+  </summary>
+  
+    
+
+Options: Separator: 
+
+
+Regex Fragment: <code class="parsing-regexfragment">,|\s+|\s+-\s+|$</code>
+
+
+, Quantifier: MATCH_REQUIRED
+
+<br>
+  
+    Parts: <br>
+    <ul>
+      
+      <li>
+
+
+<details>
+  <summary>Regex Reference: <code>kMultipleLazyWordsRe</code></summary>
+  
+
+
+Regex Fragment: <code class="parsing-regexfragment">(?:[^\s,]+(?:[^\S\r\n]+[^\s,]+)*?)</code>
+
+
+
+</details>
+
+
+</li>
+      
+    </ul>
+</details>
+
+
+</li>
+      
+      <li>
+
+
+<details>
+  <summary>
+    
+      Capture Type <code>building</code>
+    
+  </summary>
+  
+    
+
+Options: Separator: 
+
+
+Regex Fragment: <code class="parsing-regexfragment">,|\s+|$</code>
+
+
+, Quantifier: MATCH_REQUIRED
+
+<br>
+  
+    Parts: <br>
+    <ul>
+      
+      <li>
+
+
+<details>
+  <summary>Regex Reference: <code>kBuildingRe</code></summary>
+  
+
+
+  Regex concatenation
+  <ol>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">(?i:KM\s+)?</code>
+
+
+</li>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">\d+</code>
+
+
+</li>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">\w?</code>
+
+
+</li>
+    
+  </ol>
+  Wrap as non-capture group: True
+
+
+
+</details>
+
+
+</li>
+      
+    </ul>
+</details>
+
+
+</li>
+      
+    </ul>
+</details>
+
+
+
+  
+</details>
+
+
+</li>
+      
+    </ul>
+</details>
+
+
+
+
+</div>
+
 <div>
 <h4>Children:</h4>
 <ul>
@@ -4328,6 +4530,138 @@ Apartment
 
 
 
+
+<h4>Parsing:</h4>
+<div class="parsing">
+
+
+
+
+<details>
+  <summary>
+    
+      Capture Type <code>unit</code>
+    
+  </summary>
+  
+    
+
+Options: Separator: 
+
+
+Regex Fragment: <code class="parsing-regexfragment">,|\s+|$</code>
+
+
+, Quantifier: MATCH_REQUIRED
+
+<br>
+  
+    Parts: <br>
+    <ul>
+      
+      <li>
+
+
+<details>
+  <summary>
+    
+      Capture Type <code>unit-type</code>
+    
+  </summary>
+  
+    
+
+Options: Separator: 
+
+
+Regex Fragment: <code class="parsing-regexfragment">,|\s+|$</code>
+
+
+, Quantifier: MATCH_OPTIONAL
+
+<br>
+  
+    Parts: <br>
+    <ul>
+      
+      <li>
+
+
+<details>
+  <summary>Regex Reference: <code>kUnitTypeRe</code></summary>
+  
+
+
+Regex Fragment: <code class="parsing-regexfragment">(?i:apto\.?|apt\.?|apartamento|sala|conjunto)</code>
+
+
+
+</details>
+
+
+</li>
+      
+    </ul>
+</details>
+
+
+</li>
+      
+      <li>
+
+
+<details>
+  <summary>
+    
+      Capture Type <code>unit-name</code>
+    
+  </summary>
+  
+    
+
+Options: Separator: 
+
+
+Regex Fragment: <code class="parsing-regexfragment">,|\s+|$</code>
+
+
+, Quantifier: MATCH_REQUIRED
+
+<br>
+  
+    Parts: <br>
+    <ul>
+      
+      <li>
+
+
+<details>
+  <summary>Regex Reference: <code>kUnitNameRe</code></summary>
+  
+
+
+Regex Fragment: <code class="parsing-regexfragment">\d+|\w</code>
+
+
+
+</details>
+
+
+</li>
+      
+    </ul>
+</details>
+
+
+</li>
+      
+    </ul>
+</details>
+
+
+
+
+</div>
 
 <div>
 <h4>Children:</h4>

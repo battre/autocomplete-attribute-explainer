@@ -223,6 +223,8 @@ class CaptureTypeWithPattern:
   specified name. Otherwise, this describes a "no_capture_pattern".
   """
   output: Optional[str]  # Field-type e.g. given-name
+  prefix: Optional[Union[RegexFragment, RegexReference, RegexConcat]]
+  suffix: Optional[Union[RegexFragment, RegexReference, RegexConcat]]
   parts: List[Union[CaptureReference, "CaptureTypeWithPattern", RegexFragment,
                     RegexReference, RegexConcat]]
   options: CaptureOptions
@@ -235,7 +237,11 @@ class CaptureTypeWithPattern:
     separator = self.options.separator.to_regex(engine)
     quantifier = MatchQuantifier.to_regex_suffix(self.options.quantifier)
     prefix = ""
+    if self.prefix:
+      prefix = self.prefix.to_regex(engine)
     suffix = ""
+    if self.suffix:
+      suffix = self.suffix.to_regex(engine)
     if self.output:
       output = self.output.replace('-', '_')
       return f"(?i:{prefix}(?P<{output}>{pattern_regex}){suffix}" + \
