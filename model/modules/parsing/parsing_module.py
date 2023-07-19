@@ -91,6 +91,13 @@ class ParsingModule(AbstractModule):
                       capture_type_with_pattern_cascade)
         ]
 
+    test_regex_constants = {
+        'id': str,
+        'regex_constant': str,
+        'input': str,
+        'match_groups': [str],
+    }
+
     test_capture_pattern_constants = {
         'id': str,
         'capture_pattern_constant': str,
@@ -126,6 +133,7 @@ class ParsingModule(AbstractModule):
             schema.Or(capture_reference, capture_type_with_pattern,
                       capture_type_with_pattern_cascade)
         },
+        schema.Optional("test_regex_constants"): [test_regex_constants],
         schema.Optional("test_capture_pattern_constants"):
         [test_capture_pattern_constants],
         schema.Optional("test_capture_patterns"): [test_capture_patterns],
@@ -234,6 +242,23 @@ class ParsingModule(AbstractModule):
     for key, definition in yaml.get('capture_patterns', {}).items():
       engine.capture_patterns[key] = self.parse_capture_pattern(definition)
 
+  def test_regex_constants(self, yaml, engine: ParsingEngine):
+    for test in yaml:
+      if not test['regex_constant'] in engine.regexes:
+        print(f"Failed test '{test.id}': Invalid regex_constant: " +
+              test['regex_constant'])
+        return
+      regex = "(" + engine.regexes[test['regex_constant']].to_regex(engine) + \
+          ")"
+      result = re.match(regex, test['input'])
+      if result:
+        result = [s.__str__() for s in result.groups()]
+      if test['match_groups'] != result:
+        print(f"Test failed: {test}")
+        print(f"{result} was actual output")
+        print(f"{test['match_groups']} was expected output")
+        break
+
   def test_capture_pattern_constants(self, yaml, engine: ParsingEngine):
     for test in yaml:
       if not test[
@@ -296,6 +321,9 @@ class ParsingModule(AbstractModule):
     model = renderer.get_model(country)
     if not engine.validate(model):
       return
+
+    if 'test_regex_constants' in yaml:
+      self.test_regex_constants(yaml['test_regex_constants'], engine)
 
     if 'test_capture_pattern_constants' in yaml:
       self.test_capture_pattern_constants(
