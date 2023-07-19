@@ -192,7 +192,11 @@ class ParsingModule(AbstractModule):
           self.parse_capture_pattern_constant(part) for part in yaml['parts']
       ]
       options = self.parse_capture_options(yaml.get('options', {}))
-      return CaptureTypeWithPattern(output=None, parts=parts, options=options)
+      return CaptureTypeWithPattern(output=None,
+                                    parts=parts,
+                                    options=options,
+                                    prefix=None,
+                                    suffix=None)
 
     if 'capture_type_with_pattern' in yaml:
       yaml = yaml['capture_type_with_pattern']
