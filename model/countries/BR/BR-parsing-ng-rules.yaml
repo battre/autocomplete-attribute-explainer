@@ -82,6 +82,7 @@ capture_definitions:
     # match 'andar \d+'
     capture:
       output: floor
+      temp_output: floor_ParseFloorWithMandatoryPrefix
       prefix:
         regex_concat:
           parts:
@@ -93,6 +94,9 @@ capture_definitions:
     # match '\d+º andar' and '\d+ andar'
     capture:
       output: floor
+      temp_output: floor_ParseFloorWithMandatorySuffix
+      prefix:
+        regex_fragment: '(?:[,-]\s*|^)'
       parts: [ {regex_fragment: '\d+'} ]
       suffix:
         regex_concat:
@@ -100,6 +104,19 @@ capture_definitions:
           - regex_fragment: '\s*'
           - regex_fragment: '(?:º\s*)?' # optional "º "
           - regex_reference: kFloorRe
+          - regex_fragment: '(?:\s*[,-]|$)' # separator to other information
+
+  ParseLandmarkWithMandatoryPrefix:
+    capture:
+      output: landmark
+      prefix:
+        regex_concat:
+          parts:
+          - regex_fragment: '(?:ponto de )?' # Optional "ponto de"
+          - regex_fragment: 'refer[êe]ncia'
+          - regex_fragment: '(?::\s*|\s+)' # end with ":", ": " or " "
+      parts:
+        - regex_fragment: '[^,]+'
 
 parsing_definitions:
   street-location:
@@ -116,8 +133,20 @@ parsing_definitions:
           capture_reference: ParseUnitWithMandatoryUnitType
       - extract_part:
           capture_reference: ParseFloorWithMandatoryPrefix
-        # TODO: This is currently not supported due to capture_group clashes
-        # - capture_reference: ParseFloorWithMandatorySuffix
+      - extract_part:
+          capture_reference: ParseFloorWithMandatorySuffix
+
+  address-overflow-and-landmark:
+    extract_parts:
+      parts:
+      - extract_part:
+          capture_reference: ParseUnitWithMandatoryUnitType
+      - extract_part:
+          capture_reference: ParseFloorWithMandatoryPrefix
+      - extract_part:
+          capture_reference: ParseFloorWithMandatorySuffix
+      - extract_part:
+          capture_reference: ParseLandmarkWithMandatoryPrefix
 
   unit:
     decomposition:
@@ -214,3 +243,20 @@ test_parsing_definitions:
     unit-type: "apto"
     unit-name: "12"
     floor: "1"
+- id: "Floor and apartment from in-building-location, where 'andar' is a suffix"
+  type: in-building-location
+  input: "apto 12, 1 andar"
+  output:
+    unit: "apto 12"
+    unit-type: "apto"
+    unit-name: "12"
+    floor: "1"
+- id: "Landmark and overflow"
+  type: address-overflow-and-landmark
+  input: "apto 12, 1 andar, referência: foo, something else"
+  output:
+    unit: "apto 12"
+    unit-type: "apto"
+    unit-name: "12"
+    floor: "1"
+    landmark: "foo"
