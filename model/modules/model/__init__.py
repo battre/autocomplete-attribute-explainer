@@ -3,3 +3,4 @@ from modules.model.parse_descriptions_module import ParseDescriptionsModelModule
 from modules.model.parse_global_model_module import ParseGlobalModelModule
 from modules.model.render_token_index_module import RenderTokenIndexModule
 from modules.model.render_token_children_module import RenderTokenChildrenModule
+from modules.model.model import Model
