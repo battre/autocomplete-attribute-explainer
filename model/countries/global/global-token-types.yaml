@@ -1,0 +1,55 @@
+# A settings visible token is a token the user can edit in the browser settings.
+# They are special from a privacy perspective in that the following invariant
+# shall be maintained:
+#
+# *Direction of Information Growth:*
+#
+# On every root-to-leaf path the information content is only allowed to grow in
+# the direction of the settings visible token. For every token in the hierarchy
+# there are four cases:
+#
+# *The token is settings-visible:* It can contain any information that is valid
+# with respect to its type.
+#
+# *The token is a descendant of a settings-visible token:* Except for
+# differences that do not contain PII (see below), all information that is
+# contained in the token must also be contained in the settings-visible token.
+#
+# *The token is an ancestor of (multiple) settings-visible tokens:*  Except for
+# differences that do not contain PII (see below), all information that is
+# contained in the token must be contained in the set of settings-visible tokens
+# in the sub-hierarchy below the token.
+#
+# Difference that do not contain PII can be fron allow list of strings like
+# "Apartment", "Room", ...
+
+# Node types:
+# exhaustive token = parsing maps every character to a child or separator
+# parse, forget, format = we ensure that we don't store extra information in a
+#  token by parsing everything we can, storing the information and then
+#  formatting the token. Everything we forgot is gone.
+
+settings_visible:
+- name
+- street-address
+- locality1
+- locality2
+- locality3
+- locality4
+- admin-area1
+- admin-area2
+- admin-area3
+- admin-area4
+- postal-code
+- country
+- country-name
+- tel
+- email
+- cc-name
+- cc-number
+- cc-exp-MMYY
+- cc-exp-MMYYYY
+- cc-csc
+- cc-type
+
+synthetic:
