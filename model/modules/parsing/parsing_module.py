@@ -37,10 +37,10 @@ class ParsingModule(AbstractModule):
 
     # Definitions for capture components
     capture_options = {
-        schema.Optional('quantifier'):
-        schema.Or('MATCH_REQUIRED', 'MATCH_OPTIONAL', 'MATCH_LAZY_OPTIONAL'),
-        schema.Optional('separator'):
-        regex_component
+        schema.Optional('quantifier'): schema.Or('MATCH_REQUIRED',
+                                                 'MATCH_OPTIONAL',
+                                                 'MATCH_LAZY_OPTIONAL'),
+        schema.Optional('separator'): regex_component
     }
 
     capture_reference = {'capture_reference': str}
@@ -48,8 +48,7 @@ class ParsingModule(AbstractModule):
     no_capture_pattern = {
         'no_capture_pattern': {
             # 'parts' are added below due to recursion
-            schema.Optional('options'):
-            capture_options
+            schema.Optional('options'): capture_options
         }
     }
 
@@ -76,11 +75,9 @@ class ParsingModule(AbstractModule):
 
     capture_type_with_pattern_cascade = {
         'capture_type_with_pattern_cascade': {
-            'output':
-            str,  # type name, e.g. 'given-name'
+            'output': str,  # type name, e.g. 'given-name'
             # Only evaluate the patters if the condition matches.
-            schema.Optional('condition'):
-            regex_component,
+            schema.Optional('condition'): regex_component,
             # 'patters' are added below due to recursion
         }
     }
@@ -123,19 +120,18 @@ class ParsingModule(AbstractModule):
         },
         schema.Optional("capture_pattern_constants"): {
             # Constant name -> capture pattern expression
-            str:
-            schema.Or(capture_reference, no_capture_pattern,
-                      capture_type_with_pattern)
+            str: schema.Or(capture_reference, no_capture_pattern,
+                           capture_type_with_pattern)
         },
         schema.Optional("capture_patterns"): {
             # field type -> pattern to use
-            str:
-            schema.Or(capture_reference, capture_type_with_pattern,
-                      capture_type_with_pattern_cascade)
+            str: schema.Or(capture_reference, capture_type_with_pattern,
+                           capture_type_with_pattern_cascade)
         },
         schema.Optional("test_regex_constants"): [test_regex_constants],
-        schema.Optional("test_capture_pattern_constants"):
-        [test_capture_pattern_constants],
+        schema.Optional("test_capture_pattern_constants"): [
+            test_capture_pattern_constants
+        ],
         schema.Optional("test_capture_patterns"): [test_capture_patterns],
     })
 

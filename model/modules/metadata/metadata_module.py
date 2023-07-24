@@ -15,14 +15,11 @@ class MetadataModule(AbstractModule):
   def schema(self):
     return Schema({
         # The country name as a two letter code
-        "country":
-        str,
+        "country": str,
         # A flag as a UTF-8 symbol
-        schema.Optional("flag"):
-        str,
+        schema.Optional("flag"): str,
         # HTML code to be rendered as the overview of a country
-        schema.Optional("overview"):
-        str
+        schema.Optional("overview"): str
     })
 
   def observe_file(self, path: Path, renderer: Renderer):

@@ -35,8 +35,7 @@ class FormattingModule(AbstractModule):
         schema.Optional("named-formatting-rules"): {
             str: formatting_rule
         },
-        schema.Optional("formatting-rules"):
-        formatting_rule,
+        schema.Optional("formatting-rules"): formatting_rule,
         schema.Optional("examples"): [{
             "id": str,
             schema.Optional("comment"): str,
