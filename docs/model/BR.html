@@ -4643,6 +4643,332 @@ An overflow field for information that is not captured differently in a form
 
 
 
+<h4>Parsing:</h4>
+<div class="parsing">
+
+
+
+
+<details>
+  <summary>ExtractParts
+  
+  </summary>
+  
+  Parts:<br>
+  <ol>
+  
+  <li>
+
+
+<details>
+  <summary>ExtractPart
+  
+    (ParseUnitWithMandatoryUnitType)
+  
+  
+  </summary>
+  
+  
+    Capture Reference: ParseUnitWithMandatoryUnitType<br>
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>unit</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    Parts: <br>
+    <ul>
+      
+      <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>unit-type</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    Parts: <br>
+    <ul>
+      
+      <li>
+
+
+
+  Regex Reference: <code>kUnitTypeRe</code> =&gt;
+  <code class="parsing-regexfragment">(?i:apto\.?|apt\.?|apartamento|sala nº|sala||conjunto)</code>
+
+
+
+</li>
+      
+    </ul>
+    
+</details>
+
+
+</li>
+      
+      <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">^|\s+</code>
+
+
+
+</li>
+      
+      <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>unit-name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    Parts: <br>
+    <ul>
+      
+      <li>
+
+
+
+  Regex Reference: <code>kUnitNameRe</code> =&gt;
+  <code class="parsing-regexfragment">\d+|\w</code>
+
+
+
+</li>
+      
+    </ul>
+    
+</details>
+
+
+</li>
+      
+    </ul>
+    
+</details>
+
+
+
+  
+</details>
+
+
+</li>
+  
+  <li>
+
+
+<details>
+  <summary>ExtractPart
+  
+    (ParseFloorWithMandatoryPrefix)
+  
+  
+  </summary>
+  
+  
+    Capture Reference: ParseFloorWithMandatoryPrefix<br>
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>floor</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    Prefix: <br>
+    
+
+
+  Regex concatenation
+  <ol>
+    
+    <li>
+
+
+
+  Regex Reference: <code>kFloorRe</code> =&gt;
+  <code class="parsing-regexfragment">(?i:andar)</code>
+
+
+
+</li>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">\s*</code>
+
+
+</li>
+    
+  </ol>
+  Wrap as non-capture group: True
+
+
+
+    
+    Parts: <br>
+    <ul>
+      
+      <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">\d+</code>
+
+
+</li>
+      
+    </ul>
+    
+    Suffix: <br>
+    
+
+Gap: &lt;class &#39;NoneType&#39;&gt;
+
+
+    
+</details>
+
+
+
+  
+</details>
+
+
+</li>
+  
+  <li>
+
+
+<details>
+  <summary>ExtractPart
+  
+    (ParseFloorWithMandatorySuffix)
+  
+  
+  </summary>
+  
+  
+    Capture Reference: ParseFloorWithMandatorySuffix<br>
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>floor</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    Prefix: <br>
+    
+
+
+Regex Fragment: <code class="parsing-regexfragment">(?:[,-]\s*|^)</code>
+
+
+
+    
+    Parts: <br>
+    <ul>
+      
+      <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">\d+</code>
+
+
+</li>
+      
+    </ul>
+    
+    Suffix: <br>
+    
+
+
+  Regex concatenation
+  <ol>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">\s*</code>
+
+
+</li>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">(?:º\s*)?</code>
+
+
+</li>
+    
+    <li>
+
+
+
+  Regex Reference: <code>kFloorRe</code> =&gt;
+  <code class="parsing-regexfragment">(?i:andar)</code>
+
+
+
+</li>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">(?:\s*[,-]|$)</code>
+
+
+</li>
+    
+  </ol>
+  Wrap as non-capture group: True
+
+
+
+    
+</details>
+
+
+
+  
+</details>
+
+
+</li>
+  
+  </ol>
+</details>
+
+
+
+
+</div>
+
 <div>
 <h4>Children:</h4>
 <ul>

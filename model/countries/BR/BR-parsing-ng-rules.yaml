@@ -136,6 +136,17 @@ parsing_definitions:
       - extract_part:
           capture_reference: ParseFloorWithMandatorySuffix
 
+  # Identical to 'in-building-location' and therefore not tested separately.
+  address-overflow:
+    extract_parts:
+      parts:
+      - extract_part:
+          capture_reference: ParseUnitWithMandatoryUnitType
+      - extract_part:
+          capture_reference: ParseFloorWithMandatoryPrefix
+      - extract_part:
+          capture_reference: ParseFloorWithMandatorySuffix
+
   address-overflow-and-landmark:
     extract_parts:
       parts:
