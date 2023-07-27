@@ -14,7 +14,7 @@ regex_definitions:
     regex_fragment: (?i:apto\.?|apt\.?|apartamento|sala nº|sala|conjunto)
 
   kUnitNameValueRe:  # Regex for type unit-name"
-    regex_fragment: \d+|\w
+    regex_fragment: \d+\w?\b|\w\b
 
   kFloorLiteralRe:  # Regex for literal for a floor
     regex_fragment: (?i:andar)

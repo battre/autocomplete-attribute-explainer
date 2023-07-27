@@ -1,0 +1,312 @@
+regex_definitions:
+  kBuildingValueRe:  # Regex for type "building"
+    regex_concat:
+      parts:
+      - regex_fragment: '(?:'
+      # Various versions of expressing that a house dos not have number
+      - regex_fragment: (?i:S/Num\.?|S/N|Sin Nombre)
+      - regex_fragment: '|'
+      # Actual house numbers:
+      - regex_concat:
+          parts:
+            - regex_fragment: (?i:KM\s+)?  # Optional prefix for a KM position
+            - regex_fragment: \d+  # House number
+            # Optional suffix for building ids with a letter suffix, e.g. 12a.
+            # We don't support 12/1 or 12-1 because these may indicate apartment
+            # numbers.
+            - regex_fragment: \w?
+      - regex_fragment: )
+
+  kUnitTypeLiteralRe:  # Regex for type "unit-type"
+    # Note that order matches because RE2 prefers the first match.
+    regex_fragment: (?i:despacho|loc\.?|local|int(?:erior|\.?)|n[uú]m(?:ero|\.)? int(?:erno|\.)?|Apartamento|Apto\.?|Departamento|apto\.?)
+
+  kUnitNameValueRe:  # Regex for type unit-name"
+    regex_fragment: \d+\w?\b|\w\b
+
+  kFloorLiteralRe:  # Regex for literal for a floor
+    regex_fragment: (?i:piso)
+
+capture_definitions:
+  ParseStreetLocation:
+    capture:
+      output: street-location
+      parts:
+      # We only search for street locations at the beginning a field.
+      - capture_reference: AnchorToBeginningOfInput
+      - capture:
+          output: street
+          parts: [ {regex_reference: kMultipleLazyWordsRe} ]
+      - separator:
+          regex_fragment: \s+?
+      - capture:
+          output: building
+          # Optional prefix "#" before the number.
+          prefix: { regex_fragment: '(?:(?:#|No\.?|número\s)\s*)?' }
+          parts: [ {regex_reference: kBuildingValueRe} ]
+
+  ParseUnitWithMandatoryUnitType:
+    capture:
+      output: unit
+      parts:
+      - capture:
+          output: unit-type
+          parts: [ {regex_reference: kUnitTypeLiteralRe} ]
+          # In the context of an in-building-location this cannot be optional
+          # because we need to distinguish a unit from a floor.
+      - separator: {regex_reference: kWhitespaceSeparator}
+      - capture:
+          output: unit-name
+          parts: [ {regex_reference: kUnitNameValueRe} ]
+          suffix: {regex_fragment: '\b'}
+
+  ParseFloorWithMandatoryPrefix:
+    # match 'piso \d+'
+    capture:
+      output: floor
+      prefix:
+        regex_concat:
+          parts:
+            - regex_reference: kFloorLiteralRe
+            - regex_fragment: '\s*'
+      parts: [ {regex_fragment: '\d+'} ]
+
+  ParseLandmarkWithMandatoryPrefix:
+    capture:
+      output: landmark
+      prefix:
+        regex_fragment: (?i:Cerca del)
+      parts:
+        - regex_fragment: '[^,\n]+'
+
+  ParseCrossStreets:
+    capture:
+      output: cross-streets
+      prefix: {regex_fragment: '\b(?:x|Entre( Calles)?)\s+'}
+      parts:
+        - capture:
+            output: cross-street1
+            parts: [ {regex_reference: kMultipleLazyWordsRe} ]
+        - no_capture:
+            parts: [ {regex_fragment: '(?i:\s+y\s+)'} ]
+        - capture:
+            output: cross-street2
+            parts: [ {regex_reference: kMultipleWordsRe} ]
+
+parsing_definitions:
+  street-location:
+    decomposition:
+      capture_reference: ParseStreetLocation
+
+  in-building-location:
+    extract_parts:
+      parts:
+      - extract_part:
+          capture_reference: ParseUnitWithMandatoryUnitType
+      - extract_part:
+          capture_reference: ParseFloorWithMandatoryPrefix
+
+  cross-streets:
+    decomposition:
+      capture_reference: ParseCrossStreets
+
+  landmark-and-cross-streets:
+    extract_parts:
+      parts:
+      - extract_part:
+          capture_reference: ParseLandmarkWithMandatoryPrefix
+      - extract_part:
+          capture_reference: ParseCrossStreets
+
+  address-overflow:
+    extract_parts:
+      parts:
+      - extract_part:
+          capture_reference: ParseLandmarkWithMandatoryPrefix
+      - extract_part:
+          capture_reference: ParseCrossStreets
+
+  street-address-alternative-1:
+    extract_parts:
+      parts:
+      - extract_part:
+          # This field has an implicit anchoring to the beginning of the
+          # input. So we will not apply the regex in the middle of the text.
+          capture_reference: ParseStreetLocation
+      - extract_part:
+          capture_reference: ParseUnitWithMandatoryUnitType
+      - extract_part:
+          capture_reference: ParseFloorWithMandatoryPrefix
+      - extract_part:
+          capture_reference: ParseLandmarkWithMandatoryPrefix
+      - extract_part:
+          capture_reference: ParseCrossStreets
+
+  unit:
+    decomposition:
+      capture:
+        output: unit
+        parts:
+        - capture:
+            output: unit-type
+            parts: [ {regex_reference: kUnitTypeLiteralRe} ]
+            quantifier: MATCH_OPTIONAL
+        - separator: {regex_reference: kWhitespaceSeparator}
+        - capture:
+            output: unit-name
+            parts: [ {regex_reference: kUnitNameValueRe} ]
+
+test_regex_definitions:
+# Tests for kBuildingValueRe
+- id: "kBuildingValueRe: plain number"
+  regex_name: kBuildingValueRe
+  input: "123"
+  match_groups: ["123"]
+- id: "kBuildingValueRe: position on a street by a distance marker"
+  regex_name: kBuildingValueRe
+  input: "km 123"
+  match_groups: ["km 123"]
+- id: "kBuildingValueRe: building with letter suffix"
+  regex_name: kBuildingValueRe
+  input: "12a"
+  match_groups: ["12a"]
+- id: "kBuildingValueRe: without a number"
+  regex_name: kBuildingValueRe
+  input: "s/n"
+  match_groups: ["s/n"]
+- id: "kBuildingValueRe: without a number, capital version"
+  regex_name: kBuildingValueRe
+  input: "S/N"
+  match_groups: ["S/N"]
+- id: "kBuildingValueRe: plain number with other data following"
+  regex_name: kBuildingValueRe
+  input: "123, int 12"
+  match_groups: ["123"]
+# Tests for kUnitTypeLiteralRe
+- id: "kUnitTypeLiteralRe: int"
+  regex_name: kUnitTypeLiteralRe
+  input: "int"
+  match_groups: ["int"]
+- id: "kUnitTypeLiteralRe: int."
+  regex_name: kUnitTypeLiteralRe
+  input: "int."
+  match_groups: ["int."]
+# Tests for kUnitNameValueRe
+- id: "kUnitNameValueRe: 12"
+  regex_name: kUnitNameValueRe
+  input: "12"
+  match_groups: ["12"]
+- id: "kUnitNameValueRe: A"
+  regex_name: kUnitNameValueRe
+  input: "A"
+  match_groups: ["A"]
+
+test_parsing_definitions:
+- id: "Street and house number, default case: separated by space"
+  type: street-location
+  input: "Avenida Álvaro Obregón 1234"
+  output:
+    street-location: "Avenida Álvaro Obregón 1234"
+    street: "Avenida Álvaro Obregón"
+    building: "1234"
+- id: "Street and house number, separated with #"
+  type: street-location
+  input: "Avenida Álvaro Obregón #1234"
+  output:
+    street-location: "Avenida Álvaro Obregón #1234"
+    street: "Avenida Álvaro Obregón"
+    building: "1234"
+- id: "Street and house number, separated with No."
+  type: street-location
+  input: "Avenida Álvaro Obregón No. 1234"
+  output:
+    street-location: "Avenida Álvaro Obregón No. 1234"
+    street: "Avenida Álvaro Obregón"
+    building: "1234"
+- id: "Street and house number, with KM position"
+  type: street-location
+  input: "Avenida Álvaro Obregón KM 1234"
+  output:
+    street-location: "Avenida Álvaro Obregón KM 1234"
+    street: "Avenida Álvaro Obregón"
+    building: "KM 1234"
+- id: "Street and house number, without a number"
+  type: street-location
+  input: "Avenida Álvaro Obregón S/N"
+  output:
+    street-location: "Avenida Álvaro Obregón S/N"
+    street: "Avenida Álvaro Obregón"
+    building: "S/N"
+- id: "Decompose unit"
+  type: unit
+  input: "apto 12"
+  output:
+    unit: "apto 12"
+    unit-type: "apto"
+    unit-name: "12"
+- id: "Decompose unit"
+  type: unit
+  input: "num int 12"
+  output:
+    unit: "num int 12"
+    unit-type: "num int"
+    unit-name: "12"
+- id: "Floor and apartment from in-building-location"
+  type: in-building-location
+  input: "apto 12, piso 1"
+  output:
+    unit: "apto 12"
+    unit-type: "apto"
+    unit-name: "12"
+    floor: "1"
+- id: "A full street address"
+  type: street-address-alternative-1
+  input: |-
+    Avenida Álvaro Obregón 1234, Apartamento 5A, Piso 10
+    Club de Autocompletadores
+    Entre Calles Tonalá y Monterrey
+  output:
+    street-location: "Avenida Álvaro Obregón 1234"
+    street: "Avenida Álvaro Obregón"
+    building: "1234"
+    unit: "Apartamento 5A"
+    unit-type: "Apartamento"
+    unit-name: "5A"
+    floor: "10"
+    cross-streets: "Tonalá y Monterrey"
+    cross-street1: "Tonalá"
+    cross-street2: "Monterrey"
+- id: "Full street address 2"
+  type: street-address-alternative-1
+  input: |-
+    Avenida Paseo de la Reforma 505
+    interior 201, piso 2, entre Río Sena y Río Neva
+  output:
+    street-location: "Avenida Paseo de la Reforma 505"
+    street: "Avenida Paseo de la Reforma"
+    building: "505"
+    unit: "interior 201"
+    unit-type: "interior"
+    unit-name: "201"
+    floor: "2"
+    cross-streets: "Río Sena y Río Neva"
+    cross-street1: "Río Sena"
+    cross-street2: "Río Neva"
+- id: "Full street address 3"
+  type: street-address-alternative-1
+  input: |-
+    Calle 60 Norte, número 262, departamento 3, planta baja, entre 35 y 37
+  output:
+    # This would be desired, but the regex are not smart enough:
+    # street-location: "Calle 60 Norte, número 262"
+    # street: "Calle 60 Norte"
+    # building: "262"
+    street-location: "Calle 60"
+    street: "Calle"
+    building: "60"
+    unit: "departamento 3"
+    unit-type: "departamento"
+    unit-name: "3"
+    cross-streets: "35 y 37"
+    cross-street1: "35"
+    cross-street2: "37"

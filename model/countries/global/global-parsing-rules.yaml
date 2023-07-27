@@ -129,6 +129,10 @@ regex_definitions:
     regex_fragment: |-
       (?:[^\s,]+(?:[^\S\r\n]+[^\s,]+)*?)
 
+  kMultipleWordsRe:
+    regex_fragment: |-
+      (?:[^,\r\n]+)
+
   # Regular expression pattern to check if a name contains a Hispanic/Latinx
   # last name conjunction.
   kHispanicLastNameConjunctionCharacteristicsRe:
