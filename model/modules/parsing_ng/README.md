@@ -7,7 +7,7 @@ apto 12
 1 andar
 referência: foo
 ```
-into structurd information:
+into structured information:
 ```yaml
 street: "Avenida Mem de Sá"
 building: "1234"
@@ -110,7 +110,7 @@ capture:
   # won't be produced as output.
   prefix: { regex_fragment: 'floor:\s*' }
   # This is now the the regular expression that needs to be matched after the
-  # floor prefix. If a match is found, the matching substring it bound to the
+  # floor prefix. If a match is found, the matching substring bounds to the
   # output 'floor'.
   parts:
   - regex_fragment: '\d+'
@@ -162,7 +162,7 @@ capture:
 Now, both `apartment 5` and `5` would match. In the latter case we would get
 `{unit: '5', unit-type: '', unit-name: '5'}`.
 
-A capture may contain more separtors and captures and deeper recursion:
+A capture may contain more separators and captures and deeper recursion:
 ```yaml
 capture:
   output: unit-and-floor
@@ -198,7 +198,7 @@ group: The `floor` is optional and we end up building a regex similar to
 ```
 
 The takeaway here is that `seperator`s are bound to the capture that follows
-them. They are only expected to occur if the thier bound capture exists in the
+them. They are only expected to occur if the their bound capture exists in the
 input.
 
 `no_capture` groups exist to support the `match_quantifier` without having to
@@ -207,14 +207,50 @@ bind the match to an output. They are also useful for nestig captures.
 Captures may be defined in `capture_definitions` and referenced via
 `capture_reference`, analogously to regular expressions.
 
-Finally there is the `temp_output` attribute of a `capture`. The purpose of this
-is the following: Captures are mapped into regular expressions and these may not
-contain duplicate capture groups (e.g. `(?P<Foo>\w+)|(?P<Foo>\d+)` would be
-illegal because it contains the same capture group `Foo` twice). To work around
-this we can define a `temp_output` which needs to be unique in the final regular
-expression. But what ever is captured is mapped to `output`. If multiple
-`temp_output` captures are matched and mapped to the same `output` the result is
-undefined.
+Finally there is the `temp_output` attribute of a `capture`. Imagine the
+following setup:
+```yaml
+no_capture:
+  parts:
+    - capture:
+        output: floor
+        prefix: {regex_fragment: 'floor\s+'}
+        parts: [ {regex_reference: '\d+'} ]
+        match_quantifier: MATCH_OPTIONAL
+    - capture:
+        output: floor
+        parts: [ {regex_reference: '\d+'} ]
+        suffix: {regex_fragment: '(?:st|nd|rd|th)\s+floor'}
+        match_quantifier: MATCH_OPTIONAL
+```
+
+We are trying to match the floor number in two alternative ways. This would turn
+into a regex
+`(?:floor\s+(?P<floor>\d+))?(?:(?P<floor>\d+)(?:st|nd|rd|th)\s+floor)?` which is
+invalid because the capture group `(?P<floor>)` occurs twice. You can fix this
+with `temp_output`:
+
+```yaml
+no_capture:
+  parts:
+    - capture:
+        output: floor
+        temp_output: floor1
+        prefix: {regex_fragment: 'floor\s+'}
+        parts: [ {regex_reference: '\d+'} ]
+        match_quantifier: MATCH_OPTIONAL
+    - capture:
+        output: floor
+        temp_output: floor2
+        parts: [ {regex_reference: '\d+'} ]
+        suffix: {regex_fragment: '(?:st|nd|rd|th)\s+floor'}
+        match_quantifier: MATCH_OPTIONAL
+```
+
+Now the regex will become
+`(?:floor\s+(?P<floor1>\d+))?(?:(?P<floor2>\d+)(?:st|nd|rd|th)\s+floor)?`.
+During post processing any non-empty value of `floor1` and `floor2` will be
+mapped to the output `floor`.
 
 # Parsing
 
@@ -299,7 +335,8 @@ address is inherently complex to parse because apartments, floors, doors, etc.
 can be presented in arbitrary order. `extract_parts` can help looking for
 keywords (e.g. "floor") and adjacent information (e.g. the floor number). Unlike
 for a `decomposition_cascade`, `extract_parts` does not follow the "the first
-match wins" principle but applies all matching attempts in a row.
+match wins" principle but applies all matching attempts in sequence so the last
+match wins.
 
 Here is an example:
 ```yaml
@@ -337,8 +374,11 @@ capture_definitions:
           parts: [ {regex_reference: '\d+'} ]
 ```
 
-Note how this can match at any point in the input stirng but it requires the
+Note how this can match at any point in the input string but it requires the
 discovery of a `unit-type`.
+
+> **Note:** `decomposition` and `extract_parts` are mutually exclusive. You must
+  only use one in a capture definition.
 
 # Top-level syntax
 
