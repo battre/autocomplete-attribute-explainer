@@ -3814,6 +3814,12 @@ Artificial concept, not to be used in HTML; this is a structured representation 
 
 
 <details>
+  <summary>Capture Reference: <code>AnchorToBeginningOfInput</code></summary>
+  
+    
+
+
+<details>
   <summary>
     
       No capturing pattern
@@ -3834,6 +3840,11 @@ Regex Fragment: <code class="parsing-regexfragment">\A\s*</code>
       
     </ul>
     
+</details>
+
+
+
+  
 </details>
 
 
@@ -3878,7 +3889,7 @@ Regex Fragment: <code class="parsing-regexfragment">\A\s*</code>
 Separator: 
 
 
-Regex Fragment: <code class="parsing-regexfragment">,\s*|\s+|\s+-\s+</code>
+Regex Fragment: <code class="parsing-regexfragment">,\s*|\s+-\s+|\s+</code>
 
 
 
@@ -3915,7 +3926,7 @@ Regex Fragment: <code class="parsing-regexfragment">(?i:nº\s+)?</code>
 
 
 <details>
-  <summary>Regex Reference: <code>kBuildingRe</code></summary>
+  <summary>Regex Reference: <code>kBuildingValueRe</code></summary>
   
 
 
@@ -4021,7 +4032,7 @@ Regex Fragment: <code class="parsing-regexfragment">\w?</code>
 
 
 
-  Regex Reference: <code>kUnitTypeRe</code> =&gt;
+  Regex Reference: <code>kUnitTypeLiteralRe</code> =&gt;
   <code class="parsing-regexfragment">(?i:apto\.?|apt\.?|apartamento|sala nº|sala|conjunto)</code>
 
 
@@ -4064,7 +4075,7 @@ Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
 
 
 
-  Regex Reference: <code>kUnitNameRe</code> =&gt;
+  Regex Reference: <code>kUnitNameValueRe</code> =&gt;
   <code class="parsing-regexfragment">\d+|\w</code>
 
 
@@ -4125,7 +4136,7 @@ Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
 
 
 
-  Regex Reference: <code>kFloorRe</code> =&gt;
+  Regex Reference: <code>kFloorLiteralRe</code> =&gt;
   <code class="parsing-regexfragment">(?i:andar)</code>
 
 
@@ -4242,7 +4253,7 @@ Regex Fragment: <code class="parsing-regexfragment">(?:º\s*)?</code>
 
 
 
-  Regex Reference: <code>kFloorRe</code> =&gt;
+  Regex Reference: <code>kFloorLiteralRe</code> =&gt;
   <code class="parsing-regexfragment">(?i:andar)</code>
 
 
@@ -4438,9 +4449,12 @@ Name of a street and identifier for the building
 <details>
   <summary>Decomposition
     
+    (<code>ParseStreetLocation</code>)
+    
   </summary>
   Anchor beginning: True<br>
   
+    Capture Reference: ParseStreetLocation<br>
     
 
 
@@ -4459,23 +4473,9 @@ Name of a street and identifier for the building
 
 
 <details>
-  <summary>Capture Reference: <code>ParseStreetLocation</code></summary>
+  <summary>Capture Reference: <code>AnchorToBeginningOfInput</code></summary>
   
     
-
-
-<details>
-  <summary>
-    
-      Capture <code>street-location</code>
-    
-    (MATCH_REQUIRED)
-  </summary>
-    
-    Parts: <br>
-    <ul>
-      
-      <li>
 
 
 <details>
@@ -4499,6 +4499,11 @@ Regex Fragment: <code class="parsing-regexfragment">\A\s*</code>
       
     </ul>
     
+</details>
+
+
+
+  
 </details>
 
 
@@ -4543,7 +4548,7 @@ Regex Fragment: <code class="parsing-regexfragment">\A\s*</code>
 Separator: 
 
 
-Regex Fragment: <code class="parsing-regexfragment">,\s*|\s+|\s+-\s+</code>
+Regex Fragment: <code class="parsing-regexfragment">,\s*|\s+-\s+|\s+</code>
 
 
 
@@ -4580,7 +4585,7 @@ Regex Fragment: <code class="parsing-regexfragment">(?i:nº\s+)?</code>
 
 
 <details>
-  <summary>Regex Reference: <code>kBuildingRe</code></summary>
+  <summary>Regex Reference: <code>kBuildingValueRe</code></summary>
   
 
 
@@ -4624,18 +4629,6 @@ Regex Fragment: <code class="parsing-regexfragment">\w?</code>
       
     </ul>
     
-</details>
-
-
-</li>
-      
-    </ul>
-    
-</details>
-
-
-
-  
 </details>
 
 
@@ -4839,7 +4832,7 @@ House number
 
 
 
-  Regex Reference: <code>kUnitTypeRe</code> =&gt;
+  Regex Reference: <code>kUnitTypeLiteralRe</code> =&gt;
   <code class="parsing-regexfragment">(?i:apto\.?|apt\.?|apartamento|sala nº|sala|conjunto)</code>
 
 
@@ -4882,7 +4875,7 @@ Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
 
 
 
-  Regex Reference: <code>kUnitNameRe</code> =&gt;
+  Regex Reference: <code>kUnitNameValueRe</code> =&gt;
   <code class="parsing-regexfragment">\d+|\w</code>
 
 
@@ -4943,7 +4936,7 @@ Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
 
 
 
-  Regex Reference: <code>kFloorRe</code> =&gt;
+  Regex Reference: <code>kFloorLiteralRe</code> =&gt;
   <code class="parsing-regexfragment">(?i:andar)</code>
 
 
@@ -5060,7 +5053,7 @@ Regex Fragment: <code class="parsing-regexfragment">(?:º\s*)?</code>
 
 
 
-  Regex Reference: <code>kFloorRe</code> =&gt;
+  Regex Reference: <code>kFloorLiteralRe</code> =&gt;
   <code class="parsing-regexfragment">(?i:andar)</code>
 
 
@@ -5306,7 +5299,7 @@ An overflow field for information that is not captured differently in a form
 
 
 
-  Regex Reference: <code>kUnitTypeRe</code> =&gt;
+  Regex Reference: <code>kUnitTypeLiteralRe</code> =&gt;
   <code class="parsing-regexfragment">(?i:apto\.?|apt\.?|apartamento|sala nº|sala|conjunto)</code>
 
 
@@ -5349,7 +5342,7 @@ Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
 
 
 
-  Regex Reference: <code>kUnitNameRe</code> =&gt;
+  Regex Reference: <code>kUnitNameValueRe</code> =&gt;
   <code class="parsing-regexfragment">\d+|\w</code>
 
 
@@ -5410,7 +5403,7 @@ Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
 
 
 
-  Regex Reference: <code>kFloorRe</code> =&gt;
+  Regex Reference: <code>kFloorLiteralRe</code> =&gt;
   <code class="parsing-regexfragment">(?i:andar)</code>
 
 
@@ -5527,7 +5520,7 @@ Regex Fragment: <code class="parsing-regexfragment">(?:º\s*)?</code>
 
 
 
-  Regex Reference: <code>kFloorRe</code> =&gt;
+  Regex Reference: <code>kFloorLiteralRe</code> =&gt;
   <code class="parsing-regexfragment">(?i:andar)</code>
 
 
@@ -5689,7 +5682,7 @@ Location of the adresse in a building
 
 
 
-  Regex Reference: <code>kUnitTypeRe</code> =&gt;
+  Regex Reference: <code>kUnitTypeLiteralRe</code> =&gt;
   <code class="parsing-regexfragment">(?i:apto\.?|apt\.?|apartamento|sala nº|sala|conjunto)</code>
 
 
@@ -5732,7 +5725,7 @@ Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
 
 
 
-  Regex Reference: <code>kUnitNameRe</code> =&gt;
+  Regex Reference: <code>kUnitNameValueRe</code> =&gt;
   <code class="parsing-regexfragment">\d+|\w</code>
 
 
@@ -5793,7 +5786,7 @@ Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
 
 
 
-  Regex Reference: <code>kFloorRe</code> =&gt;
+  Regex Reference: <code>kFloorLiteralRe</code> =&gt;
   <code class="parsing-regexfragment">(?i:andar)</code>
 
 
@@ -5910,7 +5903,7 @@ Regex Fragment: <code class="parsing-regexfragment">(?:º\s*)?</code>
 
 
 
-  Regex Reference: <code>kFloorRe</code> =&gt;
+  Regex Reference: <code>kFloorLiteralRe</code> =&gt;
   <code class="parsing-regexfragment">(?i:andar)</code>
 
 
@@ -6088,7 +6081,7 @@ Apartment
 
 
 
-  Regex Reference: <code>kUnitTypeRe</code> =&gt;
+  Regex Reference: <code>kUnitTypeLiteralRe</code> =&gt;
   <code class="parsing-regexfragment">(?i:apto\.?|apt\.?|apartamento|sala nº|sala|conjunto)</code>
 
 
@@ -6131,7 +6124,7 @@ Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
 
 
 
-  Regex Reference: <code>kUnitNameRe</code> =&gt;
+  Regex Reference: <code>kUnitNameValueRe</code> =&gt;
   <code class="parsing-regexfragment">\d+|\w</code>
 
 
