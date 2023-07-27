@@ -1,0 +1,907 @@
+regex_definitions:
+  # This contains ^ to allow anchoring to the beginning of a line, which is
+  # important if preceding input is optional.
+  kWhitespaceSeparator:
+    regex_fragment: ^|\s+
+
+  # Regular expressions pattern of common two-character CJK last names.
+  # Korean names are written in Hangul.
+  # Chinese names are written in their traditional and simplified version.
+  # Source:
+  # https://en.wikipedia.org/wiki/List_of_Korean_surnames
+  # https://zh.wikipedia.org/wiki/%E8%A4%87%E5%A7%93#.E5.B8.B8.E8.A6.8B.E7.9A.84.E8.A4.87.E5.A7.93
+  kTwoCharacterCjkLastNamesRe:
+    regex_fragment: |-
+      (?:남궁|사공|서문|선우|제갈|황보|독고|망절|欧阳|令狐|皇甫|上官|司徒|诸葛|司马|宇文|
+      呼延|端木|張簡|歐陽|諸葛|申屠|尉遲|司馬|軒轅|夏侯)
+
+  # Regular expression pattern for a Hangul (Korean) character.
+  kHangulCharacterRe:
+    regex_fragment:
+      (?:\p{Hangul})
+
+  # Regular expression pattern for a sequence of Hangul (Korean) character.
+  kHangulCharactersRe:
+    regex_fragment:
+      (?:\p{Hangul}+)
+
+  # Regular expression pattern to match separators as used in CJK names:
+  # Included separators: \u30FB, \u00B7, \u3000 or a simple space.
+  kCjkNameSeperatorsRe:
+    regex_fragment:
+      (?:・|·|　|\s+)
+
+  # Regular expression pattern for common honorific name prefixes.
+  # The list is incomplete and focused on the English and German language.
+  # Sources:
+  # * https://en.wikipedia.org/wiki/English_honorifics
+  # * https://en.wikipedia.org/wiki/German_honorifics
+  kHonorificPrefixRe:
+    regex_fragment: |-
+      (?:
+      Master|Mr\.?|Miss\.?|Mrs\.?|Missus|Ms\.?|Mx\.?|M\.?|Ma'am|Sir|
+      Gentleman|Sire|Mistress|Madam|Ma'am|Dame|Lord|Lady|Esq|Excellency|
+      Excellence|Her Honour|His Honour|Hon\.?|The Right Honourable|
+      The Most Honourable|Dr\.?|PhD|DPhil|MD|DO|Prof\.|Professor|QC|CL|
+      Chancellor|Vice-Chancellor|Principle|Principal|President|Master|Warden|
+      Dean|Regent|Rector|Provost|Director|Chief Executive|Imām|Shaykh|Muftī|
+      Hāfiz|Hāfizah|Qārī|Mawlānā|Hājī|Sayyid|Sayyidah|Sharif|Eminent|
+      Venerable|His Holiness|His Holiness|His All Holiness|His Beatitude|
+      The Most Blessed|His Excellency|His Most Eminent Highness|His Eminence|
+      Most Reverend Eminence|The Most Reverend|His Grace|His Lordship|
+      The Reverend|Fr|Pr|Br|Sr|Elder|Rabbi|The Reverend|Cantor|Chief Rabbi|
+      Grand Rabbi|Rebbetzin|Herr|Frau|Fräulein|Dame|PD|Doktor|Magister|
+      Ingenieur|1lt|1st|2lt|2nd|3rd|admiral|capt|captain|col|cpt|dr|gen|
+      general|lcdr|lt|ltc|ltg|ltjg|maj|major|mg|pastor|prof|rep|reverend|rev|
+      sen|st)
+
+  # Regular expression pattern for an optional last name suffix.
+  kLastNameSuffixRe:
+    regex_fragment: |-
+      (?:(?:b\.a|ba|d\.d\.s|dds|ii|iii|iv|ix|jr|m\.a|m\.d|md|ms|
+      ph\.?d|sr|v|vi|vii|viii|x)\.?)
+
+  # Regular expression pattern for a CJK character.
+  kCjkCharacterRe:
+    regex_fragment: |-
+      (?:\p{Han}|\p{Hangul}|\p{Katakana}|\p{Hiragana}|\p{Bopomofo})
+
+  # Regular expression pattern for a sequence of CJK character.
+  kCjkCharactersRe:
+    regex_fragment: |-
+      (?:(?:\p{Han}|\p{Hangul}|\p{Katakana}|\p{Hiragana}|\p{Bopomofo})+)
+
+  # Regular expression pattern of common two-character Korean names.
+  # Korean last names are written in Hangul. Note, some last names are ambiguous
+  # in the sense that they share a common prefix with a single-character last
+  # name. Source: https://en.wikipedia.org/wiki/List_of_Korean_surnames
+  kTwoCharacterKoreanNamesRe:
+    regex_fragment: |-
+      (?:강전|남궁|독고|동방|망절|사공|서문|선우|소봉|어금|장곡|제갈|황목|황보)
+
+  # Regular expression pattern to match if a string contains a common
+  # Hispanic/Latinx last name.
+  # It contains the most common names in Spain, Mexico, Cuba, Dominican Republic,
+  # Puerto Rico and Guatemala.
+  # Source: https://en.wikipedia.org/wiki/List_of_common_Spanish_surnames
+  kHispanicCommonLastNameCharacteristicsRe:
+    regex_fragment: |-
+      (?:Aguilar|Alonso|Álvarez|Amador|Betancourt|Blanco|Burgos|Castillo|Castro|
+      Chávez|Colón|Contreras|Cortez|Cruz|Delgado|Diaz|Díaz|Domínguez|Estrada|
+      Fernandez|Fernández|Flores|Fuentes|Garcia|García|Garza|Gil|Gómez|González|
+      Guerrero|Gutiérrez|Guzmán|Hernández|Herrera|Iglesias|Jiménez|Juárez|Lopez|
+      López|Luna|Marín|Marroquín|Martín|Martinez|Martínez|Medina|Méndez|Mendoza|
+      Molina|Morales|Moreno|Muñoz|Narvaez|Navarro|Núñez|Ortega|Ortiz|Ortíz|Peña|
+      Perez|Pérez|Ramírez|Ramos|Reyes|Rivera|Rodriguez|Rodríguez|Rojas|Romero|
+      Rosario|Rubio|Ruiz|Ruíz|Salazar|Sanchez|Sánchez|Santana|Santiago|Santos|
+      Sanz|Serrano|Soto|Suárez|Toro|Torres|Vargas|Vasquez|Vásquez|Vázquez|
+      Velásquez)
+
+  kHasHispanicLatinxNameCharacteristics:
+    regex_concat:
+      parts:
+      - regex_reference: kHispanicCommonLastNameCharacteristicsRe
+      - regex_fragment: '|'
+      - regex_reference: kHispanicLastNameConjunctionCharacteristicsRe
+
+  kHasCjkNameCharacteristics:
+    regex_concat:
+      parts:
+      # Must contain one or more CJK characters
+      - regex_fragment: '^'
+      - regex_reference: kCjkCharactersRe
+      # Followed by an optional separator with one or more additional CJK
+      # characters.
+      - regex_fragment: '('
+      - regex_reference: kCjkNameSeperatorsRe
+      - regex_reference: kCjkCharactersRe
+      - regex_fragment: ')?$'
+
+  # Regular expression pattern to match a single word.
+  kSingleWordRe:
+    regex_fragment: |-
+      (?:[^\s,]+)
+
+  # Regular expression pattern for multiple lazy words meaning that the
+  # expression avoids to match more than one word if possible.
+  # Words are separated by white spaces but not by newlines or carriage returns.
+  kMultipleLazyWordsRe:
+    regex_fragment: |-
+      (?:[^\s,]+(?:[^\S\r\n]+[^\s,]+)*?)
+
+  # Regular expression pattern to check if a name contains a Hispanic/Latinx
+  # last name conjunction.
+  kHispanicLastNameConjunctionCharacteristicsRe:
+    regex_fragment: |-
+      \s(y|e|i)\s
+
+  # Regular expression pattern to match the conjunction used between
+  # Hispanic/Latinx last names.
+  kHispanicLastNameConjunctionsRe:
+    regex_fragment: |-
+      (?:y|e|i)
+
+  # Regular expression pattern to match common prefixes belonging to a (single)
+  # last name.
+  # Source: https://en.wikipedia.org/wiki/List_of_family_name_affixes
+  # According to the source, the list is partial. Changes to the list:
+  # * "De la" and "De le" is added to support the combination of "de" and
+  #   "le"/"la" as used in Hispanic/Latinx names.
+  # * The matching of "i" is made lazy to give the last name conjunction
+  #   precedence.
+  kOptionalLastNamePrefixRe:
+    regex_fragment: |-
+      (?:(?:
+      a|ab|af|av|ap|abu|aït|al|ālam|aust|austre|bar|bath|bat|ben|bin|ibn|bet|
+      bint|binti|binte|da|das|de|degli|dele|del|du|della|der|di|dos|du|e|el|
+      fetch|vetch|fitz|i??|kil|gil|de le|de la|la|le|lille|lu|m|mac|mc|mck|mhic|
+      mic|mala|mellom|myljom|na|ned|nedre|neder|nic|ni|nin|nord|norr|ny|o|ua|
+      ui|opp|upp|öfver|ost|öst|öster|øst|øst|østre|över|øvste|øvre|øver|öz|pour|
+      putra|putri|setia|tor|söder|sør|sønder|sør|syd|søndre|syndre|søre|ter|ter|
+      tre|van|van der|väst|väster|verch|erch|vest|vestre|vesle|vetle|von|zu|
+      von und zu)\s)?
+
+  # Regular expressions to characterize if a string contains initials by
+  # checking that:
+  # * The string contains only upper case letters that may be preceded by a
+  #   point.
+  # * Between each letter, there can be a space or a hyphen.
+  kMiddleNameInitialsCharacteristicsRe:
+    regex_fragment: |-
+      ^(?:[A-Z]\.?(?:(?:\s|-)?[A-Z]\.?)*)$
+
+capture_definitions:
+  # Returns an expression to parse a CJK name that includes one separator.
+  # The full name is parsed into |name|, the part of the name before the
+  # separator is parsed into |family_name| and the part after the separator is
+  # parsed into |given_name|.
+  ParseSeparatedCjkNameExpression:
+    capture:
+      output: name
+      parts:
+      # Parse one or more CJK characters into `family-name`.
+      - capture:
+          output: family-name
+          parts: [ {regex_reference: kCjkCharactersRe} ]
+      - separator: {regex_reference: kCjkNameSeperatorsRe}
+      # Parse the remaining CJK characters into the `given name`.
+      - capture:
+          output: given-name
+          parts: [ {regex_reference: kCjkCharactersRe} ]
+
+  # Returns an expression to parse a CJK name that starts with a known
+  # two-character last name.
+  ParseCommonCjkTwoCharacterLastNameExpression:
+    capture:
+      output: name
+      parts:
+      # Parse known two-character CJK last name into `family-name`.
+      - capture:
+          output: family-name
+          parts: [ {regex_reference: kTwoCharacterCjkLastNamesRe} ]
+      # No separtor here.
+      # Parse the remaining CJK characters into `given name`.
+      - capture:
+          output: given-name
+          parts: [ {regex_reference: kCjkCharactersRe} ]
+          quantifier: MATCH_OPTIONAL
+
+  # Returns an expression to parse a CJK name without a separator.
+  # The full name is parsed into `name`, the first character is parsed
+  # into `family-name` and the rest into `given-name`.
+  ParseCjkSingleCharacterLastNameExpression:
+    capture:
+      output: name
+      parts:
+      # Parse the first CJK character into `family-name`.
+      - capture:
+          output: family-name
+          parts: [ {regex_reference: kCjkCharacterRe} ]
+      # No separtor here.
+      # Parse the remaining CJK characters into `given name`.
+      - capture:
+          output: given-name
+          parts: [ {regex_reference: kCjkCharactersRe} ]
+          quantifier: MATCH_OPTIONAL
+
+  # Returns an expression to parse a Korean name that contains at least 4
+  # characters with a common Korean two-character last name. The full name is
+  # parsed into `name`, the first two characters into `family-name` and the
+  # rest into `given-name`.
+  ParseKoreanTwoCharacterLastNameExpression:
+    capture:
+      output: name
+      parts:
+        # Parse known Korean two-character last names into `family-name`.
+        - capture:
+            output: family-name
+            parts: [ {regex_reference: kTwoCharacterKoreanNamesRe} ]
+        # No separtor here.
+        # Parse at least two remaining Hangul characters into `given name`.
+        - capture:
+            output: given-name
+            parts:
+            - regex_reference: kHangulCharacterRe
+            - regex_reference: kHangulCharactersRe
+
+  # Returns an expression to parse a full name that contains only a last name.
+  ParseOnlyLastNameExpression:
+    capture:
+      output: name
+      parts:
+      - capture:
+          output: family-name
+          parts:
+          - regex_reference: kOptionalLastNamePrefixRe
+          - regex_reference: kSingleWordRe
+      - separator: {regex_reference: kWhitespaceSeparator}
+      - no_capture:
+          parts: [ {regex_reference: kLastNameSuffixRe} ]
+          quantifier: MATCH_OPTIONAL
+
+  # Returns an expression to parse a name that consists of a first, middle and
+  # last name with an optional honorific prefix. The full name is parsed into
+  # `name`. The name can start with an honorific prefix that is ignored.
+  # The last token is parsed into `family-name`. This token may be preceded by a
+  # last name prefix like "Mac" or "von" that is included in `family-name`. If
+  # the strings contains any remaining tokens, the first token is parsed into
+  # `given-name` and all remaining tokens into `additional-name`.
+  ParseFirstMiddleLastNameExpression:
+    capture:
+      output: name
+      parts:
+      # Divergence form Chrome:
+      # - no_capture:
+      #     parts:
+      #       - regex_reference: kHonorificPrefixRe
+      #     options:
+      #       quantifier: MATCH_OPTIONAL
+      - capture:
+          output: honorific-prefix
+          parts: [ {regex_reference: kHonorificPrefixRe} ]
+          quantifier: MATCH_OPTIONAL
+      - separator: {regex_reference: kWhitespaceSeparator}
+      - capture:
+          output: given-name
+          parts: [ {regex_reference: kSingleWordRe} ]
+          quantifier: MATCH_OPTIONAL
+      - separator: {regex_reference: kWhitespaceSeparator}
+      - capture:
+          output: additional-name
+          parts: [ {regex_reference: kMultipleLazyWordsRe} ]
+          quantifier: MATCH_LAZY_OPTIONAL
+      - separator: {regex_reference: kWhitespaceSeparator}
+      - capture:
+          output: family-name
+          parts:
+            - regex_reference: kOptionalLastNamePrefixRe
+            - regex_reference: kSingleWordRe
+      - separator: {regex_reference: kWhitespaceSeparator}
+      - no_capture:
+          parts: [ {regex_reference: kLastNameSuffixRe} ]
+          quantifier: MATCH_OPTIONAL
+
+  # Returns an expression to parse a name that starts with the last name,
+  # followed by a comma, and than the first and middle names. The full name is
+  # parsed into `name`. The name can start with an optional honorific prefix
+  # that is ignored, followed by a single token that is parsed into
+  # `family-name`. The `family-name` must be preceded by a comma with optional
+  # spaces. The next token is parsed into `first-name` and all remaining tokens
+  # are parsed into `middle-name`.
+  ParseLastCommaFirstMiddleNameExpression:
+    capture:
+      output: name
+      parts:
+      # Divergence form Chrome:
+      # - no_capture:
+      #     parts:
+      #       - regex_reference: kHonorificPrefixRe
+      #     options:
+      #       quantifier: MATCH_OPTIONAL
+      - capture:
+          output: honorific-prefix
+          parts: [ {regex_reference: kHonorificPrefixRe} ]
+          quantifier: MATCH_OPTIONAL
+      - separator: {regex_reference: kWhitespaceSeparator}
+      - capture:
+          output: family-name
+          parts:
+            - regex_reference: kOptionalLastNamePrefixRe
+            - regex_reference: kSingleWordRe
+      # It's insufficient to declare this a separator because that would be
+      # bound to the optional given-name. So it would be possible to match
+      # family-name followed by additional-name.
+      - no_capture:
+          parts: [ {regex_fragment: "\\s*,\\s*"} ]
+      - capture:
+          output: given-name
+          parts: [ {regex_reference: kSingleWordRe} ]
+          quantifier: MATCH_OPTIONAL
+      - separator: {regex_reference: kWhitespaceSeparator}
+      - capture:
+          output: additional-name
+          parts: [ {regex_reference: kMultipleLazyWordsRe} ]
+          quantifier: MATCH_LAZY_OPTIONAL
+
+  # Returns an expression to parse an Hispanic/Latinx last name.
+  # The last name can consist of two parts with an optional conjunction.
+  # The full last name is parsed into `family-name`, the first part into
+  # `family-name-first`, the conjunction into `family-name-conjunction`, and the
+  # second part into `family-name-second`.
+  # Each last name part consists of a space-separated toke with an optional
+  # prefix like "de le". If only one last name part is found, it is parsed into
+  # `family-name-second`.
+  ParseHispanicLastNameExpression:
+    capture:
+      output: family-name
+      parts:
+      - capture:
+          output: family-name-first
+          parts:
+            - regex_reference: kOptionalLastNamePrefixRe
+            - regex_reference: kSingleWordRe
+      - separator: {regex_reference: kWhitespaceSeparator}
+      - capture:
+          output: family-name-conjunction
+          parts: [ {regex_reference: kHispanicLastNameConjunctionsRe} ]
+          quantifier: MATCH_OPTIONAL
+      - separator: {regex_reference: kWhitespaceSeparator}
+      - capture:
+          output: family-name-second
+          parts:
+            - regex_reference: kOptionalLastNamePrefixRe
+            - regex_reference: kSingleWordRe
+
+  # Returns an expression to parse a full Hispanic/Latinx name that
+  # contains an optional honorific prefix which is ignored, a first name, and a
+  # last name as specified by |ParseHispanicLastNameExpression|.
+  ParseHispanicFullNameExpression:
+    capture:
+      output: name
+      parts:
+        # Divergence form Chrome:
+        # - no_capture:
+        #     parts:
+        #       - regex_reference: kHonorificPrefixRe
+        #     options:
+        #       quantifier: MATCH_OPTIONAL
+        - capture:
+            output: honorific-prefix
+            parts: [ {regex_reference: kHonorificPrefixRe} ]
+            quantifier: MATCH_OPTIONAL
+        - separator: {regex_reference: kWhitespaceSeparator}
+        - capture:
+            output: given-name
+            parts: [ {regex_reference: kMultipleLazyWordsRe} ]
+            quantifier: MATCH_LAZY_OPTIONAL
+        - separator: {regex_reference: kWhitespaceSeparator}
+        - capture_reference: ParseHispanicLastNameExpression
+
+  # Returns an expression that parses the whole family-name into
+  # `family-name-second`.
+  ParseLastNameIntoSecondLastNameExpression:
+    capture:
+      output: family-name
+      parts:
+        - capture:
+            output: family-name-second
+            parts: [ {regex_reference: kMultipleLazyWordsRe} ]
+
+  AnchorToBeginningOfInput:
+    no_capture:
+      parts: [ {regex_fragment: '\A\s*'} ]
+
+parsing_definitions:
+  name:
+    # If the name is a CJK name, try to match in the following order:
+    #
+    # * Match CJK names that include a separator.
+    # If a separator is present, dividing the name between first and last name is
+    # trivial.
+    #
+    # * Match Korean 4+ character names with two-character last names.
+    # Note, although some of the two-character last names are ambiguous in the
+    # sense that they share a common prefix with single character last names. For
+    # 4+ character names, it is more likely that the first two characters belong
+    # to the last name.
+    #
+    # * Match known two-character CJK last names.
+    # Note, this expressions uses only non-ambiguous two-character last names.
+    #
+    # * Match only the first character into the last name.
+    # This is the catch all expression that uses only the first character for the
+    # last name and puts all other characters into the first name.
+    decomposition_cascade:
+      alternatives:
+      - decomposition_cascade:
+          condition:
+            regex_reference: kHasCjkNameCharacteristics
+          alternatives:
+          - decomposition: {capture_reference: ParseSeparatedCjkNameExpression}
+          - decomposition: {capture_reference: ParseKoreanTwoCharacterLastNameExpression}
+          - decomposition: {capture_reference: ParseCommonCjkTwoCharacterLastNameExpression}
+          - decomposition: {capture_reference: ParseCjkSingleCharacterLastNameExpression}
+      - decomposition_cascade:
+          condition:
+            regex_reference: kHasHispanicLatinxNameCharacteristics
+          alternatives:
+          - decomposition: {capture_reference: ParseHispanicFullNameExpression}
+      - decomposition_cascade:
+          # No condition, this is the fallback.
+          alternatives:
+          - decomposition: {capture_reference: ParseOnlyLastNameExpression}
+          - decomposition: {capture_reference: ParseLastCommaFirstMiddleNameExpression}
+          - decomposition: {capture_reference: ParseFirstMiddleLastNameExpression}
+
+test_capture_definitions:
+- id: "Chinese name, Unihan"
+  capture_name: ParseSeparatedCjkNameExpression
+  input: 孫 德明
+  output:
+    name: 孫 德明
+    given-name: 德明
+    family-name: 孫
+
+test_parsing_definitions:
+- id: Name starting with a last name, followed by a comma and the first and middle name.
+  type: name
+  input: "Mueller, Hans Peter"
+  output:
+    honorific-prefix: ""
+    given-name: "Hans"
+    additional-name: "Peter"
+    family-name: "Mueller"
+    # Hispanic last names are skipped in these testing because they are not a
+    # result of parsing but of tree completion. These tests are inherited from
+    # Chrome where we also do tree completion.
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "Mueller"
+- id: Same with an honorific prefix an multiple middle names.
+  type: name
+  input: "Prof. Mueller, Hans Walter Peter"
+  output:
+    honorific-prefix: "Prof."
+    given-name: "Hans"
+    additional-name: "Walter Peter"
+    family-name: "Mueller"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "Mueller"
+- id: Name that includes a hyphen.
+  type: name
+  input: "Dr. Hans-Peter Mueller"
+  output:
+    honorific-prefix: "Dr."
+    given-name: "Hans-Peter"
+    additional-name: ""
+    family-name: "Mueller"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "Mueller"
+- id: Name with honorific prefix but without a middle name.
+  type: name
+  input: "Prof. Albert Einstein"
+  output:
+    honorific-prefix: "Prof."
+    given-name: "Albert"
+    additional-name: ""
+    family-name: "Einstein"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "Einstein"
+- id: Name with honorific prefix and a middle name.
+  type: name
+  input: "Dr. Richard Phillips Feynman"
+  output:
+    honorific-prefix: "Dr."
+    given-name: "Richard"
+    additional-name: "Phillips"
+    family-name: "Feynman"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "Feynman"
+- id: Name with honorific prefix and multiple middle name.
+  type: name
+  input: "Dr. Richard Phillips Isaac Feynman"
+  output:
+    honorific-prefix: "Dr."
+    given-name: "Richard"
+    additional-name: "Phillips Isaac"
+    family-name: "Feynman"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "Feynman"
+- id: Hispanic/Latinx name with two surname and a conjunction.
+  type: name
+  input: "Pablo Diego Ruiz y Picasso"
+  output:
+    honorific-prefix: ""
+    given-name: "Pablo Diego"
+    additional-name: ""
+    family-name: "Ruiz y Picasso"
+    family-name-first: "Ruiz"
+    family-name-conjunction: "y"
+    family-name-second: "Picasso"
+- id: Hispanic/Latinx name with two surname and a conjunction with an honorific prefix.
+  type: name
+  input: "Mr. Pablo Ruiz y Picasso"
+  output:
+    honorific-prefix: "Mr."
+    given-name: "Pablo"
+    additional-name: ""
+    family-name: "Ruiz y Picasso"
+    family-name-first: "Ruiz"
+    family-name-conjunction: "y"
+    family-name-second: "Picasso"
+- id: Name with multiple middle names.
+  type: name
+  input: "George Walker Junior Bush"
+  output:
+    honorific-prefix: ""
+    given-name: "George"
+    additional-name: "Walker Junior"
+    family-name: "Bush"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "Bush"
+- id: Name with a middle name initial.
+  type: name
+  input: "George W Bush"
+  output:
+    honorific-prefix: ""
+    given-name: "George"
+    additional-name: "W"
+    family-name: "Bush"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "Bush"
+- id: Name with a middle name initial.
+  type: name
+  input: "George W. Bush"
+  output:
+    honorific-prefix: ""
+    given-name: "George"
+    additional-name: "W."
+    family-name: "Bush"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "Bush"
+- id: Name with a single middle name.
+  type: name
+  input: "George Walker Bush"
+  output:
+    honorific-prefix: ""
+    given-name: "George"
+    additional-name: "Walker"
+    family-name: "Bush"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "Bush"
+- id: Name without names.
+  type: name
+  input: "George Bush"
+  output:
+    honorific-prefix: ""
+    given-name: "George"
+    additional-name: ""
+    family-name: "Bush"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "Bush"
+- id: Three character Korean name wit two-character surname.
+  type: name
+  input: "欧阳龙"
+  output:
+    honorific-prefix: ""
+    given-name: "龙"
+    additional-name: ""
+    family-name: "欧阳"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "欧阳"
+- id: Four character Korean name wit two-character surname.
+  type: name
+  input: "欧阳龙龙"
+  output:
+    honorific-prefix: ""
+    given-name: "龙龙"
+    additional-name: ""
+    family-name: "欧阳"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "欧阳"
+- id: Full name including given, middle and family names.
+  type: name
+  input: "Homer Jay Simpson"
+  output:
+    honorific-prefix: ""
+    given-name: "Homer"
+    additional-name: "Jay"
+    family-name: "Simpson"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "Simpson"
+- id: No middle name.
+  type: name
+  input: "Moe Szyslak"
+  output:
+    honorific-prefix: ""
+    given-name: "Moe"
+    additional-name: ""
+    family-name: "Szyslak"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "Szyslak"
+- id: Common name prefixes parsed into the honorific prefix.
+  type: name
+  input: "Reverend Timothy Lovejoy"
+  output:
+    honorific-prefix: "Reverend"
+    given-name: "Timothy"
+    additional-name: ""
+    family-name: "Lovejoy"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "Lovejoy"
+- id: Only a last name with a preposition.
+  type: name
+  input: "von Gutenberg"
+  output:
+    honorific-prefix: ""
+    given-name: ""
+    additional-name: ""
+    family-name: "von Gutenberg"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "von Gutenberg"
+- id: Common name suffixes removed.
+  type: name
+  input: "John Frink Phd"
+  output:
+    honorific-prefix: ""
+    given-name: "John"
+    additional-name: ""
+    family-name: "Frink"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "Frink"
+- id: Only lase name with common name suffixes removed.
+  type: name
+  input: "Frink Phd"
+  output:
+    honorific-prefix: ""
+    given-name: ""
+    additional-name: ""
+    family-name: "Frink"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "Frink"
+- id: Since "Ma" is a common last name, "Ma" was removed from the suffixes.
+  type: name
+  input: "John Ma"
+  output:
+    honorific-prefix: ""
+    given-name: "John"
+    additional-name: ""
+    family-name: "Ma"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "Ma"
+- id: Common family name prefixes not considered a middle name.
+  type: name
+  input: "Milhouse Van Houten"
+  output:
+    honorific-prefix: ""
+    given-name: "Milhouse"
+    additional-name: ""
+    family-name: "Van Houten"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "Van Houten"
+- id: Chinese name, Unihan
+  type: name
+  input: "孫 德明"
+  output:
+    honorific-prefix: ""
+    given-name: "德明"
+    additional-name: ""
+    family-name: "孫"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "孫"
+- id: Chinese name, Unihan, 'IDEOGRAPHIC SPACE'
+  type: name
+  input: "孫　德明"
+  output:
+    honorific-prefix: ""
+    given-name: "德明"
+    additional-name: ""
+    family-name: "孫"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "孫"
+- id: Korean name, Hangul
+  type: name
+  input: "홍 길동"
+  output:
+    honorific-prefix: ""
+    given-name: "길동"
+    additional-name: ""
+    family-name: "홍"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "홍"
+- id: Japanese name, Unihan
+  type: name
+  input: "山田 貴洋"
+  output:
+    honorific-prefix: ""
+    given-name: "貴洋"
+    additional-name: ""
+    family-name: "山田"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "山田"
+# In Japanese, foreign names use 'KATAKANA MIDDLE DOT' (U+30FB) as a
+# separator. There is no consensus for the ordering. For now, we use
+# the same ordering as regular Japanese names ("last・first").
+- id: Foreign name in Japanese, Katakana
+  type: name
+  input: "ゲイツ・ビル"
+  output:
+    honorific-prefix: ""
+    given-name: "ビル"
+    additional-name: ""
+    family-name: "ゲイツ"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "ゲイツ"
+- id: \'KATAKANA MIDDLE DOT\' is occasionally typo-ed as 'MIDDLE DOT' (U+00B7).
+  type: name
+  input: "ゲイツ·ビル"
+  output:
+    honorific-prefix: ""
+    given-name: "ビル"
+    additional-name: ""
+    family-name: "ゲイツ"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "ゲイツ"
+- id: |-
+    CJK names don't usually have a space in the middle, but most of the
+    time, the surname is only one character (in Chinese & Korean).
+  type: name
+  input: "최성훈" # Korean name, Hangul
+  output:
+    honorific-prefix: ""
+    given-name: "성훈"
+    additional-name: ""
+    family-name: "최"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "최"
+- id: (Simplified) Chinese name, Unihan
+  type: name
+  input: "刘翔"
+  output:
+    honorific-prefix: ""
+    given-name: "翔"
+    additional-name: ""
+    family-name: "刘"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "刘"
+- id: (Traditional) Chinese name, Unihan
+  type: name
+  input: "劉翔"
+  output:
+    honorific-prefix: ""
+    given-name: "翔"
+    additional-name: ""
+    family-name: "劉"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "劉"
+- id: Korean name, Hangul
+  type: name
+  input: "남궁도"
+  output:
+    honorific-prefix: ""
+    given-name: "도"
+    additional-name: ""
+    family-name: "남궁"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "남궁"
+- id: Korean name, Hangul
+  type: name
+  input: "황보혜정"
+  output:
+    honorific-prefix: ""
+    given-name: "혜정"
+    additional-name: ""
+    family-name: "황보"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "황보"
+- id: (Traditional) Chinese name, Unihan
+  type: name
+  input: "歐陽靖"
+  output:
+    honorific-prefix: ""
+    given-name: "靖"
+    additional-name: ""
+    family-name: "歐陽"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "歐陽"
+# In Korean, some 2-character surnames are rare/ambiguous, like "강전":
+# "강" is a common surname, and "전" can be part of a given name. In
+# those cases, we assume it's 1/2 for 3-character names, or 2/2 for
+# 4-character names.
+- id: Korean name, Hangul
+  type: name
+  input: "강전희"
+  output:
+    honorific-prefix: ""
+    given-name: "전희"
+    additional-name: ""
+    family-name: "강"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "강"
+- id: Korean name, Hangul
+  type: name
+  input: "황목치승"
+  output:
+    honorific-prefix: ""
+    given-name: "치승"
+    additional-name: ""
+    family-name: "황목"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "황목"
+# It occasionally happens that a full name is 2 characters, 1/1.
+- id: Korean name, Hangul
+  type: name
+  input: "이도"
+  output:
+    honorific-prefix: ""
+    given-name: "도"
+    additional-name: ""
+    family-name: "이"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "이"
+- id: Chinese name, Unihan
+  type: name
+  input: "孫文"
+  output:
+    honorific-prefix: ""
+    given-name: "文"
+    additional-name: ""
+    family-name: "孫"
+    # family-name-first: ""
+    # family-name-conjunction: ""
+    # family-name-second: "孫"
