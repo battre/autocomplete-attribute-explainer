@@ -9,8 +9,8 @@
     ({{c.quantifier.__str__()}})
   </summary>
     {% if c.prefix %}
-    Prefix: <br>
-    {{Render(c.prefix)}}
+    Prefix:
+    {{Render(c.prefix)}} <br>
     {% endif %}
     Parts: <br>
     <ul>
@@ -18,8 +18,8 @@
       <li>{{Render(c2)}}</li>
       {% endfor %}
     </ul>
-    {% if c.prefix %}
-    Suffix: <br>
+    {% if c.suffix %}
+    Suffix:
     {{Render(c.suffix)}}
     {% endif %}
 </details>
