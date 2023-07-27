@@ -1,10 +1,10 @@
 import unittest
 
 from renderer import Renderer
-from modules.parsing_ng import (RegexFragment, RegexReference, RegexConcat,
-                                Separator, Capture, Decomposition,
-                                DecompositionCascade, ExtractPart, ExtractParts,
-                                ParsingEngine)
+from modules.parsing import (RegexFragment, RegexReference, RegexConcat,
+                             Separator, Capture, Decomposition,
+                             DecompositionCascade, ExtractPart, ExtractParts,
+                             ParsingEngine)
 from modules.model import Model
 from schema import Schema, SchemaError
 from ruamel.yaml import YAML

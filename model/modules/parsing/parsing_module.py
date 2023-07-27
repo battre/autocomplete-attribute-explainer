@@ -10,17 +10,16 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 import os
 import pprint
 import copy
-from .parsing_ng import (RegexFragment, RegexReference, RegexConcat,
-                         ParsingEngine, RegexComponent, CaptureReference,
-                         CaptureComponent, REGEX_COMPONENT_SCHEMA,
-                         CAPTURE_COMPONENT_SCHEMA, PARSING_COMPONENT_SCHEMA,
-                         DecompositionCascade, Decomposition,
-                         parse_regex_component_from_yaml_dict,
-                         parse_capture_component_from_yaml_dict,
-                         parse_parsing_component_from_yaml_dict)
+from .parsing import (RegexFragment, RegexReference, RegexConcat, ParsingEngine,
+                      RegexComponent, CaptureReference, CaptureComponent,
+                      REGEX_COMPONENT_SCHEMA, CAPTURE_COMPONENT_SCHEMA,
+                      PARSING_COMPONENT_SCHEMA, DecompositionCascade,
+                      Decomposition, parse_regex_component_from_yaml_dict,
+                      parse_capture_component_from_yaml_dict,
+                      parse_parsing_component_from_yaml_dict)
 
 
-class ParsingNgModule(AbstractModule):
+class ParsingModule(AbstractModule):
 
   def schema(self):
     return Schema({
@@ -132,7 +131,7 @@ class ParsingNgModule(AbstractModule):
         break
 
   def observe_file(self, path: Path, renderer: Renderer):
-    match = re.fullmatch(r'(?P<country>..|global)-parsing-ng-rules\.yaml',
+    match = re.fullmatch(r'(?P<country>..|global)-parsing-rules\.yaml',
                          path.name)
     if not match:
       return
@@ -183,7 +182,7 @@ class ParsingNgModule(AbstractModule):
       return None
 
     engine = renderer.country_data[country]["ParsingEngine"]
-    template = env.get_template("parsing_ng_template.html")
+    template = env.get_template("parsing_template.html")
     return template.render(engine=engine, token_id=token_id)
 
   def css(self) -> str:
