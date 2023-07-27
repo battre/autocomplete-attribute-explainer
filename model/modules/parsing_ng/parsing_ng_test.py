@@ -277,8 +277,6 @@ class TestDecomposition(unittest.TestCase):
           capture:
             output: foo
             parts: [ { regex_fragment: '\w+' } ]
-          anchor_beginning: true
-          anchor_end: true
         """))
 
     schema = Schema(Decomposition.schema())
@@ -292,6 +290,30 @@ class TestDecomposition(unittest.TestCase):
     self.assertEqual({'foo': 'aaa'},
                      decomposition.evaluate('aaa', self.engine, {}))
     self.assertEqual({}, decomposition.evaluate('aaa aaa', self.engine, {}))
+
+    # Test anchoring disabled.
+    yaml = YAML(typ='safe').load(
+        dedent("""\
+        decomposition:
+          capture:
+            output: foo
+            parts: [ { regex_fragment: '\w+' } ]
+          anchor_beginning: false
+          anchor_end: false
+        """))
+
+    schema = Schema(Decomposition.schema())
+    schema.validate(yaml)
+
+    decomposition = Decomposition.from_yaml_dict(yaml)
+    self.assertIsNotNone(decomposition)
+    expected = "(?:(?i:(?P<foo>\w+)))"
+    self.assertEqual(expected, decomposition.to_regex(self.engine, {}))
+
+    self.assertEqual({'foo': 'aaa'},
+                     decomposition.evaluate('aaa', self.engine, {}))
+    self.assertEqual({'foo': 'aaa'},
+                     decomposition.evaluate('aaa aaa', self.engine, {}))
 
 
 class TestDecompositionCascade(unittest.TestCase):

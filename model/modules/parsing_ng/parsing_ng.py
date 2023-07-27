@@ -521,7 +521,7 @@ class Decomposition:
     else:
       raise ValueError(f'Found neither capture nor capture_reference in {yaml}')
     anchor_beginning = yaml.get('anchor_beginning', True)
-    anchor_end = yaml.get('anchor_begianchor_endnning', True)
+    anchor_end = yaml.get('anchor_end', True)
 
     return Decomposition(capture=capture,
                          anchor_beginning=anchor_beginning,
