@@ -128,6 +128,7 @@ class ParsingNgModule(AbstractModule):
         print(f"Test failed: {test}")
         print(f"{pprint.saferepr(result)} was actual output")
         print(f"{pprint.saferepr(expected)} was expected output")
+        print(f"Regex used: {pattern.to_regex_list(engine, {})}")
         break
 
   def observe_file(self, path: Path, renderer: Renderer):

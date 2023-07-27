@@ -480,7 +480,8 @@ class Capture:
     """Evaluates the `CaptureTypeWithPattern` on `data`."""
     regex = self.to_regex(None, engine, temp_output_mapping)
     result = {}
-    if regex_result := re2.search(regex, data):
+    multi_line_prefix = "(?m)"
+    if regex_result := re2.search(multi_line_prefix + regex, data):
       for k, v in regex_result.groupdict().items():
         if k in temp_output_mapping:
           k = temp_output_mapping[k]
@@ -554,7 +555,8 @@ class Decomposition:
     """Evaluates the `Decomposition` on `data`."""
     regex = self.to_regex(engine, temp_output_mapping)
     result = {}
-    if regex_result := re2.search(regex, data):
+    multi_line_prefix = "(?m)"
+    if regex_result := re2.search(multi_line_prefix + regex, data):
       for k, v in regex_result.groupdict().items():
         if k in temp_output_mapping:
           k = temp_output_mapping[k]
@@ -625,7 +627,8 @@ class DecompositionCascade:
     if self.condition:
       # Wrap in () to make sure that we have capture something
       regex = self.condition.to_regex(engine, {})
-      if not re2.search(regex, data):
+      multi_line_prefix = "(?m)"
+      if not re2.search(multi_line_prefix + regex, data):
         return {}
     for p in self.alternatives:
       if result := p.evaluate(data, engine, temp_output_mapping):
@@ -678,7 +681,8 @@ class ExtractPart:
     if self.condition:
       # Wrap in () to make sure that we have capture something
       regex = self.condition.to_regex(engine, {})
-      if not re2.search(regex, data):
+      multi_line_prefix = "(?m)"
+      if not re2.search(multi_line_prefix + regex, data):
         return {}
     resolved = self.capture.resolve(engine)
     if type(resolved) == Capture:
@@ -732,7 +736,8 @@ class ExtractParts:
     if self.condition:
       # Wrap in () to make sure that we have capture something
       regex = self.condition.to_regex(engine, {})
-      if not re2.search(regex, data):
+      multi_line_prefix = "(?m)"
+      if not re2.search(multi_line_prefix + regex, data):
         return {}
 
     result = {}

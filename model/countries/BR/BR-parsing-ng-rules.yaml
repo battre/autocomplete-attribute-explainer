@@ -39,7 +39,7 @@ regex_definitions:
 
   kUnitTypeRe:  # Regex for type "unit-type"
     # Note that order matches because RE2 prefers the first match.
-    regex_fragment: (?i:apto\.?|apt\.?|apartamento|sala nº|sala||conjunto)
+    regex_fragment: (?i:apto\.?|apt\.?|apartamento|sala nº|sala|conjunto)
 
   kUnitNameRe:  # Regex for type unit-name"
     regex_fragment: \d+|\w
@@ -52,6 +52,9 @@ capture_definitions:
     capture:
       output: street-location
       parts:
+      # We only search for street locations at the beginning a field.
+      - no_capture:
+          parts: [ {regex_fragment: '\A\s*'} ]
       - capture:
           output: street
           parts: [ {regex_reference: kMultipleLazyWordsRe} ]
@@ -61,8 +64,8 @@ capture_definitions:
             ,\s*|\s+|\s+-\s+
       - capture:
           output: building
-          parts: [ {regex_reference: kBuildingRe} ]
           prefix: { regex_fragment: '(?i:nº\s+)?' }
+          parts: [ {regex_reference: kBuildingRe} ]
 
   ParseUnitWithMandatoryUnitType:
     capture:
@@ -116,7 +119,7 @@ capture_definitions:
           - regex_fragment: 'refer[êe]ncia'
           - regex_fragment: '(?::\s*|\s+)' # end with ":", ": " or " "
       parts:
-        - regex_fragment: '[^,]+'
+        - regex_fragment: '[^,\n]+'
 
 parsing_definitions:
   street-location:
@@ -150,6 +153,22 @@ parsing_definitions:
   address-overflow-and-landmark:
     extract_parts:
       parts:
+      - extract_part:
+          capture_reference: ParseUnitWithMandatoryUnitType
+      - extract_part:
+          capture_reference: ParseFloorWithMandatoryPrefix
+      - extract_part:
+          capture_reference: ParseFloorWithMandatorySuffix
+      - extract_part:
+          capture_reference: ParseLandmarkWithMandatoryPrefix
+
+  street-address-alternative-1:
+    extract_parts:
+      parts:
+      - extract_part:
+          # This field has an implicit anchoring to the beginning of the
+          # input. So we will not apply the regex in the middle of the text.
+          capture_reference: ParseStreetLocation
       - extract_part:
           capture_reference: ParseUnitWithMandatoryUnitType
       - extract_part:
@@ -266,6 +285,54 @@ test_parsing_definitions:
   type: address-overflow-and-landmark
   input: "apto 12, 1 andar, referência: foo, something else"
   output:
+    unit: "apto 12"
+    unit-type: "apto"
+    unit-name: "12"
+    floor: "1"
+    landmark: "foo"
+- id: "A full street address"
+  type: street-address-alternative-1
+  input: |-
+    Avenida Mem de Sá, 1234
+    apto 12, 1 andar
+    referência: foo
+    something else
+  output:
+    street-location: "Avenida Mem de Sá, 1234"
+    street: "Avenida Mem de Sá"
+    building: "1234"
+    unit: "apto 12"
+    unit-type: "apto"
+    unit-name: "12"
+    floor: "1"
+    landmark: "foo"
+- id: "A full street address, v2 (floor in separate row)"
+  type: street-address-alternative-1
+  input: |-
+    Avenida Mem de Sá, 1234
+    apto 12
+    1 andar
+    referência: foo
+    something else
+  output:
+    street-location: "Avenida Mem de Sá, 1234"
+    street: "Avenida Mem de Sá"
+    building: "1234"
+    unit: "apto 12"
+    unit-type: "apto"
+    unit-name: "12"
+    floor: "1"
+    landmark: "foo"
+- id: "A full street address, v3 (in-building-loation in line 1)"
+  type: street-address-alternative-1
+  input: |-
+    Avenida Mem de Sá, 1234, andar 1, apto 12
+    referência: foo
+    something else
+  output:
+    street-location: "Avenida Mem de Sá, 1234"
+    street: "Avenida Mem de Sá"
+    building: "1234"
     unit: "apto 12"
     unit-type: "apto"
     unit-name: "12"

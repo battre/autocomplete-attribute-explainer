@@ -52,3 +52,12 @@ regex_definitions: name -> regex_component
 capture_definitions: name -> capture_component
 parsing_definitions: type_name -> parsing_component
 ```
+
+# Gotchas for multi-line inputs:
+
+Assume multi-line semantics (i.e. '(?m)' is prefixed to the query). This means
+that '^' and '$' match the beginning/end of lines, not of the entire input. If
+you want to anchor to the beginning of the input, you need to use `\A`.
+
+Note that something like `[^,]+` consumes characters beyond new lines. You can
+use `[^,\n]+` if you want to end at line-ends.
