@@ -1,33 +1,5 @@
-# - a capture should enable us to have alternatives:
-#   - ANDAR \d+
-#   - \d+º ANDAR
-#   - \d+ andar
-#   are all valid. Challenge: A capture groups (?P<...>) must have a unique
-#   identifier. So maybe we want to express this as
-#   (
-#      ANDAR (?P<floor-1>\d+)
-#      |
-#      (?P<floor-2>\d+)º ANDAR)
-#   )
-#   With an instruction to use the first match from floor-1 and floor-2
-#   Possible syntax
-#   capture_pattern_constants:
-#     ParseFloor:
-#       capture_from_alternatives:
-#         output: floor
-#         alternatives:
-#         - capture:
-#             output: floor-1  # During validation we need to make sure that this is globally, which may be challenging.
-#             parts: ...
-#         - capture:
-#             output: floor-2
-#             parts: ...
-#         cascade:
-#         - floor-1
-#         - floor-2
-
 regex_definitions:
-  kBuildingRe:  # Regex for type "building"
+  kBuildingValueRe:  # Regex for type "building"
     regex_concat:
       parts:
       - regex_fragment: (?i:KM\s+)?  # Optional prefix for a KM position
@@ -37,14 +9,14 @@ regex_definitions:
       # numbers.
       - regex_fragment: \w?
 
-  kUnitTypeRe:  # Regex for type "unit-type"
+  kUnitTypeLiteralRe:  # Regex for type "unit-type"
     # Note that order matches because RE2 prefers the first match.
     regex_fragment: (?i:apto\.?|apt\.?|apartamento|sala nº|sala|conjunto)
 
-  kUnitNameRe:  # Regex for type unit-name"
+  kUnitNameValueRe:  # Regex for type unit-name"
     regex_fragment: \d+|\w
 
-  kFloorRe:  # Regex for literal for a floor
+  kFloorLiteralRe:  # Regex for literal for a floor
     regex_fragment: (?i:andar)
 
 capture_definitions:
@@ -53,19 +25,21 @@ capture_definitions:
       output: street-location
       parts:
       # We only search for street locations at the beginning a field.
-      - no_capture:
-          parts: [ {regex_fragment: '\A\s*'} ]
+      - capture_reference: AnchorToBeginningOfInput
       - capture:
           output: street
           parts: [ {regex_reference: kMultipleLazyWordsRe} ]
       - separator:
-          # This extends the default separator by " - "
+          # ",{whitespace}"
+          # "{whitespace}-{whitespace}"
+          # "{whitespace}"
           regex_fragment: |-
-            ,\s*|\s+|\s+-\s+
+            ,\s*|\s+-\s+|\s+
       - capture:
           output: building
+          # Optional prefix "nº " before the number.
           prefix: { regex_fragment: '(?i:nº\s+)?' }
-          parts: [ {regex_reference: kBuildingRe} ]
+          parts: [ {regex_reference: kBuildingValueRe} ]
 
   ParseUnitWithMandatoryUnitType:
     capture:
@@ -73,13 +47,13 @@ capture_definitions:
       parts:
       - capture:
           output: unit-type
-          parts: [ {regex_reference: kUnitTypeRe} ]
+          parts: [ {regex_reference: kUnitTypeLiteralRe} ]
           # In the context of an in-building-location this cannot be optional
           # because we need to distinguish a unit from a floor.
       - separator: {regex_reference: kWhitespaceSeparator}
       - capture:
           output: unit-name
-          parts: [ {regex_reference: kUnitNameRe} ]
+          parts: [ {regex_reference: kUnitNameValueRe} ]
 
   ParseFloorWithMandatoryPrefix:
     # match 'andar \d+'
@@ -89,7 +63,7 @@ capture_definitions:
       prefix:
         regex_concat:
           parts:
-            - regex_reference: kFloorRe
+            - regex_reference: kFloorLiteralRe
             - regex_fragment: '\s*'
       parts: [ {regex_fragment: '\d+'} ]
 
@@ -106,7 +80,7 @@ capture_definitions:
           parts:
           - regex_fragment: '\s*'
           - regex_fragment: '(?:º\s*)?' # optional "º "
-          - regex_reference: kFloorRe
+          - regex_reference: kFloorLiteralRe
           - regex_fragment: '(?:\s*[,-]|$)' # separator to other information
 
   ParseLandmarkWithMandatoryPrefix:
@@ -124,10 +98,7 @@ capture_definitions:
 parsing_definitions:
   street-location:
     decomposition:
-      capture:
-        output: street-location
-        parts:
-        - capture_reference: ParseStreetLocation
+      capture_reference: ParseStreetLocation
 
   in-building-location:
     extract_parts:
@@ -185,47 +156,47 @@ parsing_definitions:
         parts:
         - capture:
             output: unit-type
-            parts: [ {regex_reference: kUnitTypeRe} ]
+            parts: [ {regex_reference: kUnitTypeLiteralRe} ]
             quantifier: MATCH_OPTIONAL
         - separator: {regex_reference: kWhitespaceSeparator}
         - capture:
             output: unit-name
-            parts: [ {regex_reference: kUnitNameRe} ]
+            parts: [ {regex_reference: kUnitNameValueRe} ]
 
 test_regex_definitions:
-# Tests for kBuildingRe
-- id: "kBuildingRe: plain number"
-  regex_name: kBuildingRe
+# Tests for kBuildingValueRe
+- id: "kBuildingValueRe: plain number"
+  regex_name: kBuildingValueRe
   input: "123"
   match_groups: ["123"]
-- id: "kBuildingRe: position on a street by a distance marker"
-  regex_name: kBuildingRe
+- id: "kBuildingValueRe: position on a street by a distance marker"
+  regex_name: kBuildingValueRe
   input: "km 123"
   match_groups: ["km 123"]
-- id: "kBuildingRe: building with letter suffix"
-  regex_name: kBuildingRe
+- id: "kBuildingValueRe: building with letter suffix"
+  regex_name: kBuildingValueRe
   input: "12a"
   match_groups: ["12a"]
-- id: "kBuildingRe: plain number with other data following"
-  regex_name: kBuildingRe
+- id: "kBuildingValueRe: plain number with other data following"
+  regex_name: kBuildingValueRe
   input: "123, apto 12"
   match_groups: ["123"]
-# Tests for kUnitTypeRe
-- id: "kUnitTypeRe: apto"
-  regex_name: kUnitTypeRe
+# Tests for kUnitTypeLiteralRe
+- id: "kUnitTypeLiteralRe: apto"
+  regex_name: kUnitTypeLiteralRe
   input: "apto"
   match_groups: ["apto"]
-- id: "kUnitTypeRe: apto."
-  regex_name: kUnitTypeRe
+- id: "kUnitTypeLiteralRe: apto."
+  regex_name: kUnitTypeLiteralRe
   input: "apto."
   match_groups: ["apto."]
-# Tests for kUnitNameRe
-- id: "kUnitNameRe: 12"
-  regex_name: kUnitNameRe
+# Tests for kUnitNameValueRe
+- id: "kUnitNameValueRe: 12"
+  regex_name: kUnitNameValueRe
   input: "12"
   match_groups: ["12"]
-- id: "kUnitNameRe: A"
-  regex_name: kUnitNameRe
+- id: "kUnitNameValueRe: A"
+  regex_name: kUnitNameValueRe
   input: "A"
   match_groups: ["A"]
 
@@ -333,6 +304,19 @@ test_parsing_definitions:
     street-location: "Avenida Mem de Sá, 1234"
     street: "Avenida Mem de Sá"
     building: "1234"
+    unit: "apto 12"
+    unit-type: "apto"
+    unit-name: "12"
+    floor: "1"
+    landmark: "foo"
+- id: "A full street address, v4 (don't discover a street-location from line 2)"
+  type: street-address-alternative-1
+  input: |-
+    Something else
+    Avenida Mem de Sá, 1234, andar 1, apto 12
+    referência: foo
+    something else
+  output:
     unit: "apto 12"
     unit-type: "apto"
     unit-name: "12"
