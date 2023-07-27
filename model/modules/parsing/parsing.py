@@ -87,12 +87,12 @@ class RegexFragment:
   def resolve(self, engine: "ParsingEngine") -> "RegexComponent":
     return self
 
-  def to_regex(self, engine: "ParsingEngine", temp_output_mapping: Dict) -> str:
+  def to_regex(self, engine: "ParsingEngine") -> str:
     return self.value
 
   def validate(self, engine: "ParsingEngine", model: Model, errors: List[str]):
     try:
-      re2.compile(self.to_regex(engine, {}))
+      re2.compile(self.to_regex(engine))
     except Exception as e:
       errors.append(e.__str__())
 
@@ -120,8 +120,8 @@ class RegexReference:
   def schema(cls):
     return {'regex_reference': str}
 
-  def to_regex(self, engine: "ParsingEngine", temp_output_mapping: Dict) -> str:
-    return self.resolve(engine).to_regex(engine, temp_output_mapping)
+  def to_regex(self, engine: "ParsingEngine") -> str:
+    return self.resolve(engine).to_regex(engine)
 
   def validate(self, engine: "ParsingEngine", model: Model, errors: List[str]):
     if self.name not in engine.regex_definitions:
@@ -183,20 +183,19 @@ class RegexConcat:
   def resolve(self, engine: "ParsingEngine") -> "RegexComponent":
     return self
 
-  def to_regex(self, engine: "ParsingEngine", temp_output_mapping: Dict) -> str:
+  def to_regex(self, engine: "ParsingEngine") -> str:
     # The components and the final string are wrapped in non-capture groups
     # to reduce the risk of side-effects between the components. Imagine
     # the RegexFragments A = "a|b" and B="c". Concatenating them as "a|bc" would
     # probably be unexpected.
-    result = "".join(
-        [p.to_regex(engine, temp_output_mapping) for p in self.parts])
+    result = "".join([p.to_regex(engine) for p in self.parts])
     if self.wrap_non_capture:
       return "(?:" + result + ")"
     return result
 
   def validate(self, engine: "ParsingEngine", model: Model, errors: List[str]):
     try:
-      re2.compile(self.to_regex(engine, {}))
+      re2.compile(self.to_regex(engine))
     except Exception as e:
       errors.append(e.__str__())
 
@@ -245,8 +244,8 @@ class CaptureReference:
   def schema(cls):
     return {'capture_reference': str}
 
-  def to_regex(self, engine: "ParsingEngine", temp_output_mapping: Dict) -> str:
-    return self.resolve(engine).to_regex(engine, temp_output_mapping)
+  def to_regex(self, engine: "ParsingEngine") -> str:
+    return self.resolve(engine).to_regex(engine)
 
   def validate(self, engine: "ParsingEngine", model: Model, errors: List[str]):
     if (self.name not in engine.regex_definitions
@@ -262,11 +261,10 @@ class CaptureReference:
         what = engine.capture_definitions[cast(CaptureReference, what).name]
     return what
 
-  def evaluate(self, data: str, engine: "ParsingEngine",
-               temp_output_mapping: Dict) -> Dict:
+  def evaluate(self, data: str, engine: "ParsingEngine") -> Dict:
     resolved = self.resolve(engine)
     if type(resolved) == Capture:
-      return cast(Capture, resolved).evaluate(data, engine, temp_output_mapping)
+      return cast(Capture, resolved).evaluate(data, engine)
     return {}
 
 
@@ -342,8 +340,8 @@ class Separator:
   def resolve(self, engine: "ParsingEngine") -> CaptureOrRegexComponent:
     return self
 
-  def to_regex(self, engine: "ParsingEngine", temp_output_mapping: Dict) -> str:
-    return "(?:" + self.value.to_regex(engine, {}) + ")"
+  def to_regex(self, engine: "ParsingEngine") -> str:
+    return "(?:" + self.value.to_regex(engine) + ")"
 
   def validate(self, engine: "ParsingEngine", model: Model, errors: List[str]):
     self.value.validate(engine, model, errors)
@@ -358,15 +356,8 @@ class Capture:
 
   If the "output" is specified, the regex contains a capture group for the
   specified name. Otherwise, this describes a "no_capture_pattern".
-
-  Sometimes we want to apply multiple alternative Captures. Eg to match
-  'andar \d+' and '\d andar' we would like to have two different regular
-  expressions, each with a capture group (?P<floor>), but capture groups
-  need to be named uniquely. temp_output enables seeting such a unique
-  identifier and is followed by a rename operation.
   """
   output: Optional[str]  # Field-type e.g. given-name
-  temp_output: Optional[str]
   prefix: Optional[Union[RegexFragment, RegexReference, RegexConcat]]
   suffix: Optional[Union[RegexFragment, RegexReference, RegexConcat]]
   parts: List[Union[CaptureReference, "Capture", RegexFragment, RegexReference,
@@ -376,14 +367,11 @@ class Capture:
   @classmethod
   def from_yaml_dict(cls, yaml) -> Optional["Capture"]:
     output = None
-    temp_output = None
     prefix = None
     suffix = None
     if 'capture' in yaml:
       yaml = yaml['capture']
       output = yaml['output']
-      if 'temp_output' in yaml:
-        temp_output = yaml['temp_output']
       prefix = parse_regex_component_from_yaml_dict(yaml.get('prefix', {}))
       suffix = parse_regex_component_from_yaml_dict(yaml.get('suffix', {}))
     elif 'no_capture' in yaml:
@@ -395,7 +383,6 @@ class Capture:
                   or MatchQuantifier.MATCH_REQUIRED)
 
     return Capture(output=output,
-                   temp_output=temp_output,
                    prefix=prefix,
                    parts=parts,
                    suffix=suffix,
@@ -407,7 +394,6 @@ class Capture:
     return {
         'capture': {
             'output': str,
-            schema.Optional('temp_output'): str,
             schema.Optional('prefix'): REGEX_COMPONENT_SCHEMA,
             'parts': [_capture_or_regex_component],
             schema.Optional('suffix'): REGEX_COMPONENT_SCHEMA,
@@ -429,11 +415,11 @@ class Capture:
     return self
 
   def to_regex(self, preceding_separator: Optional[RegexComponent],
-               engine: "ParsingEngine", temp_output_mapping: Dict) -> str:
-    separator = (preceding_separator.to_regex(engine, {})
+               engine: "ParsingEngine") -> str:
+    separator = (preceding_separator.to_regex(engine)
                  if preceding_separator else "")
-    prefix = (self.prefix.to_regex(engine, {}) if self.prefix else "")
-    suffix = (self.suffix.to_regex(engine, {}) if self.suffix else "")
+    prefix = (self.prefix.to_regex(engine) if self.prefix else "")
+    suffix = (self.suffix.to_regex(engine) if self.suffix else "")
 
     pattern_regex = ""
     i = 0
@@ -442,13 +428,12 @@ class Capture:
       if (type(part_i) == Separator and i + 1 < len(self.parts)
           and type(self.parts[i + 1].resolve(engine)) == Capture):
         next_capture = self.parts[i + 1].resolve(engine)
-        pattern_regex += next_capture.to_regex(part_i, engine,
-                                               temp_output_mapping)
+        pattern_regex += next_capture.to_regex(part_i, engine)
         i += 1
       elif type(part_i) == Capture:
-        pattern_regex += part_i.to_regex(None, engine, temp_output_mapping)
+        pattern_regex += part_i.to_regex(None, engine)
       else:
-        pattern_regex += part_i.to_regex(engine, temp_output_mapping)
+        pattern_regex += part_i.to_regex(engine)
       i += 1
 
     quantifier = MatchQuantifier.to_regex_suffix(self.quantifier)
@@ -456,10 +441,6 @@ class Capture:
       # RE2 does not allow '-' in capture groups, so we replace it with an
       # underscore and do the inverse in evaluate().
       output = self.output.replace('-', '_')
-      if self.temp_output:
-        normalized_temp_output = self.temp_output.replace('-', '_')
-        temp_output_mapping[normalized_temp_output] = output
-        output = normalized_temp_output
       return f"(?i:{separator}{prefix}(?P<{output}>{pattern_regex})" + \
             f"{suffix}){quantifier}"
     else:
@@ -475,16 +456,13 @@ class Capture:
     for part in self.parts:
       part.validate(engine, model, errors)
 
-  def evaluate(self, data: str, engine: "ParsingEngine",
-               temp_output_mapping: Dict) -> Dict:
+  def evaluate(self, data: str, engine: "ParsingEngine") -> Dict:
     """Evaluates the `CaptureTypeWithPattern` on `data`."""
-    regex = self.to_regex(None, engine, temp_output_mapping)
+    regex = self.to_regex(None, engine)
     result = {}
     multi_line_prefix = "(?m)"
     if regex_result := re2.search(multi_line_prefix + regex, data):
       for k, v in regex_result.groupdict().items():
-        if k in temp_output_mapping:
-          k = temp_output_mapping[k]
         k = k.replace('_', '-')
         result[k] = v
     return result
@@ -543,25 +521,22 @@ class Decomposition:
         }
     }
 
-  def to_regex(self, engine: "ParsingEngine", temp_output_mapping: Dict) -> str:
+  def to_regex(self, engine: "ParsingEngine") -> str:
     prefix = "^" if self.anchor_beginning else ""
     suffix = "$" if self.anchor_end else ""
-    regex = self.capture.resolve(engine).to_regex(None, engine,
-                                                  temp_output_mapping)
+    regex = self.capture.resolve(engine).to_regex(None, engine)
     return f"(?:{prefix}{regex}{suffix})"
 
-  def evaluate(self, data: str, engine: "ParsingEngine",
-               temp_output_mapping: Dict) -> Dict:
+  def evaluate(self, data: str, engine: "ParsingEngine") -> Dict:
     """Evaluates the `Decomposition` on `data`."""
-    regex = self.to_regex(engine, temp_output_mapping)
+    regex = self.to_regex(engine)
     result = {}
     multi_line_prefix = "(?m)"
     if regex_result := re2.search(multi_line_prefix + regex, data):
       for k, v in regex_result.groupdict().items():
-        if k in temp_output_mapping:
-          k = temp_output_mapping[k]
         k = k.replace('_', '-')
         result[k] = v
+
     return result
 
 
@@ -601,16 +576,13 @@ class DecompositionCascade:
     ]
     return decomp_schema
 
-  def to_regex_list(self, engine: "ParsingEngine",
-                    temp_output_mapping: Dict) -> List[str]:
+  def to_regex_list(self, engine: "ParsingEngine") -> List[str]:
     result = []
     for a in self.alternatives:
       if type(a) == Decomposition:
-        result.append(
-            cast(Decomposition, a).to_regex(engine, temp_output_mapping))
+        result.append(cast(Decomposition, a).to_regex(engine))
       elif type(a) == DecompositionCascade:
-        result.append(*cast(DecompositionCascade, a).to_regex_list(
-            engine, temp_output_mapping))
+        result.extend(cast(DecompositionCascade, a).to_regex_list(engine))
       else:
         raise ValueError(f"Unexpected type {type(a)}")
     return result
@@ -621,17 +593,16 @@ class DecompositionCascade:
     for alternative in self.alternatives:
       alternative.validate(engine, model, errors)
 
-  def evaluate(self, data: str, engine: "ParsingEngine",
-               temp_output_mapping: Dict) -> Dict:
+  def evaluate(self, data: str, engine: "ParsingEngine") -> Dict:
     # If we have a condition but it's not fulfilled, don't return anything.
     if self.condition:
       # Wrap in () to make sure that we have capture something
-      regex = self.condition.to_regex(engine, {})
+      regex = self.condition.to_regex(engine)
       multi_line_prefix = "(?m)"
       if not re2.search(multi_line_prefix + regex, data):
         return {}
     for p in self.alternatives:
-      if result := p.evaluate(data, engine, temp_output_mapping):
+      if result := p.evaluate(data, engine):
         return result
     return {}
 
@@ -666,27 +637,26 @@ class ExtractPart:
         }
     }
 
-  def to_regex(self, engine: "ParsingEngine", temp_output_mapping: Dict) -> str:
+  def to_regex(self, engine: "ParsingEngine") -> str:
     resolved = self.capture.resolve(engine)
-    return resolved.to_regex(None, engine, temp_output_mapping)
+    return resolved.to_regex(None, engine)
 
   def validate(self, engine: "ParsingEngine", model: Model, errors: List[str]):
     if self.condition:
       self.condition.validate(engine, model, errors)
     self.capture.validate(engine, model, errors)
 
-  def evaluate(self, data: str, engine: "ParsingEngine",
-               temp_output_mapping: Dict) -> Dict:
+  def evaluate(self, data: str, engine: "ParsingEngine") -> Dict:
     # If we have a condition but it's not fulfilled, don't return anything.
     if self.condition:
       # Wrap in () to make sure that we have capture something
-      regex = self.condition.to_regex(engine, {})
+      regex = self.condition.to_regex(engine)
       multi_line_prefix = "(?m)"
       if not re2.search(multi_line_prefix + regex, data):
         return {}
     resolved = self.capture.resolve(engine)
     if type(resolved) == Capture:
-      return cast(Capture, resolved).evaluate(data, engine, temp_output_mapping)
+      return cast(Capture, resolved).evaluate(data, engine)
     elif type(self.capture) == Separator:
       return {}
     else:
@@ -720,9 +690,8 @@ class ExtractParts:
         }
     }
 
-  def to_regex_list(self, engine: "ParsingEngine",
-                    temp_output_mapping: Dict) -> List[str]:
-    return [p.to_regex(engine, temp_output_mapping) for p in self.parts]
+  def to_regex_list(self, engine: "ParsingEngine") -> List[str]:
+    return [p.to_regex(engine) for p in self.parts]
 
   def validate(self, engine: "ParsingEngine", model: Model, errors: List[str]):
     if self.condition:
@@ -730,19 +699,18 @@ class ExtractParts:
     for p in self.parts:
       p.validate(engine, model, errors)
 
-  def evaluate(self, data: str, engine: "ParsingEngine",
-               temp_output_mapping: Dict) -> Dict:
+  def evaluate(self, data: str, engine: "ParsingEngine") -> Dict:
     # If we have a condition but it's not fulfilled, don't return anything.
     if self.condition:
       # Wrap in () to make sure that we have capture something
-      regex = self.condition.to_regex(engine, {})
+      regex = self.condition.to_regex(engine)
       multi_line_prefix = "(?m)"
       if not re2.search(multi_line_prefix + regex, data):
         return {}
 
     result = {}
     for p in self.parts:
-      result.update(p.evaluate(data, engine, temp_output_mapping))
+      result.update(p.evaluate(data, engine))
     return result
 
 

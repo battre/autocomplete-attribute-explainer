@@ -82,7 +82,7 @@ class ParsingModule(AbstractModule):
         return
       regex_definition = engine.regex_definitions[test['regex_name']]
       assert regex_definition
-      regex = regex_definition.to_regex(engine, {})
+      regex = regex_definition.to_regex(engine)
       regex = f"({regex})"
       result = re.search(regex, test['input'])
       if result:
@@ -101,7 +101,7 @@ class ParsingModule(AbstractModule):
         return
       pattern = engine.capture_definitions[test['capture_name']]
       assert pattern
-      result = pattern.evaluate(test['input'], engine, {})
+      result = pattern.evaluate(test['input'], engine)
       if test['output'] != result:
         print(f"Test failed: {test}")
         print(f"{result} was actual output")
@@ -117,7 +117,7 @@ class ParsingModule(AbstractModule):
         return
       pattern = engine.parsing_definitions[token_type]
       assert pattern
-      result = pattern.evaluate(test['input'], engine, {})
+      result = pattern.evaluate(test['input'], engine)
       result = {k: v for k, v in result.items() if v}
       expected = {k: v for k, v in test['output'].items() if v != ""}
       # For ExtractParts we don't caputre the actual string.
@@ -127,7 +127,10 @@ class ParsingModule(AbstractModule):
         print(f"Test failed: {test}")
         print(f"{pprint.saferepr(result)} was actual output")
         print(f"{pprint.saferepr(expected)} was expected output")
-        print(f"Regex used: {pattern.to_regex_list(engine, {})}")
+        if type(pattern) == Decomposition:
+          print(f"Regex used: {pattern.to_regex(engine)}")
+        else:
+          print(f"Regex used: {pattern.to_regex_list(engine)}")
         break
 
   def observe_file(self, path: Path, renderer: Renderer):

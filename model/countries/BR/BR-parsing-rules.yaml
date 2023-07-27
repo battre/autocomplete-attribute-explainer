@@ -59,7 +59,6 @@ capture_definitions:
     # match 'andar \d+'
     capture:
       output: floor
-      temp_output: floor_ParseFloorWithMandatoryPrefix
       prefix:
         regex_concat:
           parts:
@@ -71,7 +70,6 @@ capture_definitions:
     # match '\d+º andar' and '\d+ andar'
     capture:
       output: floor
-      temp_output: floor_ParseFloorWithMandatorySuffix
       prefix:
         regex_fragment: '(?:[,-]\s*|^)'
       parts: [ {regex_fragment: '\d+'} ]

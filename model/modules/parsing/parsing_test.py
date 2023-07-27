@@ -28,7 +28,7 @@ class TestRegexFragment(unittest.TestCase):
 
     regex = RegexFragment.from_yaml_dict(yaml)
     self.assertIsNotNone(regex)
-    self.assertEqual('foobar', regex.to_regex(self.engine, {}))
+    self.assertEqual('foobar', regex.to_regex(self.engine))
 
     # Verify that newlines are stripped at the end
     yaml = YAML(typ='safe').load(
@@ -42,7 +42,7 @@ class TestRegexFragment(unittest.TestCase):
 
     regex = RegexFragment.from_yaml_dict(yaml)
     self.assertIsNotNone(regex)
-    self.assertEqual('foobar', regex.to_regex(self.engine, {}))
+    self.assertEqual('foobar', regex.to_regex(self.engine))
 
   def test_validate(self):
     # Ensure that a valid expression produces no errors.
@@ -78,7 +78,7 @@ class TestRegexReference(unittest.TestCase):
     # Verify that to_regex resolves to the original fragment
     ref = RegexReference.from_yaml_dict(yaml1)
     self.assertIsNotNone(ref)
-    self.assertEqual('foobar', ref.to_regex(self.engine, {}))
+    self.assertEqual('foobar', ref.to_regex(self.engine))
 
     self.engine.regex_definitions['ref1'] = ref
 
@@ -86,7 +86,7 @@ class TestRegexReference(unittest.TestCase):
     yaml2 = {'regex_reference': 'ref1'}
     ref2 = RegexReference.from_yaml_dict(yaml2)
     self.assertIsNotNone(ref2)
-    self.assertEqual('foobar', ref2.to_regex(self.engine, {}))
+    self.assertEqual('foobar', ref2.to_regex(self.engine))
 
   def test_validate(self):
     # Ensure that a valid expression produces no errors.
@@ -143,7 +143,7 @@ class TestRegexConcat(unittest.TestCase):
     concat = RegexConcat.from_yaml_dict(yaml)
     self.assertIsNotNone(concat)
 
-    self.assertEqual('(?:fragment1foobarAB)', concat.to_regex(self.engine, {}))
+    self.assertEqual('(?:fragment1foobarAB)', concat.to_regex(self.engine))
 
   def test_validate(self):
     # Ensure that a valid expression produces no errors.
@@ -185,7 +185,7 @@ class TestSeparator(unittest.TestCase):
 
     regex = Separator.from_yaml_dict(yaml)
     self.assertIsNotNone(regex)
-    self.assertEqual('(?:foobar)', regex.to_regex(self.engine, {}))
+    self.assertEqual('(?:foobar)', regex.to_regex(self.engine))
 
     errors = []
     regex.validate(self.engine, self.model, errors)
@@ -242,7 +242,7 @@ class TestCapture(unittest.TestCase):
     capture3 = '(?i:(?:\s+sep2\s+)(?P<o3>\w+))??'
     # out-put becomes out_put
     expected = f"(?i:prefix(?P<out_put>{capture1}{capture2}{capture3})suffix)"
-    self.assertEqual(expected, regex.to_regex(None, self.engine, {}))
+    self.assertEqual(expected, regex.to_regex(None, self.engine))
     inner_input = (
       ('p1' + 'foo' + 's1') + \
       ' sep1 ' + \
@@ -251,7 +251,7 @@ class TestCapture(unittest.TestCase):
       ('' + 'baz' + '')
     )
     input = f"prefix{inner_input}suffix"
-    result = regex.evaluate(input, self.engine, {})
+    result = regex.evaluate(input, self.engine)
     expected = {
         'out-put': inner_input,
         'o1': 'foo',
@@ -285,11 +285,10 @@ class TestDecomposition(unittest.TestCase):
     decomposition = Decomposition.from_yaml_dict(yaml)
     self.assertIsNotNone(decomposition)
     expected = "(?:^(?i:(?P<foo>\w+))$)"
-    self.assertEqual(expected, decomposition.to_regex(self.engine, {}))
+    self.assertEqual(expected, decomposition.to_regex(self.engine))
 
-    self.assertEqual({'foo': 'aaa'},
-                     decomposition.evaluate('aaa', self.engine, {}))
-    self.assertEqual({}, decomposition.evaluate('aaa aaa', self.engine, {}))
+    self.assertEqual({'foo': 'aaa'}, decomposition.evaluate('aaa', self.engine))
+    self.assertEqual({}, decomposition.evaluate('aaa aaa', self.engine))
 
     # Test anchoring disabled.
     yaml = YAML(typ='safe').load(
@@ -308,12 +307,11 @@ class TestDecomposition(unittest.TestCase):
     decomposition = Decomposition.from_yaml_dict(yaml)
     self.assertIsNotNone(decomposition)
     expected = "(?:(?i:(?P<foo>\w+)))"
-    self.assertEqual(expected, decomposition.to_regex(self.engine, {}))
+    self.assertEqual(expected, decomposition.to_regex(self.engine))
 
+    self.assertEqual({'foo': 'aaa'}, decomposition.evaluate('aaa', self.engine))
     self.assertEqual({'foo': 'aaa'},
-                     decomposition.evaluate('aaa', self.engine, {}))
-    self.assertEqual({'foo': 'aaa'},
-                     decomposition.evaluate('aaa aaa', self.engine, {}))
+                     decomposition.evaluate('aaa aaa', self.engine))
 
 
 class TestDecompositionCascade(unittest.TestCase):
@@ -345,13 +343,13 @@ class TestDecompositionCascade(unittest.TestCase):
     self.assertIsNotNone(cascade)
 
     expected = ["(?:^(?i:(?P<foo>.*a+))$)", "(?:^(?i:(?P<foo>.*b+))$)"]
-    self.assertEqual(expected, cascade.to_regex_list(self.engine, {}))
+    self.assertEqual(expected, cascade.to_regex_list(self.engine))
 
-    self.assertEqual({'foo': '1aaa'}, cascade.evaluate('1aaa', self.engine, {}))
-    self.assertEqual({'foo': '1bbb'}, cascade.evaluate('1bbb', self.engine, {}))
+    self.assertEqual({'foo': '1aaa'}, cascade.evaluate('1aaa', self.engine))
+    self.assertEqual({'foo': '1bbb'}, cascade.evaluate('1bbb', self.engine))
     # The condition (a "1" at the beginning is violated), therefore, we don't
     # return anything.
-    self.assertEqual({}, cascade.evaluate('aaa', self.engine, {}))
+    self.assertEqual({}, cascade.evaluate('aaa', self.engine))
 
     # Test nested cascades:
     yaml = YAML(typ='safe').load(
@@ -377,9 +375,8 @@ class TestDecompositionCascade(unittest.TestCase):
 
     cascade = DecompositionCascade.from_yaml_dict(yaml)
     self.assertIsNotNone(cascade)
-    self.assertEqual({'foo': '1aaa'}, cascade.evaluate('1aaa', self.engine, {}))
-    self.assertEqual({'foo': '12bbb'}, cascade.evaluate('12bbb', self.engine,
-                                                        {}))
+    self.assertEqual({'foo': '1aaa'}, cascade.evaluate('1aaa', self.engine))
+    self.assertEqual({'foo': '12bbb'}, cascade.evaluate('12bbb', self.engine))
 
 
 class TestExtractPart(unittest.TestCase):
@@ -407,9 +404,9 @@ class TestExtractPart(unittest.TestCase):
     extract_part = ExtractPart.from_yaml_dict(yaml)
     self.assertIsNotNone(extract_part)
     expected = '(?i:prefix(?P<out_put>[_a]+)suffix)'
-    self.assertEqual(expected, extract_part.to_regex(self.engine, {}))
+    self.assertEqual(expected, extract_part.to_regex(self.engine))
     self.assertEqual({'out-put': '_a_'},
-                     extract_part.evaluate('1prefix_a_suffix', self.engine, {}))
+                     extract_part.evaluate('1prefix_a_suffix', self.engine))
 
 
 class TestExtractParts(unittest.TestCase):
@@ -446,47 +443,4 @@ class TestExtractParts(unittest.TestCase):
     self.assertEqual({
         'building': '1',
         'unit': '2'
-    }, extract_parts.evaluate('1 house number 1 apartment 2', self.engine, {}))
-
-  def test_overlapping_outputs(self):
-    # Here we have two extract_parts that try to extract "foo-bar".
-    # Ensure that the renaming works as intended.
-    yaml = YAML(typ='safe').load(
-        dedent("""\
-        extract_parts:
-          parts:
-          - extract_part:
-              capture:
-                output: foo-bar
-                temp_output: foo1
-                prefix: { regex_fragment: 'A\s+' }
-                parts:
-                  - regex_fragment: '\d+'
-          - extract_part:
-              capture:
-                output: foo-bar
-                temp_output: foo2
-                prefix: { regex_fragment: 'B\s+' }
-                parts:
-                  - regex_fragment: '\d+'
-        """))
-
-    schema = Schema(ExtractParts.schema())
-    schema.validate(yaml)
-
-    extract_parts = ExtractParts.from_yaml_dict(yaml)
-    self.assertIsNotNone(extract_parts)
-
-    temp_output_mapping = {}
-    self.assertEqual({
-        'foo-bar': '5',
-    }, extract_parts.evaluate('A 5', self.engine, temp_output_mapping))
-    self.assertEqual({
-        'foo1': 'foo_bar',
-        'foo2': 'foo_bar'
-    }, temp_output_mapping)
-
-    temp_output_mapping = {}
-    self.assertEqual({
-        'foo-bar': '2',
-    }, extract_parts.evaluate('B 2', self.engine, temp_output_mapping))
+    }, extract_parts.evaluate('1 house number 1 apartment 2', self.engine))

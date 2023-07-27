@@ -78,7 +78,6 @@ the output of parsing).
 match_quantifier: MATCH_REQUIRED | MATCH_OPTIONAL | MATCH_LAZY_OPTIONAL
 capture:
   output: type_name
-  [temp_output: str]
   [prefix: regex_component]
   parts: List<capture_or_regex_component>
   [suffix: regex_component]
@@ -206,51 +205,6 @@ bind the match to an output. They are also useful for nestig captures.
 
 Captures may be defined in `capture_definitions` and referenced via
 `capture_reference`, analogously to regular expressions.
-
-Finally there is the `temp_output` attribute of a `capture`. Imagine the
-following setup:
-```yaml
-no_capture:
-  parts:
-    - capture:
-        output: floor
-        prefix: {regex_fragment: 'floor\s+'}
-        parts: [ {regex_reference: '\d+'} ]
-        match_quantifier: MATCH_OPTIONAL
-    - capture:
-        output: floor
-        parts: [ {regex_reference: '\d+'} ]
-        suffix: {regex_fragment: '(?:st|nd|rd|th)\s+floor'}
-        match_quantifier: MATCH_OPTIONAL
-```
-
-We are trying to match the floor number in two alternative ways. This would turn
-into a regex
-`(?:floor\s+(?P<floor>\d+))?(?:(?P<floor>\d+)(?:st|nd|rd|th)\s+floor)?` which is
-invalid because the capture group `(?P<floor>)` occurs twice. You can fix this
-with `temp_output`:
-
-```yaml
-no_capture:
-  parts:
-    - capture:
-        output: floor
-        temp_output: floor1
-        prefix: {regex_fragment: 'floor\s+'}
-        parts: [ {regex_reference: '\d+'} ]
-        match_quantifier: MATCH_OPTIONAL
-    - capture:
-        output: floor
-        temp_output: floor2
-        parts: [ {regex_reference: '\d+'} ]
-        suffix: {regex_fragment: '(?:st|nd|rd|th)\s+floor'}
-        match_quantifier: MATCH_OPTIONAL
-```
-
-Now the regex will become
-`(?:floor\s+(?P<floor1>\d+))?(?:(?P<floor2>\d+)(?:st|nd|rd|th)\s+floor)?`.
-During post processing any non-empty value of `floor1` and `floor2` will be
-mapped to the output `floor`.
 
 # Parsing
 
