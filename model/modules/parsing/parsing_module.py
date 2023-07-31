@@ -12,9 +12,10 @@ import pprint
 import copy
 from .parsing import (RegexFragment, RegexReference, RegexConcat, ParsingEngine,
                       RegexComponent, CaptureReference, CaptureComponent,
-                      REGEX_COMPONENT_SCHEMA, CAPTURE_COMPONENT_SCHEMA,
-                      PARSING_COMPONENT_SCHEMA, DecompositionCascade,
-                      Decomposition, parse_regex_component_from_yaml_dict,
+                      CaptureMapper, REGEX_COMPONENT_SCHEMA,
+                      CAPTURE_COMPONENT_SCHEMA, PARSING_COMPONENT_SCHEMA,
+                      DecompositionCascade, Decomposition,
+                      parse_regex_component_from_yaml_dict,
                       parse_capture_component_from_yaml_dict,
                       parse_parsing_component_from_yaml_dict)
 
@@ -82,7 +83,7 @@ class ParsingModule(AbstractModule):
         return
       regex_definition = engine.regex_definitions[test['regex_name']]
       assert regex_definition
-      regex = regex_definition.to_regex(engine)
+      regex = regex_definition.to_regex(engine, CaptureMapper())
       regex = f"({regex})"
       result = re.search(regex, test['input'])
       if result:
@@ -101,7 +102,8 @@ class ParsingModule(AbstractModule):
         return
       pattern = engine.capture_definitions[test['capture_name']]
       assert pattern
-      result, regex_used = pattern.evaluate(test['input'], engine)
+      result, regex_used = pattern.evaluate(test['input'], engine,
+                                            CaptureMapper())
       if test['output'] != result:
         print(f"Test failed: {test}")
         print(f"{result} was actual output")
@@ -118,7 +120,8 @@ class ParsingModule(AbstractModule):
         return
       pattern = engine.parsing_definitions[token_type]
       assert pattern
-      result, regex_used = pattern.evaluate(test['input'], engine)
+      result, regex_used = pattern.evaluate(test['input'], engine,
+                                            CaptureMapper())
       result = {k: v for k, v in result.items() if v}
       expected = {k: v for k, v in test['output'].items() if v != ""}
       # For ExtractParts we don't caputre the actual string.
@@ -130,12 +133,16 @@ class ParsingModule(AbstractModule):
         print(f"{pprint.saferepr(expected)} was expected output")
         if type(pattern) == Decomposition:
           print(f"Regex used: {regex_used}")
-          print("Regex considered: " +
-                f"{cast(Decomposition, pattern).to_regex(engine)}")
+          print(
+              "Regex considered: " +
+              f"{cast(Decomposition, pattern).to_regex(engine, CaptureMapper())}"
+          )
         else:
           print(f"Regex used: {regex_used}")
-          print(f"Regex considered: " +
-                f"{cast(DecompositionCascade, pattern).to_regex_list(engine)}")
+          print(
+              f"Regex considered: " +
+              f"{cast(DecompositionCascade, pattern).to_regex_list(engine, CaptureMapper())}"
+          )
         break
 
   def observe_file(self, path: Path, renderer: Renderer):

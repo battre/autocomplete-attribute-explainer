@@ -1,4 +1,5 @@
 import re2
+from collections import defaultdict
 from dataclasses import dataclass, field
 from typing import Dict, List, Set, Union, Tuple, Optional, cast
 import schema
@@ -22,6 +23,31 @@ def parse_regex_component_from_yaml_dict(yaml) -> Optional[RegexComponent]:
   return (RegexFragment.from_yaml_dict(yaml)
           or RegexReference.from_yaml_dict(yaml)
           or RegexConcat.from_yaml_dict(yaml))
+
+
+@dataclass
+class CaptureMapper:
+  """Class to deal with apping duplicate named captures.
+
+  A regex must not contain duplicate capture groups like this
+  '(?P<foo>\w+)|(?P<foo>\w+)'
+
+  This CaptureMapper ensures that capture groups get assigned unique names.
+  In this case: '(?P<foo>\w+)|(?P<foo-2>\w+)'
+  """
+  occurrences: Dict[str, int] = field(default_factory=lambda: defaultdict(int))
+
+  def get_and_increment(self, type: str) -> str:
+    self.occurrences[type] += 1
+    if self.occurrences[type] == 1:
+      return type
+    return f"{type}-{self.occurrences[type]}"
+
+  def reverse(self, type: str) -> str:
+    for k, _ in self.occurrences.items():
+      if match := re2.match(f"({k})-\d+", type):
+        return match.group(1)
+    return type
 
 
 @dataclass
@@ -93,12 +119,12 @@ class RegexFragment:
   def resolve(self, engine: "ParsingEngine") -> "RegexComponent":
     return self
 
-  def to_regex(self, engine: "ParsingEngine") -> str:
+  def to_regex(self, engine: "ParsingEngine", mapper: CaptureMapper) -> str:
     return self.value
 
   def validate(self, engine: "ParsingEngine", model: Model, errors: List[str]):
     try:
-      re2.compile(self.to_regex(engine))
+      re2.compile(self.to_regex(engine, CaptureMapper()))
     except Exception as e:
       errors.append(e.__str__())
 
@@ -126,8 +152,8 @@ class RegexReference:
   def schema(cls):
     return {'regex_reference': str}
 
-  def to_regex(self, engine: "ParsingEngine") -> str:
-    return self.resolve(engine).to_regex(engine)
+  def to_regex(self, engine: "ParsingEngine", mapper: CaptureMapper) -> str:
+    return self.resolve(engine).to_regex(engine, mapper)
 
   def validate(self, engine: "ParsingEngine", model: Model, errors: List[str]):
     if self.name not in engine.regex_definitions:
@@ -189,19 +215,19 @@ class RegexConcat:
   def resolve(self, engine: "ParsingEngine") -> "RegexComponent":
     return self
 
-  def to_regex(self, engine: "ParsingEngine") -> str:
+  def to_regex(self, engine: "ParsingEngine", mapper: CaptureMapper) -> str:
     # The components and the final string are wrapped in non-capture groups
     # to reduce the risk of side-effects between the components. Imagine
     # the RegexFragments A = "a|b" and B="c". Concatenating them as "a|bc" would
     # probably be unexpected.
-    result = "".join([p.to_regex(engine) for p in self.parts])
+    result = "".join([p.to_regex(engine, mapper) for p in self.parts])
     if self.wrap_non_capture:
       return "(?:" + result + ")"
     return result
 
   def validate(self, engine: "ParsingEngine", model: Model, errors: List[str]):
     try:
-      re2.compile(self.to_regex(engine))
+      re2.compile(self.to_regex(engine, CaptureMapper()))
     except Exception as e:
       errors.append(e.__str__())
 
@@ -250,8 +276,8 @@ class CaptureReference:
   def schema(cls):
     return {'capture_reference': str}
 
-  def to_regex(self, engine: "ParsingEngine") -> str:
-    return self.resolve(engine).to_regex(engine)
+  def to_regex(self, engine: "ParsingEngine", mapper: CaptureMapper) -> str:
+    return self.resolve(engine).to_regex(engine, mapper)
 
   def validate(self, engine: "ParsingEngine", model: Model, errors: List[str]):
     if (self.name not in engine.regex_definitions
@@ -267,10 +293,11 @@ class CaptureReference:
         what = engine.capture_definitions[cast(CaptureReference, what).name]
     return what
 
-  def evaluate(self, data: str, engine: "ParsingEngine") -> MatchesAndRegexUsed:
+  def evaluate(self, data: str, engine: "ParsingEngine",
+               mapper: CaptureMapper) -> MatchesAndRegexUsed:
     resolved = self.resolve(engine)
     if type(resolved) == Capture:
-      return cast(Capture, resolved).evaluate(data, engine)
+      return cast(Capture, resolved).evaluate(data, engine, mapper)
     return {}, set()
 
 
@@ -346,13 +373,14 @@ class Separator:
   def resolve(self, engine: "ParsingEngine") -> CaptureOrRegexComponent:
     return self
 
-  def to_regex(self, engine: "ParsingEngine") -> str:
-    return "(?:" + self.value.to_regex(engine) + ")"
+  def to_regex(self, engine: "ParsingEngine", mapper: CaptureMapper) -> str:
+    return "(?:" + self.value.to_regex(engine, mapper) + ")"
 
   def validate(self, engine: "ParsingEngine", model: Model, errors: List[str]):
     self.value.validate(engine, model, errors)
 
-  def evaluate(self, data: str, engine: "ParsingEngine") -> MatchesAndRegexUsed:
+  def evaluate(self, data: str, engine: "ParsingEngine",
+               mapper: CaptureMapper) -> MatchesAndRegexUsed:
     return {}, set()
 
 
@@ -421,11 +449,13 @@ class Capture:
     return self
 
   def to_regex(self, preceding_separator: Optional[RegexComponent],
-               engine: "ParsingEngine") -> str:
-    separator = (preceding_separator.to_regex(engine)
+               engine: "ParsingEngine", mapper: CaptureMapper) -> str:
+    separator = (preceding_separator.to_regex(engine, CaptureMapper())
                  if preceding_separator else "")
-    prefix = (self.prefix.to_regex(engine) if self.prefix else "")
-    suffix = (self.suffix.to_regex(engine) if self.suffix else "")
+    prefix = (self.prefix.to_regex(engine, CaptureMapper())
+              if self.prefix else "")
+    suffix = (self.suffix.to_regex(engine, CaptureMapper())
+              if self.suffix else "")
 
     pattern_regex = ""
     i = 0
@@ -434,19 +464,20 @@ class Capture:
       if (type(part_i) == Separator and i + 1 < len(self.parts)
           and type(self.parts[i + 1].resolve(engine)) == Capture):
         next_capture = self.parts[i + 1].resolve(engine)
-        pattern_regex += next_capture.to_regex(part_i, engine)
+        pattern_regex += next_capture.to_regex(part_i, engine, mapper)
         i += 1
       elif type(part_i) == Capture:
-        pattern_regex += part_i.to_regex(None, engine)
+        pattern_regex += part_i.to_regex(None, engine, mapper)
       else:
-        pattern_regex += part_i.to_regex(engine)
+        pattern_regex += part_i.to_regex(engine, mapper)
       i += 1
 
     quantifier = MatchQuantifier.to_regex_suffix(self.quantifier)
     if self.output:
       # RE2 does not allow '-' in capture groups, so we replace it with an
       # underscore and do the inverse in evaluate().
-      output = self.output.replace('-', '_')
+      output = mapper.get_and_increment(self.output)
+      output = output.replace('-', '_')
       return f"(?i:{separator}{prefix}(?P<{output}>{pattern_regex})" + \
             f"{suffix}){quantifier}"
     else:
@@ -462,9 +493,10 @@ class Capture:
     for part in self.parts:
       part.validate(engine, model, errors)
 
-  def evaluate(self, data: str, engine: "ParsingEngine") -> MatchesAndRegexUsed:
+  def evaluate(self, data: str, engine: "ParsingEngine",
+               mapper: CaptureMapper) -> MatchesAndRegexUsed:
     """Evaluates the `CaptureTypeWithPattern` on `data`."""
-    regex = self.to_regex(None, engine)
+    regex = self.to_regex(None, engine, mapper)
     result = {}
     regex_used = set()
     multi_line_prefix = "(?m)"
@@ -529,21 +561,23 @@ class Decomposition:
         }
     }
 
-  def to_regex(self, engine: "ParsingEngine") -> str:
+  def to_regex(self, engine: "ParsingEngine", mapper: CaptureMapper) -> str:
     prefix = "^" if self.anchor_beginning else ""
     suffix = "$" if self.anchor_end else ""
-    regex = self.capture.resolve(engine).to_regex(None, engine)
+    regex = self.capture.resolve(engine).to_regex(None, engine, mapper)
     return f"(?:{prefix}{regex}{suffix})"
 
-  def evaluate(self, data: str, engine: "ParsingEngine") -> MatchesAndRegexUsed:
+  def evaluate(self, data: str, engine: "ParsingEngine",
+               mapper: CaptureMapper) -> MatchesAndRegexUsed:
     """Evaluates the `Decomposition` on `data`."""
-    regex = self.to_regex(engine)
+    regex = self.to_regex(engine, mapper)
     result = {}
     regex_used = set()
     multi_line_prefix = "(?m)"
     if regex_result := re2.search(multi_line_prefix + regex, data):
       for k, v in regex_result.groupdict().items():
         k = k.replace('_', '-')
+        k = mapper.reverse(k)
         result[k] = v
       regex_used.add(regex)
 
@@ -586,13 +620,15 @@ class DecompositionCascade:
     ]
     return decomp_schema
 
-  def to_regex_list(self, engine: "ParsingEngine") -> List[str]:
+  def to_regex_list(self, engine: "ParsingEngine",
+                    mapper: CaptureMapper) -> List[str]:
     result = []
     for a in self.alternatives:
       if type(a) == Decomposition:
-        result.append(cast(Decomposition, a).to_regex(engine))
+        result.append(cast(Decomposition, a).to_regex(engine, mapper))
       elif type(a) == DecompositionCascade:
-        result.extend(cast(DecompositionCascade, a).to_regex_list(engine))
+        result.extend(
+            cast(DecompositionCascade, a).to_regex_list(engine, mapper))
       else:
         raise ValueError(f"Unexpected type {type(a)}")
     return result
@@ -603,16 +639,17 @@ class DecompositionCascade:
     for alternative in self.alternatives:
       alternative.validate(engine, model, errors)
 
-  def evaluate(self, data: str, engine: "ParsingEngine") -> MatchesAndRegexUsed:
+  def evaluate(self, data: str, engine: "ParsingEngine",
+               mapper: CaptureMapper) -> MatchesAndRegexUsed:
     # If we have a condition but it's not fulfilled, don't return anything.
     if self.condition:
       # Wrap in () to make sure that we have capture something
-      regex = self.condition.to_regex(engine)
+      regex = self.condition.to_regex(engine, CaptureMapper())
       multi_line_prefix = "(?m)"
       if not re2.search(multi_line_prefix + regex, data):
         return {}, set()
     for p in self.alternatives:
-      result, regex_used = p.evaluate(data, engine)
+      result, regex_used = p.evaluate(data, engine, mapper)
       if result:
         return result, regex_used
     return {}, set()
@@ -648,26 +685,27 @@ class ExtractPart:
         }
     }
 
-  def to_regex(self, engine: "ParsingEngine") -> str:
+  def to_regex(self, engine: "ParsingEngine", mapper: CaptureMapper) -> str:
     resolved = self.capture.resolve(engine)
-    return resolved.to_regex(None, engine)
+    return resolved.to_regex(None, engine, mapper)
 
   def validate(self, engine: "ParsingEngine", model: Model, errors: List[str]):
     if self.condition:
       self.condition.validate(engine, model, errors)
     self.capture.validate(engine, model, errors)
 
-  def evaluate(self, data: str, engine: "ParsingEngine") -> MatchesAndRegexUsed:
+  def evaluate(self, data: str, engine: "ParsingEngine",
+               mapper: CaptureMapper) -> MatchesAndRegexUsed:
     # If we have a condition but it's not fulfilled, don't return anything.
     if self.condition:
       # Wrap in () to make sure that we have capture something
-      regex = self.condition.to_regex(engine)
+      regex = self.condition.to_regex(engine, CaptureMapper())
       multi_line_prefix = "(?m)"
       if not re2.search(multi_line_prefix + regex, data):
         return {}, set()
     resolved = self.capture.resolve(engine)
     if type(resolved) == Capture:
-      return cast(Capture, resolved).evaluate(data, engine)
+      return cast(Capture, resolved).evaluate(data, engine, mapper)
     elif type(self.capture) == Separator:
       return {}, set()
     else:
@@ -701,8 +739,9 @@ class ExtractParts:
         }
     }
 
-  def to_regex_list(self, engine: "ParsingEngine") -> List[str]:
-    return [p.to_regex(engine) for p in self.parts]
+  def to_regex_list(self, engine: "ParsingEngine",
+                    mapper: CaptureMapper) -> List[str]:
+    return [p.to_regex(engine, mapper) for p in self.parts]
 
   def validate(self, engine: "ParsingEngine", model: Model, errors: List[str]):
     if self.condition:
@@ -710,11 +749,12 @@ class ExtractParts:
     for p in self.parts:
       p.validate(engine, model, errors)
 
-  def evaluate(self, data: str, engine: "ParsingEngine") -> MatchesAndRegexUsed:
+  def evaluate(self, data: str, engine: "ParsingEngine",
+               mapper: CaptureMapper) -> MatchesAndRegexUsed:
     # If we have a condition but it's not fulfilled, don't return anything.
     if self.condition:
       # Wrap in () to make sure that we have capture something
-      regex = self.condition.to_regex(engine)
+      regex = self.condition.to_regex(engine, CaptureMapper())
       multi_line_prefix = "(?m)"
       if not re2.search(multi_line_prefix + regex, data):
         return {}, set()
@@ -722,7 +762,7 @@ class ExtractParts:
     result = {}
     regex_used = set()
     for p in self.parts:
-      local_result, local_regex_used = p.evaluate(data, engine)
+      local_result, local_regex_used = p.evaluate(data, engine, mapper)
       if local_result:
         result.update(local_result)
         regex_used = regex_used.union(local_regex_used)
