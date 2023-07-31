@@ -251,7 +251,7 @@ class TestCapture(unittest.TestCase):
       ('' + 'baz' + '')
     )
     input = f"prefix{inner_input}suffix"
-    result = regex.evaluate(input, self.engine)
+    result = regex.evaluate(input, self.engine)[0]
     expected = {
         'out-put': inner_input,
         'o1': 'foo',
@@ -287,8 +287,9 @@ class TestDecomposition(unittest.TestCase):
     expected = "(?:^(?i:(?P<foo>\w+))$)"
     self.assertEqual(expected, decomposition.to_regex(self.engine))
 
-    self.assertEqual({'foo': 'aaa'}, decomposition.evaluate('aaa', self.engine))
-    self.assertEqual({}, decomposition.evaluate('aaa aaa', self.engine))
+    self.assertEqual({'foo': 'aaa'},
+                     decomposition.evaluate('aaa', self.engine)[0])
+    self.assertEqual({}, decomposition.evaluate('aaa aaa', self.engine)[0])
 
     # Test anchoring disabled.
     yaml = YAML(typ='safe').load(
@@ -309,9 +310,10 @@ class TestDecomposition(unittest.TestCase):
     expected = "(?:(?i:(?P<foo>\w+)))"
     self.assertEqual(expected, decomposition.to_regex(self.engine))
 
-    self.assertEqual({'foo': 'aaa'}, decomposition.evaluate('aaa', self.engine))
     self.assertEqual({'foo': 'aaa'},
-                     decomposition.evaluate('aaa aaa', self.engine))
+                     decomposition.evaluate('aaa', self.engine)[0])
+    self.assertEqual({'foo': 'aaa'},
+                     decomposition.evaluate('aaa aaa', self.engine)[0])
 
 
 class TestDecompositionCascade(unittest.TestCase):
@@ -345,11 +347,11 @@ class TestDecompositionCascade(unittest.TestCase):
     expected = ["(?:^(?i:(?P<foo>.*a+))$)", "(?:^(?i:(?P<foo>.*b+))$)"]
     self.assertEqual(expected, cascade.to_regex_list(self.engine))
 
-    self.assertEqual({'foo': '1aaa'}, cascade.evaluate('1aaa', self.engine))
-    self.assertEqual({'foo': '1bbb'}, cascade.evaluate('1bbb', self.engine))
+    self.assertEqual({'foo': '1aaa'}, cascade.evaluate('1aaa', self.engine)[0])
+    self.assertEqual({'foo': '1bbb'}, cascade.evaluate('1bbb', self.engine)[0])
     # The condition (a "1" at the beginning is violated), therefore, we don't
     # return anything.
-    self.assertEqual({}, cascade.evaluate('aaa', self.engine))
+    self.assertEqual({}, cascade.evaluate('aaa', self.engine)[0])
 
     # Test nested cascades:
     yaml = YAML(typ='safe').load(
@@ -375,8 +377,9 @@ class TestDecompositionCascade(unittest.TestCase):
 
     cascade = DecompositionCascade.from_yaml_dict(yaml)
     self.assertIsNotNone(cascade)
-    self.assertEqual({'foo': '1aaa'}, cascade.evaluate('1aaa', self.engine))
-    self.assertEqual({'foo': '12bbb'}, cascade.evaluate('12bbb', self.engine))
+    self.assertEqual({'foo': '1aaa'}, cascade.evaluate('1aaa', self.engine)[0])
+    self.assertEqual({'foo': '12bbb'},
+                     cascade.evaluate('12bbb', self.engine)[0])
 
 
 class TestExtractPart(unittest.TestCase):
@@ -406,7 +409,7 @@ class TestExtractPart(unittest.TestCase):
     expected = '(?i:prefix(?P<out_put>[_a]+)suffix)'
     self.assertEqual(expected, extract_part.to_regex(self.engine))
     self.assertEqual({'out-put': '_a_'},
-                     extract_part.evaluate('1prefix_a_suffix', self.engine))
+                     extract_part.evaluate('1prefix_a_suffix', self.engine)[0])
 
 
 class TestExtractParts(unittest.TestCase):
@@ -443,4 +446,6 @@ class TestExtractParts(unittest.TestCase):
     self.assertEqual({
         'building': '1',
         'unit': '2'
-    }, extract_parts.evaluate('1 house number 1 apartment 2', self.engine))
+    },
+                     extract_parts.evaluate('1 house number 1 apartment 2',
+                                            self.engine)[0])

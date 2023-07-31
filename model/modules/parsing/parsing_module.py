@@ -1,7 +1,7 @@
 from renderer import Renderer
 from modules.abstract_module import AbstractModule
 from pathlib import Path
-from typing import Any, Optional, Dict, Union
+from typing import Any, Optional, Dict, Union, cast
 from schema import Schema
 import schema
 import re2 as re
@@ -101,11 +101,12 @@ class ParsingModule(AbstractModule):
         return
       pattern = engine.capture_definitions[test['capture_name']]
       assert pattern
-      result = pattern.evaluate(test['input'], engine)
+      result, regex_used = pattern.evaluate(test['input'], engine)
       if test['output'] != result:
         print(f"Test failed: {test}")
         print(f"{result} was actual output")
         print(f"{test['output']} was expected output")
+        print(f"Regex used: {regex_used}")
         break
 
   def test_parsing_definitions(self, yaml, engine: ParsingEngine):
@@ -117,7 +118,7 @@ class ParsingModule(AbstractModule):
         return
       pattern = engine.parsing_definitions[token_type]
       assert pattern
-      result = pattern.evaluate(test['input'], engine)
+      result, regex_used = pattern.evaluate(test['input'], engine)
       result = {k: v for k, v in result.items() if v}
       expected = {k: v for k, v in test['output'].items() if v != ""}
       # For ExtractParts we don't caputre the actual string.
@@ -128,9 +129,13 @@ class ParsingModule(AbstractModule):
         print(f"{pprint.saferepr(result)} was actual output")
         print(f"{pprint.saferepr(expected)} was expected output")
         if type(pattern) == Decomposition:
-          print(f"Regex used: {pattern.to_regex(engine)}")
+          print(f"Regex used: {regex_used}")
+          print("Regex considered: " +
+                f"{cast(Decomposition, pattern).to_regex(engine)}")
         else:
-          print(f"Regex used: {pattern.to_regex_list(engine)}")
+          print(f"Regex used: {regex_used}")
+          print(f"Regex considered: " +
+                f"{cast(DecompositionCascade, pattern).to_regex_list(engine)}")
         break
 
   def observe_file(self, path: Path, renderer: Renderer):

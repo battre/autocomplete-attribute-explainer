@@ -4,6 +4,9 @@ regex_definitions:
   kWhitespaceSeparator:
     regex_fragment: ^|\s+
 
+  kCommaOrWhitespaceSeparator:
+    regex_fragment: ^|[,\s]+
+
   # Regular expressions pattern of common two-character CJK last names.
   # Korean names are written in Hangul.
   # Chinese names are written in their traditional and simplified version.
