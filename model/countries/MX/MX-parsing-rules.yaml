@@ -36,9 +36,15 @@ capture_definitions:
       - capture_reference: AnchorToBeginningOfInput
       - capture:
           output: street
-          parts: [ {regex_reference: kMultipleLazyWordsRe} ]
+          parts:
+          - regex_concat:
+              parts:
+              # Handle numeric street names ("Calle 5 Norte")
+              - regex_fragment: '(?i:calle)\s+\d+\s+[^\d,\n\r]*?'
+              - regex_fragment: '|'
+              - regex_reference: kMultipleLazyWordsRe
       - separator:
-          regex_fragment: \s+?
+          regex_fragment: '[,]?\s+?'
       - capture:
           output: building
           # Optional prefix "#" before the number.
@@ -297,13 +303,9 @@ test_parsing_definitions:
   input: |-
     Calle 60 Norte, número 262, departamento 3, planta baja, entre 35 y 37
   output:
-    # This would be desired, but the regex are not smart enough:
-    # street-location: "Calle 60 Norte, número 262"
-    # street: "Calle 60 Norte"
-    # building: "262"
-    street-location: "Calle 60"
-    street: "Calle"
-    building: "60"
+    street-location: "Calle 60 Norte, número 262"
+    street: "Calle 60 Norte"
+    building: "262"
     unit: "departamento 3"
     unit-type: "departamento"
     unit-name: "3"
