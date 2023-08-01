@@ -6,8 +6,6 @@ from schema import Schema
 import schema
 import re2 as re
 from renderer import Renderer
-from jinja2 import Environment, FileSystemLoader, select_autoescape
-import os
 import pprint
 import copy
 from .parsing import (RegexFragment, RegexReference, RegexConcat, ParsingEngine,
@@ -116,7 +114,7 @@ class ParsingModule(AbstractModule):
     for test in yaml:
       token_type = test['type']
       if token_type not in engine.parsing_definitions:
-        print(f"Failed test '{test.id}': Invalid parsing definitions: " +
+        print(f"Failed test '{test['id']}': Invalid parsing definitions: " +
               token_type)
         return
       pattern = engine.parsing_definitions[token_type]
@@ -190,15 +188,12 @@ class ParsingModule(AbstractModule):
 
   def render_token_details(self, country: str, token_id: str,
                            renderer: Renderer) -> Optional[str]:
-    env = Environment(extensions=['jinja2.ext.do'],
-                      loader=FileSystemLoader(
-                          os.path.join(os.path.dirname(__file__))),
-                      autoescape=select_autoescape())
+    template = ParsingModule.get_template(__file__, "parsing_template.html")
+
     if "ParsingEngine" not in renderer.country_data[country]:
       return None
 
     engine = renderer.country_data[country]["ParsingEngine"]
-    template = env.get_template("parsing_template.html")
     return template.render(engine=engine, token_id=token_id)
 
   def css(self) -> str:

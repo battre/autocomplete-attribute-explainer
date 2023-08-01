@@ -1,9 +1,7 @@
 from renderer import Renderer
 from modules.abstract_module import AbstractModule
 from typing import Optional
-import os
 from renderer import Renderer
-from jinja2 import Environment, FileSystemLoader, select_autoescape
 from modules.model.model import AtomicOrCompoundToken
 
 
@@ -29,11 +27,8 @@ class RenderTokenIndexModule(AbstractModule):
 
   def render_token_index(self, country: str,
                          renderer: Renderer) -> Optional[str]:
-    env = Environment(extensions=['jinja2.ext.do'],
-                      loader=FileSystemLoader(
-                          os.path.join(os.path.dirname(__file__))),
-                      autoescape=select_autoescape())
-    template = env.get_template("token_index_template.html")
+    template = RenderTokenIndexModule.get_template(__file__,
+                                                   "token_index_template.html")
     model = renderer.get_model(country)
     return template.render(model=model,
                            country_data=renderer.country_data[country])

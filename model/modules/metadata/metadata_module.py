@@ -6,8 +6,6 @@ from schema import Schema
 import schema
 import re
 from renderer import Renderer
-from jinja2 import Environment, FileSystemLoader, select_autoescape
-import os
 
 
 class MetadataModule(AbstractModule):
@@ -33,9 +31,5 @@ class MetadataModule(AbstractModule):
     renderer.add_country(country)
 
   def render_preamble(self, country: str, renderer: Renderer) -> Optional[str]:
-    env = Environment(extensions=['jinja2.ext.do'],
-                      loader=FileSystemLoader(
-                          os.path.join(os.path.dirname(__file__))),
-                      autoescape=select_autoescape())
-    template = env.get_template("template.html")
+    template = MetadataModule.get_template(__file__, "template.html")
     return template.render(yaml=renderer.country_data[country][self.name()])

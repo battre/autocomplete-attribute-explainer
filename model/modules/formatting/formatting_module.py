@@ -6,8 +6,6 @@ from renderer import Renderer
 from schema import Schema
 import schema
 from typing import Optional, List
-import os
-from jinja2 import Environment, FileSystemLoader, select_autoescape
 import copy
 import difflib
 from .formatting_utils import collect_details_for_formatting, validate
@@ -181,11 +179,8 @@ class FormattingModule(AbstractModule):
 
   def render_token_details(self, country: str, token_id: str,
                            renderer: Renderer) -> Optional[str]:
-    env = Environment(extensions=['jinja2.ext.do'],
-                      loader=FileSystemLoader(
-                          os.path.join(os.path.dirname(__file__))),
-                      autoescape=select_autoescape())
-    template = env.get_template("formatting_template.html")
+    template = FormattingModule.get_template(__file__,
+                                             "formatting_template.html")
     kwargs = collect_details_for_formatting(country, token_id, renderer)
     if kwargs:
       return template.render(**kwargs)
@@ -300,11 +295,8 @@ class FormattingModule(AbstractModule):
 
   def render_after_token_index(self, country: str,
                                renderer: Renderer) -> Optional[str]:
-    env = Environment(extensions=['jinja2.ext.do'],
-                      loader=FileSystemLoader(
-                          os.path.join(os.path.dirname(__file__))),
-                      autoescape=select_autoescape())
-    template = env.get_template("example_formatting_template.html")
+    template = FormattingModule.get_template(
+        __file__, "example_formatting_template.html")
     kwargs = self.collect_details_for_example_addresses(country, renderer)
     if kwargs:
       return template.render(**kwargs)

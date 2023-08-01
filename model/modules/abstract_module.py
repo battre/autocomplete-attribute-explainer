@@ -1,12 +1,28 @@
 from abc import ABC
 from pathlib import Path
 from ruamel.yaml import YAML
-from typing import Any, Optional
+from typing import Any, Optional, Dict
 from schema import Schema, SchemaError
 from renderer import Renderer
+from jinja2 import Environment, FileSystemLoader, select_autoescape, Template
+import os
 
 
 class AbstractModule(ABC):
+
+  _cls_templates: Dict[str, Template] = {}
+
+  @classmethod
+  def get_template(cls, current__file__, template_file):
+    base_path = os.path.dirname(current__file__)
+    key = os.path.join(base_path, template_file)
+    if key not in cls._cls_templates:
+      env = Environment(extensions=['jinja2.ext.do'],
+                        loader=FileSystemLoader(
+                            os.path.dirname(current__file__)),
+                        autoescape=select_autoescape())
+      cls._cls_templates[key] = env.get_template(template_file)
+    return cls._cls_templates[key]
 
   def name(self) -> str:
     """Returns the name of the """
