@@ -288,7 +288,7 @@ class TestCapture(unittest.TestCase):
     regex = Capture.from_yaml_dict(yaml)
     self.assertIsNotNone(regex)
     capture1 = '(?P<bar>a\d+)'
-    capture2 = '(?P<bar_2>\d+a)'
+    capture2 = '(?P<bar__2>\d+a)'
     no_capture = f"(?:{capture1}|{capture2})"
     expected = f"(?:prefix\s(?P<foo>{no_capture})\ssuffix)"
     self.assertEqual(expected, regex.to_regex(None, self.engine,
@@ -401,7 +401,7 @@ class TestDecompositionCascade(unittest.TestCase):
     self.assertIsNotNone(cascade)
 
     # Note how this tests the capture mapper.
-    expected = ["^(?P<foo>.*a+)$", "^(?P<foo_2>.*b+)$"]
+    expected = ["^(?P<foo>.*a+)$", "^(?P<foo__2>.*b+)$"]
     self.assertEqual(expected,
                      cascade.to_regex_list(self.engine, CaptureMapper()))
 
