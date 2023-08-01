@@ -84,7 +84,7 @@ class ParsingModule(AbstractModule):
       regex_definition = engine.regex_definitions[test['regex_name']]
       assert regex_definition
       regex = regex_definition.to_regex(engine, CaptureMapper())
-      regex = f"({regex})"
+      regex = f"((?i:{regex}))"
       result = re.search(regex, test['input'])
       if result:
         result = [s.__str__() for s in result.groups()]
@@ -92,6 +92,7 @@ class ParsingModule(AbstractModule):
         print(f"Test failed: {test}")
         print(f"{result} was actual output")
         print(f"{test['match_groups']} was expected output")
+        print(f"Regex used: {regex}")
         break
 
   def test_capture_definitions(self, yaml, engine: ParsingEngine):

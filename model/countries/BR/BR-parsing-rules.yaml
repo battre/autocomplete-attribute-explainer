@@ -2,22 +2,23 @@ regex_definitions:
   kBuildingValueRe:  # Regex for type "building"
     regex_concat:
       parts:
-      - regex_fragment: (?i:KM\s+)?  # Optional prefix for a KM position
+      - regex_fragment: (?:KM\s+)?  # Optional prefix for a KM position
       - regex_fragment: \d+  # House number
       # Optional suffix for building ids with a letter suffix, e.g. 12a.
       # We don't support 12/1 or 12-1 because these may indicate apartment
       # numbers.
       - regex_fragment: \w?
+      wrap_non_capture: false
 
   kUnitTypeLiteralRe:  # Regex for type "unit-type"
     # Note that order matches because RE2 prefers the first match.
-    regex_fragment: (?i:apto\.?|apt\.?|apartamento|sala nº|sala|conjunto)
+    regex_fragment: (?:apto\.?|apt\.?|apartamento|sala nº|sala|conjunto)
 
   kUnitNameValueRe:  # Regex for type unit-name"
-    regex_fragment: \d+\w?\b|\w\b
+    regex_fragment: (?:\d+\w?\b|\w\b)
 
   kFloorLiteralRe:  # Regex for literal for a floor
-    regex_fragment: (?i:andar)
+    regex_fragment: andar
 
 capture_definitions:
   ParseStreetLocation:
@@ -34,7 +35,7 @@ capture_definitions:
           # "{whitespace}-{whitespace}"
           # "{whitespace}"
           regex_fragment: |-
-            ,\s*|\s+-\s+|\s+
+            (?:,\s*|\s+-\s+|\s+)
       - capture:
           output: building
           # Optional prefix "nº " before the number.
@@ -64,6 +65,7 @@ capture_definitions:
           parts:
             - regex_reference: kFloorLiteralRe
             - regex_fragment: '\s*'
+          wrap_non_capture: false
       parts: [ {regex_fragment: '\d+'} ]
 
   ParseFloorWithMandatorySuffix:
@@ -80,6 +82,7 @@ capture_definitions:
           - regex_fragment: '(?:º\s*)?' # optional "º "
           - regex_reference: kFloorLiteralRe
           - regex_fragment: '(?:\s*[,-]|$)' # separator to other information
+          wrap_non_capture: false
 
   ParseLandmarkWithMandatoryPrefix:
     capture:
@@ -90,6 +93,7 @@ capture_definitions:
           - regex_fragment: '(?:ponto de )?' # Optional "ponto de"
           - regex_fragment: 'refer[êe]ncia'
           - regex_fragment: '(?::\s*|\s+)' # end with ":", ": " or " "
+          wrap_non_capture: false
       parts:
         - regex_fragment: '[^,\n]+'
 

@@ -12,12 +12,22 @@
     Prefix:
     {{Render(c.prefix)}} <br>
     {% endif %}
-    Parts: <br>
-    <ul>
-      {% for c2 in c.parts %}
-      <li>{{Render(c2)}}</li>
-      {% endfor %}
-    </ul>
+    {% if c.parts %}
+      Parts: <br>
+      <ul>
+        {% for c2 in c.parts %}
+        <li>{{Render(c2)}}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    {% if c.alternatives %}
+      Alternatives: <br>
+      <ul>
+        {% for c2 in c.alternatives %}
+        <li>{{Render(c2)}}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
     {% if c.suffix %}
     Suffix:
     {{Render(c.suffix)}}

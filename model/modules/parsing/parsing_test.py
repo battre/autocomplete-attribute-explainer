@@ -186,7 +186,7 @@ class TestSeparator(unittest.TestCase):
 
     regex = Separator.from_yaml_dict(yaml)
     self.assertIsNotNone(regex)
-    self.assertEqual('(?:foobar)', regex.to_regex(self.engine, CaptureMapper()))
+    self.assertEqual('foobar', regex.to_regex(self.engine, CaptureMapper()))
 
     errors = []
     regex.validate(self.engine, self.model, errors)
@@ -236,13 +236,13 @@ class TestCapture(unittest.TestCase):
 
     regex = Capture.from_yaml_dict(yaml)
     self.assertIsNotNone(regex)
-    capture1 = '(?i:p1(?P<o1>\w+)s1)'
+    capture1 = '(?:p1(?P<o1>\w+)s1)'
     # Capture2 gets the preceding separator included and is optional.
-    capture2 = '(?i:(?:\s+sep1\s+)p2(?P<o2>\w+)s2)?'
+    capture2 = '(?:\s+sep1\s+p2(?P<o2>\w+)s2)?'
     # Capture3 gets the preceding separator and is lazy optional.
-    capture3 = '(?i:(?:\s+sep2\s+)(?P<o3>\w+))??'
+    capture3 = '(?:\s+sep2\s+(?P<o3>\w+))??'
     # out-put becomes out_put
-    expected = f"(?i:prefix(?P<out_put>{capture1}{capture2}{capture3})suffix)"
+    expected = f"(?:prefix(?P<out_put>{capture1}{capture2}{capture3})suffix)"
     self.assertEqual(expected, regex.to_regex(None, self.engine,
                                               CaptureMapper()))
     inner_input = (
@@ -259,6 +259,53 @@ class TestCapture(unittest.TestCase):
         'o1': 'foo',
         'o2': 'bar',
         'o3': 'baz',
+    }
+    self.assertEqual(expected, result)
+
+  def test_no_capture_alternatives(self):
+    yaml = YAML(typ='safe').load(
+        dedent("""\
+        capture:
+          output: 'foo'
+          prefix: { regex_fragment: 'prefix\s' }
+          parts:
+          - no_capture:
+              alternatives:
+              - capture:
+                  output: 'bar'
+                  parts:
+                  - regex_fragment: 'a\d+'
+              - capture:
+                  output: 'bar'
+                  parts:
+                  - regex_fragment: '\d+a'
+          suffix: { regex_fragment: '\ssuffix' }
+        """))
+
+    schema = Schema(Capture.schema_capture())
+    schema.validate(yaml)
+
+    regex = Capture.from_yaml_dict(yaml)
+    self.assertIsNotNone(regex)
+    capture1 = '(?P<bar>a\d+)'
+    capture2 = '(?P<bar_2>\d+a)'
+    no_capture = f"(?:{capture1}|{capture2})"
+    expected = f"(?:prefix\s(?P<foo>{no_capture})\ssuffix)"
+    self.assertEqual(expected, regex.to_regex(None, self.engine,
+                                              CaptureMapper()))
+    input = f"prefix 1a suffix"
+    result = regex.evaluate(input, self.engine, CaptureMapper())[0]
+    expected = {
+        'foo': "1a",
+        'bar': '1a',
+    }
+    self.assertEqual(expected, result)
+
+    input = f"prefix a1 suffix"
+    result = regex.evaluate(input, self.engine, CaptureMapper())[0]
+    expected = {
+        'foo': "a1",
+        'bar': 'a1',
     }
     self.assertEqual(expected, result)
 
@@ -286,7 +333,7 @@ class TestDecomposition(unittest.TestCase):
 
     decomposition = Decomposition.from_yaml_dict(yaml)
     self.assertIsNotNone(decomposition)
-    expected = "(?:^(?i:(?P<foo>\w+))$)"
+    expected = "^(?P<foo>\w+)$"
     self.assertEqual(expected,
                      decomposition.to_regex(self.engine, CaptureMapper()))
 
@@ -313,7 +360,7 @@ class TestDecomposition(unittest.TestCase):
 
     decomposition = Decomposition.from_yaml_dict(yaml)
     self.assertIsNotNone(decomposition)
-    expected = "(?:(?i:(?P<foo>\w+)))"
+    expected = "(?P<foo>\w+)"
     self.assertEqual(expected,
                      decomposition.to_regex(self.engine, CaptureMapper()))
 
@@ -354,7 +401,7 @@ class TestDecompositionCascade(unittest.TestCase):
     self.assertIsNotNone(cascade)
 
     # Note how this tests the capture mapper.
-    expected = ["(?:^(?i:(?P<foo>.*a+))$)", "(?:^(?i:(?P<foo_2>.*b+))$)"]
+    expected = ["^(?P<foo>.*a+)$", "^(?P<foo_2>.*b+)$"]
     self.assertEqual(expected,
                      cascade.to_regex_list(self.engine, CaptureMapper()))
 
@@ -421,7 +468,7 @@ class TestExtractPart(unittest.TestCase):
 
     extract_part = ExtractPart.from_yaml_dict(yaml)
     self.assertIsNotNone(extract_part)
-    expected = '(?i:prefix(?P<out_put>[_a]+)suffix)'
+    expected = '(?:prefix(?P<out_put>[_a]+)suffix)'
     self.assertEqual(expected,
                      extract_part.to_regex(self.engine, CaptureMapper()))
     self.assertEqual({'out-put': '_a_'},

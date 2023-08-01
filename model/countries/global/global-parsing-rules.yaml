@@ -2,10 +2,10 @@ regex_definitions:
   # This contains ^ to allow anchoring to the beginning of a line, which is
   # important if preceding input is optional.
   kWhitespaceSeparator:
-    regex_fragment: ^|\s+
+    regex_fragment: (?:^|\s+)
 
   kCommaOrWhitespaceSeparator:
-    regex_fragment: ^|[,\s]+
+    regex_fragment: (?:^|[,\s]+)
 
   # Regular expressions pattern of common two-character CJK last names.
   # Korean names are written in Hangul.
@@ -21,12 +21,12 @@ regex_definitions:
   # Regular expression pattern for a Hangul (Korean) character.
   kHangulCharacterRe:
     regex_fragment:
-      (?:\p{Hangul})
+      \p{Hangul}
 
   # Regular expression pattern for a sequence of Hangul (Korean) character.
   kHangulCharactersRe:
     regex_fragment:
-      (?:\p{Hangul}+)
+      \p{Hangul}+
 
   # Regular expression pattern to match separators as used in CJK names:
   # Included separators: \u30FB, \u00B7, \u3000 or a simple space.
@@ -103,9 +103,11 @@ regex_definitions:
   kHasHispanicLatinxNameCharacteristics:
     regex_concat:
       parts:
+      - regex_fragment: '(?:'
       - regex_reference: kHispanicCommonLastNameCharacteristicsRe
       - regex_fragment: '|'
       - regex_reference: kHispanicLastNameConjunctionCharacteristicsRe
+      - regex_fragment: ')'
 
   kHasCjkNameCharacteristics:
     regex_concat:
@@ -115,7 +117,7 @@ regex_definitions:
       - regex_reference: kCjkCharactersRe
       # Followed by an optional separator with one or more additional CJK
       # characters.
-      - regex_fragment: '('
+      - regex_fragment: '(?:'
       - regex_reference: kCjkNameSeperatorsRe
       - regex_reference: kCjkCharactersRe
       - regex_fragment: ')?$'
@@ -140,7 +142,7 @@ regex_definitions:
   # last name conjunction.
   kHispanicLastNameConjunctionCharacteristicsRe:
     regex_fragment: |-
-      \s(y|e|i)\s
+      \s(?:y|e|i)\s
 
   # Regular expression pattern to match the conjunction used between
   # Hispanic/Latinx last names.

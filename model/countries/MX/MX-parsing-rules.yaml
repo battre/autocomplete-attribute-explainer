@@ -2,30 +2,29 @@ regex_definitions:
   kBuildingValueRe:  # Regex for type "building"
     regex_concat:
       parts:
-      - regex_fragment: '(?:'
       # Various versions of expressing that a house dos not have number
-      - regex_fragment: (?i:S/Num\.?|S/N|Sin Nombre)
+      - regex_fragment: (?:S/Num\.?|S/N|Sin Nombre)
       - regex_fragment: '|'
       # Actual house numbers:
       - regex_concat:
           parts:
-            - regex_fragment: (?i:KM\s+)?  # Optional prefix for a KM position
+            - regex_fragment: (?:KM\s+)?  # Optional prefix for a KM position
             - regex_fragment: \d+  # House number
             # Optional suffix for building ids with a letter suffix, e.g. 12a.
             # We don't support 12/1 or 12-1 because these may indicate apartment
             # numbers.
             - regex_fragment: \w?
-      - regex_fragment: )
+          wrap_non_capture: false
 
   kUnitTypeLiteralRe:  # Regex for type "unit-type"
     # Note that order matches because RE2 prefers the first match.
-    regex_fragment: (?i:despacho|loc\.?|local|int(?:erior|\.?)|n[uú]m(?:ero|\.)? int(?:erno|\.)?|Apartamento|Apto\.?|Departamento|apto\.?)
+    regex_fragment: (?:despacho|loc\.?|local|int(?:erior|\.?)|n[uú]m(?:ero|\.)? int(?:erno|\.)?|Apartamento|Apto\.?|Departamento|apto\.?)
 
   kUnitNameValueRe:  # Regex for type unit-name"
-    regex_fragment: \d+\w?\b|\w\b
+    regex_fragment: (?:\d+\w?\b|\w\b)
 
   kFloorLiteralRe:  # Regex for literal for a floor
-    regex_fragment: (?i:piso)
+    regex_fragment: piso
 
 capture_definitions:
   ParseStreetLocation:
@@ -40,7 +39,7 @@ capture_definitions:
           - regex_concat:
               parts:
               # Handle numeric street names ("Calle 5 Norte")
-              - regex_fragment: '(?i:calle)\s+\d+\s+[^\d,\n\r]*?'
+              - regex_fragment: 'calle\s+\d+\s+[^\d,\n\r]*?'
               - regex_fragment: '|'
               - regex_reference: kMultipleLazyWordsRe
       - separator:
@@ -75,13 +74,14 @@ capture_definitions:
           parts:
             - regex_reference: kFloorLiteralRe
             - regex_fragment: '\s*'
+          wrap_non_capture: false
       parts: [ {regex_fragment: '\d+'} ]
 
   ParseLandmarkWithMandatoryPrefix:
     capture:
       output: landmark
       prefix:
-        regex_fragment: (?i:Cerca del)
+        regex_fragment: (?:Cerca del)
       parts:
         - regex_fragment: '[^,\n]+'
 
@@ -94,7 +94,7 @@ capture_definitions:
             output: cross-street1
             parts: [ {regex_reference: kMultipleLazyWordsRe} ]
         - no_capture:
-            parts: [ {regex_fragment: '(?i:\s+y\s+)'} ]
+            parts: [ {regex_fragment: '(?:\s+y\s+)'} ]
         - capture:
             output: cross-street2
             parts: [ {regex_reference: kMultipleWordsRe} ]

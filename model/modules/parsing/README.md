@@ -67,6 +67,11 @@ regex_definitions:
     - regex_reference: kFoo
 ```
 
+> **Note:** If you specify regex_fragments, you need to be sure that such
+> fragments are safe to concatenate. This means if they contain a `|`, they
+> need to be wrapped by `(?:` and `)`. For `regex_concat` the default behavior
+> is to wrap the result in `(?:` and `)`.
+
 # Captures
 
 Captures are primarily a mechanism to capture specific information out of a
@@ -85,7 +90,9 @@ capture:
 capture_reference: str
 separator: regex_component = regex_fragment("^|\s+|\s*,\s*")
 no_capture:
+  # _Either_ parts _or_ alternatives may exist in a no_capture
   parts: List<capture_or_regex_component>
+  alternatives: List<capture_or_regex_component>
   [match_quantifier]
 ```
 ## Typedefs
@@ -150,8 +157,8 @@ capture:
   parts:
   - capture:
       output: unit-type
-      parts: [ {regex_fragment: 'apartment|apt\.?|suite'} ]
       match_quantifier: MATCH_OPTIONAL  # <----
+      parts: [ {regex_fragment: 'apartment|apt\.?|suite'} ]
   - separator: {regex_fragment: '\s+'}
   - capture:
       output: unit-name
@@ -202,6 +209,76 @@ input.
 
 `no_capture` groups exist to support the `match_quantifier` without having to
 bind the match to an output. They are also useful for nestig captures.
+
+A third used case is dealing with optional matches and separators. Consider the
+example for `unit-and-floor` above. Imagine this was embedded in another capture
+as follows.
+
+```yaml
+capture:
+  output: street-address
+  parts:
+    - capture_reference: ParseStreetAndBuilding
+    - separator: {regex_fragment: '\s+'}
+    - capture:
+        output: unit-and-floor
+        ... # everything as above
+```
+
+If the `unit-and-floor` does not have a match for the optional `unit-type`, we
+end up with a sequence of two consecutive `separator: {regex_fragment: '\s+'}`
+statements. The first one follows the `capture_reference:
+ParseStreetAndBuilding` and the second one precedes the `unit-name`.
+
+For this reason you must not start a named capture with an optional sub-capture.
+A work around is the use of `alternatives` in `no_capture` elements:
+
+```yaml
+capture:
+  output: street-address
+  parts:
+    - capture_reference: ParseStreetAndBuilding
+    - separator: {regex_fragment: '\s+'}
+    - capture:
+        output: unit-and-floor
+        parts:
+          - capture:
+            output: unit
+            parts:
+            # The difference begins here.
+            # Instead of defining a sequence
+            #   unit-type? separator unit-name
+            # we turn this into
+            #  (unit-type separator unit-name)|unit-name
+            # to prevent that we lead with a separator if unit-type does not
+            # match anything.
+            - no_capture:
+                alternatives:
+                - no_capture:
+                    parts:
+                    - capture:
+                        output: unit-type
+                        parts: [ {regex_fragment: 'apartment|apt\.?|suite'} ]
+                        # Note how this is now required, so the following
+                        # separator cannot become the beginning of this
+                        # no_capture.
+                        match_quantifier: MATCH_REQUIRED
+                    - separator: {regex_fragment: '\s+'}
+                    - capture:
+                        output: unit-name
+                        parts: [ {regex_reference: '\d+'} ]
+                # Here we have an alternative that skips the unit-type and does
+                # not need a separator.
+                - capture:
+                    output: unit-name
+                    parts: [ {regex_reference: '\d+'} ]
+          - separator: {regex_fragment: '-'}
+          - capture:
+            output: floor
+            parts:
+            - regex_fragment: '\d+'
+            match_quantifier: MATCH_OPTIONAL
+```
 
 Captures may be defined in `capture_definitions` and referenced via
 `capture_reference`, analogously to regular expressions.
