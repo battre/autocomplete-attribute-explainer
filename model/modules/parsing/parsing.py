@@ -502,6 +502,7 @@ class Capture:
     multi_line_prefix = "(?m)"
     if regex_result := re2.search(multi_line_prefix + regex, data):
       for k, v in regex_result.groupdict().items():
+        if v:
         k = k.replace('_', '-')
         result[k] = v
       regex_used.add(regex)
@@ -576,6 +577,7 @@ class Decomposition:
     multi_line_prefix = "(?m)"
     if regex_result := re2.search(multi_line_prefix + regex, data):
       for k, v in regex_result.groupdict().items():
+        if v:
         k = k.replace('_', '-')
         k = mapper.reverse(k)
         result[k] = v
