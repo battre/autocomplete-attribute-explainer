@@ -26,6 +26,7 @@ MatchesAndRegexUsed = Tuple[Dict[str, str], Set[str]]
 # Appending a quantifier (+, *, ?, ??) requires the site that appends the
 # quantifier to protect the inner regex.
 
+
 def parse_regex_component_from_yaml_dict(yaml) -> Optional[RegexComponent]:
   return (RegexFragment.from_yaml_dict(yaml)
           or RegexReference.from_yaml_dict(yaml)
