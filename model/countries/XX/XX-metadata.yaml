@@ -1,0 +1,7 @@
+country: XX
+flag: �
+
+overview: |
+    This is a dummy country to reflect Chrome's current production address model
+    to a certain degree. Not a lot of attention went into the formatting rules,
+    yet.

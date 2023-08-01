@@ -1,0 +1,34 @@
+formatting-rules:
+  full-address:
+  - name
+  - separator: "\n"
+  - street-address-alternative-1
+  - separator: "\n"
+  # {city}, {state} {post-code}
+  - locality
+  - separator: ", "
+  - admin-area
+  - postal-code
+  - separator: "\n"
+  # {country}
+  - country-name
+  - skip: country  # redundant with country-name
+  - skip: street-address  # redundant with street-address-alternative-1
+
+  street-location:
+  - reference: street_first_street_location
+
+  street-address-alternative-1:
+  - organization
+  - separator: "\n"
+  - street-location
+  - separator: "\n"
+  - in-building-location
+
+  # Apartamento 5A, Piso 10
+  in-building-location:
+  - prefix: "Apt. "
+  - unit
+  - separator: ", "
+  - prefix: "Floor "
+  - floor
