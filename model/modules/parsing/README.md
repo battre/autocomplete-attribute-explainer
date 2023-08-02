@@ -302,11 +302,12 @@ decomposition:
   [anchor_end: bool = True]
 decomposition_cascade:
   [condition: regex_component]
-  alternatives: capture_sequence | decomposition_cascade
+  alternatives: decomposition | decomposition_cascade
 extract_part:
   [condition: regex_component]
   capture: capture | capture_reference
 extract_parts:
+  [condition: regex_component]
   extract_part: List<extract_part>
 parsing_component = decomposition | decomposition_cascade |
 ```
