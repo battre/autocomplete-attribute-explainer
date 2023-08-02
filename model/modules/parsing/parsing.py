@@ -35,7 +35,7 @@ def parse_regex_component_from_yaml_dict(yaml) -> Optional[RegexComponent]:
 
 @dataclass
 class CaptureMapper:
-  """Class to deal with apping duplicate named captures.
+  """Class to deal with mapping duplicate named captures.
 
   A regex must not contain duplicate capture groups like this
   '(?P<foo>\w+)|(?P<foo>\w+)'
@@ -812,6 +812,8 @@ class ExtractParts:
     for p in self.parts:
       local_result, local_regex_used = p.evaluate(data, engine, mapper)
       if local_result:
+        # If the same token is matched multiple times, only the last extracted
+        # value will be returned.
         result.update(local_result)
         regex_used = regex_used.union(local_regex_used)
 
