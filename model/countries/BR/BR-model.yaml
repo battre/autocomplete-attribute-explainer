@@ -11,10 +11,12 @@ cut-off-tokens:
   - entrance
   - staircase
   - care-of
+  - admin-area2
+  - admin-area3
+  - admin-area4
 
 cut-off-children:  # don't expose nodes below these levels
   - family-name
-  - admin-area
   - street
   - building
   - tel-local

@@ -17,9 +17,6 @@ short-descriptions:
   family-name-second:
     en: Maternal name
     es: Apellido Materno
-  admin-area:
-    en: State + Municipio/Delegación
-    es: Estado + Municipio/Delegación
   admin-area1:
     en: State
     es: Estado
@@ -30,9 +27,6 @@ short-descriptions:
   country-name:
     en: Name of a country (e.g. "Mexico")
     es: País
-  locality:
-    en: City/Neighborhood
-    es: Ciudad/Colonia
   locality1:
     en: City
     es: Ciudad

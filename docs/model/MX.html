@@ -818,25 +818,6 @@
           
 <div class="concept">
   <div class="concept-id">
-    <a href="#locality">locality</a>
-    - City/Neighborhood
-      
-        
-      
-        
-        | Ciudad/Colonia
-        
-      
-    
-  </div>
-  
-    
-    
-      <div class="concept-content">
-        
-          
-<div class="concept">
-  <div class="concept-id">
     <a href="#locality1">locality1</a>
     - City
       
@@ -870,31 +851,6 @@
 </div>
 
         
-      </div>
-    
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#admin-area">admin-area</a>
-    - State + Municipio/Delegación
-      
-        
-      
-        
-        | Estado + Municipio/Delegación
-        
-      
-    
-  </div>
-  
-    
-    
-      <div class="concept-content">
-        
           
 <div class="concept">
   <div class="concept-id">
@@ -927,12 +883,6 @@
       
     
   </div>
-  
-</div>
-
-        
-      </div>
-    
   
 </div>
 
@@ -1475,8 +1425,6 @@ granular tokens.
         
       
         
-      
-        
         <tr>
           <td>locality1</td><td><pre style="margin:0">Ciudad de México</pre></td>
         </tr>
@@ -1490,10 +1438,8 @@ granular tokens.
       
         
         <tr>
-          <td>admin-area</td><td><pre style="margin:0">CDMX</pre></td>
+          <td>admin-area1</td><td><pre style="margin:0">CDMX</pre></td>
         </tr>
-        
-      
         
       
         
@@ -1636,11 +1582,19 @@ Artificial concept, not to be used in HTML
   </li>
 
   <li>
-    <a href="#locality">locality</a>
+    <a href="#locality1">locality1</a>
   </li>
 
   <li>
-    <a href="#admin-area">admin-area</a>
+    <a href="#locality2">locality2</a>
+  </li>
+
+  <li>
+    <a href="#admin-area1">admin-area1</a>
+  </li>
+
+  <li>
+    <a href="#admin-area2">admin-area2</a>
   </li>
 
   <li>
@@ -1667,13 +1621,13 @@ Artificial concept, not to be used in HTML
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">full-address</span> =
-<span class="formatting_token">name</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">street-address-alternative-1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">locality2</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">postal-code</span><span class="formatting_token">locality1</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">country-name</span>
+<span class="formatting_token">name</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">street-address-alternative-1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">locality2</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">admin-area2</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">postal-code</span><span class="formatting_token">locality1</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">country-name</span>
 </div>
 
 <h5>Flattened formatting:</h5>
 <div>
 <span class="formatting_token">full-address</span> =<br>
-<span class="formatting_token">given-name</span><span class="formatting_token">additional-name</span><span class="formatting_token">family-name-first</span><span class="formatting_token">family-name-conjunction</span><span class="formatting_token">family-name-second</span><span class="formatting_token_separator"><br></span><span class="formatting_token">street</span><span class="formatting_token">building</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator">,␣</span><span class="formatting_token_prefix">Piso </span><span class="formatting_token">floor</span><span class="formatting_token_separator"><br></span><span class="formatting_token">organization</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Entre Calles </span><span class="formatting_token">cross-street1</span><span class="formatting_token_separator">␣y␣</span><span class="formatting_token">cross-street2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">landmark</span><span class="formatting_token_separator"><br></span><span class="formatting_token">delivery-instructions</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">postal-code</span><span class="formatting_token">locality1</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area1</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country-name</span>
+<span class="formatting_token">given-name</span><span class="formatting_token">additional-name</span><span class="formatting_token">family-name-first</span><span class="formatting_token">family-name-conjunction</span><span class="formatting_token">family-name-second</span><span class="formatting_token_separator"><br></span><span class="formatting_token">street</span><span class="formatting_token">building</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator">,␣</span><span class="formatting_token_prefix">Piso </span><span class="formatting_token">floor</span><span class="formatting_token_separator"><br></span><span class="formatting_token">organization</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Entre Calles </span><span class="formatting_token">cross-street1</span><span class="formatting_token_separator">␣y␣</span><span class="formatting_token">cross-street2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">landmark</span><span class="formatting_token_separator"><br></span><span class="formatting_token">delivery-instructions</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">admin-area2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">postal-code</span><span class="formatting_token">locality1</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country-name</span>
 </div>
 
 </div><h3 id="name"><a href="#name">#</a> name</h3>
@@ -6582,70 +6536,6 @@ Delivery instructions
 
 
 
-</div><h3 id="locality"><a href="#locality">#</a> locality</h3>
-<div style="margin-left: 20px;">
-
-City/Neighborhood
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div>
-<h4>Children:</h4>
-<ul>
-
-  <li>
-    <a href="#locality1">locality1</a>
-  </li>
-
-  <li>
-    <a href="#locality2">locality2</a>
-  </li>
-
-</ul>
-</div>
-
-
-
-
-
-
-
-<h4>Formatting:</h4>
-<div>
-<span class="formatting_token">locality</span> =
-<span class="formatting_token">locality1</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">locality2</span>
-</div>
-
-<h5>Flattened formatting:</h5>
-<div>
-<span class="formatting_token">locality</span> =<br>
-<span class="formatting_token">locality1</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">locality2</span>
-</div>
-
 </div><h3 id="locality1"><a href="#locality1">#</a> locality1</h3>
 <div style="margin-left: 20px;">
 
@@ -6707,70 +6597,6 @@ Neighborhood
 
 
 
-
-</div><h3 id="admin-area"><a href="#admin-area">#</a> admin-area</h3>
-<div style="margin-left: 20px;">
-
-State + Municipio/Delegación
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div>
-<h4>Children:</h4>
-<ul>
-
-  <li>
-    <a href="#admin-area1">admin-area1</a>
-  </li>
-
-  <li>
-    <a href="#admin-area2">admin-area2</a>
-  </li>
-
-</ul>
-</div>
-
-
-
-
-
-
-
-<h4>Formatting:</h4>
-<div>
-<span class="formatting_token">admin-area</span> =
-<span class="formatting_token">admin-area1</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area2</span>
-</div>
-
-<h5>Flattened formatting:</h5>
-<div>
-<span class="formatting_token">admin-area</span> =<br>
-<span class="formatting_token">admin-area1</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area2</span>
-</div>
 
 </div><h3 id="admin-area1"><a href="#admin-area1">#</a> admin-area1</h3>
 <div style="margin-left: 20px;">

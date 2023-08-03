@@ -288,7 +288,7 @@ Address forms also often contain a landmark field ("Ponto de referência"). Some
 <td>Most address forms contain a field for the neighborhood.</td>
 </tr>
 <tr>
-<td>{locality1} - {admin-area}</td>
+<td>{locality1} - {admin-area1}</td>
 <td>Cidade - Estado</td>
 <td>Most address forms contain a field for the neighborhood and state.</td>
 </tr>
@@ -715,25 +715,6 @@ Address forms also often contain a landmark field ("Ponto de referência"). Some
           
 <div class="concept">
   <div class="concept-id">
-    <a href="#locality">locality</a>
-    - City/Neighborhood
-      
-        
-      
-        
-        | Cidade/Bairro
-        
-      
-    
-  </div>
-  
-    
-    
-      <div class="concept-content">
-        
-          
-<div class="concept">
-  <div class="concept-id">
     <a href="#locality1">locality1</a>
     - City
       
@@ -767,16 +748,10 @@ Address forms also often contain a landmark field ("Ponto de referência"). Some
 </div>
 
         
-      </div>
-    
-  
-</div>
-
-        
           
 <div class="concept">
   <div class="concept-id">
-    <a href="#admin-area">admin-area</a>
+    <a href="#admin-area1">admin-area1</a>
     - State
       
         
@@ -1297,8 +1272,6 @@ granular tokens.
         
       
         
-      
-        
         <tr>
           <td>locality1</td><td><pre style="margin:0">Rio de Janeiro</pre></td>
         </tr>
@@ -1312,7 +1285,7 @@ granular tokens.
       
         
         <tr>
-          <td>admin-area</td><td><pre style="margin:0">RJ</pre></td>
+          <td>admin-area1</td><td><pre style="margin:0">RJ</pre></td>
         </tr>
         
       
@@ -1497,8 +1470,6 @@ Clube dos Preenchedores Automáticos</pre></td>
         
       
         
-      
-        
         <tr>
           <td>locality1</td><td><pre style="margin:0">Rio de Janeiro</pre></td>
         </tr>
@@ -1512,7 +1483,7 @@ Clube dos Preenchedores Automáticos</pre></td>
       
         
         <tr>
-          <td>admin-area</td><td><pre style="margin:0">RJ</pre></td>
+          <td>admin-area1</td><td><pre style="margin:0">RJ</pre></td>
         </tr>
         
       
@@ -1681,8 +1652,6 @@ uses a different addressing system.
         
       
         
-      
-        
         <tr>
           <td>locality1</td><td><pre style="margin:0">Brasília</pre></td>
         </tr>
@@ -1692,7 +1661,7 @@ uses a different addressing system.
       
         
         <tr>
-          <td>admin-area</td><td><pre style="margin:0">DF</pre></td>
+          <td>admin-area1</td><td><pre style="margin:0">DF</pre></td>
         </tr>
         
       
@@ -1832,11 +1801,15 @@ Artificial concept, not to be used in HTML
   </li>
 
   <li>
-    <a href="#locality">locality</a>
+    <a href="#locality1">locality1</a>
   </li>
 
   <li>
-    <a href="#admin-area">admin-area</a>
+    <a href="#locality2">locality2</a>
+  </li>
+
+  <li>
+    <a href="#admin-area1">admin-area1</a>
   </li>
 
   <li>
@@ -1863,13 +1836,13 @@ Artificial concept, not to be used in HTML
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">full-address</span> =
-<span class="formatting_token">name</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">street-address-alternative-1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">locality2</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">locality1</span><span class="formatting_token_separator">␣-␣</span><span class="formatting_token">admin-area</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">postal-code</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">country-name</span>
+<span class="formatting_token">name</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">street-address-alternative-1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">locality2</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">locality1</span><span class="formatting_token_separator">␣-␣</span><span class="formatting_token">admin-area1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">postal-code</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">country-name</span>
 </div>
 
 <h5>Flattened formatting:</h5>
 <div>
 <span class="formatting_token">full-address</span> =<br>
-<span class="formatting_token">given-name</span><span class="formatting_token">family-name</span><span class="formatting_token_separator"><br></span><span class="formatting_token">street</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">building</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Andar </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">organization</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Ponto de referência: </span><span class="formatting_token">landmark</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality1</span><span class="formatting_token_separator">␣-␣</span><span class="formatting_token">admin-area</span><span class="formatting_token_separator"><br></span><span class="formatting_token">postal-code</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country-name</span>
+<span class="formatting_token">given-name</span><span class="formatting_token">family-name</span><span class="formatting_token_separator"><br></span><span class="formatting_token">street</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">building</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Andar </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">organization</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Ponto de referência: </span><span class="formatting_token">landmark</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality1</span><span class="formatting_token_separator">␣-␣</span><span class="formatting_token">admin-area1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">postal-code</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country-name</span>
 </div>
 
 </div><h3 id="name"><a href="#name">#</a> name</h3>
@@ -6535,70 +6508,6 @@ Landmark
 
 
 
-</div><h3 id="locality"><a href="#locality">#</a> locality</h3>
-<div style="margin-left: 20px;">
-
-City/Neighborhood
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div>
-<h4>Children:</h4>
-<ul>
-
-  <li>
-    <a href="#locality1">locality1</a>
-  </li>
-
-  <li>
-    <a href="#locality2">locality2</a>
-  </li>
-
-</ul>
-</div>
-
-
-
-
-
-
-
-<h4>Formatting:</h4>
-<div>
-<span class="formatting_token">locality</span> =
-<span class="formatting_token">locality2</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">locality1</span>
-</div>
-
-<h5>Flattened formatting:</h5>
-<div>
-<span class="formatting_token">locality</span> =<br>
-<span class="formatting_token">locality2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality1</span>
-</div>
-
 </div><h3 id="locality1"><a href="#locality1">#</a> locality1</h3>
 <div style="margin-left: 20px;">
 
@@ -6661,7 +6570,7 @@ Neighborhood
 
 
 
-</div><h3 id="admin-area"><a href="#admin-area">#</a> admin-area</h3>
+</div><h3 id="admin-area1"><a href="#admin-area1">#</a> admin-area1</h3>
 <div style="margin-left: 20px;">
 
 State

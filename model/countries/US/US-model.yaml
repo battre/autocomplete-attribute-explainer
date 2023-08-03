@@ -6,8 +6,12 @@ cut-off-tokens:
   - honorific-prefix
   - honorific-suffix
   - organization-title
+  - locality2
+  - locality3
+  - locality4
+  - admin-area2
+  - admin-area3
+  - admin-area4
 cut-off-children:  # don't expose nodes below these levels
-  - locality
-  - admin-area
   - street
   - family-name

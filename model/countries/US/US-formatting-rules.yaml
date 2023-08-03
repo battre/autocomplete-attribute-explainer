@@ -5,9 +5,9 @@ formatting-rules:
   - street-address
   - separator: "\n"
   # {city}, {state} {post-code}
-  - locality
+  - locality1
   - separator: ", "
-  - admin-area
+  - admin-area1
   - postal-code
   - separator: "\n"
   # {country}
@@ -26,8 +26,8 @@ examples:
     family-name: Smith
     address-line1: 1234 Main St.
     address-line2: Apt. 10, Club of Autofillers
-    locality: New York City
-    admin-area: NY
+    locality1: New York City
+    admin-area1: NY
     postal-code: 11367
     country: US
     country-name: USA

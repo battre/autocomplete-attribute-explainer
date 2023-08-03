@@ -8,7 +8,7 @@ formatting-rules:
   - separator: "\n"
   - locality1
   - separator: " - "
-  - admin-area
+  - admin-area1
   - separator: "\n"
   - postal-code
   - separator: "\n"
@@ -37,11 +37,6 @@ formatting-rules:
     - floor
     - separator: ", "
     - unit
-
-  locality:
-  - locality2
-  - separator: "\n"
-  - locality1
 
   street-location:
   - street
@@ -73,7 +68,7 @@ examples:
     landmark: Theatro Municipal do Rio de Janeiro
     locality1: Rio de Janeiro
     locality2: Centro
-    admin-area: RJ
+    admin-area1: RJ
     postal-code: 20230-153
     country: BR
     country-name: Brasil
@@ -113,7 +108,7 @@ examples:
     landmark: Theatro Municipal do Rio de Janeiro
     locality1: Rio de Janeiro
     locality2: Centro
-    admin-area: RJ
+    admin-area1: RJ
     postal-code: 20230-153
     country: BR
     country-name: Brasil
@@ -147,7 +142,7 @@ examples:
     building: Bloco A
     floor: 4
     locality1: Brasília
-    admin-area: DF
+    admin-area1: DF
     postal-code: 70297-400
     country: BR
     country-name: Brasil

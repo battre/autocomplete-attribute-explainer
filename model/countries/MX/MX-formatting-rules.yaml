@@ -7,11 +7,13 @@ formatting-rules:
   # {neighborhood}
   - locality2
   - separator: "\n"
+  - admin-area2
+  - separator: "\n"
   # {post-code} {city}, {state}
   - postal-code
   - locality1
   - separator: ", "
-  - admin-area
+  - admin-area1
   - separator: "\n"
   # {country}
   - country-name
@@ -74,7 +76,7 @@ examples:
     organization: Club de Autocompletadores
     locality1: Ciudad de México
     locality2: Roma Nte.
-    admin-area: CDMX
+    admin-area1: CDMX
     postal-code: "06140"
     country: MX
     country-name: Mexico

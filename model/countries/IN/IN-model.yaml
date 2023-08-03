@@ -58,10 +58,6 @@ extra-definitions:
   - street-location
   - locality2
 
-  locality:
-  - locality1  # Biggest kind of locality
-  # locality2 is in the street address
-
 append-after:
   street-address-alternative-1:
   - street-address-alternative-2

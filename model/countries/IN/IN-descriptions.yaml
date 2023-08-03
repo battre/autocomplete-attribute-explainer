@@ -2,10 +2,9 @@ short-descriptions:
   given-name: First name
   additional-name: Middle name
   family-name: Last name
-  admin-area: State
+  admin-area1: State
   country: 2-letter country code (e.g. "IN")
   country-name: Name of a country (e.g. "India")
-  locality: City
   locality1: City
   locality2: Locality
   street-location: Building name and apartment, House number, Street

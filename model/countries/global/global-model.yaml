@@ -47,18 +47,16 @@ concepts:
       - care-of
     # Think of localities as cities and their subdivisions (e.g. neighborhoods,
     # districts, ...).
-    - locality:
-      - locality1  # Biggest kind of locality
-      - locality2
-      - locality3
-      - locality4
+    - locality1  # Biggest kind of locality
+    - locality2
+    - locality3
+    - locality4
     # Think of admin areas as states and adminstrative districts in these states.
     # https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country
-    - admin-area:
-      - admin-area1  # Biggest kind of admin-area
-      - admin-area2
-      - admin-area3
-      - admin-area4
+    - admin-area1  # Biggest kind of admin-area
+    - admin-area2
+    - admin-area3
+    - admin-area4
     - postal-code
     - country
     - country-name

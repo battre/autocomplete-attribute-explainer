@@ -7,6 +7,8 @@ cut-off-tokens:
   - locality4
   - admin-area3
   - admin-area4
+  - locality3
+  - locality4
   - cross-streets
   - entrance
   - staircase
@@ -18,6 +20,4 @@ cut-off-children:  # don't expose nodes below these levels
   - street
   - building
   - tel-local
-  - locality
-  - admin-area
   - unit

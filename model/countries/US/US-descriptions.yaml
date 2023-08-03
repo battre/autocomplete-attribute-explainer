@@ -5,5 +5,5 @@ short-descriptions:
   country-code: 2-letter country code (e.g. "US")
   country-name: Name of a country (e.g. "USA")
   street-address: Street address (house number, street name, apartment)
-  locality: City
-  admin-area: State
+  locality1: City
+  admin-area1: State

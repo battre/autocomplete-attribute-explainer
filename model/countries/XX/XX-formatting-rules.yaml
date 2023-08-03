@@ -4,10 +4,12 @@ formatting-rules:
   - separator: "\n"
   - street-address-alternative-1
   - separator: "\n"
-  # {city}, {state} {post-code}
-  - locality
+  # {city} {dummy-neighborhood}, {state} {dummy-adminarea2} {post-code}
+  - locality1
+  - locality2
   - separator: ", "
-  - admin-area
+  - admin-area1
+  - admin-area2
   - postal-code
   - separator: "\n"
   # {country}

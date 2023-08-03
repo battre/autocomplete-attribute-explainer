@@ -32,24 +32,6 @@ formatting-rules:
   - family-name-conjunction
   - family-name-second
 
-  admin-area:
-  - admin-area1
-  - separator: ", "
-  - admin-area2
-  - separator: ", "
-  - admin-area3
-  - separator: ", "
-  - admin-area4
-
-  locality:
-  - locality1
-  - separator: ", "
-  - locality2
-  - separator: ", "
-  - locality3
-  - separator: ", "
-  - locality4
-
   street-address:
   - address-line1
   - separator: "\n"

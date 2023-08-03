@@ -9,16 +9,13 @@ short-descriptions:
   family-name:
     en: Last name
     pt: Sobrenome
-  admin-area:
+  admin-area1:
     en: State
     pt: Estado
   country: 2-letter country code (e.g. "BR")
   country-name:
     en: Name of a country (e.g. "Brazil")
     pt: País
-  locality:
-    en: City/Neighborhood
-    pt: Cidade/Bairro
   locality1:
     en: City
     pt: Cidade

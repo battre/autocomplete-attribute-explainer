@@ -27,7 +27,7 @@ overview: |
     <td>Most address forms contain a field for the neighborhood.</td>
     </tr>
     <tr>
-    <td>{locality1} - {admin-area}</td>
+    <td>{locality1} - {admin-area1}</td>
     <td>Cidade - Estado</td>
     <td>Most address forms contain a field for the neighborhood and state.</td>
     </tr>

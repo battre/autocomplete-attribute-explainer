@@ -605,8 +605,8 @@ yet.</div>
           
 <div class="concept">
   <div class="concept-id">
-    <a href="#locality">locality</a>
-    - Typically a city; may be a concatenation of multiple smaller types
+    <a href="#locality1">locality1</a>
+    - Biggest sub type of a locality, often a city
       
         
       
@@ -619,8 +619,36 @@ yet.</div>
           
 <div class="concept">
   <div class="concept-id">
-    <a href="#admin-area">admin-area</a>
-    - Administrative area (e.g. a state, emirate, ...); maybe a concatenation of multiple smaller types of admin areas if a country uses those
+    <a href="#locality2">locality2</a>
+    - 2nd biggest type of a locality, e.g. a suburb
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#admin-area1">admin-area1</a>
+    - Biggest type of admin area if a country has multiple levels
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#admin-area2">admin-area2</a>
+    - 2nd biggest type of admin area if a country has multiple levels
       
         
       
@@ -1075,11 +1103,19 @@ Artificial concept, not to be used in HTML
   </li>
 
   <li>
-    <a href="#locality">locality</a>
+    <a href="#locality1">locality1</a>
   </li>
 
   <li>
-    <a href="#admin-area">admin-area</a>
+    <a href="#locality2">locality2</a>
+  </li>
+
+  <li>
+    <a href="#admin-area1">admin-area1</a>
+  </li>
+
+  <li>
+    <a href="#admin-area2">admin-area2</a>
   </li>
 
   <li>
@@ -1106,13 +1142,13 @@ Artificial concept, not to be used in HTML
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">full-address</span> =
-<span class="formatting_token">name</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">street-address-alternative-1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">locality</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area</span><span class="formatting_token">postal-code</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">country-name</span>
+<span class="formatting_token">name</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">street-address-alternative-1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">locality1</span><span class="formatting_token">locality2</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area1</span><span class="formatting_token">admin-area2</span><span class="formatting_token">postal-code</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">country-name</span>
 </div>
 
 <h5>Flattened formatting:</h5>
 <div>
 <span class="formatting_token">full-address</span> =<br>
-<span class="formatting_token">given-name</span><span class="formatting_token">family-name-first</span><span class="formatting_token">family-name-conjunction</span><span class="formatting_token">family-name-second</span><span class="formatting_token_separator"><br></span><span class="formatting_token">organization</span><span class="formatting_token_separator"><br></span><span class="formatting_token">street</span><span class="formatting_token">building</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Apt. </span><span class="formatting_token">unit</span><span class="formatting_token_separator">,␣</span><span class="formatting_token_prefix">Floor </span><span class="formatting_token">floor</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area</span><span class="formatting_token">postal-code</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country-name</span>
+<span class="formatting_token">given-name</span><span class="formatting_token">family-name-first</span><span class="formatting_token">family-name-conjunction</span><span class="formatting_token">family-name-second</span><span class="formatting_token_separator"><br></span><span class="formatting_token">organization</span><span class="formatting_token_separator"><br></span><span class="formatting_token">street</span><span class="formatting_token">building</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Apt. </span><span class="formatting_token">unit</span><span class="formatting_token_separator">,␣</span><span class="formatting_token_prefix">Floor </span><span class="formatting_token">floor</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality1</span><span class="formatting_token">locality2</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area1</span><span class="formatting_token">admin-area2</span><span class="formatting_token">postal-code</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country-name</span>
 </div>
 
 </div><h3 id="name"><a href="#name">#</a> name</h3>
@@ -4441,10 +4477,10 @@ Unit in a building (e.g. &#34;Apartment 5&#34;, &#34;Suite 12&#34;)
 
 
 
-</div><h3 id="locality"><a href="#locality">#</a> locality</h3>
+</div><h3 id="locality1"><a href="#locality1">#</a> locality1</h3>
 <div style="margin-left: 20px;">
 
-Typically a city; may be a concatenation of multiple smaller types
+Biggest sub type of a locality, often a city
 
 
 
@@ -4472,10 +4508,72 @@ Typically a city; may be a concatenation of multiple smaller types
 
 
 
-</div><h3 id="admin-area"><a href="#admin-area">#</a> admin-area</h3>
+</div><h3 id="locality2"><a href="#locality2">#</a> locality2</h3>
 <div style="margin-left: 20px;">
 
-Administrative area (e.g. a state, emirate, ...); maybe a concatenation of multiple smaller types of admin areas if a country uses those
+2nd biggest type of a locality, e.g. a suburb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="admin-area1"><a href="#admin-area1">#</a> admin-area1</h3>
+<div style="margin-left: 20px;">
+
+Biggest type of admin area if a country has multiple levels
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="admin-area2"><a href="#admin-area2">#</a> admin-area2</h3>
+<div style="margin-left: 20px;">
+
+2nd biggest type of admin area if a country has multiple levels
 
 
 
