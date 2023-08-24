@@ -1,5 +1,5 @@
 short-descriptions:
-  full-address: Artificial concept, not to be used in HTML
+  address: Address of a physical location - Artificial concept, not to be used in HTML
   name: Full name
   honorific-prefix: Honorific prefix
   given-name: Given namen (in Western cultures the first name)

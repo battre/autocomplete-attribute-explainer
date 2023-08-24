@@ -19,10 +19,9 @@ abbreviations:
 graphs:
   address:
     start-nodes:
-    - full-address
+    - address
     stop-at:
     # - foobar prints "foobar" but no children
-    - name
     - street-address
     # stop-before:
     # - foobar does not print "foobar" nor children

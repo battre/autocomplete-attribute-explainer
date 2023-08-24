@@ -1,7 +1,5 @@
 formatting-rules:
-  full-address:
-  - name
-  - separator: "\n"
+  address:
   - street-address
   - separator: "\n"
   # {city}, {state} {post-code}
@@ -16,14 +14,23 @@ formatting-rules:
   - skip: street-address  # redundant with street-address-alternative-1
 
 examples:
-- id: full-address
+- id: name
   comment: |
-    This is an example of a full address in the USA specified by the most
-    granular tokens.
+    This is an example of a name specified by the most granular tokens.
   attributes:
     given-name: Mary
     additional-name: Linda
     family-name: Smith
+  output:
+    name:
+      show: true
+      text: Mary Linda Smith
+
+- id: address
+  comment: |
+    This is an example of a full address in the USA specified by the most
+    granular tokens.
+  attributes:
     address-line1: 1234 Main St.
     address-line2: Apt. 10, Club of Autofillers
     locality1: New York City
@@ -33,14 +40,9 @@ examples:
     country-name: USA
 
   output:
-    name:
-      show: false
-      text: Mary Linda Smith
-
-    full-address:
+    address:
       show: true
       text: |
-        Mary Linda Smith
         1234 Main St.
         Apt. 10, Club of Autofillers
         New York City, NY 11367

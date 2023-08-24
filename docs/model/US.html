@@ -270,21 +270,6 @@
     
 <div class="concept">
   <div class="concept-id">
-    <a href="#full-address">full-address</a>
-    - Artificial concept, not to be used in HTML
-      
-        
-      
-    
-  </div>
-  
-    
-    
-      <div class="concept-content">
-        
-          
-<div class="concept">
-  <div class="concept-id">
     <a href="#name">name</a>
     - Full name
       
@@ -344,6 +329,22 @@
   
 </div>
 
+    <div>&nbsp;</div>
+    
+    
+<div class="concept">
+  <div class="concept-id">
+    <a href="#address">address</a>
+    - Address of a physical location - Artificial concept, not to be used in HTML
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
         
           
 <div class="concept">
@@ -891,8 +892,7 @@
       
 <tr>
   <td colspan="2">
-    <b>full-address</b>: This is an example of a full address in the USA specified by the most
-granular tokens.
+    <b>name</b>: This is an example of a name specified by the most granular tokens.
 
   </td>
 </tr>
@@ -903,8 +903,6 @@ granular tokens.
 <tr>
   <td valign="top">
     <table>
-      
-        
       
         
       
@@ -924,6 +922,116 @@ granular tokens.
         <tr>
           <td>family-name</td><td><pre style="margin:0">Smith</pre></td>
         </tr>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </table>
+  </td>
+  <td valign="top">
+    
+      Output for "name":<br>
+      <pre class="formatting_example_textbox">Mary Linda Smith</pre>
+      
+      
+    
+  </td>
+</tr>
+<tr>
+  <td span="2">
+    &nbsp;
+  </td>
+</tr>
+
+      
+      
+<tr>
+  <td colspan="2">
+    <b>address</b>: This is an example of a full address in the USA specified by the most
+granular tokens.
+
+  </td>
+</tr>
+<tr>
+  <th>Input</th>
+  <th>Output</th>
+</tr>
+<tr>
+  <td valign="top">
+    <table>
+      
+        
+      
+        
+      
+        
+      
+        
+      
         
       
         
@@ -1022,9 +1130,8 @@ granular tokens.
   </td>
   <td valign="top">
     
-      Output for "full-address":<br>
-      <pre class="formatting_example_textbox">Mary Linda Smith
-1234 Main St.
+      Output for "address":<br>
+      <pre class="formatting_example_textbox">1234 Main St.
 Apt. 10, Club of Autofillers
 New York City, NY 11367
 USA</pre>
@@ -1047,67 +1154,7 @@ USA</pre>
     <h2 class="mdl-card__title-text">Details</h2>
   </div>
   <div class="mdl-card__actions mdl-card--border">
-    <h3 id="full-address"><a href="#full-address">#</a> full-address</h3>
-<div style="margin-left: 20px;">
-
-Artificial concept, not to be used in HTML
-
-
-
-<div>
-<h4>Children:</h4>
-<ul>
-
-  <li>
-    <a href="#name">name</a>
-  </li>
-
-  <li>
-    <a href="#street-address">street-address</a>
-  </li>
-
-  <li>
-    <a href="#locality1">locality1</a>
-  </li>
-
-  <li>
-    <a href="#admin-area1">admin-area1</a>
-  </li>
-
-  <li>
-    <a href="#postal-code">postal-code</a>
-  </li>
-
-  <li>
-    <a href="#country">country</a>
-  </li>
-
-  <li>
-    <a href="#country-name">country-name</a>
-  </li>
-
-</ul>
-</div>
-
-
-
-
-
-
-
-<h4>Formatting:</h4>
-<div>
-<span class="formatting_token">full-address</span> =
-<span class="formatting_token">name</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">street-address</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">locality1</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area1</span><span class="formatting_token">postal-code</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">country-name</span>
-</div>
-
-<h5>Flattened formatting:</h5>
-<div>
-<span class="formatting_token">full-address</span> =<br>
-<span class="formatting_token">given-name</span><span class="formatting_token">additional-name</span><span class="formatting_token">family-name</span><span class="formatting_token_separator"><br></span><span class="formatting_token">address-line1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">address-line2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">address-line3</span><span class="formatting_token_separator"><br></span><span class="formatting_token">address-line4</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality1</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area1</span><span class="formatting_token">postal-code</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country-name</span>
-</div>
-
-</div><h3 id="name"><a href="#name">#</a> name</h3>
+    <h3 id="name"><a href="#name">#</a> name</h3>
 <div style="margin-left: 20px;">
 
 Full name
@@ -1171,6 +1218,62 @@ Middle name (middle initial in case of max-length=1)
 Last name
 
 
+
+</div><h3 id="address"><a href="#address">#</a> address</h3>
+<div style="margin-left: 20px;">
+
+Address of a physical location - Artificial concept, not to be used in HTML
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    <a href="#street-address">street-address</a>
+  </li>
+
+  <li>
+    <a href="#locality1">locality1</a>
+  </li>
+
+  <li>
+    <a href="#admin-area1">admin-area1</a>
+  </li>
+
+  <li>
+    <a href="#postal-code">postal-code</a>
+  </li>
+
+  <li>
+    <a href="#country">country</a>
+  </li>
+
+  <li>
+    <a href="#country-name">country-name</a>
+  </li>
+
+</ul>
+</div>
+
+
+
+
+
+
+
+<h4>Formatting:</h4>
+<div>
+<span class="formatting_token">address</span> =
+<span class="formatting_token">street-address</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">locality1</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area1</span><span class="formatting_token">postal-code</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">country-name</span>
+</div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">address</span> =<br>
+<span class="formatting_token">address-line1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">address-line2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">address-line3</span><span class="formatting_token_separator"><br></span><span class="formatting_token">address-line4</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality1</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area1</span><span class="formatting_token">postal-code</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country-name</span>
+</div>
 
 </div><h3 id="street-address"><a href="#street-address">#</a> street-address</h3>
 <div style="margin-left: 20px;">

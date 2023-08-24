@@ -318,21 +318,6 @@ Address forms also often contain a landmark field ("Ponto de referência"). Some
     
 <div class="concept">
   <div class="concept-id">
-    <a href="#full-address">full-address</a>
-    - Artificial concept, not to be used in HTML
-      
-        
-      
-    
-  </div>
-  
-    
-    
-      <div class="concept-content">
-        
-          
-<div class="concept">
-  <div class="concept-id">
     <a href="#name">name</a>
     - Full name
       
@@ -390,6 +375,22 @@ Address forms also often contain a landmark field ("Ponto de referência"). Some
   
 </div>
 
+    <div>&nbsp;</div>
+    
+    
+<div class="concept">
+  <div class="concept-id">
+    <a href="#address">address</a>
+    - Address of a physical location - Artificial concept, not to be used in HTML
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
         
           
 <div class="concept">
@@ -1178,7 +1179,144 @@ Address forms also often contain a landmark field ("Ponto de referência"). Some
       
 <tr>
   <td colspan="2">
-    <b>full-address</b>: This is an example of a full address in Brazil specified by the most
+    <b>name</b>: This is an example of a name.
+
+  </td>
+</tr>
+<tr>
+  <th>Input</th>
+  <th>Output</th>
+</tr>
+<tr>
+  <td valign="top">
+    <table>
+      
+        
+      
+        
+        <tr>
+          <td>given-name</td><td><pre style="margin:0">Maria Alice</pre></td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>family-name</td><td><pre style="margin:0">da Silva</pre></td>
+        </tr>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </table>
+  </td>
+  <td valign="top">
+    
+      Output for "name":<br>
+      <pre class="formatting_example_textbox">Maria Alice da Silva</pre>
+      
+      
+    
+  </td>
+</tr>
+<tr>
+  <td span="2">
+    &nbsp;
+  </td>
+</tr>
+
+      
+      
+<tr>
+  <td colspan="2">
+    <b>address</b>: This is an example of a full address in Brazil specified by the most
 granular tokens.
 
   </td>
@@ -1196,15 +1334,7 @@ granular tokens.
         
       
         
-        <tr>
-          <td>given-name</td><td><pre style="margin:0">Maria Alice</pre></td>
-        </tr>
-        
       
-        
-        <tr>
-          <td>family-name</td><td><pre style="margin:0">da Silva</pre></td>
-        </tr>
         
       
         
@@ -1351,9 +1481,8 @@ granular tokens.
   </td>
   <td valign="top">
     
-      Output for "full-address":<br>
-      <pre class="formatting_example_textbox">Maria Alice da Silva
-Avenida Mem de Sá, 1234
+      Output for "address":<br>
+      <pre class="formatting_example_textbox">Avenida Mem de Sá, 1234
 Andar 1, Apto. 12, Clube dos Preenchedores Automáticos
 Ponto de referência: Theatro Municipal do Rio de Janeiro
 Centro
@@ -1375,7 +1504,7 @@ Brasil</pre>
       
 <tr>
   <td colspan="2">
-    <b>full-address-with-inner-nodes</b>: This example illustrates how specifying an explicit value for
+    <b>address-with-inner-nodes</b>: This example illustrates how specifying an explicit value for
 address-overflow trumps the leaf node values of unit-type, unit-name, etc.
 
   </td>
@@ -1393,15 +1522,7 @@ address-overflow trumps the leaf node values of unit-type, unit-name, etc.
         
       
         
-        <tr>
-          <td>given-name</td><td><pre style="margin:0">Maria Alice</pre></td>
-        </tr>
-        
       
-        
-        <tr>
-          <td>family-name</td><td><pre style="margin:0">da Silva</pre></td>
-        </tr>
         
       
         
@@ -1549,9 +1670,8 @@ Clube dos Preenchedores Automáticos</pre></td>
   </td>
   <td valign="top">
     
-      Output for "full-address":<br>
-      <pre class="formatting_example_textbox">Maria Alice da Silva
-Avenida Mem de Sá, 1234
+      Output for "address":<br>
+      <pre class="formatting_example_textbox">Avenida Mem de Sá, 1234
 1º andar, ap 12
 Clube dos Preenchedores Automáticos
 Ponto de referência: Theatro Municipal do Rio de Janeiro
@@ -1574,7 +1694,7 @@ Brasil</pre>
       
 <tr>
   <td colspan="2">
-    <b>full-address-in-brasilia</b>: This example illustrates how an address in Brasília can be expressed, which
+    <b>address-in-brasilia</b>: This example illustrates how an address in Brasília can be expressed, which
 uses a different addressing system.
 
   </td>
@@ -1592,15 +1712,7 @@ uses a different addressing system.
         
       
         
-        <tr>
-          <td>given-name</td><td><pre style="margin:0">Maria Alice</pre></td>
-        </tr>
-        
       
-        
-        <tr>
-          <td>family-name</td><td><pre style="margin:0">da Silva</pre></td>
-        </tr>
         
       
         
@@ -1727,9 +1839,8 @@ uses a different addressing system.
   </td>
   <td valign="top">
     
-      Output for "full-address":<br>
-      <pre class="formatting_example_textbox">Maria Alice da Silva
-SCS – Quadra 6, Bloco A
+      Output for "address":<br>
+      <pre class="formatting_example_textbox">SCS – Quadra 6, Bloco A
 Andar 4
 Brasília - DF
 70297-400
@@ -1753,99 +1864,7 @@ Brasil</pre>
     <h2 class="mdl-card__title-text">Details</h2>
   </div>
   <div class="mdl-card__actions mdl-card--border">
-    <h3 id="full-address"><a href="#full-address">#</a> full-address</h3>
-<div style="margin-left: 20px;">
-
-Artificial concept, not to be used in HTML
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div>
-<h4>Children:</h4>
-<ul>
-
-  <li>
-    <a href="#name">name</a>
-  </li>
-
-  <li>
-    <a href="#street-address">street-address</a>
-  </li>
-
-  <li>
-    <a href="#street-address-alternative-1">street-address-alternative-1</a>
-  </li>
-
-  <li>
-    <a href="#locality1">locality1</a>
-  </li>
-
-  <li>
-    <a href="#locality2">locality2</a>
-  </li>
-
-  <li>
-    <a href="#admin-area1">admin-area1</a>
-  </li>
-
-  <li>
-    <a href="#postal-code">postal-code</a>
-  </li>
-
-  <li>
-    <a href="#country">country</a>
-  </li>
-
-  <li>
-    <a href="#country-name">country-name</a>
-  </li>
-
-</ul>
-</div>
-
-
-
-
-
-
-
-<h4>Formatting:</h4>
-<div>
-<span class="formatting_token">full-address</span> =
-<span class="formatting_token">name</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">street-address-alternative-1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">locality2</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">locality1</span><span class="formatting_token_separator">␣-␣</span><span class="formatting_token">admin-area1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">postal-code</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">country-name</span>
-</div>
-
-<h5>Flattened formatting:</h5>
-<div>
-<span class="formatting_token">full-address</span> =<br>
-<span class="formatting_token">given-name</span><span class="formatting_token">family-name</span><span class="formatting_token_separator"><br></span><span class="formatting_token">street</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">building</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Andar </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">organization</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Ponto de referência: </span><span class="formatting_token">landmark</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality1</span><span class="formatting_token_separator">␣-␣</span><span class="formatting_token">admin-area1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">postal-code</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country-name</span>
-</div>
-
-</div><h3 id="name"><a href="#name">#</a> name</h3>
+    <h3 id="name"><a href="#name">#</a> name</h3>
 <div style="margin-left: 20px;">
 
 Full name
@@ -3639,6 +3658,94 @@ Last name
 
 
 
+
+</div><h3 id="address"><a href="#address">#</a> address</h3>
+<div style="margin-left: 20px;">
+
+Address of a physical location - Artificial concept, not to be used in HTML
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    <a href="#street-address">street-address</a>
+  </li>
+
+  <li>
+    <a href="#street-address-alternative-1">street-address-alternative-1</a>
+  </li>
+
+  <li>
+    <a href="#locality1">locality1</a>
+  </li>
+
+  <li>
+    <a href="#locality2">locality2</a>
+  </li>
+
+  <li>
+    <a href="#admin-area1">admin-area1</a>
+  </li>
+
+  <li>
+    <a href="#postal-code">postal-code</a>
+  </li>
+
+  <li>
+    <a href="#country">country</a>
+  </li>
+
+  <li>
+    <a href="#country-name">country-name</a>
+  </li>
+
+</ul>
+</div>
+
+
+
+
+
+
+
+<h4>Formatting:</h4>
+<div>
+<span class="formatting_token">address</span> =
+<span class="formatting_token">street-address-alternative-1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">locality2</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">locality1</span><span class="formatting_token_separator">␣-␣</span><span class="formatting_token">admin-area1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">postal-code</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">country-name</span>
+</div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">address</span> =<br>
+<span class="formatting_token">street</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">building</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Andar </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">organization</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Ponto de referência: </span><span class="formatting_token">landmark</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality1</span><span class="formatting_token_separator">␣-␣</span><span class="formatting_token">admin-area1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">postal-code</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country-name</span>
+</div>
 
 </div><h3 id="street-address"><a href="#street-address">#</a> street-address</h3>
 <div style="margin-left: 20px;">
