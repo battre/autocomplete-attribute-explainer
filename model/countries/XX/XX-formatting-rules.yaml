@@ -1,7 +1,5 @@
 formatting-rules:
-  full-address:
-  - name
-  - separator: "\n"
+  address:
   - street-address-alternative-1
   - separator: "\n"
   # {city} {dummy-neighborhood}, {state} {dummy-adminarea2} {post-code}

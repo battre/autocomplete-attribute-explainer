@@ -1,16 +1,16 @@
 concepts:
-  - full-address:
-    # Name related
-    - name:
-      - honorific-prefix
-      - given-name
-      - additional-name
-      - family-name:
-        - family-name-first
-        - family-name-conjunction
-        - family-name-second
-      - honorific-suffix
-      - organization-title
+  # Name related
+  - name:
+    - honorific-prefix
+    - given-name
+    - additional-name
+    - family-name:
+      - family-name-first
+      - family-name-conjunction
+      - family-name-second
+    - honorific-suffix
+    - organization-title
+  - address:
     # Street level
     - street-address:
       - address-line1
