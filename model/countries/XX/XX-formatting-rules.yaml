@@ -9,11 +9,11 @@ formatting-rules:
   - admin-area1
   - admin-area2
   - postal-code
+  - sorting-code
   - separator: "\n"
   # {country}
   - country-name
   - skip: country  # redundant with country-name
-  - skip: street-address  # redundant with street-address-alternative-1
 
   street-location:
   - reference: street_first_street_location
@@ -23,7 +23,11 @@ formatting-rules:
   - separator: "\n"
   - street-location
   - separator: "\n"
+  - cross-streets
+  - separator: "\n"
   - in-building-location
+  - separator: "\n"
+  - landmark
 
   # Apartamento 5A, Piso 10
   in-building-location:

@@ -6,6 +6,7 @@ cut-off-tokens:
   - honorific-prefix
   - honorific-suffix
   - organization-title
+  - sorting-code
   - locality2
   - locality3
   - locality4

@@ -5,6 +5,7 @@ cut-off-tokens:
   # - additional-name
   - honorific-suffix
   - organization-title
+  - sorting-code
   - locality3
   - locality4
   - admin-area3

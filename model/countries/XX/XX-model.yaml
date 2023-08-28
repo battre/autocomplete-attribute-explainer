@@ -3,21 +3,22 @@ cut-off-tokens:
   - additional-name
   - honorific-suffix
   - organization-title
+  - organization
+  - street-address
   - locality3
   - locality4
   - admin-area3
   - admin-area4
   - locality3
   - locality4
-  - cross-streets
   - entrance
   - staircase
   - care-of
   - address-overflow
-  - landmark
   - delivery-instructions
 cut-off-children:  # don't expose nodes below these levels
   - street
   - building
   - tel-local
   - unit
+  - cross-streets

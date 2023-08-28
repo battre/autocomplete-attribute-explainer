@@ -58,6 +58,7 @@ concepts:
     - admin-area3
     - admin-area4
     - postal-code
+    - sorting-code
     - country
     - country-name
   # Credit card number related
