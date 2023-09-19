@@ -36,8 +36,6 @@ formatting-rules:
   - floor
 
   address-overflow:
-  - organization
-  - separator: "\n"
   - landmark-and-cross-streets
   - separator: "\n"
   - delivery-instructions
@@ -81,7 +79,6 @@ examples:
     landmark: Cerca del Parque España
     cross-street1: Tonalá
     cross-street2: Monterrey
-    organization: Club de Autocompletadores
     locality1: Ciudad de México
     locality2: Roma Nte.
     admin-area1: CDMX
@@ -94,7 +91,6 @@ examples:
       show: true
       text: |
         Avenida Álvaro Obregón 1234, Apartamento 5A, Piso 10
-        Club de Autocompletadores
         Entre Calles Tonalá y Monterrey
         Cerca del Parque España
         Roma Nte.

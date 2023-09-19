@@ -269,7 +269,6 @@ test_parsing_definitions:
   type: street-address-alternative-1
   input: |-
     Avenida Álvaro Obregón 1234, Apartamento 5A, Piso 10
-    Club de Autocompletadores
     Entre Calles Tonalá y Monterrey
   output:
     street-location: "Avenida Álvaro Obregón 1234"

@@ -8,20 +8,17 @@ extra-definitions:
   - in-building-location
   - building
   - street
-  - organization
   - landmark
   - locality2
 
   street-address-alternative-2:
   - street-location
-  - organization
   - landmark
   - locality2
 
   street-address-alternative-3:
   - in-building-location
   - building
-  - organization
   - street-and-locality2
   - landmark
 
@@ -32,7 +29,6 @@ extra-definitions:
   street-address-alternative-4:
   - in-building-location
   - building
-  - organization
   - street-and-landmark
   - locality2
 
@@ -41,7 +37,6 @@ extra-definitions:
   - landmark
 
   street-address-alternative-5:
-  - organization
   - street-location-and-landmark
   - locality2
 
@@ -50,7 +45,6 @@ extra-definitions:
   - landmark
 
   street-address-alternative-6:
-  - organization
   - street-location-and-locality2
   - landmark
 

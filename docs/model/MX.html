@@ -768,42 +768,6 @@
 </div>
 
         
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#organization">organization</a>
-    - Name of an organization/company
-      
-        
-      
-        
-        | Razón social
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#delivery-instructions">delivery-instructions</a>
-    - Delivery instructions
-      
-        
-      
-        
-        | Indicaciones adicionales
-        
-      
-    
-  </div>
-  
-</div>
-
-        
       </div>
     
   
@@ -940,6 +904,25 @@
         
       </div>
     
+  
+</div>
+
+    <div>&nbsp;</div>
+    
+    
+<div class="concept">
+  <div class="concept-id">
+    <a href="#organization">organization</a>
+    - Name of an organization/company
+      
+        
+      
+        
+        | Razón social
+        
+      
+    
+  </div>
   
 </div>
 
@@ -1441,8 +1424,6 @@ tokens.
       
         
       
-        
-      
     </table>
   </td>
   <td valign="top">
@@ -1567,14 +1548,6 @@ granular tokens.
       
         
         <tr>
-          <td>organization</td><td><pre style="margin:0">Club de Autocompletadores</pre></td>
-        </tr>
-        
-      
-        
-      
-        
-        <tr>
           <td>locality1</td><td><pre style="margin:0">Ciudad de México</pre></td>
         </tr>
         
@@ -1651,13 +1624,14 @@ granular tokens.
       
         
       
+        
+      
     </table>
   </td>
   <td valign="top">
     
       Output for "address":<br>
       <pre class="formatting_example_textbox">Avenida Álvaro Obregón 1234, Apartamento 5A, Piso 10
-Club de Autocompletadores
 Entre Calles Tonalá y Monterrey
 Cerca del Parque España
 Roma Nte.
@@ -3731,7 +3705,7 @@ Address of a physical location - Artificial concept, not to be used in HTML
 <h5>Flattened formatting:</h5>
 <div>
 <span class="formatting_token">address</span> =<br>
-<span class="formatting_token">street</span><span class="formatting_token">building</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator">,␣</span><span class="formatting_token_prefix">Piso </span><span class="formatting_token">floor</span><span class="formatting_token_separator"><br></span><span class="formatting_token">organization</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Entre Calles </span><span class="formatting_token">cross-street1</span><span class="formatting_token_separator">␣y␣</span><span class="formatting_token">cross-street2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">landmark</span><span class="formatting_token_separator"><br></span><span class="formatting_token">delivery-instructions</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">admin-area2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">postal-code</span><span class="formatting_token">locality1</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country-name</span>
+<span class="formatting_token">street</span><span class="formatting_token">building</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator">,␣</span><span class="formatting_token_prefix">Piso </span><span class="formatting_token">floor</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Entre Calles </span><span class="formatting_token">cross-street1</span><span class="formatting_token_separator">␣y␣</span><span class="formatting_token">cross-street2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">landmark</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">admin-area2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">postal-code</span><span class="formatting_token">locality1</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country-name</span>
 </div>
 
 </div><h3 id="street-address"><a href="#street-address">#</a> street-address</h3>
@@ -4716,7 +4690,7 @@ Regex Fragment: <code class="parsing-regexfragment">(?:\s+y\s+)</code>
 <h5>Flattened formatting:</h5>
 <div>
 <span class="formatting_token">street-address-alternative-1</span> =<br>
-<span class="formatting_token">street</span><span class="formatting_token">building</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator">,␣</span><span class="formatting_token_prefix">Piso </span><span class="formatting_token">floor</span><span class="formatting_token_separator"><br></span><span class="formatting_token">organization</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Entre Calles </span><span class="formatting_token">cross-street1</span><span class="formatting_token_separator">␣y␣</span><span class="formatting_token">cross-street2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">landmark</span><span class="formatting_token_separator"><br></span><span class="formatting_token">delivery-instructions</span>
+<span class="formatting_token">street</span><span class="formatting_token">building</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator">,␣</span><span class="formatting_token_prefix">Piso </span><span class="formatting_token">floor</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Entre Calles </span><span class="formatting_token">cross-street1</span><span class="formatting_token_separator">␣y␣</span><span class="formatting_token">cross-street2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">landmark</span>
 </div>
 
 </div><h3 id="street-location"><a href="#street-location">#</a> street-location</h3>
@@ -5978,14 +5952,6 @@ Regex Fragment: <code class="parsing-regexfragment">(?:\s+y\s+)</code>
     <a href="#landmark-and-cross-streets">landmark-and-cross-streets</a>
   </li>
 
-  <li>
-    <a href="#organization">organization</a>
-  </li>
-
-  <li>
-    <a href="#delivery-instructions">delivery-instructions</a>
-  </li>
-
 </ul>
 </div>
 
@@ -5998,13 +5964,13 @@ Regex Fragment: <code class="parsing-regexfragment">(?:\s+y\s+)</code>
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">address-overflow</span> =
-<span class="formatting_token">organization</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">landmark-and-cross-streets</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">delivery-instructions</span>
+<span class="formatting_token">landmark-and-cross-streets</span>
 </div>
 
 <h5>Flattened formatting:</h5>
 <div>
 <span class="formatting_token">address-overflow</span> =<br>
-<span class="formatting_token">organization</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Entre Calles </span><span class="formatting_token">cross-street1</span><span class="formatting_token_separator">␣y␣</span><span class="formatting_token">cross-street2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">landmark</span><span class="formatting_token_separator"><br></span><span class="formatting_token">delivery-instructions</span>
+<span class="formatting_token_prefix">Entre Calles </span><span class="formatting_token">cross-street1</span><span class="formatting_token_separator">␣y␣</span><span class="formatting_token">cross-street2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">landmark</span>
 </div>
 
 </div><h3 id="landmark-and-cross-streets"><a href="#landmark-and-cross-streets">#</a> landmark-and-cross-streets</h3>
@@ -6618,68 +6584,6 @@ Second of two crossing streets.
 
 
 
-</div><h3 id="organization"><a href="#organization">#</a> organization</h3>
-<div style="margin-left: 20px;">
-
-Name of an organization/company
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div><h3 id="delivery-instructions"><a href="#delivery-instructions">#</a> delivery-instructions</h3>
-<div style="margin-left: 20px;">
-
-Delivery instructions
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div><h3 id="locality1"><a href="#locality1">#</a> locality1</h3>
 <div style="margin-left: 20px;">
 
@@ -6870,6 +6774,37 @@ Postal code
 <div style="margin-left: 20px;">
 
 Name of a country (e.g. &#34;Mexico&#34;)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="organization"><a href="#organization">#</a> organization</h3>
+<div style="margin-left: 20px;">
+
+Name of an organization/company
 
 
 

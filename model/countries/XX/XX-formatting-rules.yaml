@@ -19,8 +19,6 @@ formatting-rules:
   - reference: street_first_street_location
 
   street-address-alternative-1:
-  - organization
-  - separator: "\n"
   - street-location
   - separator: "\n"
   - in-building-location

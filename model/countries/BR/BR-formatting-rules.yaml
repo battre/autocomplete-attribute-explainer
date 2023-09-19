@@ -27,8 +27,6 @@ formatting-rules:
 
   address-overflow:
   - in-building-location
-  - separator: ", "
-  - organization
 
   in-building-location:
     - prefix: "Andar "
@@ -71,7 +69,6 @@ examples:
     floor: 1
     unit-type: Apto.
     unit-name: 12
-    organization: Clube dos Preenchedores Automáticos
     landmark: Theatro Municipal do Rio de Janeiro
     locality1: Rio de Janeiro
     locality2: Centro
@@ -85,7 +82,7 @@ examples:
       show: true
       text: |
         Avenida Mem de Sá, 1234
-        Andar 1, Apto. 12, Clube dos Preenchedores Automáticos
+        Andar 1, Apto. 12
         Ponto de referência: Theatro Municipal do Rio de Janeiro
         Centro
         Rio de Janeiro - RJ
@@ -101,10 +98,8 @@ examples:
     building: 1234
     address-overflow: |-
       1º andar, ap 12
-      Clube dos Preenchedores Automáticos
     unit-type: Apto.
     unit-name: 12
-    organization: Clube dos Preenchedores Automáticos
     landmark: Theatro Municipal do Rio de Janeiro
     locality1: Rio de Janeiro
     locality2: Centro
@@ -119,7 +114,6 @@ examples:
       text: |
         Avenida Mem de Sá, 1234
         1º andar, ap 12
-        Clube dos Preenchedores Automáticos
         Ponto de referência: Theatro Municipal do Rio de Janeiro
         Centro
         Rio de Janeiro - RJ
