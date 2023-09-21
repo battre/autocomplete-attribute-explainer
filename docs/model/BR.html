@@ -659,24 +659,6 @@ Address forms also often contain a landmark field ("Ponto de referência"). Some
 </div>
 
         
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#organization">organization</a>
-    - Name of an organization/company
-      
-        
-      
-        
-        | Empresa
-        
-      
-    
-  </div>
-  
-</div>
-
-        
       </div>
     
   
@@ -819,6 +801,25 @@ Address forms also often contain a landmark field ("Ponto de referência"). Some
         
       </div>
     
+  
+</div>
+
+    <div>&nbsp;</div>
+    
+    
+<div class="concept">
+  <div class="concept-id">
+    <a href="#organization">organization</a>
+    - Name of an organization/company
+      
+        
+      
+        
+        | Empresa
+        
+      
+    
+  </div>
   
 </div>
 
@@ -1391,12 +1392,6 @@ granular tokens.
       
         
         <tr>
-          <td>organization</td><td><pre style="margin:0">Clube dos Preenchedores Automáticos</pre></td>
-        </tr>
-        
-      
-        
-        <tr>
           <td>landmark</td><td><pre style="margin:0">Theatro Municipal do Rio de Janeiro</pre></td>
         </tr>
         
@@ -1477,13 +1472,15 @@ granular tokens.
       
         
       
+        
+      
     </table>
   </td>
   <td valign="top">
     
       Output for "address":<br>
       <pre class="formatting_example_textbox">Avenida Mem de Sá, 1234
-Andar 1, Apto. 12, Clube dos Preenchedores Automáticos
+Andar 1, Apto. 12
 Ponto de referência: Theatro Municipal do Rio de Janeiro
 Centro
 Rio de Janeiro - RJ
@@ -1555,8 +1552,7 @@ address-overflow trumps the leaf node values of unit-type, unit-name, etc.
       
         
         <tr>
-          <td>address-overflow</td><td><pre style="margin:0">1º andar, ap 12
-Clube dos Preenchedores Automáticos</pre></td>
+          <td>address-overflow</td><td><pre style="margin:0">1º andar, ap 12</pre></td>
         </tr>
         
       
@@ -1575,12 +1571,6 @@ Clube dos Preenchedores Automáticos</pre></td>
         
         <tr>
           <td>unit-name</td><td><pre style="margin:0">12</pre></td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>organization</td><td><pre style="margin:0">Clube dos Preenchedores Automáticos</pre></td>
         </tr>
         
       
@@ -1666,6 +1656,8 @@ Clube dos Preenchedores Automáticos</pre></td>
       
         
       
+        
+      
     </table>
   </td>
   <td valign="top">
@@ -1673,7 +1665,6 @@ Clube dos Preenchedores Automáticos</pre></td>
       Output for "address":<br>
       <pre class="formatting_example_textbox">Avenida Mem de Sá, 1234
 1º andar, ap 12
-Clube dos Preenchedores Automáticos
 Ponto de referência: Theatro Municipal do Rio de Janeiro
 Centro
 Rio de Janeiro - RJ
@@ -1762,8 +1753,6 @@ uses a different addressing system.
         
       
         
-      
-        
         <tr>
           <td>locality1</td><td><pre style="margin:0">Brasília</pre></td>
         </tr>
@@ -1793,6 +1782,8 @@ uses a different addressing system.
         <tr>
           <td>country-name</td><td><pre style="margin:0">Brasil</pre></td>
         </tr>
+        
+      
         
       
         
@@ -3744,7 +3735,7 @@ Address of a physical location - Artificial concept, not to be used in HTML
 <h5>Flattened formatting:</h5>
 <div>
 <span class="formatting_token">address</span> =<br>
-<span class="formatting_token">street</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">building</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Andar </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">organization</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Ponto de referência: </span><span class="formatting_token">landmark</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality1</span><span class="formatting_token_separator">␣-␣</span><span class="formatting_token">admin-area1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">postal-code</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country-name</span>
+<span class="formatting_token">street</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">building</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Andar </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Ponto de referência: </span><span class="formatting_token">landmark</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality1</span><span class="formatting_token_separator">␣-␣</span><span class="formatting_token">admin-area1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">postal-code</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country-name</span>
 </div>
 
 </div><h3 id="street-address"><a href="#street-address">#</a> street-address</h3>
@@ -4642,7 +4633,7 @@ Regex Fragment: <code class="parsing-regexfragment">[^,\n]+</code>
 <h5>Flattened formatting:</h5>
 <div>
 <span class="formatting_token">street-address-alternative-1</span> =<br>
-<span class="formatting_token">street</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">building</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Andar </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">organization</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Ponto de referência: </span><span class="formatting_token">landmark</span>
+<span class="formatting_token">street</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">building</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Andar </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Ponto de referência: </span><span class="formatting_token">landmark</span>
 </div>
 
 </div><h3 id="street-location"><a href="#street-location">#</a> street-location</h3>
@@ -5472,7 +5463,7 @@ Regex Fragment: <code class="parsing-regexfragment">[^,\n]+</code>
 <h5>Flattened formatting:</h5>
 <div>
 <span class="formatting_token">address-overflow-and-landmark</span> =<br>
-<span class="formatting_token_prefix">Andar </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">organization</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Ponto de referência: </span><span class="formatting_token">landmark</span>
+<span class="formatting_token_prefix">Andar </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Ponto de referência: </span><span class="formatting_token">landmark</span>
 </div>
 
 </div><h3 id="address-overflow"><a href="#address-overflow">#</a> address-overflow</h3>
@@ -5848,10 +5839,6 @@ Regex Fragment: <code class="parsing-regexfragment">(?:\s*[,-]|$)</code>
     <a href="#in-building-location">in-building-location</a>
   </li>
 
-  <li>
-    <a href="#organization">organization</a>
-  </li>
-
 </ul>
 </div>
 
@@ -5864,13 +5851,13 @@ Regex Fragment: <code class="parsing-regexfragment">(?:\s*[,-]|$)</code>
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">address-overflow</span> =
-<span class="formatting_token">in-building-location</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">organization</span>
+<span class="formatting_token">in-building-location</span>
 </div>
 
 <h5>Flattened formatting:</h5>
 <div>
 <span class="formatting_token">address-overflow</span> =<br>
-<span class="formatting_token_prefix">Andar </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">organization</span>
+<span class="formatting_token_prefix">Andar </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span>
 </div>
 
 </div><h3 id="in-building-location"><a href="#in-building-location">#</a> in-building-location</h3>
@@ -6553,37 +6540,6 @@ Identifier of a unit (e.g. &#34;5&#34;)
 
 
 
-</div><h3 id="organization"><a href="#organization">#</a> organization</h3>
-<div style="margin-left: 20px;">
-
-Name of an organization/company
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div><h3 id="landmark"><a href="#landmark">#</a> landmark</h3>
 <div style="margin-left: 20px;">
 
@@ -6774,6 +6730,37 @@ Postal code
 <div style="margin-left: 20px;">
 
 Name of a country (e.g. &#34;Brazil&#34;)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="organization"><a href="#organization">#</a> organization</h3>
+<div style="margin-left: 20px;">
+
+Name of an organization/company
 
 
 

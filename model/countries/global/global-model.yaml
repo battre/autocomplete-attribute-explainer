@@ -27,7 +27,6 @@ concepts:
         - building:
           - house-number
           - building-name
-      - organization
       - cross-streets:
         - cross-street1
         - cross-street2
@@ -60,6 +59,8 @@ concepts:
     - postal-code
     - country
     - country-name
+  # Company related
+  - organization
   # Credit card number related
   - credit-card:
     - cc-name:

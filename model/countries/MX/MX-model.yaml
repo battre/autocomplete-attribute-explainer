@@ -12,6 +12,7 @@ cut-off-tokens:
   - entrance
   - staircase
   - care-of
+  - delivery-instructions
 cut-off-children:  # don't expose nodes below these levels
   - street
   - building
@@ -23,8 +24,6 @@ extra-definitions:
   - address-overflow
   address-overflow:
   - landmark-and-cross-streets
-  - organization
-  - delivery-instructions
   landmark-and-cross-streets:
   - landmark
   - cross-streets

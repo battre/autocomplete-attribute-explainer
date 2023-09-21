@@ -27,7 +27,6 @@ extra-definitions:
   - landmark
   address-overflow:
   - in-building-location
-  - organization
   street-address-alternative-1:
   - street-location
   - address-overflow-and-landmark
