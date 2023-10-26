@@ -1,5 +1,6 @@
 import argparse
 from modules.abstract_module import AbstractModule
+from modules.comparison_stopwords import ComparisonStopwordsModule
 from modules.metadata import MetadataModule
 from modules.model import ParseCountryModelModule, ParseGlobalModelModule, RenderTokenIndexModule, ParseDescriptionsModelModule, RenderTokenChildrenModule
 from modules.parsing import ParsingModule
@@ -15,6 +16,7 @@ modules: list[AbstractModule] = [
     ParseCountryModelModule(),
     ParseDescriptionsModelModule(),
     ParsingModule(),
+    ComparisonStopwordsModule(),
     RenderTokenIndexModule(),
     RenderTokenChildrenModule(),
     FormattingModule(),
