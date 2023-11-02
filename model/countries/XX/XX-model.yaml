@@ -20,4 +20,7 @@ cut-off-children:  # don't expose nodes below these levels
   - street
   - building
   - tel-local
-  - unit
+extra-definitions:
+  in-building-location:
+  - floor
+  - unit-name

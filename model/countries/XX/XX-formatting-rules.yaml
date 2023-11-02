@@ -26,7 +26,7 @@ formatting-rules:
   # Apartamento 5A, Piso 10
   in-building-location:
   - prefix: "Apt. "
-  - unit
+  - unit-name
   - separator: ", "
   - prefix: "Floor "
   - floor
