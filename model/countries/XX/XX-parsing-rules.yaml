@@ -65,13 +65,13 @@ capture_definitions:
 
   ParseMandatoryUnitPrefixed:
     capture:
-      output: unit
+      output: unit-name
       prefix: {regex_reference: kApartmentNumberPrefix}
       parts: [ {regex_fragment: '(?:(\d{0,3}\w?))'} ]
 
   ParseMandatoryUnitSuffixed:
     capture:
-      output: unit
+      output: unit-name
       prefix: {regex_fragment: '(-\s*)?'}
       parts: [ {regex_fragment: '(?:(\d{1,3}\w?|\w))'} ]
       suffix: {regex_reference: kApartmentNumberSuffix}
@@ -147,7 +147,7 @@ test_parsing_definitions:
     building: "73a"
     in-building-location: "Obergeschoss 2 Wohnung 3"
     floor: "2"
-    unit: "3"
+    unit-name: "3"
 - id: "Test 4"
   type: street-address-alternative-1
   input: "Implerstr. 73a OG 2"
@@ -196,7 +196,7 @@ test_parsing_definitions:
     building: "1600"
     in-building-location: "Floor 6 Apt 12"
     floor: "6"
-    unit: "12"
+    unit-name: "12"
 - id: "Test 11"
   type: street-address-alternative-1
   input: "Av. Paulista, 1098, 1º andar, apto. 101"
@@ -205,7 +205,7 @@ test_parsing_definitions:
     building: "1098"
     in-building-location: "1º andar, apto. 101"
     floor: "1"
-    unit: "101"
+    unit-name: "101"
 # Examples for Mexico.
 - id: "Test 12"
   type: street-address-alternative-1
@@ -217,7 +217,7 @@ test_parsing_definitions:
     # reflects the status quo.
     in-building-location: "- Piso 13 - 14"
     floor: "13"
-    unit: "14"
+    unit-name: "14"
 - id: "Test 13"
   type: street-address-alternative-1
   input: "Street Name 12 - 14"
@@ -228,7 +228,7 @@ test_parsing_definitions:
     # reflects the status quo.
     in-building-location: "- 14"
     floor: ""
-    unit: "14"
+    unit-name: "14"
 - id: "Test 14"
   type: street-address-alternative-1
   input: "Street Name 12 - Piso 13"
@@ -239,7 +239,7 @@ test_parsing_definitions:
     # reflects the status quo.
     in-building-location: "- Piso 13"
     floor: "13"
-    unit: ""
+    unit-name: ""
 # Examples for Spain.
 - id: "Test 15"
   type: street-address-alternative-1
@@ -249,7 +249,7 @@ test_parsing_definitions:
     in-building-location: "2º, 3ª"
     building: "1"
     floor: "2"
-    unit: "3"
+    unit-name: "3"
 - id: "Test 16"
   type: street-address-alternative-1
   input: "Street Name 1, 2º"
@@ -258,7 +258,7 @@ test_parsing_definitions:
     in-building-location: "2º"
     building: "1"
     floor: "2"
-    unit: ""
+    unit-name: ""
 - id: "Test 17"
   type: street-address-alternative-1
   input: "Street Name 1, 3ª"
@@ -267,4 +267,4 @@ test_parsing_definitions:
     building: "1"
     in-building-location: "3ª"
     floor: ""
-    unit: "3"
+    unit-name: "3"
