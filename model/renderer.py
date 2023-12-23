@@ -46,7 +46,7 @@ class Renderer:
     return template.render(content=content)
 
   def render_country(self, country: str, css: str, content: str,
-                     javascript: str) -> None:
+                     javascript: str, file_suffix="") -> None:
     template = self._load_template("base.html")
 
     result = template.render(country=country,
@@ -55,11 +55,12 @@ class Renderer:
                              country_data=self.country_data,
                              css=css,
                              content=content,
-                             javascript=javascript)
+                             javascript=javascript,
+                             file_suffix=file_suffix)
 
     dir = "out"
     if self.output_dir:
       dir = self.output_dir
-    f = open(f"{dir}/{country}.html", "w")
+    f = open(f"{dir}/{country}{file_suffix}.html", "w")
     f.write(result)
     f.close()
