@@ -45,8 +45,12 @@ class Renderer:
     template = self._load_template("details_global_wrapper.html")
     return template.render(content=content)
 
-  def render_country(self, country: str, css: str, content: str,
-                     javascript: str, file_suffix="") -> None:
+  def render_country(self,
+                     country: str,
+                     css: str,
+                     content: str,
+                     javascript: str,
+                     file_suffix="") -> None:
     template = self._load_template("base.html")
 
     result = template.render(country=country,
