@@ -1,61 +1,49 @@
+cut-off-children:
+  - street-location
+
+cut-off-tokens:
+  - admin-area2
+  - admin-area3
+  - admin-area4
+  - locality3
+  - locality4
+
 extra-definitions:
-  street-location: # re-ordered the fields and added the in-building-location
-  - in-building-location
-  - building
-  - street
-
-  street-address-alternative-1:
-  - in-building-location
-  - building
-  - street
-  - landmark
-  - locality2
-
-  street-address-alternative-2:
-  - street-location
-  - landmark
-  - locality2
-
-  street-address-alternative-3:
-  - in-building-location
-  - building
-  - street-and-locality2
-  - landmark
-
-  street-and-locality2:
-  - street
-  - locality2
-
-  street-address-alternative-4:
-  - in-building-location
-  - building
-  - street-and-landmark
-  - locality2
-
-  street-and-landmark:
-  - street
-  - landmark
-
-  street-address-alternative-5:
-  - street-location-and-landmark
-  - locality2
-
-  street-location-and-landmark:
-  - street-location
-  - landmark
-
-  street-address-alternative-6:
-  - street-location-and-locality2
-  - landmark
+  # Re-definition to remove the locality2 from the address
+  address:
+    - street-address
+    - street-address-alternative-1
+    - locality1
+    - admin-area1
+    - postal-code
+    - country
+    - country-name
 
   street-location-and-locality2:
   - street-location
   - locality2
 
+  street-address-alternative-1:
+  - street-location-and-locality2
+  - landmark
+
+  street-location-and-landmark:
+  - street-location
+  - landmark
+
+  street-address-alternative-2:
+  - street-location-and-landmark
+  - locality2
+
+  landmark-and-locality2:
+  - landmark
+  - locality2
+
+  street-address-alternative-3:
+  - street-location
+  - landmark-and-locality2
+
 append-after:
   street-address-alternative-1:
   - street-address-alternative-2
   - street-address-alternative-3
-  - street-address-alternative-4
-  - street-address-alternative-5
-  - street-address-alternative-6

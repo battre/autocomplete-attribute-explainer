@@ -6,18 +6,10 @@ short-descriptions:
   country: 2-letter country code (e.g. "IN")
   country-name: Name of a country (e.g. "India")
   locality1: City
-  locality2: Locality
-  street-location: Building name and apartment, House number, Street
-  building-and-unit: >
-    Building name and flat number (possibly floor and other details)
-  building: House number / Building name / Apartment name (e.g. "House 9" or "Sunshine Apartments")
-  in-building-location: Flat number (possibly floor and other details)
+  locality2: Locality, Area, Colony, Society, Sector, Street, ...
+  street-location: Building name, House no., Apartment, Flat, ...
   postal-code: PIN code
-  structured-street-address-without-landmark: >
-    Full street address except for a landmark
-  street-address-alternative-1: "Artificial concept, not to be used in HTML; 4 fields: house number, street, landmark, locality2"
-  street-address-alternative-2: "Artificial concept, not to be used in HTML; 3 fields: (house number, street), landmark, locality2"
-  street-address-alternative-3: "Artificial concept, not to be used in HTML; 3 fields: house number, (street, locality2), landmark"
-  street-address-alternative-4: "Artificial concept, not to be used in HTML; 3 fields: house number, (street, landmark), locality2"
-  street-address-alternative-5: "Artificial concept, not to be used in HTML; 2 fields: (house number, street, landmark), locality2"
-  street-address-alternative-6: "Artificial concept, not to be used in HTML; 2 fields: (house number, street, locality2), landmark"
+  street-address-alternative-1: "Artificial concept, not to be used in HTML"
+  street-address-alternative-2: "Artificial concept, not to be used in HTML"
+  street-address-alternative-3: "Artificial concept, not to be used in HTML"
+  street-address-alternative-4: "Artificial concept, not to be used in HTML"

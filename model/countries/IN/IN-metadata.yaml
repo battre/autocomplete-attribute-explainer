@@ -3,8 +3,41 @@ flag: 🇮🇳
 
 overview: >
   <p>India has a lot of variety in address forms compared to many other
-  countries. In particular the flat number, building name, street, landmark
-  and "area / locality" (modeled as locality2) seem to appear in every
-  in almost arbitrary combinations (e.g. flat number as a separate field, or
-  grouped with building name, or grouped with building name and street, ...).
-  <p>The structures below are structures we have least confidence in so far.
+  countries. We observe a lot of variance in how websites label the fields
+  of their address forms. By and large we observe three concepts besides
+  city, state and postal code which together make up the address lines 1, 2, 3:
+  <ul>
+  <li><b>Building and flat number</b> (sometimes labeled "House/Flat no.", "Flat
+  number / Building Name", "Apartment / House No."): Because Indian addresses
+  often don't contain a street name and because the term "Apartment" is
+  typically used to refer to the name of a building (not to a flat number), we
+  suggest to model this as "street-location". It is the information that
+  identifies a building.
+  <li><b>Locality</b> (sometimes labeled "locality", "area", "Street / Society",
+  "Street/Colony/Area Name", "Locality/Sector/Area"): This is a named area of a
+  city that contains the building and ideally contains no two buildings with the
+  same name. We suggest using the "locality2" concept for this as it's a
+  subsection of a city and therefore comparable to neighborhoods in other
+  countries.
+  <li><b>Landmark</b>: This is a reference to a well known building or location that
+  helps finding the building or locality (e.g. "near Birla Mandir temple").
+  </ul>
+  <p>These concepts occur on websites in various combinations:
+  <ul>
+  <li>As a single-line street address
+  <li>As unstructured address lines 1, 2, 3
+  <li>As 3 atomic fields: Building and flat number, Locality, Landmark
+  <li>As 1 combined and 1 atomic field:
+  <ul>
+  <li>Building and flat number + Locality, Landmark (most common among the 3)
+  <li>Building and flat number, Locality + Landmark
+  <li>Building and flat number + Landmark, Locality (least common)
+  </ul>
+  (note that the statement "most common among the 3" is not based on an
+  exhaustive survey among all websites but on a somewhat small sample).
+  </ul>
+  <p>We observed that roughly half of websites rely on a single street address
+  or address lines 1, 2, 3. The remainder relies on structured information.
+  <p>Based on the observed popularities we suggest to merge the 3 atomic fields
+  and "Building and flat number + Locality, Landmark" in the primary address
+  hierarchy.
