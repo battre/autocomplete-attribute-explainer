@@ -263,8 +263,7 @@
     <h2 class="mdl-card__title-text">About the country</h2>
   </div>
   <div class="mdl-card__actions mdl-card--border">
-    <div style="margin: 8px"><p>India has a lot of variety in address forms compared to many other countries. In particular the flat number, building name, street, landmark and "area / locality" (modeled as locality2) seem to appear in every in almost arbitrary combinations (e.g. flat number as a separate field, or grouped with building name, or grouped with building name and street, ...). <p>The structures below are structures we have least confidence in so far.
-</div>
+    <div style="margin: 8px"><p>India has a lot of variety in address forms compared to many other countries. We observe a lot of variance in how websites label the fields of their address forms. By and large we observe three concepts besides city, state and postal code which together make up the address lines 1, 2, 3: <ul> <li><b>Building and flat number</b> (sometimes labeled "House/Flat no.", "Flat number / Building Name", "Apartment / House No."): Because Indian addresses often don't contain a street name and because the term "Apartment" is typically used to refer to the name of a building (not to a flat number), we suggest to model this as "street-location". It is the information that identifies a building. <li><b>Locality</b> (sometimes labeled "locality", "area", "Street / Society", "Street/Colony/Area Name", "Locality/Sector/Area"): This is a named area of a city that contains the building and ideally contains no two buildings with the same name. We suggest using the "locality2" concept for this as it's a subsection of a city and therefore comparable to neighborhoods in other countries. <li><b>Landmark</b>: This is a reference to a well known building or location that helps finding the building or locality (e.g. "near Birla Mandir temple"). </ul> <p>These concepts occur on websites in various combinations: <ul> <li>As a single-line street address <li>As unstructured address lines 1, 2, 3 <li>As 3 atomic fields: Building and flat number, Locality, Landmark <li>As 1 combined and 1 atomic field: <ul> <li>Building and flat number + Locality, Landmark (most common among the 3) <li>Building and flat number, Locality + Landmark <li>Building and flat number + Landmark, Locality (least common) </ul> (note that the statement "most common among the 3" is not based on an exhaustive survey among all websites but on a somewhat small sample). </ul> <p>We observed that roughly half of websites rely on a single street address or address lines 1, 2, 3. The remainder relies on structured information. <p>Based on the observed popularities we suggest to merge the 3 atomic fields and "Building and flat number + Locality, Landmark" in the primary address hierarchy.</div>
   </div>
 </div>
 
@@ -528,673 +527,7 @@
 <div class="concept">
   <div class="concept-id">
     <a href="#street-address-alternative-1">street-address-alternative-1</a>
-    - Artificial concept, not to be used in HTML; 4 fields: house number, street, landmark, locality2
-      
-        
-      
-    
-  </div>
-  
-    
-    
-      <div class="concept-content">
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#in-building-location">in-building-location</a>
-    - Flat number (possibly floor and other details)
-      
-        
-      
-    
-  </div>
-  
-    
-    
-      <div class="concept-content">
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#entrance">entrance</a>
-    - Entrance of a building
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#floor">floor</a>
-    - Floor number in the building
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#staircase">staircase</a>
-    - Stair case in the building
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#unit">unit</a>
-    - Unit in a building (e.g. &#34;Apartment 5&#34;, &#34;Suite 12&#34;)
-      
-        
-      
-    
-  </div>
-  
-    
-    
-      <div class="concept-content">
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#unit-type">unit-type</a>
-    - Type of a unit (e.g. &#34;Apt&#34;, &#34;Room&#34;, &#34;Store&#34;)
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#unit-name">unit-name</a>
-    - Identifier of a unit (e.g. &#34;5&#34;)
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-      </div>
-    
-  
-</div>
-
-        
-      </div>
-    
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#building">building</a>
-    - House number / Building name / Apartment name (e.g. &#34;House 9&#34; or &#34;Sunshine Apartments&#34;)
-      
-        
-      
-    
-  </div>
-  
-    
-    
-      <div class="concept-content">
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#house-number">house-number</a>
-    - Numeric identifier of a house (rare: only used in countries that ask for a house number and building in separate fields)
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#building-name">building-name</a>
-    - Name of a building (rare: only used in countries that ask for a house number and building in separate fields)
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-      </div>
-    
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#street">street</a>
-    - Name of a street
-      
-        
-      
-    
-  </div>
-  
-    
-    
-      <div class="concept-content">
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#street-type">street-type</a>
-    - Type particle of a full street name or place (in countries that split the full street name into particles)
-
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#street-name">street-name</a>
-    - Name particle of a full street name or place (in countries that split the full street name into particles)
-
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-      </div>
-    
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#landmark">landmark</a>
-    - Landmark to help finding a building
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#locality2">locality2</a>
-    - Locality
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-      </div>
-    
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#street-address-alternative-2">street-address-alternative-2</a>
-    - Artificial concept, not to be used in HTML; 3 fields: (house number, street), landmark, locality2
-      
-        
-      
-    
-  </div>
-  
-    
-    
-      <div class="concept-content">
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#street-location">street-location</a>
-    - Building name and apartment, House number, Street
-      
-        
-      
-    
-  </div>
-  
-    
-    
-      <div class="concept-content">
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#in-building-location">in-building-location</a>
-    - Flat number (possibly floor and other details)
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#building">building</a>
-    - House number / Building name / Apartment name (e.g. &#34;House 9&#34; or &#34;Sunshine Apartments&#34;)
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#street">street</a>
-    - Name of a street
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-      </div>
-    
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#landmark">landmark</a>
-    - Landmark to help finding a building
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#locality2">locality2</a>
-    - Locality
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-      </div>
-    
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#street-address-alternative-3">street-address-alternative-3</a>
-    - Artificial concept, not to be used in HTML; 3 fields: house number, (street, locality2), landmark
-      
-        
-      
-    
-  </div>
-  
-    
-    
-      <div class="concept-content">
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#in-building-location">in-building-location</a>
-    - Flat number (possibly floor and other details)
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#building">building</a>
-    - House number / Building name / Apartment name (e.g. &#34;House 9&#34; or &#34;Sunshine Apartments&#34;)
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#street-and-locality2">street-and-locality2</a>
-  </div>
-  
-    
-    
-      <div class="concept-content">
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#street">street</a>
-    - Name of a street
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#locality2">locality2</a>
-    - Locality
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-      </div>
-    
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#landmark">landmark</a>
-    - Landmark to help finding a building
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-      </div>
-    
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#street-address-alternative-4">street-address-alternative-4</a>
-    - Artificial concept, not to be used in HTML; 3 fields: house number, (street, landmark), locality2
-      
-        
-      
-    
-  </div>
-  
-    
-    
-      <div class="concept-content">
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#in-building-location">in-building-location</a>
-    - Flat number (possibly floor and other details)
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#building">building</a>
-    - House number / Building name / Apartment name (e.g. &#34;House 9&#34; or &#34;Sunshine Apartments&#34;)
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#street-and-landmark">street-and-landmark</a>
-  </div>
-  
-    
-    
-      <div class="concept-content">
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#street">street</a>
-    - Name of a street
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#landmark">landmark</a>
-    - Landmark to help finding a building
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-      </div>
-    
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#locality2">locality2</a>
-    - Locality
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-      </div>
-    
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#street-address-alternative-5">street-address-alternative-5</a>
-    - Artificial concept, not to be used in HTML; 2 fields: (house number, street, landmark), locality2
-      
-        
-      
-    
-  </div>
-  
-    
-    
-      <div class="concept-content">
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#street-location-and-landmark">street-location-and-landmark</a>
-  </div>
-  
-    
-    
-      <div class="concept-content">
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#street-location">street-location</a>
-    - Building name and apartment, House number, Street
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#landmark">landmark</a>
-    - Landmark to help finding a building
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-      </div>
-    
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#locality2">locality2</a>
-    - Locality
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-      </div>
-    
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#street-address-alternative-6">street-address-alternative-6</a>
-    - Artificial concept, not to be used in HTML; 2 fields: (house number, street, locality2), landmark
+    - Artificial concept, not to be used in HTML
       
         
       
@@ -1219,7 +552,7 @@
 <div class="concept">
   <div class="concept-id">
     <a href="#street-location">street-location</a>
-    - Building name and apartment, House number, Street
+    - Building name, House no., Apartment, Flat, ...
       
         
       
@@ -1233,7 +566,7 @@
 <div class="concept">
   <div class="concept-id">
     <a href="#locality2">locality2</a>
-    - Locality
+    - Locality, Area, Colony, Society, Sector, Street, ...
       
         
       
@@ -1259,6 +592,164 @@
       
     
   </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#street-address-alternative-2">street-address-alternative-2</a>
+    - Artificial concept, not to be used in HTML
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#street-location-and-landmark">street-location-and-landmark</a>
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#street-location">street-location</a>
+    - Building name, House no., Apartment, Flat, ...
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#landmark">landmark</a>
+    - Landmark to help finding a building
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#locality2">locality2</a>
+    - Locality, Area, Colony, Society, Sector, Street, ...
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#street-address-alternative-3">street-address-alternative-3</a>
+    - Artificial concept, not to be used in HTML
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#street-location">street-location</a>
+    - Building name, House no., Apartment, Flat, ...
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#landmark-and-locality2">landmark-and-locality2</a>
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#landmark">landmark</a>
+    - Landmark to help finding a building
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    <a href="#locality2">locality2</a>
+    - Locality, Area, Colony, Society, Sector, Street, ...
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
   
 </div>
 
@@ -1286,92 +777,8 @@
           
 <div class="concept">
   <div class="concept-id">
-    <a href="#locality2">locality2</a>
-    - Locality
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#locality3">locality3</a>
-    - 3rd biggest type of a locality
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#locality4">locality4</a>
-    - 4th biggest type of a locality
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
     <a href="#admin-area1">admin-area1</a>
     - State
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#admin-area2">admin-area2</a>
-    - 2nd biggest type of admin area if a country has multiple levels
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#admin-area3">admin-area3</a>
-    - 3rd biggest type of admin area if a country has multiple levels
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#admin-area4">admin-area4</a>
-    - 4th biggest type of admin area if a country has multiple levels
       
         
       
@@ -1978,47 +1385,11 @@ Address of a physical location - Artificial concept, not to be used in HTML
   </li>
 
   <li>
-    <a href="#street-address-alternative-4">street-address-alternative-4</a>
-  </li>
-
-  <li>
-    <a href="#street-address-alternative-5">street-address-alternative-5</a>
-  </li>
-
-  <li>
-    <a href="#street-address-alternative-6">street-address-alternative-6</a>
-  </li>
-
-  <li>
     <a href="#locality1">locality1</a>
   </li>
 
   <li>
-    <a href="#locality2">locality2</a>
-  </li>
-
-  <li>
-    <a href="#locality3">locality3</a>
-  </li>
-
-  <li>
-    <a href="#locality4">locality4</a>
-  </li>
-
-  <li>
     <a href="#admin-area1">admin-area1</a>
-  </li>
-
-  <li>
-    <a href="#admin-area2">admin-area2</a>
-  </li>
-
-  <li>
-    <a href="#admin-area3">admin-area3</a>
-  </li>
-
-  <li>
-    <a href="#admin-area4">admin-area4</a>
   </li>
 
   <li>
@@ -2097,410 +1468,7 @@ Street address (street and location within the street)
 </div><h3 id="street-address-alternative-1"><a href="#street-address-alternative-1">#</a> street-address-alternative-1</h3>
 <div style="margin-left: 20px;">
 
-Artificial concept, not to be used in HTML; 4 fields: house number, street, landmark, locality2
-
-
-
-<div>
-<h4>Children:</h4>
-<ul>
-
-  <li>
-    <a href="#in-building-location">in-building-location</a>
-  </li>
-
-  <li>
-    <a href="#building">building</a>
-  </li>
-
-  <li>
-    <a href="#street">street</a>
-  </li>
-
-  <li>
-    <a href="#landmark">landmark</a>
-  </li>
-
-  <li>
-    <a href="#locality2">locality2</a>
-  </li>
-
-</ul>
-</div>
-
-</div><h3 id="in-building-location"><a href="#in-building-location">#</a> in-building-location</h3>
-<div style="margin-left: 20px;">
-
-Flat number (possibly floor and other details)
-
-
-
-<div>
-<h4>Children:</h4>
-<ul>
-
-  <li>
-    <a href="#entrance">entrance</a>
-  </li>
-
-  <li>
-    <a href="#floor">floor</a>
-  </li>
-
-  <li>
-    <a href="#staircase">staircase</a>
-  </li>
-
-  <li>
-    <a href="#unit">unit</a>
-  </li>
-
-</ul>
-</div>
-
-</div><h3 id="entrance"><a href="#entrance">#</a> entrance</h3>
-<div style="margin-left: 20px;">
-
-Entrance of a building
-
-
-
-</div><h3 id="floor"><a href="#floor">#</a> floor</h3>
-<div style="margin-left: 20px;">
-
-Floor number in the building
-
-
-
-</div><h3 id="staircase"><a href="#staircase">#</a> staircase</h3>
-<div style="margin-left: 20px;">
-
-Stair case in the building
-
-
-
-</div><h3 id="unit"><a href="#unit">#</a> unit</h3>
-<div style="margin-left: 20px;">
-
-Unit in a building (e.g. &#34;Apartment 5&#34;, &#34;Suite 12&#34;)
-
-
-
-<div>
-<h4>Children:</h4>
-<ul>
-
-  <li>
-    <a href="#unit-type">unit-type</a>
-  </li>
-
-  <li>
-    <a href="#unit-name">unit-name</a>
-  </li>
-
-</ul>
-</div>
-
-</div><h3 id="unit-type"><a href="#unit-type">#</a> unit-type</h3>
-<div style="margin-left: 20px;">
-
-Type of a unit (e.g. &#34;Apt&#34;, &#34;Room&#34;, &#34;Store&#34;)
-
-
-
-</div><h3 id="unit-name"><a href="#unit-name">#</a> unit-name</h3>
-<div style="margin-left: 20px;">
-
-Identifier of a unit (e.g. &#34;5&#34;)
-
-
-
-</div><h3 id="building"><a href="#building">#</a> building</h3>
-<div style="margin-left: 20px;">
-
-House number / Building name / Apartment name (e.g. &#34;House 9&#34; or &#34;Sunshine Apartments&#34;)
-
-
-
-<div>
-<h4>Children:</h4>
-<ul>
-
-  <li>
-    <a href="#house-number">house-number</a>
-  </li>
-
-  <li>
-    <a href="#building-name">building-name</a>
-  </li>
-
-</ul>
-</div>
-
-</div><h3 id="house-number"><a href="#house-number">#</a> house-number</h3>
-<div style="margin-left: 20px;">
-
-Numeric identifier of a house (rare: only used in countries that ask for a house number and building in separate fields)
-
-
-
-</div><h3 id="building-name"><a href="#building-name">#</a> building-name</h3>
-<div style="margin-left: 20px;">
-
-Name of a building (rare: only used in countries that ask for a house number and building in separate fields)
-
-
-
-</div><h3 id="street"><a href="#street">#</a> street</h3>
-<div style="margin-left: 20px;">
-
-Name of a street
-
-
-
-<div>
-<h4>Children:</h4>
-<ul>
-
-  <li>
-    <a href="#street-type">street-type</a>
-  </li>
-
-  <li>
-    <a href="#street-name">street-name</a>
-  </li>
-
-</ul>
-</div>
-
-</div><h3 id="street-type"><a href="#street-type">#</a> street-type</h3>
-<div style="margin-left: 20px;">
-
-Type particle of a full street name or place (in countries that split the full street name into particles)
-
-
-
-
-</div><h3 id="street-name"><a href="#street-name">#</a> street-name</h3>
-<div style="margin-left: 20px;">
-
-Name particle of a full street name or place (in countries that split the full street name into particles)
-
-
-
-
-</div><h3 id="landmark"><a href="#landmark">#</a> landmark</h3>
-<div style="margin-left: 20px;">
-
-Landmark to help finding a building
-
-
-
-</div><h3 id="locality2"><a href="#locality2">#</a> locality2</h3>
-<div style="margin-left: 20px;">
-
-Locality
-
-
-
-</div><h3 id="street-address-alternative-2"><a href="#street-address-alternative-2">#</a> street-address-alternative-2</h3>
-<div style="margin-left: 20px;">
-
-Artificial concept, not to be used in HTML; 3 fields: (house number, street), landmark, locality2
-
-
-
-<div>
-<h4>Children:</h4>
-<ul>
-
-  <li>
-    <a href="#street-location">street-location</a>
-  </li>
-
-  <li>
-    <a href="#landmark">landmark</a>
-  </li>
-
-  <li>
-    <a href="#locality2">locality2</a>
-  </li>
-
-</ul>
-</div>
-
-</div><h3 id="street-location"><a href="#street-location">#</a> street-location</h3>
-<div style="margin-left: 20px;">
-
-Building name and apartment, House number, Street
-
-
-
-<div>
-<h4>Children:</h4>
-<ul>
-
-  <li>
-    <a href="#in-building-location">in-building-location</a>
-  </li>
-
-  <li>
-    <a href="#building">building</a>
-  </li>
-
-  <li>
-    <a href="#street">street</a>
-  </li>
-
-</ul>
-</div>
-
-</div><h3 id="street-address-alternative-3"><a href="#street-address-alternative-3">#</a> street-address-alternative-3</h3>
-<div style="margin-left: 20px;">
-
-Artificial concept, not to be used in HTML; 3 fields: house number, (street, locality2), landmark
-
-
-
-<div>
-<h4>Children:</h4>
-<ul>
-
-  <li>
-    <a href="#in-building-location">in-building-location</a>
-  </li>
-
-  <li>
-    <a href="#building">building</a>
-  </li>
-
-  <li>
-    <a href="#street-and-locality2">street-and-locality2</a>
-  </li>
-
-  <li>
-    <a href="#landmark">landmark</a>
-  </li>
-
-</ul>
-</div>
-
-</div><h3 id="street-and-locality2"><a href="#street-and-locality2">#</a> street-and-locality2</h3>
-<div style="margin-left: 20px;">
-
-
-
-<div>
-<h4>Children:</h4>
-<ul>
-
-  <li>
-    <a href="#street">street</a>
-  </li>
-
-  <li>
-    <a href="#locality2">locality2</a>
-  </li>
-
-</ul>
-</div>
-
-</div><h3 id="street-address-alternative-4"><a href="#street-address-alternative-4">#</a> street-address-alternative-4</h3>
-<div style="margin-left: 20px;">
-
-Artificial concept, not to be used in HTML; 3 fields: house number, (street, landmark), locality2
-
-
-
-<div>
-<h4>Children:</h4>
-<ul>
-
-  <li>
-    <a href="#in-building-location">in-building-location</a>
-  </li>
-
-  <li>
-    <a href="#building">building</a>
-  </li>
-
-  <li>
-    <a href="#street-and-landmark">street-and-landmark</a>
-  </li>
-
-  <li>
-    <a href="#locality2">locality2</a>
-  </li>
-
-</ul>
-</div>
-
-</div><h3 id="street-and-landmark"><a href="#street-and-landmark">#</a> street-and-landmark</h3>
-<div style="margin-left: 20px;">
-
-
-
-<div>
-<h4>Children:</h4>
-<ul>
-
-  <li>
-    <a href="#street">street</a>
-  </li>
-
-  <li>
-    <a href="#landmark">landmark</a>
-  </li>
-
-</ul>
-</div>
-
-</div><h3 id="street-address-alternative-5"><a href="#street-address-alternative-5">#</a> street-address-alternative-5</h3>
-<div style="margin-left: 20px;">
-
-Artificial concept, not to be used in HTML; 2 fields: (house number, street, landmark), locality2
-
-
-
-<div>
-<h4>Children:</h4>
-<ul>
-
-  <li>
-    <a href="#street-location-and-landmark">street-location-and-landmark</a>
-  </li>
-
-  <li>
-    <a href="#locality2">locality2</a>
-  </li>
-
-</ul>
-</div>
-
-</div><h3 id="street-location-and-landmark"><a href="#street-location-and-landmark">#</a> street-location-and-landmark</h3>
-<div style="margin-left: 20px;">
-
-
-
-<div>
-<h4>Children:</h4>
-<ul>
-
-  <li>
-    <a href="#street-location">street-location</a>
-  </li>
-
-  <li>
-    <a href="#landmark">landmark</a>
-  </li>
-
-</ul>
-</div>
-
-</div><h3 id="street-address-alternative-6"><a href="#street-address-alternative-6">#</a> street-address-alternative-6</h3>
-<div style="margin-left: 20px;">
-
-Artificial concept, not to be used in HTML; 2 fields: (house number, street, locality2), landmark
+Artificial concept, not to be used in HTML
 
 
 
@@ -2539,6 +1507,111 @@ Artificial concept, not to be used in HTML; 2 fields: (house number, street, loc
 </ul>
 </div>
 
+</div><h3 id="street-location"><a href="#street-location">#</a> street-location</h3>
+<div style="margin-left: 20px;">
+
+Building name, House no., Apartment, Flat, ...
+
+
+
+</div><h3 id="locality2"><a href="#locality2">#</a> locality2</h3>
+<div style="margin-left: 20px;">
+
+Locality, Area, Colony, Society, Sector, Street, ...
+
+
+
+</div><h3 id="landmark"><a href="#landmark">#</a> landmark</h3>
+<div style="margin-left: 20px;">
+
+Landmark to help finding a building
+
+
+
+</div><h3 id="street-address-alternative-2"><a href="#street-address-alternative-2">#</a> street-address-alternative-2</h3>
+<div style="margin-left: 20px;">
+
+Artificial concept, not to be used in HTML
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    <a href="#street-location-and-landmark">street-location-and-landmark</a>
+  </li>
+
+  <li>
+    <a href="#locality2">locality2</a>
+  </li>
+
+</ul>
+</div>
+
+</div><h3 id="street-location-and-landmark"><a href="#street-location-and-landmark">#</a> street-location-and-landmark</h3>
+<div style="margin-left: 20px;">
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    <a href="#street-location">street-location</a>
+  </li>
+
+  <li>
+    <a href="#landmark">landmark</a>
+  </li>
+
+</ul>
+</div>
+
+</div><h3 id="street-address-alternative-3"><a href="#street-address-alternative-3">#</a> street-address-alternative-3</h3>
+<div style="margin-left: 20px;">
+
+Artificial concept, not to be used in HTML
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    <a href="#street-location">street-location</a>
+  </li>
+
+  <li>
+    <a href="#landmark-and-locality2">landmark-and-locality2</a>
+  </li>
+
+</ul>
+</div>
+
+</div><h3 id="landmark-and-locality2"><a href="#landmark-and-locality2">#</a> landmark-and-locality2</h3>
+<div style="margin-left: 20px;">
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    <a href="#landmark">landmark</a>
+  </li>
+
+  <li>
+    <a href="#locality2">locality2</a>
+  </li>
+
+</ul>
+</div>
+
 </div><h3 id="locality1"><a href="#locality1">#</a> locality1</h3>
 <div style="margin-left: 20px;">
 
@@ -2546,45 +1619,10 @@ City
 
 
 
-</div><h3 id="locality3"><a href="#locality3">#</a> locality3</h3>
-<div style="margin-left: 20px;">
-
-3rd biggest type of a locality
-
-
-
-</div><h3 id="locality4"><a href="#locality4">#</a> locality4</h3>
-<div style="margin-left: 20px;">
-
-4th biggest type of a locality
-
-
-
 </div><h3 id="admin-area1"><a href="#admin-area1">#</a> admin-area1</h3>
 <div style="margin-left: 20px;">
 
 State
-
-
-
-</div><h3 id="admin-area2"><a href="#admin-area2">#</a> admin-area2</h3>
-<div style="margin-left: 20px;">
-
-2nd biggest type of admin area if a country has multiple levels
-
-
-
-</div><h3 id="admin-area3"><a href="#admin-area3">#</a> admin-area3</h3>
-<div style="margin-left: 20px;">
-
-3rd biggest type of admin area if a country has multiple levels
-
-
-
-</div><h3 id="admin-area4"><a href="#admin-area4">#</a> admin-area4</h3>
-<div style="margin-left: 20px;">
-
-4th biggest type of admin area if a country has multiple levels
 
 
 
