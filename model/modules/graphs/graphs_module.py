@@ -75,7 +75,7 @@ class GraphsModule(AbstractModule):
     # Recursive function that adds a new token for token_id to the graphviz
     # graph plus all of it's children. The return value is the graphviz token
     # that was introduced for the new node. It is used for linking nodes.
-    def add_token_and_children(token_id) -> int:
+    def add_token_and_children(token_id) -> Optional[int]:
       if token_id in yaml['graphs'][graph_id].get('stop-before', []):
         return None
 

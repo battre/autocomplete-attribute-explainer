@@ -1,6 +1,6 @@
 import copy
 from modules.abstract_module import AbstractModule
-from modules.model.model import Model, CompoundToken
+from modules.model.model import Model, CompoundToken, AtomicToken
 from pathlib import Path
 import re
 from renderer import Renderer
@@ -65,6 +65,7 @@ class ParseCountryModelModule(AbstractModule):
       for parent in model.pre_order():
         if parent.is_atomic_token():
           continue
+        assert not isinstance(parent, AtomicToken)
         if anchor in parent.children:
           insert_idx = parent.children.index(anchor)
           parent.children = (parent.children[:insert_idx + 1] + nodes +

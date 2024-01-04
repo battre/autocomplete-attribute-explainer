@@ -252,10 +252,10 @@ class FormattingModule(AbstractModule):
     return result
 
   def collect_details_for_example_addresses(self, country: str,
-                                            renderer: Renderer) -> list:
+                                            renderer: Renderer) -> dict:
     examples = renderer.country_data[country].get('formatting-examples')
     if not examples:
-      return None
+      return {}
 
     collected_details = []
     for example in examples:

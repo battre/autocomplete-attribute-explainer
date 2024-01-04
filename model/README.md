@@ -61,7 +61,7 @@ The modules have a fixed order which is defined in `main.py`. This guarantees
 that read operations can happen before output generation for example.
 
 ## Check type information
-Run `pytype main.py` to verify that all type annotations are correct.
+Run `pytype .` to verify that all type annotations are correct.
 
 ## Code formatting
 Run `yapf -i -r .` before checking in code using

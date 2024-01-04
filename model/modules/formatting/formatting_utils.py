@@ -1,6 +1,6 @@
 from renderer import Renderer
-from modules.model.model import Model
-from typing import Optional, List
+from modules.model.model import Model, AtomicToken
+from typing import Optional, List, Set, Union
 
 
 def collect_details_for_formatting(country: str, token_id: str,
@@ -72,6 +72,7 @@ def validate(token_id: str, inputs: List[dict], model: Model) -> List[str]:
     return ["You cannot provide rules for atomic tokens"]
 
   # Children of the token in the model.
+  assert not isinstance(token, AtomicToken)
   children_of_token = set(token.children)
   # Tokens that are used during formatting or explicitly skipped.
   input_tokens = set([t['token'] for t in inputs if 'token' in t])
@@ -102,11 +103,15 @@ def is_descendant_of(descendant_id: str, ancestor_id: str, model: Model):
   If descendant_id == ancestor_id, that's considered a 'yes'.
   """
   ancestor = model.find_token(ancestor_id)
+  if not ancestor or ancestor.is_atomic_token():
+    return False
+  assert not isinstance(ancestor, AtomicToken)
   return descendant_id in [t.id for t in ancestor.pre_order()]
 
 
 def token_id_or_all_children_in_input_tokens(token_id: str,
-                                             input_token_id: List[str],
+                                             input_token_id: Union[List[str],
+                                                                   Set[str]],
                                              model: Model):
   """Returns if token_id is in input_token_id or all children of token_id are.
 
@@ -118,7 +123,10 @@ def token_id_or_all_children_in_input_tokens(token_id: str,
 
   token = model.find_token(token_id)
 
-  if token and not token.is_atomic_token() and token.children:
+  if token and not token.is_atomic_token():
+    assert not isinstance(token, AtomicToken)
+    if not token.children:
+      return False
     for child in token.children:
       if not token_id_or_all_children_in_input_tokens(child, input_token_id,
                                                       model):

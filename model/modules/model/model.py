@@ -82,9 +82,9 @@ class Translation:
         where the key represents a locale and the value a translation string
         """
     self.value = dict()
-    if type(yaml) == str:
+    if isinstance(yaml, str):
       self.value["en"] = yaml
-    elif type(yaml) == dict:
+    elif isinstance(yaml, dict):
       self.value = {k: v for k, v in yaml.items()}
     else:
       assert False, f"unexpected type: {yaml}"
@@ -137,6 +137,7 @@ class Model:
         node: AtomicOrCompoundToken) -> Iterator[AtomicOrCompoundToken]:
       yield node
       if not node.is_atomic_token() and node.id not in descended:
+        assert not isinstance(node, AtomicToken)
         descended.add(node.id)
         for child_id in node.children:
           for child in recursion(self.concepts[child_id]):
