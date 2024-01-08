@@ -47,10 +47,16 @@ class CompoundToken(TokenBase):
   model: "Model"
   id: str
   children: List[str]
+  is_synthesized: bool
 
-  def __init__(self, model: "Model", id: str, children: List[str]):
+  def __init__(self,
+               model: "Model",
+               id: str,
+               children: List[str],
+               is_synthesized=False):
     super().__init__(model, id)
     self.children = children
+    self.is_synthesized = is_synthesized
 
   def __str__(self) -> str:
     concepts = ", ".join(
@@ -149,3 +155,23 @@ class Model:
 
   def find_token(self, id) -> Optional[AtomicOrCompoundToken]:
     return self.concepts[id]
+
+  def find_path_to_node(self, id) -> List[str]:
+    path = []
+
+    def recursion(node: AtomicOrCompoundToken) -> bool:
+      path.append(node.id)
+      if node.id == id:
+        return True
+      if not node.is_atomic_token():
+        assert not isinstance(node, AtomicToken)
+        for child_id in node.children:
+          if found := recursion(self.concepts[child_id]):
+            return found
+      path.pop()
+      return False
+
+    for root_concept_id in self.root_concepts:
+      if recursion(self.concepts[root_concept_id]):
+        return path
+    return path

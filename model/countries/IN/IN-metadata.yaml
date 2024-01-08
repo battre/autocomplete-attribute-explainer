@@ -40,4 +40,5 @@ overview: >
   or address lines 1, 2, 3. The remainder relies on structured information.
   <p>Based on the observed popularities we suggest to merge the 3 atomic fields
   and "Building and flat number + Locality, Landmark" in the primary address
-  hierarchy.
+  hierarchy. The other two combinations are represented as synthesized-nodes,
+  meaning that they are not stored in the model but derived from the leaf nodes.

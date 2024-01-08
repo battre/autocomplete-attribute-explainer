@@ -31,6 +31,11 @@ as a prototype for an address hierarchy.
   address hierarchy.
 * `cut-off-children` contains a list of tokens whose children will be removed
   from the address hierarchy.
+* `synthesized-nodes` follows the same structure as `extra-definitions`, but
+  the added tokens are designated as synthesized nodes. These are nodes that
+  live outside the main hierarchy. They don't have to be stored in the model.
+  Instead their value can be formatted from their children. They are injected
+  into the model at the position of the lowest common ancestore of all children.
 
 `countries/*/*-descriptions.yaml` contains labels for the tokens.
 

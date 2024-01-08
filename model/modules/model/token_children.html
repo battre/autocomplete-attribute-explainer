@@ -4,6 +4,9 @@
 <ul>
 {% for child in token.children %}
   <li>
+    {%if not model.concepts[child].is_atomic_token() and model.concepts[child].is_synthesized -%}
+      <i>(synthesized)</i>
+    {%- endif %}
     <a href="#{{child}}">{{child}}</a>
   </li>
 {% endfor %}

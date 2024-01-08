@@ -263,7 +263,7 @@
     <h2 class="mdl-card__title-text">About the country</h2>
   </div>
   <div class="mdl-card__actions mdl-card--border">
-    <div style="margin: 8px"><p>India has a lot of variety in address forms compared to many other countries. We observe a lot of variance in how websites label the fields of their address forms. By and large we observe three concepts besides city, state and postal code which together make up the address lines 1, 2, 3: <ul> <li><b>Building and flat number</b> (sometimes labeled "House/Flat no.", "Flat number / Building Name", "Apartment / House No."): Because Indian addresses often don't contain a street name and because the term "Apartment" is typically used to refer to the name of a building (not to a flat number), we suggest to model this as "street-location". It is the information that identifies a building. <li><b>Locality</b> (sometimes labeled "locality", "area", "Street / Society", "Street/Colony/Area Name", "Locality/Sector/Area"): This is a named area of a city that contains the building and ideally contains no two buildings with the same name. We suggest using the "locality2" concept for this as it's a subsection of a city and therefore comparable to neighborhoods in other countries. <li><b>Landmark</b>: This is a reference to a well known building or location that helps finding the building or locality (e.g. "near Birla Mandir temple"). </ul> <p>These concepts occur on websites in various combinations: <ul> <li>As a single-line street address <li>As unstructured address lines 1, 2, 3 <li>As 3 atomic fields: Building and flat number, Locality, Landmark <li>As 1 combined and 1 atomic field: <ul> <li>Building and flat number + Locality, Landmark (most common among the 3) <li>Building and flat number, Locality + Landmark <li>Building and flat number + Landmark, Locality (least common) </ul> (note that the statement "most common among the 3" is not based on an exhaustive survey among all websites but on a somewhat small sample). </ul> <p>We observed that roughly half of websites rely on a single street address or address lines 1, 2, 3. The remainder relies on structured information. <p>Based on the observed popularities we suggest to merge the 3 atomic fields and "Building and flat number + Locality, Landmark" in the primary address hierarchy.</div>
+    <div style="margin: 8px"><p>India has a lot of variety in address forms compared to many other countries. We observe a lot of variance in how websites label the fields of their address forms. By and large we observe three concepts besides city, state and postal code which together make up the address lines 1, 2, 3: <ul> <li><b>Building and flat number</b> (sometimes labeled "House/Flat no.", "Flat number / Building Name", "Apartment / House No."): Because Indian addresses often don't contain a street name and because the term "Apartment" is typically used to refer to the name of a building (not to a flat number), we suggest to model this as "street-location". It is the information that identifies a building. <li><b>Locality</b> (sometimes labeled "locality", "area", "Street / Society", "Street/Colony/Area Name", "Locality/Sector/Area"): This is a named area of a city that contains the building and ideally contains no two buildings with the same name. We suggest using the "locality2" concept for this as it's a subsection of a city and therefore comparable to neighborhoods in other countries. <li><b>Landmark</b>: This is a reference to a well known building or location that helps finding the building or locality (e.g. "near Birla Mandir temple"). </ul> <p>These concepts occur on websites in various combinations: <ul> <li>As a single-line street address <li>As unstructured address lines 1, 2, 3 <li>As 3 atomic fields: Building and flat number, Locality, Landmark <li>As 1 combined and 1 atomic field: <ul> <li>Building and flat number + Locality, Landmark (most common among the 3) <li>Building and flat number, Locality + Landmark <li>Building and flat number + Landmark, Locality (least common) </ul> (note that the statement "most common among the 3" is not based on an exhaustive survey among all websites but on a somewhat small sample). </ul> <p>We observed that roughly half of websites rely on a single street address or address lines 1, 2, 3. The remainder relies on structured information. <p>Based on the observed popularities we suggest to merge the 3 atomic fields and "Building and flat number + Locality, Landmark" in the primary address hierarchy. The other two combinations are represented as synthesized-nodes, meaning that they are not stored in the model but derived from the leaf nodes.</div>
   </div>
 </div>
 
@@ -279,6 +279,8 @@
     
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#name">name</a>
     - Full name
       
@@ -294,6 +296,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#honorific-prefix">honorific-prefix</a>
     - Honorific prefix
       
@@ -308,6 +312,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#given-name">given-name</a>
     - First name
       
@@ -322,6 +328,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#additional-name">additional-name</a>
     - Middle name
       
@@ -336,6 +344,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#family-name">family-name</a>
     - Last name
       
@@ -351,6 +361,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#family-name-first">family-name-first</a>
     - First part of a family name (e.g. the paternal name)
       
@@ -365,6 +377,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#family-name-conjunction">family-name-conjunction</a>
     - Conjunction between the first and second part of the family name
       
@@ -379,6 +393,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#family-name-second">family-name-second</a>
     - Second part of a famiily name (e.g. the maternal name)
       
@@ -399,6 +415,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#honorific-suffix">honorific-suffix</a>
     - Honorific suffix
       
@@ -413,6 +431,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#organization-title">organization-title</a>
     - Title of a person within an organization
       
@@ -434,6 +454,8 @@
     
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#address">address</a>
     - Address of a physical location - Artificial concept, not to be used in HTML
       
@@ -449,6 +471,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#street-address">street-address</a>
     - Street address (street and location within the street)
       
@@ -464,6 +488,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#address-line1">address-line1</a>
     - 1st line of street-address
       
@@ -478,6 +504,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#address-line2">address-line2</a>
     - 2nd line of street-address
       
@@ -492,6 +520,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#address-line3">address-line3</a>
     - 3rd line of street-address
       
@@ -506,6 +536,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#address-line4">address-line4</a>
     - 4th line of street-address
       
@@ -526,6 +558,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#street-address-alternative-1">street-address-alternative-1</a>
     - Artificial concept, not to be used in HTML
       
@@ -541,6 +575,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#street-location-and-locality2">street-location-and-locality2</a>
   </div>
   
@@ -551,6 +587,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#street-location">street-location</a>
     - Building name, House no., Apartment, Flat, ...
       
@@ -565,6 +603,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#locality2">locality2</a>
     - Locality, Area, Colony, Society, Sector, Street, ...
       
@@ -585,6 +625,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#landmark">landmark</a>
     - Landmark to help finding a building
       
@@ -596,123 +638,11 @@
 </div>
 
         
-      </div>
-    
-  
-</div>
-
-        
           
 <div class="concept">
   <div class="concept-id">
-    <a href="#street-address-alternative-2">street-address-alternative-2</a>
-    - Artificial concept, not to be used in HTML
-      
-        
-      
+    <i>(synthesized)</i>
     
-  </div>
-  
-    
-    
-      <div class="concept-content">
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#street-location-and-landmark">street-location-and-landmark</a>
-  </div>
-  
-    
-    
-      <div class="concept-content">
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#street-location">street-location</a>
-    - Building name, House no., Apartment, Flat, ...
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#landmark">landmark</a>
-    - Landmark to help finding a building
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-      </div>
-    
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#locality2">locality2</a>
-    - Locality, Area, Colony, Society, Sector, Street, ...
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-      </div>
-    
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#street-address-alternative-3">street-address-alternative-3</a>
-    - Artificial concept, not to be used in HTML
-      
-        
-      
-    
-  </div>
-  
-    
-    
-      <div class="concept-content">
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <a href="#street-location">street-location</a>
-    - Building name, House no., Apartment, Flat, ...
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
     <a href="#landmark-and-locality2">landmark-and-locality2</a>
   </div>
   
@@ -723,6 +653,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    <i>(in synthesized)</i>
     <a href="#landmark">landmark</a>
     - Landmark to help finding a building
       
@@ -737,6 +669,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    <i>(in synthesized)</i>
     <a href="#locality2">locality2</a>
     - Locality, Area, Colony, Society, Sector, Street, ...
       
@@ -754,6 +688,56 @@
 </div>
 
         
+          
+<div class="concept">
+  <div class="concept-id">
+    <i>(synthesized)</i>
+    
+    <a href="#street-location-and-landmark">street-location-and-landmark</a>
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    <i>(in synthesized)</i>
+    <a href="#street-location">street-location</a>
+    - Building name, House no., Apartment, Flat, ...
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    <i>(in synthesized)</i>
+    <a href="#landmark">landmark</a>
+    - Landmark to help finding a building
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
       </div>
     
   
@@ -763,6 +747,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#locality1">locality1</a>
     - City
       
@@ -777,6 +763,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#admin-area1">admin-area1</a>
     - State
       
@@ -791,6 +779,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#postal-code">postal-code</a>
     - PIN code
       
@@ -805,6 +795,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#country">country</a>
     - 2-letter country code (e.g. &#34;IN&#34;)
       
@@ -819,6 +811,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#country-name">country-name</a>
     - Name of a country (e.g. &#34;India&#34;)
       
@@ -840,6 +834,8 @@
     
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#organization">organization</a>
     - Name of an organization/company
       
@@ -855,6 +851,8 @@
     
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#credit-card">credit-card</a>
     - Artificial concept, not to be used in HTML
       
@@ -870,6 +868,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#cc-name">cc-name</a>
     - Full name of credit card holder
       
@@ -885,6 +885,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#cc-given-name">cc-given-name</a>
     - Given name of credit card holder
       
@@ -899,6 +901,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#cc-additional-name">cc-additional-name</a>
     - Additional name of credit card holder
       
@@ -913,6 +917,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#cc-family-name">cc-family-name</a>
     - Family name of credit card holder
       
@@ -933,6 +939,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#cc-number">cc-number</a>
     - Credit card number
       
@@ -947,6 +955,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#cc-exp-MMYY">cc-exp-MMYY</a>
     - Credit card expiration date in format MM/YY
       
@@ -962,6 +972,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#cc-exp-MM">cc-exp-MM</a>
     - Credit card expiration month (2 digits)
       
@@ -976,6 +988,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#cc-exp-YY">cc-exp-YY</a>
     - Credit card expiration date in format YY (2 digits)
       
@@ -996,6 +1010,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#cc-exp-MMYYYY">cc-exp-MMYYYY</a>
     - Credit card expiration date in format MM/YYYY
       
@@ -1011,6 +1027,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#cc-exp-MM">cc-exp-MM</a>
     - Credit card expiration month (2 digits)
       
@@ -1025,6 +1043,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#cc-exp-YYYY">cc-exp-YYYY</a>
     - Credit card expiration date in format YYYY (4 digits)
       
@@ -1045,6 +1065,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#cc-csc">cc-csc</a>
     - CSC/CVC/CVV number
       
@@ -1059,6 +1081,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#cc-type">cc-type</a>
     - Credit card type
       
@@ -1080,6 +1104,8 @@
     
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#tel">tel</a>
     - Full telephone number
       
@@ -1095,6 +1121,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#tel-country-code">tel-country-code</a>
     - Country code component of the telephone number
       
@@ -1109,6 +1137,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#tel-national">tel-national</a>
     - Telephone number without the county code component, with a country-internal prefix applied if applicable
 
@@ -1125,6 +1155,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#tel-area-code">tel-area-code</a>
     - Area code component of the telephone number, with a country-internal prefix applied if applicable
 
@@ -1140,6 +1172,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#tel-local">tel-local</a>
     - Telephone number without the country code and area code components
 
@@ -1156,6 +1190,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#tel-local-prefix">tel-local-prefix</a>
     - First part of the component of the telephone number that follows the area code, when that component is split into two components
 
@@ -1171,6 +1207,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#tel-local-suffix">tel-local-suffix</a>
     - Second part of the component of the telephone number that follows the area code, when that component is split into two components
 
@@ -1198,6 +1236,8 @@
           
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#tel-extension">tel-extension</a>
     - Telephone number internal extension code
       
@@ -1219,6 +1259,8 @@
     
 <div class="concept">
   <div class="concept-id">
+    
+    
     <a href="#email">email</a>
     - Email address
       
@@ -1237,7 +1279,11 @@
     <h2 class="mdl-card__title-text">Details</h2>
   </div>
   <div class="mdl-card__actions mdl-card--border">
-    <h3 id="name"><a href="#name">#</a> name</h3>
+    <h3 id="name">
+  <a href="#name">#</a>
+  
+  name
+</h3>
 <div style="margin-left: 20px;">
 
 Full name
@@ -1249,54 +1295,76 @@ Full name
 <ul>
 
   <li>
+    
     <a href="#honorific-prefix">honorific-prefix</a>
   </li>
 
   <li>
+    
     <a href="#given-name">given-name</a>
   </li>
 
   <li>
+    
     <a href="#additional-name">additional-name</a>
   </li>
 
   <li>
+    
     <a href="#family-name">family-name</a>
   </li>
 
   <li>
+    
     <a href="#honorific-suffix">honorific-suffix</a>
   </li>
 
   <li>
+    
     <a href="#organization-title">organization-title</a>
   </li>
 
 </ul>
 </div>
 
-</div><h3 id="honorific-prefix"><a href="#honorific-prefix">#</a> honorific-prefix</h3>
+</div><h3 id="honorific-prefix">
+  <a href="#honorific-prefix">#</a>
+  
+  honorific-prefix
+</h3>
 <div style="margin-left: 20px;">
 
 Honorific prefix
 
 
 
-</div><h3 id="given-name"><a href="#given-name">#</a> given-name</h3>
+</div><h3 id="given-name">
+  <a href="#given-name">#</a>
+  
+  given-name
+</h3>
 <div style="margin-left: 20px;">
 
 First name
 
 
 
-</div><h3 id="additional-name"><a href="#additional-name">#</a> additional-name</h3>
+</div><h3 id="additional-name">
+  <a href="#additional-name">#</a>
+  
+  additional-name
+</h3>
 <div style="margin-left: 20px;">
 
 Middle name
 
 
 
-</div><h3 id="family-name"><a href="#family-name">#</a> family-name</h3>
+</div><h3 id="family-name">
+  <a href="#family-name">#</a>
+  
+  family-name
+</h3>
 <div style="margin-left: 20px;">
 
 Last name
@@ -1308,56 +1376,83 @@ Last name
 <ul>
 
   <li>
+    
     <a href="#family-name-first">family-name-first</a>
   </li>
 
   <li>
+    
     <a href="#family-name-conjunction">family-name-conjunction</a>
   </li>
 
   <li>
+    
     <a href="#family-name-second">family-name-second</a>
   </li>
 
 </ul>
 </div>
 
-</div><h3 id="family-name-first"><a href="#family-name-first">#</a> family-name-first</h3>
+</div><h3 id="family-name-first">
+  <a href="#family-name-first">#</a>
+  
+  family-name-first
+</h3>
 <div style="margin-left: 20px;">
 
 First part of a family name (e.g. the paternal name)
 
 
 
-</div><h3 id="family-name-conjunction"><a href="#family-name-conjunction">#</a> family-name-conjunction</h3>
+</div><h3 id="family-name-conjunction">
+  <a href="#family-name-conjunction">#</a>
+  
+  family-name-conjunction
+</h3>
 <div style="margin-left: 20px;">
 
 Conjunction between the first and second part of the family name
 
 
 
-</div><h3 id="family-name-second"><a href="#family-name-second">#</a> family-name-second</h3>
+</div><h3 id="family-name-second">
+  <a href="#family-name-second">#</a>
+  
+  family-name-second
+</h3>
 <div style="margin-left: 20px;">
 
 Second part of a famiily name (e.g. the maternal name)
 
 
 
-</div><h3 id="honorific-suffix"><a href="#honorific-suffix">#</a> honorific-suffix</h3>
+</div><h3 id="honorific-suffix">
+  <a href="#honorific-suffix">#</a>
+  
+  honorific-suffix
+</h3>
 <div style="margin-left: 20px;">
 
 Honorific suffix
 
 
 
-</div><h3 id="organization-title"><a href="#organization-title">#</a> organization-title</h3>
+</div><h3 id="organization-title">
+  <a href="#organization-title">#</a>
+  
+  organization-title
+</h3>
 <div style="margin-left: 20px;">
 
 Title of a person within an organization
 
 
 
-</div><h3 id="address"><a href="#address">#</a> address</h3>
+</div><h3 id="address">
+  <a href="#address">#</a>
+  
+  address
+</h3>
 <div style="margin-left: 20px;">
 
 Address of a physical location - Artificial concept, not to be used in HTML
@@ -1369,45 +1464,48 @@ Address of a physical location - Artificial concept, not to be used in HTML
 <ul>
 
   <li>
+    
     <a href="#street-address">street-address</a>
   </li>
 
   <li>
+    
     <a href="#street-address-alternative-1">street-address-alternative-1</a>
   </li>
 
   <li>
-    <a href="#street-address-alternative-2">street-address-alternative-2</a>
-  </li>
-
-  <li>
-    <a href="#street-address-alternative-3">street-address-alternative-3</a>
-  </li>
-
-  <li>
+    
     <a href="#locality1">locality1</a>
   </li>
 
   <li>
+    
     <a href="#admin-area1">admin-area1</a>
   </li>
 
   <li>
+    
     <a href="#postal-code">postal-code</a>
   </li>
 
   <li>
+    
     <a href="#country">country</a>
   </li>
 
   <li>
+    
     <a href="#country-name">country-name</a>
   </li>
 
 </ul>
 </div>
 
-</div><h3 id="street-address"><a href="#street-address">#</a> street-address</h3>
+</div><h3 id="street-address">
+  <a href="#street-address">#</a>
+  
+  street-address
+</h3>
 <div style="margin-left: 20px;">
 
 Street address (street and location within the street)
@@ -1419,53 +1517,77 @@ Street address (street and location within the street)
 <ul>
 
   <li>
+    
     <a href="#address-line1">address-line1</a>
   </li>
 
   <li>
+    
     <a href="#address-line2">address-line2</a>
   </li>
 
   <li>
+    
     <a href="#address-line3">address-line3</a>
   </li>
 
   <li>
+    
     <a href="#address-line4">address-line4</a>
   </li>
 
 </ul>
 </div>
 
-</div><h3 id="address-line1"><a href="#address-line1">#</a> address-line1</h3>
+</div><h3 id="address-line1">
+  <a href="#address-line1">#</a>
+  
+  address-line1
+</h3>
 <div style="margin-left: 20px;">
 
 1st line of street-address
 
 
 
-</div><h3 id="address-line2"><a href="#address-line2">#</a> address-line2</h3>
+</div><h3 id="address-line2">
+  <a href="#address-line2">#</a>
+  
+  address-line2
+</h3>
 <div style="margin-left: 20px;">
 
 2nd line of street-address
 
 
 
-</div><h3 id="address-line3"><a href="#address-line3">#</a> address-line3</h3>
+</div><h3 id="address-line3">
+  <a href="#address-line3">#</a>
+  
+  address-line3
+</h3>
 <div style="margin-left: 20px;">
 
 3rd line of street-address
 
 
 
-</div><h3 id="address-line4"><a href="#address-line4">#</a> address-line4</h3>
+</div><h3 id="address-line4">
+  <a href="#address-line4">#</a>
+  
+  address-line4
+</h3>
 <div style="margin-left: 20px;">
 
 4th line of street-address
 
 
 
-</div><h3 id="street-address-alternative-1"><a href="#street-address-alternative-1">#</a> street-address-alternative-1</h3>
+</div><h3 id="street-address-alternative-1">
+  <a href="#street-address-alternative-1">#</a>
+  
+  street-address-alternative-1
+</h3>
 <div style="margin-left: 20px;">
 
 Artificial concept, not to be used in HTML
@@ -1477,17 +1599,33 @@ Artificial concept, not to be used in HTML
 <ul>
 
   <li>
+    
     <a href="#street-location-and-locality2">street-location-and-locality2</a>
   </li>
 
   <li>
+    
     <a href="#landmark">landmark</a>
+  </li>
+
+  <li>
+    <i>(synthesized)</i>
+    <a href="#landmark-and-locality2">landmark-and-locality2</a>
+  </li>
+
+  <li>
+    <i>(synthesized)</i>
+    <a href="#street-location-and-landmark">street-location-and-landmark</a>
   </li>
 
 </ul>
 </div>
 
-</div><h3 id="street-location-and-locality2"><a href="#street-location-and-locality2">#</a> street-location-and-locality2</h3>
+</div><h3 id="street-location-and-locality2">
+  <a href="#street-location-and-locality2">#</a>
+  
+  street-location-and-locality2
+</h3>
 <div style="margin-left: 20px;">
 
 
@@ -1497,41 +1635,57 @@ Artificial concept, not to be used in HTML
 <ul>
 
   <li>
+    
     <a href="#street-location">street-location</a>
   </li>
 
   <li>
+    
     <a href="#locality2">locality2</a>
   </li>
 
 </ul>
 </div>
 
-</div><h3 id="street-location"><a href="#street-location">#</a> street-location</h3>
+</div><h3 id="street-location">
+  <a href="#street-location">#</a>
+  
+  street-location
+</h3>
 <div style="margin-left: 20px;">
 
 Building name, House no., Apartment, Flat, ...
 
 
 
-</div><h3 id="locality2"><a href="#locality2">#</a> locality2</h3>
+</div><h3 id="locality2">
+  <a href="#locality2">#</a>
+  
+  locality2
+</h3>
 <div style="margin-left: 20px;">
 
 Locality, Area, Colony, Society, Sector, Street, ...
 
 
 
-</div><h3 id="landmark"><a href="#landmark">#</a> landmark</h3>
+</div><h3 id="landmark">
+  <a href="#landmark">#</a>
+  
+  landmark
+</h3>
 <div style="margin-left: 20px;">
 
 Landmark to help finding a building
 
 
 
-</div><h3 id="street-address-alternative-2"><a href="#street-address-alternative-2">#</a> street-address-alternative-2</h3>
+</div><h3 id="landmark-and-locality2">
+  <a href="#landmark-and-locality2">#</a>
+  <i>(synthesized)</i>
+  landmark-and-locality2
+</h3>
 <div style="margin-left: 20px;">
-
-Artificial concept, not to be used in HTML
 
 
 
@@ -1540,17 +1694,23 @@ Artificial concept, not to be used in HTML
 <ul>
 
   <li>
-    <a href="#street-location-and-landmark">street-location-and-landmark</a>
+    
+    <a href="#landmark">landmark</a>
   </li>
 
   <li>
+    
     <a href="#locality2">locality2</a>
   </li>
 
 </ul>
 </div>
 
-</div><h3 id="street-location-and-landmark"><a href="#street-location-and-landmark">#</a> street-location-and-landmark</h3>
+</div><h3 id="street-location-and-landmark">
+  <a href="#street-location-and-landmark">#</a>
+  <i>(synthesized)</i>
+  street-location-and-landmark
+</h3>
 <div style="margin-left: 20px;">
 
 
@@ -1560,101 +1720,89 @@ Artificial concept, not to be used in HTML
 <ul>
 
   <li>
+    
     <a href="#street-location">street-location</a>
   </li>
 
   <li>
+    
     <a href="#landmark">landmark</a>
   </li>
 
 </ul>
 </div>
 
-</div><h3 id="street-address-alternative-3"><a href="#street-address-alternative-3">#</a> street-address-alternative-3</h3>
-<div style="margin-left: 20px;">
-
-Artificial concept, not to be used in HTML
-
-
-
-<div>
-<h4>Children:</h4>
-<ul>
-
-  <li>
-    <a href="#street-location">street-location</a>
-  </li>
-
-  <li>
-    <a href="#landmark-and-locality2">landmark-and-locality2</a>
-  </li>
-
-</ul>
-</div>
-
-</div><h3 id="landmark-and-locality2"><a href="#landmark-and-locality2">#</a> landmark-and-locality2</h3>
-<div style="margin-left: 20px;">
-
-
-
-<div>
-<h4>Children:</h4>
-<ul>
-
-  <li>
-    <a href="#landmark">landmark</a>
-  </li>
-
-  <li>
-    <a href="#locality2">locality2</a>
-  </li>
-
-</ul>
-</div>
-
-</div><h3 id="locality1"><a href="#locality1">#</a> locality1</h3>
+</div><h3 id="locality1">
+  <a href="#locality1">#</a>
+  
+  locality1
+</h3>
 <div style="margin-left: 20px;">
 
 City
 
 
 
-</div><h3 id="admin-area1"><a href="#admin-area1">#</a> admin-area1</h3>
+</div><h3 id="admin-area1">
+  <a href="#admin-area1">#</a>
+  
+  admin-area1
+</h3>
 <div style="margin-left: 20px;">
 
 State
 
 
 
-</div><h3 id="postal-code"><a href="#postal-code">#</a> postal-code</h3>
+</div><h3 id="postal-code">
+  <a href="#postal-code">#</a>
+  
+  postal-code
+</h3>
 <div style="margin-left: 20px;">
 
 PIN code
 
 
 
-</div><h3 id="country"><a href="#country">#</a> country</h3>
+</div><h3 id="country">
+  <a href="#country">#</a>
+  
+  country
+</h3>
 <div style="margin-left: 20px;">
 
 2-letter country code (e.g. &#34;IN&#34;)
 
 
 
-</div><h3 id="country-name"><a href="#country-name">#</a> country-name</h3>
+</div><h3 id="country-name">
+  <a href="#country-name">#</a>
+  
+  country-name
+</h3>
 <div style="margin-left: 20px;">
 
 Name of a country (e.g. &#34;India&#34;)
 
 
 
-</div><h3 id="organization"><a href="#organization">#</a> organization</h3>
+</div><h3 id="organization">
+  <a href="#organization">#</a>
+  
+  organization
+</h3>
 <div style="margin-left: 20px;">
 
 Name of an organization/company
 
 
 
-</div><h3 id="credit-card"><a href="#credit-card">#</a> credit-card</h3>
+</div><h3 id="credit-card">
+  <a href="#credit-card">#</a>
+  
+  credit-card
+</h3>
 <div style="margin-left: 20px;">
 
 Artificial concept, not to be used in HTML
@@ -1666,33 +1814,43 @@ Artificial concept, not to be used in HTML
 <ul>
 
   <li>
+    
     <a href="#cc-name">cc-name</a>
   </li>
 
   <li>
+    
     <a href="#cc-number">cc-number</a>
   </li>
 
   <li>
+    
     <a href="#cc-exp-MMYY">cc-exp-MMYY</a>
   </li>
 
   <li>
+    
     <a href="#cc-exp-MMYYYY">cc-exp-MMYYYY</a>
   </li>
 
   <li>
+    
     <a href="#cc-csc">cc-csc</a>
   </li>
 
   <li>
+    
     <a href="#cc-type">cc-type</a>
   </li>
 
 </ul>
 </div>
 
-</div><h3 id="cc-name"><a href="#cc-name">#</a> cc-name</h3>
+</div><h3 id="cc-name">
+  <a href="#cc-name">#</a>
+  
+  cc-name
+</h3>
 <div style="margin-left: 20px;">
 
 Full name of credit card holder
@@ -1704,49 +1862,72 @@ Full name of credit card holder
 <ul>
 
   <li>
+    
     <a href="#cc-given-name">cc-given-name</a>
   </li>
 
   <li>
+    
     <a href="#cc-additional-name">cc-additional-name</a>
   </li>
 
   <li>
+    
     <a href="#cc-family-name">cc-family-name</a>
   </li>
 
 </ul>
 </div>
 
-</div><h3 id="cc-given-name"><a href="#cc-given-name">#</a> cc-given-name</h3>
+</div><h3 id="cc-given-name">
+  <a href="#cc-given-name">#</a>
+  
+  cc-given-name
+</h3>
 <div style="margin-left: 20px;">
 
 Given name of credit card holder
 
 
 
-</div><h3 id="cc-additional-name"><a href="#cc-additional-name">#</a> cc-additional-name</h3>
+</div><h3 id="cc-additional-name">
+  <a href="#cc-additional-name">#</a>
+  
+  cc-additional-name
+</h3>
 <div style="margin-left: 20px;">
 
 Additional name of credit card holder
 
 
 
-</div><h3 id="cc-family-name"><a href="#cc-family-name">#</a> cc-family-name</h3>
+</div><h3 id="cc-family-name">
+  <a href="#cc-family-name">#</a>
+  
+  cc-family-name
+</h3>
 <div style="margin-left: 20px;">
 
 Family name of credit card holder
 
 
 
-</div><h3 id="cc-number"><a href="#cc-number">#</a> cc-number</h3>
+</div><h3 id="cc-number">
+  <a href="#cc-number">#</a>
+  
+  cc-number
+</h3>
 <div style="margin-left: 20px;">
 
 Credit card number
 
 
 
-</div><h3 id="cc-exp-MMYY"><a href="#cc-exp-MMYY">#</a> cc-exp-MMYY</h3>
+</div><h3 id="cc-exp-MMYY">
+  <a href="#cc-exp-MMYY">#</a>
+  
+  cc-exp-MMYY
+</h3>
 <div style="margin-left: 20px;">
 
 Credit card expiration date in format MM/YY
@@ -1758,31 +1939,45 @@ Credit card expiration date in format MM/YY
 <ul>
 
   <li>
+    
     <a href="#cc-exp-MM">cc-exp-MM</a>
   </li>
 
   <li>
+    
     <a href="#cc-exp-YY">cc-exp-YY</a>
   </li>
 
 </ul>
 </div>
 
-</div><h3 id="cc-exp-MM"><a href="#cc-exp-MM">#</a> cc-exp-MM</h3>
+</div><h3 id="cc-exp-MM">
+  <a href="#cc-exp-MM">#</a>
+  
+  cc-exp-MM
+</h3>
 <div style="margin-left: 20px;">
 
 Credit card expiration month (2 digits)
 
 
 
-</div><h3 id="cc-exp-YY"><a href="#cc-exp-YY">#</a> cc-exp-YY</h3>
+</div><h3 id="cc-exp-YY">
+  <a href="#cc-exp-YY">#</a>
+  
+  cc-exp-YY
+</h3>
 <div style="margin-left: 20px;">
 
 Credit card expiration date in format YY (2 digits)
 
 
 
-</div><h3 id="cc-exp-MMYYYY"><a href="#cc-exp-MMYYYY">#</a> cc-exp-MMYYYY</h3>
+</div><h3 id="cc-exp-MMYYYY">
+  <a href="#cc-exp-MMYYYY">#</a>
+  
+  cc-exp-MMYYYY
+</h3>
 <div style="margin-left: 20px;">
 
 Credit card expiration date in format MM/YYYY
@@ -1794,38 +1989,56 @@ Credit card expiration date in format MM/YYYY
 <ul>
 
   <li>
+    
     <a href="#cc-exp-MM">cc-exp-MM</a>
   </li>
 
   <li>
+    
     <a href="#cc-exp-YYYY">cc-exp-YYYY</a>
   </li>
 
 </ul>
 </div>
 
-</div><h3 id="cc-exp-YYYY"><a href="#cc-exp-YYYY">#</a> cc-exp-YYYY</h3>
+</div><h3 id="cc-exp-YYYY">
+  <a href="#cc-exp-YYYY">#</a>
+  
+  cc-exp-YYYY
+</h3>
 <div style="margin-left: 20px;">
 
 Credit card expiration date in format YYYY (4 digits)
 
 
 
-</div><h3 id="cc-csc"><a href="#cc-csc">#</a> cc-csc</h3>
+</div><h3 id="cc-csc">
+  <a href="#cc-csc">#</a>
+  
+  cc-csc
+</h3>
 <div style="margin-left: 20px;">
 
 CSC/CVC/CVV number
 
 
 
-</div><h3 id="cc-type"><a href="#cc-type">#</a> cc-type</h3>
+</div><h3 id="cc-type">
+  <a href="#cc-type">#</a>
+  
+  cc-type
+</h3>
 <div style="margin-left: 20px;">
 
 Credit card type
 
 
 
-</div><h3 id="tel"><a href="#tel">#</a> tel</h3>
+</div><h3 id="tel">
+  <a href="#tel">#</a>
+  
+  tel
+</h3>
 <div style="margin-left: 20px;">
 
 Full telephone number
@@ -1837,28 +2050,39 @@ Full telephone number
 <ul>
 
   <li>
+    
     <a href="#tel-country-code">tel-country-code</a>
   </li>
 
   <li>
+    
     <a href="#tel-national">tel-national</a>
   </li>
 
   <li>
+    
     <a href="#tel-extension">tel-extension</a>
   </li>
 
 </ul>
 </div>
 
-</div><h3 id="tel-country-code"><a href="#tel-country-code">#</a> tel-country-code</h3>
+</div><h3 id="tel-country-code">
+  <a href="#tel-country-code">#</a>
+  
+  tel-country-code
+</h3>
 <div style="margin-left: 20px;">
 
 Country code component of the telephone number
 
 
 
-</div><h3 id="tel-national"><a href="#tel-national">#</a> tel-national</h3>
+</div><h3 id="tel-national">
+  <a href="#tel-national">#</a>
+  
+  tel-national
+</h3>
 <div style="margin-left: 20px;">
 
 Telephone number without the county code component, with a country-internal prefix applied if applicable
@@ -1871,17 +2095,23 @@ Telephone number without the county code component, with a country-internal pref
 <ul>
 
   <li>
+    
     <a href="#tel-area-code">tel-area-code</a>
   </li>
 
   <li>
+    
     <a href="#tel-local">tel-local</a>
   </li>
 
 </ul>
 </div>
 
-</div><h3 id="tel-area-code"><a href="#tel-area-code">#</a> tel-area-code</h3>
+</div><h3 id="tel-area-code">
+  <a href="#tel-area-code">#</a>
+  
+  tel-area-code
+</h3>
 <div style="margin-left: 20px;">
 
 Area code component of the telephone number, with a country-internal prefix applied if applicable
@@ -1889,7 +2119,11 @@ Area code component of the telephone number, with a country-internal prefix appl
 
 
 
-</div><h3 id="tel-local"><a href="#tel-local">#</a> tel-local</h3>
+</div><h3 id="tel-local">
+  <a href="#tel-local">#</a>
+  
+  tel-local
+</h3>
 <div style="margin-left: 20px;">
 
 Telephone number without the country code and area code components
@@ -1902,17 +2136,23 @@ Telephone number without the country code and area code components
 <ul>
 
   <li>
+    
     <a href="#tel-local-prefix">tel-local-prefix</a>
   </li>
 
   <li>
+    
     <a href="#tel-local-suffix">tel-local-suffix</a>
   </li>
 
 </ul>
 </div>
 
-</div><h3 id="tel-local-prefix"><a href="#tel-local-prefix">#</a> tel-local-prefix</h3>
+</div><h3 id="tel-local-prefix">
+  <a href="#tel-local-prefix">#</a>
+  
+  tel-local-prefix
+</h3>
 <div style="margin-left: 20px;">
 
 First part of the component of the telephone number that follows the area code, when that component is split into two components
@@ -1920,7 +2160,11 @@ First part of the component of the telephone number that follows the area code, 
 
 
 
-</div><h3 id="tel-local-suffix"><a href="#tel-local-suffix">#</a> tel-local-suffix</h3>
+</div><h3 id="tel-local-suffix">
+  <a href="#tel-local-suffix">#</a>
+  
+  tel-local-suffix
+</h3>
 <div style="margin-left: 20px;">
 
 Second part of the component of the telephone number that follows the area code, when that component is split into two components
@@ -1928,14 +2172,22 @@ Second part of the component of the telephone number that follows the area code,
 
 
 
-</div><h3 id="tel-extension"><a href="#tel-extension">#</a> tel-extension</h3>
+</div><h3 id="tel-extension">
+  <a href="#tel-extension">#</a>
+  
+  tel-extension
+</h3>
 <div style="margin-left: 20px;">
 
 Telephone number internal extension code
 
 
 
-</div><h3 id="email"><a href="#email">#</a> email</h3>
+</div><h3 id="email">
+  <a href="#email">#</a>
+  
+  email
+</h3>
 <div style="margin-left: 20px;">
 
 Email address
