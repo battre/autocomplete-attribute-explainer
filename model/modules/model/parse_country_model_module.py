@@ -1,4 +1,5 @@
 import copy
+from collections import defaultdict
 from modules.abstract_module import AbstractModule
 from modules.model.model import Model, CompoundToken, AtomicToken
 from pathlib import Path
@@ -31,7 +32,7 @@ class ParseCountryModelModule(AbstractModule):
         # nodes. These are nodes that live outside the main hierarchy. They
         # don't have to be stored in the model. Instead their value be formatted
         # from their children. They are injected into the model at the position
-        # of the lowest common ancestore of all children.
+        # of the lowest common ancestor of all children.
         schema.Optional("synthesized-nodes"): {
             str: [str]
         }
@@ -102,12 +103,17 @@ class ParseCountryModelModule(AbstractModule):
         model.find_path_to_node(child_id) for child_id in children
     ]
 
+    if len(paths_to_nodes) == 1:
+      # In case only one node exists in `children`, use it's parent
+      assert len(paths_to_nodes[0]) >= 2  # This should not be the root node
+      return paths_to_nodes[0][-2]
+
     # Remove the first entries from all lists and store them in last_heads.
     last_heads = [path.pop(0) for path in paths_to_nodes]
 
     while True:
       # At this point all heads should share the same node.
-      assert all(last_heads[0] == l for l in last_heads)
+      assert len(set(last_heads)) == 1
 
       # What is the minimum length of all remaining paths?
       min_remaining_length = min([len(path) for path in paths_to_nodes])
@@ -117,7 +123,7 @@ class ParseCountryModelModule(AbstractModule):
 
       # If one remaining path starts starts with a different head, we have found
       # the lowest common ancestor.
-      if not all(paths_to_nodes[0][0] == path[0] for path in paths_to_nodes):
+      if len(set(path[0] for path in paths_to_nodes)) > 1:
         return last_heads[0]
 
       # Remove the first entries from all lists and store them in last_heads
@@ -136,6 +142,17 @@ class ParseCountryModelModule(AbstractModule):
         if not child.is_atomic_token():
           assert not isinstance(child, AtomicToken)
           assert not child.is_synthesized
+
+      # Verify that a child (constituent) exists only once on all constituent
+      # to root paths (as a leaf).
+      frequencies_in_leaf_to_root_path = defaultdict(int)
+      for child_id in children:
+        for token_id in model.find_path_to_node(child_id):
+          frequencies_in_leaf_to_root_path[token_id] += 1
+      for child_id in children:
+        assert frequencies_in_leaf_to_root_path[child_id] == 1
+
+      # Add the new synthesized node.
       new_token = CompoundToken(model, id, children, is_synthesized=True)
       model.concepts[id] = new_token
 
