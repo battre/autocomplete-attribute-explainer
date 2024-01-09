@@ -1,0 +1,44 @@
+short-descriptions:
+  name:
+    en: Full name
+    de: Name
+  honorific-prefix:
+    en: Honorific prefix
+    de: Titel
+  given-name:
+    en: Given name
+    de: Vorname
+  family-name:
+    en: Family name
+    de: Nachname
+  admin-area1:
+    en: State
+    de: Bundesland
+  country: 2-letter country code (e.g. "DE")
+  country-name:
+    en: Name of a country (e.g. "Deutschland")
+    de: Land
+  locality1:
+    en: City
+    de: Stadt/Ort
+  street:
+    en: Street name
+    de: Straße
+  building:
+    en: House number
+    de: Hausnummer
+  postal-code:
+    en: Postal code
+    de: PLZ
+  street-address:
+    en: Street address (street and location within the street)
+    de: Adresse
+  organization:
+    en: Name of an organization/company
+    de: Organisation/Firma
+  street-location:
+    en: Name of a street and identifier for the building
+    de: Straße und Hausnummer
+  address-overflow:
+    en: An overflow field for information that is not captured differently in a form
+    de: Adresszusatz
