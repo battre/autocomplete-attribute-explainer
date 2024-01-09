@@ -30,4 +30,4 @@ class RenderTokenChildrenModule(AbstractModule):
     template = RenderTokenChildrenModule.get_template(__file__,
                                                       "token_children.html")
     model = renderer.get_model(country)
-    return template.render(token=model.find_token(token_id))
+    return template.render(token=model.find_token(token_id), model=model)

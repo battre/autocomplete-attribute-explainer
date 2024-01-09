@@ -1,7 +1,9 @@
 {% set expanded = [] %}
-{% macro RenderConceptOverview(c) %}
+{% macro RenderConceptOverview(c, parent) %}
 <div class="concept">
   <div class="concept-id">
+    {% if not c.is_atomic_token() and c.is_synthesized -%}<i>(synthesized)</i>{%- endif %}
+    {% if parent and parent.is_synthesized -%}<i>(in synthesized)</i>{%- endif %}
     <a href="#{{c.id}}">{{c.id}}</a>
     {%- if c.id in country_data.get('token-index-suffix', {}) %}
     ({{", ".join(country_data['token-index-suffix'][c.id])}})
@@ -20,7 +22,7 @@
     {% if not c.is_atomic_token() %}
       <div class="concept-content">
         {% for child in c.children %}
-          {{RenderConceptOverview(c.model.concepts[child])}}
+          {{RenderConceptOverview(c.model.concepts[child], c)}}
         {% endfor %}
       </div>
     {% endif %}
@@ -35,7 +37,7 @@
   </div>
   <div class="mdl-card__actions mdl-card--border">
     {% for c in model.root_concepts %}
-    {{RenderConceptOverview(model.concepts[c])}}
+    {{RenderConceptOverview(model.concepts[c], None)}}
     <div>&nbsp;</div>
     {% endfor %}
   </div>

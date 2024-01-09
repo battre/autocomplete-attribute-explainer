@@ -11,13 +11,13 @@ cut-off-tokens:
 extra-definitions:
   # Re-definition to remove the locality2 from the address
   address:
-    - street-address
-    - street-address-alternative-1
-    - locality1
-    - admin-area1
-    - postal-code
-    - country
-    - country-name
+  - street-address
+  - street-address-alternative-1
+  - locality1
+  - admin-area1
+  - postal-code
+  - country
+  - country-name
 
   street-location-and-locality2:
   - street-location
@@ -27,23 +27,10 @@ extra-definitions:
   - street-location-and-locality2
   - landmark
 
-  street-location-and-landmark:
-  - street-location
-  - landmark
-
-  street-address-alternative-2:
-  - street-location-and-landmark
-  - locality2
-
+synthesized-nodes:
   landmark-and-locality2:
   - landmark
   - locality2
-
-  street-address-alternative-3:
+  street-location-and-landmark:
   - street-location
-  - landmark-and-locality2
-
-append-after:
-  street-address-alternative-1:
-  - street-address-alternative-2
-  - street-address-alternative-3
+  - landmark
