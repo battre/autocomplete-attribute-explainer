@@ -1,0 +1,55 @@
+formatting-rules:
+  address:
+  - street-address-alternative-1
+  - separator: "\n"
+  - postal-code
+  - separator: " "
+  - locality1
+  - separator: "\n"
+  - country-name
+  - skip: country  # redundant with country-name
+  - skip: street-address  # redundant with street-address-alternative-1
+  - skip: admin-area1
+
+  street-address-alternative-1:
+  - street-location
+  - separator: "\n"
+  - address-overflow
+
+  street-location:
+  - street
+  - separator: " "
+  - building
+
+examples:
+- id: name
+  comment: |
+    This is an example of a name.
+  attributes:
+    given-name: Johannes
+    family-name: Schmidt
+  output:
+    name:
+      show: true
+      text: Johannes Schmidt
+
+- id: address
+  comment: |
+    This is an example of a full address in Germany.
+  attributes:
+    street: Mozartstr.
+    building: 9
+    address-overflow: Obergeschoss 2 Wohnung 3
+    locality1: Enkenbach
+    postal-code: 67677
+    country: DE
+    country-name: Deutschland
+
+  output:
+    address:
+      show: true
+      text: |
+        Mozartstr. 9
+        Obergeschoss 2 Wohnung 3
+        67677 Enkenbach
+        Deutschland
