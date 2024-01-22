@@ -15,7 +15,7 @@ regex_definitions:
 
   # Regular expression to match the prefixes that indicate a house number.
   kHouseNumberOptionalPrefixRe:
-    regex_fragment: '(?:(?:no|°|º|nummer|number)[-.\s]*)?'
+    regex_fragment: '(?:(?:no|nr|°|º|nummer|number)[-.\s]*)?'
 
 capture_definitions:
   ParseStreetLocation:
@@ -143,3 +143,15 @@ test_parsing_definitions:
     building: "73"
     street-location: "Implerstr. 73"
     address-overflow: "abcdefg"
+- id: "Test 14"
+  type: street-location
+  input: "Implerstr. Nr 8"
+  output:
+    street: "Implerstr."
+    building: "8"
+- id: "Test 15"
+  type: street-location
+  input: "Implerstr. Nummer 15"
+  output:
+    street: "Implerstr."
+    building: "15"
