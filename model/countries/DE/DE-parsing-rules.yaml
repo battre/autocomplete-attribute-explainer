@@ -33,6 +33,20 @@ capture_definitions:
           prefix: {regex_reference: kHouseNumberOptionalPrefixRe}
           parts: [ {regex_reference: kBuildingValueRe} ]
 
+  AddressLinesDecomposition:
+    capture:
+      output: street-address-alternative-1
+      parts:
+      - capture:
+          output: street-location
+          parts: [ {regex_fragment: '.*'} ]
+      - regex_fragment: '\n'
+      - capture:
+          output: address-overflow
+          # Matches any non-empty string, including new-line characters.
+          parts: [ {regex_fragment: '[\s\S]+'} ]
+          quantifier: MATCH_REQUIRED
+
   StreetAddressDecomposition:
     capture:
       output: street-address-alternative-1
@@ -49,10 +63,17 @@ parsing_definitions:
   street-location:
     decomposition:
       capture_reference: ParseStreetLocation
-
+  # To decompose street addresses:
+  # 1. If the street address has multiple lines (separated by newline
+  # characters), use AddressLinesDecomposition to match individual, non-empty
+  # lines.
+  # 2. If there are no newline characters, try decomposing the entire street
+  # address with StreetAddressDecomposition.
   street-address-alternative-1:
-    decomposition:
-      capture_reference: StreetAddressDecomposition
+    decomposition_cascade:
+      alternatives:
+      - decomposition: {capture_reference: AddressLinesDecomposition}
+      - decomposition: {capture_reference: StreetAddressDecomposition}
 
 test_parsing_definitions:
 - id: "Test 1"
@@ -155,3 +176,17 @@ test_parsing_definitions:
   output:
     street: "Implerstr."
     building: "15"
+- id: "Test 16"
+  type: street-address-alternative-1
+  input: "Implerstr. nummer 73 \nRückgebäude"
+  output:
+    street-address-alternative-1: "Implerstr. nummer 73 \nRückgebäude"
+    street-location: "Implerstr. nummer 73 "
+    address-overflow: "Rückgebäude"
+- id: "Test 17"
+  type: street-address-alternative-1
+  input: "Implerstr. nummer 73\nRückgebäude\nExtra info"
+  output:
+    street-address-alternative-1: "Implerstr. nummer 73\nRückgebäude\nExtra info"
+    street-location: "Implerstr. nummer 73"
+    address-overflow: "Rückgebäude\nExtra info"
