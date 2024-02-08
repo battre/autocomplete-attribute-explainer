@@ -3904,6 +3904,131 @@ Artificial concept, not to be used in HTML; this is a structured representation 
 
 
 <details>
+  <summary>Decomposition Cascade
+  
+  </summary>
+  
+  Cascade:<br>
+  <ol>
+  
+  <li>
+
+
+<details>
+  <summary>Decomposition
+    
+    (<code>AddressLinesDecomposition</code>)
+    
+  </summary>
+  Anchor beginning: True<br>
+  
+    Capture Reference: AddressLinesDecomposition<br>
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>street-address-alternative-1</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>street-location</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">.*</code>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">\n</code>
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>address-overflow</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">[\s\S]+</code>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+  Anchor end: True<br>
+</details>
+
+
+</li>
+  
+  <li>
+
+
+<details>
   <summary>Decomposition
     
     (<code>StreetAddressDecomposition</code>)
@@ -4214,6 +4339,12 @@ Separator: Regex Reference <code>kCommaOrWhitespaceSeparator</code> =&gt;
 
   
   Anchor end: True<br>
+</details>
+
+
+</li>
+  
+  </ol>
 </details>
 
 
