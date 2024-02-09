@@ -27,11 +27,11 @@ regex_definitions:
     regex_fragment: piso
 
 capture_definitions:
-  ParseStreetLocation:
+  ParseBuildingLocation:
     capture:
-      output: street-location
+      output: building-location
       parts:
-      # We only search for street locations at the beginning a field.
+      # We only search for building locations at the beginning a field.
       - capture_reference: AnchorToBeginningOfInput
       - capture:
           output: street
@@ -100,9 +100,9 @@ capture_definitions:
             parts: [ {regex_reference: kMultipleWordsRe} ]
 
 parsing_definitions:
-  street-location:
+  building-location:
     decomposition:
-      capture_reference: ParseStreetLocation
+      capture_reference: ParseBuildingLocation
 
   in-building-location:
     extract_parts:
@@ -138,7 +138,7 @@ parsing_definitions:
       - extract_part:
           # This field has an implicit anchoring to the beginning of the
           # input. So we will not apply the regex in the middle of the text.
-          capture_reference: ParseStreetLocation
+          capture_reference: ParseBuildingLocation
       - extract_part:
           capture_reference: ParseUnitWithMandatoryUnitType
       - extract_part:
@@ -209,38 +209,38 @@ test_regex_definitions:
 
 test_parsing_definitions:
 - id: "Street and house number, default case: separated by space"
-  type: street-location
+  type: building-location
   input: "Avenida Álvaro Obregón 1234"
   output:
-    street-location: "Avenida Álvaro Obregón 1234"
+    building-location: "Avenida Álvaro Obregón 1234"
     street: "Avenida Álvaro Obregón"
     building: "1234"
 - id: "Street and house number, separated with #"
-  type: street-location
+  type: building-location
   input: "Avenida Álvaro Obregón #1234"
   output:
-    street-location: "Avenida Álvaro Obregón #1234"
+    building-location: "Avenida Álvaro Obregón #1234"
     street: "Avenida Álvaro Obregón"
     building: "1234"
 - id: "Street and house number, separated with No."
-  type: street-location
+  type: building-location
   input: "Avenida Álvaro Obregón No. 1234"
   output:
-    street-location: "Avenida Álvaro Obregón No. 1234"
+    building-location: "Avenida Álvaro Obregón No. 1234"
     street: "Avenida Álvaro Obregón"
     building: "1234"
 - id: "Street and house number, with KM position"
-  type: street-location
+  type: building-location
   input: "Avenida Álvaro Obregón KM 1234"
   output:
-    street-location: "Avenida Álvaro Obregón KM 1234"
+    building-location: "Avenida Álvaro Obregón KM 1234"
     street: "Avenida Álvaro Obregón"
     building: "KM 1234"
 - id: "Street and house number, without a number"
-  type: street-location
+  type: building-location
   input: "Avenida Álvaro Obregón S/N"
   output:
-    street-location: "Avenida Álvaro Obregón S/N"
+    building-location: "Avenida Álvaro Obregón S/N"
     street: "Avenida Álvaro Obregón"
     building: "S/N"
 - id: "Decompose unit"
@@ -271,7 +271,7 @@ test_parsing_definitions:
     Avenida Álvaro Obregón 1234, Apartamento 5A, Piso 10
     Entre Calles Tonalá y Monterrey
   output:
-    street-location: "Avenida Álvaro Obregón 1234"
+    building-location: "Avenida Álvaro Obregón 1234"
     street: "Avenida Álvaro Obregón"
     building: "1234"
     unit: "Apartamento 5A"
@@ -287,7 +287,7 @@ test_parsing_definitions:
     Avenida Paseo de la Reforma 505
     interior 201, piso 2, entre Río Sena y Río Neva
   output:
-    street-location: "Avenida Paseo de la Reforma 505"
+    building-location: "Avenida Paseo de la Reforma 505"
     street: "Avenida Paseo de la Reforma"
     building: "505"
     unit: "interior 201"
@@ -302,7 +302,7 @@ test_parsing_definitions:
   input: |-
     Calle 60 Norte, número 262, departamento 3, planta baja, entre 35 y 37
   output:
-    street-location: "Calle 60 Norte, número 262"
+    building-location: "Calle 60 Norte, número 262"
     street: "Calle 60 Norte"
     building: "262"
     unit: "departamento 3"

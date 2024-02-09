@@ -51,7 +51,7 @@ site_examples {
       label_translated: "Street (Av, Pça, etc.) and number"
       control_type: INPUT
       concepts: "address-line1"
-      concepts_comment: "We could also use street-location for this."
+      concepts_comment: "We could also use building-location for this."
       autocomplete_attribute: "address-line1"
       low_certainty: true
       section: ADDRESS

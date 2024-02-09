@@ -210,7 +210,7 @@ site_examples {
       label: "番地等必須"
       label_translated: "Address etc. Required"
       control_type: INPUT
-      concepts: "street-location"
+      concepts: "building-location"
       concepts: "building-and-location-in-building"
       section: ADDRESS
     }

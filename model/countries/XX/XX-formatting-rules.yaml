@@ -15,11 +15,11 @@ formatting-rules:
   - skip: country  # redundant with country-name
   - skip: street-address  # redundant with street-address-alternative-1
 
-  street-location:
-  - reference: street_first_street_location
+  building-location:
+  - reference: street_first_building_location
 
   street-address-alternative-1:
-  - street-location
+  - building-location
   - separator: "\n"
   - in-building-location
 

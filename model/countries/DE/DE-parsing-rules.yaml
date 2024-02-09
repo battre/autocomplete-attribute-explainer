@@ -18,11 +18,11 @@ regex_definitions:
     regex_fragment: '(?:(?:no|nr|°|º|nummer|number)[-.\s]*)?'
 
 capture_definitions:
-  ParseStreetLocation:
+  ParseBuildingLocation:
     capture:
-      output: street-location
+      output: building-location
       parts:
-      # We only search for street locations at the beginning a field.
+      # We only search for building locations at the beginning a field.
       - capture_reference: AnchorToBeginningOfInput
       - capture:
           output: street
@@ -38,7 +38,7 @@ capture_definitions:
       output: street-address-alternative-1
       parts:
       - capture:
-          output: street-location
+          output: building-location
           parts: [ {regex_fragment: '.*'} ]
       - regex_fragment: '\n'
       - capture:
@@ -51,7 +51,7 @@ capture_definitions:
     capture:
       output: street-address-alternative-1
       parts:
-      - capture_reference: ParseStreetLocation
+      - capture_reference: ParseBuildingLocation
       - separator: {regex_reference: kCommaOrWhitespaceSeparator}
       - capture:
           output: address-overflow
@@ -60,9 +60,9 @@ capture_definitions:
 
 
 parsing_definitions:
-  street-location:
+  building-location:
     decomposition:
-      capture_reference: ParseStreetLocation
+      capture_reference: ParseBuildingLocation
   # To decompose street addresses:
   # 1. If the street address has multiple lines (separated by newline
   # characters), use AddressLinesDecomposition to match individual, non-empty
@@ -77,31 +77,31 @@ parsing_definitions:
 
 test_parsing_definitions:
 - id: "Test 1"
-  type: street-location
+  type: building-location
   input: "Erika-Mann-Str. 3"
   output:
     street: "Erika-Mann-Str."
     building: "3"
 - id: "Test 2"
-  type: street-location
+  type: building-location
   input: "Implerstr. 73a"
   output:
     street: "Implerstr."
     building: "73a"
 - id: "Test 3"
-  type: street-location
+  type: building-location
   input: "Implerstr. no 73a"
   output:
     street: "Implerstr."
     building: "73a"
 - id: "Test 4"
-  type: street-location
+  type: building-location
   input: "Implerstr. °73a"
   output:
     street: "Implerstr."
     building: "73a"
 - id: "Test 6"
-  type: street-location
+  type: building-location
   input: "Implerstr. number 73a"
   output:
     street: "Implerstr."
@@ -112,7 +112,7 @@ test_parsing_definitions:
   output:
     street: "Implerstr."
     building: "73a"
-    street-location: "Implerstr. 73a"
+    building-location: "Implerstr. 73a"
     address-overflow: "Obergeschoss 2 Wohnung 3"
 - id: "Test 7"
   type: street-address-alternative-1
@@ -120,7 +120,7 @@ test_parsing_definitions:
   output:
     street: "Implerstr."
     building: "73"
-    street-location: "Implerstr. 73"
+    building-location: "Implerstr. 73"
     address-overflow: "OG 2"
 - id: "Test 8"
   type: street-address-alternative-1
@@ -128,7 +128,7 @@ test_parsing_definitions:
   output:
     street: "Implerstr."
     building: "73"
-    street-location: "Implerstr. nummer 73"
+    building-location: "Implerstr. nummer 73"
     address-overflow: "2. OG"
 - id: "Test 9"
   type: street-address-alternative-1
@@ -136,22 +136,22 @@ test_parsing_definitions:
   output:
     street: "Implerstr."
     building: "73"
-    street-location: "Implerstr. nummer 73"
+    building-location: "Implerstr. nummer 73"
     address-overflow: ""
 - id: "Test 10"
-  type: street-location
+  type: building-location
   input: "Implerstr. 10/12"
   output:
     street: "Implerstr."
     building: "10/12"
 - id: "Test 11"
-  type: street-location
+  type: building-location
   input: "Implerstr. number 10 - 12"
   output:
     street: "Implerstr."
     building: "10 - 12"
 - id: "Test 12"
-  type: street-location
+  type: building-location
   input: "Implerstr. 73 a"
   output:
     street: "Implerstr."
@@ -162,16 +162,16 @@ test_parsing_definitions:
   output:
     street: "Implerstr."
     building: "73"
-    street-location: "Implerstr. 73"
+    building-location: "Implerstr. 73"
     address-overflow: "abcdefg"
 - id: "Test 14"
-  type: street-location
+  type: building-location
   input: "Implerstr. Nr 8"
   output:
     street: "Implerstr."
     building: "8"
 - id: "Test 15"
-  type: street-location
+  type: building-location
   input: "Implerstr. Nummer 15"
   output:
     street: "Implerstr."
@@ -181,12 +181,12 @@ test_parsing_definitions:
   input: "Implerstr. nummer 73 \nRückgebäude"
   output:
     street-address-alternative-1: "Implerstr. nummer 73 \nRückgebäude"
-    street-location: "Implerstr. nummer 73 "
+    building-location: "Implerstr. nummer 73 "
     address-overflow: "Rückgebäude"
 - id: "Test 17"
   type: street-address-alternative-1
   input: "Implerstr. nummer 73\nRückgebäude\nExtra info"
   output:
     street-address-alternative-1: "Implerstr. nummer 73\nRückgebäude\nExtra info"
-    street-location: "Implerstr. nummer 73"
+    building-location: "Implerstr. nummer 73"
     address-overflow: "Rückgebäude\nExtra info"

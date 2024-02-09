@@ -597,7 +597,7 @@ which I have not done yet.
 
 <tr>
   <td>
-    <code class="new-concept">street-location</code>
+    <code class="new-concept">building-location</code>
     </td>
   <td>A combination of a street and house number</td>
   <td>Street name and house number</td>
@@ -609,7 +609,7 @@ which I have not done yet.
 
 <tr>
   <td>
-    <code class="new-concept">street-location</code>
+    <code class="new-concept">building-location</code>
     { US, EG }
       x
       { * }
@@ -669,7 +669,7 @@ which I have not done yet.
   <td>n/a: this would not be shown in the UI.</td>
   <td></td>
   <td>
-    <code class="new-concept">street-location</code><code>, </code><code class="">address-level2</code><code>, </code><code class="">address-level1</code><code>, </code><code class="">country-name</code>
+    <code class="new-concept">building-location</code><code>, </code><code class="">address-level2</code><code>, </code><code class="">address-level1</code><code>, </code><code class="">country-name</code>
   </td>
 </tr>
 
@@ -727,7 +727,7 @@ The following icons are used below:
     syntax for adding this capability to the autocomplete attribute. If you search
     for '[' below, you can find examples where a website requested one (or more)
     of multiple field types. Several such cases are already expressed via new
-    compound field types like <code>street-location</code> (street name and house
+    compound field types like <code>building-location</code> (street name and house
     number) that I am proposing here.
   <li>How do we model the "everything else" field type? Do we want to call it
     "address-overflow", "address-supplement" (this seems to be a term that is
@@ -1333,16 +1333,16 @@ occurred on multiple sites:
       </td>
       <td >
   
-  <span id="term_field_234">Nombre de la persona que va a recibir</span>
+  <span id="term_field_250">Nombre de la persona que va a recibir</span>
 
 </td>
       <td>
   
-  <span id="translated_term_field_234">Name of the person who will receive</span>
+  <span id="translated_term_field_250">Name of the person who will receive</span>
 
 </td>
       <td>
-  <span id="concept_field_234"><code
+  <span id="concept_field_250"><code
     class=" ">
       
   <span id="">name</span>
@@ -2225,64 +2225,157 @@ occurred on multiple sites:
       </td>
       <td >
   
-  <span class="entry-with-tooltip" id="term_field_221">Dirección de envío o Barrio cerrado* (Ingresá un domicilio sin piso ni departamento)
-      <div class="tooltip tooltip-right">The first form contains only this search widget.</div>
+  <span class="entry-with-tooltip" id="term_field_145">País * ▽
+      <div class="tooltip tooltip-right">This is the billing address form, which is different from the shipping address form.</div>
     </span>
 <span class="separator">|</span>
-  <span class="entry-with-tooltip" id="term_field_222">Piso o Apartamento (ej: 2A) (Dirección Complementaria)
-      <div class="tooltip tooltip-right">The user has already entered their address into a search widget.</div>
-    </span>
+  <span id="term_field_146">Código Postal *</span>
 <span class="separator">|</span>
-  <span id="term_field_223">☑ Barrio Privado o Country</span>
+  <span id="term_field_147">Calle *</span>
 <span class="separator">|</span>
-  <span id="term_field_224">Barrio</span>
+  <span id="term_field_148">Número *</span>
 <span class="separator">|</span>
-  <span id="term_field_225">Lote/Calle</span>
+  <span id="term_field_149"> (Opcional)</span>
 <span class="separator">|</span>
-  <span id="term_field_226">Sector/Nro</span>
+  <span id="term_field_150">Provincia * ▽</span>
+<span class="separator">|</span>
+  <span id="term_field_151">Ciudad * ▽</span>
 
 </td>
       <td>
   
-  <span id="translated_term_field_221">Shipping address or closed neighborhood* (Enter an address without a flat or apartment)</span>
+  <span id="translated_term_field_145">Country * ▽</span>
 <span class="separator">|</span>
-  <span id="translated_term_field_222">Floor or apartment (e.g. 2A) (Supplementary Address)</span>
+  <span id="translated_term_field_146">Postal Code *</span>
 <span class="separator">|</span>
-  <span id="translated_term_field_223">☑ Private neighborhood or Country</span>
+  <span id="translated_term_field_147">Street *</span>
 <span class="separator">|</span>
-  <span id="translated_term_field_224">Neighborhood</span>
+  <span id="translated_term_field_148">Number *</span>
 <span class="separator">|</span>
-  <span id="translated_term_field_225">Lot/Street</span>
+  <span id="translated_term_field_149"> (Optional)</span>
 <span class="separator">|</span>
-  <span id="translated_term_field_226">Sector/Number</span>
+  <span id="translated_term_field_150">Province * ▽</span>
+<span class="separator">|</span>
+  <span id="translated_term_field_151">City * ▽</span>
 
 </td>
       <td>
-  <span id="concept_field_221"><code
+  <span id="concept_field_145"><code
+    class=" ">
+      
+  <span id="">country</span>
+
+    </code></span>
+    |<span id="concept_field_146"><code
+    class=" ">
+      
+  <span id="">postal-code</span>
+
+    </code></span>
+    |<span id="concept_field_147"><code
+    class="new-concept ">
+      
+  <span id="">street-name</span>
+
+    </code></span>
+    |<span id="concept_field_148"><code
+    class="new-concept ">
+      
+  <span id="">house-number</span>
+
+    </code></span>
+    |<span id="concept_field_149"><code
+    class="new-concept ">
+      
+  <span id="">address-overflow</span>
+
+    </code></span>
+    |<span id="concept_field_150"><code
+    class=" ">
+      
+  <span id="">address-level1</span>
+
+    </code></span>
+    |<span id="concept_field_151"><code
+    class=" ">
+      
+  <span id="">address-level2</span>
+
+    </code></span>
+    
+</td>
+    </tr>
+    <script>
+      country_fields['AR-2'].push(
+        new Website(
+          /*id=*/ "https://www.carrefour.com.ar/",
+          /*fields=*/ ["country", "postal-code", "street-name", "house-number", "address-overflow", "address-level1", "address-level2"]));
+    </script><tr>
+      <td id="2-httpswww.carrefour.com.ar" style="padding: 0"><a href="#2-httpswww.carrefour.com.ar" title="https://www.carrefour.com.ar/">#</a>
+      <span title="Structured address"><b>S</b></span>
+      
+      <a href="https://www.carrefour.com.ar/" target="_blank">🔗</a>
+      </td>
+      <td >
+  
+  <span class="entry-with-tooltip" id="term_field_237">Dirección de envío o Barrio cerrado* (Ingresá un domicilio sin piso ni departamento)
+      <div class="tooltip tooltip-right">The first form contains only this search widget.</div>
+    </span>
+<span class="separator">|</span>
+  <span class="entry-with-tooltip" id="term_field_238">Piso o Apartamento (ej: 2A) (Dirección Complementaria)
+      <div class="tooltip tooltip-right">The user has already entered their address into a search widget.</div>
+    </span>
+<span class="separator">|</span>
+  <span id="term_field_239">☑ Barrio Privado o Country</span>
+<span class="separator">|</span>
+  <span id="term_field_240">Barrio</span>
+<span class="separator">|</span>
+  <span id="term_field_241">Lote/Calle</span>
+<span class="separator">|</span>
+  <span id="term_field_242">Sector/Nro</span>
+
+</td>
+      <td>
+  
+  <span id="translated_term_field_237">Shipping address or closed neighborhood* (Enter an address without a flat or apartment)</span>
+<span class="separator">|</span>
+  <span id="translated_term_field_238">Floor or apartment (e.g. 2A) (Supplementary Address)</span>
+<span class="separator">|</span>
+  <span id="translated_term_field_239">☑ Private neighborhood or Country</span>
+<span class="separator">|</span>
+  <span id="translated_term_field_240">Neighborhood</span>
+<span class="separator">|</span>
+  <span id="translated_term_field_241">Lot/Street</span>
+<span class="separator">|</span>
+  <span id="translated_term_field_242">Sector/Number</span>
+
+</td>
+      <td>
+  <span id="concept_field_237"><code
     class="new-concept ">
       
   <span id="">address-search</span>
 
     </code></span>
-    |<span id="concept_field_222"><code
+    |<span id="concept_field_238"><code
     class="new-concept ">
       
   <span id="">location-in-building</span>
 
     </code></span>
-    |<span id="concept_field_223"><code
+    |<span id="concept_field_239"><code
     class="gap ">
       
   <span id="">gap</span>
 
     </code></span>
-    |<span id="concept_field_224"><code
+    |<span id="concept_field_240"><code
     class=" ">
       
   <span id="">address-level3</span>
 
     </code></span>
-    |<span id="concept_field_225"><code
+    |<span id="concept_field_241"><code
     class="gap ">
       
   <span class="entry-with-tooltip" id="">gap
@@ -2290,7 +2383,7 @@ occurred on multiple sites:
     </span>
 
     </code></span>
-    |<span id="concept_field_226"><code
+    |<span id="concept_field_242"><code
     class="gap ">
       
   <span class="entry-with-tooltip" id="">gap
@@ -2306,99 +2399,6 @@ occurred on multiple sites:
         new Website(
           /*id=*/ "https://www.carrefour.com.ar/",
           /*fields=*/ ["address-search", "location-in-building", "gap", "address-level3", "gap", "gap"]));
-    </script><tr>
-      <td id="2-httpswww.carrefour.com.ar" style="padding: 0"><a href="#2-httpswww.carrefour.com.ar" title="https://www.carrefour.com.ar/">#</a>
-      <span title="Structured address"><b>S</b></span>
-      
-      <a href="https://www.carrefour.com.ar/" target="_blank">🔗</a>
-      </td>
-      <td >
-  
-  <span class="entry-with-tooltip" id="term_field_252">País * ▽
-      <div class="tooltip tooltip-right">This is the billing address form, which is different from the shipping address form.</div>
-    </span>
-<span class="separator">|</span>
-  <span id="term_field_253">Código Postal *</span>
-<span class="separator">|</span>
-  <span id="term_field_254">Calle *</span>
-<span class="separator">|</span>
-  <span id="term_field_255">Número *</span>
-<span class="separator">|</span>
-  <span id="term_field_256"> (Opcional)</span>
-<span class="separator">|</span>
-  <span id="term_field_257">Provincia * ▽</span>
-<span class="separator">|</span>
-  <span id="term_field_258">Ciudad * ▽</span>
-
-</td>
-      <td>
-  
-  <span id="translated_term_field_252">Country * ▽</span>
-<span class="separator">|</span>
-  <span id="translated_term_field_253">Postal Code *</span>
-<span class="separator">|</span>
-  <span id="translated_term_field_254">Street *</span>
-<span class="separator">|</span>
-  <span id="translated_term_field_255">Number *</span>
-<span class="separator">|</span>
-  <span id="translated_term_field_256"> (Optional)</span>
-<span class="separator">|</span>
-  <span id="translated_term_field_257">Province * ▽</span>
-<span class="separator">|</span>
-  <span id="translated_term_field_258">City * ▽</span>
-
-</td>
-      <td>
-  <span id="concept_field_252"><code
-    class=" ">
-      
-  <span id="">country</span>
-
-    </code></span>
-    |<span id="concept_field_253"><code
-    class=" ">
-      
-  <span id="">postal-code</span>
-
-    </code></span>
-    |<span id="concept_field_254"><code
-    class="new-concept ">
-      
-  <span id="">street-name</span>
-
-    </code></span>
-    |<span id="concept_field_255"><code
-    class="new-concept ">
-      
-  <span id="">house-number</span>
-
-    </code></span>
-    |<span id="concept_field_256"><code
-    class="new-concept ">
-      
-  <span id="">address-overflow</span>
-
-    </code></span>
-    |<span id="concept_field_257"><code
-    class=" ">
-      
-  <span id="">address-level1</span>
-
-    </code></span>
-    |<span id="concept_field_258"><code
-    class=" ">
-      
-  <span id="">address-level2</span>
-
-    </code></span>
-    
-</td>
-    </tr>
-    <script>
-      country_fields['AR-2'].push(
-        new Website(
-          /*id=*/ "https://www.carrefour.com.ar/",
-          /*fields=*/ ["country", "postal-code", "street-name", "house-number", "address-overflow", "address-level1", "address-level2"]));
     </script><tr>
       <td id="2-httpswww.casadelaudio.com" style="padding: 0"><a href="#2-httpswww.casadelaudio.com" title="https://www.casadelaudio.com">#</a>
       <span title="Unstructured address">U</span>
@@ -5355,7 +5355,7 @@ occurred on multiple sites:
     class=" low-certainty">
       
   <span class="entry-with-tooltip" id="">address-line1
-      <div class="tooltip tooltip-left">We could also use street-location for this.</div>
+      <div class="tooltip tooltip-left">We could also use building-location for this.</div>
     </span>
 
     </code></span>
@@ -8088,7 +8088,7 @@ occurred on multiple sites:
   <span id="concept_field_1785"><code
     class="new-concept ">
       
-  <span id="">street-location</span>
+  <span id="">building-location</span>
 
     </code></span>
     |<span id="concept_field_1786"><code
@@ -8116,7 +8116,7 @@ occurred on multiple sites:
       country_fields['DE-2'].push(
         new Website(
           /*id=*/ "https://www.aboutyou.de",
-          /*fields=*/ ["street-location", "address-overflow", "postal-code", "address-level2"]));
+          /*fields=*/ ["building-location", "address-overflow", "postal-code", "address-level2"]));
     </script><tr>
       <td id="2-httpswww.adidas.de" style="padding: 0"><a href="#2-httpswww.adidas.de" title="https://www.adidas.de">#</a>
       <span title="Unstructured address">U</span>
@@ -8148,7 +8148,7 @@ occurred on multiple sites:
   <span id="concept_field_1791"><code
     class="new-concept ">
       
-  <span id="">street-location</span>
+  <span id="">building-location</span>
 
     </code></span>
     |<span id="concept_field_1792"><code
@@ -8178,7 +8178,7 @@ occurred on multiple sites:
       country_fields['DE-2'].push(
         new Website(
           /*id=*/ "https://www.adidas.de",
-          /*fields=*/ ["street-location", "address-overflow", "postal-code", "address-level2"]));
+          /*fields=*/ ["building-location", "address-overflow", "postal-code", "address-level2"]));
     </script><tr>
       <td id="2-httpswww.alternate.de" style="padding: 0"><a href="#2-httpswww.alternate.de" title="https://www.alternate.de">#</a>
       <span title="Unstructured address">U</span>
@@ -8280,7 +8280,7 @@ occurred on multiple sites:
     |<span id="concept_field_1871"><code
     class="new-concept ">
       
-  <span id="">street-location</span>
+  <span id="">building-location</span>
 
     </code></span>
     |<span id="concept_field_1872"><code
@@ -8308,7 +8308,7 @@ occurred on multiple sites:
       country_fields['DE-2'].push(
         new Website(
           /*id=*/ "https://www.amazon.de",
-          /*fields=*/ ["country-name", "street-location", "address-overflow", "postal-code", "address-level2"]));
+          /*fields=*/ ["country-name", "building-location", "address-overflow", "postal-code", "address-level2"]));
     </script><tr>
       <td id="2-httpswww.ao.de" style="padding: 0"><a href="#2-httpswww.ao.de" title="https://www.ao.de">#</a>
       <span title="Structured address"><b>S</b></span>
@@ -8418,7 +8418,7 @@ occurred on multiple sites:
     |<span id="concept_field_2016"><code
     class="new-concept ">
       
-  <span id="">street-location</span>
+  <span id="">building-location</span>
 
     </code></span>
     |<span id="concept_field_2017"><code
@@ -8440,7 +8440,7 @@ occurred on multiple sites:
       country_fields['DE-2'].push(
         new Website(
           /*id=*/ "https://auragentum.de",
-          /*fields=*/ ["organization", "address-overflow", "street-location", "postal-code", "address-level2"]));
+          /*fields=*/ ["organization", "address-overflow", "building-location", "postal-code", "address-level2"]));
     </script><tr>
       <td id="2-httpswww.bauhaus.info" style="padding: 0"><a href="#2-httpswww.bauhaus.info" title="https://www.bauhaus.info">#</a>
       <span title="Structured address"><b>S</b></span>
@@ -9810,7 +9810,7 @@ today's autocomplete attribute.
   <span id="concept_field_2310"><code
     class="new-concept ">
       
-  <span id="">street-location</span>
+  <span id="">building-location</span>
 
     </code></span>
     |<span id="concept_field_2311"><code
@@ -9856,7 +9856,7 @@ today's autocomplete attribute.
       country_fields['EG-2'].push(
         new Website(
           /*id=*/ "https://www.azzafahmy.com",
-          /*fields=*/ ["street-location", "country", "address-level2", "postal-code", "address-level1", "address-level1", "organization"]));
+          /*fields=*/ ["building-location", "country", "address-level2", "postal-code", "address-level1", "address-level1", "organization"]));
     </script><tr>
       <td id="2-httpswww.bershka.com" style="padding: 0"><a href="#2-httpswww.bershka.com" title="https://www.bershka.com">#</a>
       <span title="Unstructured address">U</span>
@@ -11084,7 +11084,7 @@ field.
   <span id="concept_field_2413"><code
     class="new-concept ">
       
-  <span id="">street-location</span>
+  <span id="">building-location</span>
 
     </code></span>
     |[<span id="concept_field_2414"><code
@@ -11127,7 +11127,7 @@ field.
       country_fields['ES-2'].push(
         new Website(
           /*id=*/ "https://www.adidas.es",
-          /*fields=*/ ["street-location", "staircase|floor|apartment|organization", "postal-code", "address-level2"]));
+          /*fields=*/ ["building-location", "staircase|floor|apartment|organization", "postal-code", "address-level2"]));
     </script><tr>
       <td id="2-httpswww.apple.com" style="padding: 0"><a href="#2-httpswww.apple.com" title="https://www.apple.com">#</a>
       <span title="Structured address"><b>S</b></span>
@@ -11173,7 +11173,7 @@ field.
     </code><code
     class="new-concept low-certainty">
       
-  <span id="">street-location</span>
+  <span id="">building-location</span>
 
     </code></span>
     ]|<span id="concept_field_2449"><code
@@ -11213,7 +11213,7 @@ field.
       country_fields['ES-2'].push(
         new Website(
           /*id=*/ "https://www.apple.com",
-          /*fields=*/ ["building|street-location", "address-overflow", "address-overflow", "postal-code", "address-level2", "country-name"]));
+          /*fields=*/ ["building|building-location", "address-overflow", "address-overflow", "postal-code", "address-level2", "country-name"]));
     </script><tr>
       <td id="2-httpswww.asos.com" style="padding: 0"><a href="#2-httpswww.asos.com" title="https://www.asos.com">#</a>
       <span title="Unstructured address">U</span>
@@ -22830,7 +22830,7 @@ occurred on multiple sites:
     class=" low-certainty">
       
   <span class="entry-with-tooltip" id="">address-line1
-      <div class="tooltip tooltip-left">Could be street-location</div>
+      <div class="tooltip tooltip-left">Could be building-location</div>
     </span>
 
     </code></span>
@@ -23669,7 +23669,7 @@ added by me for the western eye that cannot parse kanji characters):
   I have to admit that it is not a proper reflection of what an address-levelX
   should be (a shi, gun and machi should be different levels from a political
   perspective). It's rater a reflection of what websites need. It also relies on
-  the slightly awkward grouping of address-level3 and street-location into an
+  the slightly awkward grouping of address-level3 and building-location into an
   address-line1 (typically address-levelX would not be part of an
   address-lineX).
   </li>
@@ -23709,7 +23709,7 @@ added by me for the western eye that cannot parse kanji characters):
 occurred on multiple sites:
 <ul>
 <li>phonetic family and given name
-<li>street-location (chorme, city block, house number)
+<li>building-location (chorme, city block, house number)
 <li>building-and-location-in-building (building name and apartment number)
 <li>postal-codes are often spread across two fields
 </ul>
@@ -23720,6 +23720,7 @@ occurred on multiple sites:
 </ul>
 
 <p>Progress: ☑ First round of cleanup, ☐ Discussed with a (former) resident
+
   
   <h4 id="JP-1"> <!-- <a href="#JP-1">#</a> -->
   <script>country_fields['JP-1'] = [];</script>
@@ -24756,7 +24757,7 @@ occurred on multiple sites:
     |<span id="concept_field_7199"><code
     class="new-concept ">
       
-  <span id="">street-location</span>
+  <span id="">building-location</span>
 
     </code></span>
     |[<span id="concept_field_7200"><code
@@ -24789,7 +24790,7 @@ occurred on multiple sites:
       country_fields['JP-2'].push(
         new Website(
           /*id=*/ "https://www.amazon.co.jp",
-          /*fields=*/ ["country", "postal-code", "postal-code", "address-level1", "address-level2", "street-location", "building|organization", "location-in-building", "delivery-instructions"]));
+          /*fields=*/ ["country", "postal-code", "postal-code", "address-level1", "address-level2", "building-location", "building|organization", "location-in-building", "delivery-instructions"]));
     </script><tr>
       <td id="2-httpswww.animate-onlineshop.jp" style="padding: 0"><a href="#2-httpswww.animate-onlineshop.jp" title="https://www.animate-onlineshop.jp">#</a>
       <span title="Unstructured address">U</span>
@@ -24908,7 +24909,7 @@ occurred on multiple sites:
     |<span id="concept_field_7248"><code
     class="new-concept ">
       
-  <span id="">street-location</span>
+  <span id="">building-location</span>
 
     </code></span>
     |[<span id="concept_field_7249"><code
@@ -24935,7 +24936,7 @@ occurred on multiple sites:
       country_fields['JP-2'].push(
         new Website(
           /*id=*/ "https://www.apple.com",
-          /*fields=*/ ["address-level1", "address-level2", "street-location", "building-and-location-in-building|door-code", "country"]));
+          /*fields=*/ ["address-level1", "address-level2", "building-location", "building-and-location-in-building|door-code", "country"]));
     </script><tr>
       <td id="2-httpswww.beams.co.jp" style="padding: 0"><a href="#2-httpswww.beams.co.jp" title="https://www.beams.co.jp">#</a>
       <span title="Structured address"><b>S</b></span>
@@ -24995,7 +24996,7 @@ occurred on multiple sites:
     </code><code
     class="new-concept ">
       
-  <span id="">street-location</span>
+  <span id="">building-location</span>
 
     </code></span>
     ]|<span id="concept_field_7285"><code
@@ -25011,7 +25012,7 @@ occurred on multiple sites:
       country_fields['JP-2'].push(
         new Website(
           /*id=*/ "https://www.beams.co.jp",
-          /*fields=*/ ["postal-code", "postal-code", "address-level1", "address-level2|street-location", "building"]));
+          /*fields=*/ ["postal-code", "postal-code", "address-level1", "address-level2|building-location", "building"]));
     </script><tr>
       <td id="2-httpswww.dell.com" style="padding: 0"><a href="#2-httpswww.dell.com" title="https://www.dell.com/">#</a>
       <span title="Structured address"><b>S</b></span>
@@ -25106,7 +25107,7 @@ occurred on multiple sites:
     |<span id="concept_field_7332"><code
     class="new-concept ">
       
-  <span id="">street-location</span>
+  <span id="">building-location</span>
 
     </code></span>
     |<span id="concept_field_7333"><code
@@ -25122,7 +25123,7 @@ occurred on multiple sites:
       country_fields['JP-2'].push(
         new Website(
           /*id=*/ "https://www.dell.com/",
-          /*fields=*/ ["name|organization", "phonetic-name|phonetic-organization", "postal-code", "address-level1", "address-level2", "address-level3", "street-location", "building-and-location-in-building"]));
+          /*fields=*/ ["name|organization", "phonetic-name|phonetic-organization", "postal-code", "address-level1", "address-level2", "address-level3", "building-location", "building-and-location-in-building"]));
     </script><tr>
       <td id="2-httpswww.dinos.co.jp" style="padding: 0"><a href="#2-httpswww.dinos.co.jp" title="https://www.dinos.co.jp">#</a>
       <span title="Structured address"><b>S</b></span>
@@ -25167,7 +25168,7 @@ occurred on multiple sites:
     |<span id="concept_field_7368"><code
     class="new-concept ">
       
-  <span id="">street-location</span>
+  <span id="">building-location</span>
 
     </code></span>
     |<span id="concept_field_7369"><code
@@ -25183,7 +25184,7 @@ occurred on multiple sites:
       country_fields['JP-2'].push(
         new Website(
           /*id=*/ "https://www.dinos.co.jp",
-          /*fields=*/ ["postal-code", "address-level2", "street-location", "building-and-location-in-building"]));
+          /*fields=*/ ["postal-code", "address-level2", "building-location", "building-and-location-in-building"]));
     </script><tr>
       <td id="2-httpswww.dot-st.com" style="padding: 0"><a href="#2-httpswww.dot-st.com" title="https://www.dot-st.com">#</a>
       <span title="Structured address"><b>S</b></span>
@@ -25238,7 +25239,7 @@ occurred on multiple sites:
     |<span id="concept_field_7484"><code
     class="new-concept ">
       
-  <span id="">street-location</span>
+  <span id="">building-location</span>
 
     </code></span>
     |<span id="concept_field_7485"><code
@@ -25254,7 +25255,7 @@ occurred on multiple sites:
       country_fields['JP-2'].push(
         new Website(
           /*id=*/ "https://www.dot-st.com",
-          /*fields=*/ ["postal-code", "address-level1", "address-level2", "street-location", "building-and-location-in-building"]));
+          /*fields=*/ ["postal-code", "address-level1", "address-level2", "building-location", "building-and-location-in-building"]));
     </script><tr>
       <td id="2-httpssecure-www.gap.co.jp" style="padding: 0"><a href="#2-httpssecure-www.gap.co.jp" title="https://secure-www.gap.co.jp">#</a>
       <span title="Unstructured address">U</span>
@@ -25379,7 +25380,7 @@ occurred on multiple sites:
     |<span id="concept_field_7682"><code
     class="new-concept ">
       
-  <span id="">street-location</span>
+  <span id="">building-location</span>
 
     </code></span>
     |<span id="concept_field_7683"><code
@@ -25395,7 +25396,7 @@ occurred on multiple sites:
       country_fields['JP-2'].push(
         new Website(
           /*id=*/ "https://www.gu-global.com",
-          /*fields=*/ ["postal-code", "address-level1", "address-level2", "street-location", "building-and-location-in-building"]));
+          /*fields=*/ ["postal-code", "address-level1", "address-level2", "building-location", "building-and-location-in-building"]));
     </script><tr>
       <td id="2-httpswww.hmv.co.jp" style="padding: 0"><a href="#2-httpswww.hmv.co.jp" title="https://www.hmv.co.jp">#</a>
       <span title="Structured address"><b>S</b></span>
@@ -25445,7 +25446,7 @@ occurred on multiple sites:
     </code><code
     class="new-concept ">
       
-  <span id="">street-location</span>
+  <span id="">building-location</span>
 
     </code></span>
     ]|<span id="concept_field_7719"><code
@@ -25461,7 +25462,7 @@ occurred on multiple sites:
       country_fields['JP-2'].push(
         new Website(
           /*id=*/ "https://www.hmv.co.jp",
-          /*fields=*/ ["postal-code", "address-level1", "address-level2|street-location", "building-and-location-in-building"]));
+          /*fields=*/ ["postal-code", "address-level1", "address-level2|building-location", "building-and-location-in-building"]));
     </script><tr>
       <td id="2-httpswww.iherb.com" style="padding: 0"><a href="#2-httpswww.iherb.com" title="https://www.iherb.com">#</a>
       <span title="Structured address"><b>S</b></span>
@@ -25506,7 +25507,7 @@ occurred on multiple sites:
     </code><code
     class="new-concept ">
       
-  <span id="">street-location</span>
+  <span id="">building-location</span>
 
     </code></span>
     ]|<span id="concept_field_7762"><code
@@ -25522,7 +25523,7 @@ occurred on multiple sites:
       country_fields['JP-2'].push(
         new Website(
           /*id=*/ "https://www.iherb.com",
-          /*fields=*/ ["postal-code", "address-level1|address-level2|street-location", "location-in-building"]));
+          /*fields=*/ ["postal-code", "address-level1|address-level2|building-location", "location-in-building"]));
     </script><tr>
       <td id="2-httpswww.japanet.co.jp" style="padding: 0"><a href="#2-httpswww.japanet.co.jp" title="https://www.japanet.co.jp">#</a>
       <span title="Structured address"><b>S</b></span>
@@ -25697,7 +25698,7 @@ occurred on multiple sites:
     |[<span id="concept_field_7990"><code
     class="new-concept ">
       
-  <span id="">street-location</span>
+  <span id="">building-location</span>
 
     </code><code
     class="new-concept ">
@@ -25712,7 +25713,7 @@ occurred on multiple sites:
       country_fields['JP-2'].push(
         new Website(
           /*id=*/ "https://joshinweb.jp",
-          /*fields=*/ ["postal-code", "postal-code", "address-level1", "address-level2", "street-location|building-and-location-in-building"]));
+          /*fields=*/ ["postal-code", "postal-code", "address-level1", "address-level2", "building-location|building-and-location-in-building"]));
     </script><tr>
       <td id="2-httpswww.kojima.net" style="padding: 0"><a href="#2-httpswww.kojima.net" title="https://www.kojima.net">#</a>
       <span title="Structured address"><b>S</b></span>
@@ -25769,7 +25770,7 @@ occurred on multiple sites:
     |<span id="concept_field_8001"><code
     class="new-concept ">
       
-  <span id="">street-location</span>
+  <span id="">building-location</span>
 
     </code></span>
     |<span id="concept_field_8002"><code
@@ -25785,7 +25786,7 @@ occurred on multiple sites:
       country_fields['JP-2'].push(
         new Website(
           /*id=*/ "https://www.kojima.net",
-          /*fields=*/ ["postal-code", "address-level1", "address-level2", "street-location", "building-and-location-in-building"]));
+          /*fields=*/ ["postal-code", "address-level1", "address-level2", "building-location", "building-and-location-in-building"]));
     </script>
   </table>
   <details open>
@@ -27112,7 +27113,7 @@ occurred on multiple sites:
   <span id="concept_field_8424"><code
     class="new-concept ">
       
-  <span id="">street-location</span>
+  <span id="">building-location</span>
 
     </code></span>
     |<span id="concept_field_8425"><code
@@ -27152,7 +27153,7 @@ occurred on multiple sites:
       country_fields['MX-2'].push(
         new Website(
           /*id=*/ "https://www.costco.com.mx",
-          /*fields=*/ ["street-location", "apartment", "address-level4", "address-level2", "postal-code", "landmark"]));
+          /*fields=*/ ["building-location", "apartment", "address-level4", "address-level2", "postal-code", "landmark"]));
     </script><tr>
       <td id="2-httpswww.cuidadoconelperro.com.mx" style="padding: 0"><a href="#2-httpswww.cuidadoconelperro.com.mx" title="https://www.cuidadoconelperro.com.mx">#</a>
       <span title="Structured address"><b>S</b></span>
@@ -27189,7 +27190,7 @@ occurred on multiple sites:
   <span id="concept_field_8440"><code
     class="new-concept low-certainty">
       
-  <span id="">street-location</span>
+  <span id="">building-location</span>
 
     </code></span>
     |<span id="concept_field_8441"><code
@@ -27223,7 +27224,7 @@ occurred on multiple sites:
       country_fields['MX-2'].push(
         new Website(
           /*id=*/ "https://www.cuidadoconelperro.com.mx",
-          /*fields=*/ ["street-location", "between-streets", "address-level1", "address-level3", "address-level4"]));
+          /*fields=*/ ["building-location", "between-streets", "address-level1", "address-level3", "address-level4"]));
     </script><tr>
       <td id="2-thttpswww.cyberpuerta.mxodo" style="padding: 0"><a href="#2-thttpswww.cyberpuerta.mxodo" title="thttps://www.cyberpuerta.mxodo">#</a>
       <span title="Structured address"><b>S</b></span>
@@ -30725,7 +30726,7 @@ occurred on multiple sites:
   <span id="concept_field_9501"><code
     class="new-concept ">
       
-  <span id="">street-location</span>
+  <span id="">building-location</span>
 
     </code></span>
     |<span id="concept_field_9502"><code
@@ -30759,7 +30760,7 @@ occurred on multiple sites:
       country_fields['RU-2'].push(
         new Website(
           /*id=*/ "https://www.detmir.ru",
-          /*fields=*/ ["street-location", "apartment", "entrance", "floor", "delivery-instructions"]));
+          /*fields=*/ ["building-location", "apartment", "entrance", "floor", "delivery-instructions"]));
     </script><tr>
       <td id="2-httpswww.eldorado.ru" style="padding: 0"><a href="#2-httpswww.eldorado.ru" title="https://www.eldorado.ru">#</a>
       <span title="Structured address"><b>S</b></span>
@@ -34164,7 +34165,7 @@ occurred on multiple sites:
   <td>(2)</td>
 </tr>
 <tr class="new-concept">
-  <th>street-location</th>
+  <th>building-location</th>
   <td></td><td></td><td></td><td></td><td></td><td>4</td><td></td><td>1</td><td>2</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>11</td><td>2</td><td></td><td></td><td></td><td>1</td><td></td><td></td><td></td>
   <td>(21)</td>
 </tr>
@@ -34215,7 +34216,7 @@ occurred on multiple sites:
 
 <tr>
   <td>
-    <code class="new-concept">street-location</code>
+    <code class="new-concept">building-location</code>
   </td>
   <td><code class="new-concept">street-name</code><code class="new-concept">house-number</code></td>
   <td>21</td>
@@ -34285,7 +34286,7 @@ occurred on multiple sites:
   <td>1</td>
   <td>CN</td>
 </tr><tr>
-  <td>address-level1, address-level2, street-location</td>
+  <td>address-level1, address-level2, building-location</td>
   <td>1</td>
   <td>JP</td>
 </tr><tr>
@@ -34293,13 +34294,13 @@ occurred on multiple sites:
   <td>3</td>
   <td>GR, ID</td>
 </tr><tr>
+  <td>address-level2, building-location</td>
+  <td>2</td>
+  <td>JP</td>
+</tr><tr>
   <td>address-level2, postal-code</td>
   <td>1</td>
   <td>AU</td>
-</tr><tr>
-  <td>address-level2, street-location</td>
-  <td>2</td>
-  <td>JP</td>
 </tr><tr>
   <td>address-level3, landmark</td>
   <td>1</td>
@@ -34333,13 +34334,17 @@ occurred on multiple sites:
   <td>3</td>
   <td>AR, MX</td>
 </tr><tr>
+  <td>building-and-location-in-building, building-location</td>
+  <td>1</td>
+  <td>JP</td>
+</tr><tr>
   <td>building-and-location-in-building, door-code</td>
   <td>1</td>
   <td>JP</td>
 </tr><tr>
-  <td>building-and-location-in-building, street-location</td>
+  <td>building, building-location</td>
   <td>1</td>
-  <td>JP</td>
+  <td>ES</td>
 </tr><tr>
   <td>building, house-number</td>
   <td>4</td>
@@ -34348,10 +34353,6 @@ occurred on multiple sites:
   <td>building, organization</td>
   <td>2</td>
   <td>JP, ZA</td>
-</tr><tr>
-  <td>building, street-location</td>
-  <td>1</td>
-  <td>ES</td>
 </tr><tr>
   <td>care-of, floor</td>
   <td>1</td>

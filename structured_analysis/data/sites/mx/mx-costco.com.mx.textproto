@@ -245,7 +245,7 @@ site_examples {
       label: "Calle y número exterior"
       label_translated: "Street and exterior number"
       control_type: INPUT
-      concepts: "street-location"
+      concepts: "building-location"
       section: ADDRESS
     }
     fields {

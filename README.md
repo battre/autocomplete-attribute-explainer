@@ -529,7 +529,7 @@ house number fields.
 > On top of that we need to cater for the more structured use cases and propose
 > the following new types (names TBD, the list of fields it not exhaustive):
 >
-> * `street-location` - This is what frequently goes into an `address-line1`.
+> * `building-location` - This is what frequently goes into an `address-line1`.
 >   The information that helps identifying a building in a street.
 >   * `street` - The name of the street.
 >     * `street-type` - Only a few countries split the name of the street from
@@ -542,7 +542,7 @@ house number fields.
 >     * `building-name` - Some countries reference buildings by a name (e.g.
 >       India and sometimes Great Britain).
 >
-> An US website should use `street-location` or `street` and `building`: The
+> An US website should use `building-location` or `street` and `building`: The
 > distinction between `street-type` and `street-name` is uncommon and should not
 > be brought infront of US users. If a Hungarian users tries to order somethingm
 > their `street-type` and `street-name` would automatically be filled into a
@@ -599,8 +599,8 @@ Several tokens don't fill well into the propose hierarchy:
 > **Proposal:**
 >
 > * `address-overflow` - In several countries (e.g. Brazil or Germany) this
->   field complements the `street-location`. In these countries we often see the
->   fields (`street`, `house-number`, `address-overflow`). The field is
+>   field complements the `building-location`. In these countries we often see
+>   the fields (`street`, `house-number`, `address-overflow`). The field is
 >   sometimes referred to as "additional information". It may be used to fill
 >   information like an organization, a care-of, or serve as an overflow if the
 >   previous field was not long enough.
@@ -623,7 +623,7 @@ Several tokens don't fill well into the propose hierarchy:
 
 Above we proposed the following hierarchy:
 
-* `street-location`
+* `building-location`
   * `street`
     * `street-type`
     * `street-name`
@@ -642,7 +642,7 @@ In some countries it is common to have one field for the street name and one for
 the house number and apartment. In this case we should allow for flexibility
 in hierarchies:
 
-* `street-location`
+* `building-location`
   * `street`
   * `building-and-unit`
     * `building`
@@ -681,7 +681,7 @@ meet the needs of websites.
 In India it is very common to combine the flat number (unit) and building name
 in a single field, so the following address structure may be appropriate:
 
-* `street-location`
+* `building-location`
   * `unit-and-building`
     * `unit`
     * `building`

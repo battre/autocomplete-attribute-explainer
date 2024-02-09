@@ -50,7 +50,7 @@ site_examples {
       example: "Straßenname und Hausnummer, Abholort"
       example_translated: "Street name and house number, pickup location"
       control_type: INPUT
-      concepts: "street-location"
+      concepts: "building-location"
       autocomplete_attribute: "address-ui-widgets-enterAddressLine2"
       section: ADDRESS
     }

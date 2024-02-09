@@ -19,7 +19,7 @@ cut-off-children:  # don't expose nodes below these levels
   - tel-local
 extra-definitions:
   street-address-alternative-1:
-  - street-location
+  - building-location
   - in-building-location
   - address-overflow
   address-overflow:

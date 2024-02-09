@@ -271,7 +271,8 @@
     <h2 class="mdl-card__title-text">About the country</h2>
   </div>
   <div class="mdl-card__actions mdl-card--border">
-    <div style="margin: 8px"><p>India has a lot of variety in address forms compared to many other countries. We observe a lot of variance in how websites label the fields of their address forms. By and large we observe three concepts besides city, state and postal code which together make up the address lines 1, 2, 3: <ul> <li><b>Building and flat number</b> (sometimes labeled "House/Flat no.", "Flat number / Building Name", "Apartment / House No."): Because Indian addresses often don't contain a street name and because the term "Apartment" is typically used to refer to the name of a building (not to a flat number), we suggest to model this as "street-location". It is the information that identifies a building. <li><b>Locality</b> (sometimes labeled "locality", "area", "Street / Society", "Street/Colony/Area Name", "Locality/Sector/Area"): This is a named area of a city that contains the building and ideally contains no two buildings with the same name. We suggest using the "locality2" concept for this as it's a subsection of a city and therefore comparable to neighborhoods in other countries. <li><b>Landmark</b>: This is a reference to a well known building or location that helps finding the building or locality (e.g. "near Birla Mandir temple"). </ul> <p>These concepts occur on websites in various combinations: <ul> <li>As a single-line street address <li>As unstructured address lines 1, 2, 3 <li>As 3 atomic fields: Building and flat number, Locality, Landmark <li>As 1 combined and 1 atomic field: <ul> <li>Building and flat number + Locality, Landmark (most common among the 3) <li>Building and flat number, Locality + Landmark <li>Building and flat number + Landmark, Locality (least common) </ul> (note that the statement "most common among the 3" is not based on an exhaustive survey among all websites but on a somewhat small sample). </ul> <p>We observed that roughly half of websites rely on a single street address or address lines 1, 2, 3. The remainder relies on structured information. <p>Based on the observed popularities we suggest to merge the 3 atomic fields and "Building and flat number + Locality, Landmark" in the primary address hierarchy. The other two combinations are represented as synthesized-nodes, meaning that they are not stored in the model but derived from the leaf nodes.</div>
+    <div style="margin: 8px"><p>India has a lot of variety in address forms compared to many other countries. We observe a lot of variance in how websites label the fields of their address forms. By and large we observe three concepts besides city, state and postal code which together make up the address lines 1, 2, 3: <ul> <li><b>Building and flat number</b> (sometimes labeled "House/Flat no.", "Flat number / Building Name", "Apartment / House No."): Because Indian addresses often don't contain a street name and because the term "Apartment" is typically used to refer to the name of a building (not to a flat number), we suggest to model this as "building-location". It is the information that identifies a building. <li><b>Locality</b> (sometimes labeled "locality", "area", "Street / Society", "Street/Colony/Area Name", "Locality/Sector/Area"): This is a named area of a city that contains the building and ideally contains no two buildings with the same name. We suggest using the "locality2" concept for this as it's a subsection of a city and therefore comparable to neighborhoods in other countries. <li><b>Landmark</b>: This is a reference to a well known building or location that helps finding the building or locality (e.g. "near Birla Mandir temple"). </ul> <p>These concepts occur on websites in various combinations: <ul> <li>As a single-line street address <li>As unstructured address lines 1, 2, 3 <li>As 3 atomic fields: Building and flat number, Locality, Landmark <li>As 1 combined and 1 atomic field: <ul> <li>Building and flat number + Locality, Landmark (most common among the 3) <li>Building and flat number, Locality + Landmark <li>Building and flat number + Landmark, Locality (least common) </ul> (note that the statement "most common among the 3" is not based on an exhaustive survey among all websites but on a somewhat small sample). </ul> <p>We observed that roughly half of websites rely on a single street address or address lines 1, 2, 3. The remainder relies on structured information. <p>Based on the observed popularities we suggest to merge the 3 atomic fields and "Building and flat number + Locality, Landmark" in the primary address hierarchy. The other two combinations are represented as synthesized-nodes, meaning that they are not stored in the model but derived from the leaf nodes.
+</div>
   </div>
 </div>
 
@@ -585,7 +586,7 @@
   <div class="concept-id">
     
     
-    <a href="#street-location-and-locality2">street-location-and-locality2</a>
+    <a href="#building-location-and-locality2">building-location-and-locality2</a>
   </div>
   
     
@@ -597,7 +598,7 @@
   <div class="concept-id">
     
     
-    <a href="#street-location">street-location</a>
+    <a href="#building-location">building-location</a>
     - Building name, House no., Apartment, Flat, ...
       
         
@@ -701,7 +702,7 @@
   <div class="concept-id">
     <i>(synthesized)</i>
     
-    <a href="#street-location-and-landmark">street-location-and-landmark</a>
+    <a href="#building-location-and-landmark">building-location-and-landmark</a>
   </div>
   
     
@@ -713,7 +714,7 @@
   <div class="concept-id">
     
     <i>(in synthesized)</i>
-    <a href="#street-location">street-location</a>
+    <a href="#building-location">building-location</a>
     - Building name, House no., Apartment, Flat, ...
       
         
@@ -1554,13 +1555,13 @@ Address of a physical location - Artificial concept, not to be used in HTML
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">address</span> =
-<span class="formatting_token">street-location</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">locality2</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">landmark</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">locality1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">admin-area1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">postal-code</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">country-name</span>
+<span class="formatting_token">building-location</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">locality2</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">landmark</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">locality1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">admin-area1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">postal-code</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">country-name</span>
 </div>
 
 <h5>Flattened formatting:</h5>
 <div>
 <span class="formatting_token">address</span> =<br>
-<span class="formatting_token">street-location</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">landmark</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">admin-area1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">postal-code</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country-name</span>
+<span class="formatting_token">building-location</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">landmark</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">admin-area1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">postal-code</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country-name</span>
 </div>
 
 </div><h3 id="street-address">
@@ -1680,7 +1681,7 @@ Artificial concept, not to be used in HTML
 
   <li>
     
-    <a href="#street-location-and-locality2">street-location-and-locality2</a>
+    <a href="#building-location-and-locality2">building-location-and-locality2</a>
   </li>
 
   <li>
@@ -1695,7 +1696,7 @@ Artificial concept, not to be used in HTML
 
   <li>
     <i>(synthesized)</i>
-    <a href="#street-location-and-landmark">street-location-and-landmark</a>
+    <a href="#building-location-and-landmark">building-location-and-landmark</a>
   </li>
 
 </ul>
@@ -1710,19 +1711,19 @@ Artificial concept, not to be used in HTML
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">street-address-alternative-1</span> =
-<span class="formatting_token">street-location</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">locality2</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">landmark</span>
+<span class="formatting_token">building-location</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">locality2</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">landmark</span>
 </div>
 
 <h5>Flattened formatting:</h5>
 <div>
 <span class="formatting_token">street-address-alternative-1</span> =<br>
-<span class="formatting_token">street-location</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">locality2</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">landmark</span>
+<span class="formatting_token">building-location</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">locality2</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">landmark</span>
 </div>
 
-</div><h3 id="street-location-and-locality2">
-  <a href="#street-location-and-locality2">#</a>
+</div><h3 id="building-location-and-locality2">
+  <a href="#building-location-and-locality2">#</a>
   
-  street-location-and-locality2
+  building-location-and-locality2
 </h3>
 <div style="margin-left: 20px;">
 
@@ -1734,7 +1735,7 @@ Artificial concept, not to be used in HTML
 
   <li>
     
-    <a href="#street-location">street-location</a>
+    <a href="#building-location">building-location</a>
   </li>
 
   <li>
@@ -1753,20 +1754,20 @@ Artificial concept, not to be used in HTML
 
 <h4>Formatting:</h4>
 <div>
-<span class="formatting_token">street-location-and-locality2</span> =
-<span class="formatting_token">street-location</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">locality2</span>
+<span class="formatting_token">building-location-and-locality2</span> =
+<span class="formatting_token">building-location</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">locality2</span>
 </div>
 
 <h5>Flattened formatting:</h5>
 <div>
-<span class="formatting_token">street-location-and-locality2</span> =<br>
-<span class="formatting_token">street-location</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">locality2</span>
+<span class="formatting_token">building-location-and-locality2</span> =<br>
+<span class="formatting_token">building-location</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">locality2</span>
 </div>
 
-</div><h3 id="street-location">
-  <a href="#street-location">#</a>
+</div><h3 id="building-location">
+  <a href="#building-location">#</a>
   
-  street-location
+  building-location
 </h3>
 <div style="margin-left: 20px;">
 
@@ -1840,10 +1841,10 @@ Landmark to help finding a building
 <span class="formatting_token">locality2</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">landmark</span>
 </div>
 
-</div><h3 id="street-location-and-landmark">
-  <a href="#street-location-and-landmark">#</a>
+</div><h3 id="building-location-and-landmark">
+  <a href="#building-location-and-landmark">#</a>
   <i>(synthesized)</i>
-  street-location-and-landmark
+  building-location-and-landmark
 </h3>
 <div style="margin-left: 20px;">
 
@@ -1855,7 +1856,7 @@ Landmark to help finding a building
 
   <li>
     
-    <a href="#street-location">street-location</a>
+    <a href="#building-location">building-location</a>
   </li>
 
   <li>
@@ -1874,14 +1875,14 @@ Landmark to help finding a building
 
 <h4>Formatting:</h4>
 <div>
-<span class="formatting_token">street-location-and-landmark</span> =
-<span class="formatting_token">street-location</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">landmark</span>
+<span class="formatting_token">building-location-and-landmark</span> =
+<span class="formatting_token">building-location</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">landmark</span>
 </div>
 
 <h5>Flattened formatting:</h5>
 <div>
-<span class="formatting_token">street-location-and-landmark</span> =<br>
-<span class="formatting_token">street-location</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">landmark</span>
+<span class="formatting_token">building-location-and-landmark</span> =<br>
+<span class="formatting_token">building-location</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">landmark</span>
 </div>
 
 </div><h3 id="locality1">

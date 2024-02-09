@@ -28,5 +28,5 @@ extra-definitions:
   address-overflow:
   - in-building-location
   street-address-alternative-1:
-  - street-location
+  - building-location
   - address-overflow-and-landmark

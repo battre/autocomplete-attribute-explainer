@@ -36,7 +36,7 @@ short-descriptions:
   organization:
     en: Name of an organization/company
     de: Organisation/Firma
-  street-location:
+  building-location:
     en: Name of a street and identifier for the building
     de: Straße und Hausnummer
   address-overflow:

@@ -29,7 +29,7 @@ site_examples {
       label: "Straße, Hausnummer"
       label_translated: "Street, house number"
       control_type: INPUT
-      concepts: "street-location"
+      concepts: "building-location"
       autocomplete_attribute: "street-address address-line1"
       section: ADDRESS
     }
