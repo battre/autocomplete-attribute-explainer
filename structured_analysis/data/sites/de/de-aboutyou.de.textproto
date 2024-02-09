@@ -301,7 +301,7 @@ site_examples {
       label: "Straße und Hausnummer"
       label_translated: "Street and house number"
       control_type: INPUT
-      concepts: "street-location"
+      concepts: "building-location"
       autocomplete_attribute: "none"
       section: ADDRESS
     }

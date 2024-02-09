@@ -18,7 +18,7 @@ concepts:
       - address-line3
       - address-line4
     - street-address-alternative-1:
-      - street-location:
+      - building-location:
         - street:
           # Only some countries separate the street type from the name:
           - street-type
@@ -38,7 +38,7 @@ concepts:
         - unit: # e.g. "Apt 5"
           - unit-type # "Apt", "Room", "Store"
           - unit-name # "5"
-      # Captures information that does not fit into the street-location:
+      # Captures information that does not fit into the building-location:
       - address-overflow
       # Additional information for delivery
       - landmark

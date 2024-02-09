@@ -134,7 +134,7 @@ site_examples {
       label_translated: "City address"
       control_type: INPUT
       concepts: "address-level2"
-      concepts: "street-location"
+      concepts: "building-location"
       section: ADDRESS
     }
     fields {

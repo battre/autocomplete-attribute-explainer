@@ -320,13 +320,13 @@ single `capture_reference`.
 
 Decompositions are embedded in `parsing_definitions` and instruct the browser
 how to process observed data. So for example, if the browser has seen a
-`street-location` field, the following parsing definition can indicate which
+`building-location` field, the following parsing definition can indicate which
 capture to use to process it:
 ```yaml
 parsing_definitions:
-  street-location:
+  building-location:
     decomposition:
-      capture_reference: ParseStreetLocation
+      capture_reference: ParseBuildingLocation
 ```
 
 A `decomposition_cascade` enables us to try one alternative after the next
@@ -379,7 +379,7 @@ parsing_definitions:
       - extract_part:
           # This field has an implicit anchoring to the beginning of the
           # input. So we will not apply the regex in the middle of the text.
-          capture_reference: ParseStreetLocation
+          capture_reference: ParseBuildingLocation
       - extract_part:
           capture_reference: ParseUnitWithMandatoryUnitType
       - extract_part:
@@ -440,4 +440,4 @@ number like 5) end in `ValueRe` while regular expressions that match a string
 (e.g. "floor", not the floor number) end in `LiteralRe`.
 
 **Captures** (defined in `capture_definitions`) are follow function style naming
-and start with `Parse`. E.g. `ParseStreetLocation`.
+and start with `Parse`. E.g. `ParseBuildingLocation`.

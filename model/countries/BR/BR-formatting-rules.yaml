@@ -15,7 +15,7 @@ formatting-rules:
   - skip: street-address  # redundant with street-address-alternative-1
 
   street-address-alternative-1:
-  - street-location
+  - building-location
   - separator: "\n"
   - address-overflow-and-landmark
 
@@ -34,7 +34,7 @@ formatting-rules:
     - separator: ", "
     - unit
 
-  street-location:
+  building-location:
   - street
   - separator: ", "
   - building

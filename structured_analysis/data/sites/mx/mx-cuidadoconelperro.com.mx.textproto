@@ -47,7 +47,7 @@ site_examples {
       label: "Dirección *"
       label_translated: "Address *"
       control_type: INPUT
-      concepts: "street-location"
+      concepts: "building-location"
       low_certainty: true
       autocomplete_attribute: "street-address"
       section: ADDRESS

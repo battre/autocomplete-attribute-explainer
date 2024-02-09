@@ -1,5 +1,5 @@
 cut-off-children:
-  - street-location
+  - building-location
 
 cut-off-tokens:
   - admin-area2
@@ -19,18 +19,18 @@ extra-definitions:
   - country
   - country-name
 
-  street-location-and-locality2:
-  - street-location
+  building-location-and-locality2:
+  - building-location
   - locality2
 
   street-address-alternative-1:
-  - street-location-and-locality2
+  - building-location-and-locality2
   - landmark
 
 synthesized-nodes:
   landmark-and-locality2:
   - landmark
   - locality2
-  street-location-and-landmark:
-  - street-location
+  building-location-and-landmark:
+  - building-location
   - landmark

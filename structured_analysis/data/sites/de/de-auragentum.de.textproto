@@ -218,7 +218,7 @@ site_examples {
       label: "Straße und Nr.*"
       label_translated: "Street and number.*"
       control_type: INPUT
-      concepts: "street-location"
+      concepts: "building-location"
       autocomplete_attribute: "section-billing billing street-address"
       section: ADDRESS
     }

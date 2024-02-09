@@ -158,7 +158,7 @@ site_examples {
       example: "例：1-2-34"
       example_translated: "Example: 1-2-34"
       control_type: INPUT
-      concepts: "street-location"
+      concepts: "building-location"
       section: ADDRESS
     }
     fields {

@@ -243,7 +243,7 @@ site_examples {
       example: "2-21-1"
       example_translated: "2-21-1"
       control_type: INPUT
-      concepts: "street-location"
+      concepts: "building-location"
       section: ADDRESS
     }
     fields {

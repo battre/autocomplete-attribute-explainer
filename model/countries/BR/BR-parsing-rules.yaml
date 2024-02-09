@@ -21,11 +21,11 @@ regex_definitions:
     regex_fragment: andar
 
 capture_definitions:
-  ParseStreetLocation:
+  ParseBuildingLocation:
     capture:
-      output: street-location
+      output: building-location
       parts:
-      # We only search for street locations at the beginning a field.
+      # We only search for building locations at the beginning a field.
       - capture_reference: AnchorToBeginningOfInput
       - capture:
           output: street
@@ -98,9 +98,9 @@ capture_definitions:
         - regex_fragment: '[^,\n]+'
 
 parsing_definitions:
-  street-location:
+  building-location:
     decomposition:
-      capture_reference: ParseStreetLocation
+      capture_reference: ParseBuildingLocation
 
   in-building-location:
     extract_parts:
@@ -141,7 +141,7 @@ parsing_definitions:
       - extract_part:
           # This field has an implicit anchoring to the beginning of the
           # input. So we will not apply the regex in the middle of the text.
-          capture_reference: ParseStreetLocation
+          capture_reference: ParseBuildingLocation
       - extract_part:
           capture_reference: ParseUnitWithMandatoryUnitType
       - extract_part:
@@ -204,31 +204,31 @@ test_regex_definitions:
 
 test_parsing_definitions:
 - id: "Street and house number, default case: separated by comma"
-  type: street-location
+  type: building-location
   input: "Avenida Mem de Sá, 1234"
   output:
-    street-location: "Avenida Mem de Sá, 1234"
+    building-location: "Avenida Mem de Sá, 1234"
     street: "Avenida Mem de Sá"
     building: "1234"
 - id: "Street and house number, default case: separated by -"
-  type: street-location
+  type: building-location
   input: "Avenida Mem de Sá - 1234"
   output:
-    street-location: "Avenida Mem de Sá - 1234"
+    building-location: "Avenida Mem de Sá - 1234"
     street: "Avenida Mem de Sá"
     building: "1234"
 - id: "Street and house number, default case: separated by comma with nº prefix"
-  type: street-location
+  type: building-location
   input: "Avenida Mem de Sá, nº 1234"
   output:
-    street-location: "Avenida Mem de Sá, nº 1234"
+    building-location: "Avenida Mem de Sá, nº 1234"
     street: "Avenida Mem de Sá"
     building: "1234"
 - id: "Street and house number, default case: separated by comma with KM position"
-  type: street-location
+  type: building-location
   input: "Avenida Mem de Sá, KM 1234"
   output:
-    street-location: "Avenida Mem de Sá, KM 1234"
+    building-location: "Avenida Mem de Sá, KM 1234"
     street: "Avenida Mem de Sá"
     building: "KM 1234"
 - id: "Decompose unit"
@@ -271,7 +271,7 @@ test_parsing_definitions:
     referência: foo
     something else
   output:
-    street-location: "Avenida Mem de Sá, 1234"
+    building-location: "Avenida Mem de Sá, 1234"
     street: "Avenida Mem de Sá"
     building: "1234"
     unit: "apto 12"
@@ -288,7 +288,7 @@ test_parsing_definitions:
     referência: foo
     something else
   output:
-    street-location: "Avenida Mem de Sá, 1234"
+    building-location: "Avenida Mem de Sá, 1234"
     street: "Avenida Mem de Sá"
     building: "1234"
     unit: "apto 12"
@@ -303,7 +303,7 @@ test_parsing_definitions:
     referência: foo
     something else
   output:
-    street-location: "Avenida Mem de Sá, 1234"
+    building-location: "Avenida Mem de Sá, 1234"
     street: "Avenida Mem de Sá"
     building: "1234"
     unit: "apto 12"
@@ -311,7 +311,7 @@ test_parsing_definitions:
     unit-name: "12"
     floor: "1"
     landmark: "foo"
-- id: "A full street address, v4 (don't discover a street-location from line 2)"
+- id: "A full street address, v4 (don't discover a building-location from line 2)"
   type: street-address-alternative-1
   input: |-
     Something else

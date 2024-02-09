@@ -557,7 +557,7 @@
   <div class="concept-id">
     
     
-    <a href="#street-location">street-location</a>
+    <a href="#building-location">building-location</a>
     - Name of a street and identifier for the building
       
         
@@ -4153,20 +4153,20 @@ Artificial concept, not to be used in HTML; this is a structured representation 
 <details>
   <summary>ExtractPart
   
-    (ParseStreetLocation)
+    (ParseBuildingLocation)
   
   
   </summary>
   
   
-    Capture Reference: ParseStreetLocation<br>
+    Capture Reference: ParseBuildingLocation<br>
     
 
 
 <details>
   <summary>
     
-      Capture <code>street-location</code>
+      Capture <code>building-location</code>
     
     (MATCH_REQUIRED)
   </summary>
@@ -4859,7 +4859,7 @@ Regex Fragment: <code class="parsing-regexfragment">(?:\s+y\s+)</code>
 
   <li>
     
-    <a href="#street-location">street-location</a>
+    <a href="#building-location">building-location</a>
   </li>
 
   <li>
@@ -4884,7 +4884,7 @@ Regex Fragment: <code class="parsing-regexfragment">(?:\s+y\s+)</code>
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">street-address-alternative-1</span> =
-<span class="formatting_token">street-location</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">in-building-location</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">address-overflow</span>
+<span class="formatting_token">building-location</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">in-building-location</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">address-overflow</span>
 </div>
 
 <h5>Flattened formatting:</h5>
@@ -4893,10 +4893,10 @@ Regex Fragment: <code class="parsing-regexfragment">(?:\s+y\s+)</code>
 <span class="formatting_token">street</span><span class="formatting_token">building</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator">,␣</span><span class="formatting_token_prefix">Piso </span><span class="formatting_token">floor</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Entre Calles </span><span class="formatting_token">cross-street1</span><span class="formatting_token_separator">␣y␣</span><span class="formatting_token">cross-street2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">landmark</span>
 </div>
 
-</div><h3 id="street-location">
-  <a href="#street-location">#</a>
+</div><h3 id="building-location">
+  <a href="#building-location">#</a>
   
-  street-location
+  building-location
 </h3>
 <div style="margin-left: 20px;">
 
@@ -4937,19 +4937,19 @@ Name of a street and identifier for the building
 <details>
   <summary>Decomposition
     
-    (<code>ParseStreetLocation</code>)
+    (<code>ParseBuildingLocation</code>)
     
   </summary>
   Anchor beginning: True<br>
   
-    Capture Reference: ParseStreetLocation<br>
+    Capture Reference: ParseBuildingLocation<br>
     
 
 
 <details>
   <summary>
     
-      Capture <code>street-location</code>
+      Capture <code>building-location</code>
     
     (MATCH_REQUIRED)
   </summary>
@@ -5230,13 +5230,13 @@ Regex Fragment: <code class="parsing-regexfragment">\w?</code>
 
 <h4>Formatting:</h4>
 <div>
-<span class="formatting_token">street-location</span> =
+<span class="formatting_token">building-location</span> =
 <span class="formatting_token">street</span><span class="formatting_token">building</span>
 </div>
 
 <h5>Flattened formatting:</h5>
 <div>
-<span class="formatting_token">street-location</span> =<br>
+<span class="formatting_token">building-location</span> =<br>
 <span class="formatting_token">street</span><span class="formatting_token">building</span>
 </div>
 

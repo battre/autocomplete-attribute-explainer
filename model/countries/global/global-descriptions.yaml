@@ -29,7 +29,7 @@ short-descriptions:
   street-address-alternative-1: >
     Artificial concept, not to be used in HTML; this is a structured
     representation of a street address
-  street-location: Name of a street and identifier for the building
+  building-location: Name of a street and identifier for the building
   street: Name of a street
   street-type: >
     Type particle of a full street name or place (in countries that split the

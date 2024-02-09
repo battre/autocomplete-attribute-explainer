@@ -11,7 +11,7 @@ overview: >
   number / Building Name", "Apartment / House No."): Because Indian addresses
   often don't contain a street name and because the term "Apartment" is
   typically used to refer to the name of a building (not to a flat number), we
-  suggest to model this as "street-location". It is the information that
+  suggest to model this as "building-location". It is the information that
   identifies a building.
   <li><b>Locality</b> (sometimes labeled "locality", "area", "Street / Society",
   "Street/Colony/Area Name", "Locality/Sector/Area"): This is a named area of a

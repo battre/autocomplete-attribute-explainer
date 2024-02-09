@@ -1,6 +1,6 @@
 formatting-rules:
   address:
-  - street-location
+  - building-location
   - separator: "\n"
   - locality2
   - separator: "\n"
@@ -17,13 +17,13 @@ formatting-rules:
   - skip: street-address  # Not necessary.
   - skip: street-address-alternative-1  # Not necessary.
 
-  street-location-and-locality2:
-  - street-location
+  building-location-and-locality2:
+  - building-location
   - separator: ", "
   - locality2
 
   street-address-alternative-1:
-  - street-location
+  - building-location
   - separator: ", "
   - locality2
   - separator: ", "
@@ -34,8 +34,8 @@ formatting-rules:
   - separator: ", "
   - landmark
 
-  street-location-and-landmark:
-  - street-location
+  building-location-and-landmark:
+  - building-location
   - separator: ", "
   - landmark
 

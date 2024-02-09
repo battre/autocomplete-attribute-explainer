@@ -7,13 +7,13 @@
 # "{a}{prefix}{b}{suffix}{c}" evaluates to "{a}{c}" if "b" is empty.
 
 named-formatting-rules:
-  building_first_street_location:
-    street-location:
+  building_first_building_location:
+    building-location:
     - building
     - street
 
-  street_first_street_location:
-    street-location:
+  street_first_building_location:
+    building-location:
     - street
     - building
 
@@ -55,11 +55,11 @@ formatting-rules:
   - separator: ", "
   - cross-street2
 
-  street-location:
-  - reference: street_first_street_location
+  building-location:
+  - reference: street_first_building_location
   # For some countries that follow a "<house number> <street>" schema, this
   # would look as follows:
-  # - reference: building_first_street_location
+  # - reference: building_first_building_location
 
   in-building-location:
   - prefix: "Entrance "

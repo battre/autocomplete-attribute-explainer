@@ -81,7 +81,7 @@ site_examples {
       example: "17文字以内に収めてください（例：西新宿）。"
       example_translated: "Please keep it within 17 characters (example: Nishi-Shinjuku)."
       control_type: INPUT
-      concepts: "street-location"
+      concepts: "building-location"
       autocomplete_attribute: "address-line1"
       section: ADDRESS
     }

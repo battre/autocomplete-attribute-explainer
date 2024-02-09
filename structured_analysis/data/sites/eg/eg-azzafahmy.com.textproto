@@ -121,7 +121,7 @@ site_examples {
       label: "Street Address"
       example: "Enter a location"
       control_type: INPUT
-      concepts: "street-location"
+      concepts: "building-location"
       section: ADDRESS
     }
     fields {

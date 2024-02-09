@@ -29,7 +29,7 @@ site_examples {
       label: "Calle/Avenida/Paseo, Número"
       label_translated: "Street/Avenue/Promenade, House number"
       control_type: INPUT
-      concepts: "street-location"
+      concepts: "building-location"
       autocomplete_attribute: "street-address address-line1"
       section: ADDRESS
     }

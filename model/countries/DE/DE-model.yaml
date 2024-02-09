@@ -14,6 +14,6 @@ cut-off-tokens:
 
 extra-definitions:
   street-address-alternative-1:
-  - street-location
+  - building-location
   - address-overflow
 

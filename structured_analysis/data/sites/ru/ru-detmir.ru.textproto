@@ -172,7 +172,7 @@ site_examples {
       label: "Улица и дом *"
       label_translated: "Street and house *"
       control_type: INPUT
-      concepts: "street-location"
+      concepts: "building-location"
       autocomplete_attribute: "off"
       section: ADDRESS
     }

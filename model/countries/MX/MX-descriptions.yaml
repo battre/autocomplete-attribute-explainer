@@ -57,7 +57,7 @@ short-descriptions:
   cross-streets:
     en: Crossing streets
     es: Entre calles
-  street-location:
+  building-location:
     en: Name of a street and identifier for the building
     es: Calle y número
   # address-overflow:

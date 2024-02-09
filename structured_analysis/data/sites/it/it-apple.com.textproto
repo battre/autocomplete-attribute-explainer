@@ -62,7 +62,7 @@ site_examples {
       label_translated: "Street name and house number"
       control_type: INPUT
       concepts: "address-line1"
-      concepts_comment: "Could be street-location"
+      concepts_comment: "Could be building-location"
       autocomplete_attribute: "address-line1"
       low_certainty: true
       section: ADDRESS

@@ -86,7 +86,7 @@ site_examples {
       example: "例）２−１−８"
       example_translated: "Example) 2-1-8"
       control_type: INPUT
-      concepts: "street-location"
+      concepts: "building-location"
       autocomplete_attribute: "off"
       section: ADDRESS
     }
