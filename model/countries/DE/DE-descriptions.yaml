@@ -11,9 +11,6 @@ short-descriptions:
   family-name:
     en: Family name
     de: Nachname
-  admin-area1:
-    en: State
-    de: Bundesland
   country: 2-letter country code (e.g. "DE")
   country-name:
     en: Name of a country (e.g. "Deutschland")

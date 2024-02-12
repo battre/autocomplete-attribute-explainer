@@ -5,6 +5,7 @@ cut-off-children:  # don't expose nodes below these levels
 cut-off-tokens:
   - honorific-suffix
   - organization-title
+  - admin-area1
   - admin-area2
   - admin-area3
   - admin-area4
