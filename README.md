@@ -1,6 +1,6 @@
 # Proposal for extending the autocomplete attribute
 
-**Last updated**: 2023-05-08
+**Last updated**: 2024-02-13
 
 ## tl;dr
 
@@ -255,7 +255,7 @@ means that we don't need to be backwards compatible.
   corresponds to a state and an `address-level2` corresponds to a city. This is
   an incorrect assumption. In Mexico for example, the state ("Estado") is
   subdivided into municipalities ("Municipio"), or in case of Mexico City into
-  boroughs ("Delegaciones"). The municipalities are again subdivided into cities
+  boroughs ("Delegaciónes"). The municipalities are again subdivided into cities
   ("Ciudad"). A correct mapping according to the autocomplete spec would be:
   * Estado = `address-level1`
   * Municipio = `address-level2`
@@ -331,6 +331,8 @@ The current `autocomplete` spec tries to nudge all websites to use the lowest
 common denominator for address formats. It suggested using a single full name
 field instead of using given and family name fields. It asked for unstructured
 address lines instead of asking for a house number and street name.
+
+This guidance is still good for websites that target an international audience.
 
 In practice it turns out that this approach suffers from two major challenges:
 * Many websites prefer to follow local customs or requirements of shipping
@@ -449,22 +451,100 @@ These states are organized into municipalities (municipio). *Some* of those
 organized into boroughs (delegaciónes), while others are not. The municipalities
 have cities (ciudad) that are broken into neighborhoods (colonia).
 
-Germany comprises 16 federal states (Länder) and several of those are broken
-into administrative districts (Regierungsbezirke). Neither of these are relevant
-for postal addresses, but sometimes the states are requested on webforms.
+Germany is comprised of 16 federal states (Länder) and several of those are
+broken into administrative districts (Regierungsbezirke). Neither of these are
+relevant for postal addresses, but sometimes the states are requested on
+webforms.
 
-We propose to introduce an admin-area1, ..., admin-area4 hierarchy, which one
-can think of as states and subdivisions, plus a locality1, ..., locality4
-hierarchy, which one can think of as cities, neighborhoods/districts, ...
+We propose to introduce an `admin-area1`, ..., `admin-area4` hierarchy, which one
+can think of as states and subdivisions, plus a `locality1`, ..., `locality4`
+hierarchy, which one can think of as cities, neighborhoods/districts, ...:
 
-By splitting these two, we retain the freedom to introduce finer-level
-granularities in either of the two hierarchies retrospectively. The problem of
-omitting the `municipio` level in Chrome's address hierarchy could have been
-fixed this way.
+By splitting the single hierarchy into two, we retain the freedom to introduce
+finer-level granularities in either of the two hierarchies retrospectively. The
+problem of omitting the `municipio` level in Chrome's address hierarchy could
+have been fixed this way.
 
 The [List of administrative divisions by
 country](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country)
 by Wikipedia may help modeling the admin-areas.
+
+We may start with only two levels in each hierarchy and add more if needed:
+
+* `admin-level1` = The broadest administrative level in the address, i.e. the
+  province within which the locality is found; for example, in the US, this
+  would be the state; in Switzerland it would be the canton; in the UK, the post
+  town
+* `admin-level2` = The second administrative level, in addresses with two or
+  more administrative levels; in most countries this is not used
+* `locality1` = The broadest locality type in an address, this is typically a
+  city.
+* `locality2` = The second broadest locality type in an address. This may be for
+  example a district or a neighborhood of a city.
+
+The definitions of these hierarchies would be specified per country:
+
+<table>
+<thead>
+<tr valign=top>
+<th>country
+<th>admin-level1
+<th>admin-level2
+<th>locality1
+<th>locality2
+</tr>
+</thead>
+<tbody>
+<tr valign=top>
+<td>BR
+<td>Estado (pt)<br>State (en)
+<td>
+<td>Cidade (pt)<br>City (en)
+<td>Bairro (pt)<br>Neighborhood (en)
+</tr>
+<tr valign=top>
+<td>DE
+<td>Bundesland (de)<br>State (en)
+<td>
+<td>Stadt (de)<br>City (en)
+<td>
+</tr>
+<tr valign=top>
+<td>JP
+<td>都道府県 (ja)<br>Prefecture (en)
+<td>
+<td>市 区 町 村 (ja)<br>Municipality (en)<br><br>
+市 = shi = city (en)<br>
+区 = ku = ward (subdivision of a large city) (en)<br>
+町 = chō or machi (town) (en)<br>
+村 = mura or son (village) (en)<br>
+<td>丁目 (ja)<br>
+City district (en)<br><br>
+丁目 = chōme (city district) (en)
+</tr>
+<tr valign=top>
+<td>MX
+<td>Estado (es)<br>State (en)
+<td>Municipio/Delegación (es)<br>Municipality (en)
+<td>Ciudad (es)<br>City (en)
+<td>Colonia (es)<br>Suburb (en)
+</tr>
+<tr valign=top>
+<td>US
+<td>State (en)
+<td>
+<td>City (en)
+<td>
+</tr>
+</tbody>
+</table>
+
+Contributions by country experts are encouraged. As a principle the definitions
+should reflect common usage patterns on the internet based on addressing needs.
+For example, in Germany the states are politically divided into administrative
+districts (Regierungsbezirke) but those are not commonly used in everyday life
+(on address forms, envelopes, ...). It should not contain definitions that are
+rarely used.
 
 #### Advantages
 
