@@ -596,9 +596,42 @@ rarely used.
 
 ### Modeling addresses at a street level
 
-A core aspect of this proposal is to introduce finer grained information for
-address fields that are requested in many countries such as street name and
-house number fields.
+The Autofill specification suggests a `street-address` field name, which may be
+broken down into `address-line1`, `address-line2`, `address-line3`. This is
+street level information to identify a building, flat, and maybe even a c/o
+within the finest granular `address-levelX`.
+
+**We strongly endorse this style of requesting address information** because it
+is extremely universal in the sense that it can be applied to addresses from all
+countries.
+
+Our empirical evidence suggests, however, that many websites decide against this
+format. A sample set of >100 address forms from top ecommerce websites in Mexico
+suggests that >60% of websites preferred asking for a street name (Calle) and
+house number (Número exterior). In Brazil close to 100% of surveyed websites
+asked for a street name (Endereço) and house number (Número).
+
+Because the autocomplete spec provides no annotations for street names and house
+numbers, we have seen all kinds of coping strategies by developers: Some
+websites annotate the street names and house numbers as address lines 1 and 2,
+others don’t annotate the fields at all, yet others invent field names, etc.
+
+Given the long history of the autocomplete spec and the fact that websites still
+decide not to follow the autocomplete spec, we want to take steps to meet the
+websites’ needs.
+
+At a high-level, we suggest defining a set of commonly used particles (street
+name, house number, apartment, floor, entrance, landmark, address overflow,
+cross-street, ...) plus some common aggregations (street-location =
+identification of a building (street name + house number); in-building-location
+= identification of a unit inside a building (apartment, floor, entrance)).
+
+Structured address particles are mutually exclusive with a `street-address` and
+`address-lineX` fields. This means if a form asks for a landmark, it must not
+ask for an `address-line1` as well. This is for practical reasons: A
+`street-address` or its address lines contain unstructured information and it’s
+not obvious which parts to drop from the street address if a landmark was pulled
+out.
 
 > **Proposal:**
 >
@@ -622,16 +655,27 @@ house number fields.
 >     * `building-name` - Some countries reference buildings by a name (e.g.
 >       India and sometimes Great Britain).
 >
-> An US website should use `building-location` or `street` and `building`: The
-> distinction between `street-type` and `street-name` is uncommon and should not
-> be brought infront of US users. If a Hungarian users tries to order somethingm
-> their `street-type` and `street-name` would automatically be filled into a
-> `street` field. For similar reasons, the website should just ask for a
-> `building` and get what it expects. Only few countries, like the UK, which
-> use a `house-number` *and* a `building-name` on address forms the distinction
-> matters. Only in those countries would we support a `house-number` and
-> `building-name`. This means, that browsers would not fill a building name or
-> house number of addresses that were stored for other countries.
+> We will suggest for each country which fields to use.
+>
+> US websites obviously should not bother their users with a `street-type`
+> field. But because virtually all US websites realy on address lines instead of
+> structured information, we suggest to not even support the concepts of
+> `street`, `building` and their descendants for US addresses (supporting all
+> concepts in all countries would be very difficult). The consequence of this is
+> that international customers will have a good autofill experience on US
+> websites but US customers won't have a good autofill experience on non-US
+> websites that require more specific breakdowns of their address.
+>
+> A German website should use either `building-location` or `street` and
+> `building`: The distinction between `street-type` and `street-name` is
+> uncommon and should not be brought infront of German users. If a Hungarian
+> users tries to order something on the German site, their `street-type` and
+> `street-name` would automatically be filled into a `street` field. For similar
+> reasons, a German website should just ask for a `building` and get what it
+> expects.
+>
+> The break down of a `buidling` in `house-number` and `building-name` is
+> only relevant for a few countries, like the UK.
 
 > **Status:**
 >
@@ -658,14 +702,15 @@ route the delivery inside a building.
 >     * `unit-name` - e.g. "5"
 >
 > Websites should not ask for an `in-building-location` and a `floor` in the
-> same form.
+> same form because the former encompasses the latter.
 >
 > We introduced a split into `unit-type` and `unit-name` because some countries
 > expect a 1 to 3 digit number for an apartment. But if a website of the same
 > country asks for an unstructured street address we would still need to
 > generate a string like "Apt. 5", so we would need to know the apartment type.
-> Details need to be figured out in this space. This is only a first rough
-> sketch.
+>
+> We have not investigated countries that often have special fields for
+> entrance, floor and staircase. Changes may be required in this space.
 
 > **Status:**
 >
@@ -693,6 +738,14 @@ Several tokens don't fill well into the propose hierarchy:
 > * `delivery-instructions` - Special instructions to a delivery person.
 > * `care-of` - The name of the intermediary who is responsible for transferring
 >   a piece of mail between the postal system and the final recipient.
+>
+> For websites that have a single field for `building-location` and
+> `in-building-location` we should come up with a concept that encompasses both.
+> It can be combined with `address-overflow`, `landmark`, or other fields. It is
+> up to the website whether it wants to rely on the more generic
+> `address-line1`, `address-line2` sequence and not be in control which of these
+> lines carry the street name and house number, or whether they want to be
+> prescriptive.
 
 > **Status:**
 >
@@ -703,20 +756,21 @@ Several tokens don't fill well into the propose hierarchy:
 
 Above we proposed the following hierarchy:
 
-* `building-location`
-  * `street`
-    * `street-type`
-    * `street-name`
-  * `building`
-    * `house-number`
-    * `building-name`
-* `in-building-location`
-  * `entrance`
-  * `floor`
-  * `staircase`
-  * `unit`
-    * `unit-type`
-    * `unit-name`
+* `building-and-in-building-location` (TBD)
+  * `building-location`
+    * `street`
+      * `street-type`
+      * `street-name`
+  *  `building`
+      * `house-number`
+      * `building-name`
+  * `in-building-location`
+    * `entrance`
+    * `floor`
+    * `staircase`
+    * `unit`
+      * `unit-type`
+      * `unit-name`
 
 In some countries it is common to have one field for the street name and one for
 the house number and apartment. In this case we should allow for flexibility
@@ -743,8 +797,11 @@ in hierarchies:
 
 > **Proposal:**
 >
-> We aim to have a single, predominant hierarchy for each country. This
-> hierarchy does not need to be the same for every country.
+> The set of particles used and supported will differ by country to reflect the
+> addressing customs in individual countries! This is a major divergence from
+> the strategy of today’s autocomplete specification.
+>
+> We aim to have a single, predominant, documented hierarchy for each country.
 >
 > We may introduce country-specific nodes for this.
 
@@ -758,20 +815,33 @@ in hierarchies:
 We may run into situations in which the proposed hierarchy is insufficient to
 meet the needs of websites.
 
+In India we observe 3 concepts that make up a street-address:
+* `building-and-in-building-location` (the name of a building (typically not a
+  street name and house number), information about a flat if appropriate)
+* `locality2` (a locality / area / street area / society; modeled as `locality2`
+  because of the conceptual similarity to neighborhoods, a section of a city)
+* `landmark`
+
+We observed that websites ask for these three particles in indivdual fields,
+we observed each combination of two of the three fields, and we observed that
+all three particles are requested in a single field.
+
 In India it is very common to combine the flat number (unit) and building name
 in a single field, so the following address structure may be appropriate:
 
-* `building-location`
-  * `unit-and-building`
-    * `unit`
-    * `building`
-  * `street`
+* `street-address`
+  * `building-and-in-building-location`
+    * `unit` (TBD whether this break down is needed)
+    * `building` (TBD whether this break down is needed)
+  * `locality2`
   * `landmark`
 
 Unfortunately, we observed the following combinations of fields:
-* `unit-and-building` | `street` | `landmark` (3 fields)
-* `unit-and-building` | `street` + `landmark` (2 fields)
-* `unit-and-building` + `street` | `landmark` (2 fields)
+* `building-and-in-building-location` | `locality2` | `landmark` (3 fields)
+* `building-and-in-building-location` | `locality2` + `landmark` (2 fields)
+* `building-and-in-building-location` + `locality2` | `landmark` (2 fields)
+* `building-and-in-building-location` + `landmark` | `locality2` (2 fields)
+* `building-and-in-building-location` + `locality2` + `landmark` (1 field)
 
 There was no clearly predominant way to combine fields.
 
@@ -782,11 +852,17 @@ of field types to be filled.
 > **Proposal:**
 >
 > Allow websites to request combinations of field types (e.g.
-> `unit-and-building` and `street`). Only allowlisted combinations will be
-> supported. Browsers will get meta information for constructing such
-> combinations. This meta information could express that
-> `unit-and-building` and `street` are concatenated with a `,` in an
-> `<input>` field and a `\n` in a `<textarea>`.
+> `building-and-in-building-location` and `locality2`). Only allowlisted
+> combinations will be supported. Browsers will get meta information for
+> constructing such combinations. This meta information could express that
+> `building-and-in-building-location` and `locality2` are concatenated with a
+> `,` in an `<input>` field and a `\n` in a `<textarea>`.
+>
+> Within the `autocomplete` attribute we could allow combinations of fields
+> by a `+` operator that does not allow surrounding whitespaces:
+> `autocomplete="section-blue shipping locality2+landmark"`
+> If we follow this style, the parsing algorithms may remain pretty similar
+> to their current structure.
 >
 > The Chrome team has ideas for storing and updating alternative representations
 > of address trees which we may share as design documents or an open source
