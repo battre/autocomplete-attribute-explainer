@@ -11,10 +11,11 @@ cut-off-tokens:
   - locality2
   - locality3
   - locality4
+  - cross-streets
+  - building-name
+  - street-type
 
 extra-definitions:
   street-address-alternative-1:
-    - street:
-        - street-name
-        - house-number
-    - unit
+    - building-location
+    - in-building-location
