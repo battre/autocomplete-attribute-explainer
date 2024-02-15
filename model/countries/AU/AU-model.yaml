@@ -1,6 +1,5 @@
 cut-off-children:  # don't expose nodes below these levels
   - family-name
-  - street-address-alternative-1
 
 cut-off-tokens:
   - honorific-prefix
@@ -16,6 +15,9 @@ cut-off-tokens:
   - street-type
 
 extra-definitions:
+  in-building-location:
+    - floor
+    - unit
   street-address-alternative-1:
     - building-location
     - in-building-location
