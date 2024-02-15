@@ -14,8 +14,7 @@ cut-off-tokens:
 
 extra-definitions:
   street-address-alternative-1:
-    - street-address-alternative-1:
-        - street:
-            - street-name
-            - house-number
-        - unit
+    - street:
+        - street-name
+        - house-number
+    - unit
