@@ -1,0 +1,41 @@
+formatting-rules:
+  address:
+  - building-location
+  - separator: "\n"
+  - locality2
+  - separator: "\n"
+  - landmark
+  - separator: "\n"
+  - locality1
+  - separator: "\n"
+  - admin-area1
+  - separator: "\n"
+  - postal-code
+  - separator: "\n"
+  - country-name
+  - skip: country  # redundant with country-name
+  - skip: street-address  # Not necessary.
+  - skip: street-address-alternative-1  # Not necessary.
+
+  building-location-and-locality2:
+  - building-location
+  - separator: ", "
+  - locality2
+
+  street-address-alternative-1:
+  - building-location
+  - separator: ", "
+  - locality2
+  - separator: ", "
+  - landmark
+
+  landmark-and-locality2:
+  - locality2
+  - separator: ", "
+  - landmark
+
+  building-location-and-landmark:
+  - building-location
+  - separator: ", "
+  - landmark
+

@@ -1,0 +1,317 @@
+site_examples {
+  url: "https://www.adairs.com.au"
+  is_structured: false
+  locale {
+    country: "AU"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "|__RequestVerificationToken"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|quantity"
+      label: "Quantity"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|coupon"
+      label: "Enter coupon code"
+      example: "Enter coupon code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|__RequestVerificationToken"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|email"
+      label: "Email address*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|firstname"
+      label: "First name*"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "|lastname"
+      label: "Last name*"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "|phone"
+      label: "Phone number*"
+      control_type: INPUT
+      concepts: "tel"
+      section: PHONE
+    }
+    fields {
+      name: "|company"
+      label: "Company"
+      control_type: INPUT
+      concepts: "organization"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "|"
+      label: "Address*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "|address-1"
+      label: "Address*"
+      control_type: INPUT
+      concepts: "address-line1"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "|address-2"
+      label: "Address 2"
+      control_type: INPUT
+      concepts: "address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "|suburb"
+      label: "Suburb / City*"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "|postcode"
+      label: "Postcode*"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "|state"
+      label: "State*"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "|country-name"
+      label: "Country"
+      control_type: INPUT
+      concepts: "country-name"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "|country-name"
+      control_type: INPUT
+      concepts: "country-"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "|country-code"
+      control_type: INPUT
+      concepts: "country-code"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "|giftcard-no"
+      label: "Gift card Number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|giftcard-pin"
+      label: "Gift card PIN Number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "afterPayMaximumAmount|"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PAYMENT
+    }
+    fields {
+      name: "payment-Eway|payment-method"
+      label: "Credit Card"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "payment-PayPal|payment-method"
+      label: "PayPal"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "payment-afterpay|payment-method"
+      label: "AfterPay"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "payment-zippay|payment-method"
+      label: "ZipPay"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "Id|Id"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PAYMENT
+    }
+    fields {
+      name: "|cc-name"
+      label: "Card holders name*"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "|cc-number"
+      label: "Card number*"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "|cc-expire-month"
+      label: "Card expiry date*"
+      control_type: SELECT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "|cc-expire-year"
+      label: "Please enter Expiry year"
+      control_type: SELECT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "|cc-ccv"
+      label: "Security code / CCV*"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "cc-save|cc-save"
+      label: "Save my credit card details"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "agree-privacy-policy|agree-privacy-policy"
+      label: "I agree and accept the Terms and Conditions & Privacy Policy*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "join-mail-list|join-mail-list"
+      label: "Please sign me up to hear about sales & offers"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "waypointFlagBottom|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|__RequestVerificationToken"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|EWAY_ACCESSCODE"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|EWAY_PAYMENTTYPE"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|EWAY_CARDNAME"
+      label: "Card Name:"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|EWAY_CARDNUMBER"
+      label: "Card Number:"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|EWAY_CARDEXPIRYMONTH"
+      label: "Card Expiry Month:"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|EWAY_CARDEXPIRYYEAR"
+      label: "Card Expiry Year:"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|EWAY_CARDCVN"
+      label: "Card CVN:"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

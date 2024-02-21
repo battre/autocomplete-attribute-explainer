@@ -1,0 +1,247 @@
+site_examples {
+  url: "https://jd.com"
+  is_structured: true
+  locale {
+    country: "CN"
+    language: "zh"
+  }
+  sequences {
+    fields {
+      name: "Custom element"
+      label: "所在地区"
+      label_translated: "location"
+      label_comment: "Here you select the province, city, county, town"
+      control_type: CUSTOM
+      concepts: "gap"
+      section: ADDRESS
+    }
+    fields {
+      name: "hidden_consignee_provinceName_|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "hidden_consignee_cityName_|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "hidden_consignee_countyName_|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "hidden_consignee_townName_|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "hidden_consignee_provinceId_|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "hidden_consignee_cityId_|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "hidden_consignee_countyId_|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "hidden_consignee_townId_|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "oldAddr|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "closeAddressListRecommend|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "ip-address-special-provinces|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "closeOverseaArea|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "downAddressReg|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "consignee_form_id|consigneeParam.id"
+      label: "收货人"
+      label_translated: "Receiver"
+      control_type: INPUT
+      concepts: "name"
+      section: NAME
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "consignee_type|consigneeParam.type"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "consignee_ceshi1|consignee_ceshi1"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "addressDefault|addressDefault"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "consignee_name|consigneeParam.name"
+      label: "*收货人"
+      label_translated: "*Receiver"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 2"
+    }
+    fields {
+      name: "consignee_address|consigneeParam.address"
+      label: "*详细地址"
+      label_translated: "*Address"
+      control_type: INPUT
+      concepts: "street-address"
+      section: ADDRESS
+      html_comment: "Form 2"
+    }
+    fields {
+      name: "consignee_areaCode|consigneeParam.areaCode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "consignee_nameCode|consigneeParam.nameCode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "consignee_mobile|consigneeParam.mobile"
+      label: "0086"
+      label_translated: "0086"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+      html_comment: "Form 2"
+    }
+    fields {
+      name: "overseaPhoneTip|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "hkmktwPhoneTip|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "consignee_phone|consigneeParam.phone"
+      label: "0086"
+      label_translated: "0086"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+      html_comment: "Form 2"
+    }
+    fields {
+      name: "consignee_postcode|consigneeParam.postcode"
+      label: "*邮政编码"
+      label_translated: "*zip code"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+      html_comment: "Form 2"
+      hide: true
+    }
+    fields {
+      name: "consignee_email|consigneeParam.email"
+      label: "邮箱地址"
+      label_translated: "email address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 2"
+    }
+    fields {
+      name: "consignee_addressName_old|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "consignee_addressName|consigneeParam.addressName"
+      label: "地址别名 家里"
+      label_translated: "address alias home"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 2"
+    }
+    fields {
+      name: "consignee_form_reset|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+  }
+}
+

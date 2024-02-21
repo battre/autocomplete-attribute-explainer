@@ -1,0 +1,315 @@
+site_examples {
+  url: "https://www.chipoteka.hr"
+  is_structured: false
+  locale {
+    country: "HR"
+    language: "hr"
+  }
+  sequences {
+    fields {
+      name: "|username"
+      label: "Pretraga Search"
+      label_translated: "Search Search"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Pretraga"
+      label_translated: "search"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|search"
+      label: "Pretraga"
+      label_translated: "search"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|search-mobile"
+      label: "Pretraži proizvode"
+      label_translated: "Search products"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|account"
+      label: "Kao gost"
+      label_translated: "As a guest"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|account"
+      label: "Registriraj se"
+      label_translated: "register"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "input-email|email"
+      label: "E-mail"
+      label_translated: "E-mail"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "input-password|password"
+      label: "Lozinka"
+      label_translated: "Password"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "button-login|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "racun|R1_needed"
+      label: "Trebam R1 račun"
+      label_translated: "I need an R1 account"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "input-payment-custom-field2|custom_field[account][2]"
+      label: "Naziv tvrtke"
+      label_translated: "Company name"
+      control_type: INPUT
+      concepts: "organization"
+      section: OTHER
+    }
+    fields {
+      name: "input-payment-custom-field1|custom_field[account][1]"
+      label: "OIB"
+      label_translated: "OIB"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|customer_group_id"
+      label: "Fizička osoba"
+      label_translated: "Physical person"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|customer_group_id"
+      label: "Pravna osoba"
+      label_translated: "Legal entity"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "input-payment-firstname|firstname"
+      label: "Ime"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "input-payment-lastname|lastname"
+      label: "Prezime"
+      label_translated: "Surname"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "input-payment-email|email"
+      label: "E-mail"
+      label_translated: "E-mail"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "input-payment-telephone|telephone"
+      label: "Telefon"
+      label_translated: "Phone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "input-payment-company|company"
+      label: "Tvrtka (firma/obrt/udruga)"
+      label_translated: "Company (company/trade/association)"
+      control_type: INPUT
+      concepts: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "input-payment-address-1|address_1"
+      label: "Adresa"
+      label_translated: "Address"
+      control_type: INPUT
+      concepts: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "input-payment-address-2|address_2"
+      label: "Adresa 2"
+      label_translated: "Address 2"
+      control_type: INPUT
+      concepts: "address-line2"
+      section: OTHER
+    }
+    fields {
+      name: "input-payment-city|city"
+      label: "Grad"
+      label_translated: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "input-payment-postcode|postcode"
+      label: "Poštanski broj"
+      label_translated: "Zip code"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "input-payment-country|country_id"
+      label: "Država"
+      label_translated: "State"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "input-payment-zone|zone_id"
+      label: "Županija (regija)"
+      label_translated: "County (region)"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "|shipping_address"
+      label: "Moja adresa za isporuku (dostavu) robe i za dostavu računa je ista."
+      label_translated: "My address for the delivery (delivery) of the goods and for the delivery of the invoice is the same."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "input-shipping-firstname|firstname"
+      label: "Ime*"
+      label_translated: "Name*"
+      example: "Ime"
+      example_translated: "Name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "input-shipping-lastname|lastname"
+      label: "Prezime*"
+      label_translated: "Surname*"
+      example: "Prezime"
+      example_translated: "Surname"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "input-shipping-company|company"
+      label: "Tvrtka (firma/obrt/udruga)"
+      label_translated: "Company (company/trade/association)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "input-shipping-address-1|address_1"
+      label: "Adresa*"
+      label_translated: "Address*"
+      example: "Adresa"
+      example_translated: "Address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "input-shipping-address-2|address_2"
+      label: "Adresa 2"
+      label_translated: "Address 2"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "input-shipping-city|city"
+      label: "Grad*"
+      label_translated: "City*"
+      example: "Grad"
+      example_translated: "City"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "input-shipping-postcode|postcode"
+      label: "Poštanski broj*"
+      label_translated: "Zip code*"
+      example: "Poštanski broj"
+      example_translated: "Zip code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "input-shipping-country|country_id"
+      label: "Država*"
+      label_translated: "State*"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|zone_id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "input-coupon|coupon"
+      label: "Unesite Vaš kupon kod"
+      label_translated: "Enter your coupon code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "button-coupon|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

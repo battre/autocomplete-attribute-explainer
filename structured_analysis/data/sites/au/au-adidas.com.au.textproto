@@ -1,0 +1,244 @@
+site_examples {
+  url: "https://www.adidas.com.au"
+  is_structured: true
+  locale {
+    country: "AU"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "shippingAddress-firstName|shippingAddress.firstName"
+      label: "First Name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "shippingAddress-lastName|shippingAddress.lastName"
+      label: "Last Name"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "shippingAddress-companyName|shippingAddress.companyName"
+      label: "Company name"
+      control_type: INPUT
+      concepts: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress-apartmentNumber|shippingAddress.apartmentNumber"
+      label: "Lvl, Apt or Unit No."
+      control_type: INPUT
+      concepts: "location-in-building"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress-houseNumber|shippingAddress.houseNumber"
+      label: "Street No."
+      control_type: INPUT
+      concepts: "house-number"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress-address1|shippingAddress.address1"
+      label: "Address"
+      control_type: INPUT
+      concepts: "street-name"
+      autocomplete_attribute: "street-address address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress-city|shippingAddress.city"
+      label: "Suburb"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "|shippingAddress.countyProvince"
+      label: "Select your state"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress-zipcode|shippingAddress.zipcode"
+      label: "Postal Code"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "contact-emailAddress|shippingAddress.emailAddress"
+      label: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "home email"
+      section: ADDRESS
+    }
+    fields {
+      name: "contact-phoneNumber|shippingAddress.phoneNumber"
+      label: "Phone Number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "home tel"
+      section: PHONE
+    }
+    fields {
+      hide: true
+      name: "|shouldUseShippingAddressForBilling"
+      label: "ShippingAustralia Post (5-10 business days)FREE"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "billingAddress-firstName|billingAddress.firstName"
+      label: "First Name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "given-name"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "billingAddress-lastName|billingAddress.lastName"
+      label: "Last Name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "family-name"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "billingAddress-companyName|billingAddress.companyName"
+      label: "Company name"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "billingAddress-apartmentNumber|billingAddress.apartmentNumber"
+      label: "Lvl, Apt or Unit No."
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "billingAddress-houseNumber|billingAddress.houseNumber"
+      label: "Street No."
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "billingAddress-address1|billingAddress.address1"
+      label: "Address"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "street-address address-line1"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "billingAddress-city|billingAddress.city"
+      label: "Suburb"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "|billingAddress.countyProvince"
+      label: "Select your state"
+      control_type: SELECT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "billingAddress-zipcode|billingAddress.zipcode"
+      label: "Postal Code"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "billingAddress-phoneNumber|billingAddress.phoneNumber"
+      label: "Phone Number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "home tel"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "Also want product updates with our newsletter?"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Also want product updates with our newsletter?"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "login-email|"
+      label: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      section: LOGIN
+    }
+    fields {
+      name: "login-password|"
+      label: "Password"
+      control_type: INPUT
+      concepts: "unset"
+      section: LOGIN
+    }
+    fields {
+      name: "|persistentLogin"
+      label: "Forgotten Your Password?"
+      control_type: INPUT
+      concepts: "unset"
+      section: LOGIN
+    }
+    fields {
+      name: "coupon-input|coupon"
+      label: "Enter your promo code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "fileSelector|file"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|filename"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

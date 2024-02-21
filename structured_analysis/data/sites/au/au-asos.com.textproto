@@ -1,0 +1,87 @@
+site_examples {
+  url: "https://secure.asos.com/"
+  is_structured: false
+  locale {
+    country: "AU"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "countryCode|"
+      label: "Delivery country"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "firstName|firstname"
+      label: "First name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "lastName|lastname"
+      label: "Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "contactNumber|phone"
+      label: "Mobile (For delivery updates"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "tel"
+      section: PHONE
+    }
+    fields {
+      name: "address_finder|"
+      label: "Address finder"
+      example: "Start typing the first line of your address."
+      control_type: INPUT
+      concepts: "address-search"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "address1|"
+      label: "Address 1"
+      control_type: INPUT
+      concepts: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "address2|"
+      label: "Address 2"
+      example: "Optional"
+      control_type: INPUT
+      concepts: "address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "locality|"
+      label: "Suburb"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "countyStateProvinceOrArea|"
+      label: "State"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "postalCode|"
+      label: "Postcode"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+  }
+}
+

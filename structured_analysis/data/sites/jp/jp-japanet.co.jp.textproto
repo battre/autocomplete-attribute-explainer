@@ -1,0 +1,328 @@
+site_examples {
+  url: "https://www.japanet.co.jp"
+  is_structured: true
+  locale {
+    country: "JP"
+    language: "ja"
+  }
+  sequences {
+    fields {
+      name: "|org.apache.struts.taglib.html.TOKEN"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|actType"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|addressCode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address1"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|addressCount"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|navi"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|backfwno"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|lastRequestDate"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|route"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|mailAddress"
+      label: "メールアドレス（次回サイトご利用時のユーザーIDとなります）必須"
+      label_translated: "E-mail address (this will be your user ID when you use the site next time)required"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|mailAddress2"
+      label: "メールアドレス（次回サイトご利用時のユーザーIDとなります）必須"
+      label_translated: "E-mail address (this will be your user ID when you use the site next time)required"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|passwd"
+      label: "他の登録情報から推測されにくいパスワードをご設定下さい"
+      label_translated: "Please set a password that is difficult to guess from other registered information."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|passwd2"
+      label: "パスワード（半角英数7～12文字以内）必須"
+      label_translated: "Password (within 7 to 12 half-width alphanumeric characters)required"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "lname|lastname"
+      label: "（漢字） (姓)"
+      label_translated: "(Kanji) (Family name)"
+      example: "（例）高田"
+      example_translated: "(Example) Takada"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "fname|firstname"
+      label: "（漢字）(名)"
+      label_translated: "(Kanji) (Given name)"
+      example: "（例）太郎"
+      example_translated: "(Example) Taro"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "lnamekana|kkLastname"
+      label: "（ふりがな）(姓)"
+      label_translated: "(phonetic) (Family name)"
+      example: "（例）たかた"
+      example_translated: "(Example) Takata"
+      control_type: INPUT
+      concepts: "phonetic-family-name"
+      section: NAME
+    }
+    fields {
+      name: "fnamekana|kkFirstname"
+      label: "（ふりがな）(名)"
+      label_translated: "(phonetic) (Given name)"
+      example: "（例）たろう"
+      example_translated: "(Example) Taro"
+      control_type: INPUT
+      concepts: "phonetic-given-name"
+      section: NAME
+    }
+    fields {
+      name: "|zipCdFull"
+      label: "〒"
+      label_translated: "Postal code"
+      example: "（例）1234567"
+      example_translated: "(Example) 1234567"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "|post1none"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|post2none"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address1|addressSel"
+      label: "都道府県・市区町村: ▼住所を選択してください"
+      label_translated: "State / City: ▼Select your address"
+      label_comment: "Based on the zip code, a small number of addresses are "
+        "shown such as 東京都渋谷区渋谷１丁目 (with the values 1, 2, 3, 4) which "
+        "translates to Shibuya 1-chome, Shibuya-ku, Tokyo. A chome is a city "
+        "district."
+      control_type: SELECT
+      concepts: "gap"
+      section: ADDRESS
+    }
+    fields {
+      name: "|addrInput"
+      label: "番地・アパート、マンション名・部屋番号 （最大28文字）必須"
+      label_translated: "Street address/apartment, apartment name/room number "
+        "(up to 28 characters) Required"
+      example: "（例）○－○、○番○号△△マンション○○号"
+      example_translated: "(Example) ○-○, ○ number ○ △△ apartment ○○"
+      control_type: INPUT
+      concepts: "street-address"
+      section: ADDRESS
+    }
+    fields {
+      name: "|telNo"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|ccTelNo"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|birthYear"
+      label: "西暦"
+      label_translated: "AD"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|birthMonth"
+      label: "年"
+      label_translated: "Year"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|birthDate"
+      label: "月"
+      label_translated: "Moon"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|sexFlg"
+      label: "男性"
+      label_translated: "male"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|sexFlg"
+      label: "女性"
+      label_translated: "Woman"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|mailHopeFlg"
+      label: "希望する"
+      label_translated: "hope"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|mailHopeFlg"
+      label: "希望しない"
+      label_translated: "Do not want"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|prkey"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|prtype"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|linkflg"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|styleflg"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|route"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "remindUserID|usrId"
+      label: "メールアドレス"
+      label_translated: "email address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|klastName"
+      label: "セイ"
+      label_translated: "Surname"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|kfirstName"
+      label: "メイ"
+      label_translated: "May"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|year"
+      label: "西暦"
+      label_translated: "AD"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|month"
+      label: "生年月日"
+      label_translated: "Date of birth"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|day"
+      label: "生年月日"
+      label_translated: "Date of birth"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

@@ -1,0 +1,377 @@
+# proto-file: address.proto
+# proto-message: AddressOntology
+
+# The following list of countries is incomplete and based on data for which
+# ecommercedb.com offered listed top ecommerce websites. Apologies if your
+# country is not represented.
+
+country_data {
+  country: "AR"
+  country_name: "Argentina 🇦🇷"
+  site_examples_preamble_file: "data/sites/ar/_ar_preamble.html"
+}
+
+country_data {
+  country: "AU"
+  country_name: "Australia 🇦🇺"
+  site_examples_preamble_file: "data/sites/au/_au_preamble.html"
+}
+
+country_data {
+  country: "BR"
+  country_name: "Brazil 🇧🇷"
+  site_examples_preamble_file: "data/sites/br/_br_preamble.html"
+  site_examples_epilog_file: "data/sites/br/_br_epilog.html"
+}
+
+country_data {
+  country: "CA"
+  country_name: "Canada 🇨🇦"
+  site_examples_preamble_file: "data/sites/ca/_ca_preamble.html"
+}
+
+country_data {
+  country: "DE"
+  country_name: "Germany 🇩🇪"
+  site_examples_preamble_file: "data/sites/de/_de_preamble.html"
+}
+
+country_data {
+  country: "EG"
+  country_name: "Egypt 🇪🇬"
+  site_examples_preamble_file: "data/sites/eg/_eg_preamble.html"
+}
+
+country_data {
+  country: "ES"
+  country_name: "Spain 🇪🇸"
+  site_examples_preamble_file: "data/sites/es/_es_preamble.html"
+  site_examples_epilog_file:  "data/sites/es/_es_epilog.html"
+}
+
+country_data {
+  country: "FR"
+  country_name: "France 🇫🇷"
+  site_examples_preamble_file: "data/sites/fr/_fr_preamble.html"
+}
+
+country_data {
+  country: "GB"
+  country_name: "Great Britain 🇬🇧"
+  site_examples_preamble_file: "data/sites/gb/_gb_preamble.html"
+}
+
+country_data {
+  country: "ID"
+  country_name: "Indonesia 🇮🇩"
+  site_examples_preamble_file: "data/sites/id/_id_preamble.html"
+}
+
+country_data {
+  country: "IN"
+  country_name: "India 🇮🇳"
+  site_examples_preamble_file: "data/sites/in/_in_preamble.html"
+}
+
+country_data {
+  country: "IT"
+  country_name: "Italy 🇮🇹"
+  site_examples_preamble_file: "data/sites/it/_it_preamble.html"
+}
+
+country_data {
+  country: "JP"
+  country_name: "Japan 🇯🇵"
+  site_examples_preamble_file: "data/sites/jp/_jp_preamble.html"
+  site_examples_epilog_file:  "data/sites/jp/_jp_epilog.html"
+}
+
+country_data {
+  country: "MX"
+  country_name: "Mexico 🇲🇽"
+  site_examples_preamble_file: "data/sites/mx/_mx_preamble.html"
+}
+
+country_data {
+  country: "MY"
+  country_name: "Malaysia 🇲🇾"
+  site_examples_preamble_file: "data/sites/my/_my_preamble.html"
+}
+
+country_data {
+  country: "NG"
+  country_name: "Nigeria 🇳🇬"
+  site_examples_preamble_file: "data/sites/ng/_ng_preamble.html"
+}
+
+country_data {
+  country: "PL"
+  country_name: "Poland 🇵🇱"
+  site_examples_preamble_file: "data/sites/pl/_pl_preamble.html"
+}
+
+country_data {
+  country: "RU"
+  country_name: "Russia 🇷🇺"
+  site_examples_preamble_file: "data/sites/ru/_ru_preamble.html"
+}
+
+country_data {
+  country: "TR"
+  country_name: "Turkey 🇹🇷"
+  site_examples_preamble_file: "data/sites/tr/_tr_preamble.html"
+}
+
+country_data {
+  country: "US"
+  country_name: "United States of America 🇺🇸"
+  site_examples_preamble_file: "data/sites/us/_us_preamble.html"
+}
+
+country_data {
+  country: "ZA"
+  country_name: "South Africa 🇿🇦"
+  site_examples_preamble_file: "data/sites/za/_za_preamble.html"
+}
+
+country_data {
+  country: "HR"
+  country_name: "Croatia 🇭🇷"
+  site_examples_preamble_file: "data/sites/hr/_hr_preamble.html"
+}
+
+country_data {
+  country: "DK"
+  country_name: "Denmark 🇩🇰"
+  site_examples_preamble_file: "data/sites/dk/_dk_preamble.html"
+}
+
+country_data {
+  country: "HU"
+  country_name: "Hungary 🇭🇺"
+  site_examples_preamble_file: "data/sites/hu/_hu_preamble.html"
+  site_examples_epilog_file: "data/sites/hu/_hu_epilog.html"
+}
+
+country_data {
+  country: "GR"
+  country_name: "Greece 🇬🇷"
+  site_examples_preamble_file: "data/sites/gr/_gr_preamble.html"
+  site_examples_epilog_file: "data/sites/gr/_gr_epilog.html"
+}
+
+country_data {
+  country: "AE"
+  country_name: "United Arabic Emirates 🇦🇪"
+  site_examples_preamble_html:
+    ""
+}
+
+country_data {
+  country: "AT"
+  country_name: "Austria 🇦🇹"
+  site_examples_preamble_html:
+    ""
+}
+
+country_data {
+  country: "BE"
+  country_name: "Belgium 🇧🇪"
+  site_examples_preamble_html:
+    ""
+}
+
+country_data {
+  country: "BG"
+  country_name: "Bulgaria 🇧🇬"
+  site_examples_preamble_html:
+    ""
+}
+
+country_data {
+  country: "CH"
+  country_name: "Switzerland 🇨🇭"
+  site_examples_preamble_html:
+    ""
+}
+
+country_data {
+  country: "CL"
+  country_name: "Chile 🇨🇱"
+  site_examples_preamble_html:
+    ""
+}
+
+country_data {
+  country: "CN"
+  country_name: "China 🇨🇳"
+  site_examples_preamble_file: "data/sites/cn/_cn_preamble.html"
+}
+
+country_data {
+  country: "CO"
+  country_name: "Colombia 🇨🇴"
+  site_examples_preamble_html:
+    ""
+}
+
+country_data {
+  country: "CZ"
+  country_name: "Czechia 🇨🇿"
+  site_examples_preamble_html:
+    ""
+}
+
+country_data {
+  country: "FI"
+  country_name: "Finland 🇫🇮"
+  site_examples_preamble_html:
+    ""
+}
+
+country_data {
+  country: "IE"
+  country_name: "Ireland 🇮🇪"
+  site_examples_preamble_html:
+    ""
+}
+
+country_data {
+  country: "IL"
+  country_name: "Israel 🇮🇱"
+  site_examples_preamble_html:
+    ""
+}
+
+country_data {
+  country: "IS"
+  country_name: "Iceland 🇮🇸"
+  site_examples_preamble_html:
+    ""
+}
+
+country_data {
+  country: "KE"
+  country_name: "Kenya 🇰🇪"
+  site_examples_preamble_html:
+    ""
+}
+
+country_data {
+  country: "KR"
+  country_name: "Korea (the Republic of) 🇰🇷"
+  site_examples_preamble_html:
+    ""
+}
+
+country_data {
+  country: "LT"
+  country_name: "Lithuania 🇱🇹"
+  site_examples_preamble_html:
+    ""
+}
+
+country_data {
+  country: "MA"
+  country_name: "Morocco 🇲🇦"
+  site_examples_preamble_html:
+    ""
+}
+
+country_data {
+  country: "NL"
+  country_name: "Netherlands (the) 🇳🇱"
+  site_examples_preamble_html:
+    ""
+}
+
+country_data {
+  country: "NO"
+  country_name: "Norway 🇳🇴"
+  site_examples_preamble_html:
+    ""
+}
+
+country_data {
+  country: "NZ"
+  country_name: "New Zealand 🇳🇿"
+  site_examples_preamble_html:
+    ""
+}
+
+country_data {
+  country: "PK"
+  country_name: "Pakistan 🇵🇰"
+  site_examples_preamble_html:
+    ""
+}
+
+country_data {
+  country: "PT"
+  country_name: "Portugal 🇵🇹"
+  site_examples_preamble_html:
+    ""
+}
+
+country_data {
+  country: "RO"
+  country_name: "Romania 🇷🇴"
+  site_examples_preamble_html:
+    ""
+}
+
+country_data {
+  country: "RS"
+  country_name: "Serbia 🇷🇸"
+  site_examples_preamble_html:
+    ""
+}
+
+country_data {
+  country: "SA"
+  country_name: "Saudi Arabia 🇸🇦"
+  site_examples_preamble_html:
+    ""
+}
+
+country_data {
+  country: "SE"
+  country_name: "Sweden 🇸🇪"
+  site_examples_preamble_html:
+    ""
+}
+
+country_data {
+  country: "SI"
+  country_name: "Slovenia"
+  site_examples_preamble_html:
+    ""
+}
+
+country_data {
+  country: "SK"
+  country_name: "Slovakia 🇸🇮"
+  site_examples_preamble_html:
+    ""
+}
+
+country_data {
+  country: "TH"
+  country_name: "Thailand 🇹🇭"
+  site_examples_preamble_html:
+    ""
+}
+
+country_data {
+  country: "UA"
+  country_name: "Ukraine 🇺🇦"
+  site_examples_preamble_html:
+    ""
+}
+
+country_data {
+  country: "VN"
+  country_name: "Viet Nam 🇻🇳"
+  site_examples_preamble_html:
+    ""
+}

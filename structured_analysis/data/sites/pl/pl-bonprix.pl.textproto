@@ -1,0 +1,343 @@
+site_examples {
+  url: "https://www.bonprix.pl"
+  is_structured: true
+  locale {
+    country: "PL"
+    language: "pl"
+  }
+  sequences {
+    fields {
+      name: "16578665057750.cj741tr5x6|emailRepeat"
+      label: "* Powtórz email"
+      label_translated: "* Repeat e-mail"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "16578665057760.002u9u5mek1rf|firstName"
+      label: "* Imię"
+      label_translated: "* Name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "16578665057770.mpe4eds5qzq|lastName"
+      label: "* Nazwisko"
+      label_translated: "* Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "16578665057780.3lmbew0ckwh|mobilePhone"
+      label: "Telefon komórkowy"
+      label_translated: "Mobile phone"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "phone"
+      section: PHONE
+    }
+    fields {
+      name: "|"
+      label: "Wyczyść datę < Styczeń 1990 Pn Wyczyść datę < Wyczyść datę"
+      label_translated: "Clear date &lt;January 1990 Mon Clear date &lt;Clear date"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "16578665057810.91jfn819hx|street"
+      label: "* Ulica"
+      label_translated: "* Street"
+      control_type: INPUT
+      concepts: "street-name"
+      autocomplete_attribute: "shipping street-address"
+      section: ADDRESS
+    }
+    fields {
+      name: "16578665057830.mhaaie3zp4|streetNumber"
+      label: "* Numer domu"
+      label_translated: "* House number"
+      control_type: INPUT
+      concepts: "house-number"
+      autocomplete_attribute: "shipping address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "16578665057840.e617odcdajb|flatNumber"
+      label: "Numer lokalu"
+      label_translated: "Apartment number"
+      control_type: INPUT
+      concepts: "apartment"
+      autocomplete_attribute: "shipping address-line3"
+      section: ADDRESS
+    }
+    fields {
+      name: "16578665057860.oay9erp3jd|postCode"
+      label: "* Kod pocztowy"
+      label_translated: "* ZIP code"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "shipping postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "16578665057890.umh7jcajtwl|city"
+      label: "* Miejscowość"
+      label_translated: "* City"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "shipping address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "|register"
+      label: "Zapamiętaj mnie"
+      label_translated: "Remember me"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "16578665057930.22fm3jm1n7c|password"
+      label: "* Hasło"
+      label_translated: "* Password"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "16578665057950.2gmzpyk44de|passwordRetype"
+      label: "* Powtórz hasło"
+      label_translated: "* Repeat password"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|privacyAgreement"
+      label: "* Akceptuję Politykę prywatności bonprix."
+      label_translated: "* I accept the bonprix privacy policy."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "post|delivery-methods"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "post_office|delivery-methods"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "inpost|delivery-methods"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "zabka|delivery-methods"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "orlen|delivery-methods"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payment-payu|payment-methods"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payment-computop_credit_card|payment-methods"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payment-cash_on_delivery|payment-methods"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "16578665058490.a15lkay7w4t|emailRepeat"
+      label: "* Powtórz email"
+      label_translated: "* Repeat e-mail"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "16578665058500.4j1pdm7sbjx|firstName"
+      label: "* Imię"
+      label_translated: "* Name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "given-name"
+      section: OTHER
+    }
+    fields {
+      name: "16578665058510.wdxeyyt198i|lastName"
+      label: "* Nazwisko"
+      label_translated: "* Last name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "family-name"
+      section: OTHER
+    }
+    fields {
+      name: "16578665058530.hmhwt4uypzk|mobilePhone"
+      label: "Telefon komórkowy"
+      label_translated: "Mobile phone"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "phone"
+      section: PHONE
+    }
+    fields {
+      name: "|"
+      label: "Wyczyść datę < Styczeń 1990 Pn Wyczyść datę < Wyczyść datę"
+      label_translated: "Clear date &lt;January 1990 Mon Clear date &lt;Clear date"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "16578665058560.asr3mb09k0l|street"
+      label: "* Ulica"
+      label_translated: "* Street"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "shipping street-address"
+      section: OTHER
+    }
+    fields {
+      name: "16578665058570.n375i4rfhh8|streetNumber"
+      label: "* Numer domu"
+      label_translated: "* House number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "shipping address-line2"
+      section: OTHER
+    }
+    fields {
+      name: "16578665058590.965yy1c32ni|flatNumber"
+      label: "Numer lokalu"
+      label_translated: "Apartment number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "shipping address-line3"
+      section: OTHER
+    }
+    fields {
+      name: "16578665058610.wd8c964oycd|postCode"
+      label: "* Kod pocztowy"
+      label_translated: "* ZIP code"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "shipping postal-code"
+      section: OTHER
+    }
+    fields {
+      name: "16578665058630.0pan3pxjx7l|city"
+      label: "* Miejscowość"
+      label_translated: "* City"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "shipping address-level2"
+      section: OTHER
+    }
+    fields {
+      name: "|register"
+      label: "Zapamiętaj mnie"
+      label_translated: "Remember me"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "16578665058660.bsb2cz4h6gn|password"
+      label: "* Hasło"
+      label_translated: "* Password"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "16578665058680.gm96wuqcw5g|passwordRetype"
+      label: "* Powtórz hasło"
+      label_translated: "* Repeat password"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|privacyAgreement"
+      label: "* Akceptuję Politykę prywatności bonprix."
+      label_translated: "* I accept the bonprix privacy policy."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|club"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|regulationsAgreement"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

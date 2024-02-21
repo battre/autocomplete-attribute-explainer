@@ -1,0 +1,36 @@
+cut-off-children:
+  - building-location
+
+cut-off-tokens:
+  - admin-area2
+  - admin-area3
+  - admin-area4
+  - locality3
+  - locality4
+
+extra-definitions:
+  # Re-definition to remove the locality2 from the address
+  address:
+  - street-address
+  - street-address-alternative-1
+  - locality1
+  - admin-area1
+  - postal-code
+  - country
+  - country-name
+
+  building-location-and-locality2:
+  - building-location
+  - locality2
+
+  street-address-alternative-1:
+  - building-location-and-locality2
+  - landmark
+
+synthesized-nodes:
+  landmark-and-locality2:
+  - landmark
+  - locality2
+  building-location-and-landmark:
+  - building-location
+  - landmark

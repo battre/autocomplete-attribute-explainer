@@ -1,0 +1,6550 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="prototype for autofill attribute">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>Prototype for autofill attribute</title>
+  <link rel="shortcut icon" href="static/images/favicon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://www.gstatic.com/external_hosted/material_design_lite/mdl_css-cyan-light_blue-bundle.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script defer src="https://www.gstatic.com/external_hosted/material_design_lite/mdl_all_js_compiled.js"></script>
+  <style>
+    html, body {
+      font-family: 'Roboto', 'Helvetica', sans-serif;
+    }
+    a {
+      color: #3d5afe;
+    }
+    h3 { font-size: 20px; }
+    h4 { font-size: 18px; }
+    h5 { font-size: 16px; }
+    .example-form {
+      border: 1px black solid;
+      width: 600px;
+      margin: 4px;
+      padding: 4px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-gap: 10px;
+    }
+    .example-form span {
+      margin-right: 10px;
+    }
+
+    .navigation {
+      -webkit-flex-grow: 1;
+          -ms-flex-positive: 1;
+              flex-grow: 1;
+    }
+
+    .layout .navigation .mdl-navigation__link {
+      display: -webkit-flex !important;
+      display: -ms-flexbox !important;
+      display: flex !important;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      color: rgba(255, 255, 255, 0.56);
+      font-weight: 500;
+    }
+
+    .navigation .mdl-navigation__link .material-icons {
+      font-size: 24px;
+      color: rgba(255, 255, 255, 0.56);
+      margin-right: 12px;
+    }
+
+    .layout .navigation .mdl-navigation__link:hover {
+      background-color: #00bcd4;
+      color: #37474f;
+    }
+
+    .form {
+      margin: 8px;
+      padding: 4px;
+      border: 1px solid #37474f;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-column-gap: 10px;
+    }
+
+    .production_token {
+      border: 1px solid #00bcd4;
+      padding: 1px;
+      margin-right: 1px;
+      display: inline-block;
+    }
+
+    .production_token_separator, .production_token_prefix, .production_token_suffix {
+      font-family: 'Courier New', Courier, monospace;
+      padding: 1px;
+      margin: 1px;
+    }
+    .production_token_separator {
+      background-color: azure;
+    }
+    .production_token_prefix, .production_token_suffix {
+      background-color: beige;
+    }
+  </style>
+  
+    <style>
+    .parsing details {
+        border: 1px solid #aaa;
+        border-radius: 4px;
+        padding: 0.5em 0.5em 0;
+    }
+
+    .parsing summary {
+        font-weight: bold;
+        margin: -0.5em -0.5em 0;
+        padding: 0.5em;
+    }
+
+    .parsing details[open] {
+        padding: 0.5em;
+    }
+
+    .parsing details[open].summary {
+        border-bottom: 1px solid #aaa;
+        margin-bottom: 0.5em;
+    }
+
+    .parsing-regexfragment {
+        overflow-wrap: anywhere;
+        font-family: 'Courier New', Courier, monospace;
+        padding: 2px;
+        margin: 1px;
+        background-color: beige;
+    }
+    </style>
+    
+    <style>
+    .concept {
+      border-style: solid;
+      border-width: 1px;
+      border-color: #EEE;
+    }
+    .concept-id {
+      padding: 4px;
+      background-color: #EEE;
+    }
+    .concept-content {
+      padding: 4px 4px 4px 16px ;
+    }
+    </style>
+    
+    <style>
+    .concept {
+      border-style: solid;
+      border-width: 1px;
+      border-color: #EEE;
+    }
+    .concept-id {
+      padding: 4px;
+      background-color: #EEE;
+    }
+    .concept-content {
+      padding: 4px 4px 4px 16px ;
+    }
+    </style>
+    
+    <style>
+    .formatting_token {
+      border: 1px solid #00bcd4;
+      padding: 2px;
+      margin-left: 2px;
+      margin-right: 2px;
+      display: inline-block;
+    }
+    .formatting_token_separator, .formatting_token_prefix, .formatting_token_suffix {
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2px;
+      margin: 1px;
+    }
+    .formatting_token_separator {
+      background-color: azure;
+    }
+    .formatting_token_prefix, .formatting_token_suffix {
+      background-color: beige;
+    }
+    .formatting_errors {
+      color: red;
+    }
+
+    .formatting_example_textbox {
+      border: 1px solid black;
+      padding: 6px;
+    }
+    .formatting_example_overview_table td {
+      vertical-align: top;
+      padding: 0 10px;
+    }
+    .formatting_example_overview_table > tbody > tr > td {
+      padding: 6px;
+    }
+    </style>
+    
+</head>
+
+<body>
+  <div class="layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+    <header class="header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title">Country: global</span>
+      </div>
+    </header>
+    <div class="mdl-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+      <span class="mdl-layout-title">Select a country:</span>
+      <nav class="navigation mdl-navigation mdl-color--blue-grey-800">
+        
+        <a class="mdl-navigation__link" href="global.html">
+          
+          <i class="mdl-color-text--blue-grey-400 material-icons"
+              role="presentation">south_america</i>
+          
+          <span>global</span></a>
+        
+        <a class="mdl-navigation__link" href="AU.html">
+          
+          <span class="mdl-color-text--blue-grey-400 material-icons"
+              style="font-family:'Roboto', 'Helvetica', sans-serif;">
+              🇦🇺</span>
+          
+          <span>AU</span></a>
+        
+        <a class="mdl-navigation__link" href="BR.html">
+          
+          <span class="mdl-color-text--blue-grey-400 material-icons"
+              style="font-family:'Roboto', 'Helvetica', sans-serif;">
+              🇧🇷</span>
+          
+          <span>BR</span></a>
+        
+        <a class="mdl-navigation__link" href="DE.html">
+          
+          <span class="mdl-color-text--blue-grey-400 material-icons"
+              style="font-family:'Roboto', 'Helvetica', sans-serif;">
+              🇩🇪</span>
+          
+          <span>DE</span></a>
+        
+        <a class="mdl-navigation__link" href="IN.html">
+          
+          <span class="mdl-color-text--blue-grey-400 material-icons"
+              style="font-family:'Roboto', 'Helvetica', sans-serif;">
+              🇮🇳</span>
+          
+          <span>IN</span></a>
+        
+        <a class="mdl-navigation__link" href="MX.html">
+          
+          <span class="mdl-color-text--blue-grey-400 material-icons"
+              style="font-family:'Roboto', 'Helvetica', sans-serif;">
+              🇲🇽</span>
+          
+          <span>MX</span></a>
+        
+        <a class="mdl-navigation__link" href="US.html">
+          
+          <span class="mdl-color-text--blue-grey-400 material-icons"
+              style="font-family:'Roboto', 'Helvetica', sans-serif;">
+              🇺🇸</span>
+          
+          <span>US</span></a>
+        
+        <a class="mdl-navigation__link" href="XX.html">
+          
+          <span class="mdl-color-text--blue-grey-400 material-icons"
+              style="font-family:'Roboto', 'Helvetica', sans-serif;">
+              �</span>
+          
+          <span>XX</span></a>
+        
+      </nav>
+    </div>
+    <main class="mdl-layout__content mdl-color--grey-100">
+      <div id="content" class="content">
+        
+<div class="mdl-card mdl-shadow--2dp" style="width: 95%; margin: 8px">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">About the country</h2>
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <div style="margin: 8px"><p>The following tree of concepts serves as a baseline whichs gets adapted for individual countries. <p>For example <code>family-name-first</code> is a concept that is prevalent in Spain and Mexico but not in the United states. It is a subconcept of <code>family-name</code>. So users in Spain and Mexico could have a first family name stored, but when they interact with Canadian websites, only the aggregated <code>family-name</code> would be filled. Most Canadian website developers and users probably have no idea what a first family name represents and should not be bothered with the concept.
+</div>
+  </div>
+</div>
+
+
+
+
+<div class="mdl-card mdl-shadow--2dp" style="width: 95%; margin: 8px">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Overview of concepts</h2>
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    
+    
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#name">name</a>
+    - Full name
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#honorific-prefix">honorific-prefix</a>
+    - Honorific prefix
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#given-name">given-name</a>
+    - Given namen (in Western cultures the first name)
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#additional-name">additional-name</a>
+    - Additional given name (in Western cultures the middle name)
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#family-name">family-name</a>
+    - Family name (in Western cultures the last name)
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#family-name-first">family-name-first</a>
+    - First part of a family name (e.g. the paternal name)
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#family-name-conjunction">family-name-conjunction</a>
+    - Conjunction between the first and second part of the family name
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#family-name-second">family-name-second</a>
+    - Second part of a famiily name (e.g. the maternal name)
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#honorific-suffix">honorific-suffix</a>
+    - Honorific suffix
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#organization-title">organization-title</a>
+    - Title of a person within an organization
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+    <div>&nbsp;</div>
+    
+    
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#address">address</a>
+    - Address of a physical location - Artificial concept, not to be used in HTML
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#street-address">street-address</a>
+    - Street address (street and location within the street)
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#address-line1">address-line1</a>
+    - 1st line of street-address
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#address-line2">address-line2</a>
+    - 2nd line of street-address
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#address-line3">address-line3</a>
+    - 3rd line of street-address
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#address-line4">address-line4</a>
+    - 4th line of street-address
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#street-address-alternative-1">street-address-alternative-1</a>
+    - Artificial concept, not to be used in HTML; this is a structured representation of a street address
+
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#building-location">building-location</a>
+    - Name of a street and identifier for the building
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#street">street</a>
+    - Name of a street
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#street-type">street-type</a>
+    - Type particle of a full street name or place (in countries that split the full street name into particles)
+
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#street-name">street-name</a>
+    - Name particle of a full street name or place (in countries that split the full street name into particles)
+
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#building">building</a>
+    - House number (in a street or block) or name of a building.
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#house-number">house-number</a>
+    - Numeric identifier of a house (rare: only used in countries that ask for a house number and building in separate fields)
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#building-name">building-name</a>
+    - Name of a building (rare: only used in countries that ask for a house number and building in separate fields)
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#cross-streets">cross-streets</a>
+    - Names of two streets crossing the street of the house, used to help finding the house.
+
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#cross-street1">cross-street1</a>
+    - First of two crossing streets.
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#cross-street2">cross-street2</a>
+    - Second of two crossing streets.
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#in-building-location">in-building-location</a>
+    - Location of the adresse in a building
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#entrance">entrance</a>
+    - Entrance of a building
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#floor">floor</a>
+    - Floor number in the building
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#staircase">staircase</a>
+    - Stair case in the building
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#unit">unit</a>
+    - Unit in a building (e.g. &#34;Apartment 5&#34;, &#34;Suite 12&#34;)
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#unit-type">unit-type</a>
+    - Type of a unit (e.g. &#34;Apt&#34;, &#34;Room&#34;, &#34;Store&#34;)
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#unit-name">unit-name</a>
+    - Identifier of a unit (e.g. &#34;5&#34;)
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#address-overflow">address-overflow</a>
+    - An overflow field for information that is not captured differently in a form
+
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#landmark">landmark</a>
+    - Landmark to help finding a building
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#delivery-instructions">delivery-instructions</a>
+    - Delivery instructions
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#care-of">care-of</a>
+    - Final recipient of a delivery
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#locality1">locality1</a>
+    - Biggest sub type of a locality, often a city
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#locality2">locality2</a>
+    - 2nd biggest type of a locality, e.g. a suburb
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#locality3">locality3</a>
+    - 3rd biggest type of a locality
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#locality4">locality4</a>
+    - 4th biggest type of a locality
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#admin-area1">admin-area1</a>
+    - Biggest type of admin area if a country has multiple levels
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#admin-area2">admin-area2</a>
+    - 2nd biggest type of admin area if a country has multiple levels
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#admin-area3">admin-area3</a>
+    - 3rd biggest type of admin area if a country has multiple levels
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#admin-area4">admin-area4</a>
+    - 4th biggest type of admin area if a country has multiple levels
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#postal-code">postal-code</a>
+    - Postal code
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#country">country</a>
+    - 2-letter country code
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#country-name">country-name</a>
+    - Name of a country
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+    <div>&nbsp;</div>
+    
+    
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#organization">organization</a>
+    - Name of an organization/company
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+    <div>&nbsp;</div>
+    
+    
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#credit-card">credit-card</a>
+    - Artificial concept, not to be used in HTML
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#cc-name">cc-name</a>
+    - Full name of credit card holder
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#cc-given-name">cc-given-name</a>
+    - Given name of credit card holder
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#cc-additional-name">cc-additional-name</a>
+    - Additional name of credit card holder
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#cc-family-name">cc-family-name</a>
+    - Family name of credit card holder
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#cc-number">cc-number</a>
+    - Credit card number
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#cc-exp-MMYY">cc-exp-MMYY</a>
+    - Credit card expiration date in format MM/YY
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#cc-exp-MM">cc-exp-MM</a>
+    - Credit card expiration month (2 digits)
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#cc-exp-YY">cc-exp-YY</a>
+    - Credit card expiration date in format YY (2 digits)
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#cc-exp-MMYYYY">cc-exp-MMYYYY</a>
+    - Credit card expiration date in format MM/YYYY
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#cc-exp-MM">cc-exp-MM</a>
+    - Credit card expiration month (2 digits)
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#cc-exp-YYYY">cc-exp-YYYY</a>
+    - Credit card expiration date in format YYYY (4 digits)
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#cc-csc">cc-csc</a>
+    - CSC/CVC/CVV number
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#cc-type">cc-type</a>
+    - Credit card type
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+    <div>&nbsp;</div>
+    
+    
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#tel">tel</a>
+    - Full telephone number
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#tel-country-code">tel-country-code</a>
+    - Country code component of the telephone number
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#tel-national">tel-national</a>
+    - Telephone number without the county code component, with a country-internal prefix applied if applicable
+
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#tel-area-code">tel-area-code</a>
+    - Area code component of the telephone number, with a country-internal prefix applied if applicable
+
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#tel-local">tel-local</a>
+    - Telephone number without the country code and area code components
+
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#tel-local-prefix">tel-local-prefix</a>
+    - First part of the component of the telephone number that follows the area code, when that component is split into two components
+
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#tel-local-suffix">tel-local-suffix</a>
+    - Second part of the component of the telephone number that follows the area code, when that component is split into two components
+
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#tel-extension">tel-extension</a>
+    - Telephone number internal extension code
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+    <div>&nbsp;</div>
+    
+    
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#email">email</a>
+    - Email address
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+    <div>&nbsp;</div>
+    
+  </div>
+</div><div class="mdl-card mdl-shadow--2dp" style="width: 95%; margin: 8px">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Details</h2>
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <h3 id="name">
+  <a href="#name">#</a>
+  
+  name
+</h3>
+<div style="margin-left: 20px;">
+
+Full name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h4>Parsing:</h4>
+<div class="parsing">
+
+
+
+
+<details>
+  <summary>Decomposition Cascade
+  
+  </summary>
+  
+  Cascade:<br>
+  <ol>
+  
+  <li>
+
+
+<details>
+  <summary>Decomposition Cascade
+  
+  (if <code>kHasCjkNameCharacteristics</code>)
+  
+  </summary>
+  
+  Condition:<br>
+  
+
+
+
+<details>
+  <summary>Regex Reference: <code>kHasCjkNameCharacteristics</code></summary>
+  
+
+
+  Regex concatenation
+  <ol>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">^</code>
+
+
+</li>
+    
+    <li>
+
+
+
+  Regex Reference: <code>kCjkCharactersRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:\p{Han}|\p{Hangul}|\p{Katakana}|\p{Hiragana}|\p{Bopomofo})+)</code>
+
+
+
+</li>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">(?:</code>
+
+
+</li>
+    
+    <li>
+
+
+
+  Regex Reference: <code>kCjkNameSeperatorsRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:・|·|　|\s+)</code>
+
+
+
+</li>
+    
+    <li>
+
+
+
+  Regex Reference: <code>kCjkCharactersRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:\p{Han}|\p{Hangul}|\p{Katakana}|\p{Hiragana}|\p{Bopomofo})+)</code>
+
+
+
+</li>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">)?$</code>
+
+
+</li>
+    
+  </ol>
+  Wrap as non-capture group: True
+
+
+
+</details>
+
+
+
+<br>
+  
+  Cascade:<br>
+  <ol>
+  
+  <li>
+
+
+<details>
+  <summary>Decomposition
+    
+    (<code>ParseSeparatedCjkNameExpression</code>)
+    
+  </summary>
+  Anchor beginning: True<br>
+  
+    Capture Reference: ParseSeparatedCjkNameExpression<br>
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>family-name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kCjkCharactersRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:\p{Han}|\p{Hangul}|\p{Katakana}|\p{Hiragana}|\p{Bopomofo})+)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kCjkNameSeperatorsRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:・|·|　|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>given-name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kCjkCharactersRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:\p{Han}|\p{Hangul}|\p{Katakana}|\p{Hiragana}|\p{Bopomofo})+)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+  Anchor end: True<br>
+</details>
+
+
+</li>
+  
+  <li>
+
+
+<details>
+  <summary>Decomposition
+    
+    (<code>ParseKoreanTwoCharacterLastNameExpression</code>)
+    
+  </summary>
+  Anchor beginning: True<br>
+  
+    Capture Reference: ParseKoreanTwoCharacterLastNameExpression<br>
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>family-name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kTwoCharacterKoreanNamesRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:강전|남궁|독고|동방|망절|사공|서문|선우|소봉|어금|장곡|제갈|황목|황보)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>given-name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kHangulCharacterRe</code> =&gt;
+  <code class="parsing-regexfragment">\p{Hangul}</code>
+
+
+
+</li>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kHangulCharactersRe</code> =&gt;
+  <code class="parsing-regexfragment">\p{Hangul}+</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+  Anchor end: True<br>
+</details>
+
+
+</li>
+  
+  <li>
+
+
+<details>
+  <summary>Decomposition
+    
+    (<code>ParseCommonCjkTwoCharacterLastNameExpression</code>)
+    
+  </summary>
+  Anchor beginning: True<br>
+  
+    Capture Reference: ParseCommonCjkTwoCharacterLastNameExpression<br>
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>family-name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kTwoCharacterCjkLastNamesRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:남궁|사공|서문|선우|제갈|황보|독고|망절|欧阳|令狐|皇甫|上官|司徒|诸葛|司马|宇文|呼延|端木|張簡|歐陽|諸葛|申屠|尉遲|司馬|軒轅|夏侯)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>given-name</code>
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kCjkCharactersRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:\p{Han}|\p{Hangul}|\p{Katakana}|\p{Hiragana}|\p{Bopomofo})+)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+  Anchor end: True<br>
+</details>
+
+
+</li>
+  
+  <li>
+
+
+<details>
+  <summary>Decomposition
+    
+    (<code>ParseCjkSingleCharacterLastNameExpression</code>)
+    
+  </summary>
+  Anchor beginning: True<br>
+  
+    Capture Reference: ParseCjkSingleCharacterLastNameExpression<br>
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>family-name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kCjkCharacterRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:\p{Han}|\p{Hangul}|\p{Katakana}|\p{Hiragana}|\p{Bopomofo})</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>given-name</code>
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kCjkCharactersRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:\p{Han}|\p{Hangul}|\p{Katakana}|\p{Hiragana}|\p{Bopomofo})+)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+  Anchor end: True<br>
+</details>
+
+
+</li>
+  
+  </ol>
+</details>
+
+
+</li>
+  
+  <li>
+
+
+<details>
+  <summary>Decomposition Cascade
+  
+  (if <code>kHasHispanicLatinxNameCharacteristics</code>)
+  
+  </summary>
+  
+  Condition:<br>
+  
+
+
+
+<details>
+  <summary>Regex Reference: <code>kHasHispanicLatinxNameCharacteristics</code></summary>
+  
+
+
+  Regex concatenation
+  <ol>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">(?:</code>
+
+
+</li>
+    
+    <li>
+
+
+
+  Regex Reference: <code>kHispanicCommonLastNameCharacteristicsRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:Aguilar|Alonso|Álvarez|Amador|Betancourt|Blanco|Burgos|Castillo|Castro|Chávez|Colón|Contreras|Cortez|Cruz|Delgado|Diaz|Díaz|Domínguez|Estrada|Fernandez|Fernández|Flores|Fuentes|Garcia|García|Garza|Gil|Gómez|González|Guerrero|Gutiérrez|Guzmán|Hernández|Herrera|Iglesias|Jiménez|Juárez|Lopez|López|Luna|Marín|Marroquín|Martín|Martinez|Martínez|Medina|Méndez|Mendoza|Molina|Morales|Moreno|Muñoz|Narvaez|Navarro|Núñez|Ortega|Ortiz|Ortíz|Peña|Perez|Pérez|Ramírez|Ramos|Reyes|Rivera|Rodriguez|Rodríguez|Rojas|Romero|Rosario|Rubio|Ruiz|Ruíz|Salazar|Sanchez|Sánchez|Santana|Santiago|Santos|Sanz|Serrano|Soto|Suárez|Toro|Torres|Vargas|Vasquez|Vásquez|Vázquez|Velásquez)</code>
+
+
+
+</li>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">|</code>
+
+
+</li>
+    
+    <li>
+
+
+
+  Regex Reference: <code>kHispanicLastNameConjunctionCharacteristicsRe</code> =&gt;
+  <code class="parsing-regexfragment">\s(?:y|e|i)\s</code>
+
+
+
+</li>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">)</code>
+
+
+</li>
+    
+  </ol>
+  Wrap as non-capture group: True
+
+
+
+</details>
+
+
+
+<br>
+  
+  Cascade:<br>
+  <ol>
+  
+  <li>
+
+
+<details>
+  <summary>Decomposition
+    
+    (<code>ParseHispanicFullNameExpression</code>)
+    
+  </summary>
+  Anchor beginning: True<br>
+  
+    Capture Reference: ParseHispanicFullNameExpression<br>
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>honorific-prefix</code>
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kHonorificPrefixRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:Master|Mr\.?|Miss\.?|Mrs\.?|Missus|Ms\.?|Mx\.?|M\.?|Ma&#39;am|Sir|Gentleman|Sire|Mistress|Madam|Ma&#39;am|Dame|Lord|Lady|Esq|Excellency|Excellence|Her Honour|His Honour|Hon\.?|The Right Honourable|The Most Honourable|Dr\.?|PhD|DPhil|MD|DO|Prof\.|Professor|QC|CL|Chancellor|Vice-Chancellor|Principle|Principal|President|Master|Warden|Dean|Regent|Rector|Provost|Director|Chief Executive|Imām|Shaykh|Muftī|Hāfiz|Hāfizah|Qārī|Mawlānā|Hājī|Sayyid|Sayyidah|Sharif|Eminent|Venerable|His Holiness|His Holiness|His All Holiness|His Beatitude|The Most Blessed|His Excellency|His Most Eminent Highness|His Eminence|Most Reverend Eminence|The Most Reverend|His Grace|His Lordship|The Reverend|Fr|Pr|Br|Sr|Elder|Rabbi|The Reverend|Cantor|Chief Rabbi|Grand Rabbi|Rebbetzin|Herr|Frau|Fräulein|Dame|PD|Doktor|Magister|Ingenieur|1lt|1st|2lt|2nd|3rd|admiral|capt|captain|col|cpt|dr|gen|general|lcdr|lt|ltc|ltg|ltjg|maj|major|mg|pastor|prof|rep|reverend|rev|sen|st)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>given-name</code>
+    
+    (MATCH_LAZY_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kMultipleLazyWordsRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[^\s,]+(?:[^\S\r\n]+[^\s,]+)*?)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>Capture Reference: <code>ParseHispanicLastNameExpression</code></summary>
+  
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>family-name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>family-name-first</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kOptionalLastNamePrefixRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:a|ab|af|av|ap|abu|aït|al|ālam|aust|austre|bar|bath|bat|ben|bin|ibn|bet|bint|binti|binte|da|das|de|degli|dele|del|du|della|der|di|dos|du|e|el|fetch|vetch|fitz|i??|kil|gil|de le|de la|la|le|lille|lu|m|mac|mc|mck|mhic|mic|mala|mellom|myljom|na|ned|nedre|neder|nic|ni|nin|nord|norr|ny|o|ua|ui|opp|upp|öfver|ost|öst|öster|øst|øst|østre|över|øvste|øvre|øver|öz|pour|putra|putri|setia|tor|söder|sør|sønder|sør|syd|søndre|syndre|søre|ter|ter|tre|van|van der|väst|väster|verch|erch|vest|vestre|vesle|vetle|von|zu|von und zu)\s)?</code>
+
+
+
+</li>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kSingleWordRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[^\s,]+)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>family-name-conjunction</code>
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kHispanicLastNameConjunctionsRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:y|e|i)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>family-name-second</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kOptionalLastNamePrefixRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:a|ab|af|av|ap|abu|aït|al|ālam|aust|austre|bar|bath|bat|ben|bin|ibn|bet|bint|binti|binte|da|das|de|degli|dele|del|du|della|der|di|dos|du|e|el|fetch|vetch|fitz|i??|kil|gil|de le|de la|la|le|lille|lu|m|mac|mc|mck|mhic|mic|mala|mellom|myljom|na|ned|nedre|neder|nic|ni|nin|nord|norr|ny|o|ua|ui|opp|upp|öfver|ost|öst|öster|øst|øst|østre|över|øvste|øvre|øver|öz|pour|putra|putri|setia|tor|söder|sør|sønder|sør|syd|søndre|syndre|søre|ter|ter|tre|van|van der|väst|väster|verch|erch|vest|vestre|vesle|vetle|von|zu|von und zu)\s)?</code>
+
+
+
+</li>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kSingleWordRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[^\s,]+)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+  Anchor end: True<br>
+</details>
+
+
+</li>
+  
+  </ol>
+</details>
+
+
+</li>
+  
+  <li>
+
+
+<details>
+  <summary>Decomposition Cascade
+  
+  </summary>
+  
+  Cascade:<br>
+  <ol>
+  
+  <li>
+
+
+<details>
+  <summary>Decomposition
+    
+    (<code>ParseOnlyLastNameExpression</code>)
+    
+  </summary>
+  Anchor beginning: True<br>
+  
+    Capture Reference: ParseOnlyLastNameExpression<br>
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>family-name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kOptionalLastNamePrefixRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:a|ab|af|av|ap|abu|aït|al|ālam|aust|austre|bar|bath|bat|ben|bin|ibn|bet|bint|binti|binte|da|das|de|degli|dele|del|du|della|der|di|dos|du|e|el|fetch|vetch|fitz|i??|kil|gil|de le|de la|la|le|lille|lu|m|mac|mc|mck|mhic|mic|mala|mellom|myljom|na|ned|nedre|neder|nic|ni|nin|nord|norr|ny|o|ua|ui|opp|upp|öfver|ost|öst|öster|øst|øst|østre|över|øvste|øvre|øver|öz|pour|putra|putri|setia|tor|söder|sør|sønder|sør|syd|søndre|syndre|søre|ter|ter|tre|van|van der|väst|väster|verch|erch|vest|vestre|vesle|vetle|von|zu|von und zu)\s)?</code>
+
+
+
+</li>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kSingleWordRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[^\s,]+)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      No capturing pattern
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kLastNameSuffixRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:b\.a|ba|d\.d\.s|dds|ii|iii|iv|ix|jr|m\.a|m\.d|md|ms|ph\.?d|sr|v|vi|vii|viii|x)\.?)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+  Anchor end: True<br>
+</details>
+
+
+</li>
+  
+  <li>
+
+
+<details>
+  <summary>Decomposition
+    
+    (<code>ParseLastCommaFirstMiddleNameExpression</code>)
+    
+  </summary>
+  Anchor beginning: True<br>
+  
+    Capture Reference: ParseLastCommaFirstMiddleNameExpression<br>
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>honorific-prefix</code>
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kHonorificPrefixRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:Master|Mr\.?|Miss\.?|Mrs\.?|Missus|Ms\.?|Mx\.?|M\.?|Ma&#39;am|Sir|Gentleman|Sire|Mistress|Madam|Ma&#39;am|Dame|Lord|Lady|Esq|Excellency|Excellence|Her Honour|His Honour|Hon\.?|The Right Honourable|The Most Honourable|Dr\.?|PhD|DPhil|MD|DO|Prof\.|Professor|QC|CL|Chancellor|Vice-Chancellor|Principle|Principal|President|Master|Warden|Dean|Regent|Rector|Provost|Director|Chief Executive|Imām|Shaykh|Muftī|Hāfiz|Hāfizah|Qārī|Mawlānā|Hājī|Sayyid|Sayyidah|Sharif|Eminent|Venerable|His Holiness|His Holiness|His All Holiness|His Beatitude|The Most Blessed|His Excellency|His Most Eminent Highness|His Eminence|Most Reverend Eminence|The Most Reverend|His Grace|His Lordship|The Reverend|Fr|Pr|Br|Sr|Elder|Rabbi|The Reverend|Cantor|Chief Rabbi|Grand Rabbi|Rebbetzin|Herr|Frau|Fräulein|Dame|PD|Doktor|Magister|Ingenieur|1lt|1st|2lt|2nd|3rd|admiral|capt|captain|col|cpt|dr|gen|general|lcdr|lt|ltc|ltg|ltjg|maj|major|mg|pastor|prof|rep|reverend|rev|sen|st)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>family-name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kOptionalLastNamePrefixRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:a|ab|af|av|ap|abu|aït|al|ālam|aust|austre|bar|bath|bat|ben|bin|ibn|bet|bint|binti|binte|da|das|de|degli|dele|del|du|della|der|di|dos|du|e|el|fetch|vetch|fitz|i??|kil|gil|de le|de la|la|le|lille|lu|m|mac|mc|mck|mhic|mic|mala|mellom|myljom|na|ned|nedre|neder|nic|ni|nin|nord|norr|ny|o|ua|ui|opp|upp|öfver|ost|öst|öster|øst|øst|østre|över|øvste|øvre|øver|öz|pour|putra|putri|setia|tor|söder|sør|sønder|sør|syd|søndre|syndre|søre|ter|ter|tre|van|van der|väst|väster|verch|erch|vest|vestre|vesle|vetle|von|zu|von und zu)\s)?</code>
+
+
+
+</li>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kSingleWordRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[^\s,]+)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      No capturing pattern
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">\s*,\s*</code>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>given-name</code>
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kSingleWordRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[^\s,]+)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>additional-name</code>
+    
+    (MATCH_LAZY_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kMultipleLazyWordsRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[^\s,]+(?:[^\S\r\n]+[^\s,]+)*?)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+  Anchor end: True<br>
+</details>
+
+
+</li>
+  
+  <li>
+
+
+<details>
+  <summary>Decomposition
+    
+    (<code>ParseFirstMiddleLastNameExpression</code>)
+    
+  </summary>
+  Anchor beginning: True<br>
+  
+    Capture Reference: ParseFirstMiddleLastNameExpression<br>
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>honorific-prefix</code>
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kHonorificPrefixRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:Master|Mr\.?|Miss\.?|Mrs\.?|Missus|Ms\.?|Mx\.?|M\.?|Ma&#39;am|Sir|Gentleman|Sire|Mistress|Madam|Ma&#39;am|Dame|Lord|Lady|Esq|Excellency|Excellence|Her Honour|His Honour|Hon\.?|The Right Honourable|The Most Honourable|Dr\.?|PhD|DPhil|MD|DO|Prof\.|Professor|QC|CL|Chancellor|Vice-Chancellor|Principle|Principal|President|Master|Warden|Dean|Regent|Rector|Provost|Director|Chief Executive|Imām|Shaykh|Muftī|Hāfiz|Hāfizah|Qārī|Mawlānā|Hājī|Sayyid|Sayyidah|Sharif|Eminent|Venerable|His Holiness|His Holiness|His All Holiness|His Beatitude|The Most Blessed|His Excellency|His Most Eminent Highness|His Eminence|Most Reverend Eminence|The Most Reverend|His Grace|His Lordship|The Reverend|Fr|Pr|Br|Sr|Elder|Rabbi|The Reverend|Cantor|Chief Rabbi|Grand Rabbi|Rebbetzin|Herr|Frau|Fräulein|Dame|PD|Doktor|Magister|Ingenieur|1lt|1st|2lt|2nd|3rd|admiral|capt|captain|col|cpt|dr|gen|general|lcdr|lt|ltc|ltg|ltjg|maj|major|mg|pastor|prof|rep|reverend|rev|sen|st)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>given-name</code>
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kSingleWordRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[^\s,]+)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>additional-name</code>
+    
+    (MATCH_LAZY_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kMultipleLazyWordsRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[^\s,]+(?:[^\S\r\n]+[^\s,]+)*?)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>family-name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kOptionalLastNamePrefixRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:a|ab|af|av|ap|abu|aït|al|ālam|aust|austre|bar|bath|bat|ben|bin|ibn|bet|bint|binti|binte|da|das|de|degli|dele|del|du|della|der|di|dos|du|e|el|fetch|vetch|fitz|i??|kil|gil|de le|de la|la|le|lille|lu|m|mac|mc|mck|mhic|mic|mala|mellom|myljom|na|ned|nedre|neder|nic|ni|nin|nord|norr|ny|o|ua|ui|opp|upp|öfver|ost|öst|öster|øst|øst|østre|över|øvste|øvre|øver|öz|pour|putra|putri|setia|tor|söder|sør|sønder|sør|syd|søndre|syndre|søre|ter|ter|tre|van|van der|väst|väster|verch|erch|vest|vestre|vesle|vetle|von|zu|von und zu)\s)?</code>
+
+
+
+</li>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kSingleWordRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[^\s,]+)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      No capturing pattern
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kLastNameSuffixRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:b\.a|ba|d\.d\.s|dds|ii|iii|iv|ix|jr|m\.a|m\.d|md|ms|ph\.?d|sr|v|vi|vii|viii|x)\.?)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+  Anchor end: True<br>
+</details>
+
+
+</li>
+  
+  </ol>
+</details>
+
+
+</li>
+  
+  </ol>
+</details>
+
+
+
+
+</div>
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    
+    <a href="#honorific-prefix">honorific-prefix</a>
+  </li>
+
+  <li>
+    
+    <a href="#given-name">given-name</a>
+  </li>
+
+  <li>
+    
+    <a href="#additional-name">additional-name</a>
+  </li>
+
+  <li>
+    
+    <a href="#family-name">family-name</a>
+  </li>
+
+  <li>
+    
+    <a href="#honorific-suffix">honorific-suffix</a>
+  </li>
+
+  <li>
+    
+    <a href="#organization-title">organization-title</a>
+  </li>
+
+</ul>
+</div>
+
+
+
+
+
+
+
+<h4>Formatting:</h4>
+<div>
+<span class="formatting_token">name</span> =
+<span class="formatting_token">honorific-prefix</span><span class="formatting_token">given-name</span><span class="formatting_token">additional-name</span><span class="formatting_token">family-name</span><span class="formatting_token">honorific-suffix</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">organization-title</span>
+</div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">name</span> =<br>
+<span class="formatting_token">honorific-prefix</span><span class="formatting_token">given-name</span><span class="formatting_token">additional-name</span><span class="formatting_token">family-name-first</span><span class="formatting_token">family-name-conjunction</span><span class="formatting_token">family-name-second</span><span class="formatting_token">honorific-suffix</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">organization-title</span>
+</div>
+
+</div><h3 id="honorific-prefix">
+  <a href="#honorific-prefix">#</a>
+  
+  honorific-prefix
+</h3>
+<div style="margin-left: 20px;">
+
+Honorific prefix
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="given-name">
+  <a href="#given-name">#</a>
+  
+  given-name
+</h3>
+<div style="margin-left: 20px;">
+
+Given namen (in Western cultures the first name)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="additional-name">
+  <a href="#additional-name">#</a>
+  
+  additional-name
+</h3>
+<div style="margin-left: 20px;">
+
+Additional given name (in Western cultures the middle name)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="family-name">
+  <a href="#family-name">#</a>
+  
+  family-name
+</h3>
+<div style="margin-left: 20px;">
+
+Family name (in Western cultures the last name)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    
+    <a href="#family-name-first">family-name-first</a>
+  </li>
+
+  <li>
+    
+    <a href="#family-name-conjunction">family-name-conjunction</a>
+  </li>
+
+  <li>
+    
+    <a href="#family-name-second">family-name-second</a>
+  </li>
+
+</ul>
+</div>
+
+
+
+
+
+
+
+<h4>Formatting:</h4>
+<div>
+<span class="formatting_token">family-name</span> =
+<span class="formatting_token">family-name-first</span><span class="formatting_token">family-name-conjunction</span><span class="formatting_token">family-name-second</span>
+</div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">family-name</span> =<br>
+<span class="formatting_token">family-name-first</span><span class="formatting_token">family-name-conjunction</span><span class="formatting_token">family-name-second</span>
+</div>
+
+</div><h3 id="family-name-first">
+  <a href="#family-name-first">#</a>
+  
+  family-name-first
+</h3>
+<div style="margin-left: 20px;">
+
+First part of a family name (e.g. the paternal name)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="family-name-conjunction">
+  <a href="#family-name-conjunction">#</a>
+  
+  family-name-conjunction
+</h3>
+<div style="margin-left: 20px;">
+
+Conjunction between the first and second part of the family name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="family-name-second">
+  <a href="#family-name-second">#</a>
+  
+  family-name-second
+</h3>
+<div style="margin-left: 20px;">
+
+Second part of a famiily name (e.g. the maternal name)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="honorific-suffix">
+  <a href="#honorific-suffix">#</a>
+  
+  honorific-suffix
+</h3>
+<div style="margin-left: 20px;">
+
+Honorific suffix
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="organization-title">
+  <a href="#organization-title">#</a>
+  
+  organization-title
+</h3>
+<div style="margin-left: 20px;">
+
+Title of a person within an organization
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="address">
+  <a href="#address">#</a>
+  
+  address
+</h3>
+<div style="margin-left: 20px;">
+
+Address of a physical location - Artificial concept, not to be used in HTML
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    
+    <a href="#street-address">street-address</a>
+  </li>
+
+  <li>
+    
+    <a href="#street-address-alternative-1">street-address-alternative-1</a>
+  </li>
+
+  <li>
+    
+    <a href="#locality1">locality1</a>
+  </li>
+
+  <li>
+    
+    <a href="#locality2">locality2</a>
+  </li>
+
+  <li>
+    
+    <a href="#locality3">locality3</a>
+  </li>
+
+  <li>
+    
+    <a href="#locality4">locality4</a>
+  </li>
+
+  <li>
+    
+    <a href="#admin-area1">admin-area1</a>
+  </li>
+
+  <li>
+    
+    <a href="#admin-area2">admin-area2</a>
+  </li>
+
+  <li>
+    
+    <a href="#admin-area3">admin-area3</a>
+  </li>
+
+  <li>
+    
+    <a href="#admin-area4">admin-area4</a>
+  </li>
+
+  <li>
+    
+    <a href="#postal-code">postal-code</a>
+  </li>
+
+  <li>
+    
+    <a href="#country">country</a>
+  </li>
+
+  <li>
+    
+    <a href="#country-name">country-name</a>
+  </li>
+
+</ul>
+</div>
+
+</div><h3 id="street-address">
+  <a href="#street-address">#</a>
+  
+  street-address
+</h3>
+<div style="margin-left: 20px;">
+
+Street address (street and location within the street)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    
+    <a href="#address-line1">address-line1</a>
+  </li>
+
+  <li>
+    
+    <a href="#address-line2">address-line2</a>
+  </li>
+
+  <li>
+    
+    <a href="#address-line3">address-line3</a>
+  </li>
+
+  <li>
+    
+    <a href="#address-line4">address-line4</a>
+  </li>
+
+</ul>
+</div>
+
+
+
+
+
+
+
+<h4>Formatting:</h4>
+<div>
+<span class="formatting_token">street-address</span> =
+<span class="formatting_token">address-line1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">address-line2</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">address-line3</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">address-line4</span>
+</div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">street-address</span> =<br>
+<span class="formatting_token">address-line1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">address-line2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">address-line3</span><span class="formatting_token_separator"><br></span><span class="formatting_token">address-line4</span>
+</div>
+
+</div><h3 id="address-line1">
+  <a href="#address-line1">#</a>
+  
+  address-line1
+</h3>
+<div style="margin-left: 20px;">
+
+1st line of street-address
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="address-line2">
+  <a href="#address-line2">#</a>
+  
+  address-line2
+</h3>
+<div style="margin-left: 20px;">
+
+2nd line of street-address
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="address-line3">
+  <a href="#address-line3">#</a>
+  
+  address-line3
+</h3>
+<div style="margin-left: 20px;">
+
+3rd line of street-address
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="address-line4">
+  <a href="#address-line4">#</a>
+  
+  address-line4
+</h3>
+<div style="margin-left: 20px;">
+
+4th line of street-address
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="street-address-alternative-1">
+  <a href="#street-address-alternative-1">#</a>
+  
+  street-address-alternative-1
+</h3>
+<div style="margin-left: 20px;">
+
+Artificial concept, not to be used in HTML; this is a structured representation of a street address
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    
+    <a href="#building-location">building-location</a>
+  </li>
+
+  <li>
+    
+    <a href="#cross-streets">cross-streets</a>
+  </li>
+
+  <li>
+    
+    <a href="#in-building-location">in-building-location</a>
+  </li>
+
+  <li>
+    
+    <a href="#address-overflow">address-overflow</a>
+  </li>
+
+  <li>
+    
+    <a href="#landmark">landmark</a>
+  </li>
+
+  <li>
+    
+    <a href="#delivery-instructions">delivery-instructions</a>
+  </li>
+
+  <li>
+    
+    <a href="#care-of">care-of</a>
+  </li>
+
+</ul>
+</div>
+
+</div><h3 id="building-location">
+  <a href="#building-location">#</a>
+  
+  building-location
+</h3>
+<div style="margin-left: 20px;">
+
+Name of a street and identifier for the building
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    
+    <a href="#street">street</a>
+  </li>
+
+  <li>
+    
+    <a href="#building">building</a>
+  </li>
+
+</ul>
+</div>
+
+
+
+
+
+
+
+<h4>Formatting:</h4>
+<div>
+<span class="formatting_token">building-location</span> =
+<span class="formatting_token">street</span><span class="formatting_token">building</span>
+</div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">building-location</span> =<br>
+<span class="formatting_token">street-type</span><span class="formatting_token">street-name</span><span class="formatting_token">house-number</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">building-name</span>
+</div>
+
+</div><h3 id="street">
+  <a href="#street">#</a>
+  
+  street
+</h3>
+<div style="margin-left: 20px;">
+
+Name of a street
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    
+    <a href="#street-type">street-type</a>
+  </li>
+
+  <li>
+    
+    <a href="#street-name">street-name</a>
+  </li>
+
+</ul>
+</div>
+
+
+
+
+
+
+
+<h4>Formatting:</h4>
+<div>
+<span class="formatting_token">street</span> =
+<span class="formatting_token">street-type</span><span class="formatting_token">street-name</span>
+</div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">street</span> =<br>
+<span class="formatting_token">street-type</span><span class="formatting_token">street-name</span>
+</div>
+
+</div><h3 id="street-type">
+  <a href="#street-type">#</a>
+  
+  street-type
+</h3>
+<div style="margin-left: 20px;">
+
+Type particle of a full street name or place (in countries that split the full street name into particles)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="street-name">
+  <a href="#street-name">#</a>
+  
+  street-name
+</h3>
+<div style="margin-left: 20px;">
+
+Name particle of a full street name or place (in countries that split the full street name into particles)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="building">
+  <a href="#building">#</a>
+  
+  building
+</h3>
+<div style="margin-left: 20px;">
+
+House number (in a street or block) or name of a building.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    
+    <a href="#house-number">house-number</a>
+  </li>
+
+  <li>
+    
+    <a href="#building-name">building-name</a>
+  </li>
+
+</ul>
+</div>
+
+
+
+
+
+
+
+<h4>Formatting:</h4>
+<div>
+<span class="formatting_token">building</span> =
+<span class="formatting_token">house-number</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">building-name</span>
+</div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">building</span> =<br>
+<span class="formatting_token">house-number</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">building-name</span>
+</div>
+
+</div><h3 id="house-number">
+  <a href="#house-number">#</a>
+  
+  house-number
+</h3>
+<div style="margin-left: 20px;">
+
+Numeric identifier of a house (rare: only used in countries that ask for a house number and building in separate fields)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="building-name">
+  <a href="#building-name">#</a>
+  
+  building-name
+</h3>
+<div style="margin-left: 20px;">
+
+Name of a building (rare: only used in countries that ask for a house number and building in separate fields)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="cross-streets">
+  <a href="#cross-streets">#</a>
+  
+  cross-streets
+</h3>
+<div style="margin-left: 20px;">
+
+Names of two streets crossing the street of the house, used to help finding the house.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    
+    <a href="#cross-street1">cross-street1</a>
+  </li>
+
+  <li>
+    
+    <a href="#cross-street2">cross-street2</a>
+  </li>
+
+</ul>
+</div>
+
+
+
+
+
+
+
+<h4>Formatting:</h4>
+<div>
+<span class="formatting_token">cross-streets</span> =
+<span class="formatting_token">cross-street1</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">cross-street2</span>
+</div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">cross-streets</span> =<br>
+<span class="formatting_token">cross-street1</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">cross-street2</span>
+</div>
+
+</div><h3 id="cross-street1">
+  <a href="#cross-street1">#</a>
+  
+  cross-street1
+</h3>
+<div style="margin-left: 20px;">
+
+First of two crossing streets.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="cross-street2">
+  <a href="#cross-street2">#</a>
+  
+  cross-street2
+</h3>
+<div style="margin-left: 20px;">
+
+Second of two crossing streets.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="in-building-location">
+  <a href="#in-building-location">#</a>
+  
+  in-building-location
+</h3>
+<div style="margin-left: 20px;">
+
+Location of the adresse in a building
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    
+    <a href="#entrance">entrance</a>
+  </li>
+
+  <li>
+    
+    <a href="#floor">floor</a>
+  </li>
+
+  <li>
+    
+    <a href="#staircase">staircase</a>
+  </li>
+
+  <li>
+    
+    <a href="#unit">unit</a>
+  </li>
+
+</ul>
+</div>
+
+
+
+
+
+
+
+<h4>Formatting:</h4>
+<div>
+<span class="formatting_token">in-building-location</span> =
+<span class="formatting_token_prefix">Entrance </span><span class="formatting_token">entrance</span><span class="formatting_token_separator">,␣</span><span class="formatting_token_prefix">Floor </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token_prefix">Staircase </span><span class="formatting_token">staircase</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit</span>
+</div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">in-building-location</span> =<br>
+<span class="formatting_token_prefix">Entrance </span><span class="formatting_token">entrance</span><span class="formatting_token_separator">,␣</span><span class="formatting_token_prefix">Floor </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token_prefix">Staircase </span><span class="formatting_token">staircase</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span>
+</div>
+
+</div><h3 id="entrance">
+  <a href="#entrance">#</a>
+  
+  entrance
+</h3>
+<div style="margin-left: 20px;">
+
+Entrance of a building
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="floor">
+  <a href="#floor">#</a>
+  
+  floor
+</h3>
+<div style="margin-left: 20px;">
+
+Floor number in the building
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="staircase">
+  <a href="#staircase">#</a>
+  
+  staircase
+</h3>
+<div style="margin-left: 20px;">
+
+Stair case in the building
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="unit">
+  <a href="#unit">#</a>
+  
+  unit
+</h3>
+<div style="margin-left: 20px;">
+
+Unit in a building (e.g. &#34;Apartment 5&#34;, &#34;Suite 12&#34;)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    
+    <a href="#unit-type">unit-type</a>
+  </li>
+
+  <li>
+    
+    <a href="#unit-name">unit-name</a>
+  </li>
+
+</ul>
+</div>
+
+
+
+
+
+
+
+<h4>Formatting:</h4>
+<div>
+<span class="formatting_token">unit</span> =
+<span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span>
+</div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">unit</span> =<br>
+<span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span>
+</div>
+
+</div><h3 id="unit-type">
+  <a href="#unit-type">#</a>
+  
+  unit-type
+</h3>
+<div style="margin-left: 20px;">
+
+Type of a unit (e.g. &#34;Apt&#34;, &#34;Room&#34;, &#34;Store&#34;)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="unit-name">
+  <a href="#unit-name">#</a>
+  
+  unit-name
+</h3>
+<div style="margin-left: 20px;">
+
+Identifier of a unit (e.g. &#34;5&#34;)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="address-overflow">
+  <a href="#address-overflow">#</a>
+  
+  address-overflow
+</h3>
+<div style="margin-left: 20px;">
+
+An overflow field for information that is not captured differently in a form
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="landmark">
+  <a href="#landmark">#</a>
+  
+  landmark
+</h3>
+<div style="margin-left: 20px;">
+
+Landmark to help finding a building
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="delivery-instructions">
+  <a href="#delivery-instructions">#</a>
+  
+  delivery-instructions
+</h3>
+<div style="margin-left: 20px;">
+
+Delivery instructions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="care-of">
+  <a href="#care-of">#</a>
+  
+  care-of
+</h3>
+<div style="margin-left: 20px;">
+
+Final recipient of a delivery
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="locality1">
+  <a href="#locality1">#</a>
+  
+  locality1
+</h3>
+<div style="margin-left: 20px;">
+
+Biggest sub type of a locality, often a city
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="locality2">
+  <a href="#locality2">#</a>
+  
+  locality2
+</h3>
+<div style="margin-left: 20px;">
+
+2nd biggest type of a locality, e.g. a suburb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="locality3">
+  <a href="#locality3">#</a>
+  
+  locality3
+</h3>
+<div style="margin-left: 20px;">
+
+3rd biggest type of a locality
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="locality4">
+  <a href="#locality4">#</a>
+  
+  locality4
+</h3>
+<div style="margin-left: 20px;">
+
+4th biggest type of a locality
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="admin-area1">
+  <a href="#admin-area1">#</a>
+  
+  admin-area1
+</h3>
+<div style="margin-left: 20px;">
+
+Biggest type of admin area if a country has multiple levels
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="admin-area2">
+  <a href="#admin-area2">#</a>
+  
+  admin-area2
+</h3>
+<div style="margin-left: 20px;">
+
+2nd biggest type of admin area if a country has multiple levels
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="admin-area3">
+  <a href="#admin-area3">#</a>
+  
+  admin-area3
+</h3>
+<div style="margin-left: 20px;">
+
+3rd biggest type of admin area if a country has multiple levels
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="admin-area4">
+  <a href="#admin-area4">#</a>
+  
+  admin-area4
+</h3>
+<div style="margin-left: 20px;">
+
+4th biggest type of admin area if a country has multiple levels
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="postal-code">
+  <a href="#postal-code">#</a>
+  
+  postal-code
+</h3>
+<div style="margin-left: 20px;">
+
+Postal code
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="country">
+  <a href="#country">#</a>
+  
+  country
+</h3>
+<div style="margin-left: 20px;">
+
+2-letter country code
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="country-name">
+  <a href="#country-name">#</a>
+  
+  country-name
+</h3>
+<div style="margin-left: 20px;">
+
+Name of a country
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="organization">
+  <a href="#organization">#</a>
+  
+  organization
+</h3>
+<div style="margin-left: 20px;">
+
+Name of an organization/company
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="credit-card">
+  <a href="#credit-card">#</a>
+  
+  credit-card
+</h3>
+<div style="margin-left: 20px;">
+
+Artificial concept, not to be used in HTML
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    
+    <a href="#cc-name">cc-name</a>
+  </li>
+
+  <li>
+    
+    <a href="#cc-number">cc-number</a>
+  </li>
+
+  <li>
+    
+    <a href="#cc-exp-MMYY">cc-exp-MMYY</a>
+  </li>
+
+  <li>
+    
+    <a href="#cc-exp-MMYYYY">cc-exp-MMYYYY</a>
+  </li>
+
+  <li>
+    
+    <a href="#cc-csc">cc-csc</a>
+  </li>
+
+  <li>
+    
+    <a href="#cc-type">cc-type</a>
+  </li>
+
+</ul>
+</div>
+
+</div><h3 id="cc-name">
+  <a href="#cc-name">#</a>
+  
+  cc-name
+</h3>
+<div style="margin-left: 20px;">
+
+Full name of credit card holder
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    
+    <a href="#cc-given-name">cc-given-name</a>
+  </li>
+
+  <li>
+    
+    <a href="#cc-additional-name">cc-additional-name</a>
+  </li>
+
+  <li>
+    
+    <a href="#cc-family-name">cc-family-name</a>
+  </li>
+
+</ul>
+</div>
+
+
+
+
+
+
+
+<h4>Formatting:</h4>
+<div>
+<span class="formatting_token">cc-name</span> =
+<span class="formatting_token">cc-given-name</span><span class="formatting_token">cc-additional-name</span><span class="formatting_token">cc-family-name</span>
+</div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">cc-name</span> =<br>
+<span class="formatting_token">cc-given-name</span><span class="formatting_token">cc-additional-name</span><span class="formatting_token">cc-family-name</span>
+</div>
+
+</div><h3 id="cc-given-name">
+  <a href="#cc-given-name">#</a>
+  
+  cc-given-name
+</h3>
+<div style="margin-left: 20px;">
+
+Given name of credit card holder
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="cc-additional-name">
+  <a href="#cc-additional-name">#</a>
+  
+  cc-additional-name
+</h3>
+<div style="margin-left: 20px;">
+
+Additional name of credit card holder
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="cc-family-name">
+  <a href="#cc-family-name">#</a>
+  
+  cc-family-name
+</h3>
+<div style="margin-left: 20px;">
+
+Family name of credit card holder
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="cc-number">
+  <a href="#cc-number">#</a>
+  
+  cc-number
+</h3>
+<div style="margin-left: 20px;">
+
+Credit card number
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="cc-exp-MMYY">
+  <a href="#cc-exp-MMYY">#</a>
+  
+  cc-exp-MMYY
+</h3>
+<div style="margin-left: 20px;">
+
+Credit card expiration date in format MM/YY
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    
+    <a href="#cc-exp-MM">cc-exp-MM</a>
+  </li>
+
+  <li>
+    
+    <a href="#cc-exp-YY">cc-exp-YY</a>
+  </li>
+
+</ul>
+</div>
+
+
+
+
+
+
+
+<h4>Formatting:</h4>
+<div>
+<span class="formatting_token">cc-exp-MMYY</span> =
+<span class="formatting_token">cc-exp-MM</span><span class="formatting_token_separator">/</span><span class="formatting_token">cc-exp-YY</span>
+</div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">cc-exp-MMYY</span> =<br>
+<span class="formatting_token">cc-exp-MM</span><span class="formatting_token_separator">/</span><span class="formatting_token">cc-exp-YY</span>
+</div>
+
+</div><h3 id="cc-exp-MM">
+  <a href="#cc-exp-MM">#</a>
+  
+  cc-exp-MM
+</h3>
+<div style="margin-left: 20px;">
+
+Credit card expiration month (2 digits)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="cc-exp-YY">
+  <a href="#cc-exp-YY">#</a>
+  
+  cc-exp-YY
+</h3>
+<div style="margin-left: 20px;">
+
+Credit card expiration date in format YY (2 digits)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="cc-exp-MMYYYY">
+  <a href="#cc-exp-MMYYYY">#</a>
+  
+  cc-exp-MMYYYY
+</h3>
+<div style="margin-left: 20px;">
+
+Credit card expiration date in format MM/YYYY
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    
+    <a href="#cc-exp-MM">cc-exp-MM</a>
+  </li>
+
+  <li>
+    
+    <a href="#cc-exp-YYYY">cc-exp-YYYY</a>
+  </li>
+
+</ul>
+</div>
+
+
+
+
+
+
+
+<h4>Formatting:</h4>
+<div>
+<span class="formatting_token">cc-exp-MMYYYY</span> =
+<span class="formatting_token">cc-exp-MM</span><span class="formatting_token_separator">/</span><span class="formatting_token">cc-exp-YYYY</span>
+</div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">cc-exp-MMYYYY</span> =<br>
+<span class="formatting_token">cc-exp-MM</span><span class="formatting_token_separator">/</span><span class="formatting_token">cc-exp-YYYY</span>
+</div>
+
+</div><h3 id="cc-exp-YYYY">
+  <a href="#cc-exp-YYYY">#</a>
+  
+  cc-exp-YYYY
+</h3>
+<div style="margin-left: 20px;">
+
+Credit card expiration date in format YYYY (4 digits)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="cc-csc">
+  <a href="#cc-csc">#</a>
+  
+  cc-csc
+</h3>
+<div style="margin-left: 20px;">
+
+CSC/CVC/CVV number
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="cc-type">
+  <a href="#cc-type">#</a>
+  
+  cc-type
+</h3>
+<div style="margin-left: 20px;">
+
+Credit card type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="tel">
+  <a href="#tel">#</a>
+  
+  tel
+</h3>
+<div style="margin-left: 20px;">
+
+Full telephone number
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    
+    <a href="#tel-country-code">tel-country-code</a>
+  </li>
+
+  <li>
+    
+    <a href="#tel-national">tel-national</a>
+  </li>
+
+  <li>
+    
+    <a href="#tel-extension">tel-extension</a>
+  </li>
+
+</ul>
+</div>
+
+
+
+
+
+
+
+<h4>Formatting:</h4>
+<div>
+<span class="formatting_token">tel</span> =
+<span class="formatting_token_prefix">+</span><span class="formatting_token">tel-country-code</span><span class="formatting_token">tel-national</span><span class="formatting_token_separator">-</span><span class="formatting_token">tel-extension</span>
+</div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">tel</span> =<br>
+<span class="formatting_token_prefix">+</span><span class="formatting_token">tel-country-code</span><span class="formatting_token">tel-area-code</span><span class="formatting_token">tel-local-prefix</span><span class="formatting_token">tel-local-suffix</span><span class="formatting_token_separator">-</span><span class="formatting_token">tel-extension</span>
+</div>
+
+</div><h3 id="tel-country-code">
+  <a href="#tel-country-code">#</a>
+  
+  tel-country-code
+</h3>
+<div style="margin-left: 20px;">
+
+Country code component of the telephone number
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="tel-national">
+  <a href="#tel-national">#</a>
+  
+  tel-national
+</h3>
+<div style="margin-left: 20px;">
+
+Telephone number without the county code component, with a country-internal prefix applied if applicable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    
+    <a href="#tel-area-code">tel-area-code</a>
+  </li>
+
+  <li>
+    
+    <a href="#tel-local">tel-local</a>
+  </li>
+
+</ul>
+</div>
+
+
+
+
+
+
+
+<h4>Formatting:</h4>
+<div>
+<span class="formatting_token">tel-national</span> =
+<span class="formatting_token">tel-area-code</span><span class="formatting_token">tel-local</span>
+</div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">tel-national</span> =<br>
+<span class="formatting_token">tel-area-code</span><span class="formatting_token">tel-local-prefix</span><span class="formatting_token">tel-local-suffix</span>
+</div>
+
+</div><h3 id="tel-area-code">
+  <a href="#tel-area-code">#</a>
+  
+  tel-area-code
+</h3>
+<div style="margin-left: 20px;">
+
+Area code component of the telephone number, with a country-internal prefix applied if applicable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="tel-local">
+  <a href="#tel-local">#</a>
+  
+  tel-local
+</h3>
+<div style="margin-left: 20px;">
+
+Telephone number without the country code and area code components
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    
+    <a href="#tel-local-prefix">tel-local-prefix</a>
+  </li>
+
+  <li>
+    
+    <a href="#tel-local-suffix">tel-local-suffix</a>
+  </li>
+
+</ul>
+</div>
+
+
+
+
+
+
+
+<h4>Formatting:</h4>
+<div>
+<span class="formatting_token">tel-local</span> =
+<span class="formatting_token">tel-local-prefix</span><span class="formatting_token">tel-local-suffix</span>
+</div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">tel-local</span> =<br>
+<span class="formatting_token">tel-local-prefix</span><span class="formatting_token">tel-local-suffix</span>
+</div>
+
+</div><h3 id="tel-local-prefix">
+  <a href="#tel-local-prefix">#</a>
+  
+  tel-local-prefix
+</h3>
+<div style="margin-left: 20px;">
+
+First part of the component of the telephone number that follows the area code, when that component is split into two components
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="tel-local-suffix">
+  <a href="#tel-local-suffix">#</a>
+  
+  tel-local-suffix
+</h3>
+<div style="margin-left: 20px;">
+
+Second part of the component of the telephone number that follows the area code, when that component is split into two components
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="tel-extension">
+  <a href="#tel-extension">#</a>
+  
+  tel-extension
+</h3>
+<div style="margin-left: 20px;">
+
+Telephone number internal extension code
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="email">
+  <a href="#email">#</a>
+  
+  email
+</h3>
+<div style="margin-left: 20px;">
+
+Email address
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</div>
+      </div>
+    </main>
+  </div>
+  
+</body>
+</html>

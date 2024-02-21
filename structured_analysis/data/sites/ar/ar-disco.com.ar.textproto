@@ -1,0 +1,182 @@
+site_examples {
+  url: "https://www.disco.com.ar"
+  is_structured: true
+  locale {
+    country: "AR"
+    language: "es"
+  }
+  sequences {
+    fields {
+      name: "downshift-0-input|"
+      label: "¡Hola! ¿Qué estas buscando?"
+      label_translated: "Hello! What are you looking for?"
+      example: "¡Hola! ¿Qué estas buscando?"
+      example_translated: "Hello! What are you looking for?"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "brand-crown-mustang|CROWN MUSTANG"
+      label: "CROWN MUSTANG (2)"
+      label_translated: "CROWN MUSTANG (2)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brand-hyundai|HYUNDAI"
+      label: "HYUNDAI (1)"
+      label_translated: "HYUNDAI (1)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brand-lg|LG"
+      label: "LG (5)"
+      label_translated: "LG (5)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brand-philco|PHILCO"
+      label: "PHILCO (1)"
+      label_translated: "PHILCO (1)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brand-philips|PHILIPS"
+      label: "PHILIPS (3)"
+      label_translated: "PHILIPS (3)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brand-samsung|SAMSUNG"
+      label: "SAMSUNG (8)"
+      label_translated: "SAMSUNG (8)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brand-skyworth|Skyworth"
+      label: "Skyworth (3)"
+      label_translated: "Skyworth (3)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brand-telefunken|TELEFUNKEN"
+      label: "TELEFUNKEN (1)"
+      label_translated: "TELEFUNKEN (1)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "apto-netflix-si|Si"
+      label: "Si (3)"
+      label_translated: "Yes 3)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bluetooth-no|No"
+      label: "No (1)"
+      label_translated: "Not (1)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bluetooth-si|Si"
+      label: "Si (10)"
+      label_translated: "Yes (10)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Domicilio*"
+      label_translated: "Address"
+      example: "Calle y Número ( Sin piso ni dpto)"
+      example_translated: "Street and Number (No floor or apartment)"
+      control_type: INPUT
+      concepts: "address-search"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "complement|complement"
+      label: "Datos adicionales"
+      label_translated: "Additional data"
+      control_type: INPUT
+      concepts: "address-overflow"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "checkbox|checkbox"
+      label: "Barrio privado o Country"
+      label_translated: "Private neighborhood or Country"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      name: "neighborhood|neighborhood"
+      label: "Barrio*"
+      label_translated: "Neighborhood*"
+      label_comment: "These get revealed after the user checks a checkbox "
+        "labeled \"Private neighborhood or Country\"."
+      control_type: INPUT
+      concepts: "address-level3"
+      section: ADDRESS
+    }
+    fields {
+      name: "street|street"
+      label: "Calle*"
+      label_translated: "Street*"
+      control_type: INPUT
+      concepts: "street-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "sector|sector"
+      label: "Sector / Nro*"
+      label_translated: "Sector / No.*"
+      control_type: INPUT
+      concepts: "house-number"
+      section: ADDRESS
+    }
+    fields {
+      name: "local|local"
+      label: "Ubicación"
+      label_translated: "Location"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "lote|lote"
+      label: "Lote*"
+      label_translated: "Batch*"
+      label_comment: "\"Lote\" refers to a piece of land (a lot / parcel of "
+        "land)."
+      control_type: INPUT
+      concepts: "gap"
+      section: ADDRESS
+    }
+  }
+}
+

@@ -1,0 +1,136 @@
+site_examples {
+  url: "https://eshop.mymarket.gr/"
+  is_structured: false
+  locale {
+    country: "GR"
+    language: "el"
+  }
+  sequences {
+    fields {
+      name: "|complete_order_address[profile][address][0][address][country_code]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|complete_order_address[profile][address][0][address][langcode]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "edit-complete-order-address-profile-address-0-address-given-name|complete_order_address[profile][address][0][address][given_name]"
+      label: "Όνομα"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "edit-complete-order-address-profile-address-0-address-family-name|complete_order_address[profile][address][0][address][family_name]"
+      label: "Επώνυμο"
+      label_translated: "Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "edit-complete-order-address-profile-address-0-address-address-line1|complete_order_address[profile][address][0][address][address_line1]"
+      label: "Διεύθυνση"
+      label_translated: "Address"
+      control_type: INPUT
+      concepts: "street-address"
+      autocomplete_attribute: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "edit-complete-order-address-profile-address-0-address-postal-code|complete_order_address[profile][address][0][address][postal_code]"
+      label: "Τ.Κ."
+      label_translated: "Postal Code"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "edit-complete-order-address-profile-address-0-address-locality|complete_order_address[profile][address][0][address][locality]"
+      label: "Πόλη"
+      label_translated: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "edit-complete-order-address-profile-field-customer-mobile-0-value|complete_order_address[profile][field_customer_mobile][0][value]"
+      label: "Κινητό"
+      label_translated: "Mobile"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "edit-complete-order-address-profile-field-onomasia-dieythynsis-0-value|complete_order_address[profile][field_onomasia_dieythynsis][0][value]"
+      label: "Ονομασία διεύθυνσης"
+      label_translated: "Address name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "edit-complete-order-address-profile-field-onoma-sto-koydoyni-0-value|complete_order_address[profile][field_onoma_sto_koydoyni][0][value]"
+      label: "Όνομα στο κουδούνι/όροφος"
+      label_translated: "Name on bell/floor"
+      control_type: INPUT
+      concepts: "care-of"
+      concepts: "floor"
+      concepts_comment: "As per native speaker this is a delivery-instruction "
+        "like the next field, but with a nudge about what the courier will need."
+      section: ADDRESS
+    }
+    fields {
+      name: "edit-complete-order-address-profile-field-notes-0-value|complete_order_address[profile][field_notes][0][value]"
+      label: "Σημειώσεις για την παράδοση"
+      label_translated: "Notes on delivery"
+      control_type: INPUT
+      concepts: "delivery-instructions"
+      section: ADDRESS
+    }
+    fields {
+      name: "edit-complete-order-address-profile-field-phone-0-value|complete_order_address[profile][field_phone][0][value]"
+      label: "Τηλέφωνο"
+      label_translated: "Phone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|form_build_id"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|form_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|form_id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|sgpdt"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

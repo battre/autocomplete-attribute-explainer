@@ -1,0 +1,121 @@
+site_examples {
+  url: "https://www.alternate.de"
+  is_structured: false
+  locale {
+    country: "DE"
+    language: "de"
+  }
+  sequences {
+    fields {
+      name: "|delivery-address-form"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "delivery-address-form:main-delivery-address-type|delivery-address-form:main-delivery-address-type"
+      label: "wie Rechnungsadresse"
+      label_translated: "like invoice address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "delivery-address-form:additional-options|delivery-address-form:additional-options"
+      label: "Ich möchte eine abweichende Lieferadresse angeben"
+      label_translated: "I want to specify a different delivery address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "delivery-address-form:sub-delivery-address-types:0:sub-delivery-address-type|delivery-address-form:sub-delivery-address-types:0:sub-delivery-address-type"
+      label: "Adresse"
+      label_translated: "address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "delivery-address-form:receiver|delivery-address-form:receiver"
+      label: "Empfänger"
+      label_translated: "recipient"
+      control_type: INPUT
+      concepts: "name"
+      section: NAME
+    }
+    fields {
+      name: "delivery-address-form:receiveraddon|delivery-address-form:receiveraddon"
+      label: "Neue Adresse hinzufügen"
+      label_translated: "Add new address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "delivery-address-form:street|delivery-address-form:street"
+      label: "Straße & Hausnummer"
+      label_translated: "Street, house number"
+      control_type: INPUT
+      concepts: "street-address"
+      section: ADDRESS
+    }
+    fields {
+      name: "delivery-address-form:plz|delivery-address-form:plz"
+      label: "PLZ"
+      label_translated: "Postcode"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "delivery-address-form:city|delivery-address-form:city"
+      label: "Ort"
+      label_translated: "location"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "delivery-address-form:country|delivery-address-form:country"
+      label: "Land"
+      label_translated: "country"
+      control_type: SELECT
+      concepts: "country-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "delivery-address-form:storepickup-address-type|delivery-address-form:storepickup-address-type"
+      label: "Ich möchte meine Bestellung bei ALTERNATE abholen"
+      label_translated: "I would like to collect my order from ALTERNATE"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|javax.faces.ViewState"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|next-step"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "next-step:btn|next-step:btn"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|javax.faces.ViewState"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

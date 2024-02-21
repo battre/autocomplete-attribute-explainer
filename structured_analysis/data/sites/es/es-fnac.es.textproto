@@ -1,0 +1,171 @@
+site_examples {
+  url: "https://www.fnac.es"
+  is_structured: true
+  locale {
+    country: "ES"
+    language: "es"
+  }
+  sequences {
+    fields {
+      name: "|addressValidation"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "legalStatus_1|legalStatus"
+      label: "Particular"
+      label_translated: "Particular"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "legalStatus_2|legalStatus"
+      label: "Empresa"
+      label_translated: "Business"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "genderId_3|genderId"
+      label: "Señora"
+      label_translated: "Mrs"
+      control_type: RADIO
+      concepts: "honorific-prefix"
+      section: NAME
+    }
+    fields {
+      name: "genderId_4|genderId"
+      label: "Señor"
+      label_translated: "Mister"
+      control_type: RADIO
+      concepts: "honorific-prefix"
+      section: NAME
+    }
+    fields {
+      name: "lastName|lastName"
+      label: "Apellido *"
+      label_translated: "Surname *"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "firstName|firstName"
+      label: "Nombre *"
+      label_translated: "Name *"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "address|address"
+      label: "Dirección *"
+      label_translated: "Address *"
+      control_type: INPUT
+      concepts: "address-line1"
+      autocomplete_attribute: "shipping address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "additionalAddress"
+      label: "Otros datos dirección"
+      label_translated: "Other address information"
+      control_type: INPUT
+      concepts: "address-line2"
+      autocomplete_attribute: "shipping address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "floor"
+      label: "Piso, puerta, portal..."
+      label_translated: "Floor, apartment, portal..."
+      control_type: INPUT
+      concepts: "address-line3"
+      concepts_comment: "The website labels this as autocomplete=address-line3 "
+        "but I don't know whehter users would leave address line 2 blank to "
+        "enter location-in-building information into this field."
+      autocomplete_attribute: "shipping address-line3"
+      low_certainty: true
+      section: ADDRESS
+    }
+    fields {
+      name: "zipCode|zipCode"
+      label: "Código postal *"
+      label_translated: "Postal Code *"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "shipping postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "city|city"
+      label: "Ciudad *"
+      label_translated: "City *"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "shipping address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "|countryId"
+      label: "Pays"
+      label_translated: "Country"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "|state"
+      label: "Provincia"
+      label_translated: "Province"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "|documentCountryId"
+      label: "País de emisión del documento *"
+      label_translated: "Country of issuance of the document *"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|taxNumberType"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|taxIdNumber"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "phone|phone"
+      label: "Número de teléfono (para facilitar la entrega) *"
+      label_translated: "Phone number (to facilitate delivery) *"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "shipping tel"
+      section: PHONE
+    }
+    fields {
+      name: "addressName|addressName"
+      label: "Nombra esta dirección"
+      label_translated: "name this address"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+  }
+}
+

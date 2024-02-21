@@ -1,0 +1,206 @@
+site_examples {
+  url: "https://www.adidas.com.br"
+  is_structured: true
+  locale {
+    country: "BR"
+    language: "pt"
+  }
+  sequences {
+    fields {
+      name: "shippingAddress-firstName|shippingAddress.firstName"
+      label: "Nome"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "shippingAddress-lastName|shippingAddress.lastName"
+      label: "Sobrenome"
+      label_translated: "Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "shippingAddress-address1|shippingAddress.address1"
+      label: "Endereço"
+      label_translated: "Street name"
+      control_type: INPUT
+      concepts: "street-name"
+      autocomplete_attribute: "street-address address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress-zipcode|shippingAddress.zipcode"
+      label: "CEP"
+      label_translated: "Zip code"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress-houseNumber|shippingAddress.houseNumber"
+      label: "Número"
+      label_translated: "Number"
+      control_type: INPUT
+      concepts: "house-number"
+      autocomplete_attribute: "street-address housenumber"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress-address2|shippingAddress.address2"
+      label: "Informações adicionais"
+      label_translated: "Additional Information"
+      control_type: INPUT
+      concepts: "address-overflow"
+      autocomplete_attribute: "street-address address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress-suburb|shippingAddress.suburb"
+      label: "Bairro"
+      label_translated: "Neighborhood"
+      control_type: INPUT
+      concepts: "address-level3"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress-city|shippingAddress.city"
+      label: "Cidade"
+      label_translated: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "|shippingAddress.stateCode"
+      label: "Estado"
+      label_translated: "state"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "|scheduled-delivery-date"
+      label: "Data de entrega"
+      label_translated: "Delivery date"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|scheduled-delivery-time"
+      label: "Periodo de entrega"
+      label_translated: "delivery period"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "contact-emailAddress|shippingAddress.emailAddress"
+      label: "E-mail"
+      label_translated: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "home email"
+      section: OTHER
+    }
+    fields {
+      name: "contact-phoneNumber|shippingAddress.phoneNumber"
+      label: "Número de telefone"
+      label_translated: "Phone number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "home tel"
+      section: PHONE
+    }
+    fields {
+      name: "billingAddress-documentValue|additionalBillingAddress.documentValue"
+      label: "CPF"
+      label_translated: "CPF"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|shouldUseShippingAddressForBilling"
+      label: "Minhas informações de cobrança e entrega são as mesmas"
+      label_translated: "My billing and delivery information is the same"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Tenho mais de 18 anos Por que isso importa?"
+      label_translated: "I&#39;m over 18 Why does it matter?"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Concordo expressamente que adidas do Brasil Ltda. poderá utilizar os meus dados pessoais, coletados"
+      label_translated: "I expressly agree that adidas do Brasil Ltda. may use my personal data, collected"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "login-email|login-email"
+      label: "E-mail"
+      label_translated: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      section: LOGIN
+    }
+    fields {
+      name: "login-password|login-password"
+      label: "Senha"
+      label_translated: "Password"
+      control_type: INPUT
+      concepts: "unset"
+      section: LOGIN
+    }
+    fields {
+      name: "|persistentLogin"
+      label: "Mantenha-me conectado.Mais informações"
+      label_translated: "Keep me signed in.More info"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: LOGIN
+    }
+    fields {
+      name: "coupon-input|coupon"
+      label: "Digite cupom promocional"
+      label_translated: "Enter promotional coupon"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|pid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_scsid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_sclid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

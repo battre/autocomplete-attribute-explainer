@@ -1,0 +1,755 @@
+site_examples {
+  url: "https://www.dafiti.com.br"
+  is_structured: true
+  locale {
+    country: "BR"
+    language: "pt"
+  }
+  sequences {
+    fields {
+      name: "|send"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|pickupAddressItemSelected"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "YII_CSRF_TOKEN|YII_CSRF_TOKEN"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "googleApiKey|googleApiKey"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "googleApiVersion|googleApiVersion"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "appEnv|appEnv"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "RegisterForm_customer_personality_1|CheckoutRegisterForm[customer_personality]"
+      label: "Pessoa Jurídica"
+      label_translated: "Legal person"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CheckoutLegalCustomerInformationForm_email|CheckoutLegalCustomerInformationForm[email]"
+      label: "E-mail"
+      label_translated: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "CheckoutLegalCustomerInformationForm_password|CheckoutLegalCustomerInformationForm[password]"
+      label: "Senha"
+      label_translated: "Password"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "CheckoutLegalCustomerInformationForm_password2|CheckoutLegalCustomerInformationForm[password2]"
+      label: "Confirmar"
+      label_translated: "Confirm"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "CheckoutLegalCustomerInformationForm_tax_identification|CheckoutLegalCustomerInformationForm[tax_identification]"
+      label: "CNPJ"
+      label_translated: "CNPJ"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CheckoutLegalCustomerInformationForm_state_registration|CheckoutLegalCustomerInformationForm[state_registration]"
+      label: "Inscrição Estadual"
+      label_translated: "State registration"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ytCheckoutLegalCustomerInformationForm_state_registration_exempt|CheckoutLegalCustomerInformationForm[state_registration_exempt]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CheckoutLegalCustomerInformationForm_state_registration_exempt|CheckoutLegalCustomerInformationForm[state_registration_exempt]"
+      label: "I.E. isento"
+      label_translated: "IE exempt"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CheckoutLegalCustomerInformationForm_first_name|CheckoutLegalCustomerInformationForm[first_name]"
+      label: "Razão Social"
+      label_translated: "Social Reason"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "RegisterForm_customer_personality_2|CheckoutRegisterForm[customer_personality]"
+      label: "Pessoa Física"
+      label_translated: "Physical person"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CheckoutNaturalCustomerInformationForm_email|CheckoutNaturalCustomerInformationForm[email]"
+      label: "E-mail"
+      label_translated: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "CheckoutNaturalCustomerInformationForm_password|CheckoutNaturalCustomerInformationForm[password]"
+      label: "Senha"
+      label_translated: "Password"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "CheckoutNaturalCustomerInformationForm_password2|CheckoutNaturalCustomerInformationForm[password2]"
+      label: "Confirmar"
+      label_translated: "Confirm"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "CheckoutNaturalCustomerInformationForm_tax_identification|CheckoutNaturalCustomerInformationForm[tax_identification]"
+      label: "CPF"
+      label_translated: "CPF"
+      example: "000.000.000-00"
+      example_translated: "000,000,000-00"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "CheckoutNaturalCustomerInformationForm_first_name|CheckoutNaturalCustomerInformationForm[first_name]"
+      label: "Nome"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "CheckoutNaturalCustomerInformationForm_last_name|CheckoutNaturalCustomerInformationForm[last_name]"
+      label: "Sobrenome"
+      label_translated: "Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "CheckoutNaturalCustomerInformationForm_birthday_day|CheckoutNaturalCustomerInformationForm[birthday_day]"
+      label: "Nascimento*"
+      label_translated: "Birth*"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CheckoutNaturalCustomerInformationForm_birthday_month|CheckoutNaturalCustomerInformationForm[birthday_month]"
+      label: "Nascimento*"
+      label_translated: "Birth*"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CheckoutNaturalCustomerInformationForm_birthday_year|CheckoutNaturalCustomerInformationForm[birthday_year]"
+      label: "Nascimento*"
+      label_translated: "Birth*"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CheckoutNaturalCustomerInformationForm_gender|CheckoutNaturalCustomerInformationForm[gender]"
+      label: "Sexo"
+      label_translated: "Sex"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      hide: true
+      name: "BillingAddressForm_first_name|BillingAddressForm[first_name]"
+      label: "Nome"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      hide: true
+      name: "BillingAddressForm_last_name|BillingAddressForm[last_name]"
+      label: "Sobrenome"
+      label_translated: "Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "BillingAddressForm_postcode|BillingAddressForm[postcode]"
+      label: "CEP"
+      label_translated: "Zip code"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "BillingAddressForm_address1|BillingAddressForm[address1]"
+      label: "Endereço"
+      label_translated: "Street name"
+      control_type: INPUT
+      concepts: "street-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "BillingAddressForm_street_number|BillingAddressForm[street_number]"
+      label: "Número"
+      label_translated: "House number"
+      control_type: INPUT
+      concepts: "house-number"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "BillingAddressForm_additional_info|BillingAddressForm[additional_info]"
+      label: "Complemento"
+      label_translated: "Complement"
+      example: "Nº do apartamento, Bloco, etc."
+      example_translated: "apartment number, block"
+      control_type: INPUT
+      concepts: "address-overflow"
+      section: ADDRESS
+    }
+    fields {
+      name: "BillingAddressForm_neighborhood|BillingAddressForm[neighborhood]"
+      label: "Bairro"
+      label_translated: "Neighborhood"
+      control_type: INPUT
+      concepts: "address-level3"
+      section: ADDRESS
+    }
+    fields {
+      name: "BillingAddressForm_fk_customer_address_region|BillingAddressForm[fk_customer_address_region]"
+      label: "Estado"
+      label_translated: "state"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "BillingAddressForm_city|BillingAddressForm[city]"
+      label: "Cidade"
+      label_translated: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "BillingAddressForm_city_code|BillingAddressForm[city_code]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "BillingAddressForm_reference_delivery|BillingAddressForm[reference_delivery]"
+      label: "Referência"
+      label_translated: "Reference"
+      control_type: INPUT
+      concepts: "landmark"
+      section: ADDRESS
+    }
+    fields {
+      name: "BillingAddressForm_phone|BillingAddressForm[phone]"
+      label: "Celular"
+      label_translated: "Cell"
+      example: "(XX) 00000-0000"
+      example_translated: "(XX) 00000-0000"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PHONE
+    }
+    fields {
+      name: "BillingAddressForm_phone_optional|BillingAddressForm[phone_optional]"
+      label: "Telefone 2"
+      label_translated: "phone 2"
+      example: "(XX) 0000-0000"
+      example_translated: "(XX) 0000-0000"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PHONE
+    }
+    fields {
+      name: "shippingAddressDifferent|shippingAddressDifferent"
+      label: "Endereço de entrega igual ao principal"
+      label_translated: "Delivery address equal to main"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      hide: true
+      name: "ShippingAddressForm_first_name|ShippingAddressForm[first_name]"
+      label: "Nome"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "ShippingAddressForm_last_name|ShippingAddressForm[last_name]"
+      label: "Sobrenome"
+      label_translated: "Last name"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "ShippingAddressForm_postcode|ShippingAddressForm[postcode]"
+      label: "CEP"
+      label_translated: "Zip code"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "ShippingAddressForm_address1|ShippingAddressForm[address1]"
+      label: "Endereço"
+      label_translated: "Street name"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "ShippingAddressForm_street_number|ShippingAddressForm[street_number]"
+      label: "Número"
+      label_translated: "Number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "ShippingAddressForm_additional_info|ShippingAddressForm[additional_info]"
+      label: "Complemento"
+      label_translated: "Complement"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "ShippingAddressForm_neighborhood|ShippingAddressForm[neighborhood]"
+      label: "Bairro"
+      label_translated: "Neighborhood"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "ShippingAddressForm_fk_customer_address_region|ShippingAddressForm[fk_customer_address_region]"
+      label: "Estado"
+      label_translated: "state"
+      control_type: SELECT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "ShippingAddressForm_city|ShippingAddressForm[city]"
+      label: "Cidade"
+      label_translated: "City"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "ShippingAddressForm_city_code|ShippingAddressForm[city_code]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      hide: true
+      name: "ShippingAddressForm_reference_delivery|ShippingAddressForm[reference_delivery]"
+      label: "Referência"
+      label_translated: "Reference"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      hide: true
+      name: "ShippingAddressForm_phone|ShippingAddressForm[phone]"
+      label: "Celular"
+      label_translated: "Cell"
+      example: "(XX) 00000-0000"
+      example_translated: "(XX) 00000-0000"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PHONE
+    }
+    fields {
+      hide: true
+      name: "ShippingAddressForm_phone_optional|ShippingAddressForm[phone_optional]"
+      label: "Telefone 2"
+      label_translated: "phone 2"
+      example: "(XX) 0000-0000"
+      example_translated: "(XX) 0000-0000"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PHONE
+    }
+    fields {
+      name: "delivery-type-1|selectFreightOptions"
+      label: "Normal Grátis 22 a 25-jul O pedido será liberado somente após a aprovação do pagamento."
+      label_translated: "Normal Free 22-25-Jul The order will be released only after the payment is approved."
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "delivery-type-8|selectFreightOptions"
+      label: "Retira Fácil Grátis 22 a 25-jul O pedido será liberado somente após a aprovação do pagamento."
+      label_translated: "Free Easy Pickup 22-25-Jul The order will be released only after payment has been approved."
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "creditcard|PaymentMethodForm[payment_method]"
+      label: "Cartão de Crédito"
+      label_translated: "Credit card"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cardName|CreditcardForm[cc_type]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CreditcardForm_cc_number|CreditcardForm[cc_number]"
+      label: "Número do Cartão*"
+      label_translated: "Card number*"
+      example: "0000 0000 0000 0000"
+      example_translated: "0000 0000 0000 0000"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PAYMENT
+    }
+    fields {
+      name: "PaymentMethodForm_installment_0|PaymentMethodForm[installment][0]"
+      label: "Parcelas *"
+      label_translated: "installments *"
+      control_type: SELECT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "CreditcardForm_cc_holder|CreditcardForm[cc_holder]"
+      label: "Seu Nome* (como no cartão)"
+      label_translated: "Your Name* (as on the card)"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PAYMENT
+    }
+    fields {
+      name: "CreditcardForm_cc_exp_month|CreditcardForm[cc_exp_month]"
+      label: "Vencimento*"
+      label_translated: "Due date*"
+      control_type: SELECT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PAYMENT
+    }
+    fields {
+      name: "CreditcardForm_cc_exp_year|CreditcardForm[cc_exp_year]"
+      label: "Vencimento*"
+      label_translated: "Due date*"
+      control_type: SELECT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PAYMENT
+    }
+    fields {
+      name: "CreditcardForm_cc_security_code_0|CreditcardForm[cc_security_code][0]"
+      label: "Código de Segurança (cvv)*"
+      label_translated: "Security Code (cvv)*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PAYMENT
+    }
+    fields {
+      name: "ytowner-data-input-check-cc|CreditcardForm[cc_add_another_tax_identification]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "owner-data-input-check-cc|CreditcardForm[cc_add_another_tax_identification]"
+      label: "CPF/CNPJ do proprietário do cartão usado acima é igual ao do cadastro da conta"
+      label_translated: "CPF/CNPJ of the owner of the card used above is the same as that of the account registration"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CreditcardForm_cc_tax_identification|CreditcardForm[cc_tax_identification]"
+      label: "CPF/CNPJ do cartão"
+      label_translated: "CPF/CNPJ of the card"
+      example: "CPF/CNPJ do cartão"
+      example_translated: "CPF/CNPJ of the card"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "ytCreditcardForm_cc_add_just_click|CreditcardForm[cc_add_just_click]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CreditcardForm_cc_add_just_click|CreditcardForm[cc_add_just_click]"
+      label: "Salvar cartão para próxima compra"
+      label_translated: "Save card for next purchase"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CreditcardForm_cc_is_default_just_click|CreditcardForm[cc_is_default_just_click]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "instrck|instrck"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "instcount|instcount"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "debitcard|PaymentMethodForm[payment_method]"
+      label: "Cartão de Débito"
+      label_translated: "Debit card"
+      control_type: RADIO
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "cardName|DebitcardForm[cc_type]"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "DebitcardForm_cc_number|DebitcardForm[cc_number]"
+      label: "Número do Cartão"
+      label_translated: "Card number"
+      example: "0000 0000 0000 0000"
+      example_translated: "0000 0000 0000 0000"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PAYMENT
+    }
+    fields {
+      name: "DebitcardForm_cc_holder|DebitcardForm[cc_holder]"
+      label: "Seu Nome (como no cartão)"
+      label_translated: "Your Name (as on the card)"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PAYMENT
+    }
+    fields {
+      name: "DebitcardForm_cc_exp_month|DebitcardForm[cc_exp_month]"
+      label: "Vencimento"
+      label_translated: "Due date"
+      control_type: SELECT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PAYMENT
+    }
+    fields {
+      name: "DebitcardForm_cc_exp_year|DebitcardForm[cc_exp_year]"
+      label: "Vencimento"
+      label_translated: "Due date"
+      control_type: SELECT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PAYMENT
+    }
+    fields {
+      name: "DebitcardForm_cc_security_code_0|DebitcardForm[cc_security_code][0]"
+      label: "Código de Segurança (cvv)"
+      label_translated: "Security Code (cvv)"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PAYMENT
+    }
+    fields {
+      name: "ytowner-data-input-check-dc|DebitcardForm[cc_add_another_tax_identification]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "owner-data-input-check-dc|DebitcardForm[cc_add_another_tax_identification]"
+      label: "CPF/CNPJ do proprietário do cartão usado acima é igual ao do cadastro da conta"
+      label_translated: "CPF/CNPJ of the owner of the card used above is the same as that of the account registration"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DebitcardForm_cc_tax_identification|DebitcardForm[cc_tax_identification]"
+      label: "CPF/CNPJ do cartão"
+      label_translated: "CPF/CNPJ of the card"
+      example: "CPF/CNPJ do cartão"
+      example_translated: "CPF/CNPJ of the card"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "ytDebitcardForm_cc_add_just_click|DebitcardForm[cc_add_just_click]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DebitcardForm_cc_add_just_click|DebitcardForm[cc_add_just_click]"
+      label: "Salvar cartão para próxima compra"
+      label_translated: "Save card for next purchase"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "DebitcardForm_cc_is_default_just_click|DebitcardForm[cc_is_default_just_click]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "instrck|instrck"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "instcount|instcount"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "boleto|PaymentMethodForm[payment_method]"
+      label: "Boleto Bancário"
+      label_translated: "Bank slip"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "coupon|coupon"
+      label: "Cupom de Desconto"
+      label_translated: "Discount coupon"
+      example: "Cupom de Desconto"
+      example_translated: "Discount coupon"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "refund|refund"
+      label: "Vale Trocas"
+      label_translated: "Exchange voucher"
+      example: "Vale Trocas"
+      example_translated: "Exchange voucher"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|newsletter_signup"
+      label: "Quero receber notificações por e-mail e WhatsApp."
+      label_translated: "I want to receive notifications by email and WhatsApp."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

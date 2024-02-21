@@ -1,0 +1,192 @@
+regex_definitions:
+  kBuildingValueRe:  # Regex for type "building"
+    regex_concat:
+      parts:
+      - regex_fragment: \d+  # House number
+      # Optional suffix for building ids with a letter suffix, e.g. 12a.
+      - regex_fragment: '(?:'
+      # Single character suffix (e.g. "12 a" and "12a")
+      - regex_fragment: \s*[[:alpha:]]\b
+      - regex_fragment: '|'
+      # House number range (e.g. "10 / 12", "10/12", "10 - 12", "10-12")
+      - regex_fragment: \s*[\/-]\s*\d+
+      - regex_fragment: ')?'
+      wrap_non_capture: false
+
+  # Regular expression to match the prefixes that indicate a house number.
+  kHouseNumberOptionalPrefixRe:
+    regex_fragment: '(?:(?:no|nr|°|º|nummer|number)[-.\s]*)?'
+
+capture_definitions:
+  ParseBuildingLocation:
+    capture:
+      output: building-location
+      parts:
+      # We only search for building locations at the beginning a field.
+      - capture_reference: AnchorToBeginningOfInput
+      - capture:
+          output: street
+          parts: [ {regex_reference: kMultipleLazyWordsRe} ]
+      - separator: {regex_reference: kCommaOrWhitespaceSeparator}
+      - capture:
+          output: building
+          prefix: {regex_reference: kHouseNumberOptionalPrefixRe}
+          parts: [ {regex_reference: kBuildingValueRe} ]
+
+  AddressLinesDecomposition:
+    capture:
+      output: street-address-alternative-1
+      parts:
+      - capture:
+          output: building-location
+          parts: [ {regex_fragment: '.*'} ]
+      - regex_fragment: '\n'
+      - capture:
+          output: address-overflow
+          # Matches any non-empty string, including new-line characters.
+          parts: [ {regex_fragment: '[\s\S]+'} ]
+          quantifier: MATCH_REQUIRED
+
+  StreetAddressDecomposition:
+    capture:
+      output: street-address-alternative-1
+      parts:
+      - capture_reference: ParseBuildingLocation
+      - separator: {regex_reference: kCommaOrWhitespaceSeparator}
+      - capture:
+          output: address-overflow
+          parts: [ {regex_reference: kMultipleLazyWordsRe} ]
+          quantifier: MATCH_OPTIONAL
+
+
+parsing_definitions:
+  building-location:
+    decomposition:
+      capture_reference: ParseBuildingLocation
+  # To decompose street addresses:
+  # 1. If the street address has multiple lines (separated by newline
+  # characters), use AddressLinesDecomposition to match individual, non-empty
+  # lines.
+  # 2. If there are no newline characters, try decomposing the entire street
+  # address with StreetAddressDecomposition.
+  street-address-alternative-1:
+    decomposition_cascade:
+      alternatives:
+      - decomposition: {capture_reference: AddressLinesDecomposition}
+      - decomposition: {capture_reference: StreetAddressDecomposition}
+
+test_parsing_definitions:
+- id: "Test 1"
+  type: building-location
+  input: "Erika-Mann-Str. 3"
+  output:
+    street: "Erika-Mann-Str."
+    building: "3"
+- id: "Test 2"
+  type: building-location
+  input: "Implerstr. 73a"
+  output:
+    street: "Implerstr."
+    building: "73a"
+- id: "Test 3"
+  type: building-location
+  input: "Implerstr. no 73a"
+  output:
+    street: "Implerstr."
+    building: "73a"
+- id: "Test 4"
+  type: building-location
+  input: "Implerstr. °73a"
+  output:
+    street: "Implerstr."
+    building: "73a"
+- id: "Test 6"
+  type: building-location
+  input: "Implerstr. number 73a"
+  output:
+    street: "Implerstr."
+    building: "73a"
+- id: "Test 6"
+  type: street-address-alternative-1
+  input: "Implerstr. 73a Obergeschoss 2 Wohnung 3"
+  output:
+    street: "Implerstr."
+    building: "73a"
+    building-location: "Implerstr. 73a"
+    address-overflow: "Obergeschoss 2 Wohnung 3"
+- id: "Test 7"
+  type: street-address-alternative-1
+  input: "Implerstr. 73 OG 2"
+  output:
+    street: "Implerstr."
+    building: "73"
+    building-location: "Implerstr. 73"
+    address-overflow: "OG 2"
+- id: "Test 8"
+  type: street-address-alternative-1
+  input: "Implerstr. nummer 73 2. OG"
+  output:
+    street: "Implerstr."
+    building: "73"
+    building-location: "Implerstr. nummer 73"
+    address-overflow: "2. OG"
+- id: "Test 9"
+  type: street-address-alternative-1
+  input: "Implerstr. nummer 73"
+  output:
+    street: "Implerstr."
+    building: "73"
+    building-location: "Implerstr. nummer 73"
+    address-overflow: ""
+- id: "Test 10"
+  type: building-location
+  input: "Implerstr. 10/12"
+  output:
+    street: "Implerstr."
+    building: "10/12"
+- id: "Test 11"
+  type: building-location
+  input: "Implerstr. number 10 - 12"
+  output:
+    street: "Implerstr."
+    building: "10 - 12"
+- id: "Test 12"
+  type: building-location
+  input: "Implerstr. 73 a"
+  output:
+    street: "Implerstr."
+    building: "73 a"
+- id: "Test 13"
+  type: street-address-alternative-1
+  input: "Implerstr. 73 abcdefg"
+  output:
+    street: "Implerstr."
+    building: "73"
+    building-location: "Implerstr. 73"
+    address-overflow: "abcdefg"
+- id: "Test 14"
+  type: building-location
+  input: "Implerstr. Nr 8"
+  output:
+    street: "Implerstr."
+    building: "8"
+- id: "Test 15"
+  type: building-location
+  input: "Implerstr. Nummer 15"
+  output:
+    street: "Implerstr."
+    building: "15"
+- id: "Test 16"
+  type: street-address-alternative-1
+  input: "Implerstr. nummer 73 \nRückgebäude"
+  output:
+    street-address-alternative-1: "Implerstr. nummer 73 \nRückgebäude"
+    building-location: "Implerstr. nummer 73 "
+    address-overflow: "Rückgebäude"
+- id: "Test 17"
+  type: street-address-alternative-1
+  input: "Implerstr. nummer 73\nRückgebäude\nExtra info"
+  output:
+    street-address-alternative-1: "Implerstr. nummer 73\nRückgebäude\nExtra info"
+    building-location: "Implerstr. nummer 73"
+    address-overflow: "Rückgebäude\nExtra info"

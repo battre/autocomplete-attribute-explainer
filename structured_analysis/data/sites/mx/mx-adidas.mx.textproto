@@ -1,0 +1,200 @@
+site_examples {
+  url: "https://www.adidas.mx"
+  is_structured: true
+  locale {
+    country: "MX"
+    language: "es"
+  }
+  sequences {
+    fields {
+      name: "shippingAddress-firstName|shippingAddress.firstName"
+      label: "Nombre"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "shippingAddress-lastName|shippingAddress.lastName"
+      label: "Apellidos"
+      label_translated: "Surnames"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "shippingAddress-zipcode|shippingAddress.zipcode"
+      label: "Código postal"
+      label_translated: "Postal Code"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress-address1|shippingAddress.address1"
+      label: "Calle"
+      label_translated: "Street"
+      control_type: INPUT
+      concepts: "street-name"
+      autocomplete_attribute: "street-address address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress-houseNumber|shippingAddress.houseNumber"
+      label: "Número Exterior"
+      label_translated: "Outdoor Number"
+      control_type: INPUT
+      concepts: "house-number"
+      autocomplete_attribute: "street-address housenumber"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress-address2|shippingAddress.address2"
+      label: "Número Interior"
+      label_translated: "Interior number"
+      control_type: INPUT
+      concepts: "apartment"
+      autocomplete_attribute: "street-address address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress-address3|shippingAddress.address3"
+      label: "Información Adicional"
+      label_translated: "Additional Information"
+      control_type: INPUT
+      concepts: "address-overflow"
+      autocomplete_attribute: "street-address address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress-colony|shippingAddress.colony"
+      label: "Colonia"
+      label_translated: "Colonia"
+      control_type: INPUT
+      concepts: "address-level4"
+      autocomplete_attribute: "street-address address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress-suburb|shippingAddress.suburb"
+      label: "Delegación o Municipio"
+      label_translated: "Delegation or Municipality"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress-city|shippingAddress.city"
+      label: "Ciudad"
+      label_translated: "City"
+      control_type: INPUT
+      concepts: "address-level3"
+      autocomplete_attribute: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "|shippingAddress.countyProvince"
+      label: "Estado"
+      label_translated: "State"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "contact-emailAddress|shippingAddress.emailAddress"
+      label: "Correo electrónico"
+      label_translated: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "home email"
+      section: OTHER
+    }
+    fields {
+      name: "contact-phoneNumber|shippingAddress.phoneNumber"
+      label: "Teléfono Celular"
+      label_translated: "Cell phone"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "home tel"
+      section: OTHER
+    }
+    fields {
+      name: "|shouldShowAdditionalBillingAddress"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|shouldUseShippingAddressForBilling"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "login-email|"
+      label: "Correo electrónico"
+      label_translated: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "login-password|"
+      label: "Contraseña"
+      label_translated: "Password"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|persistentLogin"
+      label: "¿Olvidaste tu contraseña?"
+      label_translated: "Did you forget your password?"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "coupon-input|coupon"
+      label: "Introduce tu código promocional"
+      label_translated: "Enter your promotional code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "fileSelector|file"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|filename"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

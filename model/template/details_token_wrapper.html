@@ -1,0 +1,14 @@
+<h3 id="{{id}}">
+  <a href="#{{id}}">#</a>
+  {% if not model.concepts[id].is_atomic_token() and model.concepts[id].is_synthesized -%}
+  <i>(synthesized)</i>
+  {%- endif %}
+  {{id}}
+</h3>
+<div style="margin-left: 20px;">
+{% if id in model.short_descriptions %}
+{{model.short_descriptions[id].get("en")}}
+{% endif %}
+
+{{content|safe}}
+</div>

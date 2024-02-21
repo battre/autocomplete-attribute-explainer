@@ -1,0 +1,190 @@
+site_examples {
+  url: "https://www.hmv.co.jp"
+  is_structured: true
+  locale {
+    country: "JP"
+    language: "ja"
+  }
+  sequences {
+    fields {
+      name: "|token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "pnflag|pnflag"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "surname|surname"
+      label: "氏名（漢字）"
+      label_translated: "Name (Kanji)"
+      example: "※姓と名の間にスペースを入れてください。"
+      example_translated: "Please leave a space between your first and last name."
+      control_type: INPUT
+      concepts: "name"
+      section: NAME
+    }
+    fields {
+      name: "surnamekana|surnamekana"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "postcode|postCode"
+      label: "郵便番号"
+      label_translated: "Zip code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "address01|address1"
+      label: "都道府県"
+      label_translated: "Prefectures"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "address02|address2"
+      label: "住所"
+      label_translated: "Address"
+      example: "例）品川区大崎一丁目11番2号"
+      example_translated: "Example) 1-11-2 Osaki, Shinagawa-ku"
+      control_type: INPUT
+      concepts: "address-level2"
+      concepts: "building-location"
+      section: ADDRESS
+    }
+    fields {
+      name: "address03|address3"
+      label: "建物名等"
+      label_translated: "Building name, etc"
+      example: "例）ゲートシティ大崎イーストタワー"
+      example_translated: "Example) Gate City Osaki East Tower"
+      control_type: INPUT
+      concepts: "building-and-location-in-building"
+      section: ADDRESS
+    }
+    fields {
+      name: "countrycode|countrycode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "tel01|TEL1"
+      label: "電話番号1"
+      label_translated: "phone number 1"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "tel2|tel2"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "occupationCode|occupationCode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "male|GENDER"
+      label: "男性"
+      label_translated: "male"
+      control_type: RADIO
+      concepts: "honorific-prefix"
+      section: NAME
+    }
+    fields {
+      name: "female|GENDER"
+      label: "女性"
+      label_translated: "woman"
+      control_type: RADIO
+      concepts: "honorific-prefix"
+      section: NAME
+    }
+    fields {
+      name: "birthday01|BIRTHYEAR"
+      label: "生年月日"
+      label_translated: "Date of birth"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "birthday02|BIRTHMONTH"
+      label: "年"
+      label_translated: "Year"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "birthday03|BIRTHDAY"
+      label: "月"
+      label_translated: "Moon"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "SPOUSE|SPOUSE"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "nickname|nickname"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "reviewaddress|reviewaddress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "lock|lock"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "genderlock|genderlock"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "send|send"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "flag|flag"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

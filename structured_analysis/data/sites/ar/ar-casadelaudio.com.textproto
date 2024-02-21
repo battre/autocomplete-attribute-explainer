@@ -1,0 +1,488 @@
+site_examples {
+  url: "https://www.casadelaudio.com"
+  is_structured: false
+  locale {
+    country: "AR"
+    language: "es"
+  }
+  sequences {
+    fields {
+      name: "RealShippingMethodId|model.ShippingMethodId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "RealStoreId|model.StoreId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ShippingSelected|model.ShippingSelected"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "FinancingId|model.FinancingId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "SetPayments|model.Payments"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "Comments|model.Comments"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "Observations|model.Observations"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "Installment|model.Installment"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "HasShippingMethodRet|model.HasShippingMethod"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "SPScardNames|SPScardNames"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "SPSPayments|SPSPayments"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "promoCode|"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "DescSPSCalc|"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "SiteId|"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "CardCode|"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "Bank|SPSBank"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "Shipping_0|ExternalShippingIdd"
+      label: "Retiro en Sucursal"
+      label_translated: "Withdrawal at Branch"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "|radio"
+      label: "Envío a Domicilio"
+      label_translated: "Home delivery"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DeliveryDateC|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "_g_country_s|Country_s"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "_g_state_s|State"
+      label: "Provincia*"
+      label_translated: "Province*"
+      label_comment: "Second form on the page"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "_g_city_s|City"
+      label: "Ciudad*"
+      label_translated: "City*"
+      control_type: SELECT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "_g_town_s|Town"
+      label: "Barrio*"
+      label_translated: "Neighborhood*"
+      control_type: SELECT
+      concepts: "address-level3"
+      section: ADDRESS
+    }
+    fields {
+      name: "_g_cp_s|cp"
+      label: "Código postal*"
+      label_translated: "Postal Code*"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "cant_MedioEnv|cant_MedioEnv"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "Shipping_88|ShippingMethodIdFromDb"
+      label: "Envios Casa del Audio $"
+      label_translated: "Shipping House of Audio $"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DeliveryDate|model.DeliveryDate"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DeliveryBand|model.DeliveryBand"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "HasShippingMethod|model.HasShippingmethod"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "StoreName|model.StoreName"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "PayMethod_25|model.PayMethodId"
+      label: "Tarjeta Naranja en 3 Sin Interés o 6 y 10 cuotas Fijas"
+      label_translated: "Orange Card in 3 Without Interest or 6 and 10 Fixed installments"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "SPScardNames_25|SPScardNames1"
+      label: "Tarjetas disponibles"
+      label_translated: "cards available"
+      control_type: SELECT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "SPSbanks_25|SPSbanks"
+      label: "Bancos disponibles"
+      label_translated: "benches available"
+      control_type: SELECT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "SPSPayments_25|SPSPayments1"
+      label: "Cuotas disponibles"
+      label_translated: "available quotas"
+      control_type: SELECT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "PayMethod_6|model.PayMethodId"
+      label: "Mercado Pago (efectivo o débito) ??????"
+      label_translated: "Market Payment (cash or debit) ??????"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "PayMethod_12|model.PayMethodId"
+      label: "Tarjetas de crédito en 3, 6 y 12 cuotas Fijas"
+      label_translated: "Credit cards in 3, 6 and 12 fixed installments"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "SPScardNames_12|SPScardNames1"
+      label: "Tarjetas disponibles"
+      label_translated: "cards available"
+      control_type: SELECT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "SPSbanks_12|SPSbanks"
+      label: "Bancos disponibles"
+      label_translated: "benches available"
+      control_type: SELECT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "SPSPayments_12|SPSPayments1"
+      label: "Cuotas disponibles"
+      label_translated: "available quotas"
+      control_type: SELECT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "_has_guest_|_has_guest_"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "FirstName|model.FirstName"
+      label: "Nombre * Razón Social *"
+      label_translated: "Name * Business name *"
+      control_type: INPUT
+      concepts: "given-name"
+      concepts: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "LastName|model.LastName"
+      label: "Apellido *"
+      label_translated: "Surname *"
+      control_type: INPUT
+      concepts: "family-name"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "FirstName1|model.FirstName"
+      label: "Razón Social *"
+      label_translated: "Business name *"
+      control_type: INPUT
+      concepts: "organization"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "LastName1|model.LastName"
+      control_type: INPUT
+      concepts: "family-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "EMail|model.EMail"
+      label: "Email *"
+      label_translated: "Email *"
+      control_type: INPUT
+      concepts: "email"
+      section: OTHER
+    }
+    fields {
+      name: "Phone|model.Phone"
+      label: "Teléfono"
+      label_translated: "Telephone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "IdNumber|model.IdNumber"
+      label: "DNI*"
+      label_translated: "ID*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "Address|model.Address"
+      label: "Calle *"
+      label_translated: "Street *"
+      control_type: INPUT
+      concepts: "street-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "StreetNumber|model.StreetNumber"
+      label: "Nro.*"
+      label_translated: ".*"
+      control_type: INPUT
+      concepts: "house-number"
+      section: ADDRESS
+    }
+    fields {
+      name: "AddressLine1|model.AddressLine1"
+      label: "Piso / Depto"
+      label_translated: "Floor / Apartment"
+      control_type: INPUT
+      # concepts: "floor"
+      # concepts: "apartment"
+      concepts: "location-in-building"
+      section: ADDRESS
+    }
+    fields {
+      name: "AddressLine2|model.AddressLine2"
+      label: "Entre calles*"
+      label_translated: "Between streets*"
+      control_type: INPUT
+      concepts: "between-streets"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "_g_country|model.Country"
+      control_type: INPUT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "_g_state|model.State_"
+      label: "Provincia"
+      label_translated: "Province"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "_g_city|model.City_"
+      label: "Partido"
+      label_translated: "Partido"
+      label_comment: "Buenos Aires is structured into Partidos "
+        "<a href=\"https://es.wikipedia.org/wiki/Anexo:Partidos_de_la_provincia_de_Buenos_Aires\">Wikipedia</a>. "
+        "I don't know whether this applies to other provinces as well."
+      control_type: SELECT
+      concepts: "address-level3"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "newCity|model.City"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "newState|model.State"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "newTown|model.Town"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      name: "_g_town|model.Town_"
+      label: "Localidad"
+      label_translated: "Location"
+      control_type: SELECT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "PostalCode|model.PostalCode"
+      label: "Código Postal"
+      label_translated: "Postal Code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "AuthorizeCheckBoxFactura|AuthorizeCheckBoxFactura"
+      label: "Si precisás Factura A por favor tildá esta opción"
+      label_translated: "If you need Invoice A please check this option"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "AuthorizeRazonSocial|AuthorizeRazonSocial"
+      label: "Razón social *"
+      label_translated: "Business name *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "AuthorizeCuit|AuthorizeCuit"
+      label: "CUIT (Ingrese el cuit sin guiones) *"
+      label_translated: "CUIT (Enter the cuit without hyphens) *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "AuthorizePhoneNumber|AuthorizePhoneNumber"
+      label: "Teléfono *"
+      label_translated: "Telephone *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|ewpos"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|adpos"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "c_tot|c_tot"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

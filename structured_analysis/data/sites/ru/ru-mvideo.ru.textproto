@@ -1,0 +1,443 @@
+site_examples {
+  url: "	https://www.mvideo.ru"
+  is_structured: true
+  locale {
+    country: "RU"
+    language: "ru"
+  }
+  sequences {
+    fields {
+      name: "|_dyncharset"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_dynSessConf"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingmethod-pickup-radio|newShippingMethod"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingmethod-delivery-radio|stub"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|/com/mvideo/checkout/ShippingAddressFormHandler.shippingGroupType"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/com/mvideo/checkout/ShippingAddressFormHandler.shippingGroupType"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "new_delivery_courier|newShippingMethod"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "new_delivery_taxi_pickup|newShippingMethod"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "new_delivery_postal|newDeliveryShippingMethod"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_DARGS"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_dyncharset"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_dynSessConf"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|addressEdited"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Город, улица, дом"
+      label_translated: "City, street, house"
+      control_type: INPUT
+      concepts: "address-search"
+      section: OTHER
+    }
+    fields {
+      name: "delivery-address|address"
+      label: "Город, улица, дом Укажите полный адрес, чтобы мы доставили заказ."
+      label_translated: "City, street, house Enter the full address so that we can deliver the order."
+      control_type: INPUT
+      concepts: "address-search"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "frm-city-id|cityId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "delivery-city|city"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address-not-valid|isValid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "delivery-appart|appartment"
+      label: "Квартира/офис"
+      label_translated: "Apartment/office"
+      control_type: INPUT
+      concepts: "apartment"
+      section: ADDRESS
+    }
+    fields {
+      name: "delivery-entrance|entrance"
+      label: "Подъезд"
+      label_translated: "Entrance"
+      control_type: INPUT
+      concepts: "entrance"
+      section: ADDRESS
+    }
+    fields {
+      name: "delivery-comment|comment"
+      label: "Комментарий к адресу"
+      label_translated: "Comment to the address"
+      example: "Укажите дополнительную информацию, чтобы курьеру было проще найти ваш адрес"
+      example_translated: "Provide additional information to make it easier for the courier to find your address"
+      control_type: TEXTAREA
+      concepts: "delivery-instructions"
+      section: ADDRESS
+    }
+    fields {
+      name: "|/atg/commerce/order/purchase/ShippingGroupFormHandler.courierDeliveryAddress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/atg/commerce/order/purchase/ShippingGroupFormHandler.courierDeliveryAddress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|/atg/commerce/order/purchase/ShippingGroupFormHandler.shippingMethod"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/atg/commerce/order/purchase/ShippingGroupFormHandler.shippingMethod"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/atg/commerce/order/purchase/ShippingGroupFormHandler.courierDeliveryDate"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "delivery-date|/atg/commerce/order/purchase/ShippingGroupFormHandler.courierDeliveryDate"
+      label: "Дата доставки"
+      label_translated: "delivery date"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/atg/commerce/order/purchase/ShippingGroupFormHandler.courierDeliveryIntervalPriceGroupId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "delivery-time|/atg/commerce/order/purchase/ShippingGroupFormHandler.courierDeliveryIntervalPriceGroupId"
+      label: "Время доставки"
+      label_translated: "Time of delivery"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_DARGS"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_dyncharset"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_dynSessConf"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "onlineCard-radio|choosenPaymentMethod"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cashOnDelivery-radio|choosenPaymentMethod"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "directCredit-radio|choosenPaymentMethod"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "installment-radio|choosenPaymentMethod"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_dyncharset"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_dynSessConf"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "field_8|email"
+      label: "Email"
+      label_translated: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "myPhone|phone"
+      label: "Телефон"
+      label_translated: "Telephone"
+      example: "+7 ___ _______"
+      example_translated: "+7 ___ _______"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:phone"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Имя"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "field_6|firstName"
+      label: "Имя"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:firstName"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_DARGS"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_dyncharset"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_dynSessConf"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "promo-checkbox-16587404590391|promo-checkbox-promocode"
+      label: "Промокод ?"
+      label_translated: "Promo code?"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "promo-input-16587404590391|promocodeOrCardNumber"
+      label: "Введите номер промокода"
+      label_translated: "Enter promo code number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "selectedPromocode|selectedPromocode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "confirm-code-promo|smsPassword"
+      label: "Код из SMS Отправлен на +7 499 ×××-××-78"
+      label_translated: "Code from SMS Sent to +7 499 ×××-××-78"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "ctr-orders-list|"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_dyncharset"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_dynSessConf"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|/com/mvideo/commerce/singlepage/order/CommitSingleOrderFormHandler.commitSuborderSuccessURL"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/com/mvideo/commerce/singlepage/order/CommitSingleOrderFormHandler.commitSuborderSuccessURL"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|/com/mvideo/commerce/singlepage/order/CommitSingleOrderFormHandler.commitSuborderErrorURL"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/com/mvideo/commerce/singlepage/order/CommitSingleOrderFormHandler.commitSuborderErrorURL"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|/com/mvideo/commerce/singlepage/order/CommitSingleOrderFormHandler.smsPasswordErrorURL"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/com/mvideo/commerce/singlepage/order/CommitSingleOrderFormHandler.smsPasswordErrorURL"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|/com/mvideo/commerce/singlepage/order/CommitSingleOrderFormHandler.commitSuborder"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/com/mvideo/commerce/singlepage/order/CommitSingleOrderFormHandler.commitSuborder"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_DARGS"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

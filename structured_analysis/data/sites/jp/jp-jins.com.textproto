@@ -1,0 +1,1047 @@
+site_examples {
+  url: "https://www.jins.com"
+  is_structured: true
+  locale {
+    country: "JP"
+    language: "ja"
+  }
+  sequences {
+    fields {
+      name: "|request"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|PC_MAIL_OLD"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|MOBILE_MAIL_OLD"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|mode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|key"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|IS_TEIKI_TOGETHER"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|IS_REGIST"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|QUICK_ORDER"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|IF_JINSJINS:item_cd_list"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|IF_JINSJINS:quantity_list"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|IF_JINSJINS:receive_kind"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "JMO_ERR_FLG|JMO_ERR_FLG"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "selectIndex|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payCard|pay"
+      label: "クレジットカード払い（1/31（水）05:00〜07:00の間、クレジットカード払いはご利用いただけません。）"
+      label_translated: "Credit card payment (Credit card payment is not available between 05:00 and 07:00 on January 31 (Wednesday).)"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "jp.co.interfactory.util.httpKESSAI_ID.51|KESSAI_ID"
+      label: "クレジットカード"
+      label_translated: "credit card"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CREDIT_NO|CREDIT_NO"
+      label: "以下の必要事項を入力後、カード決定を押してください。"
+      label_translated: "After entering the necessary information below, please press the card decision."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CREDIT_LIMIT_MONTH|CREDIT_LIMIT_MONTH"
+      label: "有効期限"
+      label_translated: "date of expiry"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "月を指定1234"
+      label_translated: "Specify month1234"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "CREDIT_LIMIT_YEAR|CREDIT_LIMIT_YEAR"
+      label: "/"
+      label_translated: "/"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "年を指定2022202320242025"
+      label_translated: "Specify the year2022202320242025"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "CREDIT_COUNT|CREDIT_COUNT"
+      label: "支払い方法"
+      label_translated: "method of payment"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "一括払い"
+      label_translated: "lump sum payment"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "CREDIT_NAME|CREDIT_NAME"
+      label: "以下の必要事項を入力後、カード決定を押してください。"
+      label_translated: "After entering the necessary information below, please press the card decision."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "SECURITY_CD|SECURITY_CD"
+      label: "セキュリティーコード"
+      label_translated: "Security code"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "payCs|pay"
+      label: "コンビニ前払い"
+      label_translated: "advance payment at convenience store"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "jp.co.interfactory.util.httpKESSAI_ID.52|KESSAI_ID"
+      label: "52"
+      label_translated: "52"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "jp.co.interfactory.util.httpKESSAI_ID.53|KESSAI_ID"
+      label: "53"
+      label_translated: "53"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "jp.co.interfactory.util.httpKESSAI_ID.56|KESSAI_ID"
+      label: "56"
+      label_translated: "56"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "jp.co.interfactory.util.httpKESSAI_ID.57|KESSAI_ID"
+      label: "57"
+      label_translated: "57"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "jp.co.interfactory.util.httpKESSAI_ID.58|KESSAI_ID"
+      label: "58"
+      label_translated: "58"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "jp.co.interfactory.util.httpKESSAI_ID.241|KESSAI_ID"
+      label: "241"
+      label_translated: "241"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payCash|pay"
+      label: "代金引換払い"
+      label_translated: "cash on delivery"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "jp.co.interfactory.util.httpKESSAI_ID.3|KESSAI_ID"
+      label: "代金引換"
+      label_translated: "cash on delivery"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payMobile|pay"
+      label: "ケータイ払い"
+      label_translated: "Mobile phone payment"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "jp.co.interfactory.util.httpKESSAI_ID.801|KESSAI_ID"
+      label: "801"
+      label_translated: "801"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "jp.co.interfactory.util.httpKESSAI_ID.802|KESSAI_ID"
+      label: "802"
+      label_translated: "802"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "jp.co.interfactory.util.httpKESSAI_ID.803|KESSAI_ID"
+      label: "803"
+      label_translated: "803"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payRakuten|pay"
+      label: "楽天ペイ"
+      label_translated: "Rakuten Pay"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "jp.co.interfactory.util.httpKESSAI_ID.804|KESSAI_ID"
+      label: "楽天ペイ"
+      label_translated: "Rakuten Pay"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payPayPay|pay"
+      label: "PayPay"
+      label_translated: "PayPay"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "jp.co.interfactory.util.httpKESSAI_ID.275|KESSAI_ID"
+      label: "PayPay"
+      label_translated: "PayPay"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ORDER_H.FREE_ITEM10_00|ORDER_H.FREE_ITEM10"
+      label: "ご登録済みの住所で受け取る （ ）"
+      label_translated: "Receive at your registered address ( )"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "SEND_ADDRESS_NO|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "SEND_L_NAME|SEND_L_NAME"
+      label: "名前（姓）"
+      label_translated: "Family name"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "|jp.co.interfactory.framework.trim.SEND_L_NAME"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "SEND_F_NAME|SEND_F_NAME"
+      label: "名前（名）"
+      label_translated: "Given name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "|jp.co.interfactory.framework.trim.SEND_F_NAME"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "SEND_L_KANA|SEND_L_KANA"
+      label: "セイ（カナ）"
+      label_translated: "Family name (Kana)"
+      control_type: INPUT
+      concepts: "phonetic-family-name"
+      section: NAME
+    }
+    fields {
+      name: "|jp.co.interfactory.framework.trim.SEND_L_KANA"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "SEND_F_KANA|SEND_F_KANA"
+      label: "メイ（カナ）"
+      label_translated: "Given name (Kana)"
+      control_type: INPUT
+      concepts: "phonetic-given-name"
+      section: NAME
+    }
+    fields {
+      name: "|jp.co.interfactory.framework.trim.SEND_F_KANA"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "SEND_ZIP|SEND_ZIP"
+      label: "郵便番号"
+      label_translated: "post code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "|jp.co.interfactory.framework.trim.SEND_ZIP"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "SEND_ADDR1|SEND_ADDR1"
+      label: "都道府県"
+      label_translated: "Prefectures"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "|"
+      label: "都道府県を選択してください"
+      label_translated: "Select the prefecture"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "SEND_ADDR2|SEND_ADDR2"
+      label: "市区町村郡、番地"
+      label_translated: "city/town/county"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "|jp.co.interfactory.framework.trim.SEND_ADDR2"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "SEND_ADDR3|SEND_ADDR3"
+      label: "建物、ビル名"
+      label_translated: "building, building name"
+      control_type: INPUT
+      low_certainty: true
+      concepts: "building"
+      section: ADDRESS
+    }
+    fields {
+      name: "|jp.co.interfactory.framework.trim.SEND_ADDR3"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "SEND_TEL1|SEND_TEL1"
+      label: "電話番号"
+      label_translated: "phone number"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|jp.co.interfactory.framework.trim.SEND_TEL1"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "SEND_TEL2|SEND_TEL2"
+      label: "お届け先 ※日本国内の住所に限ります。"
+      label_translated: "Delivery address *Limited to addresses in Japan."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|jp.co.interfactory.framework.trim.SEND_TEL2"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "SEND_TEL3|SEND_TEL3"
+      label: "お届け先 ※日本国内の住所に限ります。"
+      label_translated: "Delivery address *Limited to addresses in Japan."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|jp.co.interfactory.framework.trim.SEND_TEL3"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ORDER_H.FREE_ITEM10_02|ORDER_H.FREE_ITEM10"
+      label: "JINS店頭で受け取る お店を探す詳しくはこちら"
+      label_translated: "Pick up at a JINS store Find a store Click here for details"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ORDER_H.FREE_ITEM10_01|ORDER_H.FREE_ITEM10"
+      label: "コンビニで受け取る※注文後の受取店舗変更はできませんのでご注意ください。 お店を探す詳しくはこちら"
+      label_translated: "Pick up at a convenience store *Please note that you cannot change the pick-up store after placing an order. Find a store Click here for details"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "MEMBER_UPDATE_FROM_ADDRESS|MEMBER_UPDATE_FROM_ADDRESS"
+      label: "お届け先を会員情報として登録する"
+      label_translated: "Register delivery address as member information"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CART_SEISAN_TOUROKU_CHECK_NOT_INPUT|TOUROKU_CHECK"
+      label: "お届け先 ※日本国内の住所に限ります。"
+      label_translated: "Delivery address *Limited to addresses in Japan."
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CART_SEISAN_TOUROKU_CHECK_DO_INPUT|TOUROKU_CHECK"
+      label: "お届け先 ※日本国内の住所に限ります。"
+      label_translated: "Delivery address *Limited to addresses in Japan."
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ORDER_H.FREE_ITEM11|ORDER_H.FREE_ITEM11"
+      label: "メガネ詳細・度数指定 MMF-22A-036_86"
+      label_translated: "Spectacles Details/Prescription MMF-22A-036_86"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|jp.co.interfactory.framework.trim.ORDER_H.FREE_ITEM11"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ORDER_H.FREE_ITEM12|ORDER_H.FREE_ITEM12"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|jp.co.interfactory.framework.trim.ORDER_H.FREE_ITEM12"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ORDER_H.FREE_ITEM13|ORDER_H.FREE_ITEM13"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|jp.co.interfactory.framework.trim.ORDER_H.FREE_ITEM13"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ORDER_H.FREE_ITEM14|ORDER_H.FREE_ITEM14"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|jp.co.interfactory.framework.trim.ORDER_H.FREE_ITEM14"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ORDER_H.FREE_ITEM17|ORDER_H.FREE_ITEM17"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|jp.co.interfactory.framework.trim.ORDER_H.FREE_ITEM17"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ORDER_H.FREE_ITEM18|ORDER_H.FREE_ITEM18"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|jp.co.interfactory.framework.trim.ORDER_H.FREE_ITEM18"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "L_NAME|L_NAME"
+      label: "名前（姓）"
+      label_translated: "First name (surname)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|jp.co.interfactory.framework.trim.L_NAME"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "F_NAME|F_NAME"
+      label: "名前（名）"
+      label_translated: "first name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|jp.co.interfactory.framework.trim.F_NAME"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "L_KANA|L_KANA"
+      label: "セイ（カナ）"
+      label_translated: "Sei (Kana)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|jp.co.interfactory.framework.trim.L_KANA"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "F_KANA|F_KANA"
+      label: "メイ（カナ）"
+      label_translated: "May (Kana)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|jp.co.interfactory.framework.trim.F_KANA"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ZIP|ZIP"
+      label: "住所自動入力"
+      label_translated: "address autofill"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|jp.co.interfactory.framework.trim.ZIP"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ADDR1|ADDR1"
+      label: "都道府県"
+      label_translated: "Prefectures"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "都道府県を選択してください"
+      label_translated: "Select the prefecture"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "ADDR2|ADDR2"
+      label: "市区町村郡、番地"
+      label_translated: "city/town/county"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|jp.co.interfactory.framework.trim.ADDR2"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ADDR3|ADDR3"
+      label: "建物、ビル名"
+      label_translated: "building, building name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|jp.co.interfactory.framework.trim.ADDR3"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "TEL1|TEL1"
+      label: "電話番号"
+      label_translated: "phone number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|jp.co.interfactory.framework.trim.TEL1"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "TEL2|TEL2"
+      label: "会員情報 ※日本国内の住所に限ります。"
+      label_translated: "Member information *Limited to addresses in Japan."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|jp.co.interfactory.framework.trim.TEL2"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "TEL3|TEL3"
+      label: "会員情報 ※日本国内の住所に限ります。"
+      label_translated: "Member information *Limited to addresses in Japan."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|jp.co.interfactory.framework.trim.TEL3"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "normal_item_flg|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "指定しない※「指定しない」を選択した場合は発送の準備が整い次第、最短で発送します。お届け目安より早くなる場合がございます。"
+      label_translated: "Do not specify * If you select &quot;Do not specify&quot;, we will ship as soon as possible as soon as shipping preparations are completed. It may be earlier than the estimated delivery date."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "指定しない※「指定しない」を選択した場合は発送の準備が整い次第、最短で発送します。お届け目安より早くなる場合がございます。"
+      label_translated: "Do not specify * If you select &quot;Do not specify&quot;, we will ship as soon as possible as soon as shipping preparations are completed. It may be earlier than the estimated delivery date."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "指定する※表示されない日時については指定できません。配送希望日を指定した場合はその日に合わせて発送します。"
+      label_translated: "Specify * Dates and times that are not displayed cannot be specified. If you specify a desired delivery date, we will ship according to that date."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "指定する※表示されない日時については指定できません。配送希望日を指定した場合はその日に合わせて発送します。"
+      label_translated: "Specify * Dates and times that are not displayed cannot be specified. If you specify a desired delivery date, we will ship according to that date."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "SEND_HOPE_DATE|SEND_HOPE_DATE"
+      label: "配送日"
+      label_translated: "delivery date"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "希望なし"
+      label_translated: "no hope"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "SEND_HOPE_TIME|SEND_HOPE_TIME"
+      label: "配送時間"
+      label_translated: "delivery time"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "希望なし"
+      label_translated: "no hope"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|IF_JINSJINS:SPECIFY_FLG"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DELIVERY_FROM|DELIVERY_FROM"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DELIVERY_TO|DELIVERY_TO"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DELIVERY_STATUS|DELIVERY_STATUS"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "modal-coupon-1|COUPON_CHECK"
+      label: "クーポンを利用しない"
+      label_translated: "don&#39;t use coupons"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "selectCoupon|COUPON_CHECK"
+      label: "1"
+      label_translated: "1"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "modal-coupon-select-0|COUPON_SELECT"
+      label: "新規会員登録クーポン"
+      label_translated: "New member registration coupon"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "modal-coupon-select-1|COUPON_SELECT"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "modal-coupon-4|COUPON_CHECK"
+      label: "クーポンコード"
+      label_translated: "Coupon code"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "COUPON_CD|COUPON_CD"
+      label: "クーポンコード"
+      label_translated: "Coupon code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "jp.co.interfactory.util.httpORDER_H.FREE_ITEM30.1|ORDER_H.FREE_ITEM30"
+      label: "ギフト"
+      label_translated: "Gift"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|jp.co.interfactory.framework.unchecked.ORDER_H.FREE_ITEM30"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|jp.co.interfactory.framework.trim.ORDER_H.FREE_ITEM30"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "BIKO|BIKO"
+      label: "備考"
+      label_translated: "remarks"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "femaleEnquete|SEX"
+      label: "女性"
+      label_translated: "Woman"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "maleEnquete|SEX"
+      label: "男性"
+      label_translated: "male"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "BIRTH_YEAR|BIRTH_YEAR"
+      label: "生年"
+      label_translated: "year of birth"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|jp.co.interfactory.framework.trim.BIRTH_YEAR"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "BIRTH_MONTH|BIRTH_MONTH"
+      label: "生年月日："
+      label_translated: "Date of birth:"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|jp.co.interfactory.framework.trim.BIRTH_MONTH"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "BIRTH_DAY|BIRTH_DAY"
+      label: "日"
+      label_translated: "Day"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|jp.co.interfactory.framework.trim.BIRTH_DAY"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mailMagazineFlg|"
+      label: "メールマガジンを希望する。"
+      label_translated: "I would like to receive the e-mail newsletter."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mail_no|MAIL_FLG"
+      label: "アンケート"
+      label_translated: "questionnaire"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mail_yes|MAIL_FLG"
+      label: "アンケート"
+      label_translated: "questionnaire"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "COMPENSATION_YES|COMPENSATION_TYPE"
+      label: "集荷サービス"
+      label_translated: "Pick-up service"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "COMPENSATION_NO|COMPENSATION_TYPE"
+      label: "ポストイン"
+      label_translated: "post in"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "HOSYO_KINGAKU|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "HOSYO_TAX|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

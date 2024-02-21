@@ -1,0 +1,176 @@
+syntax = "proto3";
+
+package address;
+
+// A single locale.
+message Locale {
+  // ISO 3166-1 two-letter country code, upper case. E.g. "DE" for Germany.
+  string country = 6;
+
+  // ISO 639-1 two-letter language code, lower case. E.g. "de" for German.
+  // https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
+  string language = 7;
+}
+
+// A cross produce of country and language defines a set of locales.
+message Locales {
+  // ISO 3166-1 two-letter country code, upper case. E.g. "DE" for Germany.
+  repeated string country = 6;
+
+  // ISO 639-1 two-letter language code, lower case. E.g. "de" for German.
+  // https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
+  repeated string language = 7;
+}
+
+message Concept {
+  // Identifier of a concept when referenced anywhere. Globally unique, except
+  // that specializations via specialization_for_country and
+  // specialization_for_country are permitted.
+  string name = 1;
+
+  string parent = 2;
+
+  // Description of the concept for the developer audience (how to use this
+  // in HTML).
+  string description = 3;
+
+  // Canonical Format Example
+  string canonical_format_example = 4;
+
+  // A tag shown in product UI to users.
+  string label = 5;
+
+  repeated string limited_to_countries = 6;
+
+  repeated Locales specialization = 7;
+
+  // Whether this is a new concept not defined in the current autocomplete
+  // spec.
+  bool is_new = 8;
+}
+
+// TODO: Definition of higher level constructs.
+
+message SeparatorOrToken {
+  string separator_value = 1;
+  int32 separator_precedence = 2;
+
+  string concept_prefix = 3;
+  string concept_name = 4;
+  string concept_suffix = 5;
+}
+
+message CompoundConcept {
+  // Identifier of the concept produced (e.g. "street-address").
+  string name = 1;
+
+  // Description of the concept for the developer audience (how to use this
+  // in HTML).
+  string description = 2;
+
+  // A tag shown in product UI to users.
+  string label = 3;
+
+  repeated SeparatorOrToken tokens = 4;
+
+  // The rule applies to a set of locales.
+  repeated Locales specialization = 5;
+}
+
+// Examples of real-world sites / forms.
+
+enum ControlType {
+  UNSPECIFIED = 0;
+  INPUT = 1;
+  SELECT = 2;
+  RADIO = 3;
+  CHECKBOX = 4;
+  TEXTAREA = 5;
+  CUSTOM = 6;
+}
+
+message ExampleField {
+  string name = 1;
+
+  // The human visible label for the field.
+  string label = 2;
+  // Comments can contain raw HTML code.
+  string label_comment = 3;
+
+  string label_translated = 4;
+  string label_translated_comment = 5;
+
+  // An example given by the website.
+  string example = 6;
+  string example_translated = 7;
+
+  // The type of the form control. By default we assume <input>.
+  ControlType control_type = 8;
+
+  // The name(s) of the best matching Concept.
+  repeated string concepts = 9;
+  string concepts_comment = 10;
+  bool low_certainty = 11;
+  string autocomplete_attribute = 12;
+
+  ExampleSequenceSection section = 13;
+  bool hide = 14;
+
+  // Ignore. This is only used for internal book keeping.
+  string internal_id = 15;
+
+  // A comment from the HTML extraction.
+  string html_comment = 16;
+}
+
+enum ExampleSequenceSection {
+  UNDEFINED = 0;
+  NAME = 1;
+  ADDRESS = 2;
+  PAYMENT = 3;
+  LOGIN = 4;
+  SIGNUP = 5;
+  PHONE = 6;
+  OTHER = 7;
+}
+
+message ExampleFieldSequence {
+  ExampleSequenceSection section = 1;
+  bool hide = 2;
+  repeated ExampleField fields = 3;
+}
+
+message SiteExample {
+  bool hide = 1;
+  string url = 2;
+  bool is_structured = 3;
+  Locale locale = 4;
+  repeated ExampleFieldSequence sequences = 5;
+}
+
+// Meta information about countries.
+
+message CountryData {
+  // ISO 3166-1 two-letter country code, upper case. E.g. "DE" for Germany.
+  string country = 1;
+
+  // Full name of a country (e.g. "Germany")
+  string country_name = 2;
+
+  // HTML to include before and after the side examples for a country.
+  string site_examples_preamble_html = 3;
+  string site_examples_epilog_html = 4;
+
+  // Same as the previous two but via a link to an HTML file.
+  string site_examples_preamble_file = 5;
+  string site_examples_epilog_file = 6;
+}
+
+// Top-level data structure.
+
+message AddressOntology {
+  repeated Concept concepts = 1;
+  repeated CompoundConcept compound_concepts = 2;
+  repeated SiteExample site_examples = 3;
+  repeated CountryData country_data = 4;
+}

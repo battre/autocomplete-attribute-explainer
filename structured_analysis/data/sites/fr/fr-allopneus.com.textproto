@@ -1,0 +1,538 @@
+site_examples {
+  url: "https://www.allopneus.com/"
+  is_structured: false
+  locale {
+    country: "FR"
+    language: "fr"
+  }
+  sequences {
+    fields {
+      name: "cart-id|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "fixe|solution"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "geo-search-locality|locality"
+      label: "8 RUE DE LONDRES 75009 PARIS"
+      label_translated: "8 LONDON STREET 75009 PARIS"
+      control_type: INPUT
+      concepts: "address-search"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "geo-search-zipcode|zip_code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "geo-search-city|city"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "geo-search-query|search_query"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "geo-search-input-latitude|latitude"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "geo-search-input-longitude|longitude"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "_token|_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|vehicule"
+      label: "Type de pneu :"
+      label_translated: "Tire type:"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|max_distance"
+      label: "Rayon de recherche (km) :"
+      label_translated: "Search radius (km):"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "option_pack|front_filters[]"
+      label: "Pose packs \"jantes + pneus\""
+      label_translated: "Installation of &quot;rims + tires&quot; packs"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "option_runflat|front_filters[]"
+      label: "RUNFLAT"
+      label_translated: "RUNFLAT"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "option_tpms|front_filters[]"
+      label: "TPMS"
+      label_translated: "TPMS"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "option_wheel_assembly|front_filters[]"
+      label: "Assemblage de roue"
+      label_translated: "wheel assembly"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "option_motorbike|front_filters[]"
+      label: "Moto"
+      label_translated: "Motorbike"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "option_custom|front_filters[]"
+      label: "Custom"
+      label_translated: "Custom"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "option_scooter|front_filters[]"
+      label: "Scooter"
+      label_translated: "Scooter"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "option_cross_enduro|front_filters[]"
+      label: "Cross / Enduro / Trial"
+      label_translated: "Cross / Enduro / Trial"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|sort_field"
+      label: "Trier par"
+      label_translated: "sort by"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "centre-17446|centrefixe"
+      label: "Station Mobile"
+      label_translated: "Moving station"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "centre-12857|centrefixe"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "centre-14657|centrefixe"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "centre-12807|centrefixe"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "centre-917|centrefixe"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "centre-916|centrefixe"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "centre-7181|centrefixe"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "centre-10536|centrefixe"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "centre-23200|centrefixe"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "centre-13330|centrefixe"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address-choose|address-delivery-choice"
+      label: "J\'indique l\'adresse d\'intervention (domicile, lieu de travail...)"
+      label_translated: "I indicate the intervention address (home, place of work, etc.)"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address-decide-later|address-delivery-choice"
+      label: "Je déciderai au moment de la prise de RDV"
+      label_translated: "I will decide when making an appointment"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form_delivery|form[delivery]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form_service|form[service]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form_mobile_delivery|form[mobile_delivery]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form_mobile_type|form[mobile_type]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form_delivery_zipcode|form[delivery_zipcode]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form__token|form[_token]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "seule|solution"
+      label: "À domicile ou à l’adresse de votre choix"
+      label_translated: "At home or at the address of your choice"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "is_professional_address_yes|is_professional_address"
+      label: "OUI"
+      label_translated: "YES"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "is_professional_address_no|is_professional_address"
+      label: "NON"
+      label_translated: "NOPE"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form_service_0|form[service]"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form_delivery|form[delivery]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form__token|form[_token]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address_label|address[label]"
+      label: "Nom adresse"
+      label_translated: "name address"
+      example: "Nommez cette adresse *"
+      example_translated: "Name this address *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address_civilityId_0|address[civilityId]"
+      label: "Monsieur"
+      label_translated: "Sir"
+      control_type: RADIO
+      concepts: "honorific-prefix"
+      section: NAME
+    }
+    fields {
+      name: "address_civilityId_1|address[civilityId]"
+      label: "Madame"
+      label_translated: "Mrs."
+      control_type: RADIO
+      concepts: "honorific-prefix"
+      section: NAME
+    }
+    fields {
+      name: "address_company|address[company]"
+      label: "Raison sociale"
+      label_translated: "Social reason"
+      example: "Nom de la société"
+      example_translated: "Company Name"
+      control_type: INPUT
+      concepts: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "address_firstName|address[firstName]"
+      label: "Prénom *"
+      label_translated: "First name *"
+      example: "Votre prénom"
+      example_translated: "Your first name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "address_lastName|address[lastName]"
+      label: "Nom *"
+      label_translated: "Last name *"
+      example: "Votre nom"
+      example_translated: "Your name"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "address_phone|address[phone]"
+      label: "Téléphone portable *"
+      label_translated: "Cellphone *"
+      example: "Votre téléphone portable"
+      example_translated: "Your mobile phone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "address_countryId|address[countryId]"
+      label: "Pays"
+      label_translated: "Country"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "address_countryIso3|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address_zipCode|address[zipCode]"
+      label: "Code postal *"
+      label_translated: "Postal code *"
+      example: "Votre code postal"
+      example_translated: "your postal code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "address_city|address[city]"
+      label: "Ville *"
+      label_translated: "Town *"
+      example: "Votre ville"
+      example_translated: "Your city"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "address_streetAddress|address[streetAddress]"
+      label: "Adresse *"
+      label_translated: "Address *"
+      example: "Votre adresse"
+      example_translated: "Your address"
+      control_type: INPUT
+      concepts: "address-line1"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "address_extendedAddress|address[extendedAddress]"
+      label: "Complément d\'adresse"
+      label_translated: "Additional address"
+      example: "Votre complément d\'adresse (lieu-dit, digicode, bâtiment)"
+      example_translated: "Your additional address (locality, digicode, building)"
+      control_type: INPUT
+      concepts: "address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "address_latitude|address[latitude]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address_longitude|address[longitude]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address_dqeAddressChecked|address[dqeAddressChecked]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address__token|address[_token]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0002|ot-group-id-C0002"
+      label: "Cookies de statistiques anonymes"
+      label_translated: "Anonymous statistics cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0010|ot-group-id-C0010"
+      label: "Cookies de statistiques avancées"
+      label_translated: "Advanced statistics cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0003|ot-group-id-C0003"
+      label: "Cookies de fonctionnalité"
+      label_translated: "Functionality cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0004|ot-group-id-C0004"
+      label: "Cookies pour une publicité ciblée"
+      label_translated: "Cookies for targeted advertising"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0011|ot-group-id-C0011"
+      label: "Tags de mesure des publicités"
+      label_translated: "Ad measurement tags"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "vendor-search-handler|vendor-search-handler"
+      label: "Filter IconClear"
+      label_translated: "Filter IconClear"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "chkbox-id|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-hosts-groups-handler|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-vendor-groups-handler|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-vendor-leg-handler|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

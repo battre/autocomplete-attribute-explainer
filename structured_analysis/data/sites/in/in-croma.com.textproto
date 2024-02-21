@@ -1,0 +1,93 @@
+site_examples {
+  url: "	https://www.croma.com"
+  is_structured: false
+  locale {
+    country: "IN"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "|"
+      label: "Enter Email ID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|addAddressFullName"
+      label: "Full Name *"
+      example: "Enter Full name"
+      control_type: INPUT
+      concepts: "name"
+      autocomplete_attribute: "off"
+      section: NAME
+    }
+    fields {
+      name: "|addAddressMobileNo"
+      label: "+ 91"
+      example: "Enter your mobile number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PHONE
+    }
+    fields {
+      name: "|addAddressNickName"
+      label: "Address Nick Name*"
+      example: "Enter Nick Name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|addAddressPinCode"
+      label: "Pin Code*"
+      example: "Pincode"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "|addAddressLine1"
+      label: "Flat no./Building Name/Society"
+      control_type: INPUT
+      concepts: "address-line1"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "|addAddressLine2"
+      label: "Landmark/Locality/Area"
+      control_type: INPUT
+      concepts: "address-line2"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|addAddressState"
+      label: "State*"
+      example: "State"
+      control_type: INPUT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "|addAddressCity"
+      label: "City*"
+      example: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "chk2|addAddressSaveDefault"
+      label: "Make this my default address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

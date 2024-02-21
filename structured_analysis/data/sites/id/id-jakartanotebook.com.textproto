@@ -1,0 +1,135 @@
+site_examples {
+  url: "https://www.jakartanotebook.com"
+  is_structured: false
+  locale {
+    country: "ID"
+    language: "id"
+  }
+  sequences {
+    fields {
+      name: "|key"
+      label: "Xiaomi Gaming Monitor"
+      label_translated: "Xiaomi Gaming Monitor"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "Checkout_addressReceiver|receiverd"
+      label: "Nama Penerima"
+      label_translated: "Recipient's name"
+      control_type: INPUT
+      concepts: "name"
+      section: NAME
+    }
+    fields {
+      name: "Checkout_addressTelephone|telephoned"
+      label: "No. Telp"
+      label_translated: "No. phone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "Checkout_addressTop|topd"
+      label: "Alamat"
+      label_translated: "Address"
+      control_type: INPUT
+      concepts: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "Checkout_addressMid|midd"
+      label: "optional"
+      label_translated: "optional"
+      control_type: INPUT
+      concepts: "address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "Checkout_addressBottom|bottomd"
+      label: "optional"
+      label_translated: "optional"
+      control_type: INPUT
+      concepts: "address-line3"
+      section: ADDRESS
+    }
+    fields {
+      name: "Checkout_addressSubdistrict|subdistrictd"
+      label: "Kota/Kecamatan"
+      label_translated: "City/District"
+      control_type: CUSTOM
+      concepts: "address-level2"
+      concepts: "address-level3"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "Checkout_addressSubdistrictId|"
+      control_type: INPUT
+      concepts: "address-level4"
+      section: ADDRESS
+    }
+    fields {
+      name: "Checkout_addressPostalCode|postald"
+      label: "Kode Pos"
+      label_translated: "Postal code"
+      control_type: CUSTOM
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "Checkout_addressPostalCodeId|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "Checkout_addressNewPostalCode|postald"
+      label: "Pilih Alamat Drop Shipping"
+      label_translated: "Choose Drop Shipping Address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|origin-branch"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|shipping-note"
+      label: "Catatan Pengiriman (optional)"
+      label_translated: "Shipping Notes (optional)"
+      example: "Isi catatan pengiriman, maks 50 karakter (optional)"
+      example_translated: "Fill in the delivery note, max 50 characters (optional)"
+      control_type: TEXTAREA
+      concepts: "delivery-instructions"
+      section: ADDRESS
+    }
+    fields {
+      name: "Checkout_paymentTransfer|payment"
+      label: "Bank Transfer BCA"
+      label_translated: "Bank Transfer BCA"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|email"
+      label: "Email Anda"
+      label_translated: "Your email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

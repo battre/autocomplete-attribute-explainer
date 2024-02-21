@@ -1,0 +1,502 @@
+site_examples {
+  url: "https://www.myshoe.gr/"
+  is_structured: false
+  locale {
+    country: "GR"
+    language: "el"
+  }
+  sequences {
+    fields {
+      name: "|Title"
+      example: "Αναζήτηση"
+      example_translated: "search"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "login_username|login_username"
+      label: "Email*"
+      label_translated: "E-mail*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "username"
+      section: OTHER
+    }
+    fields {
+      name: "password-field|login_password"
+      label: "Κωδικος*"
+      label_translated: "Code*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CheckoutURL|"
+      label: "Απόδειξη\n \n \n \n Τιμολόγιο\n \n \n \n \n \n 1. Διεύθυνση Χρέωσης: \n \n \n \n \n \n \n \n Διεύθυνση Email* \n Το email δεν είναι έγκυρο \n \n \n \n \nΑν θες δημιούργησε λογαριασμό εδώ για να μπορείς να παρακολουθείς την παραγγελία σου!\n \n \n \n \n \n \n \n \n \n \n \n \n Password \n \n \n \n \n \n \n \n Χρησιμοποιήστε από 6 έως 10 χαρακτήρες \n Χρησιμοποιήστε τουλάχιστον έναν αριθμό ή σύμβολο ( @ ! & % # + = _ κτλ) \n Μην χρησιμοποιείτε τον ίδιο κωδικό σε περισσότερα sites. \n \n \n \n \n \n \n \n \n \n \n \n \n \n Επιβεβαίωση Password \n \n \n \n \n \n \n \n ΑΦΜ* \n \n \n \n \n \n \n ΔΟΥ* \n \n \n \n \n \n \n \n Επωνυμία Εταιρίας* \n \n \n \n \n   Δραστηριότητα* \n \n \n \n \n \n \n \n Όνομα* \n \n \n \n \n \n Επώνυμο* \n \n \n \n \n \n \n \n Οδός & Αριθμός* \n \n \n \n \n \n ΧΩΡΑ* \n Βέλγιο \n Βουλγαρία \n Γαλλία \n Γερμανία \n Δανία \n Ελλάδα \n Εσθονία \n Ηνωμένο Βασίλειο \n Ιρλανδία \n Ισπανία \n Ιταλία \n Κροατία \n Κύπρος \n Ολλανδία \n Πολωνία \n Ρουμανία \n Σουηδία \n Τσεχία \n Φιλανδία \n \n \n \n \n \n \n \n \n Τ.Κ.* \n Ο Τ.Κ. δεν είναι σωστός \n \n \n \n Περιοχή \n \n \n \n \n Νομός* \n Αιτωλοακαρνανίας \n Αργολίδος \n Αρκαδίας \n Άρτας \n Αττικής \n Αχαίας \n Βοιωτίας \n Γρεβενών \n Δράμας \n Δωδεκανήσου \n Έβρου \n Εύβοιας \n Ευρυτανίας \n Ζακύνθου \n Ηλείας \n Ημαθίας \n Ηρακλείου \n Θεσπρωτίας \n Θεσσαλονίκης \n Ιωαννίνων \n Καβάλας \n Καρδίτσας \n Καστοριάς \n Κέρκυρας \n Κεφαλληνίας \n Κιλκίς \n Κοζάνης \n Κορινθίας \n Κυκλάδων \n Λακωνίας \n Λαρίσης \n Λασιθίου \n Λέσβου \n Λευκάδων \n Μαγνησίας \n Μεσσηνίας \n Ξάνθης \n Παξοί \n Πέλλης \n Πιερίας \n Πρεβέζης \n Ρεθύμνης \n Ροδόπης \n Σάμου \n Σερρών \n Τρικάλων \n Φθιώτιδος \n Φλωρίνης \n Φωκίδος \n Χαλκιδικής \n Χανίων \n Χίου \n \n \n \n \n Νομός* \n \n \n \n \n \n \n \n Κινητό Τηλέφωνο* \n Το κινητό τηλέφωνο πρέπει να ξεκινά από 69 και να έχει 10 ψηφία \n \n \n \n \n \n \nΣταθερό Τηλέφωνο\n \n Το σταθερό τηλέφωνο πρέπει να έχει 10 ψηφία \n \n \n \n \n \n *  Υποχρεωτικά Πεδία  \nΤο κινητό τηλέφωνο είναι απαραίτητο για την επικοινωνία με την Speedex για την άμεση ενημέρωση σου για την παράδοση. \n \n \n \n \n \n 2. Διεύθυνση Αποστολής: \n \n \n \n \n \n\nΕπιθυμώ ίδια διεύθυνση αποστολής\n \n \n \n \n \n \n \n \n \n \n ΔΙΕΥΘΥΝΣΗ EMAIL* \n \n \n \n \n \n \n \n ΑΦΜ* \n \n \n \n \n \n \n ΔΟΥ* \n \n \n \n \n \n \n \n Επωνυμία Εταιρίας* \n \n \n \n \n \n Δραστηριότητα* \n \n \n \n \n \n \n \n Όνομα* \n \n \n \n \n \n Επώνυμο* \n \n \n \n \n \n \n \n Οδός & Αριθμός* \n \n \n \n \n \n ΧΩΡΑ* \n Βέλγιο \n Βουλγαρία \n Γαλλία \n Γερμανία \n Δανία \n Ελλάδα \n Εσθονία \n Ηνωμένο Βασίλειο \n Ιρλανδία \n Ισπανία \n Ιταλία \n Κροατία \n Κύπρος \n Ολλανδία \n Πολωνία \n Ρουμανία \n Σουηδία \n Τσεχία \n Φιλανδία \n \n \n \n \n \n \n \n \n Τ.Κ.* \n Ο Τ.Κ. δεν είναι σωστός \n \n \n \n Περιοχή \n \n \n \n \n --- \n Αιτωλοακαρνανίας \n Αργολίδος \n Αρκαδίας \n Άρτας \n Αττικής \n Αχαίας \n Βοιωτίας \n Γρεβενών \n Δράμας \n Δωδεκανήσου \n Έβρου \n Εύβοιας \n Ευρυτανίας \n Ζακύνθου \n Ηλείας \n Ημαθίας \n Ηρακλείου \n Θεσπρωτίας \n Θεσσαλονίκης \n Ιωαννίνων \n Καβάλας \n Καρδίτσας \n Καστοριάς \n Κέρκυρας \n Κεφαλληνίας \n Κιλκίς \n Κοζάνης \n Κορινθίας \n Κυκλάδων \n Λακωνίας \n Λαρίσης \n Λασιθίου \n Λέσβου \n Λευκάδων \n Μαγνησίας \n Μεσσηνίας \n Ξάνθης \n Παξοί \n Πέλλης \n Πιερίας \n Πρεβέζης \n Ρεθύμνης \n Ροδόπης \n Σάμου \n Σερρών \n Τρικάλων \n Φθιώτιδος \n Φλωρίνης \n Φωκίδος \n Χαλκιδικής \n Χανίων \n Χίου \n \n \n \n \n Νομός \n \n \n \n \n \n \n \n Κινητό Τηλέφωνο* \n Το κινητό τηλέφωνο πρέπει να ξεκινά από 69 και να έχει 10 ψηφία \n \n \n \n \n \n Σταθερό Τηλέφωνο \n Το σταθερό τηλέφωνο πρέπει να έχει 10 ψηφία \n \n \n \n \n \n \n \n 3. Επιλογές αποστολής: \n \n \n \n \n \n \n \n \n Δωρεάν αποστολή \n \n \n Εκτιμώμενη ημερομηνία παράδοσης: 1-2 εργάσιμες μέρες  \n \n \n \n \n \n \nΕίναι δώρο - δεν επιθυμώ να σταλεί απόδειξη στον παραλήπτη\n \n \n \n \n \n \n \n \n \n \n 4. Τρόποι πληρωμής \n \n \n \n \n \n \n \n \n \n Πιστωτική/Χρεωστική Κάρτα \n \n \n \n Επιλέξτε δόσεις   \n 2 δόσεις για αγορές άνω των 100€ 3 δόσεις για αγορές άνω των 150€ \n Χωρίς Δόσεις 2 Δόσεις (80,90€/μήνα) 3 Δόσεις (53,93€/μήνα) \n Οι δόσεις ισχύουν για αγορές άνω των 100€ \n \n \n \n \n \n Αντικαταβολή (+2,00€) \n \n \n \n \n Paypal \n \n \n \n \n Κατάθεση σε Λογαριασμό \n \n Μπορείτε να επιλέξετε έναν από τους παρακάτω τραπεζικούς λογαριασμούς, αναγράφοντας τον  κωδικό παραγγελίας  & το  ονοματεπώνυμο  στην αιτιολογία της κατάθεσης.  \n \n \n ΕΘΝΙΚΗ: \n GR4901102720000027247014452 \n \n \n ALPHA: \n GR1601402150215002320000282 \n \n \n EUROBANK: \n GR2402600350000120200107312 \n \n \n ΠΕΙΡΑΙΩΣ: \n GR6901721600005160022596204 \n \n \n Μόλις ολοκληρώσετε την κατάθεση, θα πρέπει να μας στείλετε το αντίγραφο της κατάθεσης στο email:  bank@myshoe.gr . Η αποστολή της παραγγελίας θα πραγματοποιηθεί μόλις εμφανιστεί η κατάθεση σας στον λογαριασμό μας, το οποίο συνήθως απαιτεί 1-3 εργάσιμες ημέρες. Αν δεν έχετε πραγματοποιήσει κατάθεση εντός 3 εργάσιμων ημερών η παραγγελία ακυρώνεται αυτόματα. \n \n \n \n \n \n \n ΣΧΟΛΙΑ ΓΙΑ ΤΗΝ ΜΕΤΑΦΟΡΙΚΗ \n \n \n \n \n \n \n \n ΣΧΟΛΙΑ ΓΙΑ ΤΗΝ ΠΑΡΑΓΓΕΛΙΑ"
+      label_translated: "Receipt Invoice 1. Billing Address: Email Address* The email is not valid If you want, create an account here to be able to track your order! Password Use between 6 and 10 characters Use at least one number or symbol ( @ ! &amp; % # + = _ etc.) Do not use the same password on multiple sites. Password Confirmation Tax ID* DOU* Company Name* Activity* First Name* Surname* Street &amp; Number* COUNTRY* Belgium Bulgaria France Germany Denmark Greece Estonia United Kingdom Ireland Spain Italy Croatia Cyprus Netherlands Poland Romania Sweden Czech Republic Finland Postal Code* The Postal Code . δεν είναι σωστός Περιοχή Νομός* Αιτωλοακαρνανίας Αργολίδος Αρκαδίας Άρτας Αττικής Αχαίας Βοιωτίας Γρεβενών Δράμας Δωδεκανήσου Έβρου Εύβοιας Ευρυτανίας Ζακύνθου Ηλείας Ημαθίας Ηρακλείου Θεσπρωτίας Θεσσαλονίκης Ιωαννίνων Καβάλας Καρδίτσας Καστοριάς Κέρκυρας Κεφαλληνίας Κιλκίς Κοζάνης Κορινθίας Κυκλάδων Λακωνίας Λαρίσης Λασιθίου Λέσβου Λευκάδων Μαγνησίας Μεσσηνίας Ξάνθης Παξοί Πέλλης Πιερίας Πρεβέζης Ρεθύμνης Ροδόπης Σάμου Serron Trikala Fthiotidos Florinis Fokidos Halkidiki Chania Chios Prefecture* Mobile Phone* The mobile phone must start with 69 and have 10 digits Landline Phone The landline must have 10 digits * Mandatory Fields The mobile phone is necessary to contact Speedex for your immediate delivery notification. 2. Shipping Address: I want the same shipping address EMAIL ADDRESS* TIN* DOU* Company Name* Activity* First Name* Surname* Street &amp; Number* COUNTRY* Belgium Bulgaria France Germany Denmark Greece Estonia United Kingdom Ireland Spain Italy Croatia Cyprus Netherlands Poland Romania Sweden Czech Republic Finland P.O.* The P.O. δεν είναι σωστός Περιοχή --- Αιτωλοακαρνανίας Αργολίδος Αρκαδίας Άρτας Αττικής Αχαίας Βοιωτίας Γρεβενών Δράμας Δωδεκανήσου Έβρου Εύβοιας Ευρυτανίας Ζακύνθου Ηλείας Ημαθίας Ηρακλείου Θεσπρωτίας Θεσσαλονίκης Ιωαννίνων Καβάλας Καρδίτσας Καστοριάς Κέρκυρας Κεφαλληνίας Κιλκίς Κοζάνης Κορινθίας Κυκλάδων Λακωνίας Λαρίσης Λασιθίου Λέσβου Λευκάδων Μαγνησίας Μεσσηνίας Ξάνθης Παξοί Πέλλης Πιερίας Πρεβέζης Ρεθύμνης Ροδόπης Samos Serres Trikala Fthiotidos Florinis Fokidos Halkidiki Chania Chios Prefecture Mobile Phone* Mobile phone must start with 69 and have 10 digits Landline Phone Landline must have 10 digits 3. Shipping Options: Free Shipping Estimated Delivery Date: 1-2 working days It&#39;s a gift - I don&#39;t want a receipt sent to the recipient 4. Payment methods Credit/Debit Card Choose installments 2 installments for purchases over €100 3 installments for purchases over €150 No Installments 2 Installments (€80.90/month) 3 Installments (€53.93/month) The installments are valid for purchase over €100 Cash on delivery (+€2.00) Paypal Deposit to an Account You can choose one of the following bank accounts, writing the order code &amp; name in the reason for the deposit. NATIONAL: GR4901102720000027247014452 ALPHA: GR1601402150215002320000282 Eurobank: GR2402600350000120200107312 PIRAEUS: The order will be shipped once your deposit appears in our account, which usually takes 1-3 business days. If you have not made a deposit within 3 working days the order is automatically cancelled. FEEDBACK FOR SHIPPING FEEDBACK FOR ORDER"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ShippingAddressId|ShippingAddressId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "BillingAddressId|BillingAddressId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CompleteOrder|CompleteOrder"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "PostFormText|PostFormText"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ShippingErrorText|ShippingErrorText"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "SelectedStoreErrorText|SelectedStoreErrorText"
+      label: "Απόδειξη\n \n \n \n Τιμολόγιο"
+      label_translated: "Receipt Invoice"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "receipt|CompanyCharge"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "invoice|CompanyCharge"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "BEmail|BEmail"
+      label: "Διεύθυνση Email*"
+      label_translated: "Email Address*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CreateAccount|CreateAccount"
+      label: "Αν θες δημιούργησε λογαριασμό εδώ για να μπορείς να παρακολουθείς την παραγγελία σου!"
+      label_translated: "If you want, create an account here to be able to track your order!"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "password|password"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "password2|password2"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CompanyVatNumber|CompanyVatNumber"
+      label: "ΑΦΜ*"
+      label_translated: "VAT NUMBER*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CompanyTaxOffice|CompanyTaxOffice"
+      label: "ΔΟΥ*"
+      label_translated: "SEE*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CompanyName|CompanyName"
+      label: "Επωνυμία Εταιρίας*"
+      label_translated: "Company name*"
+      control_type: INPUT
+      concepts: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "CompanyActivity|CompanyActivity"
+      label: "Δραστηριότητα*"
+      label_translated: "Activity*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "BName|BName"
+      label: "Όνομα*"
+      label_translated: "Name*"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "BSurname|BSurname"
+      label: "Επώνυμο*"
+      label_translated: "Last name*"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "BAddress|BAddress"
+      label: "Οδός & Αριθμός*"
+      label_translated: "Street address*"
+      control_type: INPUT
+      concepts: "street-address"
+      section: ADDRESS
+    }
+    fields {
+      name: "BCountryId|BCountryId"
+      label: "ΧΩΡΑ*"
+      label_translated: "Country"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "BZip|BZip"
+      label: "Τ.Κ.*"
+      label_translated: "Postal Code*"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "chrome-off"
+      section: ADDRESS
+    }
+    fields {
+      name: "BCity|BCity"
+      label: "Περιοχή"
+      label_translated: "Region"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "BNomosIdSelect|BNomosIdSelect"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "BNomosId|BNomosId"
+      label: "Νομός*"
+      label_translated: "Prefecture*"
+      control_type: INPUT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "BNomos|BNomos"
+      label: "Νομός*"
+      label_translated: "Law*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "BPhone|BPhone"
+      label: "Κινητό Τηλέφωνο*"
+      label_translated: "Mobile phone*"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "BPhone2|BPhone2"
+      label: "Σταθερό Τηλέφωνο"
+      label_translated: "Home phone number"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "new_address|ShippingAsBilling"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "SEmail|SEmail"
+      label: "ΔΙΕΥΘΥΝΣΗ EMAIL*"
+      label_translated: "EMAIL ADDRESS*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "SCompanyVatNumber|SCompanyVatNumber"
+      label: "ΑΦΜ*"
+      label_translated: "VAT NUMBER*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "SCompanyTaxOffice|SCompanyTaxOffice"
+      label: "ΔΟΥ*"
+      label_translated: "SEE*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "SCompanyName|SCompanyName"
+      label: "Επωνυμία Εταιρίας*"
+      label_translated: "Company name*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "SCompanyActivity|SCompanyActivity"
+      label: "Δραστηριότητα*"
+      label_translated: "Activity*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "SName|SName"
+      label: "Όνομα*"
+      label_translated: "Name*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "SSurname|SSurname"
+      label: "Επώνυμο*"
+      label_translated: "Last name*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "SAddress|SAddress"
+      label: "Οδός & Αριθμός*"
+      label_translated: "Street address*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "SCountryId|SCountryId"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "SZip|SZip"
+      label: "Τ.Κ.*"
+      label_translated: "Postal Code*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "chrome-off"
+      section: OTHER
+    }
+    fields {
+      name: "SCity|SCity"
+      label: "Περιοχή"
+      label_translated: "Region"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "SNomosIdSelect|SNomosIdSelect"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "SNomosId|SNomosId"
+      label: "Νομός"
+      label_translated: "Law"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "SNomos|SNomos"
+      label: "Νομός"
+      label_translated: "Law"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "SPhone|SPhone"
+      label: "Κινητό Τηλέφωνο*"
+      label_translated: "Mobile phone*"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "SPhone2|SPhone2"
+      label: "Σταθερό Τηλέφωνο"
+      label_translated: "Home phone number"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "courier|delivery-options"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DontSendReceipt|DontSendReceipt"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ShippingMethodId|ShippingMethodId"
+      label: "4. Τρόποι πληρωμής \n \n \n \n \n \n \n \n \n \n Πιστωτική/Χρεωστική Κάρτα \n \n \n \n Επιλέξτε δόσεις   \n 2 δόσεις για αγορές άνω των 100€ 3 δόσεις για αγορές άνω των 150€ \n Χωρίς Δόσεις 2 Δόσεις (80,90€/μήνα) 3 Δόσεις (53,93€/μήνα) \n Οι δόσεις ισχύουν για αγορές άνω των 100€ \n \n \n \n \n \n Αντικαταβολή (+2,00€) \n \n \n \n \n Paypal \n \n \n \n \n Κατάθεση σε Λογαριασμό \n \n Μπορείτε να επιλέξετε έναν από τους παρακάτω τραπεζικούς λογαριασμούς, αναγράφοντας τον  κωδικό παραγγελίας  & το  ονοματεπώνυμο  στην αιτιολογία της κατάθεσης.  \n \n \n ΕΘΝΙΚΗ: \n GR4901102720000027247014452 \n \n \n ALPHA: \n GR1601402150215002320000282 \n \n \n EUROBANK: \n GR2402600350000120200107312 \n \n \n ΠΕΙΡΑΙΩΣ: \n GR6901721600005160022596204 \n \n \n Μόλις ολοκληρώσετε την κατάθεση, θα πρέπει να μας στείλετε το αντίγραφο της κατάθεσης στο email:  bank@myshoe.gr . Η αποστολή της παραγγελίας θα πραγματοποιηθεί μόλις εμφανιστεί η κατάθεση σας στον λογαριασμό μας, το οποίο συνήθως απαιτεί 1-3 εργάσιμες ημέρες. Αν δεν έχετε πραγματοποιήσει κατάθεση εντός 3 εργάσιμων ημερών η παραγγελία ακυρώνεται αυτόματα."
+      label_translated: "4. Payment methods Credit/Debit Card Select installments 2 installments for purchases over €100 3 installments for purchases over €150 No Installments 2 Installments (80.90€/month) 3 Installments (53.93€/month) The installments apply to purchases over €100 Cash on delivery (+€2.00) Paypal Deposit to Account You can choose one of the following bank accounts, writing the order code &amp; name in the justification of the deposit. NATIONAL: GR4901102720000027247014452 ALPHA: GR1601402150215002320000282 Eurobank: GR2402600350000120200107312 PIRAEUS: The order will be shipped once your deposit appears in our account, which usually takes 1-3 business days. If you have not made a deposit within 3 working days the order is automatically cancelled."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "TotalPaymentMethods|TotalPaymentMethods"
+      label: "4. Τρόποι πληρωμής"
+      label_translated: "4. Payment methods"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CC|PaymentMethod"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CC_Installments|CC_Installments"
+      label: "Οι δόσεις ισχύουν για αγορές άνω των 100€"
+      label_translated: "Installments apply to purchases over €100"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "COD|PaymentMethod"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "Paypal|PaymentMethod"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "BankDeposit|PaymentMethod"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DeliveryComments|DeliveryComments"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "UserComments|UserComments"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "fSelectedCredits|fSelectedCredits"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "Agreement|Agreement"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "sSelectedCredits|sSelectedCredits"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CouponCode|CouponCode"
+      label: "Αξία Προϊόντων   130,48€ \n ΦΠΑ   31,32€ \n ΕΚΠΤΩΣΗ   -0,00€ \n \n \n \n \n Κόστος Αντικαταβολής   2,00€ \n Έξοδα Αποστολής   ΔΩΡΕΑΝ \n ΣΥΝΟΛΟ   161,80€"
+      label_translated: "Product Value €130.48 VAT €31.32 DISCOUNT -€0.00 Cash On Delivery Cost €2.00 Shipping Costs FREE TOTAL €161.80"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "HasBasketGiftCard|HasBasketGiftCard"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ShCost|ShCost"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CODCost|CODCost"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "TotalMoneyWithoutShipping|TotalMoneyWithoutShipping"
+      label: "Κόστος Αντικαταβολής   2,00€"
+      label_translated: "Cost of Cash on Delivery €2.00"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "Agreement2|Agreement2"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

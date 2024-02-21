@@ -1,0 +1,105 @@
+site_examples {
+  url: "	https://www.decathlon.es"
+  is_structured: false
+  locale {
+    country: "ES"
+    language: "es"
+  }
+  sequences {
+    fields {
+      name: "address-name-bcba4f13-a5a7-43d9-bb38-cde3cc8dc8db|address-name"
+      label: "Asigna un nombre a cada dirección (\"Casa\", \"Trabajo\"...) * :"
+      label_translated: "Assign a name to each address (&quot;Home&quot;, &quot;Work&quot;...) * :"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "favorite-address-bcba4f13-a5a7-43d9-bb38-cde3cc8dc8db|favorite-address"
+      label: "Esta es mi dirección preferida"
+      label_translated: "This is my preferred address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billing-address-bcba4f13-a5a7-43d9-bb38-cde3cc8dc8db|billing-address"
+      label: "Utilizar como dirección de facturación"
+      label_translated: "Use as billing address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "first-name-bcba4f13-a5a7-43d9-bb38-cde3cc8dc8db|first-name"
+      label: "Nombre * :"
+      label_translated: "Name * :"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "last-name-bcba4f13-a5a7-43d9-bb38-cde3cc8dc8db|last-name"
+      label: "Primer apellido * :"
+      label_translated: "Surname * :"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "countryCodeGeoId-bcba4f13-a5a7-43d9-bb38-cde3cc8dc8db|countryCodeGeoId"
+      label: "País * :"
+      label_translated: "Country * :"
+      control_type: SELECT
+      concepts: "country-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "line1-bcba4f13-a5a7-43d9-bb38-cde3cc8dc8db|line1"
+      label: "Dirección completa (con número, portal, letra... Máximo 60 caracteres) * :"
+      label_translated: "Complete address (with number, portal, apartment... Maximum 60 characters) * :"
+      control_type: INPUT
+      concepts: "street-address"
+      autocomplete_attribute: "shippingaddress-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "postalCode-bcba4f13-a5a7-43d9-bb38-cde3cc8dc8db|postalCode"
+      label: "Código postal * :"
+      label_translated: "Postal Code * :"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "shippingpostal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "na"
+      label: "Ciudad * :"
+      label_translated: "City * :"
+      control_type: CUSTOM
+      concepts: "address-level2"
+      autocomplete_attribute: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "97bef677-7407-45a3-9aad-2739a2473a7f|"
+      label: "Número de teléfono móvil * :"
+      label_translated: "Mobile phone number * :"
+      control_type: SELECT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "address-mobile-bcba4f13-a5a7-43d9-bb38-cde3cc8dc8db|address-mobile"
+      label: "Número de teléfono móvil * :"
+      label_translated: "Mobile phone number * :"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+  }
+}
+

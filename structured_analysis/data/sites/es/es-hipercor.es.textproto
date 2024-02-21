@@ -1,0 +1,206 @@
+site_examples {
+  url: "https://www.hipercor.es"
+  is_structured: true
+  locale {
+    country: "ES"
+    language: "es"
+  }
+  sequences {
+    fields {
+      name: "country|country"
+      label: "Pais *"
+      label_translated: "Country *"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "province|province"
+      label: "Provincia/Estado *"
+      label_translated: "Province/State *"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "city|city"
+      label: "Localidad *"
+      label_translated: "City *"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "zipcode|zipcode"
+      label: "Código Postal *"
+      label_translated: "Postal Code *"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "street-type|street-type"
+      label: "Tipo de vía *"
+      label_translated: "Type of road *"
+      example: "Agrupación, Alameda, Apartamento, Avenida, Bajada, Barranco, "
+        "Barrio/barriada, Bloque, Calle, Calleja/callejon, Camino, Carretera, "
+        "Caserio/casas, Chalet, Colonia, Cuesta, Diseminado, Edificio, "
+        "Glorieta, Grupo, Lugar, Mercado, Parque, Partida, Pasaje, Paseo, "
+        "Plaza, Plazoleta/plazuela, Poblado, Poligono, Prolongacion, Rambla, "
+        "Ronda, Senda, Subida, Torrente, Travesia, Urbanizacion"
+      example_translated: "Grouping, Alameda, Apartment, Avenue, Descent, "
+        "Ravine, Neighborhood/neighborhood, Block, Street, Alley/alley, Path, "
+        "Highway, Farmhouse/houses, Chalet, Neighborhood, Slope, Disseminated, "
+        "Building, Roundabout, Group, Place, Market, Park, Departure, Passage, "
+        "Promenade, Plaza, Small Square, Town, Polygon, Extension, Rambla, "
+        "Ronda, Path, Ascent, Torrent, Crossing, Urbanization"
+      control_type: SELECT
+      concepts: "street-name-type"
+      section: ADDRESS
+    }
+    fields {
+      name: "street-name|street-name"
+      label: "Nombre de la vía *"
+      label_translated: "Name of the road *"
+      control_type: INPUT
+      concepts: "street-name-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "house-number|house-number"
+      label: "Nº/KM *"
+      label_translated: "No./KM *"
+      control_type: INPUT
+      concepts: "house-number"
+      section: ADDRESS
+    }
+    fields {
+      name: "without-number|without-number"
+      label: "Sin número"
+      label_translated: "Without number"
+      control_type: CHECKBOX
+      concepts: "gap"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "Dirección principal"
+      label_translated: "Main address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Dirección de facturación"
+      label_translated: "Billing Address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "building|building"
+      label: "Edificio"
+      label_translated: "Building"
+      control_type: INPUT
+      concepts: "building"
+      section: ADDRESS
+    }
+    fields {
+      name: "stairs|stairs"
+      label: "Escalera"
+      label_translated: "Staircase"
+      control_type: INPUT
+      concepts: "staircase"
+      section: ADDRESS
+    }
+    fields {
+      name: "level|level"
+      label: "Piso"
+      label_translated: "Floor"
+      control_type: INPUT
+      concepts: "floor"
+      section: ADDRESS
+    }
+    fields {
+      name: "door|door"
+      label: "Puerta"
+      label_translated: "Apartment"
+      control_type: INPUT
+      concepts: "apartment"
+      section: ADDRESS
+    }
+    fields {
+      name: "additional-info|"
+      label: "¿Alguna indicación especial?"
+      label_translated: "Any special indication?"
+      example: "Ej: el edificio está dentro de una urbanización"
+      example_translated: "Ex: the building is within an urbanization"
+      control_type: TEXTAREA
+      concepts: "delivery-instructions"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "Nombre *"
+      label_translated: "Name *"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "new-name"
+      section: NAME
+    }
+    fields {
+      name: "|"
+      label: "Apellido *"
+      label_translated: "Surname *"
+      control_type: INPUT
+      concepts: "first-family-name"
+      autocomplete_attribute: "new-surname"
+      section: NAME
+    }
+    fields {
+      name: "|"
+      label: "Segundo Apellido"
+      label_translated: "Second surname"
+      control_type: INPUT
+      concepts: "second-family-name"
+      autocomplete_attribute: "new-surname2"
+      section: NAME
+    }
+    fields {
+      name: "prefix-phone|"
+      label: "Teléfono (solo llamaremos en caso de dudas) *"
+      label_translated: "Telephone (we will only call in case of doubt) *"
+      control_type: SELECT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|"
+      label: "Teléfono (solo llamaremos en caso de dudas) *"
+      label_translated: "Telephone (we will only call in case of doubt) *"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "new-phone"
+      section: PHONE
+    }
+    fields {
+      name: "additional-info-2|"
+      label: "¿Alguna indicación especial?"
+      label_translated: "Any special indication?"
+      control_type: TEXTAREA
+      concepts: "delivery-instructions"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "Nombre de la dirección *"
+      label_translated: "Address name *"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "new-alias"
+      section: OTHER
+    }
+  }
+}
+

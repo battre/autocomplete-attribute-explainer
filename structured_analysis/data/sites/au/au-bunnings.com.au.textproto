@@ -1,0 +1,169 @@
+site_examples {
+  url: "https://www.bunnings.com.au/"
+  is_structured: true
+  locale {
+    country: "AU"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "|nds-pmd"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|noDeliveryInstructions"
+      label: "No delivery instructions"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|authorityToLeaveUnattended"
+      label: "Authority to leave unattended"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|isBusinessAddress"
+      label: "This is a business address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|otherDelivery"
+      label: "Other"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "$829RemoveExpect standard delivery  Fri 15 - Mon 18 Jul"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "firstName|firstName"
+      label: "First name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "lastName|lastName"
+      label: "Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "phoneNumber|phoneNumber"
+      label: "Mobile number"
+      control_type: INPUT
+      concepts: "tel"
+      section: PHONE
+    }
+    fields {
+      hide: true
+      name: "displayUid|displayUid"
+      label: "Email address"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      name: "communicationSmsPrefFlag|communicationSmsPrefFlag"
+      label: "I\'d like to receive updates via SMS"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "communicationPrefFlag|communicationPrefFlag"
+      label: "Send me the latest products, D.I.Y. projects and ideas."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "tnc|tnc"
+      label: "I accept Bunnings\' Online Shopping Terms and Conditions, and Bunnings collecting and managing my per"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|item.key"
+      label: "Same as my delivery address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|item.key"
+      label: "Different to my delivery address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      hide: true
+      name: "firstName|firstName"
+      label: "First name"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "lastName|lastName"
+      label: "Last name"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      name: "streetNumberName|streetNumberName"
+      label: "Street number and name"
+      control_type: INPUT
+      concepts: "street-address"
+      concepts_comment: "This could also be an address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "suiteBuilding|suiteBuilding"
+      label: "Suite, building, level, etc. (optional)"
+      control_type: INPUT
+      concepts: "building-and-location-in-building"
+      concepts_comment: "This could also be an address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "suburb|suburb"
+      label: "Suburb (required)"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "|state"
+      label: "New South Wales"
+      control_type: INPUT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "postCode|postCode"
+      label: "Postcode"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+  }
+}
+

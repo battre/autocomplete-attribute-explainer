@@ -1,0 +1,112 @@
+site_examples {
+  url: "https://bws.com.au"
+  is_structured: true
+  locale {
+    country: "AU"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "cba11y|checkboxes"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "clickAndCollect|deliveryMethod"
+      label: "Pick up in store"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "Delivery|deliveryMethod"
+      label: "Get it delivered"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "addressFormFirstName|FirstName"
+      label: "First name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "off"
+      section: NAME
+    }
+    fields {
+      name: "addressFormLastName|LastName"
+      label: "Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "off"
+      section: NAME
+    }
+    fields {
+      name: "addressFormContact|ContactNumber"
+      label: "Mobile number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PHONE
+    }
+    fields {
+      name: "Street1|Street1"
+      label: "Street address line 1"
+      control_type: INPUT
+      concepts: "address-line1"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "Street2|Street2"
+      label: "Street address line 2"
+      control_type: INPUT
+      concepts: "address-line2"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "shopLocatorSearch|autoComplete"
+      label: "Enter postcode or suburb"
+      example: "Enter postcode or suburb"
+      control_type: INPUT
+      concepts: "unsure"
+      concepts_comment:
+        "This is a search field in which the user can enter their postcode or "
+        "suburb. It autocompletes to 'city, state zip'."
+      low_certainty: true
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "ChangeDeliveryInstructions|ChangeDeliveryInstructions"
+      label: "Any instructions for the driver?"
+      control_type: INPUT
+      concepts: "delivery-instructions"
+      section: ADDRESS
+    }
+    fields {
+      name: "isChilledOrderDisplay|isChilledOrderDisplay"
+      label: "Would you like your drinks chilled?"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "promoCode|promoCode"
+      label: "Enter coupon code"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "additionalProducts|showAdditionalProducts"
+      label: "Would you like to add a gift bag?"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

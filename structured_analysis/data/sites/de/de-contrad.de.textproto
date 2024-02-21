@@ -1,0 +1,100 @@
+site_examples {
+  url: "https://www.conrad.de"
+  is_structured: true
+  locale {
+    country: "DE"
+    language: "de"
+  }
+  sequences {
+    fields {
+      name: "|salutationCode"
+      label: "Anrede"
+      label_translated: "Salutation"
+      example: "Herr / Frau"
+      example_translated: "Mr. / Mrs."
+      control_type: SELECT
+      concepts: "honorific-prefix"
+      section: NAME
+    }
+    fields {
+      name: "|academicTitle"
+      label: "Titel (optional)"
+      label_translated: "Academic title"
+      control_type: SELECT
+      concepts: "honorific-prefix"
+      low_certainty: true
+      section: NAME
+    }
+    fields {
+      name: "|firstname"
+      label: "Vorname"
+      label_translated: "First name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "|lastname"
+      label: "Nachname"
+      label_translated: "Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "streetFieldId|street"
+      label: "Straße"
+      label_translated: "Street name"
+      control_type: INPUT
+      concepts: "street-name"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "[object Object]-houseNumber|houseNumber"
+      label: "Hausnummer"
+      label_translated: "House number"
+      control_type: INPUT
+      concepts: "house-number"
+      autocomplete_attribute: "address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "zipFieldId|zip"
+      label: "Postleitzahl"
+      label_translated: "Postal code"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "[object Object]-city|city1"
+      label: "Ort"
+      label_translated: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "|countryISO"
+      label: "Land"
+      label_translated: "Country"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "Ja, ich möchte diese Adresse als Lieferadresse unter \"Mein Konto\" speichern."
+      label_translated: "Yes, I would like to save this address as the delivery address in &quot;My Account&quot;."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

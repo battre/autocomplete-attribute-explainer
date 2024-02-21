@@ -1,0 +1,27 @@
+enabled: false  # To save time, we can enable and disable graph generation here.
+
+abbreviations:
+  address-line1: AL1
+  address-line2: AL2
+  address-line3: AL3
+  address-line4: AL4
+  cross-street1: CS1
+  cross-street2: CS2
+  admin-area1: AA1
+  admin-area2: AA2
+  admin-area3: AA3
+  admin-area4: AA4
+  locality1: Loc1
+  locality2: Loc2
+  locality3: Loc3
+  locality4: Loc4
+
+graphs:
+  address: # generates "global-address.pdf"
+    start-nodes:
+    - address
+    stop-at:
+    # - foobar prints "foobar" but no children
+    - street-address
+    # stop-before:
+    # - foobar does not print "foobar" nor children

@@ -1,0 +1,1180 @@
+site_examples {
+  url: "https://www.carrefour.it"
+  is_structured: true
+  locale {
+    country: "IT"
+    language: "it"
+  }
+  sequences {
+    fields {
+      name: "|isOnlyPickupInStore"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|csrf_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|originalShipmentUUID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|shipmentUUID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|dwfrm_shipping_shippingAddress_addressFields_country"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "customerAddressUUID|dwfrm_shipping_shippingAddress_addressFields_customerAddressUUID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "firstName|dwfrm_shipping_shippingAddress_addressFields_firstName"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "lastName|dwfrm_shipping_shippingAddress_addressFields_lastName"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressOne|dwfrm_shipping_shippingAddress_addressFields_address1"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressHouseNumber|dwfrm_shipping_shippingAddress_addressFields_houseNumber"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressCity|dwfrm_shipping_shippingAddress_addressFields_city"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressState|dwfrm_shipping_shippingAddress_addressFields_stateCode"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingZipCode|dwfrm_shipping_shippingAddress_addressFields_postalCode"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "shippingFloor|dwfrm_shipping_shippingAddress_addressFields_floor"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "shippingStairs|dwfrm_shipping_shippingAddress_addressFields_stairs"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "si|dwfrm_shipping_shippingAddress_addressFields_hasLift"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "no|dwfrm_shipping_shippingAddress_addressFields_hasLift"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingIntercomName|dwfrm_shipping_shippingAddress_addressFields_intercomName"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "shippingPhonePrefix|"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingPhone|dwfrm_shipping_shippingAddress_addressFields_phone"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "|csrf_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "firstName|dwfrm_shipping_shippingAddress_addressFields_firstName"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "chrome-off"
+      section: OTHER
+    }
+    fields {
+      name: "lastName|dwfrm_shipping_shippingAddress_addressFields_lastName"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "chrome-off"
+      section: OTHER
+    }
+    fields {
+      name: "shippingPhonePrefix|"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingPhone|dwfrm_shipping_shippingAddress_addressFields_phone"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "chrome-off"
+      section: OTHER
+    }
+    fields {
+      name: "|isOnlyPickupInStore"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|csrf_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|originalShipmentUUID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|shipmentUUID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|dwfrm_shipping_shippingAddress_addressFields_country"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "customerAddressUUID|dwfrm_shipping_shippingAddress_addressFields_customerAddressUUID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "firstName|dwfrm_shipping_shippingAddress_addressFields_firstName"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "lastName|dwfrm_shipping_shippingAddress_addressFields_lastName"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressOne|dwfrm_shipping_shippingAddress_addressFields_address1"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressHouseNumber|dwfrm_shipping_shippingAddress_addressFields_houseNumber"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressCity|dwfrm_shipping_shippingAddress_addressFields_city"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressState|dwfrm_shipping_shippingAddress_addressFields_stateCode"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingZipCode|dwfrm_shipping_shippingAddress_addressFields_postalCode"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "shippingFloor|dwfrm_shipping_shippingAddress_addressFields_floor"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "shippingStairs|dwfrm_shipping_shippingAddress_addressFields_stairs"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "si|dwfrm_shipping_shippingAddress_addressFields_hasLift"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "no|dwfrm_shipping_shippingAddress_addressFields_hasLift"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingIntercomName|dwfrm_shipping_shippingAddress_addressFields_intercomName"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "shippingPhonePrefix|"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingPhone|dwfrm_shipping_shippingAddress_addressFields_phone"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "|isOnlyPickupInStore"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|csrf_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|originalShipmentUUID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|shipmentUUID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|dwfrm_shipping_shippingAddress_addressFields_country"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "customerAddressUUID|dwfrm_shipping_shippingAddress_addressFields_customerAddressUUID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "firstName|dwfrm_shipping_shippingAddress_addressFields_firstName"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "lastName|dwfrm_shipping_shippingAddress_addressFields_lastName"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressOne|dwfrm_shipping_shippingAddress_addressFields_address1"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressHouseNumber|dwfrm_shipping_shippingAddress_addressFields_houseNumber"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressCity|dwfrm_shipping_shippingAddress_addressFields_city"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressState|dwfrm_shipping_shippingAddress_addressFields_stateCode"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingZipCode|dwfrm_shipping_shippingAddress_addressFields_postalCode"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "shippingFloor|dwfrm_shipping_shippingAddress_addressFields_floor"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "shippingStairs|dwfrm_shipping_shippingAddress_addressFields_stairs"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "si|dwfrm_shipping_shippingAddress_addressFields_hasLift"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "no|dwfrm_shipping_shippingAddress_addressFields_hasLift"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingIntercomName|dwfrm_shipping_shippingAddress_addressFields_intercomName"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "shippingPhonePrefix|"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingPhone|dwfrm_shipping_shippingAddress_addressFields_phone"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "|isOnlyPickupInStore"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|csrf_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|originalShipmentUUID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|shipmentUUID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|dwfrm_shipping_shippingAddress_addressFields_country"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "customerAddressUUID|dwfrm_shipping_shippingAddress_addressFields_customerAddressUUID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "firstName|dwfrm_shipping_shippingAddress_addressFields_firstName"
+      label: "Nome"
+      label_translated: "First name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "nope"
+      section: NAME
+    }
+    fields {
+      name: "lastName|dwfrm_shipping_shippingAddress_addressFields_lastName"
+      label: "Cognome"
+      label_translated: "Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "nope"
+      section: NAME
+    }
+    fields {
+      name: "shippingAddressOne|dwfrm_shipping_shippingAddress_addressFields_address1"
+      label: "Indirizzo"
+      label_translated: "Address"
+      control_type: INPUT
+      concepts: "street-name"
+      autocomplete_attribute: "nope"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddressHouseNumber|dwfrm_shipping_shippingAddress_addressFields_houseNumber"
+      label: "Numero"
+      label_translated: "Number"
+      control_type: INPUT
+      concepts: "house-number"
+      autocomplete_attribute: "nope"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddressCity|dwfrm_shipping_shippingAddress_addressFields_city"
+      label: "Città"
+      label_translated: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "nope"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddressState|dwfrm_shipping_shippingAddress_addressFields_stateCode"
+      label: "Provincia"
+      label_translated: "Province"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingZipCode|dwfrm_shipping_shippingAddress_addressFields_postalCode"
+      label: "CAP"
+      label_translated: "POSTAL CODE"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "nope"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingFloor|dwfrm_shipping_shippingAddress_addressFields_floor"
+      label: "Piano"
+      label_translated: "Floor"
+      control_type: INPUT
+      concepts: "floor"
+      autocomplete_attribute: "nope"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingStairs|dwfrm_shipping_shippingAddress_addressFields_stairs"
+      label: "Scala"
+      label_translated: "Stair case"
+      control_type: INPUT
+      concepts: "staircase"
+      autocomplete_attribute: "nope"
+      section: ADDRESS
+    }
+    fields {
+      name: "si|dwfrm_shipping_shippingAddress_addressFields_hasLift"
+      label: "si"
+      label_translated: "yes"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "no|dwfrm_shipping_shippingAddress_addressFields_hasLift"
+      label: "no"
+      label_translated: "no"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingIntercomName|dwfrm_shipping_shippingAddress_addressFields_intercomName"
+      label: "Nome o numero sul citofono"
+      label_translated: "Name or number on the intercom"
+      control_type: INPUT
+      concepts: "gap"
+      autocomplete_attribute: "nope"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingPhonePrefix|"
+      label: "Inserisci il tuo indirizzo Inserisci informazioni"
+      label_translated: "Enter your address Enter information"
+      control_type: SELECT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "shippingPhone|dwfrm_shipping_shippingAddress_addressFields_phone"
+      label: "Cellulare"
+      label_translated: "Cell phone"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: PHONE
+    }
+    fields {
+      name: "orderNotes|notes"
+      label: "Cambia"
+      label_translated: "Change"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "radioTicketRestaurant|otherPaymentOptions"
+      label: "Ticket Restaurant®"
+      label_translated: "Ticket Restaurant®"
+      control_type: RADIO
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "radioGiftCard|otherPaymentOptions"
+      label: "Gift Card Carrefour"
+      label_translated: "Carrefour Gift Card"
+      control_type: RADIO
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "giftcardNumber|giftcardNumber"
+      label: "Inserisci il codice della Gift card"
+      label_translated: "Enter the gift card code"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|csrf_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "MARKETPAY|paymentOptions"
+      label: "Pagamento online con Mastercard, Visa, American Express o Paypal Pagamento online con Carta Carrefou"
+      label_translated: "Online payment with Mastercard, Visa, American Express or Paypal Online payment with Carrefou Card"
+      control_type: RADIO
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "MARKETPAY|paymentOptions"
+      label: "Pagamento online con Carta Carrefour Findomestic (sconto 10% sul totale spesa)"
+      label_translated: "Online payment with Carrefour Findomestic Card (10% discount on total spending)"
+      control_type: RADIO
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "|csrf_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressEnabled|billingAddressEnabled"
+      label: "Voglio ricevere la fattura"
+      label_translated: "I want to receive the invoice"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|csrf_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "addressId|dwfrm_billing_customerAddressID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "azienda|dwfrm_billing_isCompany"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "privato|dwfrm_billing_isCompany"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingCodiceDestinatario|dwfrm_billing_codiceDestinatario"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "billingIndirizzoPec|dwfrm_billing_indirizzoPec"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "billingCompanyName|dwfrm_billing_companyName"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "billingCodiceFiscale|dwfrm_billing_codiceFiscale"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "billingPartitaIva|dwfrm_billing_partitaIva"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressOne|dwfrm_billing_address1"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressHouseNumber|dwfrm_billing_houseNumber"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressCity|dwfrm_billing_city"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressState|dwfrm_billing_stateCode"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingZipCode|dwfrm_billing_postalCode"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "removeTaggedShipmentUUID|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "removeTaggedTimeslotId|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "removeTaggedTimeslotStartDate|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "removeTaggedTimeslotEndDate|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|csrf_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "hiddenPid|pid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_profile_customer_birthday|dwfrm_profile_customer_birthday"
+      example: "gg / mm / aaaa"
+      example_translated: "dd / mm / yyyy"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|csrf_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0004|ot-group-id-C0004"
+      label: "Cookie per pubblicità mirata"
+      label_translated: "Targeted advertising cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-sub-group-id-C0036|switch"
+      label: "Switch Label"
+      label_translated: "Switch Label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-sub-group-id-C0056|switch"
+      label: "Switch Label"
+      label_translated: "Switch Label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0052|ot-group-id-C0052"
+      label: "Audience measurement"
+      label_translated: "Audience measurement"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0007|ot-group-id-C0007"
+      label: "Google Analytics"
+      label_translated: "Google Analytics"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-IABV2_1|ot-group-id-IABV2_1"
+      label: "Archiviare e/o accedere a informazioni su un dispositivo"
+      label_translated: "Store and / or access information on a device"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-STACK1|ot-group-id-STACK1"
+      label: "Dati di geolocalizzazione precisi e identificazione attraverso la scansione del dispositivo"
+      label_translated: "Precise geolocation data and identification by scanning the device"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-sub-group-id-ISFV2_1|switch"
+      label: "Switch Label"
+      label_translated: "Switch Label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-sub-group-id-ISFV2_2|switch"
+      label: "Switch Label"
+      label_translated: "Switch Label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-STACK42|ot-group-id-STACK42"
+      label: "Annunci e contenuti personalizzati, valutazione degli annunci e del contenuto, osservazioni del pubb"
+      label_translated: "Personalized ads and content, ad and content rating, publisher comments"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-sub-group-id-IABV2_2|switch"
+      label: "Switch Label"
+      label_translated: "Switch Label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-sub-group-id-IABV2_3|switch"
+      label: "Switch Label"
+      label_translated: "Switch Label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-sub-group-id-IABV2_4|switch"
+      label: "Switch Label"
+      label_translated: "Switch Label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-sub-group-id-IABV2_5|switch"
+      label: "Switch Label"
+      label_translated: "Switch Label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-sub-group-id-IABV2_6|switch"
+      label: "Switch Label"
+      label_translated: "Switch Label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-sub-group-id-IABV2_7|switch"
+      label: "Switch Label"
+      label_translated: "Switch Label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-sub-group-id-IABV2_8|switch"
+      label: "Switch Label"
+      label_translated: "Switch Label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-sub-group-id-IABV2_9|switch"
+      label: "Switch Label"
+      label_translated: "Switch Label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-sub-group-id-IABV2_10|switch"
+      label: "Switch Label"
+      label_translated: "Switch Label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "vendor-search-handler|vendor-search-handler"
+      label: "Vendor Search"
+      label_translated: "Vendor Search"
+      example: "Search..."
+      example_translated: "Search ..."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "chkbox-id|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-hosts-groups-handler|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-vendor-groups-handler|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-vendor-leg-handler|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|isOnlyPickupInStore"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|csrf_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|originalShipmentUUID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|shipmentUUID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|dwfrm_shipping_shippingAddress_addressFields_country"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "customerAddressUUID|dwfrm_shipping_shippingAddress_addressFields_customerAddressUUID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "firstName|dwfrm_shipping_shippingAddress_addressFields_firstName"
+      label: "Campo obbligatorio"
+      label_translated: "Required field"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "lastName|dwfrm_shipping_shippingAddress_addressFields_lastName"
+      label: "Campo obbligatorio"
+      label_translated: "Required field"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressOne|dwfrm_shipping_shippingAddress_addressFields_address1"
+      label: "Campo obbligatorio"
+      label_translated: "Required field"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressHouseNumber|dwfrm_shipping_shippingAddress_addressFields_houseNumber"
+      label: "Campo obbligatorio"
+      label_translated: "Required field"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressCity|dwfrm_shipping_shippingAddress_addressFields_city"
+      label: "Informazioni per la consegna"
+      label_translated: "Delivery information"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressState|dwfrm_shipping_shippingAddress_addressFields_stateCode"
+      label: "Informazioni per la consegna"
+      label_translated: "Delivery information"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingZipCode|dwfrm_shipping_shippingAddress_addressFields_postalCode"
+      label: "Informazioni per la consegna"
+      label_translated: "Delivery information"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "shippingFloor|dwfrm_shipping_shippingAddress_addressFields_floor"
+      label: "Campo obbligatorio"
+      label_translated: "Required field"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "shippingStairs|dwfrm_shipping_shippingAddress_addressFields_stairs"
+      label: "Informazioni per la consegna"
+      label_translated: "Delivery information"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "si|dwfrm_shipping_shippingAddress_addressFields_hasLift"
+      label: "si"
+      label_translated: "yes"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "no|dwfrm_shipping_shippingAddress_addressFields_hasLift"
+      label: "no"
+      label_translated: "no"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingIntercomName|dwfrm_shipping_shippingAddress_addressFields_intercomName"
+      label: "Campo obbligatorio"
+      label_translated: "Required field"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "shippingPhonePrefix|"
+      label: "Informazioni per la consegna"
+      label_translated: "Delivery information"
+      control_type: SELECT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "shippingPhone|dwfrm_shipping_shippingAddress_addressFields_phone"
+      label: "Campo obbligatorio"
+      label_translated: "Required field"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: PHONE
+    }
+  }
+}
+

@@ -1,0 +1,482 @@
+site_examples {
+  url: "https://www.moustakastoys.gr"
+  is_structured: true
+  locale {
+    country: "GR"
+    language: "el"
+  }
+  sequences {
+    fields {
+      name: "BillingInformation_Email|BillingInformation.Email"
+      label: "Email*"
+      label_translated: "E-mail*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "chrome-off"
+      section: OTHER
+    }
+    fields {
+      name: "|BillingInformation.ReceiptType"
+      label: "Απόδειξη"
+      label_translated: "Evidence"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|BillingInformation.ReceiptType"
+      label: "Τιμολόγιο"
+      label_translated: "Invoice"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "BillingInformation_Address_FirstName|BillingInformation.Address.FirstName"
+      label: "Όνομα*"
+      label_translated: "Name*"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "chrome-off"
+      section: NAME
+    }
+    fields {
+      name: "BillingInformation_Address_LastName|BillingInformation.Address.LastName"
+      label: "Επίθετο*"
+      label_translated: "Last name*"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "chrome-off"
+      section: NAME
+    }
+    fields {
+      name: "BillingInformation_Address_Street|BillingInformation.Address.Street"
+      label: "Διεύθυνση*"
+      label_translated: "Address*"
+      control_type: INPUT
+      concepts: "street-name"
+      autocomplete_attribute: "chrome-off"
+      section: ADDRESS
+    }
+    fields {
+      name: "BillingInformation_Address_StreetNumber|BillingInformation.Address.StreetNumber"
+      label: "Αριθμός*"
+      label_translated: "Number*"
+      control_type: INPUT
+      concepts: "house-number"
+      autocomplete_attribute: "chrome-off"
+      section: ADDRESS
+    }
+    fields {
+      name: "BillingInformation_Address_City|BillingInformation.Address.City"
+      label: "Πόλη*"
+      label_translated: "City*"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "chrome-off"
+      section: ADDRESS
+    }
+    fields {
+      name: "BillingInformation_Address_ZipCode|BillingInformation.Address.ZipCode"
+      label: "Τ.Κ.*"
+      label_translated: "Postal Code*"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "chrome-off"
+      section: ADDRESS
+    }
+    fields {
+      name: "BillingInformation_Address_FloorNumber|BillingInformation.Address.FloorNumber"
+      label: "Όροφος"
+      label_translated: "Floor"
+      control_type: INPUT
+      concepts: "floor"
+      section: OTHER
+    }
+    fields {
+      name: "BillingInformation_Address_PrefectureID|BillingInformation.Address.PrefectureID"
+      label: "Νομός"
+      label_translated: "Prefecture"
+      control_type: INPUT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "BillingInformation_Address_Mobile|BillingInformation.Address.Mobile"
+      label: "Κινητό τηλέφωνο*"
+      label_translated: "Mobile phone*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "chrome-off"
+      section: PHONE
+    }
+    fields {
+      name: "BillingInformation_Address_AddressPhone|BillingInformation.Address.AddressPhone"
+      label: "Τηλέφωνο"
+      label_translated: "Phone"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "chrome-off"
+      section: PHONE
+    }
+    fields {
+      name: "BillingInformation_InvoiceInfo_VATNumber|BillingInformation.InvoiceInfo.VATNumber"
+      label: "Α.Φ.Μ.*"
+      label_translated: "VAT NUMBER.*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "chrome-off"
+      section: OTHER
+    }
+    fields {
+      name: "BillingInformation_InvoiceInfo_Mobile|BillingInformation.InvoiceInfo.Mobile"
+      label: "Κινητό Τηλέφωνο*"
+      label_translated: "Mobile phone*"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "BillingInformation_InvoiceInfo_Phone|BillingInformation.InvoiceInfo.Phone"
+      label: "Τηλέφωνο"
+      label_translated: "Phone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "BillingInformation_InvoiceInfo_CompanyName|BillingInformation.InvoiceInfo.CompanyName"
+      label: "Επωνυμία Εταιρείας*"
+      label_translated: "Company name*"
+      control_type: INPUT
+      concepts: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "BillingInformation_InvoiceInfo_TaxAuthority|BillingInformation.InvoiceInfo.TaxAuthority"
+      label: "Δ.Ο.Υ.*"
+      label_translated: "D.O.Y.*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "BillingInformation_InvoiceInfo_Address|BillingInformation.InvoiceInfo.Address"
+      label: "Διεύθυνση*"
+      label_translated: "Address*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "BillingInformation_InvoiceInfo_AddressNumber|BillingInformation.InvoiceInfo.AddressNumber"
+      label: "Αριθμός*"
+      label_translated: "Number*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "BillingInformation_InvoiceInfo_AddressZipCode|BillingInformation.InvoiceInfo.AddressZipCode"
+      label: "Τ.Κ.*"
+      label_translated: "Postal Code*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "BillingInformation_InvoiceInfo_City|BillingInformation.InvoiceInfo.City"
+      label: "Πόλη*"
+      label_translated: "City*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "BillingInformation_InvoiceInfo_Activity|BillingInformation.InvoiceInfo.Activity"
+      label: "Δραστηριότητα*"
+      label_translated: "Activity*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DeliveryInformation.DeliveryType1|DeliveryInformation.DeliveryType"
+      label: "Παράδοση στο χώρο σας"
+      label_translated: "Delivery to your place"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DeliveryInformation.DeliveryType2|DeliveryInformation.DeliveryType"
+      label: "Παραλαβή από κατάστημα"
+      label_translated: "Pickup from store"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DeliveryInformation_Shipping_Source|DeliveryInformation.Shipping.Source"
+      label: "Διεύθυνση παράδοσης"
+      label_translated: "Delivery address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|DeliveryInformation.Shipping.Source"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DeliveryInformation_Shipping_Address_FirstName|DeliveryInformation.Shipping.Address.FirstName"
+      label: "Όνομα*"
+      label_translated: "Name*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "chrome-off"
+      section: OTHER
+    }
+    fields {
+      name: "DeliveryInformation_Shipping_Address_LastName|DeliveryInformation.Shipping.Address.LastName"
+      label: "Επίθετο*"
+      label_translated: "Adjective*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "chrome-off"
+      section: OTHER
+    }
+    fields {
+      name: "DeliveryInformation_Shipping_Address_Street|DeliveryInformation.Shipping.Address.Street"
+      label: "Διεύθυνση*"
+      label_translated: "Address*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "chrome-off"
+      section: OTHER
+    }
+    fields {
+      name: "DeliveryInformation_Shipping_Address_StreetNumber|DeliveryInformation.Shipping.Address.StreetNumber"
+      label: "Αριθμός*"
+      label_translated: "Number*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "chrome-off"
+      section: OTHER
+    }
+    fields {
+      name: "DeliveryInformation_Shipping_Address_City|DeliveryInformation.Shipping.Address.City"
+      label: "Πόλη*"
+      label_translated: "City*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "chrome-off"
+      section: OTHER
+    }
+    fields {
+      name: "DeliveryInformation_Shipping_Address_ZipCode|DeliveryInformation.Shipping.Address.ZipCode"
+      label: "Τ.Κ.*"
+      label_translated: "Postal Code*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "chrome-off"
+      section: OTHER
+    }
+    fields {
+      name: "DeliveryInformation_Shipping_Address_PrefectureID|DeliveryInformation.Shipping.Address.PrefectureID"
+      label: "Νομός"
+      label_translated: "Law"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DeliveryInformation_Shipping_Address_FloorNumber|DeliveryInformation.Shipping.Address.FloorNumber"
+      label: "Όροφος"
+      label_translated: "Floor"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "chrome-off"
+      section: OTHER
+    }
+    fields {
+      name: "DeliveryInformation_Shipping_Address_Mobile|DeliveryInformation.Shipping.Address.Mobile"
+      label: "Κινητό τηλέφωνο*"
+      label_translated: "Mobile phone*"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "chrome-off"
+      section: PHONE
+    }
+    fields {
+      name: "DeliveryInformation_Shipping_Address_AddressPhone|DeliveryInformation.Shipping.Address.AddressPhone"
+      label: "Τηλέφωνο"
+      label_translated: "Phone"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "chrome-off"
+      section: PHONE
+    }
+    fields {
+      name: "DeliveryInformation_PickupInformation_PickupLocationTitle|DeliveryInformation.PickupInformation.PickupLocationTitle"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DeliveryInformation_PickupInformation_Address|DeliveryInformation.PickupInformation.Address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DeliveryInformation_PickupInformation_Url|DeliveryInformation.PickupInformation.Url"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DeliveryInformation_PickupInformation_PickupLocation|DeliveryInformation.PickupInformation.PickupLocation"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DeliveryInformation_PickupInformation_PickupComments|DeliveryInformation.PickupInformation.PickupComments"
+      label: "Σχόλια παράδοσης:"
+      label_translated: "Delivery Comments:"
+      example: "π.χ. ώρα παραλαβής"
+      example_translated: "e.g. pick up time"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DeliveryInformation_Comments|DeliveryInformation.Comments"
+      label: "Σχόλια:"
+      label_translated: "Comments:"
+      example: "π.χ. όνομα στο κουδούνι"
+      example_translated: "e.g. name on bell"
+      control_type: TEXTAREA
+      concepts: "delivery-instructions"
+      section: ADDRESS
+    }
+    fields {
+      name: "DeliveryInformation_GiftWrap|DeliveryInformation.GiftWrap"
+      label: "2 Στοιχεία παράδοσης"
+      label_translated: "2 Delivery details"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|DeliveryInformation.GiftWrap"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DeliveryInformation_GiftWrapComment|DeliveryInformation.GiftWrapComment"
+      label: "Γράψτε εδώ την ευχή για την κάρτα"
+      label_translated: "Write the wish for the card here"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DeliveryInformation_ShippingProvider|DeliveryInformation.ShippingProvider"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "coupon|PaymentInformation.Coupon.coupon"
+      label: "Κωδικός κουπονιού/giftcard"
+      label_translated: "Coupon/giftcard code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|PaymentInformation.PaymentType"
+      label: "Αντικαταβολή"
+      label_translated: "Pay on delivery"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|PaymentInformation.PaymentType"
+      label: "Paypal"
+      label_translated: "Paypal"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|PaymentInformation.PaymentType"
+      label: "IRIS Payments"
+      label_translated: "IRIS Payments"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|PaymentInformation.PaymentType"
+      label: "Πιστωτική-Χρεωστική Κάρτα"
+      label_translated: "Credit card"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "PaymentInformation_HideCouponSector|PaymentInformation.HideCouponSector"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "PaymentInformation_ShowNewsletter|PaymentInformation.ShowNewsletter"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "PaymentInformation_Newsletter|PaymentInformation.Newsletter"
+      label: "3 Στοιχεία πληρωμής"
+      label_translated: "3 Payment details"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|PaymentInformation.Newsletter"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "PaymentInformation_AcceptTerms|PaymentInformation.AcceptTerms"
+      label: "3 Στοιχεία πληρωμής"
+      label_translated: "3 Payment details"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|PaymentInformation.AcceptTerms"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "13479|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

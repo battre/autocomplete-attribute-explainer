@@ -1,0 +1,91 @@
+concepts:
+  # Name related
+  - name:
+    - honorific-prefix
+    - given-name
+    - additional-name
+    - family-name:
+      - family-name-first
+      - family-name-conjunction
+      - family-name-second
+    - honorific-suffix
+    - organization-title
+  - address:
+    # Street level
+    - street-address:
+      - address-line1
+      - address-line2
+      - address-line3
+      - address-line4
+    - street-address-alternative-1:
+      - building-location:
+        - street:
+          # Only some countries separate the street type from the name:
+          - street-type
+          - street-name
+        # The number of the building in the street:
+        - building:
+          - house-number
+          - building-name
+      - cross-streets:
+        - cross-street1
+        - cross-street2
+      # Building level
+      - in-building-location:
+        - entrance
+        - floor
+        - staircase
+        - unit: # e.g. "Apt 5"
+          - unit-type # "Apt", "Room", "Store"
+          - unit-name # "5"
+      # Captures information that does not fit into the building-location:
+      - address-overflow
+      # Additional information for delivery
+      - landmark
+      - delivery-instructions
+      - care-of
+    # Think of localities as cities and their subdivisions (e.g. neighborhoods,
+    # districts, ...).
+    - locality1  # Biggest kind of locality
+    - locality2
+    - locality3
+    - locality4
+    # Think of admin areas as states and adminstrative districts in these states.
+    # https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country
+    - admin-area1  # Biggest kind of admin-area
+    - admin-area2
+    - admin-area3
+    - admin-area4
+    - postal-code
+    - country
+    - country-name
+  # Company related
+  - organization
+  # Credit card number related
+  - credit-card:
+    - cc-name:
+      - cc-given-name
+      - cc-additional-name
+      - cc-family-name
+    - cc-number
+    - cc-exp-MMYY:
+      - cc-exp-MM
+      - cc-exp-YY
+    - cc-exp-MMYYYY:
+      - cc-exp-MM
+      - cc-exp-YYYY
+    # - cc-exp:
+    #   - cc-exp-month
+    #   - cc-exp-year
+    - cc-csc
+    - cc-type
+  # Telephone related
+  - tel:
+    - tel-country-code
+    - tel-national:
+      - tel-area-code
+      - tel-local:
+        - tel-local-prefix
+        - tel-local-suffix
+    - tel-extension
+  - email

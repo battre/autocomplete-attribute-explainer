@@ -1,0 +1,322 @@
+site_examples {
+  url: "https://cairosales.com"
+  is_structured: false
+  locale {
+    country: "EG"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "txt_login_email|"
+      label: "E-mail"
+      example: "E-mail"
+      control_type: INPUT
+      concepts: "unset"
+      section: LOGIN
+    }
+    fields {
+      name: "txt_login_password|"
+      label: "Password"
+      example: "Password"
+      control_type: INPUT
+      concepts: "unset"
+      section: LOGIN
+    }
+    fields {
+      name: "customer_id_gender_1|id_gender"
+      label: "Mr."
+      control_type: RADIO
+      concepts: "honorific-prefix"
+      section: NAME
+    }
+    fields {
+      name: "customer_id_gender_2|id_gender"
+      label: "Mrs."
+      control_type: RADIO
+      concepts: "honorific-prefix"
+      section: NAME
+    }
+    fields {
+      name: "customer_firstname|customer_firstname"
+      label: "First name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "customer_lastname|customer_lastname"
+      label: "Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "customer_email|email_confirmation"
+      label: "E-mail"
+      control_type: INPUT
+      concepts: "email"
+      section: SIGNUP
+    }
+    fields {
+      hide: true
+      name: "checkbox_create_account_guest|checkbox_create_account_guest"
+      label: "Create an account and enjoy the benefits of a registered customer."
+      control_type: INPUT
+      concepts: "unset"
+      section: SIGNUP
+    }
+    fields {
+      name: "customer_passwd|passwd_confirmation"
+      label: "Password:"
+      control_type: INPUT
+      concepts: "unset"
+      section: SIGNUP
+    }
+    fields {
+      name: "customer_conf_passwd|passwd"
+      label: "Confirm password:"
+      control_type: INPUT
+      concepts: "unset"
+      section: SIGNUP
+    }
+    fields {
+      hide: true
+      name: "customer_birthday|customer_birthday"
+      label: "Date of Birth:"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "customer_newsletter|customer_newsletter"
+      label: "I want to receive special offers on my birthday"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "delivery_id|delivery_id"
+      label: "Address delivery:"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      name: "delivery_address1|delivery_address1"
+      label: "Address"
+      control_type: INPUT
+      concepts: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "delivery_address2|delivery_address2"
+      label: "Address (Line 2):"
+      control_type: INPUT
+      concepts: "address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "delivery_id_state|delivery_id_state"
+      label: "Governorate"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "delivery_city|delivery_city"
+      label: "District"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "delivery_city_list|"
+      label: "District"
+      control_type: SELECT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "delivery_phone_mobile|delivery_phone_mobile"
+      label: "Mobile phone"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "delivery_phone|delivery_phone"
+      label: "Other Phone Number:"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      name: "delivery_company|delivery_company"
+      label: "Company (if applicable):"
+      control_type: INPUT
+      concepts: "organization"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "delivery_alias|delivery_alias"
+      label: "Assign an address title for future reference:"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "invoice_id|"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "delivery_option_644911_0|delivery_option[644911]"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "delivery_option_644911_1|delivery_option[644911]"
+      label: "Pick At Store You can pick your purhcases at our store Free!"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      name: "module_payment_86_0|method_payment"
+      label: "Pay with cash on delivery (COD) (You pay for your order upon delivery)"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "url_module_payment_86|"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "module_payment_319_0|method_payment"
+      label: "Pay Online with Debit/Credit Card"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "url_module_payment_319|"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "module_payment_319_1|method_payment"
+      label: "Pay in Installments via multiple banksPay in Installments for up to 36 months - CIB and Misr Bank of"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "url_module_payment_319|"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "module_payment_446_2|method_payment"
+      label: "Pay with valUPay in installments with valU"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "url_module_payment_446|"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "module_payment_430_0|method_payment"
+      label: "National Bank of Egypt Installments6 months installments with 0 interest for NBE Bank"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "url_module_payment_430|"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "|quantity_14278_918_nocustom_644911_hidden"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "|quantity_14278_918_nocustom_644911"
+      label: "Quantity:"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "|quantity_14278_918_nocustom_644911"
+      label: "Quantity:"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "discount_name|discount_name"
+      label: "Promo code"
+      example: "Promo code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cgv|cgv"
+      label: "I agree to the terms of service."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|action"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|gtoken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|phone"
+      label: "XXXX-XXX-XXXX"
+      example: "XXXX-XXX-XXXX"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|key"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

@@ -1,0 +1,696 @@
+site_examples {
+  url: "https://www.autokreso.hr"
+  is_structured: true
+  locale {
+    country: "HR"
+    language: "hr"
+  }
+  sequences {
+    fields {
+      name: "|s"
+      example: "Pretraga: naziv, kat. br., org. br."
+      example_translated: "Search: name, cat. no., org. no."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|post_type"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|s"
+      example: "Pretraga: naziv, kat. br., org. br."
+      example_translated: "Search: name, cat. no., org. no."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|post_type"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "username|username"
+      label: "Korisničko ime ili email *"
+      label_translated: "Username or email *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "password|password"
+      label: "Zaporka *"
+      label_translated: "Password *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "woocommerce-login-nonce|woocommerce-login-nonce"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_wp_http_referer"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|redirect"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "rememberme|rememberme"
+      label: "Zapamti me"
+      label_translated: "Remember me"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "coupon_code|coupon_code"
+      label: "Kupon kod"
+      label_translated: "Coupon code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billing_first_name|billing_first_name"
+      label: "Ime *"
+      label_translated: "Name *"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "billing_last_name|billing_last_name"
+      label: "Prezime *"
+      label_translated: "Surname *"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "billing_address_1|billing_address_1"
+      label: "Adresa *"
+      label_translated: "Address *"
+      example: "Adresa ulice"
+      example_translated: "Street address"
+      control_type: INPUT
+      concepts: "street-address"
+      autocomplete_attribute: "address-line1"
+      section: OTHER
+    }
+    fields {
+      name: "|billing_postcode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|billing_city"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "react-select-4-input|"
+      label: "Unesite poštanski broj ili naziv mjesta/grada..."
+      label_translated: "Enter a zip code or town/city name..."
+      control_type: INPUT
+      concepts: "address-search"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "billing_country|billing_country"
+      control_type: INPUT
+      concepts: "country"
+      autocomplete_attribute: "country"
+      section: OTHER
+    }
+    fields {
+      name: "billing_email|billing_email"
+      label: "Email adresa *"
+      label_translated: "E-mail address *"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "email username"
+      section: OTHER
+    }
+    fields {
+      name: "billing_phone|billing_phone"
+      label: "Mobitel *"
+      label_translated: "Cell phone *"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "tel"
+      section: PHONE
+    }
+    fields {
+      name: "r1_checkbox|r1_checkbox"
+      label: "Da"
+      label_translated: "That"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "r1_ime_tvrtke|r1_ime_tvrtke"
+      label: "Ime tvrtke *"
+      label_translated: "Name of the company *"
+      example: "Upišite ime tvrtke"
+      example_translated: "Enter the name of the company"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "r1_adresa_tvrtke|r1_adresa_tvrtke"
+      label: "Adresa tvrtke *"
+      label_translated: "Company address *"
+      example: "Upišite adresu tvrtke"
+      example_translated: "Enter the company address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "r1_postanski_broj_tvrtke|r1_postanski_broj_tvrtke"
+      label: "Poštanski broj *"
+      label_translated: "Zip code *"
+      example: "Upišite poštanski broj"
+      example_translated: "Enter the postal code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "r1_grad_tvrtke|r1_grad_tvrtke"
+      label: "Grad *"
+      label_translated: "City *"
+      example: "Upišite grad"
+      example_translated: "Enter the city"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "r1_oib_tvrtke|r1_oib_tvrtke"
+      label: "OIB tvrtke *"
+      label_translated: "OIB of the company *"
+      example: "Upišite OIB tvrtke"
+      example_translated: "Enter the OIB of the company"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ship-to-different-address-checkbox|ship_to_different_address"
+      label: "Dostaviti na različitu adresu?"
+      label_translated: "Deliver to a different address?"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_first_name|shipping_first_name"
+      label: "Ime *"
+      label_translated: "Name *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_last_name|shipping_last_name"
+      label: "Prezime *"
+      label_translated: "Surname *"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "family-name"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_company|shipping_company"
+      label: "Naziv poduzeća"
+      label_translated: "Company name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "organization"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_address_1|shipping_address_1"
+      label: "Adresa *"
+      label_translated: "Address *"
+      example: "Adresa ulice"
+      example_translated: "Street address"
+      control_type: INPUT
+      concepts: "street-address"
+      autocomplete_attribute: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "shipping_postcode|shipping_postcode"
+      label: "Poštanski broj *"
+      label_translated: "Zip code *"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "postal-code"
+      section: OTHER
+    }
+    fields {
+      name: "|shipping_postcode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|shipping_city"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "react-select-5-input|"
+      label: "Unesite poštanski broj ili naziv mjesta/grada..."
+      label_translated: "Enter a zip code or town/city name..."
+      label_comment: "Custom select element that renders [zip code] - [city] - [district]"
+      control_type: CUSTOM
+      concepts: "gap"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "shipping_country|shipping_country"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "country"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_email|shipping_email"
+      label: "E-mail *"
+      label_translated: "E-mail *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_phone|shipping_phone"
+      label: "Telefon *"
+      label_translated: "Telephone *"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "order_comments|order_comments"
+      label: "Napomene uz narudžbu"
+      label_translated: "Notes with the order"
+      example: "Bilješke o vašoj narudžbi."
+      example_translated: "Notes about your order."
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_method_0_flat_rate8|shipping_method[0]"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_method_0_local_pickup3|shipping_method[0]"
+      label: "Lokalno preuzimanje - Dragutina Golika 14, ZG"
+      label_translated: "Local pickup - Dragutina Golika 14, ZG"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payment_method_cod|payment_method"
+      label: "Plaćanje gotovinom"
+      label_translated: "Payment by cash"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payment_method_bacs|payment_method"
+      label: "Transakcijski račun"
+      label_translated: "transaction account"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payment_method_paypal|payment_method"
+      label: "PayPal Što je PayPal?"
+      label_translated: "PayPal What is PayPal?"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payment_method_corvuspay|payment_method"
+      label: "Kreditne kartice"
+      label_translated: "Credit cards"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "f714fb59|newsletter"
+      label: "Da, želim primati newsletter obavijesti"
+      label_translated: "Yes, I want to receive newsletter notifications"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "fe564843|tos_accept"
+      label: "Prihvaćam uvjete poslovanja i odredbu o zaštiti osobnih podataka"
+      label_translated: "I accept the terms of business and the provision on the protection of personal data"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "_wpnonce|_wpnonce"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_wp_http_referer"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|field5"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|field13"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|field1[]"
+      label: "Ime i prezime"
+      label_translated: "Name and surname"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|field2"
+      label: "Email"
+      label_translated: "E-mail"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|field10[]"
+      label: "Telefon"
+      label_translated: "Phone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|field8"
+      label: "Predmet"
+      label_translated: "Case"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|field15[]"
+      label: "Broj šasije"
+      label_translated: "Chassis number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|field6"
+      label: "Komentar"
+      label_translated: "Comment"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|field12"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|website"
+      label: "pošalji upit"
+      label_translated: "send a request"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|field11"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "1 Step 1"
+      label_translated: "1 Step 1"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "1 Step 1"
+      label_translated: "1 Step 1"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|field47[]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|field22"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|field43"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|field7"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|field53"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|field35"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|field44"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|field36"
+      label: "Marka vozila"
+      label_translated: "vehicle make"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|field27[]"
+      label: "Model vozila"
+      label_translated: "Vehicle model"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|field46"
+      label: "Godina proizvodnje"
+      label_translated: "Year of manufacture"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|field37[]"
+      label: "Snaga motora (KW)"
+      label_translated: "Engine power (KW)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|field52"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|field38[]"
+      label: "Broj prijeđenih km"
+      label_translated: "Number of km traveled"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|field39[]"
+      label: "Radni obujam motora"
+      label_translated: "Engine displacement"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|field41"
+      label: "Vrsta motora u vozilu"
+      label_translated: "Type of engine in the vehicle"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|field50"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|field31[]"
+      label: "Broj šasije (opcija za ispuniti)"
+      label_translated: "Chassis number (optional to fill in)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|field51"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|field16"
+      label: "Email"
+      label_translated: "E-mail"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|field17[]"
+      label: "Telefon"
+      label_translated: "Phone"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|field20"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|field32"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|field14"
+      label: "Kratka napomena ..."
+      label_translated: "A quick note..."
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|field49"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|website"
+      label: "Pošalji obrazac"
+      label_translated: "Send the form"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|field42"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "1"
+      label_translated: "1"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "1"
+      label_translated: "1"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

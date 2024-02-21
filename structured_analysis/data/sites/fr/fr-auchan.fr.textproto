@@ -1,0 +1,379 @@
+site_examples {
+  url: "https://www.auchan.fr"
+  is_structured: false
+  locale {
+    country: "FR"
+    language: "fr"
+  }
+  sequences {
+    fields {
+      name: "ot-group-id-C0002|ot-group-id-C0002"
+      label: "Cookies de performance"
+      label_translated: "Performance cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0003|ot-group-id-C0003"
+      label: "Cookies de fonctionnalité"
+      label_translated: "Functionality cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0004|ot-group-id-C0004"
+      label: "Cookies pour une publicité ciblée"
+      label_translated: "Cookies for targeted advertising"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-IABV2_1|ot-group-id-IABV2_1"
+      label: "Stocker et/ou accéder à des informations sur un terminal"
+      label_translated: "Store and/or access information on a terminal"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-BG17|ot-group-id-BG17"
+      label: "Publicités et contenu personnalisés, mesure de performance des publicités et du contenu, données d’a"
+      label_translated: "Personalized ads and content, ad and content performance measurement, ad data"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-sub-group-id-IABV2_2|switch"
+      label: "Switch Label"
+      label_translated: "Switch Label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-sub-group-id-IABV2_3|switch"
+      label: "Switch Label"
+      label_translated: "Switch Label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-sub-group-id-IABV2_4|switch"
+      label: "Switch Label"
+      label_translated: "Switch Label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-sub-group-id-IABV2_5|switch"
+      label: "Switch Label"
+      label_translated: "Switch Label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-sub-group-id-IABV2_6|switch"
+      label: "Switch Label"
+      label_translated: "Switch Label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-sub-group-id-IABV2_7|switch"
+      label: "Switch Label"
+      label_translated: "Switch Label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-sub-group-id-IABV2_8|switch"
+      label: "Switch Label"
+      label_translated: "Switch Label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-sub-group-id-IABV2_9|switch"
+      label: "Switch Label"
+      label_translated: "Switch Label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-sub-group-id-IABV2_10|switch"
+      label: "Switch Label"
+      label_translated: "Switch Label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-ISFV2_1|ot-group-id-ISFV2_1"
+      label: "Utiliser des données de géolocalisation précises"
+      label_translated: "Use precise geolocation data"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-ISFV2_2|ot-group-id-ISFV2_2"
+      label: "Analyser activement les caractéristiques du terminal pour l’identification"
+      label_translated: "Actively scan terminal characteristics for identification"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "vendor-search-handler|vendor-search-handler"
+      label: "Filter IconClear"
+      label_translated: "Filter IconClear"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "chkbox-id|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-hosts-groups-handler|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-vendor-groups-handler|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-vendor-leg-handler|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|pid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_scsid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_sclid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "id|id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "rId_GJUVC|civility"
+      label: "Madame"
+      label_translated: "Mrs."
+      control_type: RADIO
+      concepts: "honorific-prefix"
+      section: NAME
+    }
+    fields {
+      name: "rId_WHAXH|civility"
+      label: "Monsieur"
+      label_translated: "Sir"
+      control_type: RADIO
+      concepts: "honorific-prefix"
+      section: NAME
+    }
+    fields {
+      name: "rId_L3TNG|firstName"
+      label: "Prénom"
+      label_translated: "First name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "rId_VHVF9|lastName"
+      label: "Nom"
+      label_translated: "Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "rId_VZKCA|line1"
+      label: "Adresse"
+      label_translated: "Address"
+      control_type: INPUT
+      concepts: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "rId_0PS0I|line2"
+      label: "Complément d\'adresse"
+      label_translated: "Additional address"
+      control_type: INPUT
+      concepts: "address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "rId_RR224|zipCode"
+      label: "Code postal"
+      label_translated: "Postal code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "rId_D88KJ|city"
+      label: "Ville"
+      label_translated: "Town"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "country|country"
+      label: "Pays"
+      label_translated: "Country"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "rId_HXKIC|professional"
+      label: "Je suis un professionnel"
+      label_translated: "I am a professional"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_professional"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "rId_U6WXD|companyName"
+      label: "Nom de la société"
+      label_translated: "Company Name"
+      control_type: INPUT
+      concepts: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "legal-entity|corporateBodyType"
+      label: "Entité juridique"
+      label_translated: "Legal entity"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "instructions|instructions"
+      label: "Instruction de livraison"
+      label_translated: "delivery instruction"
+      example: "Etage,code d\'entrée,etc..."
+      example_translated: "Floor, entry code, etc..."
+      control_type: TEXTAREA
+      concepts: "delivery-instructions"
+      section: ADDRESS
+    }
+    fields {
+      name: "phonePrefix|phonePrefix"
+      label: "Préfix"
+      label_translated: "Prefix"
+      control_type: SELECT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "rId_9DXYO|phoneValue"
+      label: "0612345678"
+      label_translated: "0612345678"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "rId_3WUWE|addressType"
+      label: "Domicile"
+      label_translated: "Residence"
+      control_type: RADIO
+      concepts: "gap"
+      section: ADDRESS
+    }
+    fields {
+      name: "rId_DR3O5|addressType"
+      label: "Travail"
+      label_translated: "Work"
+      control_type: RADIO
+      concepts: "gap"
+      section: ADDRESS
+    }
+    fields {
+      name: "rId_1NIUN|addressType"
+      label: "Autre"
+      label_translated: "Other"
+      control_type: RADIO
+      concepts: "gap"
+      section: ADDRESS
+    }
+    fields {
+      name: "rId_8EF3X|label"
+      label: "Nommer cette adresse"
+      label_translated: "Name this address"
+      example: "Ex : Maison de vacances"
+      example_translated: "Ex: Vacation home"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "rId_L5PX7|mainAddress"
+      label: "Définir comme adresse principale"
+      label_translated: "Set as primary address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_mainAddress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

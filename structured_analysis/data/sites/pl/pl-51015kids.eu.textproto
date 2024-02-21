@@ -1,0 +1,211 @@
+site_examples {
+  url: "https://www.51015kids.eu"
+  is_structured: true
+  locale {
+    country: "PL"
+    language: "pl"
+  }
+  sequences {
+    fields {
+      name: "CybotCookiebotDialogBodyLevelButtonNecessary|"
+      label: "Niezbędne"
+      label_translated: "Necessary"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CybotCookiebotDialogBodyLevelButtonPreferences|"
+      label: "Funkcjonalne"
+      label_translated: "Functional"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CybotCookiebotDialogBodyLevelButtonStatistics|"
+      label: "Analityczne"
+      label_translated: "Analytical"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CybotCookiebotDialogBodyLevelButtonMarketing|"
+      label: "Marketingowe"
+      label_translated: "Marketing"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CybotCookiebotDialogBodyLevelButtonNecessaryInline|"
+      label: "Niezbędne 10"
+      label_translated: "Necessary 10"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CybotCookiebotDialogBodyLevelButtonPreferencesInline|"
+      label: "Funkcjonalne 2"
+      label_translated: "Functional 2"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CybotCookiebotDialogBodyLevelButtonStatisticsInline|"
+      label: "Analityczne 21"
+      label_translated: "Analytical 21"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CybotCookiebotDialogBodyLevelButtonMarketingInline|"
+      label: "Marketingowe 70"
+      label_translated: "Marketing 70"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CybotCookiebotDialogBodyContentCheckboxPersonalInformation|"
+      label: "[#OOI_PERSONAL_INFORMATION#]"
+      label_translated: "[# OOI_PERSONAL_INFORMATION #]"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|wantsCreateAccount"
+      label: "Dane zamawiającego i adres dostawy"
+      label_translated: "Buyer&#39;s data and delivery address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "contact.emailAddress|contact.emailAddress"
+      label: "Adres e-mail *"
+      label_translated: "E-mail adress *"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "contact.firstName|contact.firstName"
+      label: "Imię *"
+      label_translated: "Name *"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "off"
+      section: NAME
+    }
+    fields {
+      name: "contact.lastName|contact.lastName"
+      label: "Nazwisko *"
+      label_translated: "Last name *"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "off"
+      section: NAME
+    }
+    fields {
+      name: "address.streetName|address.streetName"
+      label: "Ulica *"
+      label_translated: "Street *"
+      control_type: INPUT
+      concepts: "street-name"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "address.buildingNumber|address.buildingNumber"
+      label: "Numer budynku *"
+      label_translated: "Number of the building *"
+      control_type: INPUT
+      concepts: "house-number"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "address.apartmentNumber|address.apartmentNumber"
+      label: "Numer mieszkania"
+      label_translated: "Apartment number"
+      control_type: INPUT
+      concepts: "apartment"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "address.postalCode|address.postalCode"
+      label: "Kod pocztowy *"
+      label_translated: "ZIP code *"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "address.city|address.city"
+      label: "Miejscowość *"
+      label_translated: "City *"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "contact.phoneNumber|contact.phoneNumber"
+      label: "Numer telefonu *"
+      label_translated: "Phone number *"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|wantsInvoice"
+      label: "Dane zamawiającego i adres dostawy"
+      label_translated: "Buyer&#39;s data and delivery address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Administratorem Twoich danych osobowych podanych w celu zawarcia umowy sprzedaży jest KOMEX S.A. z s"
+      label_translated: "The administrator of your personal data provided in order to conclude a sales contract is KOMEX SA zs"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|agreements.0"
+      label: "Administratorem Twoich danych osobowych podanych w celu zawarcia umowy sprzedaży jest KOMEX S.A. z s"
+      label_translated: "The administrator of your personal data provided in order to conclude a sales contract is KOMEX SA zs"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|agreements.1"
+      label: "Administratorem Twoich danych osobowych podanych w celu zawarcia umowy sprzedaży jest KOMEX S.A. z s"
+      label_translated: "The administrator of your personal data provided in order to conclude a sales contract is KOMEX SA zs"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|agreements.2"
+      label: "Administratorem Twoich danych osobowych podanych w celu zawarcia umowy sprzedaży jest KOMEX S.A. z s"
+      label_translated: "The administrator of your personal data provided in order to conclude a sales contract is KOMEX SA zs"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

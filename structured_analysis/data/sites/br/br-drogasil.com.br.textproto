@@ -1,0 +1,68 @@
+site_examples {
+  url: "https://www.drogasil.com.br"
+  is_structured: true
+  locale {
+    country: "BR"
+    language: "pt"
+  }
+  sequences {
+    fields {
+      name: "33045794|33045794"
+      label: "JOSE VINICIUS CORDEIRO DA SILR MANOEL GUSTAVO, 896, PONTA VERDE, PAO DE ACUCAR - AL CASA"
+      label_translated: "JOSE VINICIUS CORDEIRO DA SILR MANOEL GUSTAVO, 896, PONTA VERDE, PAO DE ACUCAR - AL CASA"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "zipcode|zipcode"
+      label: "Endereço de entrega Informe um endereço para esta entrega"
+      label_translated: "Delivery address Enter an address for this delivery"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "fullname|fullname"
+      label: "Nome Completo"
+      label_translated: "Full name"
+      example: "Nome Completo"
+      example_translated: "Full name"
+      control_type: INPUT
+      concepts: "name"
+      section: NAME
+    }
+    fields {
+      name: "street_2|street_2"
+      label: "Número"
+      label_translated: "Number"
+      example: "Número"
+      example_translated: "Number"
+      control_type: INPUT
+      concepts: "house-number"
+      section: ADDRESS
+    }
+    fields {
+      name: "street_4|street_4"
+      label: "Complemento"
+      label_translated: "Complement"
+      example: "Apto/Bloco/Casa"
+      example_translated: "Apartment/Block/House"
+      control_type: INPUT
+      concepts: "address-overflow"
+      section: ADDRESS
+    }
+    fields {
+      name: "phone|phone"
+      label: "Telefone"
+      label_translated: "Telephone"
+      example: "Telefone"
+      example_translated: "Telephone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+  }
+}
+

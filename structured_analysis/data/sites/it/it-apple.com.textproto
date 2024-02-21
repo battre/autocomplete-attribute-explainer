@@ -1,0 +1,160 @@
+site_examples {
+  url: "https://www.apple.com"
+  is_structured: false
+  locale {
+    country: "IT"
+    language: "it"
+  }
+  sequences {
+    fields {
+      name: "ac-gn-menustate|"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ac-gn-searchform-input|"
+      example: "Cerca su apple.com"
+      example_translated: "Search apple.com"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "ac-gn-searchform-src|src"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.title|title"
+      label: "Titolo"
+      label_translated: "Title"
+      example: "Sig., Sig.ra, Non specificato"
+      example_translated: "Mr, Mrs, non-specified"
+      control_type: SELECT
+      concepts: "honorific-prefix"
+      autocomplete_attribute: "honorific-prefix"
+      section: NAME
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.firstName|firstName"
+      label: "Nome"
+      label_translated: "First Name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.lastName|lastName"
+      label: "Cognome"
+      label_translated: "Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.street|street"
+      label: "Via e Numero Civico"
+      label_translated: "Street name and house number"
+      control_type: INPUT
+      concepts: "address-line1"
+      concepts_comment: "Could be building-location"
+      autocomplete_attribute: "address-line1"
+      low_certainty: true
+      section: ADDRESS
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.street2|street2"
+      label: "Appartamento, Interno, Codice di Acecesso Edificio"
+      label_translated: "Apartment, internal number, Building Access Code"
+      control_type: INPUT
+      concepts: "address-line2"
+      concepts_comment: "Could be location-in-building or building access code"
+      autocomplete_attribute: "address-line2"
+      low_certainty: true
+      section: ADDRESS
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.street3|street3"
+      label: "Altre informazioni sull'indirizzo (opz.)"
+      label_translated: "Other address information (opt.)"
+      control_type: INPUT
+      concepts: "address-line3"
+      autocomplete_attribute: "address-line3"
+      section: ADDRESS
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.postalCode|postalCode"
+      label: "CAP"
+      label_translated: "Postal code"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.city|city"
+      label: "Città"
+      label_translated: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.countryCode|countryCode"
+      label: "Paese/area geografica"
+      label_translated: "Country/geographical area"
+      control_type: INPUT
+      concepts: "country-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "checkout.shipping.addressSelector.newAddress.address.isBusinessAddress|isBusinessAddress"
+      label: "Questo è un indirizzo aziendaleGli ordini aziendali vengono generalmente consegnati dal lunedì al ve"
+      label_translated: "This is a company address.Corporate orders are generally delivered Monday to Friday"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkout.shipping.addressContactEmail.address.emailAddress|emailAddress"
+      label: "Ti invieremo una ricevuta via email e gli aggiornamenti sull’ordine via SMS o iMessage."
+      label_translated: "We will send you an email receipt and order updates via SMS or iMessage."
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "email"
+      section: OTHER
+    }
+    fields {
+      name: "checkout.shipping.addressContactPhone.address.mobilePhone|mobilePhone"
+      label: "Il numero di cellulare che inserisci non può essere modificato una volta effettuato l’ordine, quindi"
+      label_translated: "The mobile number you enter cannot be changed once the order is placed, therefore"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "tel-local"
+      section: PHONE
+    }
+    fields {
+      name: "checkout.shipping.addressContactPhone.address.isDaytimePhoneSelected|isDaytimePhoneSelected"
+      label: "Non ho un numero di cellulare"
+      label_translated: "I don&#39;t have a mobile number"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkout.shipping.addressNotification.address.emailAddress|emailAddress"
+      label: "Le notifiche di spedizione verranno inviate all’indirizzo email che inserisci."
+      label_translated: "Shipping notifications will be sent to the email address you enter."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

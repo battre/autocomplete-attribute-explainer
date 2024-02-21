@@ -1,0 +1,207 @@
+{% macro RenderCapture(c) %}
+<details>
+  <summary>
+    {% if c.output %}
+      Capture <code>{{c.output}}</code>
+    {% else %}
+      No capturing pattern
+    {% endif %}
+    ({{c.quantifier.__str__()}})
+  </summary>
+    {% if c.prefix %}
+    Prefix:
+    {{Render(c.prefix)}} <br>
+    {% endif %}
+    {% if c.parts %}
+      Parts: <br>
+      <ul>
+        {% for c2 in c.parts %}
+        <li>{{Render(c2)}}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    {% if c.alternatives %}
+      Alternatives: <br>
+      <ul>
+        {% for c2 in c.alternatives %}
+        <li>{{Render(c2)}}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    {% if c.suffix %}
+    Suffix:
+    {{Render(c.suffix)}}
+    {% endif %}
+</details>
+{% endmacro %}
+
+{% macro RenderRegexFragment(r) %}
+Regex Fragment: <code class="parsing-regexfragment">{{r.value}}</code>
+{% endmacro %}
+
+{% macro RenderRegexReference(r) %}
+{% if "RegexFragment" in engine.regex_definitions[r.name].__class__.__name__ %}
+  Regex Reference: <code>{{r.name}}</code> =&gt;
+  <code class="parsing-regexfragment">{{engine.regex_definitions[r.name].value}}</code>
+{% else %}
+<details>
+  <summary>Regex Reference: <code>{{r.name}}</code></summary>
+  {{Render(engine.regex_definitions[r.name])}}
+</details>
+{% endif %}
+{% endmacro %}
+
+{% macro RenderRegexConcat(r) %}
+  Regex concatenation
+  <ol>
+    {% for r2 in r.parts %}
+    <li>{{Render(r2)}}</li>
+    {% endfor %}
+  </ol>
+  Wrap as non-capture group: {{r.wrap_non_capture}}
+{% endmacro %}
+
+{% macro RenderCaptureReference(c) %}
+<details>
+  <summary>Capture Reference: <code>{{c.name}}</code></summary>
+  {% if c.name in engine.capture_definitions %}
+    {{Render(engine.capture_definitions[c.name])}}
+  {% elif c.name in engine.regex_definitions %}
+    {{Render(engine.regex_definitions[c.name])}}
+  {% else %}
+    Unresolved
+  {% endif %}
+</details>
+{% endmacro %}
+
+{% macro RenderSeparator(s) %}
+{% if "RegexReference" in s.value.__class__.__name__ and "RegexFragment" in engine.regex_definitions[s.value.name].__class__.__name__ %}
+Separator: Regex Reference <code>{{s.value.name}}</code> =&gt;
+  <code class="parsing-regexfragment">{{engine.regex_definitions[s.value.name].value}}</code>
+{% elif "RegexFragment" in s.value.__class__.__name__ %}
+Separator: {{Render(s.value)}}
+{% else %}
+<details>
+  <summary>Separator:</summary>
+  {{Render(s.value)}}
+</details>
+{% endif %}
+{% endmacro %}
+
+{% macro RenderDecompositionCascade(c) %}
+<details>
+  <summary>Decomposition Cascade
+  {% if c.condition and "RegexReference" in c.condition.__class__.__name__ %}
+  (if <code>{{c.condition.name}}</code>)
+  {% endif %}
+  </summary>
+  {% if c.condition %}
+  Condition:<br>
+  {{Render(c.condition)}}<br>
+  {% endif %}
+  Cascade:<br>
+  <ol>
+  {% for c2 in c.alternatives %}
+  <li>{{Render(c2)}}</li>
+  {% endfor %}
+  </ol>
+</details>
+{% endmacro %}
+
+{% macro RenderDecomposition(c) %}
+<details>
+  <summary>Decomposition
+    {% if "CaptureReference" in c.capture.__class__.__name__ %}
+    (<code>{{c.capture.name}}</code>)
+    {% endif %}
+  </summary>
+  Anchor beginning: {{c.anchor_beginning}}<br>
+  {% if c.capture and "CaptureReference" in c.capture.__class__.__name__ %}
+    Capture Reference: {{c.capture.name}}<br>
+    {{Render(engine.capture_definitions[c.capture.name])}}
+  {% else %}
+    {{Render(c.capture)}}
+  {% endif %}
+  Anchor end: {{c.anchor_end}}<br>
+</details>
+{% endmacro %}
+
+{% macro RenderExtractParts(c) %}
+<details>
+  <summary>ExtractParts
+  {% if c.condition and "RegexReference" in c.condition.__class__.__name__ %}
+  (if <code>{{c.condition.name}}</code>)
+  {% endif %}
+  </summary>
+  {% if c.condition %}
+  Condition:<br>
+  {{Render(c.condition)}}<br>
+  {% endif %}
+  Parts:<br>
+  <ol>
+  {% for p in c.parts %}
+  <li>{{Render(p)}}</li>
+  {% endfor %}
+  </ol>
+</details>
+{% endmacro %}
+
+{% macro RenderExtractPart(c) %}
+<details>
+  <summary>ExtractPart
+  {% if c.capture and "CaptureReference" in c.capture.__class__.__name__ %}
+    ({{c.capture.name}})
+  {% endif %}
+  {% if c.condition and "RegexReference" in c.condition.__class__.__name__ %}
+  (if <code>{{c.condition.name}}</code>)
+  {% endif %}
+  </summary>
+  {% if c.condition %}
+  Condition:<br>
+  {{Render(c.condition)}}<br>
+  {% endif %}
+  {% if c.capture and "CaptureReference" in c.capture.__class__.__name__ %}
+    Capture Reference: {{c.capture.name}}<br>
+    {{Render(engine.capture_definitions[c.capture.name])}}
+  {% else %}
+    {{Render(c.capture)}}
+  {% endif %}
+</details>
+{% endmacro %}
+
+{% macro Render(c) %}
+{% if "DecompositionCascade" in c.__class__.__name__ %}
+{{RenderDecompositionCascade(c)}}
+{% elif "Decomposition" in c.__class__.__name__ %}
+{{RenderDecomposition(c)}}
+{% elif "CaptureReference" in c.__class__.__name__ %}
+{{RenderCaptureReference(c)}}
+{% elif "Capture" in c.__class__.__name__ %}
+{{RenderCapture(c)}}
+{% elif "Separator" in c.__class__.__name__ %}
+{{RenderSeparator(c)}}
+{% elif "RegexFragment" in c.__class__.__name__ %}
+{{RenderRegexFragment(c)}}
+{% elif "RegexReference" in c.__class__.__name__ %}
+{{RenderRegexReference(c)}}
+{% elif "RegexConcat" in c.__class__.__name__ %}
+{{RenderRegexConcat(c)}}
+{% elif "ExtractParts" in c.__class__.__name__ %}
+{{RenderExtractParts(c)}}
+{% elif "ExtractPart" in c.__class__.__name__ %}
+{{RenderExtractPart(c)}}
+{% else %}
+Gap: {{c.__class__}}
+{% endif %}
+{% endmacro %}
+
+{% macro RenderParsing(token_id) %}
+{{Render(engine.parsing_definitions[token_id])}}
+{% endmacro %}
+
+{% if token_id in engine.parsing_definitions %}
+<h4>Parsing:</h4>
+<div class="parsing">
+{{RenderParsing(token_id)}}
+</div>
+{% endif %}

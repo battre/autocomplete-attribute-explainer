@@ -1,0 +1,219 @@
+site_examples {
+  url: "https://www.adidas.es"
+  is_structured: true
+  locale {
+    country: "ES"
+    language: "es"
+  }
+  sequences {
+    fields {
+      name: "shippingAddress-firstName|shippingAddress.firstName"
+      label: "Nombre"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "shippingAddress-lastName|shippingAddress.lastName"
+      label: "Apellidos"
+      label_translated: "Surnames"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "shippingAddress-address1|shippingAddress.address1"
+      label: "Calle/Avenida/Paseo, Número"
+      label_translated: "Street/Avenue/Promenade, House number"
+      control_type: INPUT
+      concepts: "building-location"
+      autocomplete_attribute: "street-address address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress-address2|shippingAddress.address2"
+      label: "Escalera/Piso/Letra/Empresa"
+      label_translated: "Staircase/Floor/Apartment/Company"
+      control_type: INPUT
+      concepts: "staircase"
+      concepts: "floor"
+      concepts: "apartment"
+      concepts: "organization"
+      autocomplete_attribute: "street-address address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress-zipcode|shippingAddress.zipcode"
+      label: "Código postal"
+      label_translated: "Postal Code"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress-city|shippingAddress.city"
+      label: "Ciudad"
+      label_translated: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "contact-emailAddress|shippingAddress.emailAddress"
+      label: "Correo electrónico"
+      label_translated: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "home email"
+      section: OTHER
+    }
+    fields {
+      name: "contact-phoneNumber|shippingAddress.phoneNumber"
+      label: "Número de Teléfono (Opcional)"
+      label_translated: "Phone Number (Optional)"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "home tel"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddress-vatCode|additionalBillingAddress.vatCode"
+      label: "N.IVA"
+      label_translated: "N.VAT"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|shouldUseShippingAddressForBilling"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddress-firstName|billingAddress.firstName"
+      label: "Nombre"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "given-name"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddress-lastName|billingAddress.lastName"
+      label: "Apellidos"
+      label_translated: "Surnames"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "family-name"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddress-address1|billingAddress.address1"
+      label: "Calle/Avenida/Paseo, Número"
+      label_translated: "Street/Avenue/Paseo, Number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "street-address address-line1"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddress-address2|billingAddress.address2"
+      label: "Escalera/Piso/Letra/Empresa"
+      label_translated: "Staircase/Floor/Letter/Company"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "street-address address-line2"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddress-zipcode|billingAddress.zipcode"
+      label: "Código postal"
+      label_translated: "Postal Code"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "postal-code"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddress-city|billingAddress.city"
+      label: "Ciudad"
+      label_translated: "City"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "address-level2"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddress-phoneNumber|billingAddress.phoneNumber"
+      label: "Número de Teléfono (Opcional)"
+      label_translated: "Phone Number (Optional)"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "home tel"
+      section: PHONE
+    }
+    fields {
+      name: "|"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "login-email|login-email"
+      label: "Correo electrónico"
+      label_translated: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "login-password|login-password"
+      label: "Contraseña"
+      label_translated: "Password"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|persistentLogin"
+      label: "Mantener sesión iniciada.Más información"
+      label_translated: "Stay signed in.Learn more"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "coupon-input|coupon"
+      label: "Código Promocional"
+      label_translated: "Promotional code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "fileSelector|file"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|filename"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

@@ -1,0 +1,141 @@
+site_examples {
+  url: "https://www.kaola.com"
+  is_structured: true
+  locale {
+    country: "CN"
+    language: "zh"
+  }
+  sequences {
+    fields {
+      name: "topSearchInput|"
+      label: "象印保温杯"
+      label_translated: "Zojirushi mug"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "Custom element"
+      label: "* 所在地区"
+      label_translated: "Location"
+      example: "请选择省市区街道"
+      example_translated: "Please select a province, city, and street"
+      concepts: "address-level1"
+      concepts: "address-level2"
+      concepts: "address-level3"
+      concepts_comment: "I guess the 'and street' is a wrong translation"
+      section: ADDRESS
+      control_type: INPUT
+    }
+    fields {
+      name: "auto-id-1669598340476|address"
+      label: "* 详细地址"
+      label_translated: "* Address"
+      example: "无需重复填写省市区，小于75个字"
+      example_translated: "There is no need to fill in provinces and cities repeatedly, less than 75 characters"
+      control_type: TEXTAREA
+      concepts: "street-address"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "auto-id-1669598340477|fullname2"
+      label: "* 收货人姓名"
+      label_translated: "* Consignee name"
+      example: "不能为昵称、X先生、X小姐等，请使用真实姓名"
+      example_translated: "It cannot be a nickname, Mr. X, Miss X, etc. Please use your real name"
+      control_type: INPUT
+      concepts: "name"
+      section: NAME
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "auto-id-1669598340478|mobile"
+      label: "* 手机号码"
+      label_translated: "* cellphone number"
+      example: "手机号码、电话号码必须填一项"
+      example_translated: "Mobile phone number, phone number must fill in one item"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PHONE
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "auto-id-1669598340479|phoneAreaNum"
+      label: "电话号码"
+      label_translated: "phone number"
+      example: "区号"
+      example_translated: "area code"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "auto-id-1669598340480|phoneNum"
+      label: "电话号码"
+      label_translated: "phone number"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "auto-id-1669598340481|phoneExtNum"
+      label: "分机号(可选)"
+      label_translated: "extension number (optional)"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "auto-id-1669598340482|email"
+      label: "邮箱"
+      label_translated: "Mail"
+      example: "接受订单提醒邮件，便于您及时了解订单状态"
+      example_translated: "Accept order reminder emails, so that you can keep abreast of order status"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|oldName"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 2"
+    }
+    fields {
+      name: "|oldIdNum"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 2"
+    }
+    fields {
+      name: "|oldIdNumString"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 2"
+    }
+    fields {
+      name: "|"
+      label: "给商家留言："
+      label_translated: "Leave a message to the merchant:"
+      example: "选填，最多100个字"
+      example_translated: "Optional, up to 100 characters"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+  }
+}
+

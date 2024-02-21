@@ -1,0 +1,136 @@
+site_examples {
+  url: "https://www.belezanaweb.com.br"
+  is_structured: true
+  locale {
+    country: "BR"
+    language: "pt"
+  }
+  sequences {
+    fields {
+      name: "label|label"
+      label: "Apelido do endereço:"
+      label_translated: "Address name:"
+      example: "Ex.: Trabalho, Casa..."
+      example_translated: "Eg: Work, Home..."
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "givenName|givenName"
+      label: "Nome:"
+      label_translated: "Name:"
+      example: "Nome"
+      example_translated: "Name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "off"
+      section: NAME
+    }
+    fields {
+      name: "familyName|familyName"
+      label: "Sobrenome"
+      label_translated: "Last name"
+      example: "Sobrenome"
+      example_translated: "Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "off"
+      section: NAME
+    }
+    fields {
+      name: "postalCode|postalCode"
+      label: "CEP:"
+      label_translated: "ZIP CODE:"
+      example: "00000-000"
+      example_translated: "00000-000"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "streetAddress|streetAddress"
+      label: "Endereço:"
+      label_translated: "Street name:"
+      control_type: INPUT
+      concepts: "street-name"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "number|number"
+      label: "Número:"
+      label_translated: "Number:"
+      control_type: INPUT
+      concepts: "house-number"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "addressType|addressType"
+      label: "Tipo do endereço:"
+      label_translated: "Address type:"
+      example: "options: Apartamento, Casa, Comercial, Rural, Outro"
+      example_translated: "options: Apartment, Condominium, Business, Rural, Other"
+      control_type: SELECT
+      concepts: "gap"
+      section: ADDRESS
+    }
+    fields {
+      name: "complement|complement"
+      label: "Complemento:"
+      label_translated: "Complement:"
+      control_type: INPUT
+      concepts: "address-overflow"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "district|district"
+      label: "Bairro:"
+      label_translated: "Neighborhood:"
+      control_type: INPUT
+      concepts: "address-level3"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "referencePoint|referencePoint"
+      label: "Ponto de referência:"
+      label_translated: "Reference point:"
+      example: "(Opcional)"
+      example_translated: "(Optional)"
+      control_type: INPUT
+      concepts: "landmark"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "addressLocality|addressLocality"
+      label: "Cidade:"
+      label_translated: "City:"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "addressRegion|addressRegion"
+      label: "Estado:"
+      label_translated: "State:"
+      control_type: INPUT
+      concepts: "address-level1"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "g-recaptcha-response-100000|g-recaptcha-response"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

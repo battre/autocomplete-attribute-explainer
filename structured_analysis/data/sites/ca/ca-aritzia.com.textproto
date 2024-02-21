@@ -1,0 +1,182 @@
+site_examples {
+  url: "https://www.aritzia.com"
+  is_structured: false
+  locale {
+    country: "CA"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "dwfrm_singleshipping_shippingAddress_addressFields_firstName|dwfrm_singleshipping_shippingAddress_addressFields_firstName"
+      label: "First Name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "dwfrm_singleshipping_shippingAddress_addressFields_lastName|dwfrm_singleshipping_shippingAddress_addressFields_lastName"
+      label: "Last Name"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "dwfrm_singleshipping_shippingAddress_addressFields_address1|dwfrm_singleshipping_shippingAddress_addressFields_address1"
+      label: "Street Address"
+      control_type: INPUT
+      concepts: "address-line1"
+      autocomplete_attribute: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "dwfrm_singleshipping_shippingAddress_addressFields_address2|dwfrm_singleshipping_shippingAddress_addressFields_address2"
+      label: "Apt/Suite (Optional)"
+      control_type: INPUT
+      concepts: "address-line2"
+      autocomplete_attribute: "address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "dwfrm_singleshipping_shippingAddress_addressFields_city|dwfrm_singleshipping_shippingAddress_addressFields_city"
+      label: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "dwfrm_singleshipping_shippingAddress_addressFields_states_state|dwfrm_singleshipping_shippingAddress_addressFields_states_state"
+      label: "Province"
+      control_type: SELECT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      # This is not visible on the site
+      hide: true
+      name: "dwfrm_singleshipping_shippingAddress_addressFields_region|dwfrm_singleshipping_shippingAddress_addressFields_region"
+      label: "Region (Optional)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_singleshipping_shippingAddress_addressFields_zip|dwfrm_singleshipping_shippingAddress_addressFields_zip"
+      label: "Postal Code"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "dwfrm_singleshipping_shippingAddress_addressFields_country|dwfrm_singleshipping_shippingAddress_addressFields_country"
+      example: "Country"
+      control_type: INPUT
+      concepts: "country-name"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_singleshipping_shippingAddress_addressFields_country_label|dwfrm_singleshipping_shippingAddress_addressFields_country_label"
+      label: "Country"
+      example: "Country"
+      control_type: INPUT
+      concepts: "country-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "dwfrm_singleshipping_shippingAddress_addressFields_phone|dwfrm_singleshipping_shippingAddress_addressFields_phone"
+      label: "Cell Phone"
+      example: "Cell Phone"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "tel"
+      section: PHONE
+    }
+    fields {
+      name: "dwfrm_singleshipping_contactpreference_textme|dwfrm_singleshipping_contactpreference_textme"
+      label: "Text Me"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_singleshipping_contactpreference_callme|dwfrm_singleshipping_contactpreference_callme"
+      label: "Call Me"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|shippingInfoStored"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_singleshipping_shippingAddress_useAsBillingAddress|dwfrm_singleshipping_shippingAddress_useAsBillingAddress"
+      label: "Use as billing address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "is-gift|dwfrm_singleshipping_shippingAddress_isGift"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "is-gift-checkbox|"
+      label: "Send with gift receipt and/or message"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_singleshipping_shippingAddress_giftMessage|dwfrm_singleshipping_shippingAddress_giftMessage"
+      label: "Add a gift message (Optional)"
+      example: "Add a gift message"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping-method-47535|dwfrm_singleshipping_shippingAddress_shippingMethodID"
+      label: "Standard Shipping Delivers in 1 — 4 business days $7.50"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping-method-47536|dwfrm_singleshipping_shippingAddress_shippingMethodID"
+      label: "Express Shipping Delivers in 1 — 3 business days $10"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping-method-47537|dwfrm_singleshipping_shippingAddress_shippingMethodID"
+      label: "Priority Shipping Delivers in 1 — 2 business days $15"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|dwfrm_singleshipping_securekey"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|q"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+  }
+}
+

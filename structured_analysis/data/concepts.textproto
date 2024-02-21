@@ -1,0 +1,629 @@
+# proto-file: address.proto
+# proto-message: AddressOntology
+
+concepts {
+  name: "gap"
+  description: "We don't have a useful concept for this field, yet."
+  is_new: true
+}
+
+concepts {
+  name: "unset"
+  description: "We don't have a concept set for this field, yet."
+  is_new: true
+}
+
+concepts {
+  name: "unsure"
+  description: "It's not clear what to set here."
+  is_new: true
+}
+
+# Default concepts from
+# https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill
+
+## Name
+concepts {
+  name: "name"
+  description: "Full name"
+  canonical_format_example:
+    "Sir Timothy John Berners-Lee, OM, KBE, FRS, FREng, FRSA"
+  label: "Full name"
+}
+
+concepts {
+  name: "honorific-prefix"
+  parent: "name"
+  description:
+    "Prefix or title (e.g. \"Mr.\", \"Ms.\", \"Dr.\", \"Mlle\")"
+  canonical_format_example: "Sir"
+  label: "Prefix or title"
+}
+
+concepts {
+  name: "given-name"
+  parent: "name"
+  description:
+    "Given name (in some Western cultures, also known as the first name)"
+  canonical_format_example: "Timothy"
+  label: "Given name"
+}
+
+concepts {
+  name: "additional-name"
+  parent: "name"
+  description:
+    "Additional names (in some Western cultures, also known as middle names, "
+    "forenames other than the first name)"
+  canonical_format_example: "John"
+  label: "Additional name"
+}
+
+concepts {
+  name: "family-name"
+  parent: "name"
+  description:
+    "Family name (in some Western cultures, also known as the last name or "
+    "surname)"
+  canonical_format_example: "Berners-Lee"
+  label: "Family name"
+}
+
+concepts {
+  name: "honorific-suffix"
+  parent: "name"
+  description: "Suffix (e.g. \"Jr.\", \"B.Sc.\", \"MBASW\", \"II\")"
+  canonical_format_example: "OM, KBE, FRS, FREng, FRSA"
+  label: "Suffix"
+}
+
+## Other naming fields
+
+# concepts {
+#   name: "nickname"
+#   description: "Nickname, screen name, handle: a typically short name used instead of the full name"
+#   canonical_format_example: "Tim"
+#   label: "Nickname"
+# }
+#
+# concepts {
+#   name: "organization-title"
+#   description: "Job title (e.g. \"Software Engineer\", \"Senior Vice President\", \"Deputy Managing Director\")"
+#   canonical_format_example: "Professor"
+#   label: "Job title"
+# }
+#
+# concepts {
+#   name: "username"
+#   description: "A username"
+#   canonical_format_example: "timbl"
+#   label: "Username"
+# }
+#
+# concepts {
+#   name: "new-password"
+#   description: "A new password (e.g. when creating an account or changing a password)"
+#   canonical_format_example: "GUMFXbadyrS3"
+#   label: "New password"
+# }
+#
+# concepts {
+#   name: "current-password"
+#   description: "The current password for the account identified by the username field (e.g. when logging in)"
+#   canonical_format_example: "qwerty"
+#   label: "Password"
+# }
+#
+# concepts {
+#   name: "one-time-code"
+#   description: "One-time code used for verifying user identity"
+#   canonical_format_example: "123456"
+#   label: "One time code"
+# }
+
+concepts {
+  name: "organization"
+  description: "Company name corresponding to the person, address, or contact information in the other fields associated with this field"
+  canonical_format_example: "World Wide Web Consortium"
+  label: "Company / Organization"
+}
+
+concepts {
+  name: "street-address"
+  description: "Street address (multiple lines, newlines preserved)"
+  canonical_format_example: "32 Vassar Street<br>MIT Room 32-G524"
+  label: "Street address"
+}
+
+concepts {
+  name: "address-line1"
+  parent: "street-address"
+  description: "Street address (one line per field)"
+  canonical_format_example: "32 Vassar Street"
+  label: "Address line 1"
+}
+
+concepts {
+  name: "address-line2"
+  parent: "street-address"
+  description: "Street address (one line per field)"
+  canonical_format_example: "MIT Room 32-G524"
+  label: "Address line 2"
+}
+
+concepts {
+  name: "address-line3"
+  parent: "street-address"
+  description: "Street address (one line per field)"
+  canonical_format_example: ""
+  label: "Address line 3"
+}
+
+concepts {
+  name: "address-level4"
+  description: "The most fine-grained administrative level, in addresses with four administrative levels"
+  canonical_format_example: ""
+  label: "Address level 4"
+}
+
+concepts {
+  name: "address-level3"
+  description:
+    "The third administrative level, in addresses with three or more "
+    "administrative levels"
+  canonical_format_example: ""
+  label: "Address level 3"
+}
+
+concepts {
+  name: "address-level2"
+  description:
+    "The second administrative level, in addresses with two or more "
+    "administrative levels; in the countries with two administrative levels, "
+    "this would typically be the city, town, village, or other locality within "
+    "which the relevant street address is found"
+  canonical_format_example: "Cambridge"
+  label: "Address level 2"
+}
+
+concepts {
+  name: "address-level1"
+  description:
+    "The broadest administrative level in the address, i.e. the province "
+    "within which the locality is found; for example, in the US, this would be "
+    "the state; in Switzerland it would be the canton; in the UK, the post town"
+  canonical_format_example: "MA"
+  label: "Address level 1"
+}
+
+concepts {
+  name: "country"
+  description: "Country code"
+  canonical_format_example: "US"
+  label: "Country code"
+}
+
+concepts {
+  name: "country-name"
+  description: "Country name"
+  canonical_format_example: "US"
+  label: "Country name"
+}
+
+concepts {
+  name: "postal-code"
+  description:
+    "Postal code, post code, ZIP code, CEDEX code (if CEDEX, append \"CEDEX\", "
+    "and the arrondissement, if relevant, to the address-level2 field)"
+  canonical_format_example: "02139"
+  label: "Postal code"
+}
+
+# TODO: Credit card fields and more.
+
+# concepts {
+#   name: "email"
+#   description: "Email address"
+#   canonical_format_example: "timbl@w3.org"
+#   label: "Email address"
+# }
+
+concepts {
+  name: "sex"
+  description: "Gender identity (e.g. Female, Fa'afafine) <b>Note: only "
+    "defined for free form text, which does not help for most sites.</b>"
+  canonical_format_example: "Male"
+  label: "Sex"
+}
+
+# Locatization
+
+concepts {
+  name: "given-name"
+  specialization {
+    country: "US"
+    language: "en"
+  }
+  label: "First name"
+}
+
+concepts {
+  name: "additional-name"
+  specialization {
+    country: "US"
+    language: "en"
+  }
+  label: "Middle name"
+}
+
+# New concepts
+
+concepts {
+  name: "first-family-name"
+  description: "First family name (Primer Apellido)"
+  canonical_format_example: "Ruiz"
+  label: "First family name"
+  is_new: true
+  # This concept should not be offered in all countries.
+  limited_to_countries: "ES"
+  limited_to_countries: "MX"
+  limited_to_countries: "more?"
+}
+
+concepts {
+  name: "second-family-name"
+  description: "Second family name (Segundo Apellido)"
+  canonical_format_example: "Picasso"
+  label: "Second family name"
+  is_new: true
+  # This concept should not be offered in all countries.
+  limited_to_countries: "ES"
+  limited_to_countries: "MX"
+  limited_to_countries: "more?"
+}
+
+concepts {
+  name: "phonetic-given-name"
+  description: "Phonetic spelling of given name (メイ in JP)"
+  canonical_format_example: "タロウ"
+  label: "Phonetic spelling of given name"
+  is_new: true
+  # This concept should not be offered in all countries.
+  limited_to_countries: "JA"
+}
+
+concepts {
+  name: "phonetic-family-name"
+  description: "Phonetic spelling of family name (セイ in JP)"
+  canonical_format_example: "デル"
+  label: "Phonetic spelling of family name"
+  is_new: true
+  # This concept should not be offered in all countries.
+  limited_to_countries: "JA"
+}
+
+concepts {
+  name: "phonetic-name"
+  description: "Phonetic spelling of name (氏名（カナ） in JP)"
+  canonical_format_example: "デル"
+  label: "Phonetic spelling of name"
+  is_new: true
+  # This concept should not be offered in all countries.
+  limited_to_countries: "JA"
+}
+
+concepts {
+  name: "phonetic-organization"
+  description: "Phonetic spelling of an organization (会社名（カナ）in JP)"
+  canonical_format_example: ""
+  label: "Phonetic spelling of an organization"
+  is_new: true
+  # This concept should not be offered in all countries.
+  limited_to_countries: "JA"
+}
+
+concepts {
+  name: "patronymic-name"
+  description: "Patronymic name"
+  canonical_format_example: "Іванович, Dragoljuba, Яковлевна"
+  label: "Patronymic name"
+  is_new: true
+  limited_to_countries: "BY"  # Belarus
+  limited_to_countries: "GE"  # Georgia
+  limited_to_countries: "GR"  # Greece
+  limited_to_countries: "KG"  # Kyrgyzstan
+  limited_to_countries: "KZ"  # Kazakhstan
+  limited_to_countries: "RU"  # Russia
+  limited_to_countries: "RS"  # Serbia
+  limited_to_countries: "TM"  # Turkmenistan
+  limited_to_countries: "UA"  # Ukraine
+  limited_to_countries: "UZ"  # Uzbekistan
+  limited_to_countries: "more?"
+}
+
+concepts {
+  name: "street-name"
+  description: "Name of a street"
+  canonical_format_example: "Vassar Street"
+  label: "Street name"
+  is_new: true
+}
+
+concepts {
+  name: "house-number"
+  description:
+    "Numeric identifier of a house in a street. Can sometimes contain "
+    "characters as well"
+  canonical_format_example: "32"
+  label: "House number"
+  is_new: true
+}
+
+concepts {
+  name: "street-name-name"
+  description: "Name part of a Hungarian street (Közterület neve). "
+    "Together with street-name-type (Közterület jellege), these two result in "
+    "a street-name. Also in Spain websites split the name part from the type "
+    "of the street."
+  canonical_format_example: "Amphitheatre (translated to English)"
+  label: "Name part of a public place (Közterület neve)"
+  is_new: true
+  # This concept should not be offered in all countries.
+  limited_to_countries: "ES"
+  limited_to_countries: "HU"
+}
+
+concepts {
+  name: "street-name-type"
+  description: "Type part of a Hungarian street (Közterület jellege). "
+    "Together with street-name-name (Közterület neve), these two result in a "
+    "street-name. Also in Spain websites split the name part from the type "
+    "of the street."
+  canonical_format_example: "Blvd., Pkwy., Ln., Ave. (translated to English)"
+  label: "Type of a street"
+  is_new: true
+  # This concept should not be offered in all countries.
+  limited_to_countries: "ES"
+  limited_to_countries: "HU"
+}
+
+concepts {
+  name: "stroenie"
+  description: "Russian \"Строение\". A building identifier for a building "
+  "inside a group of buildings that are not accessible via own entrences from "
+  "the street. E.g. the buildings of a factory. Can also be used in some cases "
+  "in combination with korpus/Корпус."
+  label: "Строение"
+  is_new: true
+  # This concept should not be offered in all countries.
+  limited_to_countries: "RU"
+}
+
+concepts {
+  name: "korpus"
+  description: "Russian \"Корпус\". A building identifier inside a group of "
+    "buildings that are accessible via own entrences from the street. "
+    "Can also be used in some cases in combination with stroenie/Строение."
+  label: "Корпус"
+  is_new: true
+  # This concept should not be offered in all countries.
+  limited_to_countries: "RU"
+}
+
+concepts {
+  name: "apartment"
+  description:
+    "Identifier for an apartment, often numeric."
+  canonical_format_example: "201"
+  label: "Apartment"
+  is_new: true
+}
+
+concepts {
+  name: "floor"
+  description:
+    "Identifier for floor, often numeric."
+  canonical_format_example: "2"
+  label: "Floor"
+  is_new: true
+}
+
+concepts {
+  name: "staircase"
+  description:
+    "Staircase"
+  canonical_format_example: "2"
+  label: "Staircase"
+  is_new: true
+}
+
+concepts {
+  name: "building"
+  description: "Name of a building"
+  canonical_format_example: "Stata Center"
+  label: "Building name"
+  is_new: true
+}
+
+concepts {
+  name: "entrance"
+  description: "Entrance - Very common in russian address forms. TBD whether "
+    "to offer this in other countries as well."
+  canonical_format_example: "A"
+  label: "Entrance"
+  is_new: true
+  # This concept should not be offered in all countries.
+  limited_to_countries: "RU"
+}
+
+concepts {
+  name: "door-code"
+  description: "A pin to enter an apartment or gated community"
+  canonical_format_example: "1234"
+  label: "Door code / intercom"
+  is_new: true
+  # This concept should not be offered in all countries.
+  limited_to_countries: "RU"
+}
+
+concepts {
+  name: "landmark"
+  description: "Landmark"
+  canonical_format_example: "Near the police station"
+  label: "Landmark"
+  is_new: true
+}
+
+concepts {
+  name: "delivery-instructions"
+  description: "Delivery instructions"
+  canonical_format_example: "Dial 312 123 1234 when you are there."
+  label: "Delivery instructions"
+  is_new: true
+}
+
+concepts {
+  name: "care-of"
+  description: "Care of"
+  canonical_format_example: "Mrs. Example"
+  label: "c/o"
+  is_new: true
+}
+
+concepts {
+  name: "between-streets"
+  description: "Between streets (TODO: Consider making this just a special "
+      "translation of the term 'landmark')"
+  canonical_format_example: "A street and B street"
+  label: "Between streets"
+  is_new: true
+}
+
+concepts {
+  name: "address-line4"
+  description: "Street address (one line per field) "
+  canonical_format_example: ""
+  label: "Address line 4"
+  is_new: true
+}
+
+# Generic "street-name house-number" pattern.
+compound_concepts {
+  name: "building-location"
+  description: "A combination of a street and house number"
+  label: "Street name and house number"
+
+  tokens {
+    concept_name: "street-name"
+  }
+  tokens {
+    separator_value: " "
+  }
+  tokens {
+    concept_name: "house-number"
+  }
+}
+
+# Specialization for "house-number street-name" pattern.
+compound_concepts {
+  name: "building-location"
+  description: "A combination of a house number and street"
+  label: "House number and street name"
+
+  tokens {
+    concept_name: "house-number"
+  }
+  tokens {
+    separator_value: " "
+  }
+  tokens {
+    concept_name: "street-name"
+  }
+
+  specialization {
+    country: "US"
+    country: "EG"
+    language: "*"
+  }
+}
+
+compound_concepts {
+  name: "location-in-building"
+  description: "All fields within a building, depending on the country. "
+    "E.g. apartment number, floor, stair case, ..."
+  tokens {
+    concept_name: "very country specific"
+  }
+}
+
+compound_concepts {
+  name: "building-and-location-in-building"
+  description: "Name of a building plus location-in-building information"
+  tokens {
+    concept_name: "building"
+  }
+  tokens {
+    separator_value: ", "
+  }
+  tokens {
+    concept_name: "location-in-building"
+  }
+}
+
+compound_concepts {
+  name: "address-search"
+  description: "An address search widget, typically accepting information down "
+    "to the building level, but no name or location-in-building information. "
+    "It's conceivable to have an autocomplete=\"address-search\" paired with "
+    "a second attribute address-search-items=\"zip address-line1\" to tell the "
+    "browser which information to enter into the address search field."
+  label: "n/a: this would not be shown in the UI."
+  tokens {
+    concept_name: "very country specific"
+  }
+}
+
+compound_concepts {
+  name: "address-search"
+  description: "An address search widget, typically accepting information down "
+    "to the building level, but no name or location-in-building information. "
+    "E.g. 32 Vassar Street, Cambridge, MA, USA"
+  label: "n/a: this would not be shown in the UI."
+
+  tokens {
+    concept_name: "building-location"
+  }
+  tokens {
+    separator_value: ", "
+  }
+  tokens {
+    concept_name: "address-level2"
+  }
+  tokens {
+    separator_value: ", "
+  }
+  tokens {
+    concept_name: "address-level1"
+  }
+  tokens {
+    separator_value: ", "
+  }
+  tokens {
+    concept_name: "country-name"
+  }
+  specialization {
+    country: "US"
+    language: "en"
+  }
+}
+
+compound_concepts {
+  name: "address-overflow"
+  description: "Address overflow. Often information within a building (e.g. "
+    "floor, house number, or a c/o or company name). This may be very country "
+    "specific."
+  label: "TBD"
+  tokens {
+    concept_name: "very country specific"
+  }
+}

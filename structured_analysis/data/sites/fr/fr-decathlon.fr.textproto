@@ -1,0 +1,285 @@
+site_examples {
+  url: "https://www.decathlon.fr"
+  is_structured: false
+  locale {
+    country: "FR"
+    language: "fr"
+  }
+  sequences {
+    fields {
+      name: "address-name-5744b4a1-2fa8-4adb-84ad-2df300218968|address-name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "favorite-address-5744b4a1-2fa8-4adb-84ad-2df300218968|favorite-address"
+      label: "Ceci est mon adresse prÃ©fÃ©rÃ©e"
+      label_translated: "This is my favorite address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billing-address-5744b4a1-2fa8-4adb-84ad-2df300218968|billing-address"
+      label: "SÃ©lectionnez cette adresse en tant qu\'adresse de facturation"
+      label_translated: "Select this address as your billing address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "first-name-5744b4a1-2fa8-4adb-84ad-2df300218968|first-name"
+      label: "Prénom * :"
+      label_translated: "First name *:"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "last-name-5744b4a1-2fa8-4adb-84ad-2df300218968|last-name"
+      label: "Nom de famille * :"
+      label_translated: "Last name * :"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "countryCodeGeoId-5744b4a1-2fa8-4adb-84ad-2df300218968|countryCodeGeoId"
+      label: "Pays * :"
+      label_translated: "Country * :"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "line1-5744b4a1-2fa8-4adb-84ad-2df300218968|line1"
+      label: "Adresse ligne 1 * :"
+      label_translated: "Address Line 1 * :"
+      control_type: INPUT
+      concepts: "address-line1"
+      autocomplete_attribute: "shippingaddress-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "line2-5744b4a1-2fa8-4adb-84ad-2df300218968|line2"
+      label: "Adresse ligne 2 (N° APPT - ETAGE - BATIMENT - RESIDENCE (max 40 caractères)) :"
+      label_translated: "Address line 2 (APPT No. - FLOOR - BUILDING - RESIDENCE (max 40 characters)):"
+      control_type: INPUT
+      concepts: "address-line2"
+      autocomplete_attribute: "shippingaddress-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "postalCode-5744b4a1-2fa8-4adb-84ad-2df300218968|postalCode"
+      label: "Code postal * :"
+      label_translated: "Postal code * :"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "shippingpostal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "cityGeoId-5744b4a1-2fa8-4adb-84ad-2df300218968|cityGeoId"
+      label: "Nom de la ville * :"
+      label_translated: "Name of the city * :"
+      control_type: SELECT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "aad6f25c-85cd-4171-ab57-9bc89be10fc1|"
+      label: "Numéro de téléphone mobile * :"
+      label_translated: "Mobile phone number *:"
+      control_type: SELECT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "address-mobile-5744b4a1-2fa8-4adb-84ad-2df300218968|address-mobile"
+      label: "NumÃ©ro de tÃ©lÃ©phone mobile * :"
+      label_translated: "Mobile phone number *:"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "nps-4659_0|nps-group-4659"
+      label: "0"
+      label_translated: "0"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "nps-4659_1|nps-group-4659"
+      label: "1"
+      label_translated: "1"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "nps-4659_2|nps-group-4659"
+      label: "2"
+      label_translated: "2"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "nps-4659_3|nps-group-4659"
+      label: "3"
+      label_translated: "3"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "nps-4659_4|nps-group-4659"
+      label: "4"
+      label_translated: "4"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "nps-4659_5|nps-group-4659"
+      label: "5"
+      label_translated: "5"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "nps-4659_6|nps-group-4659"
+      label: "6"
+      label_translated: "6"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "nps-4659_7|nps-group-4659"
+      label: "7"
+      label_translated: "7"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "nps-4659_8|nps-group-4659"
+      label: "8"
+      label_translated: "8"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "nps-4659_9|nps-group-4659"
+      label: "9"
+      label_translated: "9"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "nps-4659_10|nps-group-4659"
+      label: "10"
+      label_translated: "10"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkbox-4660_0|checkbox-group-4660"
+      label: "La recherche produit"
+      label_translated: "Product research"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkbox-4660_1|checkbox-group-4660"
+      label: "Le choix dans les produits, les services"
+      label_translated: "Choice in products, services"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkbox-4660_2|checkbox-group-4660"
+      label: "La disponibilitÃ© du stock"
+      label_translated: "Stock availability"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkbox-4660_3|checkbox-group-4660"
+      label: "La qualitÃ© des informations, les conseils sur les produits"
+      label_translated: "The quality of information, advice on products"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkbox-4660_4|checkbox-group-4660"
+      label: "La connexion ou l\'inscription Ã  mon compte"
+      label_translated: "Logging in or registering for my account"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkbox-4660_5|checkbox-group-4660"
+      label: "Les options de livraison"
+      label_translated: "Delivery options"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkbox-4660_6|checkbox-group-4660"
+      label: "Les frais de livraison"
+      label_translated: "Delivery fees"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkbox-4660_7|checkbox-group-4660"
+      label: "Le manque d\'information sur l\'impact carbone de ma livraison"
+      label_translated: "The lack of information on the carbon impact of my delivery"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkbox-4660_8|checkbox-group-4660"
+      label: "Les modalitÃ©s de paiement"
+      label_translated: "Payment terms"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "website_data_js_4741_1|website_data_js_4741_1"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "element-textarea-4661|"
+      label: "Si vous le souhaitez, laissez-nous un commentaire :"
+      label_translated: "If you wish, leave us a comment:"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

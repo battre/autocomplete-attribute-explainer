@@ -1,0 +1,145 @@
+formatting-rules:
+  address:
+  - street-address-alternative-1
+  - separator: "\n"
+  - locality2
+  - separator: "\n"
+  - locality1
+  - separator: " - "
+  - admin-area1
+  - separator: "\n"
+  - postal-code
+  - separator: "\n"
+  - country-name
+  - skip: country  # redundant with country-name
+  - skip: street-address  # redundant with street-address-alternative-1
+
+  street-address-alternative-1:
+  - building-location
+  - separator: "\n"
+  - address-overflow-and-landmark
+
+  address-overflow-and-landmark:
+  - address-overflow
+  - separator: "\n"
+  - prefix: "Ponto de referência: "
+  - landmark
+
+  address-overflow:
+  - in-building-location
+
+  in-building-location:
+    - prefix: "Andar "
+    - floor
+    - separator: ", "
+    - unit
+
+  building-location:
+  - street
+  - separator: ", "
+  - building
+
+  credit-card:
+  - skip: cc-name
+  - skip: cc-number
+  - skip: cc-exp-MMYY
+  - skip: cc-exp-MMYYYY
+  - skip: cc-csc
+  - skip: cc-type
+
+examples:
+- id: name
+  comment: |
+    This is an example of a name.
+  attributes:
+    given-name: Maria Alice
+    family-name: da Silva
+  output:
+    name:
+      show: true
+      text: Maria Alice da Silva
+
+- id: address
+  comment: |
+    This is an example of a full address in Brazil specified by the most
+    granular tokens.
+  attributes:
+    street: Avenida Mem de Sá
+    building: 1234
+    floor: 1
+    unit-type: Apto.
+    unit-name: 12
+    landmark: Theatro Municipal do Rio de Janeiro
+    locality1: Rio de Janeiro
+    locality2: Centro
+    admin-area1: RJ
+    postal-code: 20230-153
+    country: BR
+    country-name: Brasil
+
+  output:
+    address:
+      show: true
+      text: |
+        Avenida Mem de Sá, 1234
+        Andar 1, Apto. 12
+        Ponto de referência: Theatro Municipal do Rio de Janeiro
+        Centro
+        Rio de Janeiro - RJ
+        20230-153
+        Brasil
+
+- id: address-with-inner-nodes
+  comment: |
+    This example illustrates how specifying an explicit value for
+    address-overflow trumps the leaf node values of unit-type, unit-name, etc.
+  attributes:
+    street: Avenida Mem de Sá
+    building: 1234
+    address-overflow: |-
+      1º andar, ap 12
+    unit-type: Apto.
+    unit-name: 12
+    landmark: Theatro Municipal do Rio de Janeiro
+    locality1: Rio de Janeiro
+    locality2: Centro
+    admin-area1: RJ
+    postal-code: 20230-153
+    country: BR
+    country-name: Brasil
+
+  output:
+    address:
+      show: true
+      text: |
+        Avenida Mem de Sá, 1234
+        1º andar, ap 12
+        Ponto de referência: Theatro Municipal do Rio de Janeiro
+        Centro
+        Rio de Janeiro - RJ
+        20230-153
+        Brasil
+
+- id: address-in-brasilia
+  comment: |
+    This example illustrates how an address in Brasília can be expressed, which
+    uses a different addressing system.
+  attributes:
+    street: SCS – Quadra 6
+    building: Bloco A
+    floor: 4
+    locality1: Brasília
+    admin-area1: DF
+    postal-code: 70297-400
+    country: BR
+    country-name: Brasil
+
+  output:
+    address:
+      show: true
+      text: |
+        SCS – Quadra 6, Bloco A
+        Andar 4
+        Brasília - DF
+        70297-400
+        Brasil

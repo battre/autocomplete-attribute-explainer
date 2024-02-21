@@ -1,0 +1,326 @@
+regex_definitions:
+  kBuildingValueRe:  # Regex for type "building"
+    regex_concat:
+      parts:
+      - regex_fragment: (?:KM\s+)?  # Optional prefix for a KM position
+      - regex_fragment: \d+  # House number
+      # Optional suffix for building ids with a letter suffix, e.g. 12a.
+      # We don't support 12/1 or 12-1 because these may indicate apartment
+      # numbers.
+      - regex_fragment: \w?
+      wrap_non_capture: false
+
+  kUnitTypeLiteralRe:  # Regex for type "unit-type"
+    # Note that order matches because RE2 prefers the first match.
+    regex_fragment: (?:apto\.?|apt\.?|apartamento|sala nº|sala|conjunto)
+
+  kUnitNameValueRe:  # Regex for type unit-name"
+    regex_fragment: (?:\d+\w?\b|\w\b)
+
+  kFloorLiteralRe:  # Regex for literal for a floor
+    regex_fragment: andar
+
+capture_definitions:
+  ParseBuildingLocation:
+    capture:
+      output: building-location
+      parts:
+      # We only search for building locations at the beginning a field.
+      - capture_reference: AnchorToBeginningOfInput
+      - capture:
+          output: street
+          parts: [ {regex_reference: kMultipleLazyWordsRe} ]
+      - separator:
+          # ",{whitespace}"
+          # "{whitespace}-{whitespace}"
+          # "{whitespace}"
+          regex_fragment: |-
+            (?:,\s*|\s+-\s+|\s+)
+      - capture:
+          output: building
+          # Optional prefix "nº " before the number.
+          prefix: { regex_fragment: '(?i:nº\s+)?' }
+          parts: [ {regex_reference: kBuildingValueRe} ]
+
+  ParseUnitWithMandatoryUnitType:
+    capture:
+      output: unit
+      parts:
+      - capture:
+          output: unit-type
+          parts: [ {regex_reference: kUnitTypeLiteralRe} ]
+          # In the context of an in-building-location this cannot be optional
+          # because we need to distinguish a unit from a floor.
+      - separator: {regex_reference: kWhitespaceSeparator}
+      - capture:
+          output: unit-name
+          parts: [ {regex_reference: kUnitNameValueRe} ]
+
+  ParseFloorWithMandatoryPrefix:
+    # match 'andar \d+'
+    capture:
+      output: floor
+      prefix:
+        regex_concat:
+          parts:
+            - regex_reference: kFloorLiteralRe
+            - regex_fragment: '\s*'
+          wrap_non_capture: false
+      parts: [ {regex_fragment: '\d+'} ]
+
+  ParseFloorWithMandatorySuffix:
+    # match '\d+º andar' and '\d+ andar'
+    capture:
+      output: floor
+      prefix:
+        regex_fragment: '(?:[,-]\s*|^)'
+      parts: [ {regex_fragment: '\d+'} ]
+      suffix:
+        regex_concat:
+          parts:
+          - regex_fragment: '\s*'
+          - regex_fragment: '(?:º\s*)?' # optional "º "
+          - regex_reference: kFloorLiteralRe
+          - regex_fragment: '(?:\s*[,-]|$)' # separator to other information
+          wrap_non_capture: false
+
+  ParseLandmarkWithMandatoryPrefix:
+    capture:
+      output: landmark
+      prefix:
+        regex_concat:
+          parts:
+          - regex_fragment: '(?:ponto de )?' # Optional "ponto de"
+          - regex_fragment: 'refer[êe]ncia'
+          - regex_fragment: '(?::\s*|\s+)' # end with ":", ": " or " "
+          wrap_non_capture: false
+      parts:
+        - regex_fragment: '[^,\n]+'
+
+parsing_definitions:
+  building-location:
+    decomposition:
+      capture_reference: ParseBuildingLocation
+
+  in-building-location:
+    extract_parts:
+      parts:
+      - extract_part:
+          capture_reference: ParseUnitWithMandatoryUnitType
+      - extract_part:
+          capture_reference: ParseFloorWithMandatoryPrefix
+      - extract_part:
+          capture_reference: ParseFloorWithMandatorySuffix
+
+  # Identical to 'in-building-location' and therefore not tested separately.
+  address-overflow:
+    extract_parts:
+      parts:
+      - extract_part:
+          capture_reference: ParseUnitWithMandatoryUnitType
+      - extract_part:
+          capture_reference: ParseFloorWithMandatoryPrefix
+      - extract_part:
+          capture_reference: ParseFloorWithMandatorySuffix
+
+  address-overflow-and-landmark:
+    extract_parts:
+      parts:
+      - extract_part:
+          capture_reference: ParseUnitWithMandatoryUnitType
+      - extract_part:
+          capture_reference: ParseFloorWithMandatoryPrefix
+      - extract_part:
+          capture_reference: ParseFloorWithMandatorySuffix
+      - extract_part:
+          capture_reference: ParseLandmarkWithMandatoryPrefix
+
+  street-address-alternative-1:
+    extract_parts:
+      parts:
+      - extract_part:
+          # This field has an implicit anchoring to the beginning of the
+          # input. So we will not apply the regex in the middle of the text.
+          capture_reference: ParseBuildingLocation
+      - extract_part:
+          capture_reference: ParseUnitWithMandatoryUnitType
+      - extract_part:
+          capture_reference: ParseFloorWithMandatoryPrefix
+      - extract_part:
+          capture_reference: ParseFloorWithMandatorySuffix
+      - extract_part:
+          capture_reference: ParseLandmarkWithMandatoryPrefix
+
+  unit:
+    decomposition:
+      capture:
+        output: unit
+        parts:
+        - capture:
+            output: unit-type
+            parts: [ {regex_reference: kUnitTypeLiteralRe} ]
+            quantifier: MATCH_OPTIONAL
+        - separator: {regex_reference: kWhitespaceSeparator}
+        - capture:
+            output: unit-name
+            parts: [ {regex_reference: kUnitNameValueRe} ]
+
+test_regex_definitions:
+# Tests for kBuildingValueRe
+- id: "kBuildingValueRe: plain number"
+  regex_name: kBuildingValueRe
+  input: "123"
+  match_groups: ["123"]
+- id: "kBuildingValueRe: position on a street by a distance marker"
+  regex_name: kBuildingValueRe
+  input: "km 123"
+  match_groups: ["km 123"]
+- id: "kBuildingValueRe: building with letter suffix"
+  regex_name: kBuildingValueRe
+  input: "12a"
+  match_groups: ["12a"]
+- id: "kBuildingValueRe: plain number with other data following"
+  regex_name: kBuildingValueRe
+  input: "123, apto 12"
+  match_groups: ["123"]
+# Tests for kUnitTypeLiteralRe
+- id: "kUnitTypeLiteralRe: apto"
+  regex_name: kUnitTypeLiteralRe
+  input: "apto"
+  match_groups: ["apto"]
+- id: "kUnitTypeLiteralRe: apto."
+  regex_name: kUnitTypeLiteralRe
+  input: "apto."
+  match_groups: ["apto."]
+# Tests for kUnitNameValueRe
+- id: "kUnitNameValueRe: 12"
+  regex_name: kUnitNameValueRe
+  input: "12"
+  match_groups: ["12"]
+- id: "kUnitNameValueRe: A"
+  regex_name: kUnitNameValueRe
+  input: "A"
+  match_groups: ["A"]
+
+test_parsing_definitions:
+- id: "Street and house number, default case: separated by comma"
+  type: building-location
+  input: "Avenida Mem de Sá, 1234"
+  output:
+    building-location: "Avenida Mem de Sá, 1234"
+    street: "Avenida Mem de Sá"
+    building: "1234"
+- id: "Street and house number, default case: separated by -"
+  type: building-location
+  input: "Avenida Mem de Sá - 1234"
+  output:
+    building-location: "Avenida Mem de Sá - 1234"
+    street: "Avenida Mem de Sá"
+    building: "1234"
+- id: "Street and house number, default case: separated by comma with nº prefix"
+  type: building-location
+  input: "Avenida Mem de Sá, nº 1234"
+  output:
+    building-location: "Avenida Mem de Sá, nº 1234"
+    street: "Avenida Mem de Sá"
+    building: "1234"
+- id: "Street and house number, default case: separated by comma with KM position"
+  type: building-location
+  input: "Avenida Mem de Sá, KM 1234"
+  output:
+    building-location: "Avenida Mem de Sá, KM 1234"
+    street: "Avenida Mem de Sá"
+    building: "KM 1234"
+- id: "Decompose unit"
+  type: unit
+  input: "apto 12"
+  output:
+    unit: "apto 12"
+    unit-type: "apto"
+    unit-name: "12"
+- id: "Floor and apartment from in-building-location"
+  type: in-building-location
+  input: "apto 12, andar 1"
+  output:
+    unit: "apto 12"
+    unit-type: "apto"
+    unit-name: "12"
+    floor: "1"
+- id: "Floor and apartment from in-building-location, where 'andar' is a suffix"
+  type: in-building-location
+  input: "apto 12, 1 andar"
+  output:
+    unit: "apto 12"
+    unit-type: "apto"
+    unit-name: "12"
+    floor: "1"
+- id: "Landmark and overflow"
+  type: address-overflow-and-landmark
+  input: "apto 12, 1 andar, referência: foo, something else"
+  output:
+    unit: "apto 12"
+    unit-type: "apto"
+    unit-name: "12"
+    floor: "1"
+    landmark: "foo"
+- id: "A full street address"
+  type: street-address-alternative-1
+  input: |-
+    Avenida Mem de Sá, 1234
+    apto 12, 1 andar
+    referência: foo
+    something else
+  output:
+    building-location: "Avenida Mem de Sá, 1234"
+    street: "Avenida Mem de Sá"
+    building: "1234"
+    unit: "apto 12"
+    unit-type: "apto"
+    unit-name: "12"
+    floor: "1"
+    landmark: "foo"
+- id: "A full street address, v2 (floor in separate row)"
+  type: street-address-alternative-1
+  input: |-
+    Avenida Mem de Sá, 1234
+    apto 12
+    1 andar
+    referência: foo
+    something else
+  output:
+    building-location: "Avenida Mem de Sá, 1234"
+    street: "Avenida Mem de Sá"
+    building: "1234"
+    unit: "apto 12"
+    unit-type: "apto"
+    unit-name: "12"
+    floor: "1"
+    landmark: "foo"
+- id: "A full street address, v3 (in-building-loation in line 1)"
+  type: street-address-alternative-1
+  input: |-
+    Avenida Mem de Sá, 1234, andar 1, apto 12
+    referência: foo
+    something else
+  output:
+    building-location: "Avenida Mem de Sá, 1234"
+    street: "Avenida Mem de Sá"
+    building: "1234"
+    unit: "apto 12"
+    unit-type: "apto"
+    unit-name: "12"
+    floor: "1"
+    landmark: "foo"
+- id: "A full street address, v4 (don't discover a building-location from line 2)"
+  type: street-address-alternative-1
+  input: |-
+    Something else
+    Avenida Mem de Sá, 1234, andar 1, apto 12
+    referência: foo
+    something else
+  output:
+    unit: "apto 12"
+    unit-type: "apto"
+    unit-name: "12"
+    floor: "1"
+    landmark: "foo"

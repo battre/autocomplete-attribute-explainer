@@ -1,0 +1,504 @@
+site_examples {
+  url: "https://www.abrakadabra.com"
+  is_structured: false
+  locale {
+    country: "HR"
+    language: "hr"
+  }
+  sequences {
+    fields {
+      name: "j_username|j_username"
+      label: "e-mail"
+      label_translated: "e-mail"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "j_password|j_password"
+      label: "Lozinka"
+      label_translated: "Password"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CSRFToken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "js-site-search-input-SearchBox|text"
+      example: "Pretražite proizvode"
+      example_translated: "Search products"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "text-search-category-SearchBox|category"
+      control_type: SELECT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "hidden-search-text-SearchBox|text"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|size"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|sort"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|mode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "hidden-search-category-SearchBox|q"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|size"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|sort"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|mode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "hidden-select-box|"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|email"
+      label: "Unesi e-mail adresu"
+      label_translated: "Enter your e-mail address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "subscribe_loyaltyCardNumber|mpcNumber"
+      label: "Unesi broj MultiPlusCard bodovi kartice"
+      label_translated: "Enter the number of the MultiPlusCard points card"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkoutForm.personalInfo.firstName|personalInfo.firstName"
+      label: "Ime"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "checkoutForm.personalInfo.lastName|personalInfo.lastName"
+      label: "Prezime"
+      label_translated: "Surname"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "checkoutForm.personalInfo.phoneNumber|personalInfo.phoneNumber"
+      label: "Broj telefona"
+      label_translated: "Telephone number"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "checkoutForm.personalInfo.email|personalInfo.email"
+      label: "Email kupca"
+      label_translated: "Buyer&#39;s email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkoutForm.personalInfo.loyaltyCardNumber|personalInfo.loyaltyCardNumber"
+      label: "Multipluscard Kartica"
+      label_translated: "Multipluscard Card"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkoutForm.payment.isNeedR1|payment.needR1"
+      label: "Trebam R1 račun"
+      label_translated: "I need an R1 account"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_payment.needR1"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payment.address.countryIso|payment.address.countryIso"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkoutForm.payment.address.companyName|payment.address.companyName"
+      label: "Naziv poduzeća"
+      label_translated: "Company name"
+      control_type: INPUT
+      concepts: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "checkoutForm.payment.address.line1|payment.address.line1"
+      label: "Ulica i broj"
+      label_translated: "Street and number"
+      control_type: INPUT
+      concepts: "street-address"
+      section: ADDRESS
+    }
+    fields {
+      name: "checkoutForm.payment.address.postcode|payment.address.postcode"
+      label: "Pošta"
+      label_translated: "Post"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "checkoutForm.payment.address.townCity|payment.address.townCity"
+      label: "Grad"
+      label_translated: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "checkoutForm.payment.address.OIB|payment.address.OIB"
+      label: "OIB"
+      label_translated: "OIB"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "pickup-gross|delivery.selectedDeliveryMode"
+      label: "Preuzmi na kiosku Tiska 15,00 HRK"
+      label_translated: "Download at the Tiska kiosk HRK 15.00"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "selectedPointOfService|delivery.selectedPointOfService"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "autocomplete|pos_locationQuery"
+      label: "Unesi mjesto ili poštanski broj:"
+      label_translated: "Enter city or zip code:"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "920300|"
+      label: "ZG-SREDNJACISREDNJACI 1 , ZAGREB130.5 mpon - sub 06:30 - 21:30ned 07:00 - 17:00"
+      label_translated: "ZG-SREDNJACISREDNJACI 1 , ZAGREB130.5 pmon - Sat 06:30 - 21:30 Sun 07:00 - 17:00"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "920320|"
+      label: "ZG-BRAĆE DOMANY BRAĆE DOMANY 6 , ZAGREB158.4 mpon - pet 07:00 - 20:30sub 07:00 - 13:30ned 07:00 - 13"
+      label_translated: "ZG-BRAĆE DOMANY BRĆE DOMANY 6 , ZAGREB158.4 Mon - Fri 07:00 - 20:30 Sat 07:00 - 13:30 Sun 07:00 - 13"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "920350|"
+      label: "ZG-HRVOJA MACANOVIĆA-PBZHRVOJA MACANOVIĆA 27 , ZAGREB713.7 mpon - pet 06:00 - 20:00sub - ned 07:00 -"
+      label_translated: "ZG-HRVOJA MACANOVIĆA-PBZHRVOJA MACANOVIĆA 27 , ZAGREB713.7 Mon - Fri 06:00 - 20:00 Sat - Sun 07:00 -"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "919930|"
+      label: "ZG-REMIZA OZALJSKA 48 , ZAGREB723.9 mpon - pet 06:00 - 21:30sub 06:00 - 14:00ned 07:00 - 13:00"
+      label_translated: "ZG-REMIZA OZALJSKA 48 , ZAGREB723.9 Mon - Fri 06:00 - 21:30 Sat 06:00 - 14:00 Sun 07:00 - 13:00"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "917640|"
+      label: "ZG-KNEŽIJA II TINA UJEVIĆA 15 , ZAGREB757.3 mpon - pet 05:30 - 23:00sub 06:00 - 23:00ned 06:30 - 22:"
+      label_translated: "ZG-KNEŽIJA II TINA UJEVIĆA 15 , ZAGREB757.3 Mon - Fri 05:30 - 23:00 Sat 06:00 - 23:00 Sun 06:30 - 22:"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "924080|"
+      label: "ZG-UJEVIĆEVA-LOKALTINA UJEVIĆA 11 , ZAGREB765.6 mpon 10:00 - 18:00uto - sub 07:00 - 20:00ned 08:00 -"
+      label_translated: "ZG-UJEVIĆEVA-LOKALTINA UJEVIĆA 11 , ZAGREB765.6 mpon 10:00 - 18:00 Tue - Sat 07:00 - 20:00 Sun 08:00 -"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "929960|"
+      label: "ZG-TRŽNICA JARUNPAKOŠTANSKA 5 , ZAGREB820.7 mpon 07:00 - 14:00uto 06:30 - 13:30sri - sub 07:00 - 14:"
+      label_translated: "ZG-TRŽNICA JARUNPAKOŠTANSKA 5 , ZAGREB820.7 Mon 07:00 - 14:00 Tue 06:30 - 13:30 Wed - Sat 07:00 - 14:00"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "920330|"
+      label: "ZG-HRGOVIĆI-POŠTA HRGOVIĆI 61 , ZAGREB1,002.6 mpon - pet 05:30 - 23:00sub 06:00 - 23:00ned 06:30 - 2"
+      label_translated: "ZG-HRGOVIĆI-POŠTA HRGOVIĆI 61 , ZAGREB1,002.6 Mon - Fri 05:30 - 23:00 Sat 06:00 - 23:00 Sun 06:30 - 2"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "922890|"
+      label: "ZG-JADRANSKI MOST SELSKA 215 , ZAGREB1,016.3 mpon - pet 07:00 - 14:00sub 08:00 - 15:00"
+      label_translated: "ZG-JADRANSKI MOST SELSKA 215, ZAGREB1,016.3 Mon - Fri 07:00 - 14:00Sat 08:00 - 15:00"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "917570|"
+      label: "ZG-OZALJSKA-NEHAJSKAOZALJSKA 33 , ZAGREB1,054.6 mpon - pet 06:00 - 22:00sub - ned 07:00 - 15:00"
+      label_translated: "ZG-OZALJSKA-NEHAJSKAOZALJSKA 33 , ZAGREB1,054.6 Mon - Fri 06:00 - 22:00 Sat - Sun 07:00 - 15:00"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "901770|"
+      label: "ZG-SAVSKI MOSTSAVSKA CESTA 198 , ZAGREB1,200.1 mpon - pet 06:00 - 21:00sub 07:00 - 12:00"
+      label_translated: "ZG-SAVSKI MOSTSAVSKA CESTA 198 , ZAGREB1,200.1 mpon - Fri 06:00 - 21:00 Sat 07:00 - 12:00"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "919990|"
+      label: "ZG-DRVINJEDRAGUTINA GOLIKA 84 , ZAGREB1,310.3 mpon 06:00 - 22:00uto - pet 06:00 - 21:00sub 06:00 - 1"
+      label_translated: "ZG-DRVINJEDRAGUTINA GOLIKA 84 , ZAGREB1,310.3 Mon 06:00 - 22:00 Tue - Fri 06:00 - 21:00 Sat 06:00 - 1"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "930220|"
+      label: "ZG-SELSKA-D.JARNEVIĆPARK KATE ŠOLJIĆ 1 , ZAGREB1,351.9 mpon - pet 14:00 - 21:00sub 08:00 - 14:00"
+      label_translated: "ZG-SELSKA-D.JARNEVIĆPARK KATE ŠOLJIĆ 1 , ZAGREB1,351.9 mpon - fri 2:00 - 9:00 pm sat 8:00 - 14:00"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "917540|"
+      label: "ZG-TREŠNJEVKA-TRŽNICA TREŠNJEVAČKI TRG 2 , ZAGREB1,452.4 mpon - pet 06:30 - 19:00sub 07:00 - 16:00ne"
+      label_translated: "ZG-TREŠNJEVKA-TRŽNICA TREŠNJEVAČKI TRG 2 , ZAGREB1,452.4 mpon - fri 06:30 - 19:00 sat 07:00 - 16:00 sun"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "920390|"
+      label: "ZG-VRBANI-RUDEŠKA RUDEŠKA CESTA 89 , ZAGREB1,619.9 mpon - pet 05:30 - 23:00sub 06:00 - 23:00ned 07:0"
+      label_translated: "ZG-VRBANI-RUDEŠKA RUDEŠKA CESTA 89 , ZAGREB1,619.9 Mon - Fri 05:30 - 23:00 Sat 06:00 - 23:00 Sun 07:00"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "home-delivery-gross|delivery.selectedDeliveryMode"
+      label: "Dostava na adresu(unutar 4 radna dana) 25,00 HRK"
+      label_translated: "Delivery to the address (within 4 working days) HRK 25.00"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkoutForm.delivery.address.line1|delivery.address.line1"
+      label: "Ulica i kućni broj"
+      label_translated: "Street and house number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkoutForm.delivery.address.postcode|delivery.address.postcode"
+      label: "Poštanski broj"
+      label_translated: "Zip code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkoutForm.delivery.address.townCity|delivery.address.townCity"
+      label: "Pogrešan naziv grada, molimo izaberite odgovarajući naziv iz padajućeg izbornika."
+      label_translated: "Incorrect city name, please select the appropriate name from the drop-down menu."
+      control_type: SELECT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "checkoutForm.delivery.address.countryIso|delivery.address.countryIso"
+      control_type: SELECT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "creditCard|payment.paymentModeCode"
+      label: "Kreditna karticaDo 24 rate bez kamata"
+      label_translated: "Credit card Up to 24 installments without interest"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cashondelivery|payment.paymentModeCode"
+      label: "PouzećemGotovina prilikom preuzimanja"
+      label_translated: "To the borrowerCash on collection"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bankpayment|payment.paymentModeCode"
+      label: "Bankovna doznakaMobilno/Internet bankarstvo ili banka"
+      label_translated: "Bank transferMobile/Internet banking or bank"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "airCash|payment.paymentModeCode"
+      label: "AirCash"
+      label_translated: "AirCash"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "keksPay|payment.paymentModeCode"
+      label: "KEKS PayDigitalno bankarstvo"
+      label_translated: "KEKS PayDigital banking"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payCek|payment.paymentModeCode"
+      label: "KriptovaluteBTC, ETH, USDT"
+      label_translated: "CryptocurrenciesBTC, ETH, USDT"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkoutForm.termsCheck|termsCheck"
+      label: "Razumijem i prihvaćam Opće uvjete poslovanja i Pravila privatnosti"
+      label_translated: "I understand and accept the General Business Terms and Privacy Policy"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_termsCheck"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CSRFToken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|email"
+      label: "Unesi e-mail adresu"
+      label_translated: "Enter your e-mail address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dp1663139482348|dateOfBirth"
+      label: "Datum rođenja (ako voliš poklone)"
+      label_translated: "Date of birth (if you like gifts)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "accesibility_refreshScreenReaderBufferField|accesibility_refreshScreenReaderBufferField"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

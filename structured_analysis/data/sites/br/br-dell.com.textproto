@@ -1,0 +1,193 @@
+site_examples {
+  url: "https://www.dell.com"
+  is_structured: true
+  locale {
+    country: "BR"
+    language: "pt"
+  }
+  sequences {
+    fields {
+      name: "DataModel-ShippingContact-TaxCategory-|DataModel-ShippingContact-TaxCategory-"
+      label: "Selecione o perfil do cliente"
+      label_translated: "Select customer profile"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DataModel-ShippingContact-TaxIdPrimary|DataModel-ShippingContact-TaxIdPrimary"
+      label: "CPF"
+      label_translated: "CPF"
+      example: "apenas números"
+      example_translated: "only numbers"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DataModel-ShippingContact-FirstName|DataModel-ShippingContact-FirstName"
+      label: "Nome"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "DataModel-ShippingContact-LastName|DataModel-ShippingContact-LastName"
+      label: "Sobrenome"
+      label_translated: "Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "DataModel-ShippingContact-PostalCode|DataModel-ShippingContact-PostalCode"
+      label: "CEP"
+      label_translated: "Zip code"
+      example: "apenas números"
+      example_translated: "only numbers"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "DataModel-ShippingContact-Line1|DataModel-ShippingContact-Line1"
+      label: "Endereço"
+      label_translated: "Street name"
+      label_comment: "Read only, derived from CEP/Zip code."
+      control_type: INPUT
+      concepts: "street-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "DataModel-ShippingContact-Line2|DataModel-ShippingContact-Line2"
+      label: "Número"
+      label_translated: "Number"
+      control_type: INPUT
+      concepts: "house-number"
+      section: ADDRESS
+    }
+    fields {
+      name: "DataModel-ShippingContact-Line4|DataModel-ShippingContact-Line4"
+      label: "Complemento (opcional). Digite o apto, n° do bloco, condomínio"
+      label_translated: "Add-on (optional). Enter the apartment, block number, condominium"
+      control_type: INPUT
+      concepts: "address-overflow"
+      section: ADDRESS
+    }
+    fields {
+      name: "DataModel-ShippingContact-Line3|DataModel-ShippingContact-Line3"
+      label: "Bairro"
+      label_translated: "Neighborhood"
+      label_comment: "Read only, derived from CEP/Zip code."
+      control_type: INPUT
+      concepts: "address-level3"
+      section: ADDRESS
+    }
+    fields {
+      name: "DataModel-ShippingContact-City|DataModel-ShippingContact-City"
+      label: "Cidade"
+      label_translated: "City"
+      label_comment: "Read only, derived from CEP/Zip code."
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "DataModel-ShippingContact-State|DataModel-ShippingContact-State"
+      label: "Estado"
+      label_translated: "state"
+      label_comment: "Read only, derived from CEP/Zip code."
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "DataModel-ShippingContact-Phone-AreaCode|DataModel-ShippingContact-Phone-AreaCode"
+      label: "Código de área"
+      label_translated: "Area code"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "DataModel-ShippingContact-Phone-PhoneNumber|DataModel-ShippingContact-Phone-PhoneNumber"
+      label: "Número de telefone"
+      label_translated: "Phone number"
+      example: "apenas números"
+      example_translated: "only numbers"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "DataModel-ShippingContact-AlternatePhone-AreaCode|DataModel-ShippingContact-AlternatePhone-AreaCode"
+      label: "Código de área"
+      label_translated: "Area code"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "DataModel-ShippingContact-AlternatePhone-PhoneNumber|DataModel-ShippingContact-AlternatePhone-PhoneNumber"
+      label: "Número de telefone"
+      label_translated: "Phone number"
+      example: "apenas números"
+      example_translated: "only numbers"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "DataModel-ShippingContact-Email|DataModel-ShippingContact-Email"
+      label: "E-mail"
+      label_translated: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Sim! Eu quero receber cupons de desconto, lançamentos e ofertas exclusivas da Dell por e-mail."
+      label_translated: "Yea! I want to receive exclusive Dell discount coupons, releases and offers via email."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|repeatSelect"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|repeatSelect"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "dfsModel.Content.SubTotalLabel"
+      label_translated: "dfsModel.Content.SubTotalLabel"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shopCalculator|"
+      label: "dfsModel.Content.SliderLabel"
+      label_translated: "dfsModel.Content.SliderLabel"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mobile-dropdown-nav|"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

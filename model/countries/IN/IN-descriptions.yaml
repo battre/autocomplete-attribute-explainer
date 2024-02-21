@@ -1,0 +1,15 @@
+short-descriptions:
+  given-name: First name
+  additional-name: Middle name
+  family-name: Last name
+  admin-area1: State
+  country: 2-letter country code (e.g. "IN")
+  country-name: Name of a country (e.g. "India")
+  locality1: City
+  locality2: Locality, Area, Colony, Society, Sector, Street, ...
+  building-location: Building name, House no., Apartment, Flat, ...
+  postal-code: PIN code
+  street-address-alternative-1: "Artificial concept, not to be used in HTML"
+  street-address-alternative-2: "Artificial concept, not to be used in HTML"
+  street-address-alternative-3: "Artificial concept, not to be used in HTML"
+  street-address-alternative-4: "Artificial concept, not to be used in HTML"

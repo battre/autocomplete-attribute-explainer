@@ -1,0 +1,289 @@
+site_examples {
+  url: "https://www.carocuore.com"
+  is_structured: true
+  locale {
+    country: "AR"
+    language: "es"
+  }
+  sequences {
+    fields {
+      name: "|form_key"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "G51MO31|firstname"
+      label: "Nombre"
+      label_translated: "Name"
+      example: "Ej. Juan"
+      example_translated: "John"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "WIGE9CU|lastname"
+      label: "Apellidos"
+      label_translated: "Surnames"
+      example: "Ej. Perez"
+      example_translated: "eg Perez"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "EHITYIH|vat_id"
+      label: "Documento"
+      label_translated: "Document"
+      example: "Ej. 13988399"
+      example_translated: "eg 13988399"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "PUFVK5Q|telephone"
+      label: "Número de teléfono"
+      label_translated: "Phone number"
+      example: "Ej. 113829928"
+      example_translated: "eg 113829928"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "MV2SDIF|street[0]"
+      label: "Calle"
+      label_translated: "Street"
+      example: "Ej. Costa Rica"
+      example_translated: "Ex. Costa Rica"
+      control_type: INPUT
+      concepts: "street-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "HEAD6MC|street[1]"
+      label: "Número"
+      label_translated: "Number"
+      example: "Ej. 999"
+      example_translated: "ex. 999"
+      control_type: INPUT
+      concepts: "house-number"
+      section: ADDRESS
+    }
+    fields {
+      name: "CJ60Y3D|street[2]"
+      label: "Piso/Dpto."
+      label_translated: "Floor/Apartment."
+      example: "Ej. 7G"
+      example_translated: "eg 7G"
+      control_type: INPUT
+      # concepts: "floor"
+      # concepts: "apartment"
+      concepts: "location-in-building"
+      section: ADDRESS
+    }
+    fields {
+      name: "H6B6J8R|street[3]"
+      label: "Entre Calles (Opcional)"
+      label_translated: "Between Streets (Optional)"
+      example: "Ej. Lavander y Gurion"
+      example_translated: "Ex. Lavender and Gurion"
+      control_type: INPUT
+      concepts: "between-streets"
+      section: ADDRESS
+    }
+    fields {
+      name: "GEJOK2D|country_id"
+      label: "País"
+      label_translated: "Country"
+      example: "País example"
+      example_translated: "example country"
+      control_type: SELECT
+      concepts: "country-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "D568G7C|region_id"
+      label: "Provincia"
+      label_translated: "Province"
+      example: "Provincia example"
+      example_translated: "Province example"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "PMKNAYE|region"
+      label: "Provincia"
+      label_translated: "Province"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "Q505KSX|city"
+      label: "Ciudad"
+      label_translated: "City"
+      example: "Ej. Capital Federal"
+      example_translated: "Ex. Federal Capital"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "P7VJ2CX|custom_attributes[city_id]"
+      label: "Ciudad"
+      label_translated: "City"
+      example: "Ej. Capital Federal"
+      example_translated: "Ex. Federal Capital"
+      control_type: SELECT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "BV8TH93|custom_attributes[district]"
+      label: "Barrio"
+      label_translated: "Neighborhood"
+      example: "Ej. Palermo"
+      example_translated: "Palermo"
+      control_type: INPUT
+      concepts: "address-level3"
+      section: ADDRESS
+    }
+    fields {
+      name: "HB7YIKU|custom_attributes[district_id]"
+      label: "Barrio"
+      label_translated: "Neighborhood"
+      example: "Ej. Palermo"
+      example_translated: "Palermo"
+      control_type: SELECT
+      concepts: "address-level3"
+      section: ADDRESS
+    }
+    fields {
+      name: "OB6OOP9|postcode"
+      label: "Código Postal"
+      label_translated: "Postal Code"
+      example: "Ej. 1425"
+      example_translated: "Ex. 1425"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "shipping-save-in-address-book|"
+      label: "Guardar en libreta de direcciones"
+      label_translated: "Save to address book"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      name: "|ko_unique_2"
+      label: "Retiro Retiro en sucursal"
+      label_translated: "Withdrawal Withdrawal at branch"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "|ko_unique_3"
+      label: "Andreani - Estandar Envío a Domicilio"
+      label_translated: "Andreani - Standard Home Delivery"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|gift_order"
+      label: "Seamos consumidores conscientes. Reducí tus deshechos y accedé al pack de regalo solo si es necesari"
+      label_translated: "Let&#39;s be conscious consumers. Reduce your waste and access the gift pack only if necessary"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|gift_bag_qty"
+      label: "¿Cuántas bolsas necesitás?"
+      label_translated: "How many bags do you need?"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|form_key"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|captcha_form_id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "discount-code|discount_code"
+      label: "Código"
+      label_translated: "Code"
+      example: "Código"
+      example_translated: "Code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|captcha_form_id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "giftcard-code|giftcard_code"
+      label: "Código"
+      label_translated: "Code"
+      example: "Código"
+      example_translated: "Code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "customer-email|username"
+      label: "Correo Electrónico"
+      label_translated: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: LOGIN
+    }
+    fields {
+      name: "pass|password"
+      label: "Contraseña"
+      label_translated: "Password"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: LOGIN
+    }
+    fields {
+      name: "|captcha_form_id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|context"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

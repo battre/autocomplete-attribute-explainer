@@ -1,0 +1,202 @@
+site_examples {
+  url: "https://www.midea.cn"
+  is_structured: false
+  locale {
+    country: "CN"
+    language: "zh"
+  }
+  sequences {
+    fields {
+      name: "keyword|keyword"
+      example: "水亮悦香IH电饭煲新品上市 券后低至469"
+      example_translated: "Shuiliang Yuexiang IH rice cooker new product launch coupons as low as 469"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|default_link"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 2"
+    }
+    fields {
+      name: "|"
+      label: "2699.00 1699.00 官方正品"
+      label_translated: "2699.00 1699.00 official authentic"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 3"
+    }
+    fields {
+      name: "|"
+      label: "请输入兑换码"
+      label_translated: "Please enter the redemption code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 3"
+    }
+    fields {
+      name: "|"
+      label: "请输入礼品卡卡密（卡密不区分大小写）"
+      label_translated: "Please enter the password of the gift card (the password is not case sensitive)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 3"
+    }
+    fields {
+      name: "|"
+      label: "请输入礼品卡卡密（卡密不区分大小写）"
+      label_translated: "Please enter the password of the gift card (the password is not case sensitive)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 3"
+    }
+    fields {
+      name: "|"
+      label: "请输入礼品卡卡密（卡密不区分大小写）"
+      label_translated: "Please enter the password of the gift card (the password is not case sensitive)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 3"
+    }
+    fields {
+      name: "|"
+      label: "请输入礼品卡卡密（卡密不区分大小写）"
+      label_translated: "Please enter the password of the gift card (the password is not case sensitive)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 3"
+    }
+    fields {
+      name: "|"
+      label: "买家留言(请勿填写和发票、支付相关信息)"
+      label_translated: "Buyer&#39;s message (do not fill in and invoice, payment related information)"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 3"
+    }
+    fields {
+      name: "custom control"
+      control_type: CUSTOM
+      concepts: "address-level1"
+      section: ADDRESS
+      label: "请选择省"
+      label_translated: "Please select a province"
+    }
+    fields {
+      name: "custom control"
+      control_type: CUSTOM
+      concepts: "address-level2"
+      section: ADDRESS
+      label: "请选择市"
+      label_translated: "Please select a city"
+    }
+    fields {
+      name: "custom control"
+      control_type: CUSTOM
+      concepts: "address-level3"
+      section: ADDRESS
+      label: "请选择区县"
+      label_translated: "Please select a district"
+    }
+    fields {
+      name: "|input_20"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 2"
+    }
+    fields {
+      name: "|input_5"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 2"
+    }
+    fields {
+      name: "|input_5"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 2"
+    }
+    fields {
+      name: "address|"
+      label: "详细地址："
+      label_translated: "Address:"
+      example: "路名、或街道名，门牌号"
+      example_translated: "road name, or street name, house number"
+      control_type: TEXTAREA
+      concepts: "street-address"
+      section: OTHER
+      html_comment: "Form 3"
+    }
+    fields {
+      name: "contact|"
+      label: "联系人："
+      label_translated: "Contact:"
+      example: "收货人姓名"
+      example_translated: "Consignee name"
+      control_type: INPUT
+      concepts: "name"
+      section: NAME
+      html_comment: "Form 3"
+    }
+    fields {
+      name: "tel|"
+      label: "手机号码："
+      label_translated: "cellphone number:"
+      example: "11位手机号码"
+      example_translated: "11-digit mobile phone number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 3"
+    }
+    fields {
+      name: "recvAddress|"
+      label: "详细地址："
+      label_translated: "Address:"
+      example: "路名、或街道名，门牌号"
+      example_translated: "road name, or street name, house number"
+      control_type: TEXTAREA
+      concepts: "street-address"
+      section: ADDRESS
+      html_comment: "Form 3"
+    }
+    fields {
+      name: "recvContact|"
+      label: "联系人："
+      label_translated: "Contact:"
+      example: "收货人姓名"
+      example_translated: "Consignee name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 3"
+    }
+    fields {
+      name: "recvTel|"
+      label: "手机号码："
+      label_translated: "cellphone number:"
+      example: "11位手机号码"
+      example_translated: "11-digit mobile phone number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 3"
+    }
+  }
+}
+

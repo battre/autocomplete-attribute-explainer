@@ -1,0 +1,204 @@
+site_examples {
+  url: "https://www.bedbathandbeyond.ca"
+  is_structured: false
+  locale {
+    country: "CA"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "|campaign_id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|device_type"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|campaign_label"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|buy_buy_optin"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|bed_bath_optin"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bx-element-1701272-Y6oMohj-input|email"
+      label: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bx-element-1701272-hxpVxso-input|zip"
+      label: "Postal Code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "bx-element-1701272-nOYMrOC-input|bed_bath_optin_check"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bx-element-1701272-1ACQwDm-input|buy_buy_optin_check"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bx-element-1701272-TQGAgMl-input|validate_checkboxes"
+      label: "Invisible validation"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|carb-trap"
+      label: "Special offer!Get 20% Offany single item.*EmailPlease enter abovePlease enter above*Offer available"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "carb-trap"
+      section: OTHER
+    }
+    fields {
+      name: "|campaign_id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|campaign_id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|campaign_id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "searchRegistry-text|q"
+      label: "First Name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "checkbox-1|checkbox-1"
+      label: "Order includes gift(s). The packing slip included with your order will not display prices."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "firstName|firstName"
+      label: "First Name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "lastName|lastName"
+      label: "Last Name"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "company|company"
+      label: "Company (Optional)"
+      control_type: INPUT
+      concepts: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingaddressLine1|addressLine1"
+      label: "Street Address"
+      control_type: INPUT
+      concepts: "address-line1"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "apartment|apartment"
+      label: "Apt/Suite/Floor (Optional)"
+      control_type: INPUT
+      concepts: "address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "city|city"
+      label: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "|province"
+      label: "State"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "zip|zip"
+      label: "Zip Code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "defaultUseAsBillingAddress|defaultUseAsBillingAddress"
+      label: "Use as billing address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "contactandoffer-email|email"
+      label: "∗Email for Order Tracking"
+      example: "Email for Order Tracking"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "new-password"
+      section: OTHER
+    }
+    fields {
+      name: "contactandoffer-mobilePh|mobilePh"
+      label: "∗Phone for Delivery Contact"
+      example: "Phone for Delivery Contact"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "on"
+      section: PHONE
+    }
+    fields {
+      name: "checkbox-3|checkbox-3"
+      label: "Get text alerts for your order on your mobile"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

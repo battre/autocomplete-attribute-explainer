@@ -1,0 +1,196 @@
+site_examples {
+  url: "https://www.homebase.co.uk"
+  is_structured: false
+  locale {
+    country: "GB"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "delivery-addressee|deliveryAddress.addressee"
+      label: "Full Name"
+      control_type: INPUT
+      concepts: "name"
+      section: NAME
+    }
+    fields {
+      name: "delivery-post-zip-code|deliveryAddress.postCode"
+      label: "Post Code"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "on"
+      section: ADDRESS
+    }
+    fields {
+      name: "pcaSelectAH71|pcaSelectAH71"
+      label: "Select Address"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "delivery-company-name|deliveryAddress.companyName"
+      label: "Company Name"
+      control_type: INPUT
+      concepts: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "delivery-name-number|deliveryAddress.nameNumber"
+      label: "House Name/Number"
+      control_type: INPUT
+      concepts: "house-number"
+      concepts: "building"
+      section: ADDRESS
+    }
+    fields {
+      name: "delivery-street-name|deliveryAddress.streetName"
+      label: "Address 1"
+      control_type: INPUT
+      concepts: "street-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "delivery-address-line-2|deliveryAddress.addressLine2"
+      label: "Address 2"
+      control_type: INPUT
+      concepts: "address-overflow"
+      concepts_comment: "'address-overflow' because a structured house-name/street-name pair "
+        "is combined with address line 2."
+      section: ADDRESS
+    }
+    fields {
+      name: "delivery-town-city|deliveryAddress.townCity"
+      label: "Town/City"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "delivery-state-province|deliveryAddress.county"
+      label: "County"
+      control_type: INPUT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "InputField--deliveryAddress.contactNumber|deliveryAddress.contactNumber"
+      label: "Mobile phone number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "tel"
+      section: PHONE
+    }
+    fields {
+      name: "DeliveryOptionListOptionType-0-0|0"
+      label: "Standard DeliveryDelivered by Thursday 14 July£6.00"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DeliveryOptionListOptionType-0-1|0"
+      label: "Named Day Delivery"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|DeliveryOptionNamedDayRadio-0-1"
+      label: "Tue, 12 July£6.00"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|DeliveryOptionNamedDayRadio-0-1"
+      label: "Wed, 13 July£6.00"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|DeliveryOptionNamedDayRadio-0-1"
+      label: "Thu, 14 July£6.00"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|DeliveryOptionNamedDayRadio-0-1"
+      label: "Fri, 15 July£6.00"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|DeliveryOptionNamedDayRadio-0-1"
+      label: "Sat, 16 July£6.00"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "pay-with-card|paymentOption"
+      label: "Credit/Debit Card"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "credit-card-num|paymentCard.creditCardNumber"
+      label: "Card Number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "cc-number"
+      section: PAYMENT
+    }
+    fields {
+      name: "credit-card-name-on-card|paymentCard.nameOnCard"
+      label: "Name on card"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "cc-name"
+      section: PAYMENT
+    }
+    fields {
+      name: "expiration-month|paymentCard.expirationMonth"
+      label: "Expiry Date"
+      control_type: SELECT
+      concepts: "unset"
+      autocomplete_attribute: "cc-exp-month"
+      section: PAYMENT
+    }
+    fields {
+      name: "expiration-year|paymentCard.expirationYear"
+      label: "Expiry Year"
+      control_type: SELECT
+      concepts: "unset"
+      autocomplete_attribute: "cc-exp-year"
+      section: PAYMENT
+    }
+    fields {
+      name: "credit-card-cv2|paymentCard.cv2"
+      label: "Security Code (CV2)"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "cc-csc"
+      section: PAYMENT
+    }
+    fields {
+      name: "use-delivery-address-as-cardholder-address|"
+      label: "Use my delivery address as my cardholder address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "AcknowledgedMessageField__input--hasSiteTandCConsent|"
+      label: "I have read and accept the Terms and Conditions"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

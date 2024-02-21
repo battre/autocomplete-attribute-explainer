@@ -1,0 +1,294 @@
+site_examples {
+  url: "https://www.appliancesonline.com.au"
+  is_structured: true
+  locale {
+    country: "AU"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "mat-input-0|"
+      label: "Welcome back, ! Looks like you\'ve been here before, please"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "email"
+      section: OTHER
+    }
+    fields {
+      name: "mat-input-1|"
+      label: "Forgot?"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "current-password"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Welcome back, ! Looks like you\'ve been here before, please Please provide your billing address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mat-input-2|"
+      label: "First name *"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "mat-input-3|"
+      label: "Last name *"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "mat-input-4|"
+      label: "Company name Optional"
+      control_type: INPUT
+      concepts: "organization"
+      autocomplete_attribute: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "mat-input-6|"
+      label: "Address *"
+      control_type: INPUT
+      concepts: "street-address"
+      autocomplete_attribute: "non-autofillable-address"
+      section: ADDRESS
+    }
+    fields {
+      name: "mat-input-7|"
+      label: "Suburb / Postcode"
+      control_type: INPUT
+      concepts: "address-level2"
+      concepts: "postal-code"
+      autocomplete_attribute: "na"
+      section: ADDRESS
+    }
+    fields {
+      name: "mat-input-5|"
+      label: "Phone number *"
+      control_type: INPUT
+      concepts: "tel"
+      autocomplete_attribute: "tel"
+      section: PHONE
+    }
+    fields {
+      hide: true
+      name: "|"
+      label: "Welcome back, ! Looks like you\'ve been here before, please Please provide your billing address"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "mat-input-13|"
+      label: "First name *"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "given-name"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "mat-input-14|"
+      label: "Last name *"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "family-name"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "mat-input-15|"
+      label: "Company name Optional"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "organization"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "mat-input-17|"
+      label: "Address *"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "non-autofillable-address"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "mat-input-18|"
+      label: "Suburb / Postcode"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "na"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "mat-input-16|"
+      label: "Phone number *"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "tel"
+      section: ADDRESS
+    }
+    fields {
+      name: "|radioNameDeliveryTime"
+      label: "Thursday, 14 July 2022"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "|radioNamePaymentMethods"
+      label: "Step 1 Your Delivery Details Please provide your billing addressStep 2 Select a Delivery Date Step 3"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "mat-input-8|"
+      label: "Credit card number *"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "cc-number"
+      section: PAYMENT
+    }
+    fields {
+      name: "mat-input-9|"
+      label: "Name on card *"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "cc-name"
+      section: PAYMENT
+    }
+    fields {
+      name: "mat-input-10|"
+      label: "Month *"
+      control_type: SELECT
+      concepts: "unset"
+      autocomplete_attribute: "cc-exp-month"
+      section: PAYMENT
+    }
+    fields {
+      name: "mat-input-11|"
+      label: "Year *"
+      control_type: SELECT
+      concepts: "unset"
+      autocomplete_attribute: "cc-exp-year"
+      section: PAYMENT
+    }
+    fields {
+      name: "mat-input-12|"
+      label: "CVV *"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "cc-csc"
+      section: PAYMENT
+    }
+    fields {
+      name: "|radioNamePaymentMethods"
+      label: "Step 1 Your Delivery Details Please provide your billing addressStep 2 Select a Delivery Date Step 3"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "|radioNamePaymentMethods"
+      label: "Step 1 Your Delivery Details Please provide your billing addressStep 2 Select a Delivery Date Step 3"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "|radioNamePaymentMethods"
+      label: "Step 1 Your Delivery Details Please provide your billing addressStep 2 Select a Delivery Date Step 3"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "|radioNamePaymentMethods"
+      label: "Step 1 Your Delivery Details Please provide your billing addressStep 2 Select a Delivery Date Step 3"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "|radioNamePaymentMethods"
+      label: "Step 1 Your Delivery Details Please provide your billing addressStep 2 Select a Delivery Date Step 3"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "antiFraudIovationBlackBox|antiFraudIovationBlackBox"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "newsletter-name|name"
+      label: "Name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "newsletter-email|email"
+      label: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "newsletter-postcode|postcode"
+      label: "Postcode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "antiFraudIovationBlackBox|antiFraudIovationBlackBox"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ele_488YaiEsnUV|visitor[firstname]"
+      label: "First Name"
+      example: "First Name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "on"
+      section: OTHER
+    }
+    fields {
+      name: "ele_QG4s3RpVeWx|visitor[email]"
+      label: "Email"
+      example: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "on"
+      section: OTHER
+    }
+    fields {
+      name: "ele_utVPLl0QjIC|custom_fields[FPWGrv_2Q]"
+      label: "Postcode"
+      example: "Postcode"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "on"
+      section: OTHER
+    }
+  }
+}
+

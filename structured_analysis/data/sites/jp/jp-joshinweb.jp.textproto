@@ -1,0 +1,337 @@
+site_examples {
+  url: "https://joshinweb.jp"
+  is_structured: true
+  locale {
+    country: "JP"
+    language: "ja"
+  }
+  sequences {
+    fields {
+      name: "|KEYWORD"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|KEY"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|KEY_M"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ShopSelect|QS"
+      label: "新規会員登録無料ログイン"
+      label_translated: "New member registration free login"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "suggest_input|QK"
+      label: "キーワード・商品名で探す"
+      label_translated: "Search by keyword or product name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "suggest_category|category_id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|REQUEST_CODE"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|KEYWORD"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|KEY"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|KEY_M"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|TOKEN"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|penparam"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CUT_NAME1"
+      label: "姓"
+      label_translated: "Family name"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "|CUT_NAME2"
+      label: "名"
+      label_translated: "Given name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "|CUT_KANA_NAME1"
+      label: "セイ"
+      label_translated: "Family name (phonetic)"
+      control_type: INPUT
+      concepts: "phonetic-family-name"
+      section: NAME
+    }
+    fields {
+      name: "|CUT_KANA_NAME2"
+      label: "メイ"
+      label_translated: "Given name (phonetic)"
+      control_type: INPUT
+      concepts: "phonetic-given-name"
+      section: NAME
+    }
+    fields {
+      name: "|CUT_POINTCARD_NO"
+      label: "ジョーシンカード番号"
+      label_translated: "joshin card number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CUT_MAIL"
+      label: "メールアドレス必須"
+      label_translated: "Email Address Required"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CUT_MAIL_CHK"
+      label: "※入力間違い防止のため、再度入力をお願いします。"
+      label_translated: "*Please enter again to prevent input errors."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CUT_PWD"
+      label: "パスワード必須"
+      label_translated: "Password Required"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CUT_PWD_CHK"
+      label: "※入力間違い防止のため、再度入力をお願いします。"
+      label_translated: "*Please enter again to prevent input errors."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CUT_ZIP1"
+      label: "郵便番号必須"
+      label_translated: "postal code required"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "|CUT_ZIP2"
+      label: "郵便番号必須"
+      label_translated: "postal code required"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "|SEARCH_BTN"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CU_ADDRESS_CODE"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CUT_ADDRESS_CODE"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CUT_ADDRESS1"
+      label: "都道府県必須"
+      label_translated: "Prefecture Required"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "|CUT_ADDRESS2"
+      label: "市区郡町村 丁目必須"
+      label_translated: "City Chome required"
+      control_type: INPUT
+      concepts: "address-level2"
+      low_certainty: true
+      section: ADDRESS
+    }
+    fields {
+      name: "|CUT_ADDRESS3"
+      label: "番地等必須"
+      label_translated: "Address etc. Required"
+      control_type: INPUT
+      concepts: "building-location"
+      concepts: "building-and-location-in-building"
+      section: ADDRESS
+    }
+    fields {
+      name: "|CUT_TEL1"
+      label: "そのため通話が可能な電話番号をご入力ください。"
+      label_translated: "Please enter a phone number where we can call you."
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|CUT_TEL2"
+      label: "電話番号必須"
+      label_translated: "Phone numberrequired"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|CUT_TEL3"
+      label: "電話番号必須"
+      label_translated: "Phone numberrequired"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|CUT_BIRTHDAY_1"
+      label: "西暦"
+      label_translated: "AD"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CUT_BIRTHDAY_2"
+      label: "生年月日必須"
+      label_translated: "Date of birthrequired"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CUT_BIRTHDAY_3"
+      label: "生年月日必須"
+      label_translated: "Date of birthrequired"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CUT_SEX"
+      label: "男性"
+      label_translated: "male"
+      control_type: RADIO
+      concepts: "honorific-prefix"
+      section: NAME
+    }
+    fields {
+      name: "|CUT_SEX"
+      label: "女性"
+      label_translated: "Woman"
+      control_type: RADIO
+      concepts: "honorific-prefix"
+      section: NAME
+    }
+    fields {
+      name: "|CUT_AGREEMENT"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|ETB"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|ETN_VIEW"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|ETN"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|DT"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CUT"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CUT_REFERE"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|SSTID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

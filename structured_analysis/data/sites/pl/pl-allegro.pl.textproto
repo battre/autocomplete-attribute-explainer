@@ -1,0 +1,216 @@
+site_examples {
+  url: "https://allegro.pl"
+  is_structured: false
+  locale {
+    country: "PL"
+    language: "pl"
+  }
+  sequences {
+    fields {
+      name: "companyForm|formType"
+      label: "FirmaKupuję na potrzeby działalności gospodarczej"
+      label_translated: "Company I buy for business purposes"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "personalForm|formType"
+      label: "Osoba prywatnaKupuję na potrzeby prywatne"
+      label_translated: "Private person I am buying for private purposes"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address.firstName|address.firstName"
+      label: "Imię"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "address.lastName|address.lastName"
+      label: "Nazwisko"
+      label_translated: "Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "address.taxId|address.taxId"
+      label: "NIP"
+      label_translated: "Tax ID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address.company|address.company"
+      label: "Firma"
+      label_translated: "Business"
+      control_type: INPUT
+      concepts: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "address.addressLine|address.addressLine"
+      label: "Ulica i numer"
+      label_translated: "Street and number"
+      control_type: INPUT
+      concepts: "street-address"
+      section: ADDRESS
+    }
+    fields {
+      name: "address.zipCode|address.zipCode"
+      label: "Kod pocztowy"
+      label_translated: "ZIP code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "address.city|address.city"
+      label: "Miejscowość"
+      label_translated: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "address.countryCode|address.countryCode"
+      label: "Kraj"
+      label_translated: "Country"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "m-soap-0-sr|m-soap-group-0"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "m-soap-0|"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "m-soap-1-sr|m-soap-group-0"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "m-soap-1|"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "addressBook--emgPDlkTmOAAiMmXq-2Ew==-firstName|firstName"
+      label: "Imię"
+      label_translated: "Name"
+      example: "np. Jan"
+      example_translated: "e.g. Jan"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "addressBook--emgPDlkTmOAAiMmXq-2Ew==-lastName|lastName"
+      label: "Nazwisko"
+      label_translated: "Last name"
+      example: "np. Kowalski-Nowak"
+      example_translated: "for example, Kowalski-Nowak"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "addressBook--emgPDlkTmOAAiMmXq-2Ew==-company|company"
+      label: "Firma"
+      label_translated: "Business"
+      example: "np. Firma sp. z o.o."
+      example_translated: "eg Firma sp. z o. o"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "addressBook-phoneNumberWithPrefix.prefix|phoneNumberWithPrefix.prefix"
+      label: "Kierunkowy"
+      label_translated: "Directional"
+      control_type: SELECT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "addressBook--emgPDlkTmOAAiMmXq-2Ew==-phoneNumberWithPrefix.number|phoneNumberWithPrefix.number"
+      label: "Telefon komórkowy"
+      label_translated: "Mobile phone"
+      example: "np. 000000000"
+      example_translated: "e.g. 000000000"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "on"
+      section: PHONE
+    }
+    fields {
+      name: "addressBook-countryCode|countryCode"
+      label: "Kraj"
+      label_translated: "Country"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "addressBook--emgPDlkTmOAAiMmXq-2Ew==-addressLine|addressLine"
+      label: "Ulica i numer"
+      label_translated: "Street and number"
+      example: "np. Przemysłowa 10/10"
+      example_translated: "eg Przemysłowa 10/10"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "on"
+      section: OTHER
+    }
+    fields {
+      name: "addressBook--emgPDlkTmOAAiMmXq-2Ew==-zipCode|zipCode"
+      label: "Kod pocztowy"
+      label_translated: "ZIP code"
+      example: "np. 00-000"
+      example_translated: "e.g. 00-000"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "on"
+      section: OTHER
+    }
+    fields {
+      name: "addressBook--emgPDlkTmOAAiMmXq-2Ew==-city|city"
+      label: "Miejscowość"
+      label_translated: "City"
+      example: "np. Warszawa"
+      example_translated: "for example, Warsaw"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "on"
+      section: OTHER
+    }
+    fields {
+      name: "field-16|"
+      label: "Twój numer telefonu"
+      label_translated: "your phone number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

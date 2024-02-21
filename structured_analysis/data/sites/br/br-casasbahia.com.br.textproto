@@ -1,0 +1,81 @@
+site_examples {
+  url: "https://www.casasbahia.com.br"
+  is_structured: true
+  locale {
+    country: "BR"
+    language: "pt"
+  }
+  sequences {
+    fields {
+      name: "c9be2fb0-042c-11ed-b94f-3d47c4542fe9|"
+      label: "CEP"
+      label_translated: "Postal code"
+      example: "00000-000"
+      example_translated: "00000-000"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "c9c582b0-042c-11ed-b94f-3d47c4542fe9|number"
+      label: "Número *"
+      label_comment: "There is not field for the street name, city, state, ... "
+        "because they are derived from the CEP/ZIP code."
+      label_translated: "House number"
+      example: "Ex: 123"
+      example_translated: "Ex: 123"
+      control_type: INPUT
+      concepts: "house-number"
+      section: ADDRESS
+    }
+    fields {
+      name: "c9c582b1-042c-11ed-b94f-3d47c4542fe9|complement"
+      label: "Complemento (opcional)"
+      label_translated: "Complement (optional)"
+      example: "Ex: Apto 123"
+      example_translated: "Ex: Apt 123"
+      control_type: INPUT
+      concepts: "address-overflow"
+      section: ADDRESS
+    }
+    fields {
+      name: "c9c582b2-042c-11ed-b94f-3d47c4542fe9|reference"
+      label: "Ponto de referência *"
+      label_translated: "Refrence point"
+      example: "Nome de lugar ou descrição de fachada perto do endereço"
+      example_translated: "Place name or facade description near the address"
+      control_type: TEXTAREA
+      concepts: "landmark"
+      section: ADDRESS
+    }
+    fields {
+      name: "c9c582b3-042c-11ed-b94f-3d47c4542fe9|name"
+      label: "Tipo de endereço"
+      label_translated: "Type of address"
+      example: "Ex: Minha Casa"
+      example_translated: "Eg: My House"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "c9c582b4-042c-11ed-b94f-3d47c4542fe9|recivier"
+      label: "Destinatário"
+      label_translated: "Recipient"
+      example: "Nome e sobrenome da pessoa que irá receber"
+      example_translated: "First and last name of the person who will receive"
+      control_type: TEXTAREA
+      concepts: "name"
+      section: NAME
+    }
+    fields {
+      name: "|"
+      label: "quantidade seleção"
+      label_translated: "selection quantity"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

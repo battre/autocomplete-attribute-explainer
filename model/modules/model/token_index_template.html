@@ -1,0 +1,44 @@
+{% set expanded = [] %}
+{% macro RenderConceptOverview(c, parent) %}
+<div class="concept">
+  <div class="concept-id">
+    {% if not c.is_atomic_token() and c.is_synthesized -%}<i>(synthesized)</i>{%- endif %}
+    {% if parent and parent.is_synthesized -%}<i>(in synthesized)</i>{%- endif %}
+    <a href="#{{c.id}}">{{c.id}}</a>
+    {%- if c.id in country_data.get('token-index-suffix', {}) %}
+    ({{", ".join(country_data['token-index-suffix'][c.id])}})
+    {%- endif -%}
+    {%- if c.id in c.model.short_descriptions %}
+    - {{c.model.short_descriptions[c.id].get("en")}}
+      {% for lang in c.model.short_descriptions[c.id].locales() %}
+        {% if lang != "en" %}
+        | {{c.model.short_descriptions[c.id].get(lang)}}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </div>
+  {% if not c.is_atomic_token() and c.children and not c.id in expanded %}
+    {% do expanded.append(c.id) %}
+    {% if not c.is_atomic_token() %}
+      <div class="concept-content">
+        {% for child in c.children %}
+          {{RenderConceptOverview(c.model.concepts[child], c)}}
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endif %}
+</div>
+{% endmacro %}
+
+
+<div class="mdl-card mdl-shadow--2dp" style="width: 95%; margin: 8px">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Overview of concepts</h2>
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    {% for c in model.root_concepts %}
+    {{RenderConceptOverview(model.concepts[c], None)}}
+    <div>&nbsp;</div>
+    {% endfor %}
+  </div>
+</div>

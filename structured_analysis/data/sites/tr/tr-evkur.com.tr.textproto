@@ -1,0 +1,847 @@
+site_examples {
+  url: "https://www.evkur.com.tr/"
+  is_structured: true
+  locale {
+    country: "TR"
+    language: "tr"
+  }
+  sequences {
+    fields {
+      name: "languageId|"
+      label: "window.addEventListener(\"load\",function(){\nvar ktgryIsm=invTagManagerParams.ProductCategoryName;\nvar a = \"<style>.eklenenKutu{display:table;width:99.8%;height:auto;padding:2%;border:solid 1px #ed2124;margin:3px;}.ekleneniIcerik{display:table-cell;text-align:center;width:100%;height:auto;vertical-align:middle;color:#ed2124;font-size:18px;font-weight:bold;font-family:Proxima}@media screen and (max-width:900px){.eklenenKutu{max-width:90%;width:55%;margin:5px auto;}.ekleneniIcerik{font-size:.18px;}}</style><div class=\\\"eklenenKutu\\\"><div class=\\\"ekleneniIcerik\\\">Bu ürün için kargo ile teslimat yapılamamaktadır. Teslimat Evkur tarafından gerçekleştirilecektir.<br\\/>Şubelerimizin hizmet veremediği bölgeleri görmek için lütfen <a href=\'https:\\/\\/www.evkur.com.tr/teslimat-yapilamayan-konumlar\'>tıklayınız.<\\/a> <\\/div><\\/div>\";\nvar b=document.querySelectorAll(\".product-description-text\")[0];\nvar puf =\"<img src=\'https:\\/\\/cdn.evkur.com.tr\\/c\\/Product\\/puffy-yatas-marka_di3b0w.png\' style=\'margin:5px auto;display:block;width:100%;height:auto;\' \\/>\";\nvar ekYtk=\"<div class=\'ytkBlg\'><h3>Evkur Müşterilerine 30 Gün Deneme Fırsatı Sunuyor.</h3>Seçtiğiniz yatağınızda eğer uyku performansınızın iyileşmediğini düşünüyorsanız yatağınızı sorgusuz sualsiz değiştirebilirsiniz.</div>\";\nif(ktgryIsm.includes(\"Puffy\")){\nb.insertAdjacentHTML(\'afterbegin\', puf);\n}\nif(ktgryIsm.includes(\"Mobilya\")){\nb.insertAdjacentHTML(\'afterbegin\', a);\n}\nif(ktgryIsm.includes(\"Yataklar\") & !ktgryIsm.includes(\"Örtü\") & !ktgryIsm.includes(\"Oda\") & !ktgryIsm.includes(\"Şiş\") & !ktgryIsm.includes(\"Kamp\")){\nb.insertAdjacentHTML(\'afterbegin\', ekYtk);\n}\n\n\nif(invTagManagerParams.PageType ==\"product\"){\nvar cmlst=document.querySelectorAll(\".comments\")[0];\nvar tsyci=cmlst;\ncmlst.remove(); \nvar hdfElment=document.querySelectorAll(\".validate.comment-rating-form\")[0];\nhdfElment.before(tsyci); \n}\n\n\n});\nwindow.addEventListener(\"load\",function(){\nif(invTagManagerParams.CategoryId.includes(251)){\n$(\'.product-list-banner .owl-stage\').css({\'display\':\'block\'});\n}\n});\n\nwindow.addEventListener(\"load\",function(){\nif(document.querySelectorAll(\'.price-option\')[0]){\n    var prdPrc=invTagManagerParams.ProductPrice.replace(/,/g,\".\");\n\tvar prdNm=invTagManagerParams.ProductName.replace(/\"/g,\"\");\n\tvar prdTxt=\"<script type=\\\"application\\/ld+json\\\">\\r \\\n    {\\r \\\n      \\\"@context\\\": \\\"https://schema.org\\\",\\r \\\n      \\\"@type\\\": \\\"Product\\\",\\r \\\n\t  \\\"name\\\": \\\" \"+prdNm+\" \\\",\\r \\\n      \\\"offers\\\": {\\r \\\n        \\\"@type\\\": \\\"Offer\\\",\\r \\\n        \\\"price\\\": \\\"\"+prdPrc+\"\\\",\\r \\\n        \\\"priceCurrency\\\": \\\"TRY\\\"\\r \\\n      }\\r \\\n    }\\r \\\n    <\\/script>\\r\";\n\t\n\tdocument.querySelectorAll(\".product-description-text\")[0].innerHTML+=prdTxt;\n\n}\n});"
+      label_translated: "window.addEventListener(&quot;load&quot;,function(){ var ktgryIsm=invTagManagerParams.ProductCategoryName; var a = &quot; <style>.eklenenKutu{display:table;width:99.8%;height:auto;padding:2%;border:solid 1px #ed2124;margin:3px;}.ekleneniIcerik{display:table-cell;text-align:center;width:100%;height:auto;vertical-align:middle;color:#ed2124;font-size:18px;font-weight:bold;font-family:Proxima}@media screen and (max-width:900px){.eklenenKutu{max-width:90%;width:55%;margin:5px auto;}.ekleneniIcerik{font-size:.18px;}}</style><div class=\\\"eklenenKutu\\\"><div class=\\\"ekleneniIcerik\\\"> Shipping is not possible for this product. Delivery will be made by Evkur.<br\\/> Please <a href=\'https:\\/\\/www.evkur.com.tr/teslimat-yapilamayan-konumlar\'>click to see the regions that our branches cannot serve.&lt;\\/a&gt; &lt;\\/div&gt;&lt;\\/div&gt;&quot;; var b=document.querySelectorAll(&quot;.product-description-text&quot;)[0]; var puff =&quot; <img src=\'https:\\/\\/cdn.evkur.com.tr\\/c\\/Product\\/puffy-yatas-marka_di3b0w.png\' style=\'margin:5px auto;display:block;width:100%;height:auto;\' \\/> &quot;; var additionalYtk=&quot;</a><div class=\'ytkBlg\'><h3> Evkur Offers 30 Days Trial Opportunity to Its Customers.</h3> If you think that your sleep performance has not improved in the mattress you have chosen, you can change your mattress without question.</div> &quot;; if(ktgryIsm.includes(&quot;Puffy&quot;)){ b.insertAdjacentHTML(&#39;afterbegin&#39;, puff); } if(ktgryIsm.includes(&quot;Furniture&quot;)){ b.insertAdjacentHTML(&#39;afterbegin&#39;, a); } if(ktgryIsm.includes(&quot;Beds&quot;) &amp; !ktgryIsm.includes(&quot;Cover&quot;) &amp; !ktgryIsm.includes(&quot;Room&quot;) &amp; !ktgryIsm.includes(&quot;Skewer&quot;) &amp; !ktgryIsm.includes(&quot;Camp&quot;) ){ b.insertAdjacentHTML(&#39;afterbegin&#39;, ekYtk); } if(invTagManagerParams.PageType ==&quot;product&quot;){ var cmlst=document.querySelectorAll(&quot;.comments&quot;)[0]; var tsyci=cmlst; cmlst.remove (); var hdfElment=document.querySelectorAll(&quot;.validate.comment-rating-form&quot;)[0]; hdfElment.before(tsyci); } }); window.addEventListener(&quot;load&quot;,function(){ if( invTagManagerParams.CategoryId.includes(251)){ $(&#39;.product-list-banner .owl-stage&#39;).css({&#39;display&#39;:&#39;block&#39;}); } }); window.addEventListener(&quot;load&quot; ,function(){ if(document.querySelectorAll(&#39;.price-option&#39;)[0]){ var prdPrc=invTagManagerParams.ProductPrice.replace(/,/g,&quot;.&quot;); var prdNm=invTagManagerParams.ProductName.replace (/&quot;/g,&quot;&quot;); var prdTxt=&quot; <script type=\\\"application\\/ld+json\\\">\\r \\\n    {\\r \\\n      \\\"@context\\\": \\\"https://schema.org\\\",\\r \\\n      \\\"@type\\\": \\\"Product\\\",\\r \\\n\t  \\\"name\\\": \\\" \"+prdNm+\" \\\",\\r \\\n      \\\"offers\\\": {\\r \\\n        \\\"@type\\\": \\\"Offer\\\",\\r \\\n        \\\"price\\\": \\\"\"+prdPrc+\"\\\",\\r \\\n        \\\"priceCurrency\\\": \\\"TRY\\\"\\r \\\n      }\\r \\\n    }\\r \\\n    <\\/script>\\r\";\n\t\n\tdocument.querySelectorAll(\".product-description-text\")[0].innerHTML+=prdTxt;\n\n}\n});"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|searchTerm"
+      example: "Aradığınız ürünü buraya yazınız."
+      example_translated: "Write the product you are looking for here."
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|languageId"
+      label: "ARA"
+      label_translated: "SEARCH"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|ShippingAddressId"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|BillingAddressId"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|languageId"
+      label: "SONRAKİ ADIM"
+      label_translated: "NEXT STEP"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|BillingAddressId"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "İl:"
+      label_translated: "Province:"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-57|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-28|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-54|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-81|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-36|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-75|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-161|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-39|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-42|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-8|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-55|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-53|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-27|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-66|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-23|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-104|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-9|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-108|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-37|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-73|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-119|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-25|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-82|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-103|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-56|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-32|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-3|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-35|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-29|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-102|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-76|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-15|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-44|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-14|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-64|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-72|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-46|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-155|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-65|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-13|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-52|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-85|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-17|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-34|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-24|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-58|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-5|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-1|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-50|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-20|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-80|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-87|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-160|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-154|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-33|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-40|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-30|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-69|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-59|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-11|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-41|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-51|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-60|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-67|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-63|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-68|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-19|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-12|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-61|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-70|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-74|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-45|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-83|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-158|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-26|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-107|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-62|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-31|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-99|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-38|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-47|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-49|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-18|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-71|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-7|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-105|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-22|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-95|storeId"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "FirstName|FirstName"
+      label: "*  Ad"
+      label_translated: "* Name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "LastName|LastName"
+      label: "*  Soyad"
+      label_translated: "* Surname"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "Email|Email"
+      label: "*  E-posta"
+      label_translated: "* Email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "Phone|Phone"
+      label: "*  Telefon"
+      label_translated: "* Telephone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|languageId"
+      label: "SONRAKİ ADIM"
+      label_translated: "NEXT STEP"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "Id|Id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|orderId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|languageId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "isAccountPage|isAccountPage"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "isBillingAddressForOrder|isBillingAddressForOrder"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ApartmanNo|ApartmanNo"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "KatNo|KatNo"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DaireNo|DaireNo"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "Title|Title"
+      label: "*  Adres Tipi (Ev, İşyeri, vs..)"
+      label_translated: "* Address Type (Home, Workplace, etc.)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "TCKN|TCKN"
+      label: "TC Kimlik Numarası"
+      label_translated: "Turkish Identity Number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "FirstName|FirstName"
+      label: "*  Ad"
+      label_translated: "* Name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "LastName|LastName"
+      label: "*  Soyad"
+      label_translated: "* Surname"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "Email|Email"
+      label: "*  E-posta Adresi"
+      label_translated: "* E-mail address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CityId"
+      label: "*  İl"
+      label_translated: "* Province"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "|CountyId"
+      label: "*  İlçe"
+      label_translated: "* District"
+      control_type: SELECT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "|DistrictId"
+      label: "*  Mahalle"
+      label_translated: "* Neighbourhood"
+      control_type: SELECT
+      concepts: "address-level3"
+      section: ADDRESS
+    }
+    fields {
+      name: "|StreetId"
+      label: "*  Sokak"
+      label_translated: "* Street"
+      control_type: SELECT
+      concepts: "street-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "Building|Building"
+      label: "*  Bina ve Daire No"
+      label_translated: "* Building and Flat No."
+      control_type: INPUT
+      concepts: "house-number"
+      concepts: "apartment"
+      section: ADDRESS
+    }
+    fields {
+      name: "Street|Street"
+      label: "*  Sokak"
+      label_translated: "* Street"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "Phone|Phone"
+      label: "*  Telefon"
+      label_translated: "* Telephone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "ZipCode|ZipCode"
+      label: "*   Zip / Posta Kodu"
+      label_translated: "* Zip / Zip Code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "AddressDetail|AddressDetail"
+      label: "Adres Tarifi"
+      label_translated: "For directions"
+      control_type: TEXTAREA
+      concepts: "delivery-instructions"
+      section: ADDRESS
+    }
+    fields {
+      name: "IsCompany|IsCompany"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|IsCompany"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CompanyName|CompanyName"
+      label: "*  Firma"
+      label_translated: "* Company"
+      control_type: INPUT
+      concepts: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "TaxAdministration|TaxAdministration"
+      label: "*  Vergi Dairesi"
+      label_translated: "* Tax Administration"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "TaxNumber|TaxNumber"
+      label: "*  Vergi Numarası"
+      label_translated: "* Tax number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

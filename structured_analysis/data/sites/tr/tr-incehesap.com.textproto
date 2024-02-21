@@ -1,0 +1,401 @@
+site_examples {
+  url: "https://www.incehesap.com"
+  is_structured: false
+  locale {
+    country: "TR"
+    language: "tr"
+  }
+  sequences {
+    fields {
+      name: "adres-no-1|adres-no-1"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "adres-no-2|adres-no-2"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "deliver-type-1|teslimat-tipi"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "deliver-type-9|teslimat-tipi"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "deliver-type-11|teslimat-tipi"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|adres_tip_id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address-title|address_name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address-name|name"
+      label: "Adınız"
+      label_translated: "Your name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "address-surname|lastname"
+      label: "Soyadınız"
+      label_translated: "Your surname"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "address-city|city"
+      label: "Şehir Seçiniz"
+      label_translated: "Select City"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "address-district|district"
+      label: "İlçe Seçiniz"
+      label_translated: "Select District"
+      control_type: SELECT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "address-mahalle|mahalle"
+      label: "Mahalle Seçiniz"
+      label_translated: "Select Neighborhood"
+      control_type: SELECT
+      concepts: "address-level3"
+      section: ADDRESS
+    }
+    fields {
+      name: "address-post-code|postal_code"
+      label: "Posta Kodu"
+      label_translated: "Post code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "address-address-text|address"
+      label: "Cadde / Sokak / Apartman"
+      label_translated: "Street / Street / Apartment "
+      control_type: TEXTAREA
+      concepts: "street-address"
+      section: ADDRESS
+    }
+    fields {
+      name: "address-phone|gsm"
+      label: "Cep Telefonu"
+      label_translated: "Mobile phone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "address-tel1|tel1"
+      label: "Telefon"
+      label_translated: "Telephone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "address-invoice-type-1|invoicetype"
+      label: "Bireysel"
+      label_translated: "Individual"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address-invoice-type-2|invoicetype"
+      label: "Kurumsal"
+      label_translated: "Institutional"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "adres-fatura-teslimat|adres-fatura-teslimat"
+      label: "Adresi fatura ve teslimat için kullanmak istiyorum"
+      label_translated: "I want to use the address for billing and delivery"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|varsayilan-adres"
+      label: "Sepetim Adres Seçimi İndirim ve Ödeme Onayı"
+      label_translated: "My Cart Address Selection Discount and Payment Confirmation"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address-firm|firm_name"
+      label: "Firma Adı"
+      label_translated: "Company name"
+      control_type: INPUT
+      concepts: "organization"
+      section: OTHER
+    }
+    fields {
+      name: "address-tax-center|tax_center"
+      label: "Vergi Dairesi"
+      label_translated: "Tax Administration"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address-tax-number|tax_number"
+      label: "Vergi Numarası"
+      label_translated: "Tax number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address-tc|tid"
+      label: "T.C. Kimlik"
+      label_translated: "TR Identity"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-no|form-no"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "promotional-code|promotional-code"
+      label: "Promosyon kodunu"
+      label_translated: "promo code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "b-name|b-name"
+      label: "Adınız Soyadınız"
+      label_translated: "your name and your surname"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "b-email|b-email"
+      label: "Epostanız"
+      label_translated: "Your Email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "b-title|b-title"
+      label: "Başlık"
+      label_translated: "Title"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "b-mesaj|b-mesaj"
+      label: "Mesajınız"
+      label_translated: "your message"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|adres_tip_id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address-title-new|address_name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address-name-new|name"
+      label: "Adınız"
+      label_translated: "Your name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address-surname-new|lastname"
+      label: "Soyadınız"
+      label_translated: "Your surname"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address-city-new|city"
+      label: "Şehir Seçiniz"
+      label_translated: "Select City"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address-district-new|district"
+      label: "İlçe Seçiniz"
+      label_translated: "Select District"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address-mahalle-new|mahalle"
+      label: "Mahalle Seçiniz"
+      label_translated: "Select Neighborhood"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address-post-code-new|postal_code"
+      label: "Posta Kodu"
+      label_translated: "Post code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address-address-text-new|address"
+      label: "Cadde / Sokak / Apartman /"
+      label_translated: "Street / Street / Apartment /"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address-phone-new|gsm"
+      label: "Cep Telefonu"
+      label_translated: "Mobile phone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "address-tel1-new|tel1"
+      label: "Telefon"
+      label_translated: "Telephone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "address-invoice-type-1-new|invoicetype"
+      label: "Bireysel"
+      label_translated: "Individual"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address-invoice-type-2-new|invoicetype"
+      label: "Kurumsal"
+      label_translated: "Institutional"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "adres-fatura-teslimat-new|adres-fatura-teslimat"
+      label: "Adresi fatura ve teslimat için kullanmak istiyorum"
+      label_translated: "I want to use the address for billing and delivery"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|varsayilan-adres"
+      label: "Varsayılan fatura adresi olarak kullan"
+      label_translated: "Use as default billing address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address-firm-new|firm_name"
+      label: "Firma Adı"
+      label_translated: "Company name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address-tax-center-new|tax_center"
+      label: "Vergi Dairesi"
+      label_translated: "Tax Administration"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address-tax-number-new|tax_number"
+      label: "Vergi Numarası"
+      label_translated: "Tax number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address-tc-new|tid"
+      label: "T.C. Kimlik"
+      label_translated: "TR Identity"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "form-no|form-no"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

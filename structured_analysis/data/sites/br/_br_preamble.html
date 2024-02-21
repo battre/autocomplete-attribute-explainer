@@ -1,0 +1,43 @@
+Brazil relies heavily on structured addresses. Basically every form
+has separate fields for street name, house number and often an complement
+(for apartments, blocks, ...). Oftentimes, a lot of information is
+derived from the CEP (postal code).
+
+<h4>Missing field types</h4>
+The following cases are currently missing in the autocomplete spec and
+occurred on multiple sites:
+<ul>
+  <li>street-name (endereço)
+  <li>house-number (número)
+  <li>additional information (Informações adicionais; Complemento (opcional)
+    (Apartamento, sala, conjunto, edifício, andar, etc.); Complemento;
+    Complemento e referência (Opcional); Complemento (Nº do apartamento,
+    Bloco, etc.); Complemento (Apto/Bloco/Casa))<br> Informationen going
+    into this are:
+    <ul>
+      <li>apartment, room, suite
+      <li>building, block, house - often times people live in gated
+        communities where the entire community has the same street name and
+        house number. The Bloco identifies the building within the
+        community.
+      <li>floor
+    </ul>
+    Note that the sites I investigated agreed on the use of an "additional
+    information" field and never split the the apartment number and house name
+    into individual fields.
+  <li>reference-point (landmark?) (Referência; Complemento e referência;
+    Ponto de referência) - e.g. people would put 'same street as Church
+    xyz' there to help the delivery person find the location.
+</ul>
+
+<h4>Open questions</h4>
+<ul>
+  <li>I have modeled the additional information as
+    "address-overflow" and reference-point as "landmark".
+    Any concerns about this? This will require some localization in the UI
+    because Brasilians probably don't think of landmarks as reference-points.
+    Instead of "address-overflow", we could also choose
+    "building-and-location-in-building".
+</ul>
+
+<p>Progress: ☑ First round of cleanup, ☑ Discussed with a (former) resident

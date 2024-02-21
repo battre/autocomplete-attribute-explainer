@@ -1,0 +1,687 @@
+site_examples {
+  url: "https://www.dexter.com.ar"
+  is_structured: true
+  locale {
+    country: "AR"
+    language: "es"
+  }
+  sequences {
+    fields {
+      name: "checkoutStep1GtmEvent|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|originalShipmentUUID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|shipmentUUID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|instorePickUpMethodId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipmentSelector-default|shipmentSelector"
+      label: "Dirección de Envío"
+      label_translated: "Shipping Address"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "Georeferencing|Georeferencing"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Buscar domicilio"
+      label_translated: "Search address"
+      example: "Buscar domicilio"
+      example_translated: "Search address"
+      control_type: INPUT
+      concepts: "address-search"
+      section: ADDRESS
+    }
+    fields {
+      name: "|storeId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingFirstNamedefault|dwfrm_shipping_shippingAddress_addressFields_firstName"
+      label: "Nombre"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "shipping given-name"
+      section: NAME
+    }
+    fields {
+      name: "shippingLastNamedefault|dwfrm_shipping_shippingAddress_addressFields_lastName"
+      label: "Apellido"
+      label_translated: "Surname"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "shipping family-name"
+      section: NAME
+    }
+    fields {
+      name: "shippingAddressOnedefault|dwfrm_shipping_shippingAddress_addressFields_address1"
+      label: "Calle"
+      label_translated: "Street"
+      control_type: INPUT
+      concepts: "street-name"
+      autocomplete_attribute: "shipping address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingNumberdefault|dwfrm_shipping_shippingAddress_addressFields_number"
+      label: "Número"
+      label_translated: "Number"
+      control_type: INPUT
+      concepts: "house-number"
+      autocomplete_attribute: "shipping given-number"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingPisoDptodefault|dwfrm_shipping_shippingAddress_addressFields_apartment"
+      label: "Piso y/o Dpto"
+      label_translated: "Floor and/or Apartment"
+      control_type: INPUT
+      # concepts: "floor"
+      # concepts: "apartment"
+      concepts: "location-in-building"
+      autocomplete_attribute: "shipping family-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingZipCodedefault|dwfrm_shipping_shippingAddress_addressFields_postalCode"
+      label: "Código Postal"
+      label_translated: "Postal Code"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "shipping postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddressCitydefault|dwfrm_shipping_shippingAddress_addressFields_city"
+      label: "Partido"
+      label_translated: "Partido (District)"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "shipping address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingObservationdefault|dwfrm_shipping_shippingAddress_addressFields_observation"
+      label: "Aclaración Adicional"
+      label_translated: "Additional Clarification"
+      control_type: INPUT
+      concepts: "delivery-instructions"
+      autocomplete_attribute: "shipping observation"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingStatedefault|dwfrm_shipping_shippingAddress_addressFields_states_stateCode"
+      label: "Provincia"
+      label_translated: "Province"
+      control_type: SELECT
+      concepts: "address-level1"
+      autocomplete_attribute: "shipping address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "isNormalizeddefault|dwfrm_shipping_shippingAddress_addressFields_isNormalized"
+      label: "Normalizada"
+      label_translated: "normalized"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "coordinatesdefault|dwfrm_shipping_shippingAddress_addressFields_coordinates"
+      label: "Coordenadas"
+      label_translated: "coordinates"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingPhoneNumberdefault|dwfrm_shipping_shippingAddress_addressFields_phone"
+      label: "Número de Teléfono"
+      label_translated: "Phone number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "shipping tel"
+      section: PHONE
+    }
+    fields {
+      name: "shippingMethodRadioButton|"
+      label: "Para conocer los métodos de envio disponibles es necesario que ingreses una dirección de entrega"
+      label_translated: "To know the available shipping methods you need to enter a delivery address"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store|"
+      example: "Tu Código Postal"
+      example_translated: "Your zip code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|csrf_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|productLineItemUUID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|originalShipmentUUID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|shipmentUUID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|instorePickUpMethodId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      hide: true
+      name: "shipmentSelector-23bf19e48083f946da60861e69|shipmentSelector"
+      label: "Dirección de Envío"
+      label_translated: "Shipping Address"
+      control_type: SELECT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "Georeferencing|Georeferencing"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "|"
+      label: "Buscar domicilio"
+      label_translated: "Search address"
+      example: "Buscar domicilio"
+      example_translated: "Search address"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "|storeId"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "shippingFirstName23bf19e48083f946da60861e69|dwfrm_shipping_shippingAddress_addressFields_firstName"
+      label: "Nombre"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "shipping given-name"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "shippingLastName23bf19e48083f946da60861e69|dwfrm_shipping_shippingAddress_addressFields_lastName"
+      label: "Apellido"
+      label_translated: "Surname"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "shipping family-name"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "shippingAddressOne23bf19e48083f946da60861e69|dwfrm_shipping_shippingAddress_addressFields_address1"
+      label: "Calle"
+      label_translated: "Street"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "shipping address-line1"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "shippingNumber23bf19e48083f946da60861e69|dwfrm_shipping_shippingAddress_addressFields_number"
+      label: "Número"
+      label_translated: "Number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "shipping given-number"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "shippingPisoDpto23bf19e48083f946da60861e69|dwfrm_shipping_shippingAddress_addressFields_apartment"
+      label: "Piso y/o Dpto"
+      label_translated: "Floor and/or Apartment"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "shipping family-name"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "shippingZipCode23bf19e48083f946da60861e69|dwfrm_shipping_shippingAddress_addressFields_postalCode"
+      label: "Código Postal"
+      label_translated: "Postal Code"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "shipping postal-code"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "shippingAddressCity23bf19e48083f946da60861e69|dwfrm_shipping_shippingAddress_addressFields_city"
+      label: "Partido"
+      label_translated: "Game"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "shipping address-level2"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "shippingObservation23bf19e48083f946da60861e69|dwfrm_shipping_shippingAddress_addressFields_observation"
+      label: "Aclaración Adicional"
+      label_translated: "Additional Clarification"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "shipping observation"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "shippingState23bf19e48083f946da60861e69|dwfrm_shipping_shippingAddress_addressFields_states_stateCode"
+      label: "Provincia"
+      label_translated: "Province"
+      control_type: SELECT
+      concepts: "unset"
+      autocomplete_attribute: "shipping address-level1"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "isNormalized23bf19e48083f946da60861e69|dwfrm_shipping_shippingAddress_addressFields_isNormalized"
+      label: "Normalizada"
+      label_translated: "normalized"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "coordinates23bf19e48083f946da60861e69|dwfrm_shipping_shippingAddress_addressFields_coordinates"
+      label: "Coordenadas"
+      label_translated: "coordinates"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "shippingPhoneNumber23bf19e48083f946da60861e69|dwfrm_shipping_shippingAddress_addressFields_phone"
+      label: "Número de Teléfono"
+      label_translated: "Phone number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "shipping tel"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "shippingMethodRadioButton|"
+      label: "Para conocer los métodos de envio disponibles es necesario que ingreses una dirección de entrega"
+      label_translated: "To know the available shipping methods you need to enter a delivery address"
+      control_type: RADIO
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "store|"
+      label: "Encontrá tu sucursal más cercana:"
+      label_translated: "Find your nearest branch:"
+      example: "Tu Código Postal"
+      example_translated: "Your zip code"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      name: "|csrf_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ischeckout|ischeckout"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "store-postal-code|postalCode"
+      label: "Buscar por Código Postal"
+      label_translated: "Search by Zip Code"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nofill"
+      section: OTHER
+    }
+    fields {
+      name: "radius|radius"
+      label: "Radio"
+      label_translated: "Radio"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "input-183|store"
+      label: "1 Peatonal Florida"
+      label_translated: "1 Pedestrian Florida"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "input-213|store"
+      label: "2 Congreso"
+      label_translated: "2 Congress"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "input-156|store"
+      label: "3 Shopp. Abasto"
+      label_translated: "3 Shopp. Supply"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "input-20|store"
+      label: "4 Pompeya (Centro)"
+      label_translated: "4 Pompeii (Center)"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "input-36|store"
+      label: "5 Dexter Flores"
+      label_translated: "5 Dexter Flowers"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddressSelector|addressSelector"
+      label: "Dirección de Facturación"
+      label_translated: "Billing Address"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingFirstName|dwfrm_billing_addressFields_firstName"
+      label: "Nombre"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "given-name"
+      section: OTHER
+    }
+    fields {
+      hide: true
+      name: "billingLastName|dwfrm_billing_addressFields_lastName"
+      label: "Apellido"
+      label_translated: "Surname"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "family-name"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "billingAddressOne|dwfrm_billing_addressFields_address1"
+      label: "Calle"
+      label_translated: "Street"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "billing address-line1"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "billingNumberdefault|dwfrm_billing_addressFields_number"
+      label: "Número"
+      label_translated: "Number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "billing given-name"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "billingPisoDptodefault|dwfrm_billing_addressFields_apartment"
+      label: "Piso y/o Dpto"
+      label_translated: "Floor and/or Apartment"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "billing family-name"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "billingObservationdefault|dwfrm_billing_addressFields_observation"
+      label: "Aclaración Adicional"
+      label_translated: "Additional Clarification"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "billing observation"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "billingZipCodedefault|dwfrm_billing_addressFields_postalCode"
+      label: "Código Postal"
+      label_translated: "Postal Code"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "billing postal-code"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "billingAddressCitydefault|dwfrm_billing_addressFields_city"
+      label: "Partido"
+      label_translated: "Game"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "billing address-level2"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "billingState|dwfrm_billing_addressFields_states_stateCode"
+      label: "Provincia"
+      label_translated: "Province"
+      control_type: SELECT
+      concepts: "unset"
+      autocomplete_attribute: "billing address-level1"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "billingPhoneNumber|dwfrm_billing_addressFields_phone"
+      label: "Número de Teléfono"
+      label_translated: "Phone number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "billing tel"
+      section: ADDRESS
+    }
+    fields {
+      name: "|csrf_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|localizedNewAddressTitle"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|dwfrm_billing_paymentMethod"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cardType|dwfrm_billing_creditCardFields_cardType"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|csrf_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cardNumber|dwfrm_billing_creditCardFields_cardNumber"
+      label: "Número de la Tarjeta"
+      label_translated: "Card number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "cc-number"
+      section: PAYMENT
+    }
+    fields {
+      name: "cardOwner|dwfrm_billing_creditCardFields_cardOwner"
+      label: "Nombre del Titular (tal como aparece en la tarjeta)"
+      label_translated: "Name of the Holder (as it appears on the card)"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "cc-name"
+      section: PAYMENT
+    }
+    fields {
+      name: "expirationMonth|dwfrm_billing_creditCardFields_expirationMonth"
+      label: "Mes de Expiración"
+      label_translated: "Expiration Month"
+      control_type: SELECT
+      concepts: "unset"
+      autocomplete_attribute: "cc-exp-month"
+      section: PAYMENT
+    }
+    fields {
+      name: "expirationYear|dwfrm_billing_creditCardFields_expirationYear"
+      label: "Año de Expiración"
+      label_translated: "Expiration Year"
+      control_type: SELECT
+      concepts: "unset"
+      autocomplete_attribute: "cc-exp-year"
+      section: PAYMENT
+    }
+    fields {
+      name: "securityCode|dwfrm_billing_creditCardFields_securityCode"
+      label: "Código de Seguridad"
+      label_translated: "Security code"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "id|dwfrm_billing_creditCardFields_id"
+      label: "DNI del Titular"
+      label_translated: "ID of the Holder"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "installmentController|installmentController"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "installments|"
+      label: "Opciones de Pago en Cuotas con Crédito"
+      label_translated: "Payment Options in Installments with Credit"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|dwfrm_billing_paymentMethod"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "goToBasket|goToBasket"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "doPayment|doPayment"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "OrderNo|OrderNo"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

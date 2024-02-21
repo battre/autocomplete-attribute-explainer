@@ -1,0 +1,294 @@
+site_examples {
+  url: "https://www.iherb.com"
+  is_structured: true
+  locale {
+    country: "JP"
+    language: "ja"
+  }
+  sequences {
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|btnGoToShipping"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|btnGoToPayment"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|btnGoToReview"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "add_new_address|SelectedAddress"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "defaultShippingAddress|defaultShippingAddress"
+      label: "この住所を既定の配送先と設定する"
+      label_translated: "Set this address as your default shipping address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|AddressID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|rftdatases"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "AddressType|AddressType"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "VerificationState|VerificationState"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "VerificationResult|VerificationResult"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "VerificationFlag|VerificationFlag"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "LoqateAVC|LoqateAVC"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "LoqateDPV|LoqateDPV"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "LoqateAutoComplete|LoqateAutoComplete"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "LoqateResult|LoqateResult"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ddlCountries|ddlCountries"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "*必須項目"
+      label_translated: "*Required item"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "search-off"
+      section: OTHER
+    }
+    fields {
+      name: "FirstName|FirstName"
+      label: "個人名フルネーム（姓・名）をご記入ください / ※法人名はご記入いただけません。"
+      label_translated: "Please enter your full name (surname and first name) / *Corporate names cannot be entered."
+      example: "(Ex): (例)山田 太郎"
+      example_translated: "(Ex): (Example) Taro Yamada"
+      control_type: INPUT
+      concepts: "name"
+      section: NAME
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "PostalCode|PostalCode"
+      label: "郵便番号"
+      label_translated: "Postal code"
+      example: "(例) 000-0000"
+      example_translated: "(Example) 000-0000"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "suggested-postcode-found|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "AddressLine1|AddressLine1"
+      label: "住所1 (都道府県・市区郡・町名・番地)"
+      label_translated: "Address 1 (Prefecture/City/Town/Address)"
+      example: "(例) 東京都新宿区新宿1-2-3"
+      example_translated: "(Example) 1-2-3 Shinjuku, Shinjuku-ku, Tokyo"
+      control_type: INPUT
+      concepts: "address-level1"
+      concepts: "address-level2"
+      concepts: "building-location"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "AddressLine2|AddressLine2"
+      label: "住所2 (建物名・号室) 日本語または英語でご利用ください。"
+      label_translated: "Address 2 (building name and room number) Please use in Japanese or English."
+      example: "(例) ○○マンション101号"
+      example_translated: "(Example) ○○ Mansion No. 101"
+      control_type: INPUT
+      concepts: "location-in-building"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "RegionName|RegionName"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "TelNumber|TelNumber"
+      label: "*必須項目"
+      label_translated: "*Required item"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|addrShip"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|btnskipVerification"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|addrsaveproceed"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|addrcancel"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|addrsave"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|addrShip"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|addrnew"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|addressID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|shiAdd"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|addredit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|addrsave"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

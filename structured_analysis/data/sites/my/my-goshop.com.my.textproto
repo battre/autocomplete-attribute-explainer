@@ -1,0 +1,101 @@
+site_examples {
+  url: "https://www.goshop.com.my"
+  is_structured: true
+  locale {
+    country: "MY"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "|"
+      label: "Search on Go Shop"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "0 selections"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "name|name"
+      label: "Recipient Name"
+      control_type: INPUT
+      concepts: "name"
+      autocomplete_attribute: "name"
+      section: NAME
+    }
+    fields {
+      name: "text$mobile|text$mobile"
+      label: "Mobile"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "new-password"
+      section: PHONE
+    }
+    fields {
+      name: "text$alternate|text$alternate"
+      label: "Other Phone"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "new-password"
+      section: PHONE
+    }
+    fields {
+      name: "text$state|"
+      label: "State"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "text$city|"
+      label: "City"
+      control_type: SELECT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "text$postcode|"
+      label: "Postcode"
+      control_type: SELECT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "text$street|"
+      label: "Street"
+      label_comment: "This site asks for a street which you select from a "
+        "select element and has textarea for the address as well."
+      control_type: SELECT
+      concepts: "street-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "text$street_manual|text$street_manual"
+      label: "Can\'t find your street?"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "type|"
+      label: "Type"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "text$address|text$address"
+      label: "Address"
+      control_type: TEXTAREA
+      concepts: "street-address"
+      section: ADDRESS
+    }
+  }
+}
+

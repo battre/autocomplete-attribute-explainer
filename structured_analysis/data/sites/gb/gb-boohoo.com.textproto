@@ -1,0 +1,441 @@
+site_examples {
+  url: "https://www.boohoo.com/"
+  is_structured: false
+  locale {
+    country: "GB"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "dwfrm_coupon_couponCode|dwfrm_coupon_couponCode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_coupon_couponCode|dwfrm_coupon_couponCode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|originalShipmentUUID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|shipmentUUID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|addressSource"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_shipping_shippingAddress_addressFields_firstName|dwfrm_shipping_shippingAddress_addressFields_firstName"
+      label: "* First name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "dwfrm_shipping_shippingAddress_addressFields_lastName|dwfrm_shipping_shippingAddress_addressFields_lastName"
+      label: "* Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "dwfrm_shipping_shippingAddress_addressFields_country|dwfrm_shipping_shippingAddress_addressFields_country"
+      label: "* Country"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "dwfrm_shipping_shippingAddress_addressFields_phone|dwfrm_shipping_shippingAddress_addressFields_phone"
+      label: "* Phone Number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "tel"
+      section: PHONE
+    }
+    fields {
+      name: "LoqateAutocomplete|"
+      label: "Address lookup"
+      example: "Start typing your address"
+      control_type: INPUT
+      concepts: "address-search"
+      autocomplete_attribute: "no"
+      section: ADDRESS
+    }
+    fields {
+      name: "dwfrm_shipping_shippingAddress_addressFields_address1|dwfrm_shipping_shippingAddress_addressFields_address1"
+      label: "* Address Line 1"
+      control_type: INPUT
+      concepts: "address-line1"
+      autocomplete_attribute: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "dwfrm_shipping_shippingAddress_addressFields_address2|dwfrm_shipping_shippingAddress_addressFields_address2"
+      label: "Address Line 2 (optional)"
+      control_type: INPUT
+      concepts: "address-line2"
+      autocomplete_attribute: "address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "dwfrm_shipping_shippingAddress_addressFields_city|dwfrm_shipping_shippingAddress_addressFields_city"
+      label: "* City"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "dwfrm_shipping_shippingAddress_addressFields_states_stateCode|dwfrm_shipping_shippingAddress_addressFields_states_stateCode"
+      label: "County (optional)"
+      control_type: INPUT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "dwfrm_shipping_shippingAddress_addressFields_postalCode|dwfrm_shipping_shippingAddress_addressFields_postalCode"
+      label: "* Postal code"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "postal-code"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_shipping_shippingAddress_addressFields_pickupLocationId|dwfrm_shipping_shippingAddress_addressFields_pickupLocationId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingMethod-UKSuperSaver|dwfrm_shipping_shippingAddress_shippingMethodID"
+      label: "UK Standard Delivery £3.99 Up to 5 working days"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingMethod-UKNextDayDelivery|dwfrm_shipping_shippingAddress_shippingMethodID"
+      label: "UK Next Day Delivery £5.99 Order before 11:00pm"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingMethod-precise|dwfrm_shipping_shippingAddress_shippingMethodID"
+      label: "DPD Precise Delivery £5.99 Select your preferred day and DPD will send you a 1hr delivery window"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dpd-method-select|dwfrm_shipping_shippingAddress_dpdDeliveryDate"
+      label: "Requested delivery date:"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingMethod-pudo-myhermes|dwfrm_shipping_shippingAddress_shippingMethodID"
+      label: "Evri Standard Parcel Collection £3.99 Up to 5 working days"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingMethod-pudo-expmyhermes|dwfrm_shipping_shippingAddress_shippingMethodID"
+      label: "Evri Next Day Parcel Collection £5.99 Arriving in shops between 12pm and 5pm if ordered before 11:00"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingMethod-pudo-asda|dwfrm_shipping_shippingAddress_shippingMethodID"
+      label: "Asda Next Day Parcel Collection £5.99 Collection next day if ordered before 10pm, Sunday to Friday o"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_billing_contactInfoFields_email|dwfrm_billing_contactInfoFields_email"
+      label: "* Email address"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "email"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_profile_customer_subscription_isemailsubscribed|dwfrm_profile_customer_subscription_isemailsubscribed"
+      label: "Email"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_profile_customer_subscription_ispostalsubscribed|dwfrm_profile_customer_subscription_ispostalsubscribed"
+      label: "Post"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_profile_customer_subscription_issmssubscribed|dwfrm_profile_customer_subscription_issmssubscribed"
+      label: "SMS*"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_profile_customer_subscription_is3rdPartySubscribed|dwfrm_profile_customer_subscription_is3rdPartySubscribed"
+      label: "Email, post and SMS* from carefully selected third parties"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_profile_customer_dayofbirth|dwfrm_profile_customer_dayofbirth"
+      label: "DD"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_profile_customer_monthofbirth|dwfrm_profile_customer_monthofbirth"
+      label: "MM"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_profile_customer_yearOfBirth|dwfrm_profile_customer_yearOfBirth"
+      label: "YY"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_billing_addressFields_useShipping|dwfrm_billing_addressFields_useShipping"
+      label: "Same as on delivery address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|addressSource"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_billing_addressFields_firstName|dwfrm_billing_addressFields_firstName"
+      label: "* First name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "given-name"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_billing_addressFields_lastName|dwfrm_billing_addressFields_lastName"
+      label: "* Last name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "family-name"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_billing_addressFields_country|dwfrm_billing_addressFields_country"
+      label: "* Country"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_billing_contactInfoFields_phone|dwfrm_billing_contactInfoFields_phone"
+      label: "* Phone Number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "tel"
+      section: PHONE
+    }
+    fields {
+      name: "LoqateAutocompleteBilling|"
+      label: "Address lookup"
+      example: "Start typing your address"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "no"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_billing_addressFields_address1|dwfrm_billing_addressFields_address1"
+      label: "* Address Line 1"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "address-line1"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_billing_addressFields_address2|dwfrm_billing_addressFields_address2"
+      label: "Address Line 2 (optional)"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "address-line2"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_billing_addressFields_city|dwfrm_billing_addressFields_city"
+      label: "* City"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "address-level2"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_billing_addressFields_states_stateCode|dwfrm_billing_addressFields_states_stateCode"
+      label: "County (optional)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_billing_addressFields_postalCode|dwfrm_billing_addressFields_postalCode"
+      label: "* Postal code"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "postal-code"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_billing_giftCertCode|dwfrm_billing_giftCertCode"
+      label: "Gift card number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_billing_pin|dwfrm_billing_pin"
+      label: "PIN"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|noPaymentNeeded"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_billing_creditCardFields_cardType|dwfrm_billing_creditCardFields_cardType"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "creditFields.encryptedData.htmlName|dwfrm_billing_creditCardFields_encryptedData"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_billing_creditCardFields_cardNumber|dwfrm_billing_creditCardFields_cardNumber"
+      label: "* Card number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "cc-number"
+      section: PAYMENT
+    }
+    fields {
+      name: "dwfrm_billing_creditCardFields_cardOwner|dwfrm_billing_creditCardFields_cardOwner"
+      label: "* Name on card"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "cc-name"
+      section: PAYMENT
+    }
+    fields {
+      name: "dwfrm_billing_creditCardFields_expirationMonth|dwfrm_billing_creditCardFields_expirationMonth"
+      label: "Expiration Month"
+      control_type: SELECT
+      concepts: "unset"
+      autocomplete_attribute: "cc-exp-month"
+      section: PAYMENT
+    }
+    fields {
+      name: "dwfrm_billing_creditCardFields_expirationYear|dwfrm_billing_creditCardFields_expirationYear"
+      label: "Expiration Year"
+      control_type: SELECT
+      concepts: "unset"
+      autocomplete_attribute: "cc-exp-year"
+      section: PAYMENT
+    }
+    fields {
+      name: "dwfrm_billing_creditCardFields_securityCode|dwfrm_billing_creditCardFields_securityCode"
+      label: "* Security code"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "cc-csc"
+      section: PAYMENT
+    }
+    fields {
+      name: "dwfrm_billing_forterCipherText|dwfrm_billing_forterCipherText"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_billing_paymentScheduleChecksum|dwfrm_billing_paymentScheduleChecksum"
+      label: "Pay Or"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|csrf_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|localizedNewAddressTitle"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|pid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_scsid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_sclid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

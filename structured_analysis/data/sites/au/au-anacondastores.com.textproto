@@ -1,0 +1,137 @@
+site_examples {
+  url: "https://www.anacondastores.com/"
+  is_structured: true
+  locale {
+    country: "AU"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "First name:"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "|"
+      label: "Last name:"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "|"
+      label: "Contact number:"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|"
+      label: "Address search:"
+      control_type: INPUT
+      concepts: "address-search"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "Building / Floor / Apartment / Unit:"
+      control_type: INPUT
+      concepts: "building-and-location-in-building"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "House Number:"
+      control_type: INPUT
+      concepts: "house-number"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "Street Name / PO Box:"
+      control_type: INPUT
+      concepts: "street-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "Town / Suburb:"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "State:"
+      control_type: INPUT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "|"
+      label: "Post Code:"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "GooglePay|"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "BrainTree|"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "PayPal|"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "ZipPay|"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "OpenPay|"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "AfterPay|"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "tac|undefined"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "promoCode|promoCode"
+      label: "Use promo code"
+      example: "Enter promo code"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+  }
+}
+

@@ -1,0 +1,465 @@
+site_examples {
+  url: "https://www.amazon.com.br/"
+  is_structured: true
+  locale {
+    country: "BR"
+    language: "pt"
+  }
+  sequences {
+    fields {
+      name: "defaultBuyBtnBlockerMsg|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "isPipelinedPage|isPipelinedPage"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|isUnifiedActionsDesignEnabled"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|submissionURL"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|hasWorkingJavascript"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|preloadAddressPopover"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|shipToAddress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "isBilling|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "is-remove-os-pabt|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|isfirsttimecustomer"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "isTFXEligible|isTFXEligible"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "isFxEnabled|isFxEnabled"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "isFXTncShown|isFXTncShown"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|useLiveAUI"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|useModifiedSpinnerResizeFn"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "unblockHeader|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "lineitemcountforfeedback|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "modifiedBlockerDivSize|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "transitionLogging|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|ue_back"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|hasWorkingJavascript"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|purchaseId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|requestToken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|purchaseId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|addressCount"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|isBilling"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|paymentInstrumentId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|paymentMethodCode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|numberOfDistinctItems"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "useFirstActivePrefetch|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address-ui-widgets-countryCode-dropdown-nativeId|address-ui-widgets-countryCode"
+      label: "País/Região"
+      label_translated: "Country/Region"
+      control_type: SELECT
+      concepts: "country-name"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "address-ui-widgets-enterAddressFullName|address-ui-widgets-enterAddressFullName"
+      label: "Nome completo (Nome e Sobrenome)"
+      label_translated: "Full name (First and Last name)"
+      control_type: INPUT
+      concepts: "name"
+      section: NAME
+    }
+    fields {
+      name: "address-ui-widgets-enterAddressPhoneNumber|address-ui-widgets-enterAddressPhoneNumber"
+      label: "Telefone"
+      label_translated: "Telephone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "address-ui-widgets-enterAddressPostalCode|address-ui-widgets-enterAddressPostalCode"
+      label: "CEP"
+      label_translated: "Zip code"
+      example: "Ex. 12345000"
+      example_translated: "Ex. 12345000"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "address-ui-widgets-streetName|address-ui-widgets-streetName"
+      label: "Endereço"
+      label_translated: "Street name"
+      control_type: INPUT
+      concepts: "street-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "address-ui-widgets-buildingNumber|address-ui-widgets-buildingNumber"
+      label: "Número da residência"
+      label_translated: "house number"
+      example: "número ou s/n"
+      example_translated: "number or n/a"
+      control_type: INPUT
+      concepts: "house-number"
+      section: ADDRESS
+    }
+    fields {
+      name: "address-ui-widgets-complement|address-ui-widgets-complement"
+      label: "Complemento (opcional)"
+      label_translated: "Add-on (optional)"
+      example: "Apartamento, sala, conjunto, edifício, andar, etc."
+      example_translated: "Apartment, room, suite, building, floor, etc."
+      control_type: INPUT
+      concepts: "address-overflow"
+      section: ADDRESS
+    }
+    fields {
+      name: "address-ui-widgets-neighborhood|address-ui-widgets-neighborhood"
+      label: "Bairro"
+      label_translated: "Neighborhood"
+      control_type: INPUT
+      concepts: "address-level3"
+      section: ADDRESS
+    }
+    fields {
+      name: "address-ui-widgets-enterAddressCity|address-ui-widgets-enterAddressCity"
+      label: "Cidade"
+      label_translated: "City"
+      example: "Insira o CEP acima para preencher a cidade"
+      example_translated: "Enter the zip code above to fill in the city"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "address-ui-widgets-enterAddressStateOrRegion|address-ui-widgets-enterAddressStateOrRegion"
+      label: "Estado"
+      label_translated: "state"
+      example: "Insira o CEP acima para preencher o estado"
+      example_translated: "Enter the zip code above to fill in the state"
+      control_type: INPUT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "|address-ui-widgets-previous-address-form-state-token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address-ui-widgets-use-as-my-default|address-ui-widgets-use-as-my-default"
+      label: "Adicionar um novo endereço"
+      label_translated: "Add a new address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-delivery-instructions-desktop-expander-context"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-addressFormButtonText"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-addressFormHideHeading"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-addressFormHideSubmitButton"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-enableAddressDetails"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-returnLegacyAddressID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-enableDeliveryInstructions"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-enableAddressWizardInlineSuggestions"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-enableEmailAddress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-enableAddressTips"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-amazonBusinessGroupId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-clientName"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-enableAddressWizardForm"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-delivery-instructions-data"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-address-wizard-interaction-id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-obfuscated-customerId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-locationData"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-enableLatestAddressWizardForm"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-avsSuppressSoftblock"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-avsSuppressSuggestion"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-csrfToken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-locale"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|hasWorkingJavascript"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

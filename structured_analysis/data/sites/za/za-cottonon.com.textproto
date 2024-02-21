@@ -1,0 +1,1056 @@
+site_examples {
+  url: "https://cottonon.com"
+  is_structured: false
+  locale {
+    country: "ZA"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "dwfrm_login_username|dwfrm_login_username"
+      label: "Email *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_login_password|dwfrm_login_password"
+      label: "Password *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_login_rememberme|dwfrm_login_rememberme"
+      label: "Remember Me"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|recaptcha_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|recaptcha_action"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|csrf_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|dwfrm_login_login"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_checkout_subscriptionSignup|dwfrm_checkout_subscriptionSignup"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "0-cat-pref|"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|category[]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|brands[]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "1-cat-pref|"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|category[]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|brands[]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "2-cat-pref|"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|category[]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|brands[]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "3-cat-pref|"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|category[]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|brands[]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "4-cat-pref|"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|category[]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|brands[]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "5-cat-pref|"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|category[]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|brands[]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_checkout_profile_newsletter_listsignups|dwfrm_checkout_profile_newsletter_listsignups"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_checkout_profile_newsletter_listinterests|dwfrm_checkout_profile_newsletter_listinterests"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ts_page_identifier|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ts_geo_host|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ts_gray_host|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ts_journey_ip|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|absolute_domain"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_checkout_deliveryAndPayment_contactDetailFields_contactDetailsFirstName|dwfrm_checkout_deliveryAndPayment_contactDetailFields_contactDetailsFirstName"
+      label: "First Name *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_checkout_deliveryAndPayment_contactDetailFields_contactDetailsLastName|dwfrm_checkout_deliveryAndPayment_contactDetailFields_contactDetailsLastName"
+      label: "Last Name *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_checkout_deliveryAndPayment_contactDetailFields_contactDetailsPhone|dwfrm_checkout_deliveryAndPayment_contactDetailFields_contactDetailsPhone"
+      label: "Phone Number *"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|contactDetailsFirstNameHiddenInput"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|contactDetailsLastNameHiddenInput"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|contactDetailsPhoneHiddenInput"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "is-HOME_DELIVERY|dwfrm_checkout_deliveryAndPayment_delivery_shipmentType"
+      label: "Hi, Lets get started!"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "is-CLICK_AND_COLLECT|dwfrm_checkout_deliveryAndPayment_delivery_shipmentType"
+      label: "Hi, Lets get started!"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_checkout_deliveryAndPayment_delivery_addressFields_firstName|dwfrm_checkout_deliveryAndPayment_delivery_addressFields_firstName"
+      label: "First Name *"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "dwfrm_checkout_deliveryAndPayment_delivery_addressFields_lastName|dwfrm_checkout_deliveryAndPayment_delivery_addressFields_lastName"
+      label: "Last Name *"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "dwfrm_checkout_deliveryAndPayment_delivery_addressFields_country|dwfrm_checkout_deliveryAndPayment_delivery_addressFields_country"
+      label: "Country *"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "dwfrm_checkout_deliveryAndPayment_delivery_addressFields_address1|dwfrm_checkout_deliveryAndPayment_delivery_addressFields_address1"
+      label: "Address 1 *"
+      control_type: INPUT
+      concepts: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "dwfrm_checkout_deliveryAndPayment_delivery_addressFields_address2|dwfrm_checkout_deliveryAndPayment_delivery_addressFields_address2"
+      label: "Address 2"
+      control_type: INPUT
+      concepts: "address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "dwfrm_checkout_deliveryAndPayment_delivery_addressFields_city|dwfrm_checkout_deliveryAndPayment_delivery_addressFields_city"
+      label: "City / Suburb *"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "dwfrm_checkout_deliveryAndPayment_delivery_addressFields_states_state|dwfrm_checkout_deliveryAndPayment_delivery_addressFields_states_state"
+      label: "State / Region *"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "dwfrm_checkout_deliveryAndPayment_delivery_addressFields_postalCode|dwfrm_checkout_deliveryAndPayment_delivery_addressFields_postalCode"
+      label: "Postcode / Zip *"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_checkout_deliveryAndPayment_delivery_addressFields_addressShort|dwfrm_checkout_deliveryAndPayment_delivery_addressFields_addressShort"
+      label: "Address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_checkout_deliveryAndPayment_delivery_addressFields_phone|dwfrm_checkout_deliveryAndPayment_delivery_addressFields_phone"
+      label: "Phone Number *"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "is_postal_service|is_postal_service"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_checkout_deliveryAndPayment_delivery_email_emailAddress|dwfrm_checkout_deliveryAndPayment_delivery_email_emailAddress"
+      label: "Email *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ts_page_identifier|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ts_geo_host|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ts_gray_host|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ts_journey_ip|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|absolute_domain"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_storelocator_textfield|dwfrm_storelocator_textfield"
+      label: "Find your store"
+      example: "Suburb, Postcode/Zip, Store name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|dwfrm_storelocator_country"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|csrf_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|dwfrm_storelocator_findByText"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "estimated_delivery_date|estimated_delivery_date"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping-method-2000008200851_South_Africa_Domestic|dwfrm_checkout_deliveryAndPayment_delivery_shippingMethodID"
+      label: "2000008200851_South_Africa_Domestic"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_checkout_deliveryAndPayment_payment_voucherCode|dwfrm_checkout_deliveryAndPayment_payment_voucherCode"
+      label: "Enter code here"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "donations-widget-checkbox|"
+      label: "* We cannot accept donations if paying COD"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_checkout_deliveryAndPayment_payment_giftCertCode|dwfrm_checkout_deliveryAndPayment_payment_giftCertCode"
+      label: "Gift Card Number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_checkout_deliveryAndPayment_payment_giftCertPin|dwfrm_checkout_deliveryAndPayment_payment_giftCertPin"
+      label: "Pin Number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "is-CREDIT_CARD|dwfrm_checkout_deliveryAndPayment_payment_paymentMethods_selectedPaymentMethodID"
+      label: "CREDIT_CARD"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "rb_scheme|brandCode"
+      label: "Billing Address"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cardType|dwfrm_checkout_deliveryAndPayment_payment_paymentMethods_creditCard_type"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "cardNumber|dwfrm_checkout_deliveryAndPayment_payment_paymentMethods_creditCard_number"
+      label: "Billing Address"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "credit_card_checkout_deliveryAndPayment_delivery_useAsBillingAddress|credit_card_checkout_deliveryAndPayment_delivery_useAsBillingAddress"
+      label: "Same as shipping address Billing address must match the address on your credit card statement"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "credit_card_checkout_deliveryAndPayment_payment_addressFields_firstName|credit_card_checkout_deliveryAndPayment_payment_addressFields_firstName"
+      label: "First Name *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "credit_card_checkout_deliveryAndPayment_payment_addressFields_lastName|credit_card_checkout_deliveryAndPayment_payment_addressFields_lastName"
+      label: "Last Name *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "credit_card_checkout_deliveryAndPayment_payment_addressFields_country|credit_card_checkout_deliveryAndPayment_payment_addressFields_country"
+      label: "Country *"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "credit_card_checkout_deliveryAndPayment_payment_addressFields_address1|credit_card_checkout_deliveryAndPayment_payment_addressFields_address1"
+      label: "Address 1 *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "credit_card_checkout_deliveryAndPayment_payment_addressFields_address2|credit_card_checkout_deliveryAndPayment_payment_addressFields_address2"
+      label: "Address 2"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "credit_card_checkout_deliveryAndPayment_payment_addressFields_city|credit_card_checkout_deliveryAndPayment_payment_addressFields_city"
+      label: "City / Suburb *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "credit_card_checkout_deliveryAndPayment_payment_addressFields_states_state|credit_card_checkout_deliveryAndPayment_payment_addressFields_states_state"
+      label: "State / Region *"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "credit_card_checkout_deliveryAndPayment_payment_addressFields_postalCode|credit_card_checkout_deliveryAndPayment_payment_addressFields_postalCode"
+      label: "Postcode / Zip *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "credit_card_checkout_deliveryAndPayment_payment_addressFields_addressShort|credit_card_checkout_deliveryAndPayment_payment_addressFields_addressShort"
+      label: "Address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "credit_card_checkout_deliveryAndPayment_payment_addressFields_phone|credit_card_checkout_deliveryAndPayment_payment_addressFields_phone"
+      label: "Phone Number *"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "is-BANK_TRANSFER|dwfrm_checkout_deliveryAndPayment_payment_paymentMethods_selectedPaymentMethodID"
+      label: "BANK_TRANSFER"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|brandCode"
+      label: "payu_ZA_eftpro"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bank_transfer_checkout_deliveryAndPayment_delivery_useAsBillingAddress|bank_transfer_checkout_deliveryAndPayment_delivery_useAsBillingAddress"
+      label: "Same as shipping address Billing address must match the address on your credit card statement"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bank_transfer_checkout_deliveryAndPayment_payment_addressFields_firstName|bank_transfer_checkout_deliveryAndPayment_payment_addressFields_firstName"
+      label: "First Name *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bank_transfer_checkout_deliveryAndPayment_payment_addressFields_lastName|bank_transfer_checkout_deliveryAndPayment_payment_addressFields_lastName"
+      label: "Last Name *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bank_transfer_checkout_deliveryAndPayment_payment_addressFields_country|bank_transfer_checkout_deliveryAndPayment_payment_addressFields_country"
+      label: "Country *"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bank_transfer_checkout_deliveryAndPayment_payment_addressFields_address1|bank_transfer_checkout_deliveryAndPayment_payment_addressFields_address1"
+      label: "Address 1 *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bank_transfer_checkout_deliveryAndPayment_payment_addressFields_address2|bank_transfer_checkout_deliveryAndPayment_payment_addressFields_address2"
+      label: "Address 2"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bank_transfer_checkout_deliveryAndPayment_payment_addressFields_city|bank_transfer_checkout_deliveryAndPayment_payment_addressFields_city"
+      label: "City / Suburb *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bank_transfer_checkout_deliveryAndPayment_payment_addressFields_states_state|bank_transfer_checkout_deliveryAndPayment_payment_addressFields_states_state"
+      label: "State / Region *"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bank_transfer_checkout_deliveryAndPayment_payment_addressFields_postalCode|bank_transfer_checkout_deliveryAndPayment_payment_addressFields_postalCode"
+      label: "Postcode / Zip *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bank_transfer_checkout_deliveryAndPayment_payment_addressFields_addressShort|bank_transfer_checkout_deliveryAndPayment_payment_addressFields_addressShort"
+      label: "Address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bank_transfer_checkout_deliveryAndPayment_payment_addressFields_phone|bank_transfer_checkout_deliveryAndPayment_payment_addressFields_phone"
+      label: "Phone Number *"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "is-Payflex|dwfrm_checkout_deliveryAndPayment_payment_paymentMethods_selectedPaymentMethodID"
+      label: "Payflex"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payflex_checkout_deliveryAndPayment_delivery_useAsBillingAddress|payflex_checkout_deliveryAndPayment_delivery_useAsBillingAddress"
+      label: "Same as shipping address Billing address must match the address on your credit card statement"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payflex_checkout_deliveryAndPayment_payment_addressFields_firstName|payflex_checkout_deliveryAndPayment_payment_addressFields_firstName"
+      label: "First Name *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payflex_checkout_deliveryAndPayment_payment_addressFields_lastName|payflex_checkout_deliveryAndPayment_payment_addressFields_lastName"
+      label: "Last Name *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payflex_checkout_deliveryAndPayment_payment_addressFields_country|payflex_checkout_deliveryAndPayment_payment_addressFields_country"
+      label: "Country *"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payflex_checkout_deliveryAndPayment_payment_addressFields_address1|payflex_checkout_deliveryAndPayment_payment_addressFields_address1"
+      label: "Address 1 *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payflex_checkout_deliveryAndPayment_payment_addressFields_address2|payflex_checkout_deliveryAndPayment_payment_addressFields_address2"
+      label: "Address 2"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payflex_checkout_deliveryAndPayment_payment_addressFields_city|payflex_checkout_deliveryAndPayment_payment_addressFields_city"
+      label: "City / Suburb *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payflex_checkout_deliveryAndPayment_payment_addressFields_states_state|payflex_checkout_deliveryAndPayment_payment_addressFields_states_state"
+      label: "State / Region *"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payflex_checkout_deliveryAndPayment_payment_addressFields_postalCode|payflex_checkout_deliveryAndPayment_payment_addressFields_postalCode"
+      label: "Postcode / Zip *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payflex_checkout_deliveryAndPayment_payment_addressFields_addressShort|payflex_checkout_deliveryAndPayment_payment_addressFields_addressShort"
+      label: "Address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payflex_checkout_deliveryAndPayment_payment_addressFields_phone|payflex_checkout_deliveryAndPayment_payment_addressFields_phone"
+      label: "Phone Number *"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "adyenStateData|dwfrm_adyPaydata_adyenStateData"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "merchantReference|dwfrm_adyPaydata_merchantReference"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "orderToken|dwfrm_adyPaydata_orderToken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_adyPaydata_adyenFingerprint|dwfrm_adyPaydata_adyenFingerprint"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_checkout_deliveryAndPayment_delivery_useAsBillingAddress|dwfrm_checkout_deliveryAndPayment_delivery_useAsBillingAddress"
+      label: "Same as shipping address Billing address must match the address on your credit card statement"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_checkout_deliveryAndPayment_payment_addressFields_firstName|dwfrm_checkout_deliveryAndPayment_payment_addressFields_firstName"
+      label: "First Name *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_checkout_deliveryAndPayment_payment_addressFields_lastName|dwfrm_checkout_deliveryAndPayment_payment_addressFields_lastName"
+      label: "Last Name *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_checkout_deliveryAndPayment_payment_addressFields_country|dwfrm_checkout_deliveryAndPayment_payment_addressFields_country"
+      label: "Country *"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_checkout_deliveryAndPayment_payment_addressFields_address1|dwfrm_checkout_deliveryAndPayment_payment_addressFields_address1"
+      label: "Address 1 *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_checkout_deliveryAndPayment_payment_addressFields_address2|dwfrm_checkout_deliveryAndPayment_payment_addressFields_address2"
+      label: "Address 2"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_checkout_deliveryAndPayment_payment_addressFields_city|dwfrm_checkout_deliveryAndPayment_payment_addressFields_city"
+      label: "City / Suburb *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_checkout_deliveryAndPayment_payment_addressFields_states_state|dwfrm_checkout_deliveryAndPayment_payment_addressFields_states_state"
+      label: "State / Region *"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_checkout_deliveryAndPayment_payment_addressFields_postalCode|dwfrm_checkout_deliveryAndPayment_payment_addressFields_postalCode"
+      label: "Postcode / Zip *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_checkout_deliveryAndPayment_payment_addressFields_addressShort|dwfrm_checkout_deliveryAndPayment_payment_addressFields_addressShort"
+      label: "Address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dwfrm_checkout_deliveryAndPayment_payment_addressFields_phone|dwfrm_checkout_deliveryAndPayment_payment_addressFields_phone"
+      label: "Phone Number *"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|csrf_token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|dwfrm_checkout_placeorder"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "GA_CID|GA_CID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ts_page_identifier|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ts_geo_host|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ts_gray_host|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ts_journey_ip|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|absolute_domain"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "g-recaptcha-response-100000|g-recaptcha-response"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

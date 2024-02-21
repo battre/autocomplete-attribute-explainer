@@ -1,0 +1,222 @@
+site_examples {
+  url: "https://www.adidas.de"
+  is_structured: false
+  locale {
+    country: "DE"
+    language: "de"
+  }
+  sequences {
+    fields {
+      name: "shippingAddress-firstName|shippingAddress.firstName"
+      label: "Vorname"
+      label_translated: "first name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "shippingAddress-lastName|shippingAddress.lastName"
+      label: "Nachname"
+      label_translated: "Surname"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "shippingAddress-address1|shippingAddress.address1"
+      label: "Straße, Hausnummer"
+      label_translated: "Street, house number"
+      control_type: INPUT
+      concepts: "building-location"
+      autocomplete_attribute: "street-address address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress-address2|shippingAddress.address2"
+      label: "Wohnung/Firma/Empfänger"
+      label_translated: "Residence/company/recipient"
+      control_type: INPUT
+      concepts: "address-overflow"
+      concepts_comment: "This could be an address line 2 (the website labeled "
+        "the field as address-line2) but typically one "
+        "would put all of this information above the street name and house "
+        "number."
+      low_certainty: true
+      autocomplete_attribute: "street-address address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress-zipcode|shippingAddress.zipcode"
+      label: "Postleitzahl"
+      label_translated: "postal code"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress-city|shippingAddress.city"
+      label: "Stadt"
+      label_translated: "city"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "contact-emailAddress|shippingAddress.emailAddress"
+      label: "E-Mail"
+      label_translated: "e-mail"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "home email"
+      section: OTHER
+    }
+    fields {
+      name: "contact-phoneNumber|shippingAddress.phoneNumber"
+      label: "Telefonnummer (Optional)"
+      label_translated: "Phone Number (Optional)"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "home tel"
+      section: OTHER
+    }
+    fields {
+      name: "|shouldUseShippingAddressForBilling"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddress-firstName|billingAddress.firstName"
+      label: "Vorname"
+      label_translated: "first name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "given-name"
+      section: OTHER
+    }
+    fields {
+      name: "billingAddress-lastName|billingAddress.lastName"
+      label: "Nachname"
+      label_translated: "Surname"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "family-name"
+      section: OTHER
+    }
+    fields {
+      hide: true
+      name: "billingAddress-address1|billingAddress.address1"
+      label: "Straße, Hausnummer"
+      label_translated: "Street, house number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "street-address address-line1"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "billingAddress-address2|billingAddress.address2"
+      label: "Wohnung/Firma/Empfänger"
+      label_translated: "Residence/company/recipient"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "street-address address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "billingAddress-zipcode|billingAddress.zipcode"
+      label: "Postleitzahl"
+      label_translated: "postal code"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "postal-code"
+      section: OTHER
+    }
+    fields {
+      hide: true
+      name: "billingAddress-city|billingAddress.city"
+      label: "Stadt"
+      label_translated: "city"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "billingAddress-phoneNumber|billingAddress.phoneNumber"
+      label: "Telefonnummer (Optional)"
+      label_translated: "Phone Number (Optional)"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "home tel"
+      section: PHONE
+    }
+    fields {
+      name: "|"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "login-email|"
+      label: "E-Mail"
+      label_translated: "e-mail"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "login-password|"
+      label: "Kennwort"
+      label_translated: "password"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|persistentLogin"
+      label: "Passwort vergessen?"
+      label_translated: "Forgot Password?"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "coupon-input|coupon"
+      label: "Gib den Promo-Code ein"
+      label_translated: "Enter the promo code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|pid"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "fileSelector|file"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|filename"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

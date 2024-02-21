@@ -1,0 +1,421 @@
+site_examples {
+  url: "https://www.assetpharmacy.com/"
+  is_structured: false
+  locale {
+    country: "NG"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "|post_type"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|taxonomy"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|s"
+      label: "Search..."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dgwt-wcas-search-input-1|s"
+      label: "Products search"
+      example: "Search for products..."
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|post_type"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|dgwt_wcas"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "username|username"
+      label: "Username or email *"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "username"
+      section: OTHER
+    }
+    fields {
+      name: "password|password"
+      label: "Password *"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "current-password"
+      section: OTHER
+    }
+    fields {
+      name: "rememberme|rememberme"
+      label: "Remember me"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "woocommerce-login-nonce|woocommerce-login-nonce"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_wp_http_referer"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|redirect"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "coupon_code|coupon_code"
+      label: "Coupon code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billing_first_name|billing_first_name"
+      label: "First name *"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "given-name"
+      section: OTHER
+    }
+    fields {
+      name: "billing_last_name|billing_last_name"
+      label: "Last name *"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "family-name"
+      section: OTHER
+    }
+    fields {
+      name: "billing_company|billing_company"
+      label: "Company name (optional)"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "organization"
+      section: OTHER
+    }
+    fields {
+      name: "billing_country|billing_country"
+      label: "Country/Region *"
+      control_type: SELECT
+      concepts: "unset"
+      autocomplete_attribute: "country"
+      section: OTHER
+    }
+    fields {
+      name: "billing_address_1|billing_address_1"
+      label: "Street address *"
+      example: "House number and street name"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "address-line1"
+      section: OTHER
+    }
+    fields {
+      name: "billing_address_2|billing_address_2"
+      label: "Flat, suite, unit, etc. (optional)"
+      example: "Apartment, suite, unit, etc. (optional)"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "address-line2"
+      section: OTHER
+    }
+    fields {
+      name: "billing_city|billing_city"
+      label: "Town / City *"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "address-level2"
+      section: OTHER
+    }
+    fields {
+      name: "billing_state|billing_state"
+      label: "State *"
+      control_type: SELECT
+      concepts: "unset"
+      autocomplete_attribute: "address-level1"
+      section: OTHER
+    }
+    fields {
+      name: "billing_postcode|billing_postcode"
+      label: "Postcode (optional)"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "postal-code"
+      section: OTHER
+    }
+    fields {
+      name: "billing_phone|billing_phone"
+      label: "Phone *"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "tel"
+      section: PHONE
+    }
+    fields {
+      name: "billing_email|billing_email"
+      label: "Email address *"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "email username"
+      section: OTHER
+    }
+    fields {
+      name: "account_password|account_password"
+      label: "Create account password *"
+      example: "Password"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "new-password"
+      section: OTHER
+    }
+    fields {
+      name: "ship-to-different-address-checkbox|ship_to_different_address"
+      label: "Deliver to a different address?"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_first_name|shipping_first_name"
+      label: "First name *"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "shipping_last_name|shipping_last_name"
+      label: "Last name *"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "shipping_company|shipping_company"
+      label: "Company name (optional)"
+      control_type: INPUT
+      concepts: "organization"
+      autocomplete_attribute: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "shipping_country|shipping_country"
+      label: "Country/Region *"
+      control_type: SELECT
+      concepts: "country"
+      autocomplete_attribute: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "shipping_address_1|shipping_address_1"
+      label: "Street address *"
+      example: "House number and street name"
+      control_type: INPUT
+      concepts: "address-line1"
+      autocomplete_attribute: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "shipping_address_2|shipping_address_2"
+      label: "Flat, suite, unit, etc. (optional)"
+      example: "Apartment, suite, unit, etc. (optional)"
+      control_type: INPUT
+      concepts: "address-line2"
+      autocomplete_attribute: "address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "shipping_city|shipping_city"
+      label: "Town / City *"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "shipping_state|shipping_state"
+      label: "State *"
+      control_type: SELECT
+      concepts: "address-level1"
+      autocomplete_attribute: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "shipping_postcode|shipping_postcode"
+      label: "Postcode (optional)"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "order_comments|order_comments"
+      label: "Order notes (optional)"
+      example: "Notes about your order, e.g. special notes for delivery."
+      control_type: TEXTAREA
+      concepts: "delivery-instructions"
+      section: ADDRESS
+    }
+    fields {
+      name: "shipping_method_0_flat_rate1|shipping_method[0]"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_method_0_local_pickup17|shipping_method[0]"
+      label: "Click & Collect"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payment_method_rave|payment_method"
+      label: "Rave - Credit / Debit cards"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payment_method_paystack|payment_method"
+      label: "Debit/Credit Cards"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payment_method_bacs|payment_method"
+      label: "Direct bank transfer"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|woocommerce_checkout_update_totals"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "terms|terms"
+      label: "I have read and agree to the website terms and conditions"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|terms-field"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "automatewoo_optin|automatewoo_optin"
+      label: "I want to receive updates about products and promotions."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "place_order|woocommerce_checkout_place_order"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "woocommerce-process-checkout-nonce|woocommerce-process-checkout-nonce"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_wp_http_referer"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|email"
+      label: "Email address here"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "wt-cli-checkbox-necessary|"
+      label: "Necessary"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "wt-cli-checkbox-functional|"
+      label: "Functional"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "wt-cli-checkbox-performance|"
+      label: "Performance"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "wt-cli-checkbox-analytics|"
+      label: "Analytics"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "wt-cli-checkbox-advertisement|"
+      label: "Advertisement"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "wt-cli-checkbox-others|"
+      label: "Others"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "g-recaptcha-response-100000|g-recaptcha-response"
+      label: "error:"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

@@ -1,0 +1,75 @@
+Russian addresses are super confusing:
+
+<p><a href="https://spbtranslations.com/articles/how-do-i-address-a-letter-to-russia">This source</a>
+points out that address data can be transliterated and translated. It contains
+some common terms.
+
+The following quote helps understanding the structures. ("n.b." are by myself, I
+am not 100% sure these are correct)
+<blockquote>
+  "The Russian address system might get a bit confusing, as each address is
+  often made up of a bunch of information, an inheritance of the Soviet mass
+  construction of tall multi-apartment buildings. So, you’ll usually have a
+  “dom” [n.b.: дом] number, which refers to the whole complex; then, since many
+  housing complexes in Russia are massive and contain multiple buildings, most
+  of which are accessible from an inner courtyard, you’ll also have a “korpus”
+  [n.b.: корп.] number referring to the specific building; the “stroenie” [n.b.:
+  стр.] number is quite similar to the “korpus”, as it still refers to the
+  specific building of a complex having a common entrance from the main street;
+  then, you may have a “pod’ezd” [n.b.: Подъезд], aka the actual entrance to an
+  apartment located in a multi-storey building; and finally, the “kvartira”
+  [n.b.: Квартира], referring to the specific apartment accessible from the
+  specific “pod’ezd”, inside the specific “stroenie” or “korpus” of a certain
+  “dom”." - https://thetranssiberians.com/2015/08/30/hostels-in-russia/
+</blockquote>
+
+A Russian colleague clarified this as follows:
+<blockquote>
+  Stroenie is a building inside a building set that are not accessible from a
+  street. Good example - buildings on a factory territory. Korpus is a building
+  inside a building set with its own entrance from a street. Usually you can
+  have one of them. The interesting thing begins when a territory is divided
+  into several. In that case a building may receive “korpus”. Example: Moscow,
+  Ulitsa Rogova, 12 korpus 2 stroenie 1. Many government documents have just one
+  field “korpus/stroenie”. Then you will fill in with “k.2 s.1”.
+  <p>If a website does not have fields for korpus/stroenie, this information
+    would go into the "dom"/"дома" field.
+</blockquote>
+
+Finally, <a
+href="https://www.upu.int/UPU/media/upu/documents/PostCode/Thorougfare-Types-and-Abbreviations.pdf">this</a>
+is handy because it contains a number of abbreviation and translations.
+
+<h4>Missing field types</h4>
+<p>The following cases are currently missing in the autocomplete spec and
+occurred on multiple sites:
+<ul>
+<li>address-search - Many websites have an interactive address widget into which
+  you fill city, street and house information
+<li>street-name
+<li>house-number
+<li>stroenie
+<li>korpus
+<li>entrance
+<li>floor
+<li>apartment
+<li>door-code
+<li>delivery-instructions
+</ul>
+
+<h4>Open questions</h4>
+<ul>
+  <li>Do we want a field type for the "ouside-address" to be filled into address search fields?
+  <li>Do we want to have different types for handling the situation that a "dom"
+    field needs to represent the "korpus"/"stroenie” as well because there are
+    no separate fields for those?
+  <li>A Russian native speaker shared that a typical address consists of the
+  top-level administrative district (oblast, kray, etc), then optional region in
+  case it is a village, then city/town/village, street name, building number and
+  apartment number. This means that the city needs to be mapped to address-level3
+  instead of address-level2, which may cause breaking behavior of websites which
+  optimized to follow Chrome's behavior (I suspect that other browsers also
+  (incorrectly) assigned address-level2 to a city).
+</ul>
+
+<p>Progress: ☑ First round of cleanup, ☐ Discussed with a (former) resident

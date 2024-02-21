@@ -1,0 +1,98 @@
+formatting-rules:
+  address:
+  - street-address-alternative-1
+  - separator: "\n"
+  # {neighborhood}
+  - locality2
+  - separator: "\n"
+  - admin-area2
+  - separator: "\n"
+  # {post-code} {city}, {state}
+  - postal-code
+  - locality1
+  - separator: ", "
+  - admin-area1
+  - separator: "\n"
+  # {country}
+  - country-name
+  - skip: country  # redundant with country-name
+  - skip: street-address  # redundant with street-address-alternative-1
+
+  building-location:
+  - reference: street_first_building_location
+
+  street-address-alternative-1:
+  - building-location
+  - separator: ", "
+  - in-building-location
+  - separator: "\n"
+  - address-overflow
+
+  # Apartamento 5A, Piso 10
+  in-building-location:
+  - unit
+  - separator: ", "
+  - prefix: "Piso "
+  - floor
+
+  address-overflow:
+  - landmark-and-cross-streets
+  - separator: "\n"
+  - delivery-instructions
+
+  landmark-and-cross-streets:
+  - prefix: "Entre Calles "
+  - cross-streets
+  - separator: "\n"
+  - landmark
+
+  cross-streets:
+  - cross-street1
+  - separator: " y "
+  - cross-street2
+
+examples:
+- id: name
+  comment: |
+    This is an example of a name in Mexico specified by the most granular
+    tokens.
+  attributes:
+    given-name: Pablo
+    family-name-first: Ruiz
+    family-name-conjunction: y
+    family-name-second: Picasso
+  output:
+    name:
+      show: true
+      text: Pablo Ruiz y Picasso
+
+- id: address
+  comment: |
+    This is an example of a full address in Mexico specified by the most
+    granular tokens.
+  attributes:
+    street: Avenida Álvaro Obregón
+    building: 1234
+    floor: 10
+    unit-type: Apartamento
+    unit-name: 5A
+    landmark: Cerca del Parque España
+    cross-street1: Tonalá
+    cross-street2: Monterrey
+    locality1: Ciudad de México
+    locality2: Roma Nte.
+    admin-area1: CDMX
+    postal-code: "06140"
+    country: MX
+    country-name: Mexico
+
+  output:
+    address:
+      show: true
+      text: |
+        Avenida Álvaro Obregón 1234, Apartamento 5A, Piso 10
+        Entre Calles Tonalá y Monterrey
+        Cerca del Parque España
+        Roma Nte.
+        06140 Ciudad de México, CDMX
+        Mexico

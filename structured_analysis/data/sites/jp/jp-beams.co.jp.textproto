@@ -1,0 +1,322 @@
+site_examples {
+  url: "https://www.beams.co.jp"
+  is_structured: true
+  locale {
+    country: "JP"
+    language: "ja"
+  }
+  sequences {
+    fields {
+      name: "name|name"
+      label: "［姓］"
+      label_translated: "[Family name]"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "name2|name2"
+      label: "［名］"
+      label_translated: "[Given name]"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "kana|kana"
+      label: "［セイ］"
+      label_translated: "[Family name (phonetic)]"
+      control_type: INPUT
+      concepts: "phonetic-family-name"
+      section: NAME
+    }
+    fields {
+      name: "kana2|kana2"
+      label: "［メイ］"
+      label_translated: "[Given name (phonetic)]"
+      control_type: INPUT
+      concepts: "phonetic-given-name"
+      section: NAME
+    }
+    fields {
+      name: "sex_1|sex"
+      label: "男性"
+      label_translated: "male"
+      control_type: RADIO
+      concepts: "honorific-prefix"
+      section: NAME
+    }
+    fields {
+      name: "sex_2|sex"
+      label: "女性"
+      label_translated: "Woman"
+      control_type: RADIO
+      concepts: "honorific-prefix"
+      section: NAME
+    }
+    fields {
+      name: "|yy_birth"
+      label: "生年月日"
+      label_translated: "Date of birth"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|mm_birth"
+      label: "年"
+      label_translated: "Year"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|dd_birth"
+      label: "月"
+      label_translated: "Moon"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "pwd|pwd"
+      label: "パスワード"
+      label_translated: "password"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "cpwd|cpwd"
+      label: "パスワード（確認）"
+      label_translated: "Password confirmation)"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "zip_form1|zip_form1"
+      label: "郵便番号"
+      label_translated: "post code"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "zip_form2|zip_form2"
+      label: "郵便番号"
+      label_translated: "post code"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "zip|zip"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "pref|pref"
+      label: "都道府県"
+      label_translated: "Prefectures"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "addr|addr"
+      label: "市区町村番地"
+      label_translated: "City address"
+      control_type: INPUT
+      concepts: "address-level2"
+      concepts: "building-location"
+      section: ADDRESS
+    }
+    fields {
+      name: "addr2|addr2"
+      label: "建物名"
+      label_translated: "Building name"
+      control_type: INPUT
+      concepts: "building"
+      section: ADDRESS
+    }
+    fields {
+      name: "WeBEAMS_form_TEL1_1|tel_form1"
+      label: "電話番号１ ー"
+      label_translated: "phone number 1"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "WeBEAMS_form_TEL1_2|tel_form2"
+      label: "電話番号１ ー"
+      label_translated: "phone number 1"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "WeBEAMS_form_TEL1_3|tel_form3"
+      label: "電話番号１ ー"
+      label_translated: "phone number 1"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "tel|tel"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "WeBEAMS_form_TEL2_1|tel_form4"
+      label: "電話番号２ ー ー"
+      label_translated: "Phone number 2 ー ー"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "WeBEAMS_form_TEL2_2|tel_form5"
+      label: "電話番号２ ー ー"
+      label_translated: "Phone number 2 ー ー"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "WeBEAMS_form_TEL2_3|tel_form6"
+      label: "電話番号２ ー ー"
+      label_translated: "Phone number 2 ー ー"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "tel2|tel2"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mag2_1|mag2"
+      label: "希望する"
+      label_translated: "hope"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mag2_0|mag2"
+      label: "希望しない"
+      label_translated: "Do not want"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "chk_dm_use_regist_addr|DM_UseRegistAddr"
+      label: "会員登録した住所に送付する"
+      label_translated: "Send to the registered address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dm_zip_form1|dm_zip_form1"
+      label: "郵便番号"
+      label_translated: "post code"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "dm_zip_form2|dm_zip_form2"
+      label: "郵便番号"
+      label_translated: "post code"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "dm_zip|dm_zip"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dm_pref|dm_pref"
+      label: "都道府県"
+      label_translated: "Prefectures"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dm_addr|dm_addr"
+      label: "市区町村番地"
+      label_translated: "City address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dm_addr2|dm_addr2"
+      label: "建物名"
+      label_translated: "Building name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "subscribe-dsmailmaga_02|subscribe"
+      label: "BEAMS CLUB JOURNAL"
+      label_translated: "BEAMS CLUB JOURNAL"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "subscribe-dsmailmaga_01|subscribe"
+      label: "BEAMS CLUB 新着メール"
+      label_translated: "BEAMS CLUB new mail"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|authkey"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|confirm"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|agree.x"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "g-recaptcha-response-100000|g-recaptcha-response"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

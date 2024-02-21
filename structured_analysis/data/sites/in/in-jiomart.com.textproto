@@ -1,0 +1,293 @@
+site_examples {
+  url: "https://www.jiomart.com"
+  is_structured: true
+  locale {
+    country: "IN"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "selectWstatusmobile|"
+      label: "Enable order updates and important information on Whatsapp"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|customerNotesByOrder"
+      label: "CUSTOMER NOTES"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "selectWstatusweb|"
+      label: "Enable order updates and important information on Whatsapp"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Search for your Location"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "EgmoreEgmore, Chennai, Tamil NaduEgmore Railway StationEgmore, Chennai, Tamil NaduEgmoreEgmore, Chen"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "flatno|flat_or_house_no"
+      label: "Flat / House No."
+      control_type: INPUT
+      concepts: "apartment"
+      section: ADDRESS
+    }
+    fields {
+      name: "floorno|floorno"
+      label: "Floor No."
+      control_type: INPUT
+      concepts: "floor"
+      section: ADDRESS
+    }
+    fields {
+      name: "towerno|tower_no"
+      label: "Tower No."
+      control_type: INPUT
+      concepts: "gap"
+      section: ADDRESS
+    }
+    fields {
+      name: "buildingname|building_name"
+      label: "Building / Apartment Name"
+      control_type: INPUT
+      concepts: "building"
+      section: ADDRESS
+    }
+    fields {
+      name: "building_name|building_address"
+      label: "Address *"
+      control_type: INPUT
+      concepts: "street-address"
+      section: ADDRESS
+    }
+    fields {
+      name: "areaname|area_name"
+      label: "Landmark / Area *"
+      control_type: INPUT
+      concepts: "landmark"
+      concepts: "address-level3"
+      section: ADDRESS
+    }
+    fields {
+      name: "addresseename|addressee_name"
+      label: "Name *"
+      control_type: INPUT
+      concepts: "name"
+      section: NAME
+    }
+    fields {
+      name: "phonenumber|mobile_no"
+      label: "Mobile number *"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "mhome|address_type"
+      label: "Home"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mwork|address_type"
+      label: "Work"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mother|address_type"
+      label: "Other"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "pin|pin"
+      label: "Pin Code *"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "flat_or_house_no|flat_or_house_no"
+      label: "Flat / House No."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "floor_no|floor_no"
+      label: "Floor No."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "tower_no|tower_no"
+      label: "Tower No."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "building_name|building_name"
+      label: "Building / Apartment Name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "building_address|building_address"
+      label: "Address *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "area_name|area_name"
+      label: "Landmark / Area *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "landmark|landmark"
+      label: "City,State"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "addressee_name|addressee_name"
+      label: "Name *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mobile_no|mobile_no"
+      label: "Mobile number *"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "nhome|address_type"
+      label: "Home"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "nwork|address_type"
+      label: "Work"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "nother|address_type"
+      label: "Other"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "pin|pin"
+      label: "Pin Code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "landmark|city"
+      label: "City"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|apartment_id"
+      label: "Tap to auto fill the address fieldsDetect My Location"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "flat_or_house|flat_or_house_no"
+      label: "Flat / House No."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "floor_no|floor_no"
+      label: "Floor No."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "tower_no|tower_no"
+      label: "Tower No."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "addressee_name|addressee_name"
+      label: "Full Name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mobile_no|mobile_no"
+      label: "Phone number *"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "home|address_type"
+      label: "Home"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "work|address_type"
+      label: "Work"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "other|address_type"
+      label: "Other"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

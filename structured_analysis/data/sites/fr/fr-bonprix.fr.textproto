@@ -1,0 +1,171 @@
+site_examples {
+  url: "https://www.bonprix.fr"
+  is_structured: true
+  locale {
+    country: "FR"
+    language: "fr"
+  }
+  sequences {
+    fields {
+      name: "submitstate|submitstate"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressType_service_points|shippingAddressTypeUiCode"
+      label: "Livraison en point de retrait"
+      label_translated: "Pick-up point delivery"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressType_billing|shippingAddressTypeUiCode"
+      label: "Livraison à l´adresse de facturation"
+      label_translated: "Delivery to billing address"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddressType_alternative|shippingAddressTypeUiCode"
+      label: "Livraison à une adresse différente"
+      label_translated: "Delivery to a different address"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "addressBookEntryId|currentOrder.shippingAddress.addressBookEntryId"
+      label: "Recopier à partir du carnet d\'adresse."
+      label_translated: "Copy from address book."
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingAddress.salutation_0|shippingAddress.salutation"
+      label: "Madame"
+      label_translated: "Mrs."
+      label_comment: "autocomplete attribute is 'sex'"
+      control_type: RADIO
+      concepts: "honorific-prefix"
+      autocomplete_attribute: "sex"
+      section: NAME
+    }
+    fields {
+      name: "shippingAddress.salutation_1|shippingAddress.salutation"
+      label: "Monsieur"
+      label_translated: "Mr."
+      control_type: RADIO
+      concepts: "honorific-prefix"
+      autocomplete_attribute: "sex"
+      section: NAME
+    }
+    fields {
+      name: "shippingAddress.firstName|shippingAddress.firstName"
+      label: "Prénom*"
+      label_translated: "First name*"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "shippingAddress.name|shippingAddress.name"
+      label: "Nom*"
+      label_translated: "Last name*"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "shippingAddress.postalCode|shippingAddress.postalCode"
+      label: "Code postal*"
+      label_translated: "Postal code*"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress.city|shippingAddress.city"
+      label: "Commune*"
+      label_translated: "Municipality*"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress.street|shippingAddress.street"
+      label: "Voie*"
+      label_translated: "Way*"
+      control_type: INPUT
+      concepts: "street-name"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress.houseNumber|shippingAddress.houseNumber"
+      label: "N°"
+      label_translated: "No."
+      control_type: INPUT
+      concepts: "house-number"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress.city2|shippingAddress.city2"
+      label: "Localité/lieu dit"
+      label_translated: "Locality/lieu dit"
+      label_comment: "A \"Lieu dit\" is a small place that often does not have "
+        "street names. People  would typically fill this into address line 1."
+      control_type: INPUT
+      concepts: "address-level3"
+      autocomplete_attribute: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress.street2|shippingAddress.street2"
+      label: "Appartement"
+      label_translated: "Apartment"
+      control_type: INPUT
+      concepts: "apartment"
+      autocomplete_attribute: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "shippingAddress.street3|shippingAddress.street3"
+      label: "Bâtiment"
+      label_translated: "Building"
+      control_type: INPUT
+      concepts: "building"
+      autocomplete_attribute: "address-line3"
+      section: ADDRESS
+    }
+    fields {
+      name: "transferToAddressbook|transferToAddressbook"
+      label: "Inscrire cette adresse dans le carnet d\'adresse."
+      label_translated: "Enter this address in the address book."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingMethodTypeUiCode|shippingMethodTypeUiCode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "g-recaptcha-response-100000|g-recaptcha-response"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

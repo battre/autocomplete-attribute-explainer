@@ -1,0 +1,99 @@
+site_examples {
+  url: "	https://answear.com"
+  is_structured: true
+  locale {
+    country: "PL"
+    language: "pl"
+  }
+  sequences {
+    fields {
+      name: "firstName|firstName"
+      label: "Imię"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "surname|surname"
+      label: "Nazwisko"
+      label_translated: "Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "company|company"
+      label: "Firma (opcjonalnie dla kuriera)"
+      label_translated: "Company (optional for courier)"
+      control_type: INPUT
+      concepts: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "street|street"
+      label: "Ulica"
+      label_translated: "Street"
+      control_type: INPUT
+      concepts: "street-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "houseNumber|houseNumber"
+      label: "Nr domu"
+      label_translated: "House number"
+      control_type: INPUT
+      concepts: "house-number"
+      section: ADDRESS
+    }
+    fields {
+      name: "apartmentNumber|apartmentNumber"
+      label: "Nr mieszkania"
+      label_translated: "Apartment number"
+      control_type: INPUT
+      concepts: "apartment"
+      section: ADDRESS
+    }
+    fields {
+      name: "postalCode|postalCode"
+      label: "Kod pocztowy"
+      label_translated: "ZIP code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "city|city"
+      label: "Miasto"
+      label_translated: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "phone|phone"
+      label: "Nr telefonu komórkowego"
+      label_translated: "Cell phone no"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "email|email"
+      label: "Adres e-mail"
+      label_translated: "E-mail adress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "withInvoice_radio_0|withInvoice"
+      label: "Chcę otrzymać fakturę VAT"
+      label_translated: "I want to receive a VAT invoice"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

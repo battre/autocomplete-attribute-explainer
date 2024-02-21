@@ -1,0 +1,37 @@
+<p>Turkish addresses are special because the concept translated to
+a city (Şehir/Il) is more comparable to states in other countries. We have
+the following granularities:
+<ul>
+<li>Şehir/Il: Province (City) - many people refer to these as "city" and we see
+  "city" in the source code a lot. This is because often provinces share the name
+  of the big city. (note: this is more comparable to states in other countries) -
+  address-level1
+<li>İlçe: County/District (note: this is more comparable to cities in other countries) - address-level2
+<li>Mahalle/Köy: Neighborhood/Village (a neighborhood in the country side) - address-level3
+</ul>
+
+<p>The majority of addresses seem to be unstructured addresses (I haven't copied them all).
+
+<h4>Missing field types</h4>
+<p>The following cases are currently missing in the autocomplete spec and
+occurred on multiple sites:
+<ul>
+<li> street-name
+<li> building (every building has a house number, some also have a name)
+<li> house-number
+<li> apartment
+<li> delivery instructions
+</ul>
+
+<h4>Open questions</h4>
+<ul>
+  <li>n/a
+</ul>
+
+Note that a Turkish citizen shared that people often copy the
+Mahalle/Köy in the street-address field even if there is a separate field for
+that. Also in rural areas people put their phone number in the free-text field
+so that the delivery service can call them because the street-name and
+house-number are not sufficient to find houses in the country side.
+
+<p>Progress: ☑ First round of cleanup, ☑ Discussed with a (former) resident

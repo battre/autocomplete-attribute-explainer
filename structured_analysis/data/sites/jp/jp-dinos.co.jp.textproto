@@ -1,0 +1,186 @@
+site_examples {
+  url: "https://www.dinos.co.jp"
+  is_structured: true
+  locale {
+    country: "JP"
+    language: "ja"
+  }
+  sequences {
+    fields {
+      name: "|SEARCH_FLG"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|actionFlg"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|submitFlg"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|ZIP_ADDR1"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|ZIP_ADDRKN1"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|ZIP_ADDR2_P"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|ZIP_ADDRKN2_P"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|ADDR_CD"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|SEARCH_ZIP_CD"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "MEM_NM_FST|MEM_NM_FST"
+      label: "姓"
+      label_translated: "Family name"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "MEM_NM_MID|MEM_NM_MID"
+      label: "名"
+      label_translated: "Given name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "MEM_NM_LAST|MEM_NM_LAST"
+      label: "セイ"
+      label_translated: "Family name (Phonetic)"
+      control_type: INPUT
+      concepts: "phonetic-family-name"
+      section: NAME
+    }
+    fields {
+      name: "MEM_NM_ETC|MEM_NM_ETC"
+      label: "メイ"
+      label_translated: "Given name (Phonetic)"
+      control_type: INPUT
+      concepts: "phonetic-given-name"
+      section: NAME
+    }
+    fields {
+      name: "ZIP_CD|ZIP_CD"
+      label: "〒"
+      label_translated: "Postal code"
+      example: "例：1640012"
+      example_translated: "Example: 1640012"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "|ZIP_ADDR_VIEW"
+      label: "市区郡　町村名／丁目"
+      label_translated: "City/town name/chome"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "ZIP_ADDR2|ZIP_ADDR2"
+      label: "番地・号"
+      label_translated: "Address/number"
+      example: "例：４６－２"
+      example_translated: "Example: 46-2"
+      control_type: INPUT
+      concepts: "building-location"
+      section: ADDRESS
+    }
+    fields {
+      name: "ZIP_ADDR3|ZIP_ADDR3"
+      label: "建物名・部屋番号"
+      label_translated: "Building name, room number"
+      example: "例：中野坂上セントラルハイツ２０１"
+      example_translated: "Example: Nakano Sakaue Central Heights 201"
+      control_type: INPUT
+      concepts: "building-and-location-in-building"
+      section: ADDRESS
+    }
+    fields {
+      name: "TEL_NO1|TEL_NO1"
+      label: "電話番号 必須"
+      label_translated: "Phone number Required"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "TEL_NO2|TEL_NO2"
+      label: "－"
+      label_translated: "-"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "TEL_NO3|TEL_NO3"
+      label: "－"
+      label_translated: "-"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "MEM_EML|MEM_EML"
+      label: "メールアドレス 必須"
+      label_translated: "Email Address Required"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|dummy"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|NEXT_URL"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

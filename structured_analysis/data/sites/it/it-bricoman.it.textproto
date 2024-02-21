@@ -1,0 +1,581 @@
+site_examples {
+  url: "https://www.bricoman.it"
+  is_structured: true
+  locale {
+    country: "IT"
+    language: "it"
+  }
+  sequences {
+    fields {
+      name: "|form_key"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "login-email|username"
+      label: "Indirizzo email"
+      label_translated: "Email address"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "login-password|password"
+      label: "Password"
+      label_translated: "Password"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|captcha_form_id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "g-recaptcha-response-1|g-recaptcha-response"
+      label: "Accedi"
+      label_translated: "Log in"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|recaptcha-validate-"
+      label: "Accedi"
+      label_translated: "Log in"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|context"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "customer-phone-second|"
+      label: "Telefono 2 (opzionale)"
+      label_translated: "Phone 2 (optional)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "1|ko_unique_1"
+      label: "Privato"
+      label_translated: "Private"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "2|ko_unique_2"
+      label: "Professionista"
+      label_translated: "Professional"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "F1UM3K2|billing_details_firstname"
+      label: "Nome"
+      label_translated: "First name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: OTHER
+    }
+    fields {
+      name: "JR6VCJJ|billing_details_lastname"
+      label: "Cognome"
+      label_translated: "Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      section: OTHER
+    }
+    fields {
+      name: "JJYGOD4|fiscal_code"
+      label: "Codice fiscale"
+      label_translated: "Fiscal Code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "G7XX7D9|id"
+      label: "Id"
+      label_translated: "Id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "L6L5KRG|business_name"
+      label: "Ragione sociale"
+      label_translated: "Business name"
+      control_type: INPUT
+      concepts: "organization"
+      section: OTHER
+    }
+    fields {
+      name: "JDV9RYW|vat"
+      label: "Partita IVA"
+      label_translated: "VAT number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "UMRJNWA|id"
+      label: "Id"
+      label_translated: "Id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "AR37GCF|firstname"
+      label: "Nome"
+      label_translated: "First name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "CHM8F4A|lastname"
+      label: "Cognome"
+      label_translated: "Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "N2596KC|company"
+      label: "Azienda"
+      label_translated: "Agency"
+      control_type: INPUT
+      concepts: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "A3PQARV|street[0]"
+      label: "Via"
+      label_translated: "Street"
+      control_type: INPUT
+      concepts: "street-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "FME6ODC|street[1]"
+      label: "N° Civico"
+      label_translated: "House number"
+      control_type: INPUT
+      concepts: "house-number"
+      section: ADDRESS
+    }
+    fields {
+      name: "P1DXXC2|street[2]"
+      label: "Frazione"
+      label_translated: "Suburb"
+      control_type: INPUT
+      concepts: "address-level3"
+      section: ADDRESS
+    }
+    fields {
+      name: "NP0DDGL|city"
+      label: "Città"
+      label_translated: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "O40NL6X|region_id"
+      label: "Provincia"
+      label_translated: "Province"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "IX296B0|region"
+      label: "Provincia"
+      label_translated: "Province"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "A924609|postcode"
+      label: "CAP"
+      label_translated: "Postal code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "AR7B0CR|country_id"
+      label: "Nazione"
+      label_translated: "Country"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "NRK7G88|address_id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "search-cap-street-billing|text"
+      label: "Cap e selezione città"
+      label_translated: "Zip code and city selection"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "new-password"
+      section: OTHER
+    }
+    fields {
+      name: "B1XASGV|vat_id"
+      label: "Partita Iva"
+      label_translated: "VAT number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "AA89WGC|custom_attributes[reply_notes]"
+      label: "Note"
+      label_translated: "Note"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "e-invoicing-choice|"
+      label: "Inserire i dati per la fatturazione elettronica"
+      label_translated: "Enter the data for electronic invoicing"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "BPOSXRE|destination_code"
+      label: "Codice destinatario"
+      label_translated: "Recipient code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "G9EYVAN|pec"
+      label: "PEC"
+      label_translated: "PEC"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "IFDBHSR|id"
+      label: "Id"
+      label_translated: "Id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|form_key"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "banktransfer|payment[method]"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "paymentIrpef|payment[irpef]"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "paypal_express|payment[method]"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bnlpositivity_paymentservice|payment[method]"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "agreement__1|agreement[1]"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "wishlist-switch|wishlist-switch"
+      label: "Salva il carrello nel promemoria"
+      label_translated: "Save the cart to the reminder"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "customer-email|username"
+      label: "Indirizzo email"
+      label_translated: "Email address"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "pass|password"
+      label: "Password"
+      label_translated: "Password"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "g-recaptcha-response|g-recaptcha-response"
+      label: "Esegui il checkout utilizzando il tuo account"
+      label_translated: "Checkout using your account"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|recaptcha-validate-"
+      label: "Esegui il checkout utilizzando il tuo account"
+      label_translated: "Checkout using your account"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|context"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "SILE5UD|custom_attributes[address_id]"
+      label: "Custom Attribute"
+      label_translated: "Custom Attribute"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DRBX95H|firstname"
+      label: "Nome"
+      label_translated: "First name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "YXTO5W0|lastname"
+      label: "Cognome"
+      label_translated: "Last name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "MSOIVQA|street[0]"
+      label: "Via"
+      label_translated: "Street"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "HRQ68R7|street[1]"
+      label: "N° Civico"
+      label_translated: "Civic number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "XDD9F2J|street[2]"
+      label: "Frazione"
+      label_translated: "Fraction"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "XX0JNHN|postcode"
+      label: "CAP"
+      label_translated: "POSTAL CODE"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "NOLW1LK|city"
+      label: "Città"
+      label_translated: "City"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "O9SRLVK|region_id"
+      label: "Provincia"
+      label_translated: "Province"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "EXWTAR2|region"
+      label: "Provincia"
+      label_translated: "Province"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "search-cap-street-shipping|text"
+      label: "Cap e selezione città"
+      label_translated: "Zip code and city selection"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "new-password"
+      section: OTHER
+    }
+    fields {
+      name: "YT4WW9W|country_id"
+      label: "Nazione"
+      label_translated: "Country"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "J8G48MJ|vat_id"
+      label: "Partita Iva"
+      label_translated: "VAT number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "I4BGWPW|custom_attributes[reply_attention_of]"
+      label: "All\'attenzione di"
+      label_translated: "To the attention of"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "HFGWQ25|custom_attributes[reply_location_near]"
+      label: "Presso"
+      label_translated: "At"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "JJBRQFY|custom_attributes[reply_delivery_time_availability]"
+      label: "Orario presidio"
+      label_translated: "Presidio hours"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "W666DKM|custom_attributes[reply_notes]"
+      label: "Note"
+      label_translated: "Note"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0002|ot-group-id-C0002"
+      label: "Cookie di prestazione"
+      label_translated: "Performance cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0003|ot-group-id-C0003"
+      label: "Cookie di funzionalità"
+      label_translated: "Functionality cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0004|ot-group-id-C0004"
+      label: "Cookie per pubblicità mirata"
+      label_translated: "Targeted advertising cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "vendor-search-handler|vendor-search-handler"
+      label: "Vendor Search"
+      label_translated: "Vendor Search"
+      example: "Search..."
+      example_translated: "Search ..."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-hosts-groups-handler|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-vendor-groups-handler|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-vendor-leg-handler|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "chkbox-id|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

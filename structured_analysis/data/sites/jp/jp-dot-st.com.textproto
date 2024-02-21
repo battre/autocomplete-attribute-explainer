@@ -1,0 +1,857 @@
+site_examples {
+  url: "https://www.dot-st.com"
+  is_structured: true
+  locale {
+    country: "JP"
+    language: "ja"
+  }
+  sequences {
+    fields {
+      name: "btnSearchB|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "qB|q"
+      label: "キーワードで探す"
+      label_translated: "Search by keyword"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "similar-upload-file|similar-upload-file"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "キーワードで探す"
+      label_translated: "Search by keyword"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_csrf"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "memIdType1|memIdType"
+      label: "会員ID必須"
+      label_translated: "Member ID required"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "memIdType2|memIdType"
+      label: "会員ID必須"
+      label_translated: "Member ID required"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "memIdType3|memIdType"
+      label: "会員ID必須"
+      label_translated: "Member ID required"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "memId|memId"
+      label: "会員ID必須"
+      label_translated: "Member ID required"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "nm1|nm1"
+      label: "姓"
+      label_translated: "Family name"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "nm2|nm2"
+      label: "名"
+      label_translated: "Given name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "nm3|nm3"
+      label: "セイ"
+      label_translated: "Family name (phonetic)"
+      control_type: INPUT
+      concepts: "phonetic-family-name"
+      section: NAME
+    }
+    fields {
+      name: "nm4|nm4"
+      label: "メイ"
+      label_translated: "Given name (phonetic)"
+      control_type: INPUT
+      concepts: "phonetic-given-name"
+      section: NAME
+    }
+    fields {
+      name: "sexTp1|sexTp"
+      label: "女性"
+      label_translated: "Female"
+      control_type: RADIO
+      concepts: "honorific-prefix"
+      section: NAME
+    }
+    fields {
+      name: "sexTp2|sexTp"
+      label: "男性"
+      label_translated: "Male"
+      control_type: RADIO
+      concepts: "honorific-prefix"
+      section: NAME
+    }
+    fields {
+      name: "sexTp3|sexTp"
+      label: "無回答"
+      label_translated: "no answer"
+      control_type: RADIO
+      concepts: "honorific-prefix"
+      section: NAME
+    }
+    fields {
+      name: "tel1|tel1"
+      label: "電話番号必須"
+      label_translated: "Phone numberrequired"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "tel2|tel2"
+      label: "電話番号必須"
+      label_translated: "Phone numberrequired"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "tel3|tel3"
+      label: "電話番号必須"
+      label_translated: "Phone numberrequired"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "mbEml|mbEml"
+      label: "携帯メールアドレス"
+      label_translated: "mobile email address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "pcEml|pcEml"
+      label: "PCメールアドレス"
+      label_translated: "PC email address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "nickname|nickname"
+      label: "ニックネーム必須"
+      label_translated: "Nickname required"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "icon-avatar-choiceImgHidden|avatorImage"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "modal-avatar-content__footer-cancel|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "modal-avatar-content__footer-entry|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "zipCd1|zipCd1"
+      label: "郵便番号必須"
+      label_translated: "postal code required"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "zipCd2|zipCd2"
+      label: "郵便番号必須"
+      label_translated: "postal code required"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: OTHER
+    }
+    fields {
+      name: "addr1|addr1"
+      label: "都道府県必須"
+      label_translated: "Prefecture required"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "addr2|addr2"
+      label: "市区町村必須"
+      label_translated: "City Required"
+      example: "渋谷区渋谷"
+      example_translated: "Shibuya, Shibuya Ward"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "addr3|addr3"
+      label: "番地必須"
+      label_translated: "Address required"
+      example: "2-21-1"
+      example_translated: "2-21-1"
+      control_type: INPUT
+      concepts: "building-location"
+      section: ADDRESS
+    }
+    fields {
+      name: "addr4|addr4"
+      label: "建物名 部屋番号"
+      label_translated: "Building name, room number"
+      example: "〇〇ビル〇〇号室"
+      example_translated: "〇〇 building room 〇〇"
+      control_type: INPUT
+      concepts: "building-and-location-in-building"
+      autocomplete_attribute: "address-line3"
+      section: ADDRESS
+    }
+    fields {
+      name: "checkbox-receive-mail|mailNotice"
+      label: "受信方法"
+      label_translated: "Receiving method"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_mailNotice"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "appNotice1|appNotice"
+      label: "受信方法"
+      label_translated: "Receiving method"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_appNotice"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "pcMailNotice|pcMailNotice"
+      label: "受信方法"
+      label_translated: "Receiving method"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_pcMailNotice"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mbMailNotice|mbMailNotice"
+      label: "受信方法"
+      label_translated: "Receiving method"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_mbMailNotice"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brandNotices1|brandNotices"
+      label: "ブランド選択"
+      label_translated: "brand selection"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_brandNotices"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brandNotices2|brandNotices"
+      label: "ブランド選択"
+      label_translated: "brand selection"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_brandNotices"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brandNotices3|brandNotices"
+      label: "ブランド選択"
+      label_translated: "brand selection"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_brandNotices"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brandNotices4|brandNotices"
+      label: "ブランド選択"
+      label_translated: "brand selection"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_brandNotices"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brandNotices5|brandNotices"
+      label: "ブランド選択"
+      label_translated: "brand selection"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_brandNotices"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brandNotices6|brandNotices"
+      label: "ブランド選択"
+      label_translated: "brand selection"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_brandNotices"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brandNotices7|brandNotices"
+      label: "ブランド選択"
+      label_translated: "brand selection"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_brandNotices"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brandNotices8|brandNotices"
+      label: "ブランド選択"
+      label_translated: "brand selection"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_brandNotices"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brandNotices9|brandNotices"
+      label: "ブランド選択"
+      label_translated: "brand selection"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_brandNotices"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brandNotices10|brandNotices"
+      label: "ブランド選択"
+      label_translated: "brand selection"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_brandNotices"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brandNotices11|brandNotices"
+      label: "ブランド選択"
+      label_translated: "brand selection"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_brandNotices"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brandNotices12|brandNotices"
+      label: "ブランド選択"
+      label_translated: "brand selection"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_brandNotices"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brandNotices13|brandNotices"
+      label: "ブランド選択"
+      label_translated: "brand selection"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_brandNotices"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brandNotices14|brandNotices"
+      label: "ブランド選択"
+      label_translated: "brand selection"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_brandNotices"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brandNotices15|brandNotices"
+      label: "ブランド選択"
+      label_translated: "brand selection"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_brandNotices"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brandNotices16|brandNotices"
+      label: "ブランド選択"
+      label_translated: "brand selection"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_brandNotices"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brandNotices17|brandNotices"
+      label: "ブランド選択"
+      label_translated: "brand selection"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_brandNotices"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brandNotices18|brandNotices"
+      label: "ブランド選択"
+      label_translated: "brand selection"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_brandNotices"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brandNotices19|brandNotices"
+      label: "ブランド選択"
+      label_translated: "brand selection"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_brandNotices"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brandNotices20|brandNotices"
+      label: "ブランド選択"
+      label_translated: "brand selection"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_brandNotices"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brandNotices21|brandNotices"
+      label: "ブランド選択"
+      label_translated: "brand selection"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_brandNotices"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brandNotices22|brandNotices"
+      label: "ブランド選択"
+      label_translated: "brand selection"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_brandNotices"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brandNotices23|brandNotices"
+      label: "ブランド選択"
+      label_translated: "brand selection"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_brandNotices"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brandNotices24|brandNotices"
+      label: "ブランド選択"
+      label_translated: "brand selection"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_brandNotices"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brandNotices25|brandNotices"
+      label: "ブランド選択"
+      label_translated: "brand selection"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_brandNotices"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brandNotices26|brandNotices"
+      label: "ブランド選択"
+      label_translated: "brand selection"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_brandNotices"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brandNotices27|brandNotices"
+      label: "ブランド選択"
+      label_translated: "brand selection"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_brandNotices"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brandNotices28|brandNotices"
+      label: "ブランド選択"
+      label_translated: "brand selection"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_brandNotices"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brandNotices29|brandNotices"
+      label: "ブランド選択"
+      label_translated: "brand selection"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_brandNotices"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brandNotices30|brandNotices"
+      label: "ブランド選択"
+      label_translated: "brand selection"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_brandNotices"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brandNotices31|brandNotices"
+      label: "ブランド選択"
+      label_translated: "brand selection"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_brandNotices"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "brandNotices32|brandNotices"
+      label: "ブランド選択"
+      label_translated: "brand selection"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_brandNotices"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "BRAND_MAILMAGA_ALL|BRAND_MAILMAGA_ALL"
+      label: "すべてのブランド"
+      label_translated: "all brands"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "pw|pw"
+      label: "半角英数混在8～12文字"
+      label_translated: "Half-width alphanumeric mixed 8-12 characters"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "new-password"
+      section: OTHER
+    }
+    fields {
+      name: "check-pw-input|newPw"
+      label: "半角英数混在8～12文字"
+      label_translated: "8 to 12 single-byte alphanumeric characters"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "checkbox-pw|checkbox-pw"
+      label: "パスワードを表示する"
+      label_translated: "show password"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "newPwCfm|newPwCfm"
+      label: "半角英数混在8～12文字"
+      label_translated: "Half-width alphanumeric mixed 8-12 characters"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "height|height"
+      label: "160"
+      label_translated: "160"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "weight|weight"
+      label: "50"
+      label_translated: "50"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shoesize|shoesize"
+      label: "24.5"
+      label_translated: "24.5"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "郵便番号"
+      label_translated: "post code"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "住所"
+      label_translated: "address"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "検索条件入力"
+      label_translated: "Search condition input"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

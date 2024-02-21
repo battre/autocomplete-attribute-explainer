@@ -1,0 +1,32 @@
+cut-off-tokens:
+  # Many of these might exist but we haven't seen them commonly used in
+  # Brazil.
+  - honorific-prefix
+  - additional-name
+  - honorific-suffix
+  - organization-title
+  - locality3
+  - locality4
+  - cross-streets
+  - entrance
+  - staircase
+  - care-of
+  - admin-area2
+  - admin-area3
+  - admin-area4
+
+cut-off-children:  # don't expose nodes below these levels
+  - family-name
+  - street
+  - building
+  - tel-local
+
+extra-definitions:
+  address-overflow-and-landmark:
+  - address-overflow
+  - landmark
+  address-overflow:
+  - in-building-location
+  street-address-alternative-1:
+  - building-location
+  - address-overflow-and-landmark

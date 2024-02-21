@@ -1,0 +1,270 @@
+regex_definitions:
+  # Regular expression to match the affixes that indicate the floor an
+  # apartment is located in.
+  kFloorAffixRe:
+    regex_fragment: |-
+      (?:(°|º|\.|\s|-)*
+      (floor|flur|fl|og|obergeschoss|ug|untergeschoss|geschoss|andar|piso|º)
+      (\.|\s|-)*)
+
+    # (floor|flur|fl|geschoss|andar|piso|º)
+  kFloorValueRe:
+    regex_concat:
+      parts:
+      # Obsergeschoss can be a prefix followed by a number
+      - regex_fragment: '(?:og|obergeschoss|ug|untergeschoss)?'
+      - regex_fragment: '\d{0,3}\w?'
+      # ". OG" is a suffix in Germany to indicate something is the n-th floor
+      # above ground
+      - regex_fragment: '(?:\.? (?:og|obergeschoss|ug|untergeschoss))?'
+      - regex_fragment: '|'
+      # Just "OG" can be used if there is a single floor above ground.
+      - regex_fragment: '(?:og|eg|ug)'
+
+  # Prefix that indicates an apartment number.
+  kApartmentNumberPrefix:
+    regex_fragment: '(?:(apt|apartment|wohnung|apto|-)(\.|\s|-)*)'
+
+  # Suffix that inficates an apartment number.
+  kApartmentNumberSuffix:
+    regex_fragment: '(?:(\.|\s|-)*(ª))'
+
+  # Regular expression to match the prefixes that indicate a house number.
+  kHouseNumberOptionalPrefixRe:
+    regex_fragment: '(?:((no|°|º|number)(\.|-|\s)*)?)'
+
+capture_definitions:
+
+  ParseHouseNumberAndStreet:
+    no_capture:
+      parts:
+      - capture:
+          output: building
+          prefix: {regex_reference: kHouseNumberOptionalPrefixRe}
+          parts: [ {regex_fragment: '(?:\d+\w?)'} ]
+          suffix: {regex_fragment: '(th\.|\.)?'}
+      - separator: {regex_reference: kWhitespaceSeparator}
+      - capture:
+          # We don't have ADDRESS_HOME_STREET_AND_DEPENDENT_STREET_NAME
+          output: street
+          parts: [ {regex_reference: kMultipleLazyWordsRe} ]
+
+  ParseStreetAndHouseNumber:
+    no_capture:
+      parts:
+      - capture:
+          # We don't have ADDRESS_HOME_STREET_AND_DEPENDENT_STREET_NAME
+          output: street
+          parts: [ {regex_reference: kMultipleLazyWordsRe} ]
+      - separator: {regex_reference: kCommaOrWhitespaceSeparator}
+      - capture:
+          output: building
+          prefix: {regex_reference: kHouseNumberOptionalPrefixRe}
+          parts: [ {regex_fragment: '(?:\d+\w?)'} ]
+          suffix: {regex_fragment: '(th\.|\.)?'}
+
+  ParseMandatoryUnitPrefixed:
+    capture:
+      output: unit-name
+      prefix: {regex_reference: kApartmentNumberPrefix}
+      parts: [ {regex_fragment: '(?:(\d{0,3}\w?))'} ]
+
+  ParseMandatoryUnitSuffixed:
+    capture:
+      output: unit-name
+      prefix: {regex_fragment: '(-\s*)?'}
+      parts: [ {regex_fragment: '(?:(\d{1,3}\w?|\w))'} ]
+      suffix: {regex_reference: kApartmentNumberSuffix}
+      quantifier: MATCH_OPTIONAL
+
+  ParseMandatoryFloorPrefixed:
+    capture:
+      output: floor
+      prefix: {regex_reference: kFloorAffixRe}
+      parts: [ {regex_fragment: '(?:(\d{0,3}\w?))'} ]
+
+  ParseMandatoryFloorSuffixed:
+    capture:
+      output: floor
+      parts: [ {regex_fragment: '(?:(\d{1,3}\w?|\w))'} ]
+      suffix: {regex_reference: kFloorAffixRe}
+
+  StreetAddressDecomposition:
+    capture:
+      output: street-address-alternative-1
+      parts:
+      - no_capture:
+          alternatives:
+            - capture_reference: ParseHouseNumberAndStreet
+            - capture_reference: ParseStreetAndHouseNumber
+      - separator: {regex_reference: kCommaOrWhitespaceSeparator}
+      - capture:
+          output: in-building-location
+          parts:
+          - no_capture: # Floor <separator> Unit? | Unit
+              alternatives:
+              - no_capture: # Floor <separator> Unit?
+                  parts:
+                  - no_capture: # Floor
+                      alternatives:
+                      - capture_reference: ParseMandatoryFloorPrefixed
+                      - capture_reference: ParseMandatoryFloorSuffixed
+                  - separator: {regex_reference: kCommaOrWhitespaceSeparator}
+                  - no_capture: # Unit
+                      alternatives:
+                      - capture_reference: ParseMandatoryUnitPrefixed
+                      - capture_reference: ParseMandatoryUnitSuffixed
+                      quantifier: MATCH_OPTIONAL
+              - no_capture: # Unit
+                  alternatives:
+                    - capture_reference: ParseMandatoryUnitPrefixed
+                    - capture_reference: ParseMandatoryUnitSuffixed
+          quantifier: MATCH_OPTIONAL
+
+parsing_definitions:
+  street-address-alternative-1:
+    decomposition: {capture_reference: StreetAddressDecomposition}
+
+
+test_parsing_definitions:
+- id: "Test 1"
+  type: street-address-alternative-1
+  input: "Erika-Mann-Str. 33"
+  output:
+    street: "Erika-Mann-Str."
+    building: "33"
+- id: "Test 2"
+  type: street-address-alternative-1
+  input: "Implerstr. 73a"
+  output:
+    street: "Implerstr."
+    building: "73a"
+- id: "Test 3"
+  type: street-address-alternative-1
+  input: "Implerstr. 73a Obergeschoss 2 Wohnung 3"
+  output:
+    street: "Implerstr."
+    building: "73a"
+    in-building-location: "Obergeschoss 2 Wohnung 3"
+    floor: "2"
+    unit-name: "3"
+- id: "Test 4"
+  type: street-address-alternative-1
+  input: "Implerstr. 73a OG 2"
+  output:
+    street: "Implerstr."
+    building: "73a"
+    in-building-location: "OG 2"
+    floor: "2"
+- id: "Test 5"
+  type: street-address-alternative-1
+  input: "Implerstr. 73a 2. OG"
+  output:
+    street: "Implerstr."
+    building: "73a"
+    in-building-location: "2. OG"
+    floor: "2"
+- id: "Test 6"
+  type: street-address-alternative-1
+  input: "Implerstr. no 73a"
+  output:
+    street: "Implerstr."
+    building: "73a"
+- id: "Test 7"
+  type: street-address-alternative-1
+  input: "Implerstr. °73a"
+  output:
+    street: "Implerstr."
+    building: "73a"
+- id: "Test 8"
+  type: street-address-alternative-1
+  input: "Implerstr. number 73a"
+  output:
+    street: "Implerstr."
+    building: "73a"
+- id: "Test 9"
+  type: street-address-alternative-1
+  input: "1600 Amphitheatre Parkway"
+  output:
+    street: "Amphitheatre Parkway"
+    building: "1600"
+- id: "Test 10"
+  type: street-address-alternative-1
+  input: "1600 Amphitheatre Parkway, Floor 6 Apt 12"
+  output:
+    street: "Amphitheatre Parkway"
+    building: "1600"
+    in-building-location: "Floor 6 Apt 12"
+    floor: "6"
+    unit-name: "12"
+- id: "Test 11"
+  type: street-address-alternative-1
+  input: "Av. Paulista, 1098, 1º andar, apto. 101"
+  output:
+    street: "Av. Paulista"
+    building: "1098"
+    in-building-location: "1º andar, apto. 101"
+    floor: "1"
+    unit-name: "101"
+# Examples for Mexico.
+- id: "Test 12"
+  type: street-address-alternative-1
+  input: "Street Name 12 - Piso 13 - 14"
+  output:
+    street: "Street Name"
+    building: "12"
+    # This is probably a sign of bad modelling (the - should not be there) but
+    # reflects the status quo.
+    in-building-location: "- Piso 13 - 14"
+    floor: "13"
+    unit-name: "14"
+- id: "Test 13"
+  type: street-address-alternative-1
+  input: "Street Name 12 - 14"
+  output:
+    street: "Street Name"
+    building: "12"
+    # This is probably a sign of bad modelling (the - should not be there) but
+    # reflects the status quo.
+    in-building-location: "- 14"
+    floor: ""
+    unit-name: "14"
+- id: "Test 14"
+  type: street-address-alternative-1
+  input: "Street Name 12 - Piso 13"
+  output:
+    street: "Street Name"
+    building: "12"
+    # This is probably a sign of bad modelling (the - should not be there) but
+    # reflects the status quo.
+    in-building-location: "- Piso 13"
+    floor: "13"
+    unit-name: ""
+# Examples for Spain.
+- id: "Test 15"
+  type: street-address-alternative-1
+  input: "Street Name 1, 2º, 3ª"
+  output:
+    street: "Street Name"
+    in-building-location: "2º, 3ª"
+    building: "1"
+    floor: "2"
+    unit-name: "3"
+- id: "Test 16"
+  type: street-address-alternative-1
+  input: "Street Name 1, 2º"
+  output:
+    street: "Street Name"
+    in-building-location: "2º"
+    building: "1"
+    floor: "2"
+    unit-name: ""
+- id: "Test 17"
+  type: street-address-alternative-1
+  input: "Street Name 1, 3ª"
+  output:
+    street: "Street Name"
+    building: "1"
+    in-building-location: "3ª"
+    floor: ""
+    unit-name: "3"

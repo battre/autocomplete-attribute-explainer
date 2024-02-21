@@ -1,0 +1,443 @@
+site_examples {
+  url: "https://www.biba.in"
+  is_structured: false
+  locale {
+    country: "IN"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "__EVENTTARGET|__EVENTTARGET"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "__EVENTARGUMENT|__EVENTARGUMENT"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "__VIEWSTATE|__VIEWSTATE"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "hdnAntiforgery|ctl01$hdnAntiforgery"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "hdnSiteUrl|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "Step1continueWithoutEmail|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "txtEmailid|"
+      label: "Mobile number*"
+      example: "Enter mobile number*"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "txtPassword|"
+      label: "Enter password *"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Password*"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "chkIhavePassword_V2|"
+      label: "Remember Me"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "Step1continue|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "Step1continueWithoutEmail|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ShipZip|"
+      label: "Postal/Zip Code*"
+      example: "Enter Postal/Zip Code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "ShipCountry|"
+      label: "Country *"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "ShipFirstName|"
+      label: "First Name*"
+      example: "Enter First Name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "ShipLastName|"
+      label: "Last Name*"
+      example: "Enter Last Name"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "ShipAddress1|"
+      label: "Flat no, Building, Colony*"
+      label_comment: "I am calling this a street-address because the form lacks "
+        "an obvious place to put a street name."
+      example: "Enter Address"
+      control_type: INPUT
+      concepts: "street-address"
+      section: ADDRESS
+    }
+    fields {
+      name: "ShipAddress2|"
+      label: "Localty / Town*"
+      example: "Enter Address"
+      control_type: INPUT
+      concepts: "address-level3"
+      section: ADDRESS
+    }
+    fields {
+      name: "ShipCity|"
+      label: "City/District/Town*"
+      example: "Enter City/District/Town"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "ShipState|"
+      label: "State*"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "ShipMobileCode|"
+      label: "Mobile*"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "ShipMobile|"
+      label: "Enter Mobile"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "ShipEmail|"
+      label: "Email*"
+      example: "Enter Email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ShipAddressType|"
+      label: "Select Address Type*"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ShipAddress2|"
+      label: "Address 2*"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ShipTelephoneCode|"
+      label: "Alternate Mobile Number*"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "ShipTelephone|"
+      label: "Alternate Mobile Number*"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "Step2continue|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "PickupState|"
+      label: "State*"
+      example: "Select State"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "PickupCity|"
+      label: "City*"
+      example: "Select City"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "hdnShipCountry|hdnShipCountry"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "hdnShipState|hdnShipState"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "hdnShipCity|hdnShipCity"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "hdnShipZip|hdnShipZip"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "hdnBillCountry|hdnBillCountry"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "hdnBillState|hdnBillState"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "hdnBillCity|hdnBillCity"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "hdnLatitude|hdnLatitude"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "hdnLongitude|hdnLongitude"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "hdnBillZip|hdnBillZip"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "VoucherCode|"
+      label: "Enter Voucher code"
+      example: "Enter Your Voucher Code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ApplyVoucher|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ctl01_ContentPlaceHolder1_hdnPaymentType|ctl01$ContentPlaceHolder1$hdnPaymentType"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ctl01_ContentPlaceHolder1_hdnPaymentOption|ctl01$ContentPlaceHolder1$hdnPaymentOption"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ctl01_ContentPlaceHolder1_hdnPaymentGateWayId|ctl01$ContentPlaceHolder1$hdnPaymentGateWayId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ctl01_ContentPlaceHolder1_SelectedSupplierId|ctl01$ContentPlaceHolder1$SelectedSupplierId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ctl01_ContentPlaceHolder1_tempPaymentSummary|ctl01$ContentPlaceHolder1$tempPaymentSummary"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ctl01_ContentPlaceHolder1_hdnGuestUserEmail|ctl01$ContentPlaceHolder1$hdnGuestUserEmail"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ctl01_ContentPlaceHolder1_CountryCodes|ctl01$ContentPlaceHolder1$CountryCodes"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ctl01_ContentPlaceHolder1_hdnRdbId|ctl01$ContentPlaceHolder1$hdnRdbId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ctl01_ContentPlaceHolder1_hdnTxtValue|ctl01$ContentPlaceHolder1$hdnTxtValue"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ctl01_ContentPlaceHolder1_hdnPayBackPointsApplied|ctl01$ContentPlaceHolder1$hdnPayBackPointsApplied"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ctl01_ContentPlaceHolder1_hdnPaybackCardNo|ctl01$ContentPlaceHolder1$hdnPaybackCardNo"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ctl01_ContentPlaceHolder1_hdnBankCode|ctl01$ContentPlaceHolder1$hdnBankCode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ctl01_ContentPlaceHolder1_hdnDeliveySlotID|ctl01$ContentPlaceHolder1$hdnDeliveySlotID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ctl01_ContentPlaceHolder1_hdnDeliverySlotDate|ctl01$ContentPlaceHolder1$hdnDeliverySlotDate"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ctl01_ContentPlaceHolder1_hdnChangeForCash|ctl01$ContentPlaceHolder1$hdnChangeForCash"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ctl01_ContentPlaceHolder1_hdnChoiceofRegistration|ctl01$ContentPlaceHolder1$hdnChoiceofRegistration"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ctl01_ContentPlaceHolder1_hdnIsVisaCheckout|ctl01$ContentPlaceHolder1$hdnIsVisaCheckout"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ctl01_ContentPlaceHolder1_hdnIsCartVCO|ctl01$ContentPlaceHolder1$hdnIsCartVCO"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ctl01_ContentPlaceHolder1_hdnSADADOLPId|ctl01$ContentPlaceHolder1$hdnSADADOLPId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ctl01_ContentPlaceHolder1_hdnDokuIsATM|ctl01$ContentPlaceHolder1$hdnDokuIsATM"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ctl01_ContentPlaceHolder1_hdnSelectedLat|ctl01$ContentPlaceHolder1$hdnSelectedLat"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ctl01_ContentPlaceHolder1_hdnSelectedLgn|ctl01$ContentPlaceHolder1$hdnSelectedLgn"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "hdnUsernameSource|hdnUsernameSource"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ctl01_ContentPlaceHolder1_hdnCapillaryMobileNo|ctl01$ContentPlaceHolder1$hdnCapillaryMobileNo"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

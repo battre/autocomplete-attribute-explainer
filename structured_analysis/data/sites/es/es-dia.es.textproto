@@ -1,0 +1,432 @@
+site_examples {
+  url: "https://www.dia.es"
+  is_structured: true
+  locale {
+    country: "ES"
+    language: "es"
+  }
+  sequences {
+    fields {
+      name: "iot-lambda-endpoint|lambdaEndpoint"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "subscriptionAcceptLegalTermsMsg|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "subscriptionEmailEmptyMsg|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "subscriptionErrorMsg|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "superListLoadingMsg|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "savedListLoadingMsg|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "orderHistoryLoadingMsg|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "superListEditingMsg|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "search|text"
+      example: "Busca en el supermercado..."
+      example_translated: "Look in the supermarket..."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|entryNumber"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|productCodePost"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|initialQuantity"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|quantity"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|soldByType"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "4,47 €"
+      label_translated: "€4.47"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "quantityByProduct_18357|freequantity"
+      label: "4,47 €"
+      label_translated: "€4.47"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "hiddenSelectEmptyOption|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shippingTimeoutu|shippingTimeoutu"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "firstName|deliveryAddress.firstName"
+      label: "Nombre"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "lastName|deliveryAddress.lastName"
+      label: "Primer Apellido"
+      label_translated: "First surname"
+      control_type: INPUT
+      concepts: "first-family-name"
+      section: NAME
+    }
+    fields {
+      name: "secondSurname|deliveryAddress.secondSurname"
+      label: "Segundo Apellido"
+      label_translated: "Second surname"
+      control_type: INPUT
+      concepts: "second-family-name"
+      section: NAME
+    }
+    fields {
+      name: "cellPhone|deliveryAddress.cellPhone"
+      label: "Teléfono móvil"
+      label_translated: "Mobile phone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "documentType|deliveryAddress.documentType"
+      label: "Tipo de documento"
+      label_translated: "Document type"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "documentNumber|deliveryAddress.documentNumber"
+      label: "Número de documento"
+      label_translated: "Document number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "deliveryModeCode1|deliveryModeCode"
+      label: "Envío a domicilio"
+      label_translated: "Home delivery"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "deliveryModeCode2|deliveryModeCode"
+      label: "Recogida en tienda"
+      label_translated: "Picked up at the store"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "s2id_autogen1|"
+      label: "Tienda de recogida"
+      label_translated: "pickup shop"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Por favor selecciona"
+      label_translated: "please select"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "pickUpPointOfServiceName|pickUpPointOfServiceName"
+      label: "Por favor selecciona"
+      label_translated: "please select"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "selectExistentAddress|selectExistentAddress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "addressStreetType|deliveryAddress.streetType"
+      label: "Tipo de vía"
+      label_translated: "Type of road"
+      example: "ACCESO, ACEQUIA, ACERA, AFUERAS, AGRUPACION, ALAMEDA, "
+        "APARTADO DE, APARTAMENTO, ARRABAL, AUTOPISTA, AVENIDA, BAJADA, "
+        "BARRANCO, BARRIADA, BARRIO, BLOQUE, BOULEVARD, CALLE, CALLEJON, "
+        "CAMINO, CARRETERA, CASAS, CAÑADA, CHALET, COLONIA, CONJUNTO, "
+        "COPERATIVA, CORTIJO, CUESTA, DIRECCION, DISEMINADO, EDIFICIO, "
+        "ENTRADA, FINCA, GLORIETA, GRUPO, LUGAR, MASIA, MERCADO, NÚCLEO, "
+        "PARAJE, PARQUE, PARTIDA, PASAJE, PASEO, PASEO, PATIO, PLAZA, "
+        "PLAZOLETA, POBLADO, POLIGONO, PROLONGACIO, RAMBLA, RESIDENCIA, RONDA, "
+        "SENDA, SUBIDA, TORRENTE, TRAVESIA, URBANIZACIÓN, ZONA"
+      example_translated: "ACCESS, ACEQUIA, SIDEWALK, OUTSKIRTS, GROUPING, "
+        "ALAMEDA, APARTMENT OF, APARTMENT, ARRABAL, HIGHWAY, AVENUE, DOWNHILL, "
+        "BARRANCO, NEIGHBORHOOD, NEIGHBORHOOD, BLOCK, BOULEVARD, STREET, "
+        "ALLEY, ROAD, ROAD, HOUSES, CAÑADA, CHALET, COLONIA , ASSEMBLY, "
+        "COOPERATIVE, FARMHOUSE, SLOPE, ADDRESS, DISSEMINATED, BUILDING, "
+        "ENTRANCE, PROPERTY, ROUNDABOUT, GROUP, PLACE, FARMHOUSE, MARKET, "
+        "NUCLEUS, PLACE, PARK, DEPARTURE, PASSAGE, WALK, WALK, PATIO, PLAZA, "
+        "SQUARE, VILLAGE , POLYGON, PROLONGATION, RAMBLA, RESIDENCE, RONDA, "
+        "PATH, RISE, TORRENT, CROSSING, URBANIZATION, AREA"
+      control_type: SELECT
+      concepts: "street-name-type"
+      section: ADDRESS
+    }
+    fields {
+      name: "address.streetName|deliveryAddress.streetName"
+      label: "Nombre de la vía"
+      label_translated: "Name of the road"
+      control_type: INPUT
+      concepts: "street-name-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "address.streetNumber|deliveryAddress.streetNumber"
+      label: "Número"
+      label_translated: "Number"
+      control_type: INPUT
+      concepts: "house-number"
+      section: ADDRESS
+    }
+    fields {
+      name: "address.building|deliveryAddress.building"
+      label: "Escalera"
+      label_translated: "Stair case"
+      label_comment: "The HTML code refers to deliveryAddress.building"
+      control_type: INPUT
+      concepts: "staircase"
+      section: ADDRESS
+    }
+    fields {
+      name: "address.floor|deliveryAddress.floor"
+      label: "Piso"
+      label_translated: "Floor"
+      control_type: INPUT
+      concepts: "floor"
+      section: ADDRESS
+    }
+    fields {
+      name: "address.apartment|deliveryAddress.apartment"
+      label: "Letra"
+      label_translated: "apartment"
+      control_type: INPUT
+      concepts: "apartment"
+      section: ADDRESS
+    }
+    fields {
+      name: "countrySelector|deliveryAddress.countryIso"
+      label: "País"
+      label_translated: "Country"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "regionSelector|deliveryAddress.regionIso"
+      label: "Provincia"
+      label_translated: "Province"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "townCitySelector|deliveryAddress.townCity"
+      label: "Localidad"
+      label_translated: "Location"
+      control_type: SELECT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "addressPostcode|deliveryAddress.postcode"
+      label: "Código postal"
+      label_translated: "Postal Code"
+      control_type: SELECT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "address.deliveryObservations|deliveryAddress.deliveryObservations"
+      label: "Observaciones para esta dirección de entrega"
+      label_translated: "Remarks for this delivery address"
+      example: "¡Ayúdanos a que el transportista entregue tu pedido de la mejor manera posible!\n Ej: No funciona el portero automático, vivo en un 8º sin ascensor, mi portal está escondido tras la esquina y no se ve bien, etc \nPor favor, no hagas indicaciones de horarios de entrega aquí. Gracias."
+      example_translated: "Help us to ensure that the carrier delivers your order in the best possible way! Eg: The intercom doesn't work, I live in an 8th floor without a lift, my portal is hidden behind the corner and it doesn't look good, etc. Please, don't indicate delivery times here. Thanks."
+      control_type: TEXTAREA
+      concepts: "delivery-instructions"
+      section: ADDRESS
+    }
+    fields {
+      name: "saveAddressInMyAddressBook|deliveryAddress.saveInAddressBook"
+      label: "Guardar esta dirección en mi libreta de direcciones."
+      label_translated: "Save this address in my address book."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_deliveryAddress.saveInAddressBook"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CSRFToken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "latitud|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "longitud|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "accesibility_refreshScreenReaderBufferField|accesibility_refreshScreenReaderBufferField"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0004|ot-group-id-C0004"
+      label: "Cookies dirigidas"
+      label_translated: "Targeted cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0002|ot-group-id-C0002"
+      label: "Cookies de rendimiento"
+      label_translated: "performance cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "vendor-search-handler|vendor-search-handler"
+      label: "Vendor Search"
+      label_translated: "Vendor Search"
+      example: "Search..."
+      example_translated: "Search..."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "chkbox-id|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-hosts-groups-handler|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-vendor-groups-handler|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-vendor-leg-handler|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

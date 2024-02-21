@@ -1,0 +1,108 @@
+site_examples {
+  url: "https://www.anta.cn"
+  is_structured: false
+  locale {
+    country: "CN"
+    language: "zh"
+  }
+  sequences {
+    fields {
+      name: "search_box|"
+      label: "搜索"
+      label_translated: "search"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|"
+      label: "优惠券码"
+      label_translated: "coupon code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|"
+      label: "收货人*"
+      label_translated: "Receiver*"
+      example: "姓名"
+      example_translated: "Name"
+      control_type: INPUT
+      concepts: "name"
+      section: NAME
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|"
+      label: "手机号码*"
+      label_translated: "cellphone number*"
+      example: "手机号码"
+      example_translated: "cellphone number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|"
+      label: "国家/地区*"
+      label_translated: "country / region*"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|"
+      label: "省/直辖市*"
+      label_translated: "State / Province*"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|"
+      label: "市*"
+      label_translated: "city*"
+      control_type: SELECT
+      concepts: "address-level2"
+      section: ADDRESS
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|"
+      label: "区/县*"
+      label_translated: "District/County*"
+      control_type: SELECT
+      concepts: "address-level2"
+      section: ADDRESS
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|"
+      label: "详细地址*"
+      label_translated: "Address*"
+      example: "详细地址"
+      example_translated: "Address"
+      control_type: INPUT
+      concepts: "street-address"
+      section: ADDRESS
+      html_comment: "Form 1"
+    }
+    fields {
+      name: "|"
+      label: "新增收货地址"
+      label_translated: "New shipping address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+      html_comment: "Form 1"
+    }
+  }
+}
+

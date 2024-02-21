@@ -1,0 +1,769 @@
+site_examples {
+  url: "https://www.eldorado.ru"
+  is_structured: true
+  locale {
+    country: "RU"
+    language: "ru"
+  }
+  sequences {
+    fields {
+      name: "is_taxi_flag|is_taxi_flag"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "taxi_last_price|taxi_last_price"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|ORDER_PROP_245"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "city_name|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "deliveryContactFullName|ORDER_PROP_7"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "deliveryPhone|ORDER_PROP_46"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "phone_mobile_1|USER_MOBILE_PHONE"
+      label: "Телефон"
+      label_translated: "Telephone"
+      example: "+7 (___) ___ - __ - __"
+      example_translated: "+7 (___) ___ - __ - __"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|SMS_CODE[]"
+      label: "Неправильный код"
+      label_translated: "Wrong code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|SMS_CODE[]"
+      label: "Неправильный код"
+      label_translated: "Wrong code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|SMS_CODE[]"
+      label: "Неправильный код"
+      label_translated: "Wrong code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|SMS_CODE[]"
+      label: "Неправильный код"
+      label_translated: "Wrong code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "USER_FACE_NAME|USER_FACE_NAME"
+      label: "Имя"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "USER_FACE_LAST_NAME|USER_FACE_LAST_NAME"
+      label: "Фамилия"
+      label_translated: "Surname"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "USER_EMAIL|ORDER_PROP_6"
+      label: "E-mail"
+      label_translated: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|ORDER_PROP_37"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|DELIVERY_DATE_DATA"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|DELIVERY_TIME_DATA"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|DELIVERY_INTERVAL_ID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|ORDER_PROP_1650"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|ORDER_PROP_2"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|DELIVERY_REGIONID_DATA"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|loc"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ORDER_PROP_3_VALUE|ORDER_PROP_3_VALUE"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ORDER_PROP_3|ORDER_PROP_3"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ORDER_PROP_5_VALUE|ORDER_PROP_5_VALUE"
+      label: "Название улицы*"
+      label_translated: "Street name*"
+      control_type: INPUT
+      concepts: "street-name"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "ORDER_PROP_5|ORDER_PROP_5"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "no-settlement|no-settlement"
+      label: "Моего адреса нет в списке"
+      label_translated: "My address is not on the list"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ORDER_PROP_4_VALUE|ORDER_PROP_4_VALUE"
+      label: "Дом"
+      label_translated: "House number (dom)"
+      control_type: INPUT
+      concepts: "house-number"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "ORDER_PROP_4|ORDER_PROP_4"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address_building|ORDER_PROP_39"
+      label: "Стр."
+      label_translated: "Building Number (stroenie)"
+      control_type: INPUT
+      concepts: "stroenie"
+      section: ADDRESS
+    }
+    fields {
+      name: "address_housing|ORDER_PROP_40"
+      label: "Корп."
+      label_translated: "Building Number (korpus)"
+      control_type: INPUT
+      concepts: "korpus"
+      section: ADDRESS
+    }
+    fields {
+      name: "address_porch|ORDER_PROP_41"
+      label: "Подъезд"
+      label_translated: "Entrance"
+      control_type: INPUT
+      concepts: "entrance"
+      section: ADDRESS
+    }
+    fields {
+      name: "address_floor|ORDER_PROP_42"
+      label: "Этаж"
+      label_translated: "Floor"
+      control_type: INPUT
+      concepts: "floor"
+      section: ADDRESS
+    }
+    fields {
+      name: "address_room|ORDER_PROP_43"
+      label: "Кв. / оф."
+      label_translated: "Apartment / Office"
+      control_type: INPUT
+      concepts: "apartment"
+      section: ADDRESS
+    }
+    fields {
+      name: "address_doorcode|ORDER_PROP_44"
+      label: "Домофон"
+      label_translated: "intercom"
+      control_type: INPUT
+      concepts: "door-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "|ORDER_PROP_45"
+      label: "нет"
+      label_translated: "No"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|ORDER_PROP_45"
+      label: "пассажирский"
+      label_translated: "passenger"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|ORDER_PROP_45"
+      label: "грузовой"
+      label_translated: "cargo"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|ORDER_PROP_45"
+      label: "пасс. и грузов."
+      label_translated: "pass. and cargo."
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "f_area|ORDER_PROP_2126"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "f_district|ORDER_PROP_278"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "f_coordinates|ORDER_PROP_2130"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "f_qcGeo|ORDER_PROP_2134"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "f_unrestrictedValue|ORDER_PROP_2138"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|SELECTED_DELIVERY_ID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|ORIGINAL_DELIVERY_ID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|loc"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|ORDER_PROP_"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|ORDER_PRICE"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|ORDER_WEIGHT"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|PROFILE_ID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|PERSON_TYPE"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|LAST_USER_ID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order-current-step|CurrentStep"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|type_credit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|AUTH_FORM"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|action"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|auth_popup"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|backurl"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "USER_LOGIN|USER_LOGIN"
+      label: "E-mail или логин/номер бонусной карты"
+      label_translated: "E-mail or login/bonus card number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "USER_PASSWORD|USER_PASSWORD"
+      label: "Пароль/PIN-код"
+      label_translated: "Password/PIN"
+      example: "Пароль"
+      example_translated: "Password"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|AUTH_FORM"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|action"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "AUTH_MOBILEPHONE|USER_LOGIN"
+      label: "+7 (___) ___ ____"
+      label_translated: "+7 (___) ___ ____"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "AUTH_MOBILEPHONE|"
+      label: "Телефон"
+      label_translated: "Telephone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|"
+      label: "Код из СМС"
+      label_translated: "Code from SMS"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Код из СМС"
+      label_translated: "Code from SMS"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Код из СМС"
+      label_translated: "Code from SMS"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "Код из СМС"
+      label_translated: "Code from SMS"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "VERIFY_NO_CODE|VERIFY_NO_CODE"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "VERIFY_PHONE|VERIFY_PHONE"
+      label: "Телефон"
+      label_translated: "Telephone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|sms-input[]"
+      label: "Код из смс"
+      label_translated: "SMS code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|sms-input[]"
+      label: "Код из смс"
+      label_translated: "SMS code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|sms-input[]"
+      label: "Код из смс"
+      label_translated: "SMS code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|sms-input[]"
+      label: "Код из смс"
+      label_translated: "SMS code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "VERIFY_EMAIL|VERIFY_EMAIL"
+      label: "Email"
+      label_translated: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "VERIFY_NAME|VERIFY_NAME"
+      label: "Имя"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "VERIFY_LAST_NAME|VERIFY_LAST_NAME"
+      label: "Фамилия"
+      label_translated: "Surname"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "VERIFY_BIRTHDAY|VERIFY_BIRTHDAY"
+      label: "Дата рождения"
+      label_translated: "Date of Birth"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|VERIFY_ISSUE_CARD"
+      label: "Выпустить бонусную карту"
+      label_translated: "Issue bonus card"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|backurl"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|AUTH_FORM"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|TYPE"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|popup"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|USER_LOGIN"
+      label: "введите адрес эл. почты"
+      label_translated: "enter email address mail"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|SOURCE_REG"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|FROM_PAGE"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|IS_ORGANIZATION"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|ORDER_ID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|TOKEN"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "bonus_card|"
+      label: "У меня есть бонусная карта"
+      label_translated: "I have a bonus card"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "USER_CARD|"
+      label: "Введите 16 цифр"
+      label_translated: "Enter 16 digits"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "USER_PINCODE_TEXT|"
+      label: "PIN"
+      label_translated: "PIN"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "USER_PINCODE|"
+      label: "PIN"
+      label_translated: "PIN"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "NEW_PHONE|"
+      label: "Телефон"
+      label_translated: "Telephone"
+      example: "+7 ___ _______"
+      example_translated: "+7 ___ _______"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "NEW_EMAIL|"
+      label: "Email"
+      label_translated: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "NEW_NAME|"
+      label: "Имя"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "NEW_LAST_NAME|"
+      label: "Фамилия"
+      label_translated: "Surname"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "NEW_BIRTHDAY|"
+      label: "Дата рождения"
+      label_translated: "Date of Birth"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|USER_PASSWORD"
+      label: "Пароль"
+      label_translated: "Password"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|USER_PASSWORD_CONFIRM"
+      label: "Подтвердите пароль"
+      label_translated: "Confirm the password"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

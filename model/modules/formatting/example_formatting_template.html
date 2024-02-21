@@ -1,0 +1,68 @@
+{% macro RenderExample(example) %}
+<tr>
+  <td colspan="2">
+    <b>{{example.id}}</b>: {{example.comment}}
+  </td>
+</tr>
+<tr>
+  <th>Input</th>
+  <th>Output</th>
+</tr>
+<tr>
+  <td valign="top">
+    <table>
+      {% for token in model.pre_order_only_uniques() %}
+        {% if token.id in example.data %}
+        <tr>
+          <td>{{token.id}}</td><td><pre style="margin:0">{{example.data[token.id]}}</pre></td>
+        </tr>
+        {% endif %}
+      {% endfor %}
+    </table>
+  </td>
+  <td valign="top">
+    {% for result in example.results %}
+      Output for "{{result.output_token}}":<br>
+      <pre class="formatting_example_textbox">{{result.output}}</pre>
+      {% if result.errors %}
+        <p class="formatting_errors">
+          Errors:
+          <ul>
+            {% for error in result.errors %}
+            <li>{{error}}</li>
+            {% endfor %}
+          </ul>
+        </p>
+      {% endif %}
+      {% if result.delta %}
+        <p class="formatting_errors">
+          Expected:
+          <pre class="formatting_example_textbox formatting_errors">{{result.expected_output}}</pre>
+        </p>
+        <p class="formatting_errors">
+          Delta:
+          <pre class="formatting_example_textbox formatting_errors">{{result.delta}}</pre>
+        </p>
+      {% endif %}
+    {% endfor %}
+  </td>
+</tr>
+<tr>
+  <td span="2">
+    &nbsp;
+  </td>
+</tr>
+{% endmacro %}
+
+<div class="mdl-card mdl-shadow--2dp" style="width: 95%; margin: 8px">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Example addresses</h2>
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <table class="formatting_example_overview_table">
+      {% for example in examples %}
+      {{RenderExample(example)}}
+      {% endfor %}
+    </table>
+  </div>
+</div>

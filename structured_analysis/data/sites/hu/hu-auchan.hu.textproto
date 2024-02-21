@@ -1,0 +1,190 @@
+site_examples {
+  url: "https://online.auchan.hu/"
+  is_structured: true
+  locale {
+    country: "HU"
+    language: "hu"
+  }
+  sequences {
+    fields {
+      name: "|is-cc"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|is-cc"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "last_name90cb4883-4cbb-4971-b72b-eec6b448d338|"
+      label: "Vezetéknév*"
+      label_translated: "Last name*"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "first_name90cb4883-4cbb-4971-b72b-eec6b448d338|"
+      label: "Keresztnév*"
+      label_translated: "First name*"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "contactPhone90cb4883-4cbb-4971-b72b-eec6b448d338|"
+      label: "20"
+      label_translated: "20"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "street_name90cb4883-4cbb-4971-b72b-eec6b448d338|"
+      label: "Közterület neve*"
+      label_translated: "Name of public area*"
+      control_type: INPUT
+      concepts: "street-name-name"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "street_type90cb4883-4cbb-4971-b72b-eec6b448d338|"
+      label: "Közterület jellege"
+      label_translated: "Nature of public space"
+      control_type: INPUT
+      concepts: "street-name-type"
+      section: ADDRESS
+    }
+    fields {
+      name: "street_no90cb4883-4cbb-4971-b72b-eec6b448d338|"
+      label: "Házszám*"
+      label_translated: "House number*"
+      control_type: INPUT
+      concepts: "house-number"
+      section: ADDRESS
+    }
+    fields {
+      name: "building90cb4883-4cbb-4971-b72b-eec6b448d338|"
+      label: "Épület (opcionális)"
+      label_translated: "Building (optional)"
+      control_type: INPUT
+      concepts: "building"
+      section: ADDRESS
+    }
+    fields {
+      name: "floor90cb4883-4cbb-4971-b72b-eec6b448d338|"
+      label: "Emelet (opcionális)"
+      label_translated: "Floor (optional)"
+      control_type: INPUT
+      concepts: "floor"
+      section: ADDRESS
+    }
+    fields {
+      name: "door90cb4883-4cbb-4971-b72b-eec6b448d338|"
+      label: "Ajtó (opcionális)"
+      label_translated: "Door (optional)"
+      control_type: INPUT
+      concepts: "apartment"
+      section: ADDRESS
+    }
+    fields {
+      name: "post_codef10240be-48f6-45e3-b6d5-0bd4c59fc9c1"
+      label: "Irányítószám* 1023"
+      label_translated: "Postal code*"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "comment|comment"
+      label: "Megjegyzés a szállítóknak (opcionális)"
+      label_translated: "Note to suppliers (optional)"
+      control_type: TEXTAREA
+      concepts: "delivery-instructions"
+      section: ADDRESS
+    }
+    fields {
+      name: "ot-group-id-C0003|ot-group-id-C0003"
+      label: "Működést segítő sütik"
+      label_translated: "Functionality cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0004|ot-group-id-C0004"
+      label: "Célzott sütik"
+      label_translated: "Targeted cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0002|ot-group-id-C0002"
+      label: "Teljesítmény sütik"
+      label_translated: "Performance cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "vendor-search-handler|vendor-search-handler"
+      label: "Filter IconClear"
+      label_translated: "Filter IconClear"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "chkbox-id|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-hosts-groups-handler|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-vendor-groups-handler|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-vendor-leg-handler|"
+      label: "checkbox label"
+      label_translated: "checkbox label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "tab_overlay-command|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "tab-input|"
+      label: "éppen üzenetet ír..."
+      label_translated: "he is writing a message..."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

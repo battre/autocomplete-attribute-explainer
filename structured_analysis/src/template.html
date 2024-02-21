@@ -1,0 +1,769 @@
+{% macro entry(prefix, text, suffix, id, tooltip, position) %}
+  {% if tooltip -%}
+    <span class="entry-with-tooltip" id="{{id}}">{{prefix|safe}}{{text}}{{suffix|safe}}
+      <div class="tooltip tooltip-{{position}}">{{tooltip|safe}}</div>
+    </span>
+  {%- else -%}
+    <span id="{{id}}">{{prefix|safe if text}}{{text}}{{suffix|safe if text}}</span>
+  {%- endif %}
+{% endmacro %}
+
+{% macro terms(sequence) %}
+  {% for field in sequence.fields -%}
+    {%- if loop.index0 > 0 %}<span class="separator">|</span>{% endif -%}
+    {{entry(
+        "☑ " if field.control_type == address_pb2.ControlType.CHECKBOX else
+        "⊙ " if field.control_type == address_pb2.ControlType.RADIO else
+        "",
+        field.label + (" (" + field.example + ")" if field.example else ""),
+        " ▽" if field.control_type == address_pb2.ControlType.SELECT else
+        " <span title=\"custom element\">[🤷]</span>" if field.control_type == address_pb2.ControlType.CUSTOM else "",
+        "term_" + field.internal_id, field.label_comment, "right")}}
+  {%- endfor %}
+{% endmacro %}
+
+{% macro translated_terms(sequence) %}
+  {% for field in sequence.fields -%}
+    {%- if loop.index0 > 0 %}<span class="separator">|</span>{% endif -%}
+    {{entry(
+        "☑ " if field.control_type == address_pb2.ControlType.CHECKBOX else
+        "⊙ " if field.control_type == address_pb2.ControlType.RADIO else
+        "",
+        field.label_translated + (" (" + field.example_translated + ")" if field.example_translated else ""),
+        " ▽" if field.control_type == address_pb2.ControlType.SELECT else
+        " <span title=\"custom element\">[🤷]</span>" if field.control_type == address_pb2.ControlType.CUSTOM else "",
+        "translated_term_" + field.internal_id, field.label_translated_comment, "bottom")}}
+  {%- endfor %}
+{% endmacro %}
+
+{% macro concepts(sequence) %}
+  {% for field in sequence.fields -%}
+    {%- if loop.index0 > 0 %}|{% endif -%}
+    {%- if field.concepts | length > 1 %}[{% endif -%}
+    <span id="concept_{{field.internal_id}}">
+    {%- for concept in field.concepts -%}<code
+    class="{{concept|css_classes_for_concept}} {{'low-certainty' if field.low_certainty else ''}}">
+      {{entry("", concept, "", "", field.concepts_comment, "left")}}
+    </code>{%- endfor -%}
+    </span>
+    {% if field.concepts | length > 1 %}]{% endif %}
+  {%- endfor %}
+{% endmacro %}
+
+<html>
+<head>
+  <title>Address form analysis</title>
+  <!-- https://picocss.com/ -->
+  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+  <style>
+    /* Tweaks to pico style */
+    @media (min-width: 1200px) {
+      :root {
+          --font-size: 18px;
+      }
+    }
+    @media (min-width: 992px) {
+      :root {
+          --font-size: 18px;
+      }
+    }
+    h1, h2, h3, h4, h5, p, ul {
+      --typography-spacing-vertical: 0.5rem;
+    }
+    h1, h2, h3 {
+      border-bottom: 1px solid #d8dee4;
+    }
+  </style>
+
+
+  <style>
+/* https://www.w3schools.com/css/css_tooltip.asp */
+
+/* Tooltip container */
+.entry-with-tooltip {
+  position: relative;
+  /* display: inline-block; */
+  text-decoration-line: underline;
+  text-decoration-color: black;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 1px;
+}
+
+/* Tooltip text */
+.entry-with-tooltip .tooltip {
+  visibility: hidden;
+  width: 300px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+}
+
+.entry-with-tooltip .tooltip-bottom {
+  /** Default */
+}
+
+.entry-with-tooltip .tooltip-left {
+  top: -5px;
+  right: 105%;
+}
+
+.entry-with-tooltip .tooltip-right {
+  top: -5px;
+  left: 105%;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.entry-with-tooltip:hover .tooltip {
+  visibility: visible;
+}
+
+.separator {
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+span.hovered {
+  color: red;
+}
+span.hovered code {
+  color: red;
+}
+
+code.unknown-concept {
+  background-color: darksalmon !important;
+}
+code.low-certainty::after {
+  content: "🤷";
+}
+code.low-certainty,
+code.new-concept.unset.gap {
+  background-color: blanchedalmond;
+}
+code.unset,
+code.new-concept.unset {
+  background-color: blanchedalmond;
+}
+code.gap,
+code.unsure,
+code.new-concept.gap,
+.frequencies-summary .gap td:not(:empty),
+.frequencies-summary .unset td:not(:empty),
+.frequencies-summary .unsure td:not(:empty) {
+  background-color: blanchedalmond;
+}
+code.new-concept,
+.frequencies-summary .new-concept td:not(:empty)
+ {
+  color: black;
+  background-color: lightgreen;
+}
+
+.frequencies-summary .header {
+  background-color: rgb(230, 230, 230);
+}
+.frequencies-summary .header.sites-in-country th {
+  font-size: x-small;
+}
+.frequencies-summary td {
+  text-align: right;
+}
+.frequencies-summary tr:hover {
+  background-color: rgb(245, 245, 245);
+}
+.frequencies-summary tr th,
+.frequencies-summary tr td {
+  padding: 4px 4px;
+  border-right: var(--border-width) solid var(--table-border-color);;
+}
+
+.scrollable-div {
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: visible;
+}
+  </style>
+</head>
+<body>
+<main class="container-fluid">
+<h1>Extending the autocomplete attribute</h1>
+
+<p>This is an effort to analyze the structures of address forms in a somewhat
+machine readable way.
+
+<p>This work is based on the following assumptions:
+<ul>
+  <li>The autocomplete spec was written with the intent to find a lowest common
+    denominator that should work for all countries. An analysis of real-world
+    web-forms indicates that those forms cannot be properly annotated with
+    today's autocomplete attribute because it lacks expressiveness. Probably
+    many site owners don't have a choice because shipping companies or local
+    customs tell them how an address form should look like.
+  <li>There are certain aspects that just apply to a few countries (e.g. Japan
+    has phonetic names, Spain has paternal and maternal last names, Hungary
+    splits the name of a street from the type of a street). The fact that these
+    concepts only apply to a few countries does not make them go away. We should
+    allow storing a few extra fields for Japanese, Spanish, Hungarian, ...
+    addresses (i.e. decide which fields to offer based on the country of an
+    address) because oftentimes customers and merchants are in the same
+    country and share the same cultural norms when it comes to address forms.
+  <li>I don't think that we can immediately fix autofill for all countries
+    and this analysis does not cover all countries. I hope that this document
+    leads to an architecture that can be extended.
+  <li>We may need to combine certain atomic pieces of information into a single
+    field (e.g. a house number and an apartment number). This process is
+    probably very locale specific and needs to grow over time. The fact that
+    we don't know how to combine two fields into one fillable string for
+    some countries yet, hopefully does not invalidate the overall idea.
+</ul>
+
+<p>Note that this is work in progress. Feedback is highly appreciated.
+<p>-Dominic Battr&eacute; (battre at google . com)
+
+<section>
+<h2>Concepts</h2>
+
+<p>
+The following are concepts taken from the
+<a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill">
+  autocomplete specification
+</a> with extensions that I deemed useful to make the autocomplete attribute
+useful for more countries.
+</p>
+
+<table role="grid">
+  <thead>
+    <th>Field name</th>
+    <th>Meaning</th>
+    <th>Canonical format example</th>
+  </thead>
+{% for concept in ontology.concepts|ignore_specialized_concept %}
+  <tr>
+    <td><code class="{{concept.name|css_classes_for_concept}}">
+      {{concept.name}}
+    </code>
+      {%-if concept.limited_to_countries %}
+      ({{ concept.limited_to_countries|join(', ') }})
+      {%- endif -%}
+    </td>
+    <td>{{concept.description|safe}}</td>
+    <td>{{concept.canonical_format_example|safe}}</td>
+  </tr>
+{% endfor %}
+</table>
+
+<p>
+The following are compound concepts. They are typically strongly localized,
+which I have not done yet.
+</p>
+<table role="grid">
+  <thead>
+    <th>Compound concept name</th>
+    <th>Meaning</th>
+    <th>In product label</th>
+    <th></th>
+    <th>Tokens</th>
+  </thead>
+{% for concept in ontology.compound_concepts %}
+<tr>
+  <td>
+    <code class="{{concept.name|css_classes_for_concept}}">{{concept.name}}</code>
+    {% for specialization in concept.specialization -%}
+      { {{ specialization.country|join(', ') }} }
+      x
+      { {{ specialization.language|join(', ') }} }
+      {{ ", " if not loop.last else "" }}
+    {%- endfor -%}
+  </td>
+  <td>{{concept.description|safe}}</td>
+  <td>{{concept.label|safe}}</td>
+  <td>{{concept.canonical_format_example|safe}}</td>
+  <td>
+    {% for token in concept.tokens -%}
+      {%- if token.concept_name -%}
+        <code class="{{token.concept_name|css_classes_for_concept}}">{{token.concept_name}}</code>
+      {%- endif -%}
+      {%- if token.separator_value -%}
+        <code>{{token.separator_value}}</code>
+      {%- endif -%}
+    {%- endfor %}
+  </td>
+</tr>
+{% endfor %}
+</table>
+
+</section>
+
+<section>
+<h2>Icons</h2>
+The following icons are used below:
+<ul>
+  <li> Information about sites:
+    <ul>
+      <li>S - structured form (containing fine-grained address information not
+          supported by the current autofill spec)
+      <li>U - unstructured form (typically asking for address-line[123] or
+          street address)
+      <li># - Anchor-tag to create a deep link to the current position
+      <li>🔗 - Link to the tested website
+    </ul>
+  </li>
+  <li> Information about fields
+    <ul>
+      <li>☑ - Form control is a checkbox
+      <li>⊙ -  Form control is a radio button
+      <li>▽ - Form control is a select element
+      <li>🤷 - Form control is a custom element (divs + CSS + click handlers + ...)
+    </ul>
+  </li>
+  <li> Information about recommended annotations
+    <ul>
+      <li>🤷 - It's unclear what to put here
+    </ul>
+  </li>
+</ul>
+</section>
+
+<section>
+  <h2>Big and global questions</h2>
+<ul>
+  <li>Do we want to support multiple concurrent field types? For example a
+    single &lt;input&gt; field for "name or company". I don't see an obvious
+    syntax for adding this capability to the autocomplete attribute. If you search
+    for '[' below, you can find examples where a website requested one (or more)
+    of multiple field types. Several such cases are already expressed via new
+    compound field types like <code>building-location</code> (street name and house
+    number) that I am proposing here.
+  <li>How do we model the "everything else" field type? Do we want to call it
+    "address-overflow", "address-supplement" (this seems to be a term that is
+    quite common in many countries), "building-and-location-in-building" (also
+    common)? The latter may be too narrow because it does not cover a company
+    name or c/o. Some websites would not want a company or c/o in their
+    "everything else" fields while others would want them.<br>
+    Instead of an "everything else" type we could ask websites to enumerate
+    what should go into these fields (see the previous bullet point).
+  <li>Are we ok with introducing country specific concepts? E.g. Hungary and
+    Spain separate the name of a street (e.g. "Amphitheatre") from the type of the
+    street ("Ave", "Pkwy", "Blvd", ...). I haven't seen this anywhere else. It's
+    essential to fill Hungarian and Spanish address forms but we should not offer
+    this to all users.<br>
+    How far do we go? In Spain we see the "Tipo de vía" as &lt;select&gt;
+    elements and websites offer different options to choose from. Do we want to
+    prescribe a list of supported road types?
+  <li>How do we deal with probably wrong but widely used interpretations of the
+    autocomplete spec? Browsers (at least Chrome) used to sell address-level2 as
+    the city field. In Mexico, we have a hierarchy of state, municipality or
+    delegation, city, neighborhood - where the municipality is optional. I have
+    seen several websites that assign address-level1, nothing, address-level2,
+    nothing to the respective fields. Do we force websites to use address-level3
+    for cities? This breaks current behavior. Or do we introduce an
+    "address-level1.5" for countries that have a level between state and city?
+  <li>Do we allow forms to specify an encoding? E.g. Japanese forms are picky
+    about ASCII, full-width or half-width characters.
+  <li>The <a href="https://en.wikipedia.org/wiki/Patronymic">patronymic name</a>
+    is based on the first name of the father. As per
+    <a href="https://en.wikipedia.org/wiki/Eastern_Slavic_naming_customs">
+    Eastern Slavic naming customs</a>, it is written in these countries in all
+    legal and identity documents. Countries mentioned there include Russia,
+    Belarus, Ukraine, Kazakhstan, Turkmenistan, Uzbekistan, and to an extent in
+    Kyrgyzstan, Georgia. But the list of
+    <a href="https://en.wikipedia.org/wiki/Patronymic">affected countries</a>
+    is longer.
+    <li>Many naming questions...
+    <ul>
+      <li>What do we call the field type to find a place inside a building?
+        "location-in-building"? "sub-building"?
+      <li>What do we name things that are very country/culture specific
+        (Hungary's separation between street name and street type, entrecalles,
+        stroenie/korpus, ...)?
+      <li>Apartment or Unit?</li>
+    </ul>
+  <li>How do we deal with websites whose address forms that centered around a
+    search widget? Do we want to offer autofilling?</li>
+</ul>
+
+</section>
+
+<section>
+<h2>Examples</h2>
+
+<p>
+The following are examples of real-world address forms. The purpose is to see
+frequent structures and learn requirements for a more powerful autocomplete
+attribute that meets the requirements of real-world websites.
+</p>
+<script>
+class Website {
+  // `id` is an identifier for a website
+  // `fields` is an array of concepts. Combined concepts need to be concatenated.
+  constructor(id, fields) {
+    this.id = id;
+    // Remove "gap" fields.
+    this.fields = fields.filter(entry => entry !== 'gap');
+  }
+
+  // Returns -1 if field1 appears before field2, +1 if field1 appears after
+  // field2. 0 if either is missing.
+  orderOfFields(field1, field2) {
+    const index1 = this.fields.indexOf(field1);
+    const index2 = this.fields.indexOf(field2);
+    if (index1 < 0 || index2 < 0) {
+      return 0;
+    }
+    return index1 < index2 ? -1 : +1;
+  }
+}
+
+function getOrderOfFields(websites) {
+  const setOfFields = new Set();
+  for (const website of websites) {
+    for (const field of website.fields) {
+      setOfFields.add(field);
+    }
+  }
+  const listOfFields = [...setOfFields.keys()];
+  listOfFields.sort((field1, field2) => {
+    // Country always goes last because it's implied and does not really
+    // participate in clustering.
+    if (field1 == 'country') return 1;
+    if (field2 == 'country') return -1;
+    let sum = 0;
+    for (const website of websites) {
+      sum += website.orderOfFields(field1, field2);
+    }
+    return sum;
+  });
+
+  return listOfFields;
+}
+
+function buildTable(destinationID, orderOfFields, websites) {
+  function createNodeWithText(name, text) {
+    const node = document.createElement(name);
+    node.appendChild(document.createTextNode(text));
+    return node;
+  }
+  const table = document.createElement('table');
+  // Build the table head.
+  const tableHead = document.createElement('thead');
+  table.appendChild(tableHead);
+  tableHead.style = "position: sticky; top: 0; background: white;";
+  const headTableRow = document.createElement('tr');
+  tableHead.appendChild(headTableRow);
+  headTableRow.appendChild(createNodeWithText('th', 'Site'));
+  for (const field of orderOfFields) {
+    headTableRow.appendChild(createNodeWithText('th', field));
+  }
+
+  // Build the table body.
+  const tableBody = document.createElement('tbody');
+  table.appendChild(tableBody);
+
+  for (const website of websites) {
+    const tr = document.createElement('tr');
+    tableBody.appendChild(tr);
+    tr.appendChild(createNodeWithText('td', website.id));
+    for (const field of orderOfFields) {
+      if (website.fields.indexOf(field) >= 0) {
+        tr.appendChild(createNodeWithText('td', field));
+      } else {
+        tr.appendChild(createNodeWithText('td', ''));
+      }
+    }
+  }
+
+  const target = document.getElementById(destinationID);
+  while (target.hasChildNodes()) {target.removeChild(target.firstChild);}
+  target.append(table);
+}
+
+function clusterInOrderOfAppearance(destinationID, websites) {
+  const orderOfFields = getOrderOfFields(websites);
+
+  function partitionRecursively(orderOfFields, websites) {
+    // The order in which fields appear on websites.
+    if (websites.length <= 1 || orderOfFields.length == 0) {
+      return websites;
+    }
+    const partitionBy = orderOfFields[0];
+    const part1 = [];
+    const part2 = [];
+    for (website of websites) {
+      if (website.fields.indexOf(partitionBy) >= 0) {
+        part1.push(website);
+      } else {
+        part2.push(website);
+      }
+    }
+    const sortedPart1 = [...partitionRecursively(orderOfFields.slice(1), part1)];
+    const sortedPart2 = [...partitionRecursively(orderOfFields.slice(1), part2)];
+    return sortedPart1.concat(sortedPart2);
+  }
+  const sortedSites = partitionRecursively(orderOfFields, websites);
+  buildTable(destinationID, orderOfFields, sortedSites);
+}
+
+function clusterBiggestFrequenciesFirst(destinationID, websites) {
+  // The order in which fields appear on websites.
+  const orderOfFields = getOrderOfFields(websites);
+
+  function partitionRecursively(orderOfFields, websites, depth) {
+    if (websites.length <= 1 || orderOfFields.length == 0) {
+      return websites;
+    }
+    let partitionBy = undefined;
+    let maxSitesWithPartitionAttribute = 0;
+    for (let i = 0; i < orderOfFields.length; ++i) {
+      let sitesWithPartitionAttribute = 0;
+      for (website of websites) {
+        if (website.fields.indexOf(orderOfFields[i]) >= 0) {
+          sitesWithPartitionAttribute++;
+        }
+      }
+      // console.log("Partition size with ", orderOfFields[i], " is ", sitesWithPartitionAttribute, "Max is", maxSitesWithPartitionAttribute);
+      if (sitesWithPartitionAttribute != websites.length &&
+          sitesWithPartitionAttribute > maxSitesWithPartitionAttribute &&
+          orderOfFields[i] !== 'country') {
+        // console.log("new winner");
+        partitionBy = orderOfFields[i];
+        maxSitesWithPartitionAttribute = sitesWithPartitionAttribute;
+      }
+    }
+    // console.log(depth, partitionBy);
+    if (!partitionBy) {
+      // All fields are identical.
+      return websites;
+    }
+    const part1 = [];
+    const part2 = [];
+    for (website of websites) {
+      if (website.fields.indexOf(partitionBy) >= 0) {
+        part1.push(website);
+      } else {
+        part2.push(website);
+      }
+    }
+    const sortedPart1 = [...partitionRecursively(orderOfFields, part1, depth+1)];
+    const sortedPart2 = [...partitionRecursively(orderOfFields, part2, depth+1)];
+    return sortedPart1.concat(sortedPart2);
+  }
+  const sortedSites = partitionRecursively(orderOfFields, websites, 0);
+  buildTable(destinationID, orderOfFields, sortedSites);
+}
+
+// Map of country code to a list of Websites
+const country_fields = {};
+</script>
+<p> <!-- Table of contents -->
+  <ol>
+    {% for country in countries|sort -%}
+    <li>
+      <a href="#{{country}}">{{country}}
+      {% for country_data in ontology.country_data -%}
+        {{"- " + country_data.country_name if country_data.country == country}}
+      {%- endfor -%}
+      </a>
+    </li>
+    {% endfor %}
+  </ol>
+</p>
+
+{% for country in countries|sort %}
+  <h3 id="{{country}}"><a href="#{{country}}">#</a> {{country}}
+    {% for country_data in ontology.country_data -%}
+      {{"- " + country_data.country_name if country_data.country == country}}
+    {%- endfor -%}
+  </h3>
+  {% for country_data in ontology.country_data -%}
+  {{country_data.site_examples_preamble_html|safe if country_data.country == country}}
+  {%- endfor %}
+  {% for section in [address_pb2.ExampleSequenceSection.NAME, address_pb2.ExampleSequenceSection.ADDRESS] %}
+  <h4 id="{{country}}-{{section}}"> <!-- <a href="#{{country}}-{{section}}">#</a> -->
+  <script>country_fields['{{country}}-{{section}}'] = [];</script>
+  {% if section == address_pb2.ExampleSequenceSection.NAME %}Names ({{country}}){% endif %}
+  {% if section == address_pb2.ExampleSequenceSection.ADDRESS %}Addresses ({{country}}){% endif %}
+  </h4>
+  <table role="grid">
+    <thead>
+      <th style="padding: 0; width: 60px"></th>
+      <th>Term</th>
+      <th>Translation</th>
+      <th>Recommended annotation</th>
+    </thead>
+    {% for site in ontology.site_examples -%}
+    {%- for sequence in site.sequences -%}
+    {%- if site.locale.country == country and sequence.section == section -%}
+    <tr>
+      <td id="{{section}}-{{site.url|replace('/','')|replace(':', '')|replace('?', '')}}" style="padding: 0"><a href="#{{section}}-{{site.url|replace('/','')|replace(':', '')|replace('?', '')}}" title="{{site.url}}">#</a>
+      {%if site.is_structured %}<span title="Structured address"><b>S</b></span>
+      {% else %}<span title="Unstructured address">U</span>{% endif %}
+      <a href="{{site.url}}" target="_blank">🔗</a>
+      </td>
+      <td {% if site.locale.language in rtl_languages %}dir="rtl"{% endif %}>{{terms(sequence)}}</td>
+      <td>{{translated_terms(sequence)}}</td>
+      <td>{{concepts(sequence)}}</td>
+    </tr>
+    <script>
+      country_fields['{{country}}-{{section}}'].push(
+        new Website(
+          /*id=*/ "{{site.url}}",
+          /*fields=*/ [
+          {%- for field in sequence.fields -%}
+            {%- if loop.index0 > 0 %}, {% endif -%}"{{field.concepts|join("|")}}"
+          {%- endfor -%}
+          ]));
+    </script>
+    {%- endif -%}
+    {%- endfor -%}
+    {% endfor %}
+  </table>
+  <details open>
+    <summary>Field clustering</summary>
+    <div id="field_clustering_{{country}}-{{section}}">
+      <!--
+      <button onclick="clusterInOrderOfAppearance('field_clustering_result_{{country}}-{{section}}', country_fields['{{country}}-{{section}}'])">In order of appearnance</button>
+      <button onclick="clusterBiggestFrequenciesFirst('field_clustering_result_{{country}}-{{section}}', country_fields['{{country}}-{{section}}'])">Biggest frequencies first</button>
+      -->
+        <select onchange="
+        if (this.value=='clusterInOrderOfAppearance') {
+          clusterInOrderOfAppearance('field_clustering_result_{{country}}-{{section}}', country_fields['{{country}}-{{section}}']);
+        } else {
+          clusterBiggestFrequenciesFirst('field_clustering_result_{{country}}-{{section}}', country_fields['{{country}}-{{section}}'])}">
+          <option value="clusterInOrderOfAppearance">In order of appearance</option>
+          <option value="clusterBiggestFrequenciesFirst" selected>Biggest frequencies first</option>
+        </select>
+      <div id="field_clustering_result_{{country}}-{{section}}"></div>
+      <script>clusterBiggestFrequenciesFirst('field_clustering_result_{{country}}-{{section}}', country_fields['{{country}}-{{section}}']);</script>
+    </div>
+  </details>
+  {% endfor %}
+  {% for country_data in ontology.country_data -%}
+  {{country_data.site_examples_epilog_html|safe if country_data.country == country}}
+  {%- endfor %}
+{% endfor %}
+
+</section>
+
+<section>
+<h2>Summary</h2>
+<p>The following tables indicate the frequencies of tokens in certain countries.
+  Please take this data with a grain of salt and consider it qualitative data.
+  This is not derived from an uniformly sampled data set.
+
+<h3 id="frequencies_of_concepts">Frequencies of concepts</h3>
+<div class="scrollable-div">
+<table class="frequencies-summary">
+{% for concept in ontology.concepts|ignore_specialized_concept|list + ontology.compound_concepts|ignore_specialized_concept|list %}
+{%- if loop.index0 % 10 == 0 %}
+<tr class="header">
+  <th>Concept</th>
+  {% for country in countries|sort -%}
+  <th>{{country}}</th>
+  {%- endfor %}
+  <th>Total</th>
+</tr>
+<tr class="header sites-in-country">
+  <th>(tested sites)</th>
+  {% for country in countries|sort -%}
+  <th>({{sites_in_country[country]}})</th>
+  {%- endfor %}
+  <th>({{sites_in_country["total"]}})</th>
+</tr>
+{% endif -%}
+
+<tr class="{{concept.name|css_classes_for_concept}}">
+  <th>{{concept.name}}</th>
+  {% for country in countries|sort -%}
+  <td>{{country_concept_frequencies[country + "-" + concept.name]}}</td>
+  {%- endfor %}
+  <td>({{concept_frequencies[concept.name]}})</td>
+</tr>
+{% endfor %}
+</table>
+</div>
+</section>
+
+<h3 id="frequencies_of_named_compound_concepts">Frequencies of named compound concepts</h3>
+<table role="grid">
+  <thead>
+    <th>Compound concept name</th>
+    <th>Tokens</th>
+    <th>Frequency</th>
+    <th>Countries</th>
+  </thead>
+{% for concept in ontology.compound_concepts|ignore_specialized_concept %}
+<tr>
+  <td>
+    <code class="{{concept.name|css_classes_for_concept}}">{{concept.name}}</code>
+  </td>
+  <td>
+    {%- for token in concept.tokens -%}
+      {%- if token.concept_name -%}
+        <code class="{{token.concept_name|css_classes_for_concept}}">{{token.concept_name}}</code>
+      {%- endif -%}
+    {%- endfor -%}
+  </td>
+  <td>{{concept_frequencies[concept.name]}}</td>
+  <td>{{concept_countries[concept.name]|sort|join(', ')}}</td>
+</tr>
+{% endfor %}
+</table>
+
+
+<h3 id="frequencies_of_unnamed_compound_concepts">Frequencies of unnamed compound concepts</h3>
+<table role="grid">
+<thead>
+  <th>Concepts</th>
+  <th>Frequency</th>
+  <th>Countries</th>
+</thead>
+{% for entry in compound_concept_frequencies.keys()|sort -%}
+<tr>
+  <td>{{compound_concept_frequencies[entry].concepts|join(', ')}}</td>
+  <td>{{compound_concept_frequencies[entry].total_frequency}}</td>
+  <td>{{compound_concept_frequencies[entry].countries|sort|join(', ')}}</td>
+</tr>
+{%- endfor %}
+</table>
+
+</section>
+
+</main>
+<script>
+document.body.addEventListener('mouseover', (event) => {
+  for (let node = event.target; node != document.body; node = node.parentNode) {
+    if (node.tagName !== 'SPAN')
+      continue;
+    const element_id = node.id;
+    const matches  = element_id.match("^.*_(field_\\d+)$");
+    if (matches) {
+      document.getElementById('term_' + matches[1]).classList.add('hovered');
+      document.getElementById('translated_term_' + matches[1]).classList.add('hovered');
+      document.getElementById('concept_' + matches[1]).classList.add('hovered');
+      return;
+    }
+  }
+});
+document.body.addEventListener('mouseout', (event) => {
+  for (let node = event.target; node != document.body; node = node.parentNode) {
+    if (node.tagName !== 'SPAN')
+      continue;
+    const element_id = node.id;
+    const matches  = element_id.match("^.*_(field_\\d+)$");
+    if (matches) {
+      document.getElementById('term_' + matches[1]).classList.remove('hovered');
+      document.getElementById('translated_term_' + matches[1]).classList.remove('hovered');
+      document.getElementById('concept_' + matches[1]).classList.remove('hovered');
+      return;
+    }
+  }
+});
+</script>
+
+</body>
+</html>

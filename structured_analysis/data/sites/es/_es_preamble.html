@@ -1,0 +1,79 @@
+Spanish addresses ask for street name and house number in either one or
+two input fields. Spain is special because some websites ask for
+ultra-detailed information (one field for each of):
+<ul>
+<li>Type of street
+<li>Stair case
+<li>Floor
+<li>Apartment (either 'letra' or 'puerta' which was once described as the
+delivery door but also refers to an apartment)
+<li>Urbanización
+</ul>
+
+This information can also be requested in a single address overflow
+field.
+
+<p>First discussions with a Portuguese person indicated the following:
+<ul>
+  <li><s>Gate/Puerta/Porta (PT)/Door (EN) is the building/house number. Usually is next
+    to the door, that's why it is called just door.</s>
+    -- Note to self: There are some websites that seem to contradict this. I
+    will try to find more country experts.
+  </li>
+  <li>
+    The definition of letra was not quite clear. I have confirmed from multiple
+    sources that this refers to apartment numbers. E.g <a
+    href="https://forum.wordreference.com/threads/letra-bloque-portal-escalera.1768794/">here</a>:
+    "Letra, Doors in apartment blocks in spain sometimes have a letter rather
+    than a number........Bloque : Block .......... Portal, Door Escalera Some
+    big blocks have more than one entrance so each Stairs are given a letter
+    too". Also an the HTML name-attribute associated letra with apartment.
+  </li>
+  <li>
+    Floor/Stair case and Apartment. Apartments are usually numbered. It is not
+    like in Germany where you have your last name next to the doorbell. Each
+    apartment has a number. That number is composed by first the floor number
+    and then the number/side of the apartment on that floor. For example:
+    apartment "34" is the 4th apartment on the 3rd floor. Or apartment "3rd
+    left" is the apartment on the 3rd floor on the left side. Some websites have
+    separate fields for the floor number and apartment. So in the example prior
+    would be: Floor: 3; Apartment: 4 or Left. Sometimes they just say Apartment
+    number, you would just put 34 or 3rd left.
+  </li>
+  <li>
+    Urbanización is a small area of houses or buildings in a city. They may
+    be gated communities but don't have to be gated communities. They are
+    much smaller than a parish and just point to a general small area in a city.
+    An Urbanización is not official and usually doesn't need to filled in an
+    address form. It often shares amenities (playground, swimming pool, garage)
+    among the residents and the construction of multiple houses belonging
+    to the Urbanización was led by the same company. I am still looking for an apropriate translation.
+    <a href="https://www.spanishdict.com/translate/Urbanizaci%C3%B3n">This</a>
+    suggests "(private) housing development". <a
+    href="https://www.wordreference.com/es/en/translation.asp?spen=Urbanizaci%C3%B3n">This</a>
+    also suggests "residential area".
+  </li>
+  <li>
+    Streets sometimes are long and have no numbers, indicated by "s/n" put in
+    the number field (sin numero). Instead of the number, buildings are then
+    referenced either by building name ("Edificio [name]") or sometimes groups
+    of buildings/gated communities are called Urbanización which also have a
+    name. Within the Urbanización, apartment buildings are then referenced by
+    staircase ("Escalera/Esc. [number]").
+  </li>
+  <li>
+    Tipo de vía (type of street) is often a &lt;select&gt; element with
+    many options. Different websites don't agree on a standard set. Maybe we
+    should just offer a limited set ("Calle", "Plaza", "Avenida" were mentioned
+    to me as the most popular ones) and "other". If the stored record is
+    "other", we don't fill. Or we fill the last observed value in case it is
+    found on the current website.<br>
+    If we fill a form which has a sparatent entry for "Tipo de vía" and we
+    select "Calle", we should not repeat that in the street name field. "Avenida
+    San Martín" becomes "Avenida" (type of street) and "San Martín" (name of
+    street).<br>
+    <a href="https://www.laputa.it/spanish-street-types/?lang=en">This</a> is
+    an interesting articule on Spanish street types. It states that the street
+    type is a prefix of the specific piece of a street name.
+  </li>
+</ul>

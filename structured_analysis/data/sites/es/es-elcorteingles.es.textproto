@@ -1,0 +1,334 @@
+site_examples {
+  url: "https://www.elcorteingles.es"
+  is_structured: true
+  locale {
+    country: "ES"
+    language: "es"
+  }
+  sequences {
+    fields {
+      name: "card-yes|eci-card"
+      label: "Sí"
+      label_translated: "Yes"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "card-no|eci-card"
+      label: "No"
+      label_translated: "Nope"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "js-card-id-back|card_id_back"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "card_number_have|card_number"
+      label: "600833"
+      label_translated: "600833"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "pin_number_have|pin_number"
+      label: "600833"
+      label_translated: "600833"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "card_number|card_number"
+      label: "600833"
+      label_translated: "600833"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "pin_number|pin_number"
+      label: "600833"
+      label_translated: "600833"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "male|gender"
+      label: "Hombre"
+      label_translated: "Men"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "female|gender"
+      label: "Mujer"
+      label_translated: "Woman"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "date_of_birth_day|date_of_birth_day"
+      label: "Sexo Fecha de nacimientoDocumento de identificación"
+      label_translated: "Sex Date of birth Identification document"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "date_of_birth_month|date_of_birth_month"
+      label: "Sexo Fecha de nacimientoDocumento de identificación"
+      label_translated: "Sex Date of birth Identification document"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "date_of_birth_year|date_of_birth_year"
+      label: "Sexo Fecha de nacimientoDocumento de identificación"
+      label_translated: "Sex Date of birth Identification document"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "id_document_type|id_document_type"
+      label: "Sexo Fecha de nacimientoDocumento de identificación"
+      label_translated: "Sex Date of birth Identification document"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "id_document_number|id_document_number"
+      label: "Sexo Fecha de nacimientoDocumento de identificación"
+      label_translated: "Sex Date of birth Identification document"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "same-billing-address|type"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "new-billing-address|type"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "first_name|first_name"
+      label: "Nombre"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "last_name|last_name"
+      label: "Primer apellido"
+      label_translated: "First surname"
+      control_type: INPUT
+      concepts: "first-family-name"
+      section: NAME
+    }
+    fields {
+      name: "second_last_name|second_last_name"
+      label: "Segundo apellido (opcional)"
+      label_translated: "Second surname (optional)"
+      control_type: INPUT
+      concepts: "second-family-name"
+      section: NAME
+    }
+    fields {
+      name: "country_eci_code|country_eci_code"
+      label: "País"
+      label_translated: "Country"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "province_code|province_code"
+      label: "Provincia"
+      label_translated: "Province"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "|state"
+      label: "Provincia, Estado, etc"
+      label_translated: "Province, State, etc."
+      control_type: INPUT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "street_type_code|street_type_code"
+      label: "Tipo de vía"
+      label_translated: "Type of road"
+      example: "Agrupacion, Alameda, Apartamento, Avenida, Barranco, Bajada, "
+        "Bloque, Barrio/barriada, Chalet, Calleja/callejon, Calle, Camino, "
+        "Colonia, Carretera, Caserio/casas, Cuesta, Diseminado, Edificio, "
+        "Glorieta, Grupo, Lugar, Mercado, Poblado, Partida, Poligono, Pasaje, "
+        "Plazoleta/plazuela, Parque, Prolongacion, Paseo, Plaza, Rambla, "
+        "Ronda, Subida, Senda, Travesia, Torrente, Urbanizacion"
+      example_translated: "Grouping, Alameda, Apartment, Avenue, Ravine, "
+        "Descent, Block, Neighborhood/neighborhood, Chalet, Alley/alley, "
+        "Street, Path, Neighborhood, Highway, Farmhouse/houses, Slope, "
+        "Disseminated, Building, Roundabout, Group, Place, Market, Town, "
+        "Departure, Polygon, Passage, Small square, Park, Prolongation, "
+        "Promenade, Plaza, Rambla, Ronda, Rise, Path, Crossing, Torrent, "
+        "Urbanization"
+      control_type: SELECT
+      concepts: "street-name-type"
+      section: ADDRESS
+    }
+    fields {
+      name: "street_name|street_name"
+      label: "Nombre de vía"
+      label_translated: "Street name"
+      control_type: INPUT
+      concepts: "street-name-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "house_number|house_number"
+      label: "Número"
+      label_translated: "Number"
+      control_type: INPUT
+      concepts: "house-number"
+      section: ADDRESS
+    }
+    fields {
+      name: "without_number|without_number"
+      label: "s/n"
+      label_translated: "n/a"
+      example: "sin número"
+      example_translated: "without house number"
+      control_type: CHECKBOX
+      concepts: "gap"
+      section: ADDRESS
+    }
+    fields {
+      name: "building|building"
+      label: "Bloque/Edificio"
+      label_translated: "Block/Building"
+      control_type: INPUT
+      concepts: "gap"
+      section: ADDRESS
+    }
+    fields {
+      name: "stairs|stairs"
+      label: "Escalera"
+      label_translated: "Staircase"
+      control_type: INPUT
+      concepts: "staircase"
+      section: ADDRESS
+    }
+    fields {
+      name: "level|level"
+      label: "Piso"
+      label_translated: "Floor"
+      control_type: INPUT
+      concepts: "floor"
+      section: ADDRESS
+    }
+    fields {
+      name: "door|door"
+      label: "Puerta"
+      label_translated: "Apartment"
+      label_comment: "The HTML code referrs to a 'door'."
+      control_type: INPUT
+      concepts: "apartment"
+      section: ADDRESS
+    }
+    fields {
+      name: "additionalInfo|additionalInfo"
+      label: "Información adicional"
+      label_translated: "Additional Information"
+      control_type: INPUT
+      concepts: "address-overflow"
+      section: ADDRESS
+    }
+    fields {
+      name: "postal_code|postal_code"
+      label: "Código postal"
+      label_translated: "Postal Code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "city|city"
+      label: "Población"
+      label_translated: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "phone_number|phone_number"
+      label: "Teléfono móvil"
+      label_translated: "Mobile phone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "my-order-phone|my-order-phone"
+      label: "Utilizar uno de mi pedido"
+      label_translated: "Use one of my order"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "sms_phone_number|sms_phone_number"
+      label: "Utilizar uno de mi pedido"
+      label_translated: "Use one of my order"
+      control_type: SELECT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "other-phone|other-phone"
+      label: "Otro"
+      label_translated: "Other"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "other-phone-input|other-phone-input"
+      label: "Otro"
+      label_translated: "Other"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|observations"
+      label: "Observaciones"
+      label_translated: "Observations"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

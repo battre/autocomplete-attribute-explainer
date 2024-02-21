@@ -1,0 +1,56 @@
+<p>Argentinian address forms rely on <b>street names</b>, <b>house numbers</b>,
+  <b>floors</b> (Piso) and <b>apartments</b> (Departamento). Floors and
+  apartments can be requested in a single input field or in two separate fields.
+
+<p>On the street address level, we frequently see <b>between streets</b>, i.e.
+  a field in which one specifies the names of two crossing streets to help
+  locate the house number.
+
+<p>The forms ask for states/provinces and localities/cities.
+
+<p>Oftentimes the address form was filled via an address search box.
+
+<p>Frequently a DNI was requested (national identification number).
+
+<h4>Missing field types</h4>
+The following cases are currently missing in the autocomplete spec and
+occurred on multiple sites:
+<ul>
+  <li>street-name (calle)
+  <li>house-number (número)
+  <li>floor (piso)
+  <li>apartment (departamento)
+  <li>floor and/or apartment (piso y/o departamento)
+  <li>"between streets" (entrecalles) - either with one input field or with
+    two
+  <li>additional information (datos adicionales/aclaración
+    adicional/observations/Dirección Complementaria
+  <li>lote/sector, some buildings may not be adjacent to a street but only
+    accessible by foot. In this case, the area is sub-divided into lote-s and
+    possibly further subdivided into sectors. A "sector" seems to be on the same
+    level as a house number.
+  <li>torre (tower) - especially in Buenos Aires you may have big apartment
+    complexes that share the same house number you you specify the tower you live
+    in. It could also refer to a part of a building (e.g. front-building, a wing
+    of a building, ...).
+</ul>
+
+<h4>Open questions</h4>
+<ul>
+  <li>How do we deal with address-overflow? Oftentimes, this seems to ask for
+    information within a building - floor and apartment - but theoretically it
+    could be more flexible. Do we want to rely on "location-in-building"?
+  <li>Do we want to support entrecalles (between streets) which are split across
+    two fields? - Do we want to combine this with "landmark"?
+  <li>The concept of "partido" is not fully clear to me. One form asked for
+    (provincia, partido, localidad), which I see as (province, part of a city,
+    city). Another form asked for (partido, provincia) but no city. Maybe this was
+    implied by the zip code?
+  <li>Should we model the entrecalles ("between streets") as a landmark with a
+    country specific translation (i.e. translate "landmark" as "entrecalles" in
+    AR and MX)? Only one website in Mexico had separate fields for entrecalles
+    and a landmarks. Several websites combined these concepts into a field
+    "betreen streets or landmark". They serve the same purpose.
+</ul>
+
+<p>Progress: ☑ First round of cleanup, ☑ Discussed with a (former) resident

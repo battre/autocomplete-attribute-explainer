@@ -1,0 +1,1201 @@
+site_examples {
+  url: "https://www.home.co.za"
+  is_structured: true
+  locale {
+    country: "ZA"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "|Ntt"
+      example: "Search"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "component-account-cta-static-data|"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_dyncharset"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_dynSessConf"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|/atg/commerce/order/purchase/CartModifierFormHandler.moveToPurchase"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/atg/commerce/order/purchase/CartModifierFormHandler.moveToPurchase"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_DARGS"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_dyncharset"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_dynSessConf"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "selectedCommerceItemID|/atg/commerce/order/purchase/CartModifierFormHandler.removalCommerceIds"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/atg/commerce/order/purchase/CartModifierFormHandler.removalCommerceIds"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|/atg/commerce/order/purchase/CartModifierFormHandler.removeItemFromOrder"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/atg/commerce/order/purchase/CartModifierFormHandler.removeItemFromOrder"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_DARGS"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_dyncharset"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_dynSessConf"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|furnitureFlow"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:furnitureFlow"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "collectionAddress|collectionAddress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:collectionAddress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "data-rica-index|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "data-furniture-index|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "data-shipping-index|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "data-pargo-available|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "data-checkout-cart-enabled|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "voucherWidgetInput|"
+      label: "Enter voucher code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkout-1__off-registry-1|checkout-1__off-registry"
+      label: "YES"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkout-1__off-registry-2|checkout-1__off-registry"
+      label: "NO"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkout-furniture__assembly-yes|checkout-furniture__assembly"
+      label: "YES"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:checkout-furniture__assembly"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkout-furniture__assembly-no|checkout-furniture__assembly"
+      label: "NO"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:checkout-furniture__assembly"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping-method-furniture-delivery|shipping-address-furniture-method"
+      label: "Furniture delivery details Would you like us to assemble your furniture items?"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping-method-furniture-collection|shipping-address-furniture-method"
+      label: "Furniture delivery details Would you like us to assemble your furniture items?"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkout-furniture__collection-guest-email|checkout-furniture__collection-guest-email"
+      label: "Email Address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:checkout-furniture__collection-guest-email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkout-furniture__collection-guest-firstname|checkout-furniture__collection-guest-firstname"
+      label: "First name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "|_D:checkout-furniture__collection-guest-firstname"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkout-furniture__collection-guest-lastname|checkout-furniture__collection-guest-lastname"
+      label: "Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "|_D:checkout-furniture__collection-guest-lastname"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkout-furniture__shipping-address-collect|checkout-1__shipping-address"
+      label: "collect"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkout__collection|checkout-furniture___collect"
+      label: "@home MIDRAND DC@home MIDRAND DC@home PAROW CAPE TOWN DC@homelivingspace NELSPRUIT@homelivingspace B"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkout-1__shipping-address-new|checkout-1__shipping-address"
+      label: "New address"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address_lookup|address_lookup"
+      label: "Start typing your street name"
+      example: "Enter a location"
+      control_type: INPUT
+      concepts: "address-search"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "furniture-address__email|furniture-address__email"
+      label: "Email Address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:furniture-address__email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "furniture-address__firstname|furniture-address__firstname"
+      label: "First name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:furniture-address__firstname"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "furniture-address__lastname|furniture-address__lastname"
+      label: "Last name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:furniture-address__lastname"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:furniture-address__country-ext"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "furniture-address__country-ext|furniture-address__country-ext"
+      label: "+27+27"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|/atg/commerce/order/purchase/ShippingGroupFormHandler.addressMap.phoneCode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/atg/commerce/order/purchase/ShippingGroupFormHandler.addressMap.phoneCode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "furniture-address__number|furniture-address__number"
+      label: "CELLPHONE NUMBER OF RECIPIENT"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|_D:furniture-address__number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "furniture-address__company-building|furniture-address__company-building"
+      label: "Company / Building"
+      control_type: INPUT
+      concepts: "organization"
+      concepts: "building"
+      section: ADDRESS
+    }
+    fields {
+      name: "|_D:furniture-address__company-building"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "furniture-address__straddress1|furniture-address__straddress1"
+      control_type: INPUT
+      label: "Street address 1"
+      concepts: "street-address"
+      section: ADDRESS
+    }
+    fields {
+      name: "|_D:furniture-address__straddress1"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "furniture-address__suburb|furniture-address__suburb"
+      label: "Suburb"
+      control_type: INPUT
+      concepts: "address-level3"
+      section: ADDRESS
+    }
+    fields {
+      name: "|_D:furniture-address__suburb"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "furniture-address__city-town|furniture-address__city-town"
+      label: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "|_D:furniture-address__city-town"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "furniture-address__postal-code|furniture-address__postal-code"
+      label: "Postal code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "|_D:furniture-address__postal-code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:furniture-address__region"
+      control_type: INPUT
+      concepts: "address-level1"
+      section: OTHER
+    }
+    fields {
+      name: "furniture-address__region|furniture-address__region"
+      label: "Region Confirm your region"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "|_D:furniture-address__country-code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "furniture-address__country-code|furniture-address__country-code"
+      label: "Country"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "|/atg/commerce/order/purchase/ShippingGroupFormHandler.addressMap.country"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/atg/commerce/order/purchase/ShippingGroupFormHandler.addressMap.country"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:furniture-address__region"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "furniture-address__region|furniture-address__region"
+      label: "Please SelectPlease SelectEastern CapeFree StateGauteng"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:furniture-address__building-type"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "furniture-address__building-type|furniture-address__building-type"
+      label: "Building Type"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:furniture-address__parking-distance"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "furniture-address__parking-distance|furniture-address__parking-distance"
+      label: "Distance to Parking"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:furniture-address__delivery-floor"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "furniture-address__delivery-floor|furniture-address__delivery-floor"
+      label: "Delivery Floor"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:furniture-address__lift-stairs"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "furniture-address__lift-stairs|furniture-address__lift-stairs"
+      label: "Lift or Stairs"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "furniture-address__door-space-yes|furniture-address__door-space"
+      label: "YES"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:furniture-address__door-space"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "furniture-address__door-space-no|furniture-address__door-space"
+      label: "NO"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:furniture-address__door-space"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:checkout__delivery-collect__country-ext"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkout__delivery-collect__country-ext|checkout__delivery-collect__country-ext"
+      label: "+27+27"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|/atg/commerce/order/purchase/ShippingGroupFormHandler.furnitureInfoMap.phoneCode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/atg/commerce/order/purchase/ShippingGroupFormHandler.furnitureInfoMap.phoneCode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkout__delivery-collect__number|checkout__delivery-collect__number"
+      label: "CELLPHONE NUMBER OF RECIPIENT"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|_D:checkout__delivery-collect__number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:checkout__delivery"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkout__delivery|checkout__delivery"
+      label: "Message for your courier"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkout__delivery|checkout__delivery"
+      label: "Message for your courier"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "selectedShippingMethod|selectedShippingMethod"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:selectedShippingMethod"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "selectedGiftAddress|/atg/commerce/order/purchase/ShippingGroupFormHandler.selectedGiftAddress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/atg/commerce/order/purchase/ShippingGroupFormHandler.selectedGiftAddress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "giftWrapOrder|/atg/commerce/order/purchase/ShippingGroupFormHandler.giftWrapOrder"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/atg/commerce/order/purchase/ShippingGroupFormHandler.giftWrapOrder"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "collectionStoreId|collectionStoreId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:collectionStoreId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|/atg/commerce/order/purchase/ShippingGroupFormHandler.shippingSuccessURL"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/atg/commerce/order/purchase/ShippingGroupFormHandler.shippingSuccessURL"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|/atg/commerce/order/purchase/ShippingGroupFormHandler.shippingErrorURL"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/atg/commerce/order/purchase/ShippingGroupFormHandler.shippingErrorURL"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipToNewAddressSubmit|shipToNewAddressSubmit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:shipToNewAddressSubmit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipToExistingAddressSubmit|shipToExistingAddressSubmit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:shipToExistingAddressSubmit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipToCollectionAddressSubmit|shipToCollectionAddressSubmit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:shipToCollectionAddressSubmit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipToGiftRegistryAddressSubmit|shipToGiftRegistryAddressSubmit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:shipToGiftRegistryAddressSubmit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_DARGS"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "isAjaxCall|isAjaxCallName"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_dyncharset"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_dynSessConf"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "voucherNumber|/atg/commerce/order/purchase/CartModifierFormHandler.voucherNumber"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/atg/commerce/order/purchase/CartModifierFormHandler.voucherNumber"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|/atg/commerce/order/purchase/CartModifierFormHandler.siteId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/atg/commerce/order/purchase/CartModifierFormHandler.siteId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|/atg/commerce/order/purchase/CartModifierFormHandler.applyVoucher"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/atg/commerce/order/purchase/CartModifierFormHandler.applyVoucher"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_DARGS"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_dyncharset"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_dynSessConf"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|/atg/commerce/order/purchase/ShippingGroupFormHandler.furnitureFlow"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/atg/commerce/order/purchase/ShippingGroupFormHandler.furnitureFlow"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "selectedShipMethod|/atg/commerce/order/purchase/ShippingGroupFormHandler.shippingMethod"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/atg/commerce/order/purchase/ShippingGroupFormHandler.shippingMethod"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|/atg/commerce/order/purchase/ShippingGroupFormHandler.applyShippingMethod"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/atg/commerce/order/purchase/ShippingGroupFormHandler.applyShippingMethod"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_DARGS"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "location-select-static-data|"
+      label: "K"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "newsletter-widget-static-data|"
+      label: "Why Shop With Us"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_dyncharset"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_dynSessConf"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|/com/tfg/commerce/email/TFGEmailNotificationFormHandler.value.formName"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/com/tfg/commerce/email/TFGEmailNotificationFormHandler.value.formName"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "newsletter-widget-input|newsletter-widget-input"
+      label: "SIGN UP TO OUR NEWSLETTER"
+      example: "Enter your email address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:newsletter-widget-input"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|/com/tfg/commerce/email/TFGEmailNotificationFormHandler.value.siteId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/com/tfg/commerce/email/TFGEmailNotificationFormHandler.value.siteId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|/com/tfg/commerce/email/TFGEmailNotificationFormHandler.value.source"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/com/tfg/commerce/email/TFGEmailNotificationFormHandler.value.source"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|/com/tfg/commerce/email/TFGEmailNotificationFormHandler.value.locale"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/com/tfg/commerce/email/TFGEmailNotificationFormHandler.value.locale"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|/com/tfg/commerce/email/TFGEmailNotificationFormHandler.value.idKey"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/com/tfg/commerce/email/TFGEmailNotificationFormHandler.value.idKey"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|/com/tfg/commerce/email/TFGEmailNotificationFormHandler.value.page"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/com/tfg/commerce/email/TFGEmailNotificationFormHandler.value.page"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|/com/tfg/commerce/email/TFGEmailNotificationFormHandler.value.requestFrom"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/com/tfg/commerce/email/TFGEmailNotificationFormHandler.value.requestFrom"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|/com/tfg/commerce/email/TFGEmailNotificationFormHandler.sendNewsLetter"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/com/tfg/commerce/email/TFGEmailNotificationFormHandler.sendNewsLetter"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "newsletter-widget-submit|newsletter-widget-submit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:newsletter-widget-submit"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_DARGS"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_dyncharset"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_dynSessConf"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order-status-widget-order-id|order-status-widget-order-id"
+      label: "ORDER NUMBER"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:order-status-widget-order-id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order-status-widget-email|order-status-widget-email"
+      label: "EMAIL ADDRESS OR"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:order-status-widget-email"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|/com/tfg/commerce/order/search/TFGOrderSearchFormHandler.phoneNumberCountryCode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/com/tfg/commerce/order/search/TFGOrderSearchFormHandler.phoneNumberCountryCode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:order-status-widget-country-extension"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "order-status-widget-country-extension|order-status-widget-country-extension"
+      label: "+27+27"
+      control_type: SELECT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "order-status-widget-phone|order-status-widget-phone"
+      label: "PHONE NUMBER"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|_D:order-status-widget-phone"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|/com/tfg/commerce/order/search/TFGOrderSearchFormHandler.formName"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/com/tfg/commerce/order/search/TFGOrderSearchFormHandler.formName"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|/com/tfg/commerce/order/search/TFGOrderSearchFormHandler.errorUrl"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/com/tfg/commerce/order/search/TFGOrderSearchFormHandler.errorUrl"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|/com/tfg/commerce/order/search/TFGOrderSearchFormHandler.successUrl"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/com/tfg/commerce/order/search/TFGOrderSearchFormHandler.successUrl"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|/com/tfg/commerce/order/search/TFGOrderSearchFormHandler.searchOrder"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:/com/tfg/commerce/order/search/TFGOrderSearchFormHandler.searchOrder"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_DARGS"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mini-cart-static-data|"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping-cart-static-data|"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payment-summary-static-data|"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "component-shipping-address-static-data|"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_dyncharset"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_dynSessConf"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "forceOpen|forceOpen"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_D:forceOpen"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_DARGS"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

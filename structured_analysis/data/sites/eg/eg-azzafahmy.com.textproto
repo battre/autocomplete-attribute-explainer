@@ -1,0 +1,301 @@
+# proto-file: address.proto
+# proto-message: AddressOntology
+
+site_examples {
+  url: "https://www.azzafahmy.com"
+  is_structured: false
+  locale {
+    country: "EG"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "email|username"
+      label: "Your email"
+      example: "Your email"
+      control_type: INPUT
+      concepts: "unset"
+      section: LOGIN
+    }
+    fields {
+      name: "pass|password"
+      label: "Password"
+      example: "Password"
+      control_type: INPUT
+      concepts: "unset"
+      section: LOGIN
+    }
+    fields {
+      name: "firstname|firstname"
+      label: "First Name"
+      example: "First Name"
+      control_type: INPUT
+      concepts: "unset"
+      section: SIGNUP
+    }
+    fields {
+      name: "lastname|lastname"
+      label: "Last Name"
+      example: "Last Name"
+      control_type: INPUT
+      concepts: "unset"
+      section: SIGNUP
+    }
+    fields {
+      name: "email_address|email"
+      label: "Your mail"
+      example: "Your mail"
+      control_type: INPUT
+      concepts: "unset"
+      section: SIGNUP
+    }
+    fields {
+      name: "gender|gender"
+      label: "Gender"
+      control_type: SELECT
+      concepts: "unset"
+      section: SIGNUP
+    }
+    fields {
+      name: "password-social|password"
+      label: "Password"
+      example: "Password"
+      control_type: INPUT
+      concepts: "unset"
+      section: SIGNUP
+    }
+    fields {
+      name: "password-confirmation-social|password_confirmation"
+      label: "Confirm Password"
+      example: "Confirm Password"
+      control_type: INPUT
+      concepts: "unset"
+      section: SIGNUP
+    }
+    fields {
+      name: "is_subscribed|is_subscribed"
+      label: "I consent to receive Azza Fahmy emails, catalogues and other communications about jewelry and other"
+      control_type: INPUT
+      concepts: "unset"
+      section: SIGNUP
+    }
+    fields {
+      name: "forgot_email_address|email"
+      label: "Your email"
+      example: "Your email"
+      control_type: INPUT
+      concepts: "unset"
+      section: SIGNUP
+    }
+    fields {
+      name: "customer-email|username"
+      label: "Email Address"
+      control_type: INPUT
+      concepts: "unset"
+      section: SIGNUP
+    }
+    fields {
+      name: "customer-password|password"
+      label: "Password"
+      example: "optional"
+      control_type: INPUT
+      concepts: "unset"
+      section: SIGNUP
+    }
+    fields {
+      name: "G7O24TW|firstname"
+      label: "First Name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "RPBAL0M|lastname"
+      label: "Last Name"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "T8IOTUO|street[0]"
+      label: "Street Address"
+      example: "Enter a location"
+      control_type: INPUT
+      concepts: "building-location"
+      section: ADDRESS
+    }
+    fields {
+      name: "K8X3W7X|country_id"
+      label: "Country"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "XJWN574|city"
+      label: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "D3JYTVC|postcode"
+      label: "Zip/Postal Code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "JPUNSKC|region"
+      label: "State/Province"
+      control_type: INPUT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "CE17FY9|region_id"
+      label: "State/Province"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "FCEL8AO|company"
+      label: "Company"
+      control_type: INPUT
+      concepts: "organization"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "A90GHYK|telephone"
+      label: "Phone Number"
+      control_type: INPUT
+      concepts: "tel"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "create-account-checkbox|create-account-checkbox"
+      label: "Create account"
+      control_type: INPUT
+      concepts: "unset"
+      section: SIGNUP
+    }
+    fields {
+      name: "osc-password|password"
+      label: "Password"
+      control_type: INPUT
+      concepts: "unset"
+      section: SIGNUP
+    }
+    fields {
+      name: "osc-password-confirmation|password_confirmation"
+      label: "Confirm Password"
+      control_type: INPUT
+      concepts: "unset"
+      section: SIGNUP
+    }
+    fields {
+      # Skip billing
+      hide: true
+      name: "billing-address-same-as-shipping|billing-address-same-as-shipping"
+      label: "My billing and shipping address are the same"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      # Skip billing
+      hide: true
+      name: "C2SPWUT|firstname"
+      label: "First Name"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      # Skip billing
+      hide: true
+      name: "DDPMNTP|lastname"
+      label: "Last Name"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      # Skip billing
+      hide: true
+      name: "DSPRIUF|street[0]"
+      label: "Enter a location"
+      example: "Enter a location"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      # Skip billing
+      hide: true
+      name: "L13O9IS|country_id"
+      label: "Country"
+      control_type: SELECT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      # Skip billing
+      hide: true
+      name: "VAMV0O4|city"
+      label: "City"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      # Skip billing
+      hide: true
+      name: "CHE3IER|postcode"
+      label: "Zip/Postal Code"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      # Skip billing
+      hide: true
+      name: "E79COU7|region"
+      label: "State/Province"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      # Skip billing
+      hide: true
+      name: "V681XQB|region_id"
+      label: "State/Province"
+      control_type: SELECT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      # Skip billing
+      hide: true
+      name: "IWSSAAM|company"
+      label: "Company"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      # Skip billing
+      hide: true
+      name: "NNE37NX|telephone"
+      label: "Phone Number"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+  }
+}
+

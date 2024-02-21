@@ -1,0 +1,181 @@
+site_examples {
+  url: "https://www.baur.de"
+  is_structured: true
+  locale {
+    country: "DE"
+    language: "de"
+  }
+  sequences {
+    fields {
+      name: "ot-group-id-C0002|ot-group-id-C0002"
+      label: "Statistische-Cookies & Dienste"
+      label_translated: "Statistical Cookies &amp; Services"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0003|ot-group-id-C0003"
+      label: "Personalisierungs-Cookies & Dienste"
+      label_translated: "Personalization Cookies &amp; Services"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0004|ot-group-id-C0004"
+      label: "Cookies & Dienste für Marketingzwecke"
+      label_translated: "Cookies &amp; Services for Marketing Purposes"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0005|ot-group-id-C0005"
+      label: "Social-Media-Cookies & Dienste"
+      label_translated: "Social Media Cookies &amp; Services"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "vendor-search-handler|vendor-search-handler"
+      label: "Vendor Search"
+      label_translated: "Vendor Search"
+      example: "Search..."
+      example_translated: "search..."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-hosts-groups-handler|"
+      label: "checkbox label"
+      label_translated: "check box label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-vendor-groups-handler|"
+      label: "checkbox label"
+      label_translated: "check box label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-vendor-leg-handler|"
+      label: "checkbox label"
+      label_translated: "check box label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "chkbox-id|"
+      label: "checkbox label"
+      label_translated: "check box label"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|gender"
+      label: "Frau"
+      label_translated: "Mrs"
+      control_type: RADIO
+      concepts: "honorific-prefix"
+      section: NAME
+    }
+    fields {
+      name: "|gender"
+      label: "Herr"
+      label_translated: "Mr"
+      control_type: RADIO
+      concepts: "honorific-prefix"
+      section: NAME
+    }
+    fields {
+      name: "109|firstName"
+      label: "Vorname:"
+      label_translated: "First name:"
+      example: "Erika"
+      example_translated: "Erika"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "110|lastName"
+      label: "Nachname:"
+      label_translated: "Last name:"
+      example: "Musterfrau"
+      example_translated: "example woman"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "111|street"
+      label: "Straße:"
+      label_translated: "Street name:"
+      example: "Musterstraße"
+      example_translated: "example road"
+      control_type: INPUT
+      concepts: "street-name"
+      section: ADDRESS
+    }
+    fields {
+      name: "112|houseNumber"
+      label: "Hausnummer:"
+      label_translated: "House number:"
+      example: "17"
+      example_translated: "17"
+      control_type: INPUT
+      concepts: "house-number"
+      section: ADDRESS
+    }
+    fields {
+      name: "113|additional"
+      label: "Adresszusatz:"
+      label_translated: "Address supplement:"
+      example: "Tür, Stockwerk, Stock"
+      example_translated: "door, floor, floor"
+      control_type: INPUT
+      concepts: "address-overflow"
+      section: ADDRESS
+    }
+    fields {
+      name: "114|zipCode"
+      label: "PLZ:"
+      label_translated: "Postal code:"
+      example: "12345"
+      example_translated: "12345"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "115|city"
+      label: "Ort:"
+      label_translated: "City:"
+      example: "Musterstadt"
+      example_translated: "example city"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "116|primaryPhoneNumber"
+      label: "Telefonnummer:"
+      label_translated: "Telephone number:"
+      example: "0987123456"
+      example_translated: "0987123456"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+  }
+}
+

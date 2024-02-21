@@ -1,0 +1,169 @@
+site_examples {
+  url: "https://www.ae.com"
+  is_structured: false
+  locale {
+    country: "CA"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "ember355-input|email"
+      label: "Email"
+      example: "Email"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "email"
+      section: OTHER
+    }
+    fields {
+      name: "ember357-input|firstname"
+      label: "First Name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "ember359-input|lastname"
+      label: "Last Name"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "ember361-input|streetAddress1"
+      label: "Street Address"
+      control_type: INPUT
+      concepts: "address-line1"
+      autocomplete_attribute: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "ember363-input|streetAddress2"
+      label: "Apt #, Floor, etc. (Optional)"
+      control_type: INPUT
+      concepts: "address-line2"
+      autocomplete_attribute: "address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "ember365-input|city"
+      label: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "|states"
+      label: "Province / Territory"
+      control_type: SELECT
+      concepts: "address-level1"
+      autocomplete_attribute: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "ember367-input|postalCode"
+      label: "Postal Code"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "payment-radio-credit-card|paymentMethod"
+      label: "Credit or Debit Card"
+      control_type: RADIO
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "ember377-input|cardNumber"
+      label: "Credit Card Number"
+      example: "Credit Card Number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "cc-number"
+      section: PAYMENT
+    }
+    fields {
+      name: "ember379-input|expirationDate"
+      label: "Exp. (MM/YY)"
+      example: "Exp. (MM/YY)"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "cc-exp"
+      section: PAYMENT
+    }
+    fields {
+      name: "ember381-input|securityCode"
+      label: "CVV"
+      example: "CVV"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PAYMENT
+    }
+    fields {
+      name: "ember383-input|phoneNumber"
+      label: "Phone Number"
+      example: "Phone Number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "tel"
+      section: PHONE
+    }
+    fields {
+      name: "ember386-checkbox|billToShippingAddress"
+      label: "Same as Shipping Address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payment-radio-paypal|paymentMethod"
+      label: "PayPal"
+      control_type: RADIO
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "payment-radio-after-pay|paymentMethod"
+      label: "Afterpay"
+      control_type: RADIO
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "toggle-ember401|receiveAEPromoEmails"
+      label: "AE Emails"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "toggle-ember402|receiveAeriePromoEmails"
+      label: "Aerie Emails"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "ember403-input|rewardsNumber"
+      label: "Real Rewards Member #"
+      example: "Real Rewards Member #"
+      control_type: INPUT
+      concepts: "unset"
+      section: PAYMENT
+    }
+    fields {
+      name: "ember406-checkbox|giftReceipt"
+      label: "Include free gift receipt"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: PAYMENT
+    }
+  }
+}
+

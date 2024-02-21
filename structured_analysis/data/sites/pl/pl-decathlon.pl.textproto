@@ -1,0 +1,116 @@
+site_examples {
+  url: "	https://www.decathlon.pl"
+  is_structured: false
+  locale {
+    country: "PL"
+    language: "pl"
+  }
+  sequences {
+    fields {
+      name: "|"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address-name-1c899d57-b3fe-4a2c-ad97-ea581f6d8a3d|address-name"
+      label: "Nazwa dla tego adresu * :"
+      label_translated: "Name for this address *:"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "first-name-1c899d57-b3fe-4a2c-ad97-ea581f6d8a3d|first-name"
+      label: "Imię * :"
+      label_translated: "Name * :"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "last-name-1c899d57-b3fe-4a2c-ad97-ea581f6d8a3d|last-name"
+      label: "Nazwisko * :"
+      label_translated: "Last name * :"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "countryCodeGeoId-1c899d57-b3fe-4a2c-ad97-ea581f6d8a3d|countryCodeGeoId"
+      label: "Kraj * :"
+      label_translated: "Country *:"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "line1-1c899d57-b3fe-4a2c-ad97-ea581f6d8a3d|line1"
+      label: "Ulica, numer domu i mieszkania * :"
+      label_translated: "Street, house and flat number *:"
+      control_type: INPUT
+      concepts: "address-line1"
+      low_certainty: true
+      autocomplete_attribute: "shippingaddress-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "line2-1c899d57-b3fe-4a2c-ad97-ea581f6d8a3d|line2"
+      label: "Dodatkowe informacje adresowe :"
+      label_translated: "Additional address information:"
+      control_type: INPUT
+      concepts: "address-line2"
+      autocomplete_attribute: "shippingaddress-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "postalCode-1c899d57-b3fe-4a2c-ad97-ea581f6d8a3d|postalCode"
+      label: "Kod pocztowy * :"
+      label_translated: "ZIP code * :"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "shippingpostal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "cityGeoId-1c899d57-b3fe-4a2c-ad97-ea581f6d8a3d|cityGeoId"
+      label: "Miasto * :"
+      label_translated: "City * :"
+      control_type: SELECT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "37c1a0e2-1000-4378-938e-2e1247f942eb|"
+      label: "Numer telefonu komórkowego * :"
+      label_translated: "Cell phone number * :"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address-mobile-1c899d57-b3fe-4a2c-ad97-ea581f6d8a3d|address-mobile"
+      label: "Numer telefonu komórkowego * :"
+      label_translated: "Cell phone number * :"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

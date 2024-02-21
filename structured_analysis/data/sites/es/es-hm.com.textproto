@@ -1,0 +1,201 @@
+site_examples {
+  url: "https://www2.hm.com"
+  is_structured: false
+  locale {
+    country: "ES"
+    language: "es"
+  }
+  sequences {
+    fields {
+      name: "main-search|q"
+      label: "Buscar productos"
+      label_translated: "Search products"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "firstName|firstName"
+      label: "Nombre"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "lastName|lastName"
+      label: "Apellido"
+      label_translated: "Surname"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "line1|line1"
+      label: "Dirección"
+      label_translated: "Address"
+      example: "Calle, número"
+      example_translated: "Street, house number"
+      control_type: INPUT
+      concepts: "address-line1"
+      autocomplete_attribute: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "line2|line2"
+      label: "Dirección 2"
+      label_translated: "address 2"
+      example: "Apartamento, bloque, unidad, piso, código del portal, etc."
+      example_translated: "Apartment, block, unit, floor, door code, etc."
+      control_type: INPUT
+      concepts: "address-line2"
+      autocomplete_attribute: "address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "town|town"
+      label: "Población"
+      label_translated: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "postalCode|postalCode"
+      label: "Código postal"
+      label_translated: "Postal Code"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "club-signin-day|day"
+      label: "dd"
+      label_translated: "dd"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "bday-day"
+      section: OTHER
+    }
+    fields {
+      name: "club-signin-month|month"
+      label: "/"
+      label_translated: "/"
+      example: "mm"
+      example_translated: "hmm"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "bday-month"
+      section: OTHER
+    }
+    fields {
+      name: "club-signin-year|year"
+      label: "/"
+      label_translated: "/"
+      example: "aaaa"
+      example_translated: "aaaa"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "bday-year"
+      section: OTHER
+    }
+    fields {
+      name: "club-dob|birthDate"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|hmClubJoin"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "upgrade-create-account-fashion-news|hmNewsSubscription"
+      label: "Sí, enviadme ofertas, novedades sobre estilo, descuentos adicionales en rebajas online e invitacione"
+      label_translated: "Yes, send me offers, style news, extra discounts on online sales and invitations"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0001|ot-group-id-C0001"
+      label: "Cookies estrictamente necesarias"
+      label_translated: "Strictly necessary cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0002|ot-group-id-C0002"
+      label: "Cookies de rendimiento"
+      label_translated: "performance cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0003|ot-group-id-C0003"
+      label: "Cookies de funcionalidad"
+      label_translated: "functionality cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ot-group-id-C0004|ot-group-id-C0004"
+      label: "Marketing cookies"
+      label_translated: "Marketing cookies"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "vendor-search-handler|vendor-search-handler"
+      label: "Vendor Search"
+      label_translated: "Vendor Search"
+      example: "Search..."
+      example_translated: "Search..."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "storage-access-group|"
+      label: "Information storage and access"
+      label_translated: "Information storage and access"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-vendor-leg-handler|"
+      label: "Select All Vendors"
+      label_translated: "Select All Vendors"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-vendor-groups-handler|"
+      label: "Select All Vendors"
+      label_translated: "Select All Vendors"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "select-all-hosts-groups-handler|"
+      label: "Select All Hosts"
+      label_translated: "Select All Hosts"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

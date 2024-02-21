@@ -1,0 +1,352 @@
+site_examples {
+  url: "https://edigital.hr"
+  is_structured: false
+  locale {
+    country: "HR"
+    language: "hr"
+  }
+  sequences {
+    fields {
+      name: "product_search|product[search]"
+      example: "Što tražite?"
+      example_translated: "What are you looking for?"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "product_search_mobile|product[search]"
+      example: "Što tražite?"
+      example_translated: "What are you looking for?"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "billing_address__token|billing_address[_token]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billing_address_tax_answer_0|billing_address[tax_answer]"
+      label: "Kupujem kao privatna osoba"
+      label_translated: "I am buying as a private person"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billing_address_tax_answer_1|billing_address[tax_answer]"
+      label: "Kupujem kao firma"
+      label_translated: "I buy as a company"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billing_address_name|billing_address[name]"
+      label: "Ime / Ime tvrtke"
+      label_translated: "Name / Company name"
+      control_type: INPUT
+      concepts: "name"
+      concepts: "organization"
+      section: NAME
+    }
+    fields {
+      name: "billing_address_phone_phone_country|billing_address[phone][phone_country]"
+      label: "broj telefona"
+      label_translated: "telephone number"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billing_address_phone_number|billing_address[phone][number]"
+      label: "broj telefona"
+      label_translated: "telephone number"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "billing_address_zip_code|billing_address[zip_code]"
+      label: "poštanski broj"
+      label_translated: "Zip code"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "nope"
+      section: ADDRESS
+    }
+    fields {
+      name: "billing_address_city|billing_address[city]"
+      label: "grad"
+      label_translated: "city"
+      control_type: SELECT
+      concepts: "address-level2"
+      autocomplete_attribute: "false"
+      section: ADDRESS
+    }
+    fields {
+      name: "billing_address_country|billing_address[country]"
+      label: "država"
+      label_translated: "state"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "billing_address_address|billing_address[address]"
+      label: "adresa"
+      label_translated: "address"
+      control_type: INPUT
+      concepts: "street-address"
+      section: ADDRESS
+    }
+    fields {
+      name: "billing_address_vat_free|billing_address[vat_free]"
+      label: "Kupujemm bez PDV-a, sa EU poreznim brojem"
+      label_translated: "I buy without VAT, with an EU tax number"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billing_address_tax_number|billing_address[tax_number]"
+      label: "Porezni broj (OIB) Ako želite R1 račun, kupovina sa PDV-om"
+      label_translated: "Tax number (OIB) If you want an R1 invoice, purchase with VAT"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billing_address_tax|billing_address[tax]"
+      label: "Csak Magyar Adószám"
+      label_translated: "Csak Magyar Adószám"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billing_address_company_registration_number|billing_address[company_registration_number]"
+      label: "Company registration number"
+      label_translated: "Company registration number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billing_address_vat_number|billing_address[vat_number]"
+      label: "EU porezni broj (EU OIB) Ispunite samo onda, ako želite kupovati bez PDV-a"
+      label_translated: "EU tax number (EU OIB) Fill in only if you want to buy without VAT"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billing_address_email|billing_address[email]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billing_address_default|billing_address[default]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billing_address_select__token|billing_address_select[_token]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "delivery_mode__token|delivery_mode[_token]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "delivery_mode_deliveryMode_free-shipping|delivery_mode[deliveryMode]"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "delivery_mode_deliveryMode_free-shipping|delivery_mode[deliveryMode]"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "delivery_mode_deliveryMode_pickpack|delivery_mode[deliveryMode]"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_address_select__token|shipping_address_select[_token]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_address_select_shippingAddress_303450168|shipping_address_select[shippingAddress]"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_address_select_deliveryMode|shipping_address_select[deliveryMode]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "note-textarea|"
+      label: "komentar"
+      label_translated: "comment"
+      example: "For example, you can provide information about the courier\'s approach to the destination, etc. (We will not be able to complete requests beyond our service)"
+      example_translated: "For example, you can provide information about the courier&#39;s approach to the destination, etc. (We will not be able to complete requests beyond our service)"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkout__token|checkout[_token]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkout_note|checkout[note]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "checkout_extra_data|checkout[extra_data]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payment_mode__token|payment_mode[_token]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payment_mode_payment_mode_0|payment_mode[payment_mode]"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payment_mode_payment_mode_1|payment_mode[payment_mode]"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payment_mode_payment_mode_2|payment_mode[payment_mode]"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "default_billing_address_id|billing-address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_address__token|shipping_address[_token]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_address_name|shipping_address[name]"
+      label: "Ime / Ime tvrtke"
+      label_translated: "Name / Company name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_address_phone_phone_country|shipping_address[phone][phone_country]"
+      label: "broj telefona"
+      label_translated: "telephone number"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_address_phone_number|shipping_address[phone][number]"
+      label: "broj telefona"
+      label_translated: "telephone number"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "shipping_address_email|shipping_address[email]"
+      label: "Email adresa"
+      label_translated: "E-mail address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_address_zip_code|shipping_address[zip_code]"
+      label: "Poštanski broj"
+      label_translated: "Zip code"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "nope"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_address_city|shipping_address[city]"
+      label: "grad"
+      label_translated: "city"
+      control_type: SELECT
+      concepts: "unset"
+      autocomplete_attribute: "false"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_address_country|shipping_address[country]"
+      label: "Država"
+      label_translated: "State"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_address_address|shipping_address[address]"
+      label: "adresa"
+      label_translated: "address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_address_billing_address|shipping_address[billing_address]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_address_default|shipping_address[default]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

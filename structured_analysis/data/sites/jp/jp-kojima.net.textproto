@@ -1,0 +1,227 @@
+site_examples {
+  url: "https://www.kojima.net"
+  is_structured: true
+  locale {
+    country: "JP"
+    language: "ja"
+  }
+  sequences {
+    fields {
+      name: "|P_FLNM_KNJ_LASTNM"
+      label: "姓："
+      label_translated: "Family name:"
+      example: "例）小島"
+      example_translated: "Example) Kojima"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "off"
+      section: NAME
+    }
+    fields {
+      name: "|P_FLNM_KNJ_FSTNM"
+      label: "名："
+      label_translated: "Given name:"
+      example: "例）太郎"
+      example_translated: "Example) Taro"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "off"
+      section: NAME
+    }
+    fields {
+      name: "|P_FLNM_KANA_LASTNM"
+      label: "セイ："
+      label_translated: "Family name (phonetic):"
+      example: "例）コジマ"
+      example_translated: "Example) Kojima"
+      control_type: INPUT
+      concepts: "phonetic-family-name"
+      autocomplete_attribute: "off"
+      section: NAME
+    }
+    fields {
+      name: "|P_FLNM_KANA_FSTNM"
+      label: "メイ："
+      label_translated: "Given name (phonetic):"
+      example: "例）タロウ"
+      example_translated: "Example) Taro"
+      control_type: INPUT
+      concepts: "phonetic-given-name"
+      autocomplete_attribute: "off"
+      section: NAME
+    }
+    fields {
+      name: "POST_NO|POST_NO"
+      label: "例）3200038"
+      label_translated: "Example) 3200038"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "STATE_CD|STATE_CD"
+      label: "都道府県 必須"
+      label_translated: "Prefecture Required"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "P_ADDRESS1|P_ADDRESS1"
+      label: "市区町村 必須"
+      label_translated: "City Required"
+      example: "例）宇都宮市星が丘"
+      example_translated: "Example) Hoshigaoka, Utsunomiya City"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "P_ADDRESS2|P_ADDRESS2"
+      label: "番地以降 必須"
+      label_translated: "After address"
+      label_comment: "This is followed by two input fields with the specified place holders"
+      example: "例）２−１−８"
+      example_translated: "Example) 2-1-8"
+      control_type: INPUT
+      concepts: "building-location"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "P_ADDRESS3|P_ADDRESS3"
+      label: "番地以降 必須"
+      label_translated: "After address"
+      example: "例）コジママンション１２３号室"
+      example_translated: "Example) Kojima Mansion Room 123"
+      control_type: INPUT
+      concepts: "building-and-location-in-building"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "|P_TEL_NO"
+      label: "例）0286210001"
+      label_translated: "Example) 0286210001"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: PHONE
+    }
+    fields {
+      name: "|P_BIRTHDAY"
+      label: "例）19550505"
+      label_translated: "Example) 19550505"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "CS_MK2CAP02003_SEX_LST.$LoopCount|SEX"
+      label: "男性"
+      label_translated: "male"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CS_MK2CAP02003_SEX_LST.$LoopCount|SEX"
+      label: "女性"
+      label_translated: "Woman"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CS_MK2CAP02003_SEX_LST.$LoopCount|SEX"
+      label: "未回答"
+      label_translated: "unanswered"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CHK_MLMG_ID"
+      label: "新商品・注目商品情報"
+      label_translated: "New product/notable product information"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CHK_MLMG_ID"
+      label: "お買い得商品・キャンペーン"
+      label_translated: "Bargain products and campaigns"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CHK_MLMG_ID"
+      label: "店舗情報"
+      label_translated: "store information"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|CHK_MLMG_ID"
+      label: "週刊メルマガ（毎週）"
+      label_translated: "Weekly mail magazine (every week)"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "MLMG_ID|MLMG_ID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "password|P_MBR_PWD"
+      label: "パスワード 必須"
+      label_translated: "Password Required"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "passcheck|"
+      label: "パスワードを表示する"
+      label_translated: "show password"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "password2|P_MBR_PWD_CONF"
+      label: "確認用パスワード 必須"
+      label_translated: "Password for confirmation Required"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|PNT_CRD_NO"
+      label: "例）001229000000000000"
+      label_translated: "Example) 001229000000000000"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "FormAction|FormAction"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

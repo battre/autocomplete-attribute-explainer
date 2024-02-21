@@ -1,0 +1,251 @@
+site_examples {
+  url: "	https://www.amazon.co.uk"
+  is_structured: false
+  locale {
+    country: "GB"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "|purchaseId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address-ui-widgets-countryCode-dropdown-nativeId|address-ui-widgets-countryCode"
+      label: "Country/Region"
+      control_type: SELECT
+      concepts: "country"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "address-ui-widgets-enterAddressFullName|address-ui-widgets-enterAddressFullName"
+      label: "Full Name"
+      control_type: INPUT
+      concepts: "name"
+      section: NAME
+    }
+    fields {
+      name: "address-ui-widgets-enterAddressPhoneNumber|address-ui-widgets-enterAddressPhoneNumber"
+      label: "Phone number"
+      example: "Your 10 or 9 digit phone number"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "address-ui-widgets-enterAddressPostalCode|address-ui-widgets-enterAddressPostalCode"
+      label: "Postcode"
+      example: "Enter your area postcode"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "address-ui-widgets-enterAddressLine1|address-ui-widgets-enterAddressLine1"
+      label: "Address Line 1 (or Company Name)"
+      example: "Start typing your address to get suggestions"
+      control_type: INPUT
+      concepts: "address-line1"
+      autocomplete_attribute: "address-ui-widgets-enterAddressLine1"
+      section: ADDRESS
+    }
+    fields {
+      name: "address-ui-widgets-enterAddressLine2|address-ui-widgets-enterAddressLine2"
+      label: "Address line 2 (optional)"
+      control_type: INPUT
+      concepts: "address-line2"
+      autocomplete_attribute: "address-ui-widgets-enterAddressLine2"
+      section: ADDRESS
+    }
+    fields {
+      name: "address-ui-widgets-enterAddressCity|address-ui-widgets-enterAddressCity"
+      label: "Town/City"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "address-ui-widgets-enterAddressCity"
+      section: ADDRESS
+    }
+    fields {
+      name: "address-ui-widgets-enterAddressDistrictOrCounty|address-ui-widgets-enterAddressDistrictOrCounty"
+      label: "County (if applicable)"
+      label_comment: "Note: County, not country - there is no 'r'."
+      control_type: INPUT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "|address-ui-widgets-previous-address-form-state-token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address-ui-widgets-use-as-my-default|address-ui-widgets-use-as-my-default"
+      label: "Add a new address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-delivery-instructions-desktop-expander-context"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-addressFormButtonText"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-addressFormHideHeading"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-addressFormHideSubmitButton"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-enableAddressDetails"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-returnLegacyAddressID"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-enableDeliveryInstructions"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-enableAddressWizardInlineSuggestions"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-enableEmailAddress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-enableAddressTips"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-amazonBusinessGroupId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-clientName"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-enableAddressWizardForm"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-delivery-instructions-data"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-address-wizard-interaction-id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-obfuscated-customerId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-locationData"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-enableLatestAddressWizardForm"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-avsSuppressSoftblock"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-avsSuppressSuggestion"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-csrfToken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|address-ui-widgets-locale"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|hasWorkingJavascript"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|ue_back"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|hasWorkingJavascript"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

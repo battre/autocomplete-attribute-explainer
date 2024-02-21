@@ -1,0 +1,204 @@
+site_examples {
+  url: "https://www.gu-global.com"
+  is_structured: true
+  locale {
+    country: "JP"
+    language: "ja"
+  }
+  sequences {
+    fields {
+      name: "id-familyName|familyName"
+      label: "姓"
+      label_translated: "Family name"
+      example: "姓を入力してください。"
+      example_translated: "Please enter your last name."
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "id-givenName|givenName"
+      label: "名"
+      label_translated: "Given name"
+      example: "名を入力してください。"
+      example_translated: "Please enter your first name."
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "id-phoneticFamilyName|phoneticFamilyName"
+      label: "セイ"
+      label_translated: "Family name (phonetic)"
+      example: "セイを入力してください。"
+      example_translated: "Please enter sei."
+      control_type: INPUT
+      concepts: "phonetic-family-name"
+      section: NAME
+    }
+    fields {
+      name: "id-phoneticGivenName|phoneticGivenName"
+      label: "メイ"
+      label_translated: "Given name (phonetic)"
+      example: "メイを入力してください。"
+      example_translated: "Please enter Mei."
+      control_type: INPUT
+      concepts: "phonetic-given-name"
+      section: NAME
+    }
+    fields {
+      name: "id-|postalCode"
+      label: "郵便番号"
+      label_translated: "post code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "|state"
+      label: "都道府県"
+      label_translated: "Prefectures"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      hide: true
+      name: "|"
+      label: "都道府県"
+      label_translated: "Prefectures"
+      control_type: INPUT
+      concepts: "unset"
+      section: ADDRESS
+    }
+    fields {
+      name: "id-city|city"
+      label: "市区郡町村"
+      label_translated: "city"
+      example: "市区郡町村を入力してください"
+      example_translated: "Please enter your city"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "id-street1|street1"
+      label: "番地"
+      label_translated: "address"
+      example: "例: 1-2-3"
+      example_translated: "Example: 1-2-3"
+      control_type: INPUT
+      concepts: "building-location"
+      section: ADDRESS
+    }
+    fields {
+      name: "id-street2|street2"
+      label: "アパート・マンション・部屋番号"
+      label_translated: "Apartment/condominium/room number"
+      example: "例: 〇〇ビル１２３号室"
+      example_translated: "Example: 〇〇 Building Room 123"
+      control_type: INPUT
+      concepts: "building-and-location-in-building"
+      section: ADDRESS
+    }
+    fields {
+      name: "id-phone|phone"
+      label: "電話番号(1)"
+      label_translated: "phone number(1)"
+      example: "電話番号を入力してください。"
+      example_translated: "Please enter your phone number."
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "id-mobilePhone|mobilePhone"
+      label: "電話番号(2)"
+      label_translated: "phone number(2)"
+      example: "電話番号を入力してください。"
+      example_translated: "Please enter your phone number."
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "billingAddress|billingAddress"
+      label: "請求先住所として使用"
+      label_translated: "Use as billing address"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "unattendedDeliveryOption-FRONTDOOR-1|unattendedDeliveryOptions"
+      label: "玄関ドア前 玄関ドア前"
+      label_translated: "In front of the entrance door In front of the entrance door"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "unattendedDeliveryOption-DELIVERY_BOX-2|unattendedDeliveryOptions"
+      label: "宅配ボックス 宅配ボックス"
+      label_translated: "delivery box delivery box"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "unattendedDeliveryOption-METER_BOX-3|unattendedDeliveryOptions"
+      label: "メーターボックス メーターボックス"
+      label_translated: "meter box meter box"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "unattendedDeliveryOption-GARAGE-4|unattendedDeliveryOptions"
+      label: "車庫 車庫"
+      label_translated: "Garage Garage"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "unattendedDeliveryOption-BICYCLE_BASKET-5|unattendedDeliveryOptions"
+      label: "自転車カゴ 自転車カゴ"
+      label_translated: "bicycle basket bicycle basket"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "unattendedDeliveryOption-STORAGE-6|unattendedDeliveryOptions"
+      label: "物置 物置"
+      label_translated: "storeroom storeroom"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "unattendedDeliveryOption-RECEPTION-7|unattendedDeliveryOptions"
+      label: "建物内受付・管理人預け 建物内受付・管理人預け"
+      label_translated: "Reception inside the building / deposit with the janitor Reception inside the building / deposit with the janitor"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "unattendedDeliveryOption-doNotSetUnattendedDeliveryOption-8|unattendedDeliveryOptions"
+      label: "置き配を利用しない 置き配を利用しない"
+      label_translated: "Do not use delivery delivery Do not use delivery delivery"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "device-fingerprint|fingerprint"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

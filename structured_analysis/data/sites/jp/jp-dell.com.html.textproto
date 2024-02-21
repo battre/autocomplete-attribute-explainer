@@ -1,0 +1,472 @@
+site_examples {
+  url: "https://www.dell.com/"
+  is_structured: true
+  locale {
+    country: "JP"
+    language: "ja"
+  }
+  sequences {
+    fields {
+      name: "ZeroSegmentOrderForHomeTrue|ZeroSegmentOrderForHomeTrue"
+      label: "いいえ"
+      label_translated: "No"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ZeroSegmentOrderForHomeFalse|ZeroSegmentOrderForHomeFalse"
+      label: "はい"
+      label_translated: "yes"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DataModel-ShippingContact-CompanyType|DataModel-ShippingContact-CompanyType"
+      label: "法人格"
+      label_translated: "Legal status"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DataModel-ShippingContact-CompanyStatus|DataModel-ShippingContact-CompanyStatus"
+      label: "法人格前後 *"
+      label_translated: "Before and after corporate status *"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DataModel-ShippingContact-CompanyName|DataModel-ShippingContact-CompanyName"
+      label: "会社名・氏名"
+      label_translated: "Company name/Name"
+      example: "例：デル"
+      example_translated: "Example: Dell"
+      control_type: INPUT
+      concepts: "name"
+      concepts: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "DataModel-ShippingContact-OrganizationName|DataModel-ShippingContact-OrganizationName"
+      label: "会社名・氏名（カナ）"
+      label_translated: "Company name/Name (Kana)"
+      control_type: INPUT
+      concepts: "phonetic-name"
+      concepts: "phonetic-organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "DataModel-ShippingContact-BranchName|DataModel-ShippingContact-BranchName"
+      label: "支店名"
+      label_translated: "Branch name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DataModel-ShippingContact-DepartmentName|DataModel-ShippingContact-DepartmentName"
+      label: "部署名・店舗名"
+      label_translated: "Department name/Store name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DataModel-ShippingContact-LastName|DataModel-ShippingContact-LastName"
+      label: "姓"
+      label_translated: "Family name"
+      example: "*例：デル"
+      example_translated: "*Example: Dell"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "DataModel-ShippingContact-FirstName|DataModel-ShippingContact-FirstName"
+      label: "名"
+      label_translated: "Given name"
+      example: "*例：太郎"
+      example_translated: "*Example: Taro"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "DataModel-ShippingContact-SecondaryLastName|DataModel-ShippingContact-SecondaryLastName"
+      label: "姓（カナ）"
+      label_translated: "Family name (kana)"
+      example: "*例：デル"
+      example_translated: "*Example: Dell"
+      control_type: INPUT
+      concepts: "phonetic-family-name"
+      section: NAME
+    }
+    fields {
+      name: "DataModel-ShippingContact-SecondaryFirstName|DataModel-ShippingContact-SecondaryFirstName"
+      label: "名（カナ）"
+      label_translated: "Given name (kana)"
+      example: "*例：タロウ"
+      example_translated: "*Example: Taro"
+      control_type: INPUT
+      concepts: "phonetic-given-name"
+      section: NAME
+    }
+    fields {
+      name: "DataModel-ShippingContact-PostalCode|DataModel-ShippingContact-PostalCode"
+      label: "郵便番号 (半角数字)"
+      label_translated: "Postal code (single-byte numbers)"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "nofill"
+      section: ADDRESS
+    }
+    fields {
+      name: "DataModel-ShippingContact-Line5|DataModel-ShippingContact-Line5"
+      label: "都道府県"
+      label_translated: "Prefectures"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "DataModel-ShippingContact-City|DataModel-ShippingContact-City"
+      label: "市区町村"
+      label_translated: "municipalities"
+      example: "*例：川崎市幸区"
+      example_translated: "*Example: Saiwai Ward, Kawasaki City"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "DataModel-ShippingContact-Line3|DataModel-ShippingContact-Line3"
+      label: "町村名"
+      label_translated: "Town/village name"
+      example: "*例：堀川町"
+      example_translated: "*Example: Horikawa Town"
+      control_type: INPUT
+      concepts: "address-level3"
+      section: ADDRESS
+    }
+    fields {
+      name: "DataModel-ShippingContact-Line1|DataModel-ShippingContact-Line1"
+      label: "番地（数字は半角）"
+      label_translated: "Street address (numbers are half-width)"
+      example: "例：1-2-34"
+      example_translated: "Example: 1-2-34"
+      control_type: INPUT
+      concepts: "building-location"
+      section: ADDRESS
+    }
+    fields {
+      name: "DataModel-ShippingContact-Line2|DataModel-ShippingContact-Line2"
+      label: "建物名, 部屋番号"
+      label_translated: "Building name, room number"
+      example: "例：ソリッドスクエア東館20F"
+      example_translated: "Example: Solid Square East Building 20F"
+      control_type: INPUT
+      concepts: "building-and-location-in-building"
+      section: ADDRESS
+    }
+    fields {
+      name: "DataModel-ShippingContact-Phone-AreaCode|DataModel-ShippingContact-Phone-AreaCode"
+      label: "電話番号（半角数字）"
+      label_translated: "Phone number (single-byte numbers)"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "DataModel-ShippingContact-Phone-Number1|DataModel-ShippingContact-Phone-Number1"
+      label: "電話番号（半角数字）"
+      label_translated: "Phone number (single-byte numbers)"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "DataModel-ShippingContact-Phone-Number2|DataModel-ShippingContact-Phone-Number2"
+      label: "電話番号（半角数字）"
+      label_translated: "Phone number (single-byte numbers)"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "DataModel-ShippingContact-AlternatePhone-AreaCode|DataModel-ShippingContact-AlternatePhone-AreaCode"
+      label: "その他"
+      label_translated: "others"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "DataModel-ShippingContact-AlternatePhone-Number1|DataModel-ShippingContact-AlternatePhone-Number1"
+      label: "その他"
+      label_translated: "others"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "DataModel-ShippingContact-AlternatePhone-Number2|DataModel-ShippingContact-AlternatePhone-Number2"
+      label: "その他"
+      label_translated: "others"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "DataModel-ShippingContact-Email|DataModel-ShippingContact-Email"
+      label: "Eメールアドレス"
+      label_translated: "email address"
+      example: "*半角"
+      example_translated: "*Half size"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DataModel-ShippingContact-Phone-PhoneNumber|DataModel-ShippingContact-Phone-PhoneNumber"
+      label: "電話番号（半角数字）"
+      label_translated: "Phone number (single-byte numbers)"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "DataModel-ShippingContact-AlternatePhone-PhoneNumber|DataModel-ShippingContact-AlternatePhone-PhoneNumber"
+      label: "その他"
+      label_translated: "others"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|SameAsShipToAddress"
+      label: "上記配送先情報と同じ"
+      label_translated: "Same as shipping address information above"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|SameAsShipToAddress"
+      label: "別の住所と連絡先を使用する"
+      label_translated: "Use a different address and contact"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DataModel-TradeComplianceDataModel-IntendedProductUsage|DataModel-TradeComplianceDataModel-IntendedProductUsage"
+      label: "* 製品をどのようにご使用になりますか?　使用目的を教えて下さい。"
+      label_translated: "* How will you use the product? What is your purpose?"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|SameAsShipToAddressTradeCompliance"
+      label: "製品は、指定した配送先でのみ使用します。"
+      label_translated: "Use the product only at the designated delivery destination."
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|SameAsShipToAddressTradeCompliance"
+      label: "製品は、指定した配送先以外の下記最終使用場所で使用します。（以下必須記入）"
+      label_translated: "The product will be used at the following end-use locations other than the designated delivery destination. (Required below)"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DataModel-TradeComplianceDataModel-Contact-LastName|DataModel-TradeComplianceDataModel-Contact-LastName"
+      label: "姓"
+      label_translated: "Surname"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DataModel-TradeComplianceDataModel-Contact-FirstName|DataModel-TradeComplianceDataModel-Contact-FirstName"
+      label: "名"
+      label_translated: "Name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DataModel-TradeComplianceDataModel-Contact-SecondaryLastName|DataModel-TradeComplianceDataModel-Contact-SecondaryLastName"
+      label: "姓（カナ）"
+      label_translated: "Surname (kana)"
+      control_type: INPUT
+      concepts: "phonetic-family-name"
+      section: OTHER
+    }
+    fields {
+      name: "DataModel-TradeComplianceDataModel-Contact-SecondaryFirstName|DataModel-TradeComplianceDataModel-Contact-SecondaryFirstName"
+      label: "名（カナ）"
+      label_translated: "First name (kana)"
+      control_type: INPUT
+      concepts: "phonetic-given-name"
+      section: OTHER
+    }
+    fields {
+      name: "DataModel-TradeComplianceDataModel-Contact-CompanyName|DataModel-TradeComplianceDataModel-Contact-CompanyName"
+      label: "会社名(法人格含む)"
+      label_translated: "Company name (including corporate status)"
+      example: "*例：デル株式会社"
+      example_translated: "*Example: Dell Inc."
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DataModel-TradeComplianceDataModel-Contact-OrganizationName|DataModel-TradeComplianceDataModel-Contact-OrganizationName"
+      label: "会社名(カナ)"
+      label_translated: "Company name (kana)"
+      example: "*例：デルカブシキガイシャ"
+      example_translated: "*Example: Deru Kabushiki Gaisha"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DataModel-TradeComplianceDataModel-Contact-BranchName|DataModel-TradeComplianceDataModel-Contact-BranchName"
+      label: "支店名"
+      label_translated: "Branch name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DataModel-TradeComplianceDataModel-Contact-DepartmentName|DataModel-TradeComplianceDataModel-Contact-DepartmentName"
+      label: "部署名・店舗名"
+      label_translated: "Department name/Store name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DataModel-TradeComplianceDataModel-Contact-City|DataModel-TradeComplianceDataModel-Contact-City"
+      label: "都道府県・州"
+      label_translated: "Prefecture/State"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DataModel-TradeComplianceDataModel-Contact-Line3|DataModel-TradeComplianceDataModel-Contact-Line3"
+      label: "市区町村"
+      label_translated: "municipalities"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DataModel-TradeComplianceDataModel-Contact-Line1|DataModel-TradeComplianceDataModel-Contact-Line1"
+      label: "町名・番地"
+      label_translated: "Street Bunch"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DataModel-TradeComplianceDataModel-Contact-Line2|DataModel-TradeComplianceDataModel-Contact-Line2"
+      label: "建物名・部屋番号"
+      label_translated: "Building name, room number"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DataModel-TradeComplianceDataModel-Contact-PostalCode|DataModel-TradeComplianceDataModel-Contact-PostalCode"
+      label: "郵便番号 (半角数字)"
+      label_translated: "Postal code (single-byte numbers)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DataModel-TradeComplianceDataModel-Contact-PhoneNumber|DataModel-TradeComplianceDataModel-Contact-PhoneNumber"
+      label: "電話番号（半角数字）"
+      label_translated: "Phone number (single-byte numbers)"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "DataModel-TradeComplianceDataModel-Contact-Country|DataModel-TradeComplianceDataModel-Contact-Country"
+      label: "国または地域"
+      label_translated: "country or region"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DataModel-SalesRepDataModel-Name|DataModel-SalesRepDataModel-Name"
+      label: "名前（オプション）"
+      label_translated: "name (optional)"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DataModel-PriceLegalCertificateDataModel-IsStandardPriceCertificateSelected|DataModel-PriceLegalCertificateDataModel-IsStandardPriceCertificateSelected"
+      label: "会計処理上、必要な場合は下記項目をご選択ください。専用書類は、製品と別送にてお送りさせていただきます。<a href=\"//www.dell.com/learn/jp/ja/jpbsd1/campai"
+      label_translated: "<html>Please select the following items if necessary for accounting purposes. The special documents will be sent separately from the product."
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|DataModel.IsStandardPriceCertificateSelected"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "DataModel-PriceLegalCertificateDataModel-IsSellingPriceCertificateSelected|DataModel-PriceLegalCertificateDataModel-IsSellingPriceCertificateSelected"
+      label: "標準価格証明書"
+      label_translated: "standard price certificate"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|DataModel.IsSellingPriceCertificateSelected"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      label: "dfsModel.Content.SubTotalLabel"
+      label_translated: "dfsModel.Content.SubTotalLabel"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shopCalculator|"
+      label: "dfsModel.Content.SliderLabel"
+      label_translated: "dfsModel. Content. SliderLabel"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mobile-dropdown-nav|"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

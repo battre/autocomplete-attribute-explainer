@@ -1,0 +1,170 @@
+site_examples {
+  url: "https://www.darty.com"
+  is_structured: false
+  locale {
+    country: "FR"
+    language: "fr"
+  }
+  sequences {
+    fields {
+      name: "relativesAddress|addressType"
+      label: "Adresse de proche"
+      label_translated: "Nearby address"
+      control_type: RADIO
+      concepts: "unset"
+      autocomplete_attribute: "none"
+      section: OTHER
+    }
+    fields {
+      name: "secondaryAddress|addressType"
+      label: "Adresse secondaire"
+      label_translated: "Secondary address"
+      control_type: RADIO
+      concepts: "unset"
+      autocomplete_attribute: "none"
+      section: OTHER
+    }
+    fields {
+      name: "particular|personType"
+      label: "Particulier"
+      label_translated: "Particular"
+      control_type: RADIO
+      concepts: "unset"
+      autocomplete_attribute: "none"
+      section: OTHER
+    }
+    fields {
+      name: "professionnal|personType"
+      label: "Professionnel"
+      label_translated: "Professional"
+      control_type: RADIO
+      concepts: "unset"
+      autocomplete_attribute: "none"
+      section: OTHER
+    }
+    fields {
+      name: "monsieur|civility"
+      label: "Monsieur"
+      label_translated: "Mr."
+      control_type: RADIO
+      concepts: "honorific-prefix"
+      section: NAME
+    }
+    fields {
+      name: "madame|civility"
+      label: "Madame"
+      label_translated: "Mrs."
+      control_type: RADIO
+      concepts: "honorific-prefix"
+      section: NAME
+    }
+    fields {
+      name: "lastname|lastname"
+      label: "Nom"
+      label_translated: "Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "none"
+      section: NAME
+    }
+    fields {
+      name: "firstname|firstname"
+      label: "Prénom"
+      label_translated: "First name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "none"
+      section: NAME
+    }
+    fields {
+      name: "cellPhoneNumber|cellPhoneNumber"
+      label: "Téléphone mobile"
+      label_translated: "Mobile phone"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "none"
+      section: PHONE
+    }
+    fields {
+      name: "phoneNumber|phoneNumber"
+      label: "Téléphone fixe"
+      label_translated: "Phone"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "none"
+      section: PHONE
+    }
+    fields {
+      name: "zipcode|zipcode"
+      label: "Code postal"
+      label_translated: "Postal code"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "none"
+      section: ADDRESS
+    }
+    fields {
+      name: "city|city"
+      label: "Ville"
+      label_translated: "Town"
+      control_type: SELECT
+      concepts: "address-level2"
+      autocomplete_attribute: "none"
+      section: ADDRESS
+    }
+    fields {
+      name: "address|address"
+      label: "Adresse"
+      label_translated: "Address"
+      control_type: INPUT
+      concepts: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "address_more|address_more"
+      label: "Complément d\'adresse"
+      label_translated: "Additional address"
+      control_type: INPUT
+      concepts: "address-line2"
+      autocomplete_attribute: "none"
+      section: ADDRESS
+    }
+    fields {
+      name: "building|building"
+      label: "Bâtiment"
+      label_translated: "Building"
+      control_type: INPUT
+      concepts: "building"
+      autocomplete_attribute: "none"
+      section: ADDRESS
+    }
+    fields {
+      name: "staircase|staircase"
+      label: "Escalier"
+      label_translated: "Staircase"
+      control_type: INPUT
+      concepts: "staircase"
+      autocomplete_attribute: "none"
+      section: ADDRESS
+    }
+    fields {
+      name: "floor|floor"
+      label: "Étage"
+      label_translated: "Stage"
+      control_type: INPUT
+      concepts: "floor"
+      autocomplete_attribute: "none"
+      section: ADDRESS
+    }
+    fields {
+      name: "door|door"
+      label: "Porte"
+      label_translated: "Door"
+      control_type: INPUT
+      concepts: "entrance"
+      autocomplete_attribute: "none"
+      section: ADDRESS
+    }
+  }
+}
+

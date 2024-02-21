@@ -1,0 +1,400 @@
+site_examples {
+  url: "https://allure.com.ng/"
+  is_structured: false
+  locale {
+    country: "NG"
+    language: "en"
+  }
+  sequences {
+    fields {
+      name: "dgwt-wcas-search-input-4|s"
+      label: "Products search"
+      example: "Search..."
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|post_type"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|dgwt_wcas"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dgwt-wcas-search-input-12|s"
+      label: "Products search"
+      example: "Search..."
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|post_type"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|dgwt_wcas"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "dgwt-wcas-search-input-16|s"
+      label: "Products search"
+      example: "Search..."
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|post_type"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|dgwt_wcas"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "username|username"
+      label: "Username or email *"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "username"
+      section: OTHER
+    }
+    fields {
+      name: "password|password"
+      label: "Password *"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "current-password"
+      section: OTHER
+    }
+    fields {
+      name: "rememberme|rememberme"
+      label: "Remember me"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "woocommerce-login-nonce|woocommerce-login-nonce"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_wp_http_referer"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|redirect"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "coupon_code|coupon_code"
+      label: "Coupon code"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "billing_first_name|billing_first_name"
+      label: "First name *"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: OTHER
+    }
+    fields {
+      name: "billing_last_name|billing_last_name"
+      label: "Last name *"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: OTHER
+    }
+    fields {
+      name: "billing_email|billing_email"
+      label: "Email address *"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "email"
+      section: OTHER
+    }
+    fields {
+      name: "billing_phone|billing_phone"
+      label: "Phone *"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "tel"
+      section: PHONE
+    }
+    fields {
+      name: "billing_country|billing_country"
+      label: "Country / Region *"
+      control_type: SELECT
+      concepts: "country"
+      autocomplete_attribute: "country"
+      section: OTHER
+    }
+    fields {
+      name: "billing_state|billing_state"
+      label: "State / County *"
+      control_type: SELECT
+      concepts: "address-level1"
+      autocomplete_attribute: "address-level1"
+      section: OTHER
+    }
+    fields {
+      name: "billing_city|billing_city"
+      label: "Town / City *"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "address-level2"
+      section: OTHER
+    }
+    fields {
+      name: "billing_address_1|billing_address_1"
+      label: "Street address *"
+      example: "Street Address"
+      control_type: INPUT
+      concepts: "address-line1"
+      autocomplete_attribute: "address-line1"
+      section: OTHER
+    }
+    fields {
+      name: "billing_address_2|billing_address_2"
+      label: "Apartment/ House number (optional)"
+      example: "Apartment/ House number"
+      control_type: INPUT
+      concepts: "address-line2"
+      autocomplete_attribute: "address-line2"
+      section: OTHER
+    }
+    fields {
+      name: "createaccount|createaccount"
+      label: "Create an account?"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "account_username|account_username"
+      label: "Account username *"
+      example: "Username"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "account_password|account_password"
+      label: "Create account password *"
+      example: "Password"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "ship-to-different-address-checkbox|ship_to_different_address"
+      label: "Ship to a different address?"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "shipping_first_name|shipping_first_name"
+      label: "First name *"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "shipping_last_name|shipping_last_name"
+      label: "Last name *"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "shipping_country|shipping_country"
+      label: "Country / Region *"
+      control_type: SELECT
+      concepts: "country"
+      autocomplete_attribute: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "shipping_state|shipping_state"
+      label: "State / County *"
+      control_type: SELECT
+      concepts: "address-level1"
+      autocomplete_attribute: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "shipping_city|shipping_city"
+      label: "Town / City *"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "shipping_address_1|shipping_address_1"
+      label: "Street address *"
+      example: "Street address"
+      control_type: INPUT
+      concepts: "address-line1"
+      autocomplete_attribute: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "shipping_address_2|shipping_address_2"
+      label: "Apartment/ House number (optional)"
+      example: "Apartment/ House number"
+      control_type: INPUT
+      concepts: "address-line2"
+      autocomplete_attribute: "address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "shipping_postcode|shipping_postcode"
+      label: "Postcode / ZIP (optional)"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "order_comments|order_comments"
+      label: "Order notes (optional)"
+      example: "Notes about your order, e.g. special notes for delivery."
+      control_type: TEXTAREA
+      concepts: "delivery-instructions"
+      section: ADDRESS
+    }
+    fields {
+      name: "shipping_method_0_flat_rate8|shipping_method[0]"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "payment_method_paystack|payment_method"
+      label: "Debit/Credit Cards"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mailpoet_woocommerce_checkout_optin|mailpoet_woocommerce_checkout_optin"
+      label: "I would like to receive exclusive emails with discounts and product information (optional)"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mailpoet_woocommerce_checkout_optin_present|mailpoet_woocommerce_checkout_optin_present"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "terms|terms"
+      label: "I have read and agree to the website terms and conditions *"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|terms-field"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "pwgc-redeem-gift-card-number|card_number"
+      label: "Have a gift card?"
+      example: "Gift card number"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "pwgc-redeem-button|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "woocommerce-process-checkout-nonce|woocommerce-process-checkout-nonce"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|_wp_http_referer"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mce-EMAIL|EMAIL"
+      label: "Email Address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mc-embedded-subscribe|subscribe"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|b_1a22a4b3331047341b400d9e8_6907e05b73"
+      label: "Newsletter Subscription"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "quantity_630c4d425d48a|4e4f8804bf781c81ea45e97aecb24427"
+      label: "GARNIER SKINACTIVE MICELLAR OIL-INFUSED CLEANSING WATER  -400ML quantity"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "quantity_630c4d425dde2|e29b33be8942a4c9cd5e8bf33c045d33"
+      label: "BALANCE VITAMIN C DARK CIRCLE CORRECTOR GLOW & RADIANCE SERUM quantity"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

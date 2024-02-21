@@ -1,0 +1,99 @@
+site_examples {
+  url: "https://secure.asos.com"
+  is_structured: false
+  locale {
+    country: "IT"
+    language: "it"
+  }
+  sequences {
+    fields {
+      name: "countryCode|"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "firstName|firstname"
+      label: "Nome"
+      label_translated: "First name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "lastName|lastname"
+      label: "Cognome"
+      label_translated: "Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "contactNumber|phone"
+      label: "Telefono Cellulare (Per aggiornamenti sulla consegna"
+      label_translated: "Mobile Phone (For delivery updates"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "tel"
+      section: PHONE
+    }
+    fields {
+      name: "address_finder|"
+      label: "Trova l’indirizzo"
+      label_translated: "Find the address"
+      example: "Per prima cosa compila la prima riga dell\'indirizzo."
+      example_translated: "First fill in the first line of the address."
+      control_type: INPUT
+      concepts: "address-search"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "address1|"
+      label: "Indirizzo 1"
+      label_translated: "address 1"
+      control_type: INPUT
+      concepts: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "address2|"
+      label: "Indirizzo 2"
+      label_translated: "Address 2"
+      example: "Facoltativo"
+      example_translated: "Optional"
+      control_type: INPUT
+      concepts: "address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "locality|"
+      label: "Città"
+      label_translated: "City"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "countyStateProvinceOrArea|"
+      label: "Provincia"
+      label_translated: "Province"
+      example: "Facoltativo"
+      example_translated: "Optional"
+      control_type: INPUT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "postalCode|"
+      label: "Codice postale"
+      label_translated: "Postal code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+  }
+}
+

@@ -1,0 +1,213 @@
+site_examples {
+  url: "https://www.cdiscount.com/"
+  is_structured: true
+  locale {
+    country: "FR"
+    language: "fr"
+  }
+  sequences {
+    fields {
+      name: "TechFormSiteMapNodeId|TechnicalForm.SiteMapNodeId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "TechFormDepartmentId|TechnicalForm.DepartmentId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "TechFormProductId|TechnicalForm.ProductId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "hdnPageType|hdnPageType"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|__RequestVerificationToken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "AddressBookFormData_IdAddressString|AddressBookFormData.IdAddressString"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|__RequestVerificationToken"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CustomerCreation|CustomerCreation"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "AddingNewAddress|AddingNewAddress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "IsUpdateAddress|IsUpdateAddress"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CustomerId|CustomerId"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CustomerInformationsFormData_AddressName|CustomerInformationsFormData.AddressName"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "CustomerInformationsFormData_Gender|CustomerInformationsFormData.Gender"
+      label: "Madame"
+      label_translated: "Mrs."
+      control_type: RADIO
+      concepts: "honorific-prefix"
+      section: NAME
+    }
+    fields {
+      name: "radio_2|CustomerInformationsFormData.Gender"
+      label: "Monsieur"
+      label_translated: "Sir"
+      control_type: RADIO
+      concepts: "honorific-prefix"
+      section: NAME
+    }
+    fields {
+      name: "CustomerInformationsFormData_Name|CustomerInformationsFormData.Name"
+      label: "Nom"
+      label_translated: "Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      autocomplete_attribute: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "CustomerInformationsFormData_FirstName|CustomerInformationsFormData.FirstName"
+      label: "Prénom"
+      label_translated: "First name"
+      control_type: INPUT
+      concepts: "given-name"
+      autocomplete_attribute: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "CustomerInformationsFormData_Mobile|CustomerInformationsFormData.Mobile"
+      label: "Téléphone"
+      label_translated: "Telephone"
+      control_type: INPUT
+      concepts: "tel"
+      autocomplete_attribute: "tel"
+      section: PHONE
+    }
+    fields {
+      name: "CustomerInformationsFormData_Tel|CustomerInformationsFormData.Tel"
+      label: "Téléphone"
+      label_translated: "Telephone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "CustomerInformationsFormData_Country|CustomerInformationsFormData.Country"
+      label: "Pays"
+      label_translated: "Country"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "CustomerInformationsFormData_PostalCode|CustomerInformationsFormData.PostalCode"
+      label: "Code Postal"
+      label_translated: "Postal code"
+      control_type: INPUT
+      concepts: "postal-code"
+      autocomplete_attribute: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "CustomerInformationsFormData_City|CustomerInformationsFormData.City"
+      label: "Ville"
+      label_translated: "Town"
+      control_type: INPUT
+      concepts: "address-level2"
+      autocomplete_attribute: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "CustomerInformationsFormData_NumAndStreet|CustomerInformationsFormData.NumAndStreet"
+      label: "Numéro et nom de rue"
+      label_translated: "Street number and name"
+      control_type: INPUT
+      concepts: "address-line1"
+      autocomplete_attribute: "address-line1"
+      section: ADDRESS
+    }
+    fields {
+      name: "CustomerInformationsFormData_AddrComplement|CustomerInformationsFormData.AddrComplement"
+      label: "Complément d\'adresse"
+      label_translated: "Additional address"
+      control_type: INPUT
+      concepts: "address-line2"
+      autocomplete_attribute: "address-line2"
+      section: ADDRESS
+    }
+    fields {
+      name: "CustomerInformationsFormData_Building|CustomerInformationsFormData.Building"
+      label: "Bâtiment"
+      label_translated: "Building"
+      control_type: INPUT
+      concepts: "building"
+      section: ADDRESS
+    }
+    fields {
+      name: "CustomerInformationsFormData_CompanyName|CustomerInformationsFormData.CompanyName"
+      label: "Nom de société"
+      label_translated: "Company name"
+      control_type: INPUT
+      concepts: "organization"
+      autocomplete_attribute: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "AddressIdFromHidden|AddressIdFromHidden"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+

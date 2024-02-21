@@ -1,0 +1,243 @@
+site_examples {
+  url: "https://www.animate-onlineshop.jp"
+  is_structured: false
+  locale {
+    country: "JP"
+    language: "ja"
+  }
+  sequences {
+    fields {
+      name: "|mode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "search_multi_text|smt"
+      label: "Search"
+      label_translated: "Search"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "|"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|mode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|customer_id"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "hidden|input_type"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "name_1|name01"
+      label: "姓"
+      label_translated: "Family name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "name_2|name02"
+      label: "名"
+      label_translated: "Given name"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "kana_1|kana01"
+      label: "セイ"
+      label_translated: "Family name (phonetic)"
+      control_type: INPUT
+      concepts: "phonetic-family-name"
+      section: NAME
+    }
+    fields {
+      name: "kana_2|kana02"
+      label: "メイ"
+      label_translated: "Given name (phonetic)"
+      control_type: INPUT
+      concepts: "phonetic-given-name"
+      section: NAME
+    }
+    fields {
+      name: "nickname|nickname"
+      label: "ニックネーム"
+      label_translated: "nickname"
+      control_type: INPUT
+      concepts: "gap"
+      section: NAME
+    }
+    fields {
+      name: "|year"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|month"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|day"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "man|sex"
+      label: "男"
+      label_translated: "Man"
+      control_type: RADIO
+      concepts: "honorific-prefix"
+      section: NAME
+    }
+    fields {
+      name: "woman|sex"
+      label: "女"
+      label_translated: "woman"
+      control_type: RADIO
+      concepts: "honorific-prefix"
+      section: NAME
+    }
+    fields {
+      name: "zip_1|zip01"
+      label: "郵便番号"
+      label_translated: "post code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "zip_2|zip02"
+      label: "郵便番号"
+      label_translated: "post code"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "city_1|pref"
+      label: "都道府県"
+      label_translated: "Prefectures"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "city_2|addr01"
+      label: "市区町村名"
+      label_translated: "City name"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "city_3|addr02"
+      label: "番地・建物名"
+      label_translated: "address building name"
+      control_type: INPUT
+      concepts: "street-address"
+      section: ADDRESS
+    }
+    fields {
+      name: "|tel01"
+      label: "電話番号1"
+      label_translated: "phone number 1"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|tel02"
+      label: "電話番号1"
+      label_translated: "phone number 1"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|tel03"
+      label: "電話番号1"
+      label_translated: "phone number 1"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|cell01"
+      label: "電話番号2"
+      label_translated: "phone number 2"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|cell02"
+      label: "電話番号2"
+      label_translated: "phone number 2"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "|cell03"
+      label: "電話番号2"
+      label_translated: "phone number 2"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "mail|email"
+      label: "メールアドレス"
+      label_translated: "email address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "mail_confirm|email2"
+      label: "連絡用メールアドレス"
+      label_translated: "Contact email address"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|mode"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "suggestion_text|suggestion_text"
+      label: "ご意見 アニメイト通販へのご意見をお聞かせください。 こちらの投稿にお返事はしておりませんが、スタッフが全て拝見します。（140文字まで）"
+      label_translated: "Opinion Please let us know your opinion on Animate online shopping. I haven&#39;t replied to this post, but the staff will see it all. (up to 140 characters)"
+      control_type: TEXTAREA
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+  }
+}
+

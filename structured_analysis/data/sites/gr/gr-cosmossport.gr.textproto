@@ -1,0 +1,370 @@
+site_examples {
+  url: "	https://www.cosmossport.gr"
+  is_structured: false
+  locale {
+    country: "GR"
+    language: "el"
+  }
+  sequences {
+    fields {
+      name: "|submitCheckoutDelivery"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|delivery_option_home"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "|token"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "gift-receipt-details|gift"
+      label: "Θέλω να το στείλω ΔΩΡΟ"
+      label_translated: "I want to send it as a GIFT"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "id_address_delivery|id_address_delivery"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "lastname_shipping|lastname_shipping"
+      label: "*Επίθετο"
+      label_translated: "*Last name"
+      control_type: INPUT
+      concepts: "family-name"
+      section: NAME
+    }
+    fields {
+      name: "firstname_shipping|firstname_shipping"
+      label: "*Όνομα"
+      label_translated: "*Name"
+      control_type: INPUT
+      concepts: "given-name"
+      section: NAME
+    }
+    fields {
+      name: "email_shipping|email_shipping"
+      label: "*Email"
+      label_translated: "*E-mail"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "phone_shipping|phone_shipping"
+      label: "Oops! Κάτι δε συμπλήρωσες σωστά!"
+      label_translated: "Oops! You did not fill in something correctly!"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "id_country_shipping|id_country_shipping"
+      label: "*Χώρα"
+      label_translated: "*Country"
+      control_type: SELECT
+      concepts: "country"
+      section: ADDRESS
+    }
+    fields {
+      name: "id_state_shipping|id_state_shipping"
+      label: "*Νομός"
+      label_translated: "*Prefecture"
+      control_type: SELECT
+      concepts: "address-level1"
+      section: ADDRESS
+    }
+    fields {
+      name: "address1_shipping|address1_shipping"
+      label: "*Διεύθυνση(Οδός & Αριθμός)"
+      label_translated: "*Address (Street & Number)"
+      example: "πχ Ερμού 10"
+      example_translated: "eg Ermou 10"
+      control_type: INPUT
+      concepts: "street-address"
+      autocomplete_attribute: "off"
+      section: ADDRESS
+    }
+    fields {
+      name: "city_shipping|city_shipping"
+      label: "*Πόλη"
+      label_translated: "*City"
+      control_type: INPUT
+      concepts: "address-level2"
+      section: ADDRESS
+    }
+    fields {
+      name: "postcode_shipping|postcode_shipping"
+      label: "*Ταχυδρομικός κώδικας"
+      label_translated: "*Postcodes"
+      control_type: INPUT
+      concepts: "postal-code"
+      section: ADDRESS
+    }
+    fields {
+      name: "other_shipping|other_shipping"
+      label: "Σχόλια Παράδοσης ή Τσάντας ΔΩΡΟΥ:"
+      label_translated: "Delivery or GIFT Bag Comments:"
+      control_type: TEXTAREA
+      concepts: "delivery-instructions"
+      section: ADDRESS
+    }
+    fields {
+      name: "transaction_carrier_standard|delivery_carrier_type"
+      label: "Standard"
+      label_translated: "Standard"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "transaction_carrier_express|delivery_carrier_type"
+      label: "Premium"
+      label_translated: "Premium"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "transaction_document_receipt|transaction_document_type"
+      label: "Απόδειξη"
+      label_translated: "Evidence"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "transaction_document_invoice|transaction_document_type"
+      label: "Τιμολόγιο"
+      label_translated: "Invoice"
+      control_type: RADIO
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "other-receipt-details|other_receipt_details"
+      label: "Επιθυμώ έκδοση απόδειξης σε διαφορετικά στοιχεία από τα στοιχεία παράδοσης"
+      label_translated: "I would like to issue a receipt in different details from the delivery details"
+      control_type: CHECKBOX
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "company_invoice|company_invoice"
+      label: "*Επωνυμία επιχείρησης"
+      label_translated: "*Company name"
+      control_type: INPUT
+      concepts: "organization"
+      section: ADDRESS
+    }
+    fields {
+      name: "business_activity_invoice|business_activity_invoice"
+      label: "*Επαγγελματική δραστηριότητα"
+      label_translated: "*Professional activity"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "vat_id_invoice|vat_id_invoice"
+      label: "*Α.Φ.Μ"
+      label_translated: "*VAT NUMBER"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "tax_office_invoice|tax_office_invoice"
+      label: "*Δ.Ο.Υ."
+      label_translated: "*D.O.Y."
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "lastname_invoice|lastname_invoice"
+      label: "*Επίθετο"
+      label_translated: "*Adjective"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "firstname_invoice|firstname_invoice"
+      label: "*Όνομα"
+      label_translated: "*Name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "email_invoice|email_invoice"
+      label: "*Email"
+      label_translated: "*E-mail"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "phone_invoice|phone_invoice"
+      label: "Τηλέφωνο"
+      label_translated: "Phone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "id_country_invoice|id_country_invoice"
+      label: "*Χώρα"
+      label_translated: "*Country"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "id_state_invoice|id_state_invoice"
+      label: "*Νομός"
+      label_translated: "*Law"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address1_invoice|address1_invoice"
+      label: "*Διεύθυνση"
+      label_translated: "*Address"
+      example: "πχ Ερμού 10"
+      example_translated: "eg Ermou 10"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "city_invoice|city_invoice"
+      label: "*Πόλη"
+      label_translated: "*City"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "postcode_invoice|postcode_invoice"
+      label: "*Ταχυδρομικός κώδικας"
+      label_translated: "*Postcodes"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "other_invoice|other_invoice"
+      label: "Σχόλια"
+      label_translated: "Comments"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "id_address_invoice|id_address_invoice"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "lastname_billing|lastname_billing"
+      label: "*Επίθετο"
+      label_translated: "*Adjective"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "firstname_billing|firstname_billing"
+      label: "*Όνομα"
+      label_translated: "*Name"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "email_billing|email_billing"
+      label: "*Email"
+      label_translated: "*E-mail"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "phone_billing|phone_billing"
+      label: "Τηλέφωνο"
+      label_translated: "Phone"
+      control_type: INPUT
+      concepts: "unset"
+      section: PHONE
+    }
+    fields {
+      name: "id_country_billing|id_country_billing"
+      label: "*Χώρα"
+      label_translated: "*Country"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "id_state_billing|id_state_billing"
+      label: "*Νομός"
+      label_translated: "*Law"
+      control_type: SELECT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "address1_billing|address1_billing"
+      label: "*Διεύθυνση"
+      label_translated: "*Address"
+      example: "πχ Ερμού 10"
+      example_translated: "eg Ermou 10"
+      control_type: INPUT
+      concepts: "unset"
+      autocomplete_attribute: "off"
+      section: OTHER
+    }
+    fields {
+      name: "city_billing|city_billing"
+      label: "*Πόλη"
+      label_translated: "*City"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "postcode_billing|postcode_billing"
+      label: "*Ταχυδρομικός κώδικας"
+      label_translated: "*Postcodes"
+      control_type: INPUT
+      concepts: "unset"
+      section: OTHER
+    }
+    fields {
+      name: "other_billing|other_billing"
+      label: "Ευχές για Δωρολήπτη:"
+      label_translated: "Wishes for Donor:"
+      control_type: TEXTAREA
+      concepts: "unset"
+      section: OTHER
+    }
+  }
+}
+
