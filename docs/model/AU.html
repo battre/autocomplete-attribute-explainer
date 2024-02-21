@@ -199,7 +199,7 @@
   <div class="layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
     <header class="header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
       <div class="mdl-layout__header-row">
-        <span class="mdl-layout-title">Country: IN</span>
+        <span class="mdl-layout-title">Country: AU</span>
       </div>
     </header>
     <div class="mdl-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
@@ -274,16 +274,6 @@
     <main class="mdl-layout__content mdl-color--grey-100">
       <div id="content" class="content">
         
-<div class="mdl-card mdl-shadow--2dp" style="width: 95%; margin: 8px">
-  <div class="mdl-card__title">
-    <h2 class="mdl-card__title-text">About the country</h2>
-  </div>
-  <div class="mdl-card__actions mdl-card--border">
-    <div style="margin: 8px"><p>India has a lot of variety in address forms compared to many other countries. We observe a lot of variance in how websites label the fields of their address forms. By and large we observe three concepts besides city, state and postal code which together make up the address lines 1, 2, 3: <ul> <li><b>Building and flat number</b> (sometimes labeled "House/Flat no.", "Flat number / Building Name", "Apartment / House No."): Because Indian addresses often don't contain a street name and because the term "Apartment" is typically used to refer to the name of a building (not to a flat number), we suggest to model this as "building-location". It is the information that identifies a building. <li><b>Locality</b> (sometimes labeled "locality", "area", "Street / Society", "Street/Colony/Area Name", "Locality/Sector/Area"): This is a named area of a city that contains the building and ideally contains no two buildings with the same name. We suggest using the "locality2" concept for this as it's a subsection of a city and therefore comparable to neighborhoods in other countries. <li><b>Landmark</b>: This is a reference to a well known building or location that helps finding the building or locality (e.g. "near Birla Mandir temple"). </ul> <p>These concepts occur on websites in various combinations: <ul> <li>As a single-line street address <li>As unstructured address lines 1, 2, 3 <li>As 3 atomic fields: Building and flat number, Locality, Landmark <li>As 1 combined and 1 atomic field: <ul> <li>Building and flat number + Locality, Landmark (most common among the 3) <li>Building and flat number, Locality + Landmark <li>Building and flat number + Landmark, Locality (least common) </ul> (note that the statement "most common among the 3" is not based on an exhaustive survey among all websites but on a somewhat small sample). </ul> <p>We observed that roughly half of websites rely on a single street address or address lines 1, 2, 3. The remainder relies on structured information. <p>Based on the observed popularities we suggest to merge the 3 atomic fields and "Building and flat number + Locality, Landmark" in the primary address hierarchy. The other two combinations are represented as synthesized-nodes, meaning that they are not stored in the model but derived from the leaf nodes.
-</div>
-  </div>
-</div>
-
 
 
 
@@ -315,24 +305,8 @@
   <div class="concept-id">
     
     
-    <a href="#honorific-prefix">honorific-prefix</a>
-    - Honorific prefix
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    
-    
     <a href="#given-name">given-name</a>
-    - First name
+    - Given namen (in Western cultures the first name)
       
         
       
@@ -348,7 +322,7 @@
     
     
     <a href="#additional-name">additional-name</a>
-    - Middle name
+    - Additional given name (in Western cultures the middle name)
       
         
       
@@ -364,78 +338,7 @@
     
     
     <a href="#family-name">family-name</a>
-    - Last name
-      
-        
-      
-    
-  </div>
-  
-    
-    
-      <div class="concept-content">
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    
-    
-    <a href="#family-name-first">family-name-first</a>
-    - First part of a family name (e.g. the paternal name)
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    
-    
-    <a href="#family-name-conjunction">family-name-conjunction</a>
-    - Conjunction between the first and second part of the family name
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    
-    
-    <a href="#family-name-second">family-name-second</a>
-    - Second part of a famiily name (e.g. the maternal name)
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-      </div>
-    
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    
-    
-    <a href="#honorific-suffix">honorific-suffix</a>
-    - Honorific suffix
+    - Family name (in Western cultures the last name)
       
         
       
@@ -578,23 +481,12 @@
     
     
     <a href="#street-address-alternative-1">street-address-alternative-1</a>
-    - Artificial concept, not to be used in HTML
+    - Artificial concept, not to be used in HTML; this is a structured representation of a street address
+
       
         
       
     
-  </div>
-  
-    
-    
-      <div class="concept-content">
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    
-    
-    <a href="#building-location-and-locality2">building-location-and-locality2</a>
   </div>
   
     
@@ -607,7 +499,24 @@
     
     
     <a href="#building-location">building-location</a>
-    - Building name, House no., Apartment, Flat, ...
+    - Name of a street and identifier for the building
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#street">street</a>
+    - Name of a street
       
         
       
@@ -622,8 +531,8 @@
   <div class="concept-id">
     
     
-    <a href="#locality2">locality2</a>
-    - Locality, Area, Colony, Society, Sector, Street, ...
+    <a href="#building">building</a>
+    - House number (in a street or block) or name of a building.
       
         
       
@@ -644,23 +553,12 @@
   <div class="concept-id">
     
     
-    <a href="#landmark">landmark</a>
-    - Landmark to help finding a building
+    <a href="#in-building-location">in-building-location</a>
+    - Location of the adresse in a building
       
         
       
     
-  </div>
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <i>(synthesized)</i>
-    
-    <a href="#landmark-and-locality2">landmark-and-locality2</a>
   </div>
   
     
@@ -671,9 +569,9 @@
 <div class="concept">
   <div class="concept-id">
     
-    <i>(in synthesized)</i>
-    <a href="#landmark">landmark</a>
-    - Landmark to help finding a building
+    
+    <a href="#floor">floor</a>
+    - Floor number in the building
       
         
       
@@ -687,9 +585,42 @@
 <div class="concept">
   <div class="concept-id">
     
-    <i>(in synthesized)</i>
-    <a href="#locality2">locality2</a>
-    - Locality, Area, Colony, Society, Sector, Street, ...
+    
+    <a href="#unit">unit</a>
+    - Unit in a building (e.g. &#34;Apartment 5&#34;, &#34;Suite 12&#34;)
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#unit-type">unit-type</a>
+    - Type of a unit (e.g. &#34;Apt&#34;, &#34;Room&#34;, &#34;Store&#34;)
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#unit-name">unit-name</a>
+    - Identifier of a unit (e.g. &#34;5&#34;)
       
         
       
@@ -701,50 +632,6 @@
         
       </div>
     
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    <i>(synthesized)</i>
-    
-    <a href="#building-location-and-landmark">building-location-and-landmark</a>
-  </div>
-  
-    
-    
-      <div class="concept-content">
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    
-    <i>(in synthesized)</i>
-    <a href="#building-location">building-location</a>
-    - Building name, House no., Apartment, Flat, ...
-      
-        
-      
-    
-  </div>
-  
-</div>
-
-        
-          
-<div class="concept">
-  <div class="concept-id">
-    
-    <i>(in synthesized)</i>
-    <a href="#landmark">landmark</a>
-    - Landmark to help finding a building
-      
-        
-      
-    
-  </div>
   
 </div>
 
@@ -767,7 +654,7 @@
     
     
     <a href="#locality1">locality1</a>
-    - City
+    - Biggest sub type of a locality, often a city
       
         
       
@@ -783,7 +670,7 @@
     
     
     <a href="#admin-area1">admin-area1</a>
-    - State
+    - Biggest type of admin area if a country has multiple levels
       
         
       
@@ -799,7 +686,7 @@
     
     
     <a href="#postal-code">postal-code</a>
-    - PIN code
+    - Postal code
       
         
       
@@ -815,7 +702,7 @@
     
     
     <a href="#country">country</a>
-    - 2-letter country code (e.g. &#34;IN&#34;)
+    - 2-letter country code
       
         
       
@@ -831,7 +718,7 @@
     
     
     <a href="#country-name">country-name</a>
-    - Name of a country (e.g. &#34;India&#34;)
+    - Name of a country
       
         
       
@@ -1313,11 +1200,6 @@ Full name
 
   <li>
     
-    <a href="#honorific-prefix">honorific-prefix</a>
-  </li>
-
-  <li>
-    
     <a href="#given-name">given-name</a>
   </li>
 
@@ -1333,45 +1215,11 @@ Full name
 
   <li>
     
-    <a href="#honorific-suffix">honorific-suffix</a>
-  </li>
-
-  <li>
-    
     <a href="#organization-title">organization-title</a>
   </li>
 
 </ul>
 </div>
-
-
-
-
-
-
-
-<h4>Formatting:</h4>
-<div>
-<span class="formatting_token">name</span> =
-<span class="formatting_token">honorific-prefix</span><span class="formatting_token">given-name</span><span class="formatting_token">additional-name</span><span class="formatting_token">family-name</span><span class="formatting_token">honorific-suffix</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">organization-title</span>
-</div>
-
-<h5>Flattened formatting:</h5>
-<div>
-<span class="formatting_token">name</span> =<br>
-<span class="formatting_token">honorific-prefix</span><span class="formatting_token">given-name</span><span class="formatting_token">additional-name</span><span class="formatting_token">family-name-first</span><span class="formatting_token">family-name-conjunction</span><span class="formatting_token">family-name-second</span><span class="formatting_token">honorific-suffix</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">organization-title</span>
-</div>
-
-</div><h3 id="honorific-prefix">
-  <a href="#honorific-prefix">#</a>
-  
-  honorific-prefix
-</h3>
-<div style="margin-left: 20px;">
-
-Honorific prefix
-
-
 
 </div><h3 id="given-name">
   <a href="#given-name">#</a>
@@ -1380,7 +1228,7 @@ Honorific prefix
 </h3>
 <div style="margin-left: 20px;">
 
-First name
+Given namen (in Western cultures the first name)
 
 
 
@@ -1391,7 +1239,7 @@ First name
 </h3>
 <div style="margin-left: 20px;">
 
-Middle name
+Additional given name (in Western cultures the middle name)
 
 
 
@@ -1402,91 +1250,7 @@ Middle name
 </h3>
 <div style="margin-left: 20px;">
 
-Last name
-
-
-
-<div>
-<h4>Children:</h4>
-<ul>
-
-  <li>
-    
-    <a href="#family-name-first">family-name-first</a>
-  </li>
-
-  <li>
-    
-    <a href="#family-name-conjunction">family-name-conjunction</a>
-  </li>
-
-  <li>
-    
-    <a href="#family-name-second">family-name-second</a>
-  </li>
-
-</ul>
-</div>
-
-
-
-
-
-
-
-<h4>Formatting:</h4>
-<div>
-<span class="formatting_token">family-name</span> =
-<span class="formatting_token">family-name-first</span><span class="formatting_token">family-name-conjunction</span><span class="formatting_token">family-name-second</span>
-</div>
-
-<h5>Flattened formatting:</h5>
-<div>
-<span class="formatting_token">family-name</span> =<br>
-<span class="formatting_token">family-name-first</span><span class="formatting_token">family-name-conjunction</span><span class="formatting_token">family-name-second</span>
-</div>
-
-</div><h3 id="family-name-first">
-  <a href="#family-name-first">#</a>
-  
-  family-name-first
-</h3>
-<div style="margin-left: 20px;">
-
-First part of a family name (e.g. the paternal name)
-
-
-
-</div><h3 id="family-name-conjunction">
-  <a href="#family-name-conjunction">#</a>
-  
-  family-name-conjunction
-</h3>
-<div style="margin-left: 20px;">
-
-Conjunction between the first and second part of the family name
-
-
-
-</div><h3 id="family-name-second">
-  <a href="#family-name-second">#</a>
-  
-  family-name-second
-</h3>
-<div style="margin-left: 20px;">
-
-Second part of a famiily name (e.g. the maternal name)
-
-
-
-</div><h3 id="honorific-suffix">
-  <a href="#honorific-suffix">#</a>
-  
-  honorific-suffix
-</h3>
-<div style="margin-left: 20px;">
-
-Honorific suffix
+Family name (in Western cultures the last name)
 
 
 
@@ -1554,24 +1318,6 @@ Address of a physical location - Artificial concept, not to be used in HTML
 </ul>
 </div>
 
-
-
-
-
-
-
-<h4>Formatting:</h4>
-<div>
-<span class="formatting_token">address</span> =
-<span class="formatting_token">building-location</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">locality2</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">landmark</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">locality1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">admin-area1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">postal-code</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">country-name</span>
-</div>
-
-<h5>Flattened formatting:</h5>
-<div>
-<span class="formatting_token">address</span> =<br>
-<span class="formatting_token">building-location</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">landmark</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">admin-area1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">postal-code</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country-name</span>
-</div>
-
 </div><h3 id="street-address">
   <a href="#street-address">#</a>
   
@@ -1608,24 +1354,6 @@ Street address (street and location within the street)
   </li>
 
 </ul>
-</div>
-
-
-
-
-
-
-
-<h4>Formatting:</h4>
-<div>
-<span class="formatting_token">street-address</span> =
-<span class="formatting_token">address-line1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">address-line2</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">address-line3</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">address-line4</span>
-</div>
-
-<h5>Flattened formatting:</h5>
-<div>
-<span class="formatting_token">street-address</span> =<br>
-<span class="formatting_token">address-line1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">address-line2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">address-line3</span><span class="formatting_token_separator"><br></span><span class="formatting_token">address-line4</span>
 </div>
 
 </div><h3 id="address-line1">
@@ -1679,61 +1407,8 @@ Street address (street and location within the street)
 </h3>
 <div style="margin-left: 20px;">
 
-Artificial concept, not to be used in HTML
+Artificial concept, not to be used in HTML; this is a structured representation of a street address
 
-
-
-<div>
-<h4>Children:</h4>
-<ul>
-
-  <li>
-    
-    <a href="#building-location-and-locality2">building-location-and-locality2</a>
-  </li>
-
-  <li>
-    
-    <a href="#landmark">landmark</a>
-  </li>
-
-  <li>
-    <i>(synthesized)</i>
-    <a href="#landmark-and-locality2">landmark-and-locality2</a>
-  </li>
-
-  <li>
-    <i>(synthesized)</i>
-    <a href="#building-location-and-landmark">building-location-and-landmark</a>
-  </li>
-
-</ul>
-</div>
-
-
-
-
-
-
-
-<h4>Formatting:</h4>
-<div>
-<span class="formatting_token">street-address-alternative-1</span> =
-<span class="formatting_token">building-location</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">locality2</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">landmark</span>
-</div>
-
-<h5>Flattened formatting:</h5>
-<div>
-<span class="formatting_token">street-address-alternative-1</span> =<br>
-<span class="formatting_token">building-location</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">locality2</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">landmark</span>
-</div>
-
-</div><h3 id="building-location-and-locality2">
-  <a href="#building-location-and-locality2">#</a>
-  
-  building-location-and-locality2
-</h3>
-<div style="margin-left: 20px;">
 
 
 
@@ -1748,28 +1423,10 @@ Artificial concept, not to be used in HTML
 
   <li>
     
-    <a href="#locality2">locality2</a>
+    <a href="#in-building-location">in-building-location</a>
   </li>
 
 </ul>
-</div>
-
-
-
-
-
-
-
-<h4>Formatting:</h4>
-<div>
-<span class="formatting_token">building-location-and-locality2</span> =
-<span class="formatting_token">building-location</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">locality2</span>
-</div>
-
-<h5>Flattened formatting:</h5>
-<div>
-<span class="formatting_token">building-location-and-locality2</span> =<br>
-<span class="formatting_token">building-location</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">locality2</span>
 </div>
 
 </div><h3 id="building-location">
@@ -1779,38 +1436,7 @@ Artificial concept, not to be used in HTML
 </h3>
 <div style="margin-left: 20px;">
 
-Building name, House no., Apartment, Flat, ...
-
-
-
-</div><h3 id="locality2">
-  <a href="#locality2">#</a>
-  
-  locality2
-</h3>
-<div style="margin-left: 20px;">
-
-Locality, Area, Colony, Society, Sector, Street, ...
-
-
-
-</div><h3 id="landmark">
-  <a href="#landmark">#</a>
-  
-  landmark
-</h3>
-<div style="margin-left: 20px;">
-
-Landmark to help finding a building
-
-
-
-</div><h3 id="landmark-and-locality2">
-  <a href="#landmark-and-locality2">#</a>
-  <i>(synthesized)</i>
-  landmark-and-locality2
-</h3>
-<div style="margin-left: 20px;">
+Name of a street and identifier for the building
 
 
 
@@ -1820,41 +1446,47 @@ Landmark to help finding a building
 
   <li>
     
-    <a href="#landmark">landmark</a>
+    <a href="#street">street</a>
   </li>
 
   <li>
     
-    <a href="#locality2">locality2</a>
+    <a href="#building">building</a>
   </li>
 
 </ul>
 </div>
 
-
-
-
-
-
-
-<h4>Formatting:</h4>
-<div>
-<span class="formatting_token">landmark-and-locality2</span> =
-<span class="formatting_token">locality2</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">landmark</span>
-</div>
-
-<h5>Flattened formatting:</h5>
-<div>
-<span class="formatting_token">landmark-and-locality2</span> =<br>
-<span class="formatting_token">locality2</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">landmark</span>
-</div>
-
-</div><h3 id="building-location-and-landmark">
-  <a href="#building-location-and-landmark">#</a>
-  <i>(synthesized)</i>
-  building-location-and-landmark
+</div><h3 id="street">
+  <a href="#street">#</a>
+  
+  street
 </h3>
 <div style="margin-left: 20px;">
+
+Name of a street
+
+
+
+</div><h3 id="building">
+  <a href="#building">#</a>
+  
+  building
+</h3>
+<div style="margin-left: 20px;">
+
+House number (in a street or block) or name of a building.
+
+
+
+</div><h3 id="in-building-location">
+  <a href="#in-building-location">#</a>
+  
+  in-building-location
+</h3>
+<div style="margin-left: 20px;">
+
+Location of the adresse in a building
 
 
 
@@ -1864,34 +1496,77 @@ Landmark to help finding a building
 
   <li>
     
-    <a href="#building-location">building-location</a>
+    <a href="#floor">floor</a>
   </li>
 
   <li>
     
-    <a href="#landmark">landmark</a>
+    <a href="#unit">unit</a>
   </li>
 
 </ul>
 </div>
 
+</div><h3 id="floor">
+  <a href="#floor">#</a>
+  
+  floor
+</h3>
+<div style="margin-left: 20px;">
+
+Floor number in the building
 
 
 
+</div><h3 id="unit">
+  <a href="#unit">#</a>
+  
+  unit
+</h3>
+<div style="margin-left: 20px;">
+
+Unit in a building (e.g. &#34;Apartment 5&#34;, &#34;Suite 12&#34;)
 
 
 
-<h4>Formatting:</h4>
 <div>
-<span class="formatting_token">building-location-and-landmark</span> =
-<span class="formatting_token">building-location</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">landmark</span>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    
+    <a href="#unit-type">unit-type</a>
+  </li>
+
+  <li>
+    
+    <a href="#unit-name">unit-name</a>
+  </li>
+
+</ul>
 </div>
 
-<h5>Flattened formatting:</h5>
-<div>
-<span class="formatting_token">building-location-and-landmark</span> =<br>
-<span class="formatting_token">building-location</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">landmark</span>
-</div>
+</div><h3 id="unit-type">
+  <a href="#unit-type">#</a>
+  
+  unit-type
+</h3>
+<div style="margin-left: 20px;">
+
+Type of a unit (e.g. &#34;Apt&#34;, &#34;Room&#34;, &#34;Store&#34;)
+
+
+
+</div><h3 id="unit-name">
+  <a href="#unit-name">#</a>
+  
+  unit-name
+</h3>
+<div style="margin-left: 20px;">
+
+Identifier of a unit (e.g. &#34;5&#34;)
+
+
 
 </div><h3 id="locality1">
   <a href="#locality1">#</a>
@@ -1900,7 +1575,7 @@ Landmark to help finding a building
 </h3>
 <div style="margin-left: 20px;">
 
-City
+Biggest sub type of a locality, often a city
 
 
 
@@ -1911,7 +1586,7 @@ City
 </h3>
 <div style="margin-left: 20px;">
 
-State
+Biggest type of admin area if a country has multiple levels
 
 
 
@@ -1922,7 +1597,7 @@ State
 </h3>
 <div style="margin-left: 20px;">
 
-PIN code
+Postal code
 
 
 
@@ -1933,7 +1608,7 @@ PIN code
 </h3>
 <div style="margin-left: 20px;">
 
-2-letter country code (e.g. &#34;IN&#34;)
+2-letter country code
 
 
 
@@ -1944,7 +1619,7 @@ PIN code
 </h3>
 <div style="margin-left: 20px;">
 
-Name of a country (e.g. &#34;India&#34;)
+Name of a country
 
 
 
@@ -2040,24 +1715,6 @@ Full name of credit card holder
 </ul>
 </div>
 
-
-
-
-
-
-
-<h4>Formatting:</h4>
-<div>
-<span class="formatting_token">cc-name</span> =
-<span class="formatting_token">cc-given-name</span><span class="formatting_token">cc-additional-name</span><span class="formatting_token">cc-family-name</span>
-</div>
-
-<h5>Flattened formatting:</h5>
-<div>
-<span class="formatting_token">cc-name</span> =<br>
-<span class="formatting_token">cc-given-name</span><span class="formatting_token">cc-additional-name</span><span class="formatting_token">cc-family-name</span>
-</div>
-
 </div><h3 id="cc-given-name">
   <a href="#cc-given-name">#</a>
   
@@ -2130,24 +1787,6 @@ Credit card expiration date in format MM/YY
 </ul>
 </div>
 
-
-
-
-
-
-
-<h4>Formatting:</h4>
-<div>
-<span class="formatting_token">cc-exp-MMYY</span> =
-<span class="formatting_token">cc-exp-MM</span><span class="formatting_token_separator">/</span><span class="formatting_token">cc-exp-YY</span>
-</div>
-
-<h5>Flattened formatting:</h5>
-<div>
-<span class="formatting_token">cc-exp-MMYY</span> =<br>
-<span class="formatting_token">cc-exp-MM</span><span class="formatting_token_separator">/</span><span class="formatting_token">cc-exp-YY</span>
-</div>
-
 </div><h3 id="cc-exp-MM">
   <a href="#cc-exp-MM">#</a>
   
@@ -2196,24 +1835,6 @@ Credit card expiration date in format MM/YYYY
   </li>
 
 </ul>
-</div>
-
-
-
-
-
-
-
-<h4>Formatting:</h4>
-<div>
-<span class="formatting_token">cc-exp-MMYYYY</span> =
-<span class="formatting_token">cc-exp-MM</span><span class="formatting_token_separator">/</span><span class="formatting_token">cc-exp-YYYY</span>
-</div>
-
-<h5>Flattened formatting:</h5>
-<div>
-<span class="formatting_token">cc-exp-MMYYYY</span> =<br>
-<span class="formatting_token">cc-exp-MM</span><span class="formatting_token_separator">/</span><span class="formatting_token">cc-exp-YYYY</span>
 </div>
 
 </div><h3 id="cc-exp-YYYY">
@@ -2282,24 +1903,6 @@ Full telephone number
 </ul>
 </div>
 
-
-
-
-
-
-
-<h4>Formatting:</h4>
-<div>
-<span class="formatting_token">tel</span> =
-<span class="formatting_token_prefix">+</span><span class="formatting_token">tel-country-code</span><span class="formatting_token">tel-national</span><span class="formatting_token_separator">-</span><span class="formatting_token">tel-extension</span>
-</div>
-
-<h5>Flattened formatting:</h5>
-<div>
-<span class="formatting_token">tel</span> =<br>
-<span class="formatting_token_prefix">+</span><span class="formatting_token">tel-country-code</span><span class="formatting_token">tel-area-code</span><span class="formatting_token">tel-local-prefix</span><span class="formatting_token">tel-local-suffix</span><span class="formatting_token_separator">-</span><span class="formatting_token">tel-extension</span>
-</div>
-
 </div><h3 id="tel-country-code">
   <a href="#tel-country-code">#</a>
   
@@ -2338,24 +1941,6 @@ Telephone number without the county code component, with a country-internal pref
   </li>
 
 </ul>
-</div>
-
-
-
-
-
-
-
-<h4>Formatting:</h4>
-<div>
-<span class="formatting_token">tel-national</span> =
-<span class="formatting_token">tel-area-code</span><span class="formatting_token">tel-local</span>
-</div>
-
-<h5>Flattened formatting:</h5>
-<div>
-<span class="formatting_token">tel-national</span> =<br>
-<span class="formatting_token">tel-area-code</span><span class="formatting_token">tel-local-prefix</span><span class="formatting_token">tel-local-suffix</span>
 </div>
 
 </div><h3 id="tel-area-code">
@@ -2397,24 +1982,6 @@ Telephone number without the country code and area code components
   </li>
 
 </ul>
-</div>
-
-
-
-
-
-
-
-<h4>Formatting:</h4>
-<div>
-<span class="formatting_token">tel-local</span> =
-<span class="formatting_token">tel-local-prefix</span><span class="formatting_token">tel-local-suffix</span>
-</div>
-
-<h5>Flattened formatting:</h5>
-<div>
-<span class="formatting_token">tel-local</span> =<br>
-<span class="formatting_token">tel-local-prefix</span><span class="formatting_token">tel-local-suffix</span>
 </div>
 
 </div><h3 id="tel-local-prefix">

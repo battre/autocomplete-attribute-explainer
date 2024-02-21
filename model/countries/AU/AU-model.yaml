@@ -1,0 +1,22 @@
+cut-off-children:  # don't expose nodes below these levels
+  - street
+  - building
+  - family-name
+
+cut-off-tokens:
+  - honorific-prefix
+  - honorific-suffix
+  - admin-area2
+  - admin-area3
+  - admin-area4
+  - locality2
+  - locality3
+  - locality4
+
+extra-definitions:
+  in-building-location:
+    - floor
+    - unit
+  street-address-alternative-1:
+    - building-location
+    - in-building-location
