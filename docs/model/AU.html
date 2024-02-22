@@ -1522,6 +1522,1699 @@ Full name
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h4>Parsing:</h4>
+<div class="parsing">
+
+
+
+
+<details>
+  <summary>Decomposition Cascade
+  
+  </summary>
+  
+  Cascade:<br>
+  <ol>
+  
+  <li>
+
+
+<details>
+  <summary>Decomposition Cascade
+  
+  (if <code>kHasCjkNameCharacteristics</code>)
+  
+  </summary>
+  
+  Condition:<br>
+  
+
+
+
+<details>
+  <summary>Regex Reference: <code>kHasCjkNameCharacteristics</code></summary>
+  
+
+
+  Regex concatenation
+  <ol>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">^</code>
+
+
+</li>
+    
+    <li>
+
+
+
+  Regex Reference: <code>kCjkCharactersRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:\p{Han}|\p{Hangul}|\p{Katakana}|\p{Hiragana}|\p{Bopomofo})+)</code>
+
+
+
+</li>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">(?:</code>
+
+
+</li>
+    
+    <li>
+
+
+
+  Regex Reference: <code>kCjkNameSeperatorsRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:・|·|　|\s+)</code>
+
+
+
+</li>
+    
+    <li>
+
+
+
+  Regex Reference: <code>kCjkCharactersRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:\p{Han}|\p{Hangul}|\p{Katakana}|\p{Hiragana}|\p{Bopomofo})+)</code>
+
+
+
+</li>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">)?$</code>
+
+
+</li>
+    
+  </ol>
+  Wrap as non-capture group: True
+
+
+
+</details>
+
+
+
+<br>
+  
+  Cascade:<br>
+  <ol>
+  
+  <li>
+
+
+<details>
+  <summary>Decomposition
+    
+    (<code>ParseSeparatedCjkNameExpression</code>)
+    
+  </summary>
+  Anchor beginning: True<br>
+  
+    Capture Reference: ParseSeparatedCjkNameExpression<br>
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>family-name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kCjkCharactersRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:\p{Han}|\p{Hangul}|\p{Katakana}|\p{Hiragana}|\p{Bopomofo})+)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kCjkNameSeperatorsRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:・|·|　|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>given-name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kCjkCharactersRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:\p{Han}|\p{Hangul}|\p{Katakana}|\p{Hiragana}|\p{Bopomofo})+)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+  Anchor end: True<br>
+</details>
+
+
+</li>
+  
+  <li>
+
+
+<details>
+  <summary>Decomposition
+    
+    (<code>ParseKoreanTwoCharacterLastNameExpression</code>)
+    
+  </summary>
+  Anchor beginning: True<br>
+  
+    Capture Reference: ParseKoreanTwoCharacterLastNameExpression<br>
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>family-name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kTwoCharacterKoreanNamesRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:강전|남궁|독고|동방|망절|사공|서문|선우|소봉|어금|장곡|제갈|황목|황보)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>given-name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kHangulCharacterRe</code> =&gt;
+  <code class="parsing-regexfragment">\p{Hangul}</code>
+
+
+
+</li>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kHangulCharactersRe</code> =&gt;
+  <code class="parsing-regexfragment">\p{Hangul}+</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+  Anchor end: True<br>
+</details>
+
+
+</li>
+  
+  <li>
+
+
+<details>
+  <summary>Decomposition
+    
+    (<code>ParseCommonCjkTwoCharacterLastNameExpression</code>)
+    
+  </summary>
+  Anchor beginning: True<br>
+  
+    Capture Reference: ParseCommonCjkTwoCharacterLastNameExpression<br>
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>family-name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kTwoCharacterCjkLastNamesRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:남궁|사공|서문|선우|제갈|황보|독고|망절|欧阳|令狐|皇甫|上官|司徒|诸葛|司马|宇文|呼延|端木|張簡|歐陽|諸葛|申屠|尉遲|司馬|軒轅|夏侯)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>given-name</code>
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kCjkCharactersRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:\p{Han}|\p{Hangul}|\p{Katakana}|\p{Hiragana}|\p{Bopomofo})+)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+  Anchor end: True<br>
+</details>
+
+
+</li>
+  
+  <li>
+
+
+<details>
+  <summary>Decomposition
+    
+    (<code>ParseCjkSingleCharacterLastNameExpression</code>)
+    
+  </summary>
+  Anchor beginning: True<br>
+  
+    Capture Reference: ParseCjkSingleCharacterLastNameExpression<br>
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>family-name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kCjkCharacterRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:\p{Han}|\p{Hangul}|\p{Katakana}|\p{Hiragana}|\p{Bopomofo})</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>given-name</code>
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kCjkCharactersRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:\p{Han}|\p{Hangul}|\p{Katakana}|\p{Hiragana}|\p{Bopomofo})+)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+  Anchor end: True<br>
+</details>
+
+
+</li>
+  
+  </ol>
+</details>
+
+
+</li>
+  
+  <li>
+
+
+<details>
+  <summary>Decomposition Cascade
+  
+  (if <code>kHasHispanicLatinxNameCharacteristics</code>)
+  
+  </summary>
+  
+  Condition:<br>
+  
+
+
+
+<details>
+  <summary>Regex Reference: <code>kHasHispanicLatinxNameCharacteristics</code></summary>
+  
+
+
+  Regex concatenation
+  <ol>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">(?:</code>
+
+
+</li>
+    
+    <li>
+
+
+
+  Regex Reference: <code>kHispanicCommonLastNameCharacteristicsRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:Aguilar|Alonso|Álvarez|Amador|Betancourt|Blanco|Burgos|Castillo|Castro|Chávez|Colón|Contreras|Cortez|Cruz|Delgado|Diaz|Díaz|Domínguez|Estrada|Fernandez|Fernández|Flores|Fuentes|Garcia|García|Garza|Gil|Gómez|González|Guerrero|Gutiérrez|Guzmán|Hernández|Herrera|Iglesias|Jiménez|Juárez|Lopez|López|Luna|Marín|Marroquín|Martín|Martinez|Martínez|Medina|Méndez|Mendoza|Molina|Morales|Moreno|Muñoz|Narvaez|Navarro|Núñez|Ortega|Ortiz|Ortíz|Peña|Perez|Pérez|Ramírez|Ramos|Reyes|Rivera|Rodriguez|Rodríguez|Rojas|Romero|Rosario|Rubio|Ruiz|Ruíz|Salazar|Sanchez|Sánchez|Santana|Santiago|Santos|Sanz|Serrano|Soto|Suárez|Toro|Torres|Vargas|Vasquez|Vásquez|Vázquez|Velásquez)</code>
+
+
+
+</li>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">|</code>
+
+
+</li>
+    
+    <li>
+
+
+
+  Regex Reference: <code>kHispanicLastNameConjunctionCharacteristicsRe</code> =&gt;
+  <code class="parsing-regexfragment">\s(?:y|e|i)\s</code>
+
+
+
+</li>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">)</code>
+
+
+</li>
+    
+  </ol>
+  Wrap as non-capture group: True
+
+
+
+</details>
+
+
+
+<br>
+  
+  Cascade:<br>
+  <ol>
+  
+  <li>
+
+
+<details>
+  <summary>Decomposition
+    
+    (<code>ParseHispanicFullNameExpression</code>)
+    
+  </summary>
+  Anchor beginning: True<br>
+  
+    Capture Reference: ParseHispanicFullNameExpression<br>
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      No capturing pattern
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kHonorificPrefixRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:Master|Mr\.?|Miss\.?|Mrs\.?|Missus|Ms\.?|Mx\.?|M\.?|Ma&#39;am|Sir|Gentleman|Sire|Mistress|Madam|Ma&#39;am|Dame|Lord|Lady|Esq|Excellency|Excellence|Her Honour|His Honour|Hon\.?|The Right Honourable|The Most Honourable|Dr\.?|PhD|DPhil|MD|DO|Prof\.|Professor|QC|CL|Chancellor|Vice-Chancellor|Principle|Principal|President|Master|Warden|Dean|Regent|Rector|Provost|Director|Chief Executive|Imām|Shaykh|Muftī|Hāfiz|Hāfizah|Qārī|Mawlānā|Hājī|Sayyid|Sayyidah|Sharif|Eminent|Venerable|His Holiness|His Holiness|His All Holiness|His Beatitude|The Most Blessed|His Excellency|His Most Eminent Highness|His Eminence|Most Reverend Eminence|The Most Reverend|His Grace|His Lordship|The Reverend|Fr|Pr|Br|Sr|Elder|Rabbi|The Reverend|Cantor|Chief Rabbi|Grand Rabbi|Rebbetzin|Herr|Frau|Fräulein|Dame|PD|Doktor|Magister|Ingenieur|1lt|1st|2lt|2nd|3rd|admiral|capt|captain|col|cpt|dr|gen|general|lcdr|lt|ltc|ltg|ltjg|maj|major|mg|pastor|prof|rep|reverend|rev|sen|st)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>given-name</code>
+    
+    (MATCH_LAZY_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kMultipleLazyWordsRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[^\s,]+(?:[^\S\r\n]+[^\s,]+)*?)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>Capture Reference: <code>ParseHispanicLastNameExpression</code></summary>
+  
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>family-name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      No capturing pattern
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kOptionalLastNamePrefixRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:a|ab|af|av|ap|abu|aït|al|ālam|aust|austre|bar|bath|bat|ben|bin|ibn|bet|bint|binti|binte|da|das|de|degli|dele|del|du|della|der|di|dos|du|e|el|fetch|vetch|fitz|i??|kil|gil|de le|de la|la|le|lille|lu|m|mac|mc|mck|mhic|mic|mala|mellom|myljom|na|ned|nedre|neder|nic|ni|nin|nord|norr|ny|o|ua|ui|opp|upp|öfver|ost|öst|öster|øst|øst|østre|över|øvste|øvre|øver|öz|pour|putra|putri|setia|tor|söder|sør|sønder|sør|syd|søndre|syndre|søre|ter|ter|tre|van|van der|väst|väster|verch|erch|vest|vestre|vesle|vetle|von|zu|von und zu)\s)?</code>
+
+
+
+</li>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kSingleWordRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[^\s,]+)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      No capturing pattern
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kHispanicLastNameConjunctionsRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:y|e|i)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      No capturing pattern
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kOptionalLastNamePrefixRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:a|ab|af|av|ap|abu|aït|al|ālam|aust|austre|bar|bath|bat|ben|bin|ibn|bet|bint|binti|binte|da|das|de|degli|dele|del|du|della|der|di|dos|du|e|el|fetch|vetch|fitz|i??|kil|gil|de le|de la|la|le|lille|lu|m|mac|mc|mck|mhic|mic|mala|mellom|myljom|na|ned|nedre|neder|nic|ni|nin|nord|norr|ny|o|ua|ui|opp|upp|öfver|ost|öst|öster|øst|øst|østre|över|øvste|øvre|øver|öz|pour|putra|putri|setia|tor|söder|sør|sønder|sør|syd|søndre|syndre|søre|ter|ter|tre|van|van der|väst|väster|verch|erch|vest|vestre|vesle|vetle|von|zu|von und zu)\s)?</code>
+
+
+
+</li>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kSingleWordRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[^\s,]+)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+  Anchor end: True<br>
+</details>
+
+
+</li>
+  
+  </ol>
+</details>
+
+
+</li>
+  
+  <li>
+
+
+<details>
+  <summary>Decomposition Cascade
+  
+  </summary>
+  
+  Cascade:<br>
+  <ol>
+  
+  <li>
+
+
+<details>
+  <summary>Decomposition
+    
+    (<code>ParseOnlyLastNameExpression</code>)
+    
+  </summary>
+  Anchor beginning: True<br>
+  
+    Capture Reference: ParseOnlyLastNameExpression<br>
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>family-name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kOptionalLastNamePrefixRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:a|ab|af|av|ap|abu|aït|al|ālam|aust|austre|bar|bath|bat|ben|bin|ibn|bet|bint|binti|binte|da|das|de|degli|dele|del|du|della|der|di|dos|du|e|el|fetch|vetch|fitz|i??|kil|gil|de le|de la|la|le|lille|lu|m|mac|mc|mck|mhic|mic|mala|mellom|myljom|na|ned|nedre|neder|nic|ni|nin|nord|norr|ny|o|ua|ui|opp|upp|öfver|ost|öst|öster|øst|øst|østre|över|øvste|øvre|øver|öz|pour|putra|putri|setia|tor|söder|sør|sønder|sør|syd|søndre|syndre|søre|ter|ter|tre|van|van der|väst|väster|verch|erch|vest|vestre|vesle|vetle|von|zu|von und zu)\s)?</code>
+
+
+
+</li>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kSingleWordRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[^\s,]+)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      No capturing pattern
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kLastNameSuffixRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:b\.a|ba|d\.d\.s|dds|ii|iii|iv|ix|jr|m\.a|m\.d|md|ms|ph\.?d|sr|v|vi|vii|viii|x)\.?)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+  Anchor end: True<br>
+</details>
+
+
+</li>
+  
+  <li>
+
+
+<details>
+  <summary>Decomposition
+    
+    (<code>ParseLastCommaFirstMiddleNameExpression</code>)
+    
+  </summary>
+  Anchor beginning: True<br>
+  
+    Capture Reference: ParseLastCommaFirstMiddleNameExpression<br>
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      No capturing pattern
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kHonorificPrefixRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:Master|Mr\.?|Miss\.?|Mrs\.?|Missus|Ms\.?|Mx\.?|M\.?|Ma&#39;am|Sir|Gentleman|Sire|Mistress|Madam|Ma&#39;am|Dame|Lord|Lady|Esq|Excellency|Excellence|Her Honour|His Honour|Hon\.?|The Right Honourable|The Most Honourable|Dr\.?|PhD|DPhil|MD|DO|Prof\.|Professor|QC|CL|Chancellor|Vice-Chancellor|Principle|Principal|President|Master|Warden|Dean|Regent|Rector|Provost|Director|Chief Executive|Imām|Shaykh|Muftī|Hāfiz|Hāfizah|Qārī|Mawlānā|Hājī|Sayyid|Sayyidah|Sharif|Eminent|Venerable|His Holiness|His Holiness|His All Holiness|His Beatitude|The Most Blessed|His Excellency|His Most Eminent Highness|His Eminence|Most Reverend Eminence|The Most Reverend|His Grace|His Lordship|The Reverend|Fr|Pr|Br|Sr|Elder|Rabbi|The Reverend|Cantor|Chief Rabbi|Grand Rabbi|Rebbetzin|Herr|Frau|Fräulein|Dame|PD|Doktor|Magister|Ingenieur|1lt|1st|2lt|2nd|3rd|admiral|capt|captain|col|cpt|dr|gen|general|lcdr|lt|ltc|ltg|ltjg|maj|major|mg|pastor|prof|rep|reverend|rev|sen|st)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>family-name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kOptionalLastNamePrefixRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:a|ab|af|av|ap|abu|aït|al|ālam|aust|austre|bar|bath|bat|ben|bin|ibn|bet|bint|binti|binte|da|das|de|degli|dele|del|du|della|der|di|dos|du|e|el|fetch|vetch|fitz|i??|kil|gil|de le|de la|la|le|lille|lu|m|mac|mc|mck|mhic|mic|mala|mellom|myljom|na|ned|nedre|neder|nic|ni|nin|nord|norr|ny|o|ua|ui|opp|upp|öfver|ost|öst|öster|øst|øst|østre|över|øvste|øvre|øver|öz|pour|putra|putri|setia|tor|söder|sør|sønder|sør|syd|søndre|syndre|søre|ter|ter|tre|van|van der|väst|väster|verch|erch|vest|vestre|vesle|vetle|von|zu|von und zu)\s)?</code>
+
+
+
+</li>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kSingleWordRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[^\s,]+)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      No capturing pattern
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">\s*,\s*</code>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>given-name</code>
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kSingleWordRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[^\s,]+)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>additional-name</code>
+    
+    (MATCH_LAZY_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kMultipleLazyWordsRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[^\s,]+(?:[^\S\r\n]+[^\s,]+)*?)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+  Anchor end: True<br>
+</details>
+
+
+</li>
+  
+  <li>
+
+
+<details>
+  <summary>Decomposition
+    
+    (<code>ParseFirstMiddleLastNameExpression</code>)
+    
+  </summary>
+  Anchor beginning: True<br>
+  
+    Capture Reference: ParseFirstMiddleLastNameExpression<br>
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      No capturing pattern
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kHonorificPrefixRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:Master|Mr\.?|Miss\.?|Mrs\.?|Missus|Ms\.?|Mx\.?|M\.?|Ma&#39;am|Sir|Gentleman|Sire|Mistress|Madam|Ma&#39;am|Dame|Lord|Lady|Esq|Excellency|Excellence|Her Honour|His Honour|Hon\.?|The Right Honourable|The Most Honourable|Dr\.?|PhD|DPhil|MD|DO|Prof\.|Professor|QC|CL|Chancellor|Vice-Chancellor|Principle|Principal|President|Master|Warden|Dean|Regent|Rector|Provost|Director|Chief Executive|Imām|Shaykh|Muftī|Hāfiz|Hāfizah|Qārī|Mawlānā|Hājī|Sayyid|Sayyidah|Sharif|Eminent|Venerable|His Holiness|His Holiness|His All Holiness|His Beatitude|The Most Blessed|His Excellency|His Most Eminent Highness|His Eminence|Most Reverend Eminence|The Most Reverend|His Grace|His Lordship|The Reverend|Fr|Pr|Br|Sr|Elder|Rabbi|The Reverend|Cantor|Chief Rabbi|Grand Rabbi|Rebbetzin|Herr|Frau|Fräulein|Dame|PD|Doktor|Magister|Ingenieur|1lt|1st|2lt|2nd|3rd|admiral|capt|captain|col|cpt|dr|gen|general|lcdr|lt|ltc|ltg|ltjg|maj|major|mg|pastor|prof|rep|reverend|rev|sen|st)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>given-name</code>
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kSingleWordRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[^\s,]+)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>additional-name</code>
+    
+    (MATCH_LAZY_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kMultipleLazyWordsRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[^\s,]+(?:[^\S\r\n]+[^\s,]+)*?)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>family-name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kOptionalLastNamePrefixRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:a|ab|af|av|ap|abu|aït|al|ālam|aust|austre|bar|bath|bat|ben|bin|ibn|bet|bint|binti|binte|da|das|de|degli|dele|del|du|della|der|di|dos|du|e|el|fetch|vetch|fitz|i??|kil|gil|de le|de la|la|le|lille|lu|m|mac|mc|mck|mhic|mic|mala|mellom|myljom|na|ned|nedre|neder|nic|ni|nin|nord|norr|ny|o|ua|ui|opp|upp|öfver|ost|öst|öster|øst|øst|østre|över|øvste|øvre|øver|öz|pour|putra|putri|setia|tor|söder|sør|sønder|sør|syd|søndre|syndre|søre|ter|ter|tre|van|van der|väst|väster|verch|erch|vest|vestre|vesle|vetle|von|zu|von und zu)\s)?</code>
+
+
+
+</li>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kSingleWordRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[^\s,]+)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      No capturing pattern
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kLastNameSuffixRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:b\.a|ba|d\.d\.s|dds|ii|iii|iv|ix|jr|m\.a|m\.d|md|ms|ph\.?d|sr|v|vi|vii|viii|x)\.?)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+  Anchor end: True<br>
+</details>
+
+
+</li>
+  
+  </ol>
+</details>
+
+
+</li>
+  
+  </ol>
+</details>
+
+
+
+
+</div>
+
 <div>
 <h4>Children:</h4>
 <ul>
@@ -1578,6 +3271,30 @@ Given namen (in Western cultures the first name)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="additional-name">
   <a href="#additional-name">#</a>
   
@@ -1586,6 +3303,30 @@ Given namen (in Western cultures the first name)
 <div style="margin-left: 20px;">
 
 Additional given name (in Western cultures the middle name)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1600,6 +3341,30 @@ Family name (in Western cultures the last name)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="organization-title">
   <a href="#organization-title">#</a>
   
@@ -1611,6 +3376,30 @@ Title of a person within an organization
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="address">
   <a href="#address">#</a>
   
@@ -1619,6 +3408,30 @@ Title of a person within an organization
 <div style="margin-left: 20px;">
 
 Address of a physical location - Artificial concept, not to be used in HTML
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1693,6 +3506,30 @@ Street address (street and location within the street)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div>
 <h4>Children:</h4>
 <ul>
@@ -1749,6 +3586,30 @@ Street address (street and location within the street)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="address-line2">
   <a href="#address-line2">#</a>
   
@@ -1757,6 +3618,30 @@ Street address (street and location within the street)
 <div style="margin-left: 20px;">
 
 2nd line of street-address
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1771,6 +3656,30 @@ Street address (street and location within the street)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="address-line4">
   <a href="#address-line4">#</a>
   
@@ -1779,6 +3688,30 @@ Street address (street and location within the street)
 <div style="margin-left: 20px;">
 
 4th line of street-address
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1793,6 +3726,576 @@ Artificial concept, not to be used in HTML; this is a structured representation 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h4>Parsing:</h4>
+<div class="parsing">
+
+
+
+
+<details>
+  <summary>Decomposition
+    
+    (<code>StreetAddressDecomposition</code>)
+    
+  </summary>
+  Anchor beginning: True<br>
+  
+    Capture Reference: StreetAddressDecomposition<br>
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>street-address-alternative-1</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>Capture Reference: <code>ParseInBuildingLocation</code></summary>
+  
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>in-building-location</code>
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>Capture Reference: <code>ParseUnitWithOptionalPrefix</code></summary>
+  
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>unit</code>
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>unit-type</code>
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kUnitTypeLiteralRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:\b(?:apt\.?|apartment|se\.?|ste\.?|suite|unit|u\.?|room|rm\.?|shop|po box|ms\.?|mail shop|mb\.?|marine berth|vlla\.?|villa|we\.?|warehouse|office|off\.?|fy\.?|factory|sl\.?|stall|site|shed))</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>unit-name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kUnitNameValueRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:\d+\w?\b|\w\b)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      No capturing pattern
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+    
+      Alternatives: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>Capture Reference: <code>ParseFloorWithoutPrefix</code></summary>
+  
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>floor</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kFloorValueLiteralRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:\b(?:basement|b\.?|ground floor|g\.?|lower ground floor|lg\.?|upper ground floor|ug\.?|mezzanine|m\.?))</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+</details>
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>Capture Reference: <code>ParseFloorWithMandatoryPrefix</code></summary>
+  
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>floor</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    Prefix:
+    
+
+
+  Regex concatenation
+  <ol>
+    
+    <li>
+
+
+
+  Regex Reference: <code>kFloorPrefixLiteralRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:\b(?:level|l\.?|floor|fl\.?))</code>
+
+
+
+</li>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">\s*</code>
+
+
+</li>
+    
+  </ol>
+  Wrap as non-capture group: False
+
+
+ <br>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">(?:\d+|.*?)</code>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: 
+
+
+Regex Fragment: <code class="parsing-regexfragment">.*?</code>
+
+
+
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>Capture Reference: <code>ParseBuildingLocation</code></summary>
+  
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>building-location</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>building</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+<details>
+  <summary>Regex Reference: <code>kBuildingValueRe</code></summary>
+  
+
+
+  Regex concatenation
+  <ol>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">\d+</code>
+
+
+</li>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">(?:</code>
+
+
+</li>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">\s*[[:alpha:]]\b</code>
+
+
+</li>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">|</code>
+
+
+</li>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">\s*?[-]\s*\d+</code>
+
+
+</li>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">)?</code>
+
+
+</li>
+    
+  </ol>
+  Wrap as non-capture group: False
+
+
+
+</details>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>street</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kMultipleLazyWordsRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[^\s,]+(?:[^\S\r\n]+[^\s,]+)*?)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+  Anchor end: True<br>
+</details>
+
+
+
+
+</div>
 
 <div>
 <h4>Children:</h4>
@@ -1840,6 +4343,218 @@ Name of a street and identifier for the building
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h4>Parsing:</h4>
+<div class="parsing">
+
+
+
+
+<details>
+  <summary>Decomposition
+    
+    (<code>ParseBuildingLocation</code>)
+    
+  </summary>
+  Anchor beginning: True<br>
+  
+    Capture Reference: ParseBuildingLocation<br>
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>building-location</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>building</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+<details>
+  <summary>Regex Reference: <code>kBuildingValueRe</code></summary>
+  
+
+
+  Regex concatenation
+  <ol>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">\d+</code>
+
+
+</li>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">(?:</code>
+
+
+</li>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">\s*[[:alpha:]]\b</code>
+
+
+</li>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">|</code>
+
+
+</li>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">\s*?[-]\s*\d+</code>
+
+
+</li>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">)?</code>
+
+
+</li>
+    
+  </ol>
+  Wrap as non-capture group: False
+
+
+
+</details>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>street</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kMultipleLazyWordsRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[^\s,]+(?:[^\S\r\n]+[^\s,]+)*?)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+  Anchor end: True<br>
+</details>
+
+
+
+
+</div>
+
 <div>
 <h4>Children:</h4>
 <ul>
@@ -1886,6 +4601,30 @@ Name of a street
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="building">
   <a href="#building">#</a>
   
@@ -1894,6 +4633,30 @@ Name of a street
 <div style="margin-left: 20px;">
 
 House number
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1907,6 +4670,349 @@ House number
 Location of the adresse in a building
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h4>Parsing:</h4>
+<div class="parsing">
+
+
+
+
+<details>
+  <summary>Decomposition
+    
+    (<code>ParseInBuildingLocation</code>)
+    
+  </summary>
+  Anchor beginning: True<br>
+  
+    Capture Reference: ParseInBuildingLocation<br>
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>in-building-location</code>
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>Capture Reference: <code>ParseUnitWithOptionalPrefix</code></summary>
+  
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>unit</code>
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>unit-type</code>
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kUnitTypeLiteralRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:\b(?:apt\.?|apartment|se\.?|ste\.?|suite|unit|u\.?|room|rm\.?|shop|po box|ms\.?|mail shop|mb\.?|marine berth|vlla\.?|villa|we\.?|warehouse|office|off\.?|fy\.?|factory|sl\.?|stall|site|shed))</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>unit-name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kUnitNameValueRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:\d+\w?\b|\w\b)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      No capturing pattern
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+    
+      Alternatives: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>Capture Reference: <code>ParseFloorWithoutPrefix</code></summary>
+  
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>floor</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kFloorValueLiteralRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:\b(?:basement|b\.?|ground floor|g\.?|lower ground floor|lg\.?|upper ground floor|ug\.?|mezzanine|m\.?))</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+</details>
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>Capture Reference: <code>ParseFloorWithMandatoryPrefix</code></summary>
+  
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>floor</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    Prefix:
+    
+
+
+  Regex concatenation
+  <ol>
+    
+    <li>
+
+
+
+  Regex Reference: <code>kFloorPrefixLiteralRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:\b(?:level|l\.?|floor|fl\.?))</code>
+
+
+
+</li>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">\s*</code>
+
+
+</li>
+    
+  </ol>
+  Wrap as non-capture group: False
+
+
+ <br>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">(?:\d+|.*?)</code>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+  Anchor end: True<br>
+</details>
+
+
+
+
+</div>
 
 <div>
 <h4>Children:</h4>
@@ -1954,6 +5060,30 @@ Floor number in the building
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="unit">
   <a href="#unit">#</a>
   
@@ -1964,6 +5094,155 @@ Floor number in the building
 Unit in a building (e.g. &#34;Apartment 5&#34;, &#34;Suite 12&#34;)
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h4>Parsing:</h4>
+<div class="parsing">
+
+
+
+
+<details>
+  <summary>Decomposition
+    
+  </summary>
+  Anchor beginning: True<br>
+  
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>unit</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>unit-type</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kUnitTypeLiteralRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:\b(?:apt\.?|apartment|se\.?|ste\.?|suite|unit|u\.?|room|rm\.?|shop|po box|ms\.?|mail shop|mb\.?|marine berth|vlla\.?|villa|we\.?|warehouse|office|off\.?|fy\.?|factory|sl\.?|stall|site|shed))</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>unit-name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kUnitNameValueRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:\d+\w?\b|\w\b)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+  Anchor end: True<br>
+</details>
+
+
+
+
+</div>
 
 <div>
 <h4>Children:</h4>
@@ -2011,6 +5290,30 @@ Type of a unit (e.g. &#34;Apt&#34;, &#34;Room&#34;, &#34;Store&#34;)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="unit-name">
   <a href="#unit-name">#</a>
   
@@ -2019,6 +5322,30 @@ Type of a unit (e.g. &#34;Apt&#34;, &#34;Room&#34;, &#34;Store&#34;)
 <div style="margin-left: 20px;">
 
 Identifier of a unit (e.g. &#34;5&#34;)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2033,6 +5360,30 @@ City/Suburb
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="admin-area1">
   <a href="#admin-area1">#</a>
   
@@ -2041,6 +5392,30 @@ City/Suburb
 <div style="margin-left: 20px;">
 
 Biggest type of admin area if a country has multiple levels
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2055,6 +5430,30 @@ Postal code
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="country">
   <a href="#country">#</a>
   
@@ -2063,6 +5462,30 @@ Postal code
 <div style="margin-left: 20px;">
 
 2-letter country code
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2077,6 +5500,30 @@ Name of a country
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="organization">
   <a href="#organization">#</a>
   
@@ -2088,6 +5535,30 @@ Name of an organization/company
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="credit-card">
   <a href="#credit-card">#</a>
   
@@ -2096,6 +5567,30 @@ Name of an organization/company
 <div style="margin-left: 20px;">
 
 Artificial concept, not to be used in HTML
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2144,6 +5639,30 @@ Artificial concept, not to be used in HTML
 <div style="margin-left: 20px;">
 
 Full name of credit card holder
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2198,6 +5717,30 @@ Given name of credit card holder
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="cc-additional-name">
   <a href="#cc-additional-name">#</a>
   
@@ -2206,6 +5749,30 @@ Given name of credit card holder
 <div style="margin-left: 20px;">
 
 Additional name of credit card holder
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2220,6 +5787,30 @@ Family name of credit card holder
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="cc-number">
   <a href="#cc-number">#</a>
   
@@ -2231,6 +5822,30 @@ Credit card number
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="cc-exp-MMYY">
   <a href="#cc-exp-MMYY">#</a>
   
@@ -2239,6 +5854,30 @@ Credit card number
 <div style="margin-left: 20px;">
 
 Credit card expiration date in format MM/YY
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2288,6 +5927,30 @@ Credit card expiration month (2 digits)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="cc-exp-YY">
   <a href="#cc-exp-YY">#</a>
   
@@ -2299,6 +5962,30 @@ Credit card expiration date in format YY (2 digits)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="cc-exp-MMYYYY">
   <a href="#cc-exp-MMYYYY">#</a>
   
@@ -2307,6 +5994,30 @@ Credit card expiration date in format YY (2 digits)
 <div style="margin-left: 20px;">
 
 Credit card expiration date in format MM/YYYY
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2356,6 +6067,30 @@ Credit card expiration date in format YYYY (4 digits)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="cc-csc">
   <a href="#cc-csc">#</a>
   
@@ -2364,6 +6099,30 @@ Credit card expiration date in format YYYY (4 digits)
 <div style="margin-left: 20px;">
 
 CSC/CVC/CVV number
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2378,6 +6137,30 @@ Credit card type
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="tel">
   <a href="#tel">#</a>
   
@@ -2386,6 +6169,30 @@ Credit card type
 <div style="margin-left: 20px;">
 
 Full telephone number
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2440,6 +6247,30 @@ Country code component of the telephone number
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="tel-national">
   <a href="#tel-national">#</a>
   
@@ -2448,6 +6279,30 @@ Country code component of the telephone number
 <div style="margin-left: 20px;">
 
 Telephone number without the county code component, with a country-internal prefix applied if applicable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2499,6 +6354,30 @@ Area code component of the telephone number, with a country-internal prefix appl
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="tel-local">
   <a href="#tel-local">#</a>
   
@@ -2507,6 +6386,30 @@ Area code component of the telephone number, with a country-internal prefix appl
 <div style="margin-left: 20px;">
 
 Telephone number without the country code and area code components
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2558,6 +6461,30 @@ First part of the component of the telephone number that follows the area code, 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="tel-local-suffix">
   <a href="#tel-local-suffix">#</a>
   
@@ -2566,6 +6493,30 @@ First part of the component of the telephone number that follows the area code, 
 <div style="margin-left: 20px;">
 
 Second part of the component of the telephone number that follows the area code, when that component is split into two components
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2581,6 +6532,30 @@ Telephone number internal extension code
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="email">
   <a href="#email">#</a>
   
@@ -2589,6 +6564,30 @@ Telephone number internal extension code
 <div style="margin-left: 20px;">
 
 Email address
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
