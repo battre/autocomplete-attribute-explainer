@@ -9,6 +9,21 @@ from modules.graphs import GraphsModule
 from abstract_vendor_extension import AbstractVendorExtension
 from pathlib import Path
 from renderer import Renderer
+from typing import List
+
+
+# Function to parse a `--countries=country_list` argument, where the
+# country_list looks e.g. like "IN,US".
+def list_of_strings(arg: str) -> List[str]:
+  return arg.split(',')
+
+
+# Takes a other_config_file path, which by definition matches
+# countries/*/??-*.yaml, and returns the country, which is the first '*' in the
+# regex.
+def country_of_path(path: Path) -> str:
+  return path.parent.name
+
 
 modules: list[AbstractModule] = [
     MetadataModule(),
@@ -31,6 +46,7 @@ parser.add_argument('--use_vendor_extension',
                     action='store_true',
                     help='run vendor extension modules')
 parser.add_argument('--out', required=False, help='output directory')
+parser.add_argument('--contries', required=False, type=list_of_strings)
 args = parser.parse_args()
 
 # If you would like to inject further modules that are vendor specific like
@@ -50,6 +66,13 @@ if args.use_vendor_extension:
     pass
   except ImportError as e:
     raise e
+
+# If an argument like --countries=IN,US was passed, only process the listed
+# countries. This is helpful during development to speed up the processing.
+if args.contries:
+  other_config_files = list(
+      filter(lambda path: country_of_path(path) in args.contries,
+             other_config_files))
 
 renderer = Renderer(args.out)
 
