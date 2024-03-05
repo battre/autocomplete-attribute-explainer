@@ -3,7 +3,7 @@ from pathlib import Path
 from ruamel.yaml import YAML
 from typing import Any, Optional, Dict
 from schema import Schema, SchemaError
-from renderer import Renderer
+from renderer import Renderer, ExtraPage
 from jinja2 import Environment, FileSystemLoader, select_autoescape, Template
 import os
 
@@ -82,3 +82,10 @@ class AbstractModule(ABC):
 
   def post_processing(self, renderer: Renderer):
     return None
+
+  # Enables a vendor extension to register extra files that it generates.
+  # E.g. if an extension generates "<country>-foo.html" files, it would return
+  # this here. By default vendor extensions don't create their own html files
+  # and should return the empty list.
+  def get_extra_pages(self) -> list[ExtraPage]:
+    return []
