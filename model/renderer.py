@@ -1,7 +1,17 @@
 from collections import defaultdict
-from typing import Optional, Any
+from dataclasses import dataclass
+from typing import Optional, Any, List
 from jinja2 import Environment, FileSystemLoader, Template, select_autoescape
 import os
+
+
+@dataclass
+class ExtraPage:
+  # Human readable part of a link that describes the extra page.
+  description: str
+  # The path suffix (e.g. "-foo" if the generated files are
+  # "<country>-foo.html").
+  path_suffix: str
 
 
 class Renderer:
@@ -13,9 +23,13 @@ class Renderer:
   country_data = defaultdict(dict)
 
   countries = []
+  vendor_extension_extra_pages: List[ExtraPage] = []
 
-  def __init__(self, output_dir: Optional[str] = None):
+  def __init__(self,
+               output_dir: Optional[str] = None,
+               vendor_extension_extra_pages: List[ExtraPage] = []):
     self.output_dir = output_dir
+    self.vendor_extension_extra_pages = vendor_extension_extra_pages
 
   def add_country(self, country: str) -> None:
     if country in self.countries:
@@ -53,14 +67,16 @@ class Renderer:
                      file_suffix="") -> None:
     template = self._load_template("base.html")
 
-    result = template.render(country=country,
-                             countries=self.countries,
-                             data=self.data,
-                             country_data=self.country_data,
-                             css=css,
-                             content=content,
-                             javascript=javascript,
-                             file_suffix=file_suffix)
+    result = template.render(
+        country=country,
+        countries=self.countries,
+        data=self.data,
+        country_data=self.country_data,
+        css=css,
+        content=content,
+        javascript=javascript,
+        file_suffix=file_suffix,
+        vendor_extension_extra_pages=self.vendor_extension_extra_pages)
 
     dir = "out"
     if self.output_dir:

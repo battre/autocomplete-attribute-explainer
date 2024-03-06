@@ -8,7 +8,7 @@ from modules.formatting import FormattingModule
 from modules.graphs import GraphsModule
 from abstract_vendor_extension import AbstractVendorExtension
 from pathlib import Path
-from renderer import Renderer
+from renderer import Renderer, ExtraPage
 from typing import List
 
 
@@ -74,7 +74,12 @@ if args.contries:
       filter(lambda path: country_of_path(path) in args.contries,
              other_config_files))
 
-renderer = Renderer(args.out)
+vendor_extension_extra_pages: List[ExtraPage] = []
+for module in modules:
+  vendor_extension_extra_pages = (vendor_extension_extra_pages +
+                                  module.get_extra_pages())
+
+renderer = Renderer(args.out, vendor_extension_extra_pages)
 
 # Read files for the global file (make sure this is fully set up before
 # proceeding to the files for other countries).
