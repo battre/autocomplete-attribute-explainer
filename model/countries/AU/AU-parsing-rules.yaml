@@ -1,0 +1,381 @@
+regex_definitions:
+  kBuildingValueRe:  # Regex for type "building"
+    regex_concat:
+      parts:
+      - regex_fragment: \d+  # House number
+      # Covering cases - house number with alphabetic suffix, house number range.
+      - regex_fragment: '(?:'
+      - regex_fragment: \s*[[:alpha:]]\b # Optional suffix for building ids with a letter suffix, e.g. 12a.
+      - regex_fragment: '|'
+      - regex_fragment: \s*?[-]\s*\d+ # House number range (10-17)
+      - regex_fragment: ')?'
+      wrap_non_capture: false
+
+  kUnitTypeLiteralRe:  # Regex for "unit-type"
+    regex_fragment: (?:\b(?:apt\.?|apartment|se\.?|ste\.?|suite|unit|u\.?|room|rm\.?|shop|po box|ms\.?|mail shop|mb\.?|marine berth|vlla\.?|villa|we\.?|warehouse|office|off\.?|fy\.?|factory|sl\.?|stall|site|shed))
+
+  kUnitNameValueRe:  # Regex for "unit-name"
+    regex_fragment: (?:\d+\w?\b|\w\b)
+
+  kFloorValueLiteralRe: # Regex for floor value literal
+    regex_fragment: (?:\b(?:basement|b\.?|ground floor|g\.?|lower ground floor|lg\.?|upper ground floor|ug\.?|mezzanine|m\.?))
+
+  kFloorPrefixLiteralRe:  # Regex for floor prefix literal
+    regex_fragment: (?:\b(?:level|l\.?|floor|fl\.?))
+
+capture_definitions:
+  StreetAddressDecomposition:
+    capture:
+      output: street-address-alternative-1
+      parts:
+      - capture_reference: ParseInBuildingLocation
+      - separator: {regex_fragment: '.*?'} 
+      - capture_reference: ParseBuildingLocation
+
+  ParseBuildingLocation:
+    capture:
+      output: building-location
+      parts:
+      - capture:
+          output: building
+          parts: [ {regex_reference: kBuildingValueRe} ]
+      - separator: {regex_reference: kWhitespaceSeparator}
+      - capture:
+          output: street
+          parts: [ {regex_reference: kMultipleLazyWordsRe} ]
+
+  ParseInBuildingLocation:
+    capture:
+      output: in-building-location
+      parts:
+        - capture_reference: ParseUnitWithOptionalPrefix
+        - separator: {regex_reference: kWhitespaceSeparator}  
+        - no_capture:
+            alternatives:
+              - capture_reference: ParseFloorWithoutPrefix
+              - capture_reference: ParseFloorWithMandatoryPrefix
+            quantifier: MATCH_OPTIONAL
+      quantifier: MATCH_OPTIONAL
+
+  ParseUnitWithOptionalPrefix:
+    capture:
+      output: unit
+      parts:
+      - capture:
+          output: unit-type
+          parts: [ {regex_reference: kUnitTypeLiteralRe} ]
+          quantifier: MATCH_OPTIONAL
+      - separator: {regex_reference: kWhitespaceSeparator}
+      - capture:
+          output: unit-name
+          parts: [ {regex_reference: kUnitNameValueRe} ]
+      quantifier: MATCH_OPTIONAL
+
+  ParseFloorWithMandatoryPrefix:
+    # match 'level \d+'
+    capture:
+      output: floor
+      prefix:
+        regex_concat:
+          parts:
+            - regex_reference: kFloorPrefixLiteralRe
+            - regex_fragment: '\s*'
+          wrap_non_capture: false
+      parts: [ {regex_fragment: '(?:\d+|.*?)'}]
+
+  ParseFloorWithoutPrefix:
+    capture:
+      output: floor
+      parts: [ {regex_reference: kFloorValueLiteralRe}]
+
+
+parsing_definitions:
+  street-address-alternative-1:
+    decomposition: 
+      capture_reference: StreetAddressDecomposition
+
+  building-location:
+    decomposition:
+      capture_reference: ParseBuildingLocation
+
+  in-building-location:
+    decomposition:
+      capture_reference: ParseInBuildingLocation
+
+  unit:
+    decomposition:
+      capture:
+        output: unit
+        parts:
+        - capture:
+            output: unit-type
+            parts: [ {regex_reference: kUnitTypeLiteralRe} ]
+        - separator: {regex_reference: kWhitespaceSeparator}
+        - capture:
+            output: unit-name
+            parts: [ {regex_reference: kUnitNameValueRe} ]
+
+
+test_regex_definitions:
+- id: "kUnitTypeLiteralRe: Apt."
+  regex_name: kUnitTypeLiteralRe
+  input: "Apt."
+  match_groups: ["Apt."]
+- id: "kUnitTypeLiteralRe: APT"
+  regex_name: kUnitTypeLiteralRe
+  input: "APT"
+  match_groups: ["APT"]
+- id: "kUnitTypeLiteralRe: Suite"
+  regex_name: kUnitTypeLiteralRe
+  input: "Suite"
+  match_groups: ["Suite"]
+- id: "kUnitTypeLiteralRe: STE"
+  regex_name: kUnitTypeLiteralRe
+  input: "STE"
+  match_groups: ["STE"]
+- id: "kUnitTypeLiteralRe: ste."
+  regex_name: kUnitTypeLiteralRe
+  input: "ste."
+  match_groups: ["ste."]
+- id: "kUnitTypeLiteralRe: SE"
+  regex_name: kUnitTypeLiteralRe
+  input: "SE"
+  match_groups: ["SE"]
+- id: "kUnitTypeLiteralRe: Unit"
+  regex_name: kUnitTypeLiteralRe
+  input: "Unit"
+  match_groups: ["Unit"]
+- id: "kUnitTypeLiteralRe: U"
+  regex_name: kUnitTypeLiteralRe
+  input: "U"
+  match_groups: ["U"]
+- id: "kUnitTypeLiteralRe: rm"
+  regex_name: kUnitTypeLiteralRe
+  input: "rm"
+  match_groups: ["rm"]
+- id: "kUnitTypeLiteralRe: room"
+  regex_name: kUnitTypeLiteralRe
+  input: "room"
+  match_groups: ["room"]
+- id: "kUnitTypeLiteralRe: PO box"
+  regex_name: kUnitTypeLiteralRe
+  input: "PO box"
+  match_groups: ["PO box"]
+- id: "kFloorValueLiteralRe: ug"
+  regex_name: kFloorValueLiteralRe
+  input: "ug"
+  match_groups: ["ug"]
+- id: "kFloorPrefixLiteralRe: Level 10"
+  regex_name: kFloorPrefixLiteralRe
+  input: "Level 10"
+  match_groups: ["Level"]
+- id: "kBuildingValueRe: 10"
+  regex_name: kBuildingValueRe
+  input: "10"
+  match_groups: ["10"]
+- id: "kBuildingValueRe: 10A"
+  regex_name: kBuildingValueRe
+  input: "10A"
+  match_groups: ["10A"]
+- id: "kBuildingValueRe: 10-17"
+  regex_name: kBuildingValueRe
+  input: "10-17"
+  match_groups: ["10-17"]
+
+    
+
+test_parsing_definitions:
+- id: "Test 1"
+  type: unit
+  input: "Apartment 75"
+  output:
+    unit: "Apartment 75"
+    unit-type: "Apartment"
+    unit-name: "75"
+- id: "Test 2"
+  type: in-building-location
+  input: "Apt. 75 Floor 7"
+  output:
+    in-building-location: "Apt. 75 Floor 7"
+    unit: "Apt. 75"
+    unit-type: "Apt."
+    unit-name: "75"
+    floor: "7"
+- id: "Test 3"
+  type: in-building-location
+  input: "suite 75 ug"
+  output:
+    in-building-location: "suite 75 ug"
+    unit: "suite 75"
+    unit-type: "suite"
+    unit-name: "75"
+    floor: ug
+- id: "Test 4"
+  type: building-location
+  input: "75 Lane Street"
+  output:
+    street: "Lane Street"
+    building: "75"
+- id: "Test 5"
+  type: building-location
+  input: "189 Great Eastern Highway"
+  output:
+    street: "Great Eastern Highway"
+    building: "189"
+- id: "Test 6"
+  type: building-location
+  input: "189 Great Eastern Highway"
+  output:
+    street: "Great Eastern Highway"
+    building: "189"
+- id: "Test 7"
+  type: street-address-alternative-1
+  input: "Unit 7 Level 8  189 Great Eastern Highway"
+  output:
+    street-address-alternative-1: "Unit 7 Level 8  189 Great Eastern Highway"
+    in-building-location: "Unit 7 Level 8"
+    building-location: "189 Great Eastern Highway"
+    unit: "Unit 7"
+    unit-type: "Unit"
+    unit-name: "7"
+    floor: "8"
+    street: "Great Eastern Highway"
+    building: "189"
+- id: "Test 8"
+  type: street-address-alternative-1
+  input: "suite 5 fl 10  189 Great Eastern Highway"
+  output:
+    street-address-alternative-1: "suite 5 fl 10  189 Great Eastern Highway"
+    in-building-location: "suite 5 fl 10"
+    building-location: "189 Great Eastern Highway"
+    unit: "suite 5"
+    unit-type: "suite"
+    unit-name: "5"
+    floor: "10"
+    street: "Great Eastern Highway"
+    building: "189"
+- id: "Test 9"
+  type: street-address-alternative-1
+  input: "Unit 7  189 Great Eastern Highway"
+  output:
+    street-address-alternative-1: "Unit 7  189 Great Eastern Highway"
+    building-location: "189 Great Eastern Highway"
+    street: "Great Eastern Highway"
+    building: "189"
+    in-building-location: "Unit 7"
+    unit: "Unit 7"
+    unit-type: "Unit"
+    unit-name: "7"
+- id: "Test 10"
+  type: street-address-alternative-1
+  input: "Floor 10  189 Great Eastern Highway"
+  output:
+    street-address-alternative-1: "Floor 10  189 Great Eastern Highway"
+    building-location: "189 Great Eastern Highway"
+    street: "Great Eastern Highway"
+    building: "189"
+    in-building-location: "Floor 10"
+    floor: "10"
+- id: "Test 11"
+  type: street-address-alternative-1
+  input: "189 Great Eastern Highway"
+  output:
+    street-address-alternative-1: "189 Great Eastern Highway"
+    building-location: "189 Great Eastern Highway"
+    street: "Great Eastern Highway"
+    building: "189"
+- id: "Test 12"
+  type: in-building-location
+  input: "Unit 7 Floor 15"
+  output:
+    in-building-location: "Unit 7 Floor 15"
+    unit: "Unit 7"
+    unit-type: "Unit"
+    unit-name: "7"
+    floor: "15"
+- id: "Test 13"
+  type: in-building-location
+  input: "Unit 7"
+  output:
+    in-building-location: "Unit 7"
+    unit: "Unit 7"
+    unit-type: "Unit"
+    unit-name: "7"
+- id: "Test 14"
+  type: in-building-location
+  input: "Floor 7"
+  output:
+    in-building-location: "Floor 7"
+    floor: "7"
+- id: "Test 15"
+  type: street-address-alternative-1
+  input: "Apt 17 189 Great Eastern Highway"
+  output:
+    street-address-alternative-1: "189 Great Eastern Highway"
+    building-location: "189 Great Eastern Highway"
+    street: "Great Eastern Highway"
+    building: "189"
+    in-building-location: "Apt 17"
+    unit: "Apt 17"
+    unit-type: "Apt"
+    unit-name: "17"
+- id: "Test 16"
+  type: street-address-alternative-1
+  input: "U 17 189 Great U Highway"
+  output:
+    street-address-alternative-1: "189 Great U Highway"
+    building-location: "189 Great U Highway"
+    street: "Great U Highway"
+    building: "189"
+    in-building-location: "U 17"
+    unit: "U 17"
+    unit-type: "U"
+    unit-name: "17"
+- id: "Test 17"
+  type: street-address-alternative-1
+  input: "17/189 Great Eastern Highway"
+  output:
+    street-address-alternative-1: "189 Great Eastern Highway"
+    building-location: "189 Great Eastern Highway"
+    street: "Great Eastern Highway"
+    building: "189"
+    in-building-location: "17"
+    unit: "17"
+    unit-name: "17"
+- id: "Test 18"
+  type: street-address-alternative-1
+  input: "17 / 189 Great Eastern Highway"
+  output:
+    street-address-alternative-1: "189 Great Eastern Highway"
+    building-location: "189 Great Eastern Highway"
+    street: "Great Eastern Highway"
+    building: "189"
+    in-building-location: "17"
+    unit: "17"
+    unit-name: "17"
+- id: "Test 19"
+  type: street-address-alternative-1
+  input: "suite 3\n fl. 7 189 Great Eastern Highway"
+  output:
+    street-address-alternative-1: "suite 3\n fl. 7 189 Great Eastern Highway"
+    building-location: "189 Great Eastern Highway"
+    street: "Great Eastern Highway"
+    building: "189"
+    in-building-location: "suite 3\n fl. 7"
+    unit: "suite 3"
+    unit-type: "suite"
+    unit-name: "3"
+    floor: "7"
+- id: "Test 20"
+  type: street-address-alternative-1
+  input: "suite 3\n fl. 7 189-195 Great Eastern Highway"
+  output:
+    street-address-alternative-1: "suite 3\n fl. 7 189-195 Great Eastern Highway"
+    building-location: "189-195 Great Eastern Highway"
+    street: "Great Eastern Highway"
+    building: "189-195"
+    in-building-location: "suite 3\n fl. 7"
+    unit: "suite 3"
+    unit-type: "suite"
+    unit-name: "3"
+    floor: "7"
