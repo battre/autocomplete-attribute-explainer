@@ -6,6 +6,7 @@ from schema import Schema, SchemaError
 from renderer import Renderer, ExtraPage
 from jinja2 import Environment, FileSystemLoader, select_autoescape, Template
 import os
+import re
 
 
 class AbstractModule(ABC):
@@ -21,6 +22,8 @@ class AbstractModule(ABC):
                         loader=FileSystemLoader(
                             os.path.dirname(current__file__)),
                         autoescape=select_autoescape())
+      env.filters['regex_replace'] = lambda s, find, replace: re.sub(
+          find, replace, s)
       cls._cls_templates[key] = env.get_template(template_file)
     return cls._cls_templates[key]
 
