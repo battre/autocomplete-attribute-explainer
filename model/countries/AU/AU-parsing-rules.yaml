@@ -29,7 +29,7 @@ capture_definitions:
       output: street-address-alternative-1
       parts:
       - capture_reference: ParseInBuildingLocation
-      - separator: {regex_fragment: '.*?'} 
+      - separator: {regex_fragment: '(?:^|[/\s]+)'} 
       - capture_reference: ParseBuildingLocation
 
   ParseBuildingLocation:
@@ -379,3 +379,45 @@ test_parsing_definitions:
     unit-type: "suite"
     unit-name: "3"
     floor: "7"
+- id: "Test 21"
+  type: street-address-alternative-1
+  input: "189-195 Great Eastern Highway"
+  output:
+    street-address-alternative-1: "189-195 Great Eastern Highway"
+    building-location: "189-195 Great Eastern Highway"
+    street: "Great Eastern Highway"
+    building: "189-195"
+- id: "Test 22"
+  type: street-address-alternative-1
+  input: "ug 189-195 Great Eastern Highway"
+  output:
+    street-address-alternative-1: "ug 189-195 Great Eastern Highway"
+    building-location: "189-195 Great Eastern Highway"
+    street: "Great Eastern Highway"
+    building: "189-195"
+    in-building-location: "ug"
+    floor: "ug"
+- id: "Test 23"
+  type: street-address-alternative-1
+  input: "level 7 189-195 Great Eastern Highway"
+  output:
+    street-address-alternative-1: "level 7 189-195 Great Eastern Highway"
+    building-location: "189-195 Great Eastern Highway"
+    street: "Great Eastern Highway"
+    building: "189-195"
+    in-building-location: "level 7"
+    floor: "7"
+- id: "Test 24"
+  type: street-address-alternative-1
+  input: "u 8 level 7 189-195 Great Eastern Highway"
+  output:
+    street-address-alternative-1: "u 8 level 7 189-195 Great Eastern Highway"
+    building-location: "189-195 Great Eastern Highway"
+    street: "Great Eastern Highway"
+    building: "189-195"
+    in-building-location: "u 8 level 7"
+    unit: "u 8"
+    unit-type: "u"
+    unit-name: "8"
+    floor: "7"
+    
