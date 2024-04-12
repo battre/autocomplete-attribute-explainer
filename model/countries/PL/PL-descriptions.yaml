@@ -1,0 +1,47 @@
+short-descriptions:
+  name:
+    en: Full name
+    pl: Pełne imię i nazwisko
+  honorific-prefix:
+    en: Honorific prefix
+    pl: Tytuł
+  given-name:
+    en: Given name
+    pl: Imię
+  family-name:
+    en: Family name
+    pl: Nazwisko
+  admin-area1:
+    en: State
+    pl: Województwo
+  country: 2-letter country code (e.g. "PL")
+  country-name:
+    en: Name of a country (e.g. "Polska")
+    pl: Kraj
+  locality1:
+    en: City
+    pl: Miasto
+  street:
+    en: Street name
+    pl: Nazwa ulicy
+  building:
+    en: House number
+    pl: Numer domu
+  postal-code:
+    en: Postal code
+    pl: Kod pocztowy
+  street-address:
+    en: Street address (street and location within the street)
+    pl: Adres zamieszkania
+  organization:
+    en: Name of an organization/company
+    pl: Nazwa organizacji/firmy
+  building-location:
+    en: Name of a street and identifier for the building and the apartment
+    pl: Lokalizacja budynku
+  unit: 
+    en: Unit in a building (e.g. "Apartment 5", "Suite 12")
+    pl: Mieszkanie/Lokal
+  building-and-unit: 
+    en: House number and apartment number
+    pl: Numer domu/lokalu
