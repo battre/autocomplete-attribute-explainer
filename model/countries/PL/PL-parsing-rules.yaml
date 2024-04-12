@@ -1,0 +1,196 @@
+regex_definitions:
+  kBuildingValueRe:  # Regex for type "building"
+    regex_concat:
+      parts:
+      - regex_fragment: \d+  # House number
+      # Optional suffix for building ids with a letter suffix, e.g. 12a.
+      - regex_fragment: '(?:'
+      # Single character suffix (e.g. "12 a" and "12a")
+      - regex_fragment: \s*[[:alpha:]]\b
+      - regex_fragment: ')?'
+      wrap_non_capture: false
+      
+  # Regular expression to match the prefixes that indicate a house number.
+  kStreetOptionalPrefixRe:
+    regex_fragment: '(?:(?:ulica|ul\.?|aleja|al\.?|plac|pl\.?|skwer|rondo|osiedle|boczna|bulwar|droga|rynek|szosa|zaulek)\s*)?'
+
+  # Regular expression to match the unit-types in Poland.
+  kUnitTypeLiteralRe:
+    regex_fragment: '(?:mieszkanie|m\.?|lokal|lok\.?|apartment|apt\.?)?'
+
+  kUnitNameValueRe:  # Regex for "unit-name"
+    regex_fragment: (?:\d+\w?\b|\w\b)
+
+  # Regular expression to match separator of house/building number and unit/apartment number.
+  kHouseNumberAndUnitSeparator:
+    regex_fragment: (?:^|[/\s]+)
+
+capture_definitions:
+  ParseBuildingLocation:
+    capture:
+      output: building-location
+      parts:
+      - capture:
+          output: street
+          prefix: {regex_reference: kStreetOptionalPrefixRe}
+          parts: [{regex_reference: kMultipleLazyWordsRe}]
+      - separator: {regex_reference: kWhitespaceSeparator}
+      - capture:
+          output: building-and-unit
+          parts:
+            - capture:
+                output: building
+                parts: [ {regex_reference: kBuildingValueRe} ]
+            - separator: {regex_reference: kHouseNumberAndUnitSeparator} 
+            - capture_reference: ParseUnitWithOptionalPrefix
+
+  ParseUnitWithOptionalPrefix:
+    capture:
+      output: unit
+      parts:
+      - capture:
+          output: unit-type
+          parts: [ {regex_reference: kUnitTypeLiteralRe} ]
+          quantifier: MATCH_OPTIONAL
+      - separator: {regex_fragment: '\s*' }
+      - capture:
+          output: unit-name
+          parts: [{regex_reference: kUnitNameValueRe}]
+      quantifier: MATCH_OPTIONAL
+
+
+parsing_definitions:
+  building-location:
+    decomposition: 
+      capture_reference: ParseBuildingLocation
+
+  street-address-alternative-1:
+    decomposition:
+      capture: 
+        output: street-address-alternative-1
+        parts:
+        - capture_reference: ParseBuildingLocation
+
+  unit:
+    decomposition:
+      capture_reference: ParseUnitWithOptionalPrefix
+
+
+test_parsing_definitions:
+- id: "Test 1"
+  type: building-location
+  input: "ul. Jan Warsaw 9/10"
+  output:
+    building-location: "ul. Jan Warsaw 9/10" 
+    street: "Jan Warsaw"
+    building-and-unit: "9/10"
+    building: "9"
+    unit: "10"
+    unit-name: "10"
+- id: "Test 2"
+  type: street-address-alternative-1
+  input: "ul. Jan Warsaw 9/10"
+  output:
+    street-address-alternative-1: "ul. Jan Warsaw 9/10"  
+    building-location: "ul. Jan Warsaw 9/10" 
+    street: "Jan Warsaw"
+    building-and-unit: "9/10"
+    building: "9"
+    unit: "10"
+    unit-name: "10" 
+- id: "Test 3"
+  type: street-address-alternative-1
+  input: "al. Warsaw 9/10"
+  output:
+    street-address-alternative-1: "al. Warsaw 9/10"  
+    building-location: "al. Warsaw 9/10" 
+    street: "Warsaw"
+    building-and-unit: "9/10"
+    building: "9"
+    unit: "10"
+    unit-name: "10"
+- id: "Test 4"
+  type: street-address-alternative-1
+  input: "Warsaw 9A/10"
+  output:
+    street-address-alternative-1: "Warsaw 9A/10"  
+    building-location: "Warsaw 9A/10" 
+    street: "Warsaw"
+    building-and-unit: "9A/10"
+    building: "9A"
+    unit: "10"
+    unit-name: "10"
+- id: "Test 5"
+  type: street-address-alternative-1
+  input: "Warsaw 9"
+  output:
+    street-address-alternative-1: "Warsaw 9"  
+    building-location: "Warsaw 9" 
+    street: "Warsaw"
+    building-and-unit: "9"
+    building: "9"
+- id: "Test 6"
+  type: street-address-alternative-1
+  input: "pl Warsaw 9"
+  output:
+    street-address-alternative-1: "pl Warsaw 9"  
+    building-location: "pl Warsaw 9" 
+    street: "Warsaw"
+    building-and-unit: "9"
+    building: "9"
+- id: "Test 7"
+  type: street-address-alternative-1
+  input: "pl Warsaw 9A"
+  output:
+    street-address-alternative-1: "pl Warsaw 9A"  
+    building-location: "pl Warsaw 9A" 
+    street: "Warsaw"
+    building-and-unit: "9A"
+    building: "9A"
+- id: "Test 8"
+  type: street-address-alternative-1
+  input: "aleja Warsaw 9A"
+  output:
+    street-address-alternative-1: "aleja Warsaw 9A"  
+    building-location: "aleja Warsaw 9A" 
+    street: "Warsaw"
+    building-and-unit: "9A"
+    building: "9A"
+- id: "Test 9"
+  type: street-address-alternative-1
+  input: "ul. Warsaw 9A m. 10"
+  output:
+    street-address-alternative-1: "ul. Warsaw 9A m. 10"  
+    building-location: "ul. Warsaw 9A m. 10" 
+    street: "Warsaw"
+    building-and-unit: "9A m. 10"
+    building: "9A"
+    unit: "m. 10"
+    unit-type: "m."
+    unit-name: "10"
+- id: "Test 10"
+  type: unit
+  input: "m. 10"
+  output:
+    unit: "m. 10"  
+    unit-type: "m."
+    unit-name: "10"
+- id: "Test 11"
+  type: unit
+  input: "m.10"
+  output:
+    unit: "m.10"  
+    unit-type: "m."
+    unit-name: "10"
+- id: "Test 12"
+  type: street-address-alternative-1
+  input: "ul. Warsaw 9A/m.10"
+  output:
+    street-address-alternative-1: "ul. Warsaw 9A/m.10"  
+    building-location: "ul. Warsaw 9A/m.10" 
+    street: "Warsaw"
+    building-and-unit: "9A/m.10"
+    building: "9A"
+    unit: "m.10"
+    unit-type: "m."
+    unit-name: "10"
