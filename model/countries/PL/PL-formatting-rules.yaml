@@ -1,0 +1,58 @@
+formatting-rules:
+  address:
+  - street-address-alternative-1
+  - separator: "\n"
+  - postal-code
+  - separator: " "
+  - locality1
+  - separator: "\n"
+  - country-name
+  - skip: country  # redundant with country-name
+  - skip: street-address  # redundant with street-address-alternative-1
+  - skip: admin-area1
+
+  street-address-alternative-1:
+  - building-location
+
+  building-location:
+  - street
+  - separator: " "
+  - building-and-unit
+
+  building-and-unit:
+  - building
+  - separator: "/"
+  - unit
+
+examples:
+- id: name
+  comment: |
+    This is an example of a name.
+  attributes:
+    given-name: Jan
+    family-name: Kowalski
+  output:
+    name:
+      show: true
+      text: Jan Kowalski
+
+- id: address
+  comment: |
+    This is an example of a full address in Poland.
+  attributes:
+    street: ul. Warsaw
+    building: 9
+    unit: 10
+    building-and-unit: 9/10
+    locality1: Warsaw
+    postal-code: 01-001
+    country: PL
+    country-name: Polska
+
+  output:
+    address:
+      show: true
+      text: |
+        ul. Warsaw 9/10
+        01-001 Warsaw
+        Polska
