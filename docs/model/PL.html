@@ -4690,6 +4690,261 @@ House number and apartment number
 
 
 
+<h4>Parsing:</h4>
+<div class="parsing">
+
+
+
+
+<details>
+  <summary>Decomposition
+    
+  </summary>
+  Anchor beginning: True<br>
+  
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>building-and-unit</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>building</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+<details>
+  <summary>Regex Reference: <code>kBuildingValueRe</code></summary>
+  
+
+
+  Regex concatenation
+  <ol>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">\d+</code>
+
+
+</li>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">(?:</code>
+
+
+</li>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">\s*[[:alpha:]]\b</code>
+
+
+</li>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">)?</code>
+
+
+</li>
+    
+  </ol>
+  Wrap as non-capture group: False
+
+
+
+</details>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kHouseNumberAndUnitSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|[/\s]+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>Capture Reference: <code>ParseUnitWithOptionalPrefix</code></summary>
+  
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>unit</code>
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>unit-type</code>
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kUnitTypeLiteralRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:mieszkanie|m\.?|lokal|lok\.?|apartment|apt\.?)?</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: 
+
+
+Regex Fragment: <code class="parsing-regexfragment">\s*</code>
+
+
+
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>unit-name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kUnitNameValueRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:\d+\w?\b|\w\b)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+  Anchor end: True<br>
+</details>
+
+
+
+
+</div>
+
 <div>
 <h4>Children:</h4>
 <ul>

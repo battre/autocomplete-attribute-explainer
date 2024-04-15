@@ -71,6 +71,17 @@ parsing_definitions:
         parts:
         - capture_reference: ParseBuildingLocation
 
+  building-and-unit:
+    decomposition:
+      capture:
+        output: building-and-unit
+        parts:
+        - capture:
+            output: building
+            parts: [ {regex_reference: kBuildingValueRe} ]
+        - separator: {regex_reference: kHouseNumberAndUnitSeparator} 
+        - capture_reference: ParseUnitWithOptionalPrefix 
+
   unit:
     decomposition:
       capture_reference: ParseUnitWithOptionalPrefix
@@ -190,6 +201,24 @@ test_parsing_definitions:
     building-location: "ul. Warsaw 9A/m.10" 
     street: "Warsaw"
     building-and-unit: "9A/m.10"
+    building: "9A"
+    unit: "m.10"
+    unit-type: "m."
+    unit-name: "10"
+- id: "Test 13"
+  type: building-and-unit
+  input: "9A/m.10"
+  output:
+    building-and-unit: "9A/m.10"
+    building: "9A"
+    unit: "m.10"
+    unit-type: "m."
+    unit-name: "10"
+- id: "Test 14"
+  type: building-and-unit
+  input: "9A m.10"
+  output:
+    building-and-unit: "9A m.10"
     building: "9A"
     unit: "m.10"
     unit-type: "m."
