@@ -2,7 +2,6 @@ cut-off-children:
   - family-name
   - street
   - building
-  - unit
 
 cut-off-tokens:
   - honorific-suffix
