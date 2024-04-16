@@ -56,3 +56,23 @@ examples:
         ul. Warsaw 9/10
         01-001 Warsaw
         Polska
+
+- id: address-without-apartment
+  comment: |
+    This is an example of an address without indication of apt in Poland.
+  attributes:
+    street: ul. Warsaw
+    building: 9
+    building-and-unit: 9
+    locality1: Warsaw
+    postal-code: 01-001
+    country: PL
+    country-name: Polska
+
+  output:
+    address:
+      show: true
+      text: |
+        ul. Warsaw 9
+        01-001 Warsaw
+        Polska
