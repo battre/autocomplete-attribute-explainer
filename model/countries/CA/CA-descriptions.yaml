@@ -1,0 +1,7 @@
+short-descriptions:
+  given-name: First name
+  additional-name: Middle name
+  family-name: Last name
+  street-address: Street address (street name, house number, apartment)
+  locality1: City
+  admin-area1: State
