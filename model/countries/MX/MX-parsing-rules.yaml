@@ -259,7 +259,7 @@ test_parsing_definitions:
     unit-name: "12"
 - id: "Floor and apartment from in-building-location"
   type: in-building-location
-  input: "apto 12, piso 1"
+  input: "piso 1, apto 12"
   output:
     unit: "apto 12"
     unit-type: "apto"
@@ -268,7 +268,7 @@ test_parsing_definitions:
 - id: "A full street address"
   type: street-address-alternative-1
   input: |-
-    Avenida Álvaro Obregón 1234, Apartamento 5A, Piso 10
+    Avenida Álvaro Obregón 1234, Piso 10, Apartamento 5A
     Entre Calles Tonalá y Monterrey
   output:
     building-location: "Avenida Álvaro Obregón 1234"
@@ -285,7 +285,7 @@ test_parsing_definitions:
   type: street-address-alternative-1
   input: |-
     Avenida Paseo de la Reforma 505
-    interior 201, piso 2, entre Río Sena y Río Neva
+    piso 2, interior 201, entre Río Sena y Río Neva
   output:
     building-location: "Avenida Paseo de la Reforma 505"
     street: "Avenida Paseo de la Reforma"
@@ -300,7 +300,7 @@ test_parsing_definitions:
 - id: "Full street address 3"
   type: street-address-alternative-1
   input: |-
-    Calle 60 Norte, número 262, departamento 3, planta baja, entre 35 y 37
+    Calle 60 Norte, número 262, planta baja, departamento 3, entre 35 y 37
   output:
     building-location: "Calle 60 Norte, número 262"
     street: "Calle 60 Norte"

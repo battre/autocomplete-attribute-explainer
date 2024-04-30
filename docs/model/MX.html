@@ -1792,7 +1792,7 @@ granular tokens.
   <td valign="top">
     
       Output for "address":<br>
-      <pre class="formatting_example_textbox">Avenida Álvaro Obregón 1234, Apartamento 5A, Piso 10
+      <pre class="formatting_example_textbox">Avenida Álvaro Obregón 1234, Piso 10, Apartamento 5A
 Entre Calles Tonalá y Monterrey
 Cerca del Parque España
 Roma Nte.
@@ -3913,7 +3913,7 @@ Address of a physical location - Artificial concept, not to be used in HTML
 <h5>Flattened formatting:</h5>
 <div>
 <span class="formatting_token">address</span> =<br>
-<span class="formatting_token">street</span><span class="formatting_token">building</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator">,␣</span><span class="formatting_token_prefix">Piso </span><span class="formatting_token">floor</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Entre Calles </span><span class="formatting_token">cross-street1</span><span class="formatting_token_separator">␣y␣</span><span class="formatting_token">cross-street2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">landmark</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">admin-area2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">postal-code</span><span class="formatting_token">locality1</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country-name</span>
+<span class="formatting_token">street</span><span class="formatting_token">building</span><span class="formatting_token_separator">,␣</span><span class="formatting_token_prefix">Piso </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Entre Calles </span><span class="formatting_token">cross-street1</span><span class="formatting_token_separator">␣y␣</span><span class="formatting_token">cross-street2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">landmark</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">admin-area2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">postal-code</span><span class="formatting_token">locality1</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country-name</span>
 </div>
 
 </div><h3 id="street-address">
@@ -4929,7 +4929,7 @@ Regex Fragment: <code class="parsing-regexfragment">(?:\s+y\s+)</code>
 <h5>Flattened formatting:</h5>
 <div>
 <span class="formatting_token">street-address-alternative-1</span> =<br>
-<span class="formatting_token">street</span><span class="formatting_token">building</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator">,␣</span><span class="formatting_token_prefix">Piso </span><span class="formatting_token">floor</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Entre Calles </span><span class="formatting_token">cross-street1</span><span class="formatting_token_separator">␣y␣</span><span class="formatting_token">cross-street2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">landmark</span>
+<span class="formatting_token">street</span><span class="formatting_token">building</span><span class="formatting_token_separator">,␣</span><span class="formatting_token_prefix">Piso </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Entre Calles </span><span class="formatting_token">cross-street1</span><span class="formatting_token_separator">␣y␣</span><span class="formatting_token">cross-street2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">landmark</span>
 </div>
 
 </div><h3 id="building-location">
@@ -5649,13 +5649,13 @@ Regex Fragment: <code class="parsing-regexfragment">\d+</code>
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">in-building-location</span> =
-<span class="formatting_token">unit</span><span class="formatting_token_separator">,␣</span><span class="formatting_token_prefix">Piso </span><span class="formatting_token">floor</span>
+<span class="formatting_token_prefix">Piso </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit</span>
 </div>
 
 <h5>Flattened formatting:</h5>
 <div>
 <span class="formatting_token">in-building-location</span> =<br>
-<span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator">,␣</span><span class="formatting_token_prefix">Piso </span><span class="formatting_token">floor</span>
+<span class="formatting_token_prefix">Piso </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span>
 </div>
 
 </div><h3 id="floor">
