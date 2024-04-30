@@ -1,0 +1,47 @@
+formatting-rules:
+  address:
+  - street-address
+  - separator: "\n"
+  - locality1
+  - separator: ", "
+  - admin-area1
+  - postal-code
+  - separator: "\n"
+  - country-name
+  - skip: country  # redundant with country-name
+  - skip: street-address  # redundant with street-address-alternative-1
+
+examples:
+- id: name
+  comment: |
+    This is an example of a name specified by the most granular tokens.
+  attributes:
+    given-name: William
+    additional-name: Edward
+    family-name: Trudeau
+  output:
+    name:
+      show: true
+      text: William Edward Trudeau
+
+- id: address
+  comment: |
+    This is an example of a full address in the Canada specified by the most
+    granular tokens.
+  attributes:
+    address-line1: 123 Main Street
+    address-line2: Apt. 306
+    locality1: Ottawa
+    admin-area1: ON
+    postal-code: M5H 2J9
+    country: CA
+    country-name: Canada
+
+  output:
+    address:
+      show: true
+      text: |
+        123 Main Street
+        Apt. 306
+        Ottawa, ON M5H 2J9
+        Canada
