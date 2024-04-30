@@ -28,12 +28,12 @@ formatting-rules:
   - separator: "\n"
   - address-overflow
 
-  # Apartamento 5A, Piso 10
+  # Piso 10, Apartamento 5A
   in-building-location:
-  - unit
-  - separator: ", "
   - prefix: "Piso "
   - floor
+  - separator: ", "
+  - unit
 
   address-overflow:
   - landmark-and-cross-streets
@@ -90,7 +90,7 @@ examples:
     address:
       show: true
       text: |
-        Avenida Álvaro Obregón 1234, Apartamento 5A, Piso 10
+        Avenida Álvaro Obregón 1234, Piso 10, Apartamento 5A
         Entre Calles Tonalá y Monterrey
         Cerca del Parque España
         Roma Nte.
