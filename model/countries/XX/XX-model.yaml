@@ -16,6 +16,7 @@ cut-off-tokens:
   - address-overflow
   - landmark
   - delivery-instructions
+  - sorting-code
 cut-off-children:  # don't expose nodes below these levels
   - street
   - building
