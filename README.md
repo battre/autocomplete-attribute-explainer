@@ -95,7 +95,7 @@ Spec) are:
    unofficial/self-defined attributes like `house-number` and pair them with
    official attributes like `given-name` and `family-name`.
 
-### Statistics on address fields.
+### Statistics on address fields
 
 To indicate how far the `autocomplete` attribute is from the reality of real
 world websites in some countries, we have sampled top e-commerce websites
@@ -104,6 +104,8 @@ world websites in some countries, we have sampled top e-commerce websites
 
 In the following a `" / "` represents a separation between two fields while a
 `" + "` represents the combination of data that goes into a single field.
+
+Fields currently not supported are highlighted with a ⚠ symbol.
 
 All percentages, even those of breakdowns, are releative to the total number of
 considered address forms.
@@ -114,7 +116,7 @@ considered address forms.
   * ~12% had address lines 1/2
   * ⚠ ~85% had street (*Endereço*) / building (*Número*) / overflow
     (*Complemento*) fields
-  * The overflow fields were broken down (as % of all forms)
+    * The overflow fields were broken down (as % of all forms):
     * ~31% asked for overflow + landmark in one field
     * ~15% asked for overflow / landmark (*Referência*) in two fields
     * ~39% only asked for overflow
@@ -123,14 +125,14 @@ considered address forms.
   * ~21% had a single address line
   * ~34% had address lines 1/2
   * ⚠ ~42% had street (*Straße*) / building (*Hausnummer*) fields
-  * ⚠ ~24% had an overflow field (*Adresszusatz*) (paired with street/building).
+    * ⚠ ~24% (of all forms) had an overflow field (*Adresszusatz*) (paired with street/building).
 * Mexico
   * \>500 address forms reviewed
   * ~15% had a single address line
   * ~53% had address lines 1/2
   * ⚠ ~26% had street (*Calle*) / building (*Número exterior*) / unit (*Número interior*) fields
-  * ⚠ ~9% had a landmark field (*Referencias*)
-  * ⚠ ~7% had cross street fields (⅔ as a single field, ⅓ split into two fields) (*Entre calles*)
+    * ⚠ ~9% (of all forms) had a landmark field (*Referencias*)
+    * ⚠ ~7% (of all forms) had cross street fields (⅔ as a single field, ⅓ split into two fields) (*Entre calles*)
 * Netherlands
   * 40 address forms reviewed
   * 7.5% had a single address line
@@ -155,15 +157,15 @@ considered address forms.
   * 24% had address lines 1/2
   * ⚠ 9% had street name / building
   * ⚠ 56% had street name (*Straat / Rue*) / Building (*Huisnummer / Numéro*) / mailbox number (*Bus / Boîte*) fields
-  ⚠ * 12% (of all forms) contained also a *Toevoeging* (see Netherlands)
-  * N.b.: A *Bus / Boîte* is often a single digit number or single character or a combination of these.
+    * ⚠ 12% (of all forms) contained also a *Toevoeging* (see Netherlands)
+    * N.b.: A *Bus / Boîte* is often a single digit number or single character or a combination of these.
 * Chile
   * 43 address forms reviewed
   * 7% had a single address line
   * 7% had address lines 1/2
   * ⚠ 58% had street (*Nombre de Calle*) / building (*Número de Calle*) / unit (*Dpto/Piso*) fields
   * ⚠ 21% had street / building / overflow fields
-  * Note that it was not fully clear where the third field should be filled with a single number (2A seems to be the canonical example for floor and apartment) or with the full text of an overflow field (“Depto 2A”).
+    * Note that it was not fully clear where the third field should be filled with a single number (2A seems to be the canonical example for floor and apartment) or with the full text of an overflow field (“Depto 2A”).
 * Colombia
   * 40 address forms reviewed
   * 15% had a single address line
