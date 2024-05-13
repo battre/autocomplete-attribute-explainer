@@ -33,11 +33,13 @@ expected types of address information:
 * `autofill` supports the concepts of `autocomplete` but extends them.
 * `autofill` does not force websites to use the unstructured address format of
   `autocomplete` (e.g. relying on address-lineX fields). It allows websites to
-  get browser-based autofill on their their forms which follow local customs or
-  requirements of local shipping companies. This may mean requesting fine
-  grained data types like a street name, house number, floor number, etc.
+  get browser-based autofill on their their forms which follow local customs,
+  tax reporting requirements, or requirements of local shipping companies.
+  This may mean requesting fine grained data types like a street name, house
+  number, floor number, etc.
 * The `autofill` attribute is based on the idea of having a framework to
-  describe addresses in general. This framework is adapted to the needs of
+  describe addresses in general. This framework provides more token types than
+  the current `autocomplete` attribute and is adapted to the needs of
   different countries via country profiles (similarly to ISO 19160). This allows
   us to support field types that are very common in some countries but
   non-existent as individual fields in others.
@@ -70,7 +72,7 @@ supported by today's `autocomplete` attribute.
 Our arguments for adding the new autocomplete types (“Field names” in the HTML
 Spec) are:
 
-1. Giving website authors the chance to annotate address forms so that they can
+1. Giving website authors the tools to annotate address forms so that they can
    collect data in a format they need and enable browser vendors to facilitate a
    better autofill experience for such forms.
 
@@ -92,6 +94,109 @@ Spec) are:
    address profile stored. We also see that website authors introduce
    unofficial/self-defined attributes like `house-number` and pair them with
    official attributes like `given-name` and `family-name`.
+
+### Statistics on address fields.
+
+To indicate how far the `autocomplete` attribute is from the reality of real
+world websites in some countries, we have sampled top e-commerce websites
+(as per ecommercedb.com) and investigated the fields that correspond to a
+`street-address`.
+
+In the following a `" / "` represents a separation between two fields while a
+`" + "` represents the combination of data that goes into a single field.
+
+All percentages, even those of breakdowns, are releative to the total number of
+considered address forms.
+
+* Brazil
+  * \>500 address forms reviewed
+  * ~2% had a single address line
+  * ~12% had address lines 1/2
+  * ⚠ ~85% had street (*Endereço*) / building (*Número*) / overflow
+    (*Complemento*) fields
+  * The overflow fields were broken down (as % of all forms)
+    * ~31% asked for overflow + landmark in one field
+    * ~15% asked for overflow / landmark (*Referência*) in two fields
+    * ~39% only asked for overflow
+* Germany
+  * \>500 address forms reviewed
+  * ~21% had a single address line
+  * ~34% had address lines 1/2
+  * ⚠ ~42% had street (*Straße*) / building (*Hausnummer*) fields
+  * ⚠ ~24% had an overflow field (*Adresszusatz*) (paired with street/building).
+* Mexico
+  * \>500 address forms reviewed
+  * ~15% had a single address line
+  * ~53% had address lines 1/2
+  * ⚠ ~26% had street (*Calle*) / building (*Número exterior*) / unit (*Número interior*) fields
+  * ⚠ ~9% had a landmark field (*Referencias*)
+  * ⚠ ~7% had cross street fields (⅔ as a single field, ⅓ split into two fields) (*Entre calles*)
+* Netherlands
+  * 40 address forms reviewed
+  * 7.5% had a single address line
+  * 10% had address lines 1/2
+  * ⚠ 52.5% street name (*Straat*) / house number (*Huisnummer*) / extension (*Huisnummer toevoeging*) - (sometimes the street name was omitted and derived from the postal code)
+  * ⚠ 30% had street name (*Straat*) / house number (*Huisnummer*) but wanted the extension to be entered in house number field
+* Spain
+  * 39 address forms reviewed
+  * 15% had a single address line
+  * 48% had address lines 1/2
+  * ⚠ 18% had very detailed information (English descriptions originate from Gemini Advanced):
+    * *Número* (Number): The street number of the building.
+    * *Bloque/Edificio* (Block/Building): Some complexes have multiple buildings. This field identifies the specific building within the complex.
+    * *Escalera* (Stairway): Larger buildings might have several stairways or entrances. This field indicates which stairway leads to the residence.
+    * *Piso* (Floor): The floor on which the residence is located.
+    * *Puerta* (Door): The specific door or apartment number.
+  * ⚠ 13% had street name / house number / "other information" fields
+  * ⚠ 5% had street name / house number + floor + apt fields
+* Belgium
+  * 34 address forms reviewed
+  * 6% had a single address line
+  * 24% had address lines 1/2
+  * ⚠ 9% had street name / building
+  * ⚠ 56% had street name (*Straat / Rue*) / Building (*Huisnummer / Numéro*) / mailbox number (*Bus / Boîte*) fields
+  ⚠ * 12% (of all forms) contained also a *Toevoeging* (see Netherlands)
+  * N.b.: A *Bus / Boîte* is often a single digit number or single character or a combination of these.
+* Chile
+  * 43 address forms reviewed
+  * 7% had a single address line
+  * 7% had address lines 1/2
+  * ⚠ 58% had street (*Nombre de Calle*) / building (*Número de Calle*) / unit (*Dpto/Piso*) fields
+  * ⚠ 21% had street / building / overflow fields
+  * Note that it was not fully clear where the third field should be filled with a single number (2A seems to be the canonical example for floor and apartment) or with the full text of an overflow field (“Depto 2A”).
+* Colombia
+  * 40 address forms reviewed
+  * 15% had a single address line
+  * 60% had address lines 1/2
+  * ⚠ 23% had the following format (five fields): "\<Tipo de via (e.g. Carrera)\> \<street\> # \<cross-street\> - \<distance from intersection in meter\>, \<apartment number\>”
+    * Streets are numeric identifiers (e.g., 12) sometimes joined with a character (e.g., 12b). Natives will probably think of "\<cross-street\> - \<distance from intersection in m\>" as their house number.
+    * Internally the fields were sometimes named numero-1, numero-2, numbero-3
+    * These fields are typically accompanied by an apartment number
+* Indonesia
+  * 32 address forms reviewed
+  * 69% had a single address line (*Alamat*)
+  * 31% had address lines 1/2
+* Philippines
+  * 25 address forms reviewed
+  * 44% had a single address line
+  * 56% had address lines 1/2
+* Taiwan
+  * It was very hard to reach checkout forms as most are gated by a check of your phone number. 7 address forms contained only a single address line or address lines 1/2 but it’s possible that this is a non-representative sample.
+* Turkey
+  * 31 address forms reviewed
+  * 67% had a single address line
+  * 16% had address lines 1/2
+  * ⚠ 6.5% had a field for street + house number, followed by 3 separate fields for building / floor / apartment
+  * ⚠ 10% had a field for street and a field for building + apartment
+* Vietnam
+  * 10 address forms reviewed
+  * 100% had a single address line
+
+The data indicates that there are several countries (Brazil, Germany, Mexico,
+Netherlands, Spain, Belgium, Colombia) where many address forms are not well
+supported by the `autocomplete` attribute today and other countries (Indonesia,
+Philippines, Vietnam) where the `autocomplete` attribute is a good fit to
+address forms.
 
 ## Goals and principles
 
