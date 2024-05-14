@@ -13,6 +13,8 @@ formatting-rules:
 
   street-address-alternative-1:
   - building-location
+  - separator: "\n"
+  - address-overflow
 
   building-location:
   - street
@@ -44,6 +46,7 @@ examples:
     building: 9
     unit: 10
     building-and-unit: 9/10
+    address-overflow: Nějaké doplňující informace
     locality1: Warsaw
     postal-code: 01-001
     country: PL
@@ -54,6 +57,7 @@ examples:
       show: true
       text: |
         ul. Warsaw 9/10
+        Nějaké doplňující informace
         01-001 Warsaw
         Polska
 
@@ -64,6 +68,7 @@ examples:
     street: ul. Warsaw
     building: 9
     building-and-unit: 9
+    address-overflow: floor 5 apt 7
     locality1: Warsaw
     postal-code: 01-001
     country: PL
@@ -74,5 +79,6 @@ examples:
       show: true
       text: |
         ul. Warsaw 9
+        floor 5 apt 7
         01-001 Warsaw
         Polska
