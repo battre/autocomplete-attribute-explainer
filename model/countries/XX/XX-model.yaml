@@ -3,19 +3,7 @@ cut-off-tokens:
   - additional-name
   - honorific-suffix
   - organization-title
-  - locality3
-  - locality4
-  - admin-area3
-  - admin-area4
-  - locality3
-  - locality4
-  - cross-streets
-  - entrance
-  - staircase
-  - care-of
-  - address-overflow
-  - landmark
-  - delivery-instructions
+
 cut-off-children:  # don't expose nodes below these levels
   - street
   - building
@@ -24,3 +12,17 @@ extra-definitions:
   in-building-location:
   - floor
   - unit-name
+  street-address-alternative-1:
+  - building-location
+  - in-building-location
+  address:
+  - street-address
+  - street-address-alternative-1
+  - locality1 
+  - locality2
+  - admin-area1
+  - admin-area2
+  - postal-code
+  - sorting-code
+  - country
+  - country-name

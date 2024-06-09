@@ -12,6 +12,7 @@ formatting-rules:
   - separator: "\n"
   # {country}
   - country-name
+  - skip: sorting-code
   - skip: country  # redundant with country-name
   - skip: street-address  # redundant with street-address-alternative-1
 
