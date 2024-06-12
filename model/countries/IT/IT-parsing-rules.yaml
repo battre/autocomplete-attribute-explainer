@@ -1,0 +1,172 @@
+regex_definitions:
+  kBuildingValueRe:  # Regex for type "building"
+    regex_concat:
+      parts:
+      - regex_fragment: \d+  # House number
+      # Optional suffix for building ids with a letter suffix, e.g. 12a.
+      - regex_fragment: '(?:'
+      # Single character suffix (e.g. "12 a" and "12a")
+      - regex_fragment: \s*[[:alpha:]]\b
+      - regex_fragment: '|'
+      # House number range (e.g. "10 / 12", "10/12", "10 - 12", "10-12")
+      - regex_fragment: \s*[\/-]\s*\d+
+      - regex_fragment: ')?'
+      wrap_non_capture: false
+
+  # Regular expression to match the prefixes that indicate a house number.
+  kHouseNumberOptionalPrefixRe:
+    regex_fragment: '(?:(?:no|nr|°|º|numero)[-.\s]*)?'
+
+capture_definitions:
+  ParseBuildingLocation:
+    capture:
+      output: building-location
+      parts:
+      # We only search for building locations at the beginning a field.
+      - capture_reference: AnchorToBeginningOfInput
+      - capture:
+          output: street
+          parts: [ {regex_reference: kMultipleLazyWordsRe} ]
+      - separator: {regex_reference: kCommaOrWhitespaceSeparator}
+      - capture:
+          output: building
+          prefix: {regex_reference: kHouseNumberOptionalPrefixRe}
+          parts: [ {regex_reference: kBuildingValueRe} ]
+
+  StreetAddressDecomposition:
+    capture:
+      output: street-address-alternative-1
+      parts:
+      - capture_reference: ParseBuildingLocation
+      - separator: {regex_reference: kCommaOrWhitespaceSeparator}
+      - capture:
+          output: address-overflow
+          parts: [ {regex_fragment: '(?:[^\r\n]+)'} ]
+          quantifier: MATCH_OPTIONAL
+
+
+parsing_definitions:
+  building-location:
+    decomposition:
+      capture_reference: ParseBuildingLocation
+  street-address-alternative-1:
+    decomposition:
+      capture_reference: StreetAddressDecomposition
+
+test_parsing_definitions:
+- id: "Test 1"
+  type: building-location
+  input: "Via Nazionale 50"
+  output:
+    street: "Via Nazionale"
+    building: "50"
+- id: "Test 2"
+  type: building-location
+  input: "Via Nazionale 73a"
+  output:
+    street: "Via Nazionale"
+    building: "73a"
+- id: "Test 3"
+  type: building-location
+  input: "Via Nazionale, 73a"
+  output:
+    street: "Via Nazionale"
+    building: "73a"
+- id: "Test 4"
+  type: building-location
+  input: "Via Nazionale no 73a"
+  output:
+    street: "Via Nazionale"
+    building: "73a"
+- id: "Test 5"
+  type: building-location
+  input: "Via Nazionale °50"
+  output:
+    street: "Via Nazionale"
+    building: "50"
+- id: "Test 6"
+  type: building-location
+  input: "Via Nazionale numero 50"
+  output:
+    street: "Via Nazionale"
+    building: "50"
+- id: "Test 7"
+  type: street-address-alternative-1
+  input: "Corso Vittorio Emanuele II 30"
+  output:
+    street: "Corso Vittorio Emanuele II"
+    building: "30"
+    building-location: "Corso Vittorio Emanuele II 30"
+    address-overflow: ""
+- id: "Test 8"
+  type: street-address-alternative-1
+  input: "Corso Vittorio Emanuele II, 30"
+  output:
+    street: "Corso Vittorio Emanuele II"
+    building: "30"
+    building-location: "Corso Vittorio Emanuele II, 30"
+    address-overflow: ""
+- id: "Test 9"
+  type: street-address-alternative-1
+  input: "Corso Vittorio Emanuele II 30 Scala A Interno 4"
+  output:
+    street: "Corso Vittorio Emanuele II"
+    building: "30"
+    building-location: "Corso Vittorio Emanuele II 30"
+    address-overflow: "Scala A Interno 4"
+- id: "Test 10"
+  type: street-address-alternative-1
+  input: "Corso Vittorio Emanuele II 30, Scala A Interno 4"
+  output:
+    street: "Corso Vittorio Emanuele II"
+    building: "30"
+    building-location: "Corso Vittorio Emanuele II 30"
+    address-overflow: "Scala A Interno 4"
+- id: "Test 11"
+  type: street-address-alternative-1
+  input: "Corso Vittorio Emanuele II 30, Scala A, Interno 4"
+  output:
+    street: "Corso Vittorio Emanuele II"
+    building: "30"
+    building-location: "Corso Vittorio Emanuele II 30"
+    address-overflow: "Scala A, Interno 4"
+- id: "Test 12"
+  type: street-address-alternative-1
+  input: "Piazza Roma 15, Appartamento 3"
+  output:
+    street: "Piazza Roma"
+    building: "15"
+    building-location: "Piazza Roma 15"
+    address-overflow: "Appartamento 3"
+- id: "Test 13"
+  type: street-address-alternative-1
+  input: "Piazza Roma numero 73 Palazzo 12, Piano 3"
+  output:
+    street: "Piazza Roma"
+    building: "73"
+    building-location: "Piazza Roma numero 73"
+    address-overflow: "Palazzo 12, Piano 3"
+- id: "Test 14"
+  type: street-address-alternative-1
+  input: "Piazza Roma nr 73"
+  output:
+    street: "Piazza Roma"
+    building: "73"
+    building-location: "Piazza Roma nr 73"
+    address-overflow: ""
+- id: "Test 15"
+  type: street-address-alternative-1
+  input: "Casella Postale 1234 abcdefg"
+  output:
+    street: "Casella Postale"
+    building: "1234"
+    building-location: "Casella Postale 1234"
+    address-overflow: "abcdefg"
+- id: "Test 16"
+  type: street-address-alternative-1
+  input: "Casella Postale, 1234 abcdefg"
+  output:
+    street: "Casella Postale"
+    building: "1234"
+    building-location: "Casella Postale, 1234"
+    address-overflow: "abcdefg"
