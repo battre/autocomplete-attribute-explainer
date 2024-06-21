@@ -26,6 +26,25 @@ regex_definitions:
     regex_fragment: (?:^|[/\s]+)
 
 capture_definitions:
+  ParseStreetAddressWithOverflow:
+    capture: 
+      output: street-address-alternative-1
+      parts:
+        - capture_reference: ParseBuildingLocation
+        - regex_fragment: '\n'
+        - capture:
+            output: address-overflow
+            # Matches any non-empty string, including new-line characters.
+            parts: [ {regex_fragment: '[\s\S]+'} ]
+            quantifier: MATCH_REQUIRED
+
+  ParseStreetAddressWithoutOverflow:
+    capture: 
+      output: street-address-alternative-1
+      parts:
+        - capture_reference: ParseBuildingLocation
+
+
   ParseBuildingLocation:
     capture:
       output: building-location
@@ -43,6 +62,7 @@ capture_definitions:
                 parts: [ {regex_reference: kBuildingValueRe} ]
             - separator: {regex_reference: kHouseNumberAndUnitSeparator} 
             - capture_reference: ParseUnitWithOptionalPrefix
+
 
   ParseUnitWithOptionalPrefix:
     capture:
@@ -65,11 +85,10 @@ parsing_definitions:
       capture_reference: ParseBuildingLocation
 
   street-address-alternative-1:
-    decomposition:
-      capture: 
-        output: street-address-alternative-1
-        parts:
-        - capture_reference: ParseBuildingLocation
+    decomposition_cascade:
+      alternatives:
+      - decomposition: {capture_reference: ParseStreetAddressWithOverflow}
+      - decomposition: {capture_reference: ParseStreetAddressWithoutOverflow}
 
   building-and-unit:
     decomposition:
@@ -223,3 +242,35 @@ test_parsing_definitions:
     unit: "m.10"
     unit-type: "m."
     unit-name: "10"
+- id: "Test 15"
+  type: street-address-alternative-1
+  input: "ul. Warsaw 9A\nthird entrance of building"
+  output:
+    street-address-alternative-1: "ul. Warsaw 9A\nthird entrance of building"  
+    building-location: "ul. Warsaw 9A" 
+    street: "Warsaw"
+    building-and-unit: "9A"
+    building: "9A"
+    address-overflow: "third entrance of building"
+- id: "Test 16"
+  type: street-address-alternative-1
+  input: "ul. Warsaw 9\nthird entrance of building"
+  output:
+    street-address-alternative-1: "ul. Warsaw 9\nthird entrance of building"  
+    building-location: "ul. Warsaw 9" 
+    street: "Warsaw"
+    building-and-unit: "9"
+    building: "9"
+    address-overflow: "third entrance of building"
+- id: "Test 17"
+  type: street-address-alternative-1
+  input: "ul. Warsaw 9/10\nNějaké doplňující informace"
+  output:
+    street-address-alternative-1: "ul. Warsaw 9\nNějaké doplňující informace"  
+    building-location: "ul. Warsaw 9/10" 
+    street: "Warsaw"
+    building-and-unit: "9/10"
+    building: "9"
+    unit: "10"
+    unit-name: "10"
+    address-overflow: "Nějaké doplňující informace"
