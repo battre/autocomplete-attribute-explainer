@@ -203,7 +203,7 @@
   <div class="layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
     <header class="header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
       <div class="mdl-layout__header-row">
-        <span class="mdl-layout-title">Country: CA</span>
+        <span class="mdl-layout-title">Country: FR</span>
       </div>
     </header>
     <div class="mdl-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
@@ -236,7 +236,7 @@
           
           <span>BR</span></a>
         
-        <a class="mdl-navigation__link current"
+        <a class="mdl-navigation__link "
           href="CA.html">
           
           <span class="mdl-color-text--blue-grey-400 material-icons"
@@ -254,7 +254,7 @@
           
           <span>DE</span></a>
         
-        <a class="mdl-navigation__link "
+        <a class="mdl-navigation__link current"
           href="FR.html">
           
           <span class="mdl-color-text--blue-grey-400 material-icons"
@@ -354,8 +354,24 @@
   <div class="concept-id">
     
     
+    <a href="#honorific-prefix">honorific-prefix</a>
+    - Honorific prefix
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
     <a href="#given-name">given-name</a>
-    - First name
+    - Given namen (in Western cultures the first name)
       
         
       
@@ -371,7 +387,7 @@
     
     
     <a href="#additional-name">additional-name</a>
-    - Middle name
+    - Additional given name (in Western cultures the middle name)
       
         
       
@@ -387,7 +403,7 @@
     
     
     <a href="#family-name">family-name</a>
-    - Last name
+    - Family name (in Western cultures the last name)
       
         
       
@@ -427,7 +443,7 @@
     
     
     <a href="#street-address">street-address</a>
-    - Street address (street name, house number, apartment)
+    - Street address (street and location within the street)
       
         
       
@@ -513,8 +529,104 @@
   <div class="concept-id">
     
     
+    <a href="#street-address-alternative-1">street-address-alternative-1</a>
+    - Artificial concept, not to be used in HTML; this is a structured representation of a street address
+
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#building-location">building-location</a>
+    - Name of a street and identifier for the building
+      
+        
+      
+    
+  </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#street">street</a>
+    - Name of a street
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#building">building</a>
+    - House number (in a street or block) or name of a building.
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#address-overflow">address-overflow</a>
+    - An overflow field for information that is not captured differently in a form
+
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
     <a href="#locality1">locality1</a>
-    - City
+    - Biggest sub type of a locality, often a city
       
         
       
@@ -530,7 +642,7 @@
     
     
     <a href="#admin-area1">admin-area1</a>
-    - State
+    - Biggest type of admin area if a country has multiple levels
       
         
       
@@ -1038,279 +1150,6 @@
     <div>&nbsp;</div>
     
   </div>
-</div>
-
-<div class="mdl-card mdl-shadow--2dp" style="width: 95%; margin: 8px">
-  <div class="mdl-card__title">
-    <h2 class="mdl-card__title-text">Example addresses</h2>
-  </div>
-  <div class="mdl-card__actions mdl-card--border">
-    <table class="formatting_example_overview_table">
-      
-      
-<tr>
-  <td colspan="2">
-    <b>name</b>: This is an example of a name specified by the most granular tokens.
-
-  </td>
-</tr>
-<tr>
-  <th>Input</th>
-  <th>Output</th>
-</tr>
-<tr>
-  <td valign="top">
-    <table>
-      
-        
-      
-        
-        <tr>
-          <td>given-name</td><td><pre style="margin:0">William</pre></td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>additional-name</td><td><pre style="margin:0">Edward</pre></td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>family-name</td><td><pre style="margin:0">Trudeau</pre></td>
-        </tr>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </table>
-  </td>
-  <td valign="top">
-    
-      Output for "name":<br>
-      <pre class="formatting_example_textbox">William Edward Trudeau</pre>
-      
-      
-    
-  </td>
-</tr>
-<tr>
-  <td span="2">
-    &nbsp;
-  </td>
-</tr>
-
-      
-      
-<tr>
-  <td colspan="2">
-    <b>address</b>: This is an example of a full address in the Canada specified by the most
-granular tokens.
-
-  </td>
-</tr>
-<tr>
-  <th>Input</th>
-  <th>Output</th>
-</tr>
-<tr>
-  <td valign="top">
-    <table>
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-        <tr>
-          <td>address-line1</td><td><pre style="margin:0">123 Main Street</pre></td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>address-line2</td><td><pre style="margin:0">Apt. 306</pre></td>
-        </tr>
-        
-      
-        
-      
-        
-      
-        
-        <tr>
-          <td>locality1</td><td><pre style="margin:0">Ottawa</pre></td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>admin-area1</td><td><pre style="margin:0">ON</pre></td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>postal-code</td><td><pre style="margin:0">M5H 2J9</pre></td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>country</td><td><pre style="margin:0">CA</pre></td>
-        </tr>
-        
-      
-        
-        <tr>
-          <td>country-name</td><td><pre style="margin:0">Canada</pre></td>
-        </tr>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </table>
-  </td>
-  <td valign="top">
-    
-      Output for "address":<br>
-      <pre class="formatting_example_textbox">123 Main Street
-Apt. 306
-Ottawa, ON M5H 2J9
-Canada</pre>
-      
-      
-    
-  </td>
-</tr>
-<tr>
-  <td span="2">
-    &nbsp;
-  </td>
-</tr>
-
-      
-    </table>
-  </div>
 </div><div class="mdl-card mdl-shadow--2dp" style="width: 95%; margin: 8px">
   <div class="mdl-card__title">
     <h2 class="mdl-card__title-text">Details</h2>
@@ -1333,6 +1172,11 @@ Full name
 
   <li>
     
+    <a href="#honorific-prefix">honorific-prefix</a>
+  </li>
+
+  <li>
+    
     <a href="#given-name">given-name</a>
   </li>
 
@@ -1349,23 +1193,16 @@ Full name
 </ul>
 </div>
 
+</div><h3 id="honorific-prefix">
+  <a href="#honorific-prefix">#</a>
+  
+  honorific-prefix
+</h3>
+<div style="margin-left: 20px;">
+
+Honorific prefix
 
 
-
-
-
-
-<h4>Formatting:</h4>
-<div>
-<span class="formatting_token">name</span> =
-<span class="formatting_token">given-name</span><span class="formatting_token">additional-name</span><span class="formatting_token">family-name</span>
-</div>
-
-<h5>Flattened formatting:</h5>
-<div>
-<span class="formatting_token">name</span> =<br>
-<span class="formatting_token">given-name</span><span class="formatting_token">additional-name</span><span class="formatting_token">family-name</span>
-</div>
 
 </div><h3 id="given-name">
   <a href="#given-name">#</a>
@@ -1374,7 +1211,7 @@ Full name
 </h3>
 <div style="margin-left: 20px;">
 
-First name
+Given namen (in Western cultures the first name)
 
 
 
@@ -1385,7 +1222,7 @@ First name
 </h3>
 <div style="margin-left: 20px;">
 
-Middle name
+Additional given name (in Western cultures the middle name)
 
 
 
@@ -1396,7 +1233,7 @@ Middle name
 </h3>
 <div style="margin-left: 20px;">
 
-Last name
+Family name (in Western cultures the last name)
 
 
 
@@ -1418,6 +1255,11 @@ Address of a physical location - Artificial concept, not to be used in HTML
   <li>
     
     <a href="#street-address">street-address</a>
+  </li>
+
+  <li>
+    
+    <a href="#street-address-alternative-1">street-address-alternative-1</a>
   </li>
 
   <li>
@@ -1448,24 +1290,6 @@ Address of a physical location - Artificial concept, not to be used in HTML
 </ul>
 </div>
 
-
-
-
-
-
-
-<h4>Formatting:</h4>
-<div>
-<span class="formatting_token">address</span> =
-<span class="formatting_token">street-address</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">locality1</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area1</span><span class="formatting_token">postal-code</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">country-name</span>
-</div>
-
-<h5>Flattened formatting:</h5>
-<div>
-<span class="formatting_token">address</span> =<br>
-<span class="formatting_token">address-line1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">address-line2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">address-line3</span><span class="formatting_token_separator"><br></span><span class="formatting_token">address-line4</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality1</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area1</span><span class="formatting_token">postal-code</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country-name</span>
-</div>
-
 </div><h3 id="street-address">
   <a href="#street-address">#</a>
   
@@ -1473,7 +1297,7 @@ Address of a physical location - Artificial concept, not to be used in HTML
 </h3>
 <div style="margin-left: 20px;">
 
-Street address (street name, house number, apartment)
+Street address (street and location within the street)
 
 
 
@@ -1502,24 +1326,6 @@ Street address (street name, house number, apartment)
   </li>
 
 </ul>
-</div>
-
-
-
-
-
-
-
-<h4>Formatting:</h4>
-<div>
-<span class="formatting_token">street-address</span> =
-<span class="formatting_token">address-line1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">address-line2</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">address-line3</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">address-line4</span>
-</div>
-
-<h5>Flattened formatting:</h5>
-<div>
-<span class="formatting_token">street-address</span> =<br>
-<span class="formatting_token">address-line1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">address-line2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">address-line3</span><span class="formatting_token_separator"><br></span><span class="formatting_token">address-line4</span>
 </div>
 
 </div><h3 id="address-line1">
@@ -1566,6 +1372,97 @@ Street address (street name, house number, apartment)
 
 
 
+</div><h3 id="street-address-alternative-1">
+  <a href="#street-address-alternative-1">#</a>
+  
+  street-address-alternative-1
+</h3>
+<div style="margin-left: 20px;">
+
+Artificial concept, not to be used in HTML; this is a structured representation of a street address
+
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    
+    <a href="#building-location">building-location</a>
+  </li>
+
+  <li>
+    
+    <a href="#address-overflow">address-overflow</a>
+  </li>
+
+</ul>
+</div>
+
+</div><h3 id="building-location">
+  <a href="#building-location">#</a>
+  
+  building-location
+</h3>
+<div style="margin-left: 20px;">
+
+Name of a street and identifier for the building
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    
+    <a href="#street">street</a>
+  </li>
+
+  <li>
+    
+    <a href="#building">building</a>
+  </li>
+
+</ul>
+</div>
+
+</div><h3 id="street">
+  <a href="#street">#</a>
+  
+  street
+</h3>
+<div style="margin-left: 20px;">
+
+Name of a street
+
+
+
+</div><h3 id="building">
+  <a href="#building">#</a>
+  
+  building
+</h3>
+<div style="margin-left: 20px;">
+
+House number (in a street or block) or name of a building.
+
+
+
+</div><h3 id="address-overflow">
+  <a href="#address-overflow">#</a>
+  
+  address-overflow
+</h3>
+<div style="margin-left: 20px;">
+
+An overflow field for information that is not captured differently in a form
+
+
+
+
 </div><h3 id="locality1">
   <a href="#locality1">#</a>
   
@@ -1573,7 +1470,7 @@ Street address (street name, house number, apartment)
 </h3>
 <div style="margin-left: 20px;">
 
-City
+Biggest sub type of a locality, often a city
 
 
 
@@ -1584,7 +1481,7 @@ City
 </h3>
 <div style="margin-left: 20px;">
 
-State
+Biggest type of admin area if a country has multiple levels
 
 
 
@@ -1713,24 +1610,6 @@ Full name of credit card holder
 </ul>
 </div>
 
-
-
-
-
-
-
-<h4>Formatting:</h4>
-<div>
-<span class="formatting_token">cc-name</span> =
-<span class="formatting_token">cc-given-name</span><span class="formatting_token">cc-additional-name</span><span class="formatting_token">cc-family-name</span>
-</div>
-
-<h5>Flattened formatting:</h5>
-<div>
-<span class="formatting_token">cc-name</span> =<br>
-<span class="formatting_token">cc-given-name</span><span class="formatting_token">cc-additional-name</span><span class="formatting_token">cc-family-name</span>
-</div>
-
 </div><h3 id="cc-given-name">
   <a href="#cc-given-name">#</a>
   
@@ -1803,24 +1682,6 @@ Credit card expiration date in format MM/YY
 </ul>
 </div>
 
-
-
-
-
-
-
-<h4>Formatting:</h4>
-<div>
-<span class="formatting_token">cc-exp-MMYY</span> =
-<span class="formatting_token">cc-exp-MM</span><span class="formatting_token_separator">/</span><span class="formatting_token">cc-exp-YY</span>
-</div>
-
-<h5>Flattened formatting:</h5>
-<div>
-<span class="formatting_token">cc-exp-MMYY</span> =<br>
-<span class="formatting_token">cc-exp-MM</span><span class="formatting_token_separator">/</span><span class="formatting_token">cc-exp-YY</span>
-</div>
-
 </div><h3 id="cc-exp-MM">
   <a href="#cc-exp-MM">#</a>
   
@@ -1869,24 +1730,6 @@ Credit card expiration date in format MM/YYYY
   </li>
 
 </ul>
-</div>
-
-
-
-
-
-
-
-<h4>Formatting:</h4>
-<div>
-<span class="formatting_token">cc-exp-MMYYYY</span> =
-<span class="formatting_token">cc-exp-MM</span><span class="formatting_token_separator">/</span><span class="formatting_token">cc-exp-YYYY</span>
-</div>
-
-<h5>Flattened formatting:</h5>
-<div>
-<span class="formatting_token">cc-exp-MMYYYY</span> =<br>
-<span class="formatting_token">cc-exp-MM</span><span class="formatting_token_separator">/</span><span class="formatting_token">cc-exp-YYYY</span>
 </div>
 
 </div><h3 id="cc-exp-YYYY">
@@ -1955,24 +1798,6 @@ Full telephone number
 </ul>
 </div>
 
-
-
-
-
-
-
-<h4>Formatting:</h4>
-<div>
-<span class="formatting_token">tel</span> =
-<span class="formatting_token_prefix">+</span><span class="formatting_token">tel-country-code</span><span class="formatting_token">tel-national</span><span class="formatting_token_separator">-</span><span class="formatting_token">tel-extension</span>
-</div>
-
-<h5>Flattened formatting:</h5>
-<div>
-<span class="formatting_token">tel</span> =<br>
-<span class="formatting_token_prefix">+</span><span class="formatting_token">tel-country-code</span><span class="formatting_token">tel-area-code</span><span class="formatting_token">tel-local-prefix</span><span class="formatting_token">tel-local-suffix</span><span class="formatting_token_separator">-</span><span class="formatting_token">tel-extension</span>
-</div>
-
 </div><h3 id="tel-country-code">
   <a href="#tel-country-code">#</a>
   
@@ -2011,24 +1836,6 @@ Telephone number without the county code component, with a country-internal pref
   </li>
 
 </ul>
-</div>
-
-
-
-
-
-
-
-<h4>Formatting:</h4>
-<div>
-<span class="formatting_token">tel-national</span> =
-<span class="formatting_token">tel-area-code</span><span class="formatting_token">tel-local</span>
-</div>
-
-<h5>Flattened formatting:</h5>
-<div>
-<span class="formatting_token">tel-national</span> =<br>
-<span class="formatting_token">tel-area-code</span><span class="formatting_token">tel-local-prefix</span><span class="formatting_token">tel-local-suffix</span>
 </div>
 
 </div><h3 id="tel-area-code">
@@ -2070,24 +1877,6 @@ Telephone number without the country code and area code components
   </li>
 
 </ul>
-</div>
-
-
-
-
-
-
-
-<h4>Formatting:</h4>
-<div>
-<span class="formatting_token">tel-local</span> =
-<span class="formatting_token">tel-local-prefix</span><span class="formatting_token">tel-local-suffix</span>
-</div>
-
-<h5>Flattened formatting:</h5>
-<div>
-<span class="formatting_token">tel-local</span> =<br>
-<span class="formatting_token">tel-local-prefix</span><span class="formatting_token">tel-local-suffix</span>
 </div>
 
 </div><h3 id="tel-local-prefix">
