@@ -1,0 +1,19 @@
+cut-off-children:
+  - family-name
+  - street
+  - building
+
+cut-off-tokens:
+  - honorific-suffix
+  - organization-title
+  - admin-area2
+  - admin-area3
+  - admin-area4
+  - locality2
+  - locality3
+  - locality4
+
+extra-definitions:
+  street-address-alternative-1:
+  - building-location
+  - address-overflow
