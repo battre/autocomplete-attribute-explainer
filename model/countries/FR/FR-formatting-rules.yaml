@@ -2,8 +2,6 @@ formatting-rules:
   address:
   - street-address-alternative-1
   - separator: "\n"
-  - admin-area1
-  - separator: "\n"
   - postal-code
   - separator: " "
   - locality1
@@ -11,6 +9,7 @@ formatting-rules:
   - country-name
   - skip: country  # redundant with country-name
   - skip: street-address  # redundant with street-address-alternative-1
+  - skip: admin-area1  # redundant with postal-code
 
   street-address-alternative-1:
   - address-overflow
@@ -53,6 +52,5 @@ examples:
       text: |
         Appartament 36
         1661 Place Charles de Gaulle
-        Nord-Pas-de-Calais
         59491 Villeneuve-d'ascq
         France
