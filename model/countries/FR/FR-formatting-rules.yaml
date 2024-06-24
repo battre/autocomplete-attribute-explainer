@@ -1,0 +1,56 @@
+formatting-rules:
+  address:
+  - street-address-alternative-1
+  - separator: "\n"
+  - postal-code
+  - separator: " "
+  - locality1
+  - separator: "\n"
+  - country-name
+  - skip: country  # redundant with country-name
+  - skip: street-address  # redundant with street-address-alternative-1
+  - skip: admin-area1  # redundant with postal-code
+
+  street-address-alternative-1:
+  - address-overflow
+  - separator: "\n"
+  - building-location
+
+  building-location:
+  - building
+  - separator: " "
+  - street
+
+examples:
+- id: name
+  comment: |
+    This is an example of a name.
+  attributes:
+    given-name: Jacques
+    family-name: Martin
+  output:
+    name:
+      show: true
+      text: Jacques Martin
+
+- id: address
+  comment: |
+    This is an example of a full address in France.
+  attributes:
+    street: Place Charles de Gaulle
+    building: 1661
+    address-overflow: Appartament 36
+    locality1: Villeneuve-d'ascq
+    postal-code: 59491
+    admin-area1: Nord-Pas-de-Calais
+    country: FR
+    country-name: France
+
+  output:
+    address:
+      show: true
+      text: |
+        Appartament 36
+        1661 Place Charles de Gaulle
+        59491 Villeneuve-d'ascq
+        France
