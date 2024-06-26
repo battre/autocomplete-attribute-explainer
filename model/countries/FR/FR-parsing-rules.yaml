@@ -22,8 +22,6 @@ capture_definitions:
     capture:
       output: building-location
       parts:
-      # We only search for building locations at the beginning a field.
-      # - capture_reference: AnchorToBeginningOfInput
       - capture:
           output: building
           prefix: {regex_reference: kHouseNumberOrNameOptionalPrefixRe}
