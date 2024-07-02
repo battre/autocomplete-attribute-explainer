@@ -1,0 +1,147 @@
+regex_definitions:
+  kBuildingValueRe:  # Regex for type "building"
+    regex_concat:
+      parts:
+      - regex_fragment: \d+  # House number
+      # Optional suffix for building ids with a letter suffix, e.g. 12a.
+      - regex_fragment: '(?:'
+      # Single character suffix (e.g. "12 a" and "12a")
+      - regex_fragment: \s*[[:alpha:]]\b
+      - regex_fragment: '|'
+      # House number range (e.g. "10 / 12", "10/12", "10 - 12", "10-12")
+      - regex_fragment: \s*[\/-]\s*\d+
+      - regex_fragment: ')?'
+      wrap_non_capture: false
+
+  # Regular expression to match the prefixes that indicate a house number or name.
+  kHouseNumberOrNameOptionalPrefixRe:
+    regex_fragment: '(?:(?:no|nr|°|º|numéro)[-.\s]*)?'
+
+capture_definitions:
+  ParseBuildingLocation:
+    capture:
+      output: building-location
+      parts:
+      - capture:
+          output: building
+          prefix: {regex_reference: kHouseNumberOrNameOptionalPrefixRe}
+          parts: [ {regex_reference: kBuildingValueRe} ]
+      - separator: {regex_reference: kCommaOrWhitespaceSeparator}
+      - capture:
+          output: street
+          parts: [ {regex_reference: kMultipleLazyWordsRe} ]
+
+
+  StreetAddressDecomposition:
+    capture:
+      output: street-address-alternative-1
+      parts:
+      - capture:
+          output: address-overflow
+          parts: [ {regex_fragment: '(?:[^,\r\n]+)'} ]
+          quantifier: MATCH_OPTIONAL
+      - separator: {regex_reference: kCommaOrWhitespaceSeparator}
+      - capture_reference: ParseBuildingLocation
+
+
+
+parsing_definitions:
+  building-location:
+    decomposition:
+      capture_reference: ParseBuildingLocation
+  street-address-alternative-1:
+    decomposition:
+      capture_reference: StreetAddressDecomposition
+
+test_parsing_definitions:
+- id: "Test 1"
+  type: building-location
+  input: "1661 Place Charles de Gaulle"
+  output:
+    street: "Place Charles de Gaulle"
+    building: "1661"
+- id: "Test 2"
+  type: building-location
+  input: "58 rue du Gue Jacquet"
+  output:
+    street: "rue du Gue Jacquet"
+    building: "58"
+- id: "Test 3"
+  type: street-address-alternative-1
+  input: "58 rue du Gue Jacquet"
+  output:
+    street-address-alternative-1: "58 rue du Gue Jacquet"
+    building-location: "58 rue du Gue Jacquet"
+    street: "rue du Gue Jacquet"
+    building: "58"
+- id: "Test 4"
+  type: street-address-alternative-1
+  input: "1661 Place Charles de Gaulle"
+  output:
+    street-address-alternative-1: "1661 Place Charles de Gaulle"
+    building-location: "1661 Place Charles de Gaulle"
+    street: "Place Charles de Gaulle"
+    building: "1661"
+- id: "Test 5"
+  type: street-address-alternative-1
+  input: "Appartement 36\n1661 Place Charles de Gaulle"
+  output:
+    street-address-alternative-1: "Appartement 36\n1661 Place Charles de Gaulle"
+    building-location: "1661 Place Charles de Gaulle"
+    street: "Place Charles de Gaulle"
+    building: "1661"
+    address-overflow: "Appartement 36"
+- id: "Test 6"
+  type: street-address-alternative-1
+  input: "Appartement 1\n58 rue du Gue Jacquet"
+  output:
+    street-address-alternative-1: "Appartement 1\n58 rue du Gue Jacquet"
+    building-location: "58 rue du Gue Jacquet"
+    street: "rue du Gue Jacquet"
+    building: "58"
+    address-overflow: "Appartement 1"
+- id: "Test 7"
+  type: street-address-alternative-1
+  input: "Appartement 36, 1661 Place Charles de Gaulle"
+  output:
+    street-address-alternative-1: "Appartement 36, 1661 Place Charles de Gaulle"
+    building-location: "1661 Place Charles de Gaulle"
+    street: "Place Charles de Gaulle"
+    building: "1661"
+    address-overflow: "Appartement 36"
+- id: "Test 8"
+  type: street-address-alternative-1
+  input: "Appartement 1, 58 rue du Gue Jacquet"
+  output:
+    street-address-alternative-1: "Appartement 1, 58 rue du Gue Jacquet"
+    building-location: "58 rue du Gue Jacquet"
+    street: "rue du Gue Jacquet"
+    building: "58"
+    address-overflow: "Appartement 1"
+- id: "Test 9"
+  type: street-address-alternative-1
+  input: "App 1, 58 rue du Gue Jacquet"
+  output:
+    street-address-alternative-1: "App 1, 58 rue du Gue Jacquet"
+    building-location: "58 rue du Gue Jacquet"
+    street: "rue du Gue Jacquet"
+    building: "58"
+    address-overflow: "App 1"
+- id: "Test 10"
+  type: street-address-alternative-1
+  input: "Appt 1, 58 rue du Gue Jacquet"
+  output:
+    street-address-alternative-1: "Appt 1, 58 rue du Gue Jacquet"
+    building-location: "58 rue du Gue Jacquet"
+    street: "rue du Gue Jacquet"
+    building: "58"
+    address-overflow: "Appt 1"
+- id: "Test 11"
+  type: street-address-alternative-1
+  input: "Apt. 1, 58 rue du Gue Jacquet"
+  output:
+    street-address-alternative-1: "Apt. 1, 58 rue du Gue Jacquet"
+    building-location: "58 rue du Gue Jacquet"
+    street: "rue du Gue Jacquet"
+    building: "58"
+    address-overflow: "Apt. 1"
