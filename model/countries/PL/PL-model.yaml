@@ -22,3 +22,4 @@ extra-definitions:
   - building-and-unit
   street-address-alternative-1:
   - building-location
+  - address-overflow
