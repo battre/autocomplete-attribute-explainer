@@ -2,6 +2,8 @@ formatting-rules:
   address:
   - street-address-alternative-1
   - separator: "\n"
+  - locality2
+  - separator: "\n"
   - postal-code
   - separator: " "
   - locality1
@@ -41,6 +43,7 @@ examples:
     building: 1661
     address-overflow: Appartament 36
     locality1: Villeneuve-d'ascq
+    locality2: Quartier du Marais
     postal-code: 59491
     admin-area1: Nord-Pas-de-Calais
     country: FR
@@ -52,5 +55,6 @@ examples:
       text: |
         Appartament 36
         1661 Place Charles de Gaulle
+        Quartier du Marais
         59491 Villeneuve-d'ascq
         France
