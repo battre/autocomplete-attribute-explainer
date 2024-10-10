@@ -12,7 +12,7 @@ regex_definitions:
       
   # Regular expression to match the prefixes that indicate a house number.
   kStreetOptionalPrefixRe:
-    regex_fragment: '(?:(?:ulica|ul\.?|aleja|al\.?|plac|pl\.?|skwer|rondo|osiedle|boczna|bulwar|droga|rynek|szosa|zaulek)\s*)?'
+    regex_fragment: '(?:(?:ulica|ul\.?)\s*)?'
 
   # Regular expression to match the unit-types in Poland.
   kUnitTypeLiteralRe:
@@ -115,7 +115,7 @@ test_parsing_definitions:
   output:
     street-address-alternative-1: "al. Warsaw 9/10"  
     building-location: "al. Warsaw 9/10" 
-    street: "Warsaw"
+    street: "al. Warsaw"
     building-and-unit: "9/10"
     building: "9"
     unit: "10"
@@ -146,7 +146,7 @@ test_parsing_definitions:
   output:
     street-address-alternative-1: "pl Warsaw 9"  
     building-location: "pl Warsaw 9" 
-    street: "Warsaw"
+    street: "pl Warsaw"
     building-and-unit: "9"
     building: "9"
 - id: "Test 7"
@@ -155,7 +155,7 @@ test_parsing_definitions:
   output:
     street-address-alternative-1: "pl Warsaw 9A"  
     building-location: "pl Warsaw 9A" 
-    street: "Warsaw"
+    street: "pl Warsaw"
     building-and-unit: "9A"
     building: "9A"
 - id: "Test 8"
@@ -164,7 +164,7 @@ test_parsing_definitions:
   output:
     street-address-alternative-1: "aleja Warsaw 9A"  
     building-location: "aleja Warsaw 9A" 
-    street: "Warsaw"
+    street: "aleja Warsaw"
     building-and-unit: "9A"
     building: "9A"
 - id: "Test 9"
