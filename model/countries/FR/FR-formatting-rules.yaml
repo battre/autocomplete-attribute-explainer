@@ -14,9 +14,9 @@ formatting-rules:
   - skip: admin-area1  # redundant with postal-code
 
   street-address-alternative-1:
-  - address-overflow
-  - separator: "\n"
   - building-location
+  - separator: "\n"
+  - address-overflow
 
   building-location:
   - building
@@ -53,8 +53,8 @@ examples:
     address:
       show: true
       text: |
-        Appartament 36
         1661 Place Charles de Gaulle
+        Appartament 36
         Quartier du Marais
         59491 Villeneuve-d'ascq
         France
