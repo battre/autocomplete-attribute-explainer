@@ -59,52 +59,52 @@ parsing_definitions:
       capture_reference: StreetAddressDecomposition
 
 test_parsing_definitions:
-# - id: "Test 1"
-#   type: building-location
-#   input: "1661 Place Charles de Gaulle"
-#   output:
-#     street: "Place Charles de Gaulle"
-#     building: "1661"
-# - id: "Test 2"
-#   type: building-location
-#   input: "58 rue du Gue Jacquet"
-#   output:
-#     street: "rue du Gue Jacquet"
-#     building: "58"
-# - id: "Test 3"
-#   type: street-address-alternative-1
-#   input: "58 rue du Gue Jacquet"
-#   output:
-#     street-address-alternative-1: "58 rue du Gue Jacquet"
-#     building-location: "58 rue du Gue Jacquet"
-#     street: "rue du Gue Jacquet"
-#     building: "58"
-# - id: "Test 4"
-#   type: street-address-alternative-1
-#   input: "1661 Place Charles de Gaulle"
-#   output:
-#     street-address-alternative-1: "1661 Place Charles de Gaulle"
-#     building-location: "1661 Place Charles de Gaulle"
-#     street: "Place Charles de Gaulle"
-#     building: "1661"
-# - id: "Test 5"
-#   type: street-address-alternative-1
-#   input: "1661 Place Charles de Gaulle\n Appartement 36"
-#   output:
-#     street-address-alternative-1: "1661 Place Charles de Gaulle\n Appartement 36"
-#     building-location: "1661 Place Charles de Gaulle"
-#     street: "Place Charles de Gaulle"
-#     building: "1661"
-#     address-overflow: "Appartement 36"
-# - id: "Test 6"
-#   type: street-address-alternative-1
-#   input: "58 rue du Gue Jacquet\nAppartement 1"
-#   output:
-#     street-address-alternative-1: "58 rue du Gue Jacquet\nAppartement 1"
-#     building-location: "58 rue du Gue Jacquet"
-#     street: "rue du Gue Jacquet"
-#     building: "58"
-#     address-overflow: "Appartement 1"
+- id: "Test 1"
+  type: building-location
+  input: "1661 Place Charles de Gaulle"
+  output:
+    street: "Place Charles de Gaulle"
+    building: "1661"
+- id: "Test 2"
+  type: building-location
+  input: "58 rue du Gue Jacquet"
+  output:
+    street: "rue du Gue Jacquet"
+    building: "58"
+- id: "Test 3"
+  type: street-address-alternative-1
+  input: "58 rue du Gue Jacquet"
+  output:
+    street-address-alternative-1: "58 rue du Gue Jacquet"
+    building-location: "58 rue du Gue Jacquet"
+    street: "rue du Gue Jacquet"
+    building: "58"
+- id: "Test 4"
+  type: street-address-alternative-1
+  input: "1661 Place Charles de Gaulle"
+  output:
+    street-address-alternative-1: "1661 Place Charles de Gaulle"
+    building-location: "1661 Place Charles de Gaulle"
+    street: "Place Charles de Gaulle"
+    building: "1661"
+- id: "Test 5"
+  type: street-address-alternative-1
+  input: "1661 Place Charles de Gaulle\n Appartement 36"
+  output:
+    street-address-alternative-1: "1661 Place Charles de Gaulle\n Appartement 36"
+    building-location: "1661 Place Charles de Gaulle"
+    street: "Place Charles de Gaulle"
+    building: "1661"
+    address-overflow: "Appartement 36"
+- id: "Test 6"
+  type: street-address-alternative-1
+  input: "58 rue du Gue Jacquet\nAppartement 1"
+  output:
+    street-address-alternative-1: "58 rue du Gue Jacquet\nAppartement 1"
+    building-location: "58 rue du Gue Jacquet"
+    street: "rue du Gue Jacquet"
+    building: "58"
+    address-overflow: "Appartement 1"
 - id: "Test 7"
   type: street-address-alternative-1
   input: "1661 Place Charles de Gaulle, Appartement 36"
