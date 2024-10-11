@@ -116,9 +116,9 @@ test_parsing_definitions:
     address-overflow: "Appartement 36"
 - id: "Test 8"
   type: street-address-alternative-1
-  input: "58 rue du Gue Jacquet,Appartement 1"
+  input: "58 rue du Gue Jacquet, Appartement 1"
   output:
-    street-address-alternative-1: "58 rue du Gue Jacquet,Appartement 1"
+    street-address-alternative-1: "58 rue du Gue Jacquet, Appartement 1"
     building-location: "58 rue du Gue Jacquet"
     street: "rue du Gue Jacquet"
     building: "58"
@@ -134,9 +134,9 @@ test_parsing_definitions:
     address-overflow: "App 1"
 - id: "Test 10"
   type: street-address-alternative-1
-  input: "58 rue du Gue Jacquet,Appt 1"
+  input: "58 rue du Gue Jacquet, Appt 1"
   output:
-    street-address-alternative-1: "58 rue du Gue Jacquet,Appt 1"
+    street-address-alternative-1: "58 rue du Gue Jacquet, Appt 1"
     building-location: "58 rue du Gue Jacquet"
     street: "rue du Gue Jacquet"
     building: "58"
@@ -150,3 +150,12 @@ test_parsing_definitions:
     street: "rue du Gue Jacquet"
     building: "58"
     address-overflow: "Apt. 1"
+- id: "Test 12"
+  type: street-address-alternative-1
+  input: "1661 Place Charles de Gaulle, Floor 5, Apartment 2"
+  output:
+    street-address-alternative-1: "1661 Place Charles de Gaulle, Floor 5, Apartment 2"
+    building-location: "1661 Place Charles de Gaulle"
+    street: "Place Charles de Gaulle"
+    building: "1661"
+    address-overflow: "Floor 5, Apartment 2"
