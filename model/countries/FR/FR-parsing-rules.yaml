@@ -20,9 +20,6 @@ regex_definitions:
   kCommaOrNewlineSeparator:
     regex_fragment: '(,|, |\n)'
 
-  kSpaceOptionalPrefixRe:
-    regex_fragment: '[ ]*'
-
 capture_definitions:
   ParseBuildingLocation:
     capture:
@@ -46,7 +43,7 @@ capture_definitions:
       - separator: {regex_reference: kCommaOrNewlineSeparator}
       - capture:
           output: address-overflow
-          prefix: {regex_reference: kSpaceOptionalPrefixRe}
+          prefix: {regex_fragment: '\s*'}
           parts: [ {regex_fragment: '(?:[^\r\n]+)'} ]
           quantifier: MATCH_OPTIONAL
 
