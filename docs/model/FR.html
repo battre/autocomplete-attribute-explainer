@@ -1452,8 +1452,8 @@
   <td valign="top">
     
       Output for "address":<br>
-      <pre class="formatting_example_textbox">Appartament 36
-1661 Place Charles de Gaulle
+      <pre class="formatting_example_textbox">1661 Place Charles de Gaulle
+Appartament 36
 Quartier du Marais
 59491 Villeneuve-d&#39;ascq
 France</pre>
@@ -3462,7 +3462,7 @@ Address of a physical location - Artificial concept, not to be used in HTML
 <h5>Flattened formatting:</h5>
 <div>
 <span class="formatting_token">address</span> =<br>
-<span class="formatting_token">address-overflow</span><span class="formatting_token_separator"><br></span><span class="formatting_token">building</span><span class="formatting_token_separator">␣</span><span class="formatting_token">street</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">postal-code</span><span class="formatting_token_separator">␣</span><span class="formatting_token">locality1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country-name</span>
+<span class="formatting_token">building</span><span class="formatting_token_separator">␣</span><span class="formatting_token">street</span><span class="formatting_token_separator"><br></span><span class="formatting_token">address-overflow</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">postal-code</span><span class="formatting_token_separator">␣</span><span class="formatting_token">locality1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country-name</span>
 </div>
 
 </div><h3 id="street-address">
@@ -3755,49 +3755,6 @@ Artificial concept, not to be used in HTML; this is a structured representation 
 
 
 <details>
-  <summary>
-    
-      Capture <code>address-overflow</code>
-    
-    (MATCH_OPTIONAL)
-  </summary>
-    
-    
-      Parts: <br>
-      <ul>
-        
-        <li>
-
-
-Regex Fragment: <code class="parsing-regexfragment">(?:[^,\r\n]+)</code>
-
-
-</li>
-        
-      </ul>
-    
-    
-    
-</details>
-
-
-</li>
-        
-        <li>
-
-
-
-Separator: Regex Reference <code>kCommaOrWhitespaceSeparator</code> =&gt;
-  <code class="parsing-regexfragment">(?:^|[,\s]+)</code>
-
-
-
-</li>
-        
-        <li>
-
-
-<details>
   <summary>Capture Reference: <code>ParseBuildingLocation</code></summary>
   
     
@@ -3982,6 +3939,58 @@ Separator: Regex Reference <code>kCommaOrWhitespaceSeparator</code> =&gt;
 
 </li>
         
+        <li>
+
+
+
+Separator: Regex Reference <code>kCommaOrNewlineSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:, |\n|\r|,)+</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>address-overflow</code>
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    Prefix:
+    
+
+
+Regex Fragment: <code class="parsing-regexfragment">\s*</code>
+
+
+ <br>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">(?:[^\r\n]+)</code>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
       </ul>
     
     
@@ -4025,13 +4034,13 @@ Separator: Regex Reference <code>kCommaOrWhitespaceSeparator</code> =&gt;
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">street-address-alternative-1</span> =
-<span class="formatting_token">address-overflow</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">building-location</span>
+<span class="formatting_token">building-location</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">address-overflow</span>
 </div>
 
 <h5>Flattened formatting:</h5>
 <div>
 <span class="formatting_token">street-address-alternative-1</span> =<br>
-<span class="formatting_token">address-overflow</span><span class="formatting_token_separator"><br></span><span class="formatting_token">building</span><span class="formatting_token_separator">␣</span><span class="formatting_token">street</span>
+<span class="formatting_token">building</span><span class="formatting_token_separator">␣</span><span class="formatting_token">street</span><span class="formatting_token_separator"><br></span><span class="formatting_token">address-overflow</span>
 </div>
 
 </div><h3 id="building-location">
