@@ -18,7 +18,7 @@ regex_definitions:
     regex_fragment: '(?:(?:no|nr|°|º|numéro)[-.\s]*)?'
   
   kCommaOrNewlineSeparator:
-    regex_fragment: '(,|, |\n)'
+    regex_fragment: '(?:, |\n|\r|,)+'
 
 capture_definitions:
   ParseBuildingLocation:
@@ -131,9 +131,9 @@ test_parsing_definitions:
     address-overflow: "App 1"
 - id: "Test 10"
   type: street-address-alternative-1
-  input: "58 rue du Gue Jacquet, Appt 1"
+  input: "58 rue du Gue Jacquet,Appt 1"
   output:
-    street-address-alternative-1: "58 rue du Gue Jacquet, Appt 1"
+    street-address-alternative-1: "58 rue du Gue Jacquet,Appt 1"
     building-location: "58 rue du Gue Jacquet"
     street: "rue du Gue Jacquet"
     building: "58"
