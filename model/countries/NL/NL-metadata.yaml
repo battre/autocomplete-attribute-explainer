@@ -1,0 +1,8 @@
+country: NL
+flag: 🇳🇱
+
+overview: |
+
+ Street Addresses in Netherland typically consist of street name, building number and in-building location (toevoeging). 
+ For data model of Netherland subset of Polish data model was used. The node <b>building-and-unit</b> was reused to store house number and in-building location in one node. 
+ As in Polish model, whole node of street-address is redundant, since the data is stored in <b>building-location</b> node, but we keep the main <b>street-address</b> node to preserve generic i18n project tree like data structure.
