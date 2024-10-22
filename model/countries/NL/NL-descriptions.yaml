@@ -1,0 +1,50 @@
+short-descriptions:
+  name:
+    en: Full name
+    nl: Naam en achternaam
+  honorific-prefix:
+    en: Honorific prefix
+    nl: Aanhef
+  given-name:
+    en: Given name
+    nl: Voornaam
+  family-name-conjunction:
+    en: Name conjunction
+    nl: Tussenvoegsel
+  family-name:
+    en: Family name
+    nl: Achternaam
+  admin-area1:
+    en: State
+    nl: Provincie
+  country: 2-letter country code (e.g. "NL")
+  country-name:
+    en: Name of a country (e.g. "Netherland")
+    nl: Land
+  locality1:
+    en: City
+    nl: Plaats
+  street:
+    en: Street name
+    nl: Straatnaam
+  building:
+    en: House number
+    nl: Huisnummer
+  postal-code:
+    en: Postal code
+    nl: Postcode
+  street-address:
+    en: Street address (street and location within the street)
+    nl: Straatadres
+  organization:
+    en: Name of an organization/company
+    nl: Bedrijfsnaam
+  building-location:
+    en: Name of a street and identifier for the building and the apartment
+    nl: Straat & Nr. (toevoeging)
+  unit:
+    en: Unit in a building (e.g. "A", "2", "III")
+    nl: Toevoeging
+  building-and-unit:
+    en: House number and unit
+    nl: Huisnummer & Toevoeging
