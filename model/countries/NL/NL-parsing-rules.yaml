@@ -3,13 +3,45 @@ regex_definitions:
     regex_fragment: (?:\d+)
 
   kUnitValueRe:  # Regex for "unit"
-    regex_fragment: (?:[\d\w]+)
+    regex_fragment: (?:\w[\w\s-]*)
 
   # Regular expression to match separator of "building" and "unit".
   kHouseNumberAndUnitSeparator:
-    regex_fragment: (?:[-\s]*)
+    regex_fragment: (?:[-\s/,]*)
+
+  kConjunctionNL:
+    regex_fragment: (?:van)
 
 capture_definitions:
+  ParseNLSpecificName:
+    capture:
+      output: name
+      parts:
+      - capture:
+          output: honorific-prefix
+          parts: [ {regex_reference: kHonorificPrefixRe} ]
+          quantifier: MATCH_OPTIONAL
+      - separator: {regex_reference: kWhitespaceSeparator}
+      - capture:
+          output: given-name
+          parts: [ {regex_reference: kSingleWordRe} ]
+      - separator: {regex_reference: kWhitespaceSeparator}
+      - capture:
+          output: additional-name
+          parts: [ {regex_reference: kMultipleLazyWordsRe} ]
+          quantifier: MATCH_LAZY_OPTIONAL
+      - separator: {regex_reference: kWhitespaceSeparator}
+      - capture:
+          output: family-name
+          parts:
+          - capture:
+              output: family-name-conjunction
+              parts: [ {regex_reference: kConjunctionNL} ]
+          - separator: {regex_reference: kWhitespaceSeparator}
+          - capture:
+              output: family-name-second
+              parts: [ {regex_reference: kSingleWordRe} ]
+
   ParseBuildingLocation:
     capture:
       output: building-location
@@ -28,7 +60,7 @@ capture_definitions:
             - capture:
                 output: unit
                 parts: [ {regex_reference: kUnitValueRe} ]
-                quantifier: MATCH_OPTIONAL
+                quantifier: MATCH_OPTIONAL       
 
 parsing_definitions:
   building-location:
@@ -41,6 +73,31 @@ parsing_definitions:
         output: street-address-alternative-1
         parts:
         - capture_reference: ParseBuildingLocation
+  
+  name:
+    decomposition_cascade:
+      alternatives:
+      - decomposition: {capture_reference: ParseNLSpecificName}
+        # TODO: This is copy paste from global-parsing-rules.yaml.
+        # Currently we don't have parsing definitions reusing logic.
+      - decomposition_cascade:
+          condition:
+            regex_reference: kHasCjkNameCharacteristics
+          alternatives:
+          - decomposition: {capture_reference: ParseSeparatedCjkNameExpression}
+          - decomposition: {capture_reference: ParseKoreanTwoCharacterLastNameExpression}
+          - decomposition: {capture_reference: ParseCommonCjkTwoCharacterLastNameExpression}
+          - decomposition: {capture_reference: ParseCjkSingleCharacterLastNameExpression}
+      - decomposition_cascade:
+          condition:
+            regex_reference: kHasHispanicLatinxNameCharacteristics
+          alternatives:
+          - decomposition: {capture_reference: ParseHispanicFullNameExpression}
+      - decomposition_cascade:
+          alternatives:
+          - decomposition: {capture_reference: ParseOnlyLastNameExpression}
+          - decomposition: {capture_reference: ParseLastCommaFirstMiddleNameExpression}
+          - decomposition: {capture_reference: ParseFirstMiddleLastNameExpression}
 
 test_parsing_definitions:
 - id: "Test 1"
@@ -74,6 +131,16 @@ test_parsing_definitions:
     unit: "A"
 - id: "Test 4"
   type: street-address-alternative-1
+  input: "Nieuwe Hoogstraat 12,A"
+  output:
+    street-address-alternative-1: "Nieuwe Hoogstraat 12,A"  
+    building-location: "Nieuwe Hoogstraat 12,A" 
+    street: "Nieuwe Hoogstraat"
+    building-and-unit: "12,A"
+    building: "12"
+    unit: "A"
+- id: "Test 5"
+  type: street-address-alternative-1
   input: "Nieuwe Hoogstraat 12 A"
   output:
     street-address-alternative-1: "Nieuwe Hoogstraat 12 A"  
@@ -82,7 +149,7 @@ test_parsing_definitions:
     building-and-unit: "12 A"
     building: "12"
     unit: "A"
-- id: "Test 5"
+- id: "Test 6"
   type: street-address-alternative-1
   input: "Nieuwe Hoogstraat 12-bis"
   output:
@@ -92,7 +159,7 @@ test_parsing_definitions:
     building-and-unit: "12-bis"
     building: "12"
     unit: "bis"
-- id: "Test 6"
+- id: "Test 7"
   type: street-address-alternative-1
   input: "Nieuwe Hoogstraat 12-III"
   output:
@@ -102,7 +169,17 @@ test_parsing_definitions:
     building-and-unit: "12-III"
     building: "12"
     unit: "III"
-- id: "Test 7"
+- id: "Test 8"
+  type: street-address-alternative-1
+  input: "Nieuwe Hoogstraat 12II"
+  output:
+    street-address-alternative-1: "Nieuwe Hoogstraat 12II"  
+    building-location: "Nieuwe Hoogstraat 12II" 
+    street: "Nieuwe Hoogstraat"
+    building-and-unit: "12II"
+    building: "12"
+    unit: "II"
+- id: "Test 9"
   type: street-address-alternative-1
   input: "Nieuwe Hoogstraat 12"
   output:
@@ -111,7 +188,7 @@ test_parsing_definitions:
     street: "Nieuwe Hoogstraat"
     building-and-unit: "12"
     building: "12"
-- id: "Test 8"
+- id: "Test 10"
   type: street-address-alternative-1
   input: "Nieuwe Hoogstraat 12 -3"
   output:
@@ -121,7 +198,7 @@ test_parsing_definitions:
     building-and-unit: "12 -3"
     building: "12"
     unit: "3"
-- id: "Test 9"
+- id: "Test 11"
   type: street-address-alternative-1
   input: "Nieuwe Hoogstraat 12\nB"
   output:
@@ -131,7 +208,7 @@ test_parsing_definitions:
     building-and-unit: "12\nB"
     building: "12"
     unit: "B"
-- id: "Test 10"
+- id: "Test 12"
   type: street-address-alternative-1
   input: "Nieuwe Hoogstraat \n12B"
   output:
@@ -141,3 +218,52 @@ test_parsing_definitions:
     building-and-unit: "12B"
     building: "12"
     unit: "B"
+- id: "Test 13"
+  type: street-address-alternative-1
+  input: "Kon. Emmaplein 12 B01"
+  output:
+    street-address-alternative-1: Kon. Emmaplein 12 B01"  
+    building-location: "Kon. Emmaplein 12 B01" 
+    street: "Kon. Emmaplein"
+    building-and-unit: "12 B01"
+    building: "12"
+    unit: "B01"
+- id: "Test 14"
+  type: street-address-alternative-1
+  input: "Severenstraat 146A02"
+  output:
+    street-address-alternative-1: Severenstraat 146A02"  
+    building-location: "Severenstraat 146A02" 
+    street: "Severenstraat"
+    building-and-unit: "146A02"
+    building: "146"
+    unit: "A02"
+- id: "Test 15"
+  type: street-address-alternative-1
+  input: "Kagerstraat 5-F 4"
+  output:
+    street-address-alternative-1: "Kagerstraat 5-F 4"
+    building-location: "Kagerstraat 5-F 4"
+    street: "Kagerstraat"
+    building-and-unit: "5-F 4"
+    building: "5"
+    unit: "F 4"
+- id: "Test 16"
+  type: street-address-alternative-1
+  input: "Severenstraat 146A-02"
+  output:
+    street-address-alternative-1: Severenstraat 146A-02"  
+    building-location: "Severenstraat 146A-02" 
+    street: "Severenstraat"
+    building-and-unit: "146A-02"
+    building: "146"
+    unit: "A-02"
+- id: "Test 17"
+  type: name
+  input: "Vincent Willem van Gogh"
+  output:
+    given-name: "Vincent"
+    additional-name: "Willem"
+    family-name: "van Gogh"
+    family-name-conjunction: "van"
+    family-name-second: "Gogh"

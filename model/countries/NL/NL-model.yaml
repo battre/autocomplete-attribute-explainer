@@ -4,7 +4,7 @@ cut-off-children:
   - unit
 
 cut-off-tokens:
-  - family-name-second
+  - family-name-first
   - honorific-suffix
   - organization-title
   - admin-area2

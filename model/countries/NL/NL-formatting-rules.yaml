@@ -1,7 +1,7 @@
 formatting-rules:
   family-name:
   - family-name-conjunction
-  - family-name-first
+  - family-name-second
 
   address:
   - street-address-alternative-1
@@ -36,7 +36,7 @@ examples:
     given-name: Vincent
     additional-name: Willem
     family-name-conjunction: van
-    family-name-first: Gogh
+    family-name-second: Gogh
   output:
     name:
       show: true
