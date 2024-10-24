@@ -4,7 +4,6 @@ cut-off-children:
   - unit
 
 cut-off-tokens:
-  - honorific-suffix
   - organization-title
   - admin-area2
   - admin-area3
@@ -22,15 +21,3 @@ extra-definitions:
   - building-and-unit
   street-address-alternative-1:
   - building-location
-  # street-address-alternative-1 supports building-and-unit grouping.
-  # street-address-alternative-2 can be used to support
-  # less common NL street-and-building grouping.
-  #
-  # street-and-building:
-  # - street
-  # - building
-  # building-location-2:
-  # - street-and-building
-  # - unit
-  # street-address-alternative-2:
-  # - building-location-2

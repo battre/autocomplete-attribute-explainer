@@ -338,9 +338,25 @@
   </div>
   <div class="mdl-card__actions mdl-card--border">
     <div style="margin: 8px">
-Street addresses in the Netherlands typically consist of a street name, building number, and unit number (toevoeging).
-For the data model of the Netherlands, a subset of the Polish data model was used. The building-and-unit node was reused to store the house number and unit location within a single node.
-The street-address node is redundant since the data is stored in the building-location node. However, we retain the main street-address node to preserve a generic, i18n-friendly, tree-like data structure for the project.
+<p>Netherlands address forms rarely use the address line concept.
+Instead, they use more granular fields describing entities like city, postal code, state, street name, and building number.
+This addressing system is unified across the country, except for a few cities and districts.
+Address fields in the Netherlands can be divided into two groups: high-level location and street address.</p>
+<p><b>High-level location</b></p>
+<p>High-level location fields are: country, state, city, and postal code.
+The postal code in the Netherlands provides a precise location, often down to the street name, meaning two different streets will generally have different postal codes.
+Due to this precision, some forms omit high-level data like city name or even street name.</p>
+<p><b>Street address location</b></p>
+<p>Street address fields are: street name, building number, and unit. The street name and building number identify a specific building,
+while the unit ('toevoeging') specifies the location within that building.
+The unit can be an apartment number (e.g., 'A', 'II', '3') or a more complex code (e.g., 'A-02') that includes
+information about the floor or part of the building. </p>
+<p>There are two common patterns for street addresses:
+<ul>
+<li> Three atomic fields: street name + building number + unit
+<li> One combined field and one atomic field: street name with building number + unit. 
+</ul></p>
+<p>For the Netherlands' street address, a custom 'building-location' node was used with two child nodes: 'street' (containing the street name) and 'building-and-unit' (grouping 'building' and 'unit' nodes, as these are often requested in a single field).</p>
 </div>
   </div>
 </div>
@@ -383,10 +399,6 @@ The street-address node is redundant since the data is stored in the building-lo
     <a href="#honorific-prefix">honorific-prefix</a>
     - Honorific prefix
       
-        
-      
-        
-        | Aanhef
         
       
     
@@ -502,6 +514,22 @@ The street-address node is redundant since the data is stored in the building-lo
         
       </div>
     
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#honorific-suffix">honorific-suffix</a>
+    - Honorific suffix
+      
+        
+      
+    
+  </div>
   
 </div>
 
@@ -1349,6 +1377,11 @@ Full name
     <a href="#family-name">family-name</a>
   </li>
 
+  <li>
+    
+    <a href="#honorific-suffix">honorific-suffix</a>
+  </li>
+
 </ul>
 </div>
 
@@ -1448,6 +1481,17 @@ Conjunction between the first and second part of the family name
 <div style="margin-left: 20px;">
 
 Second part of a famiily name (e.g. the maternal name)
+
+
+
+</div><h3 id="honorific-suffix">
+  <a href="#honorific-suffix">#</a>
+  
+  honorific-suffix
+</h3>
+<div style="margin-left: 20px;">
+
+Honorific suffix
 
 
 

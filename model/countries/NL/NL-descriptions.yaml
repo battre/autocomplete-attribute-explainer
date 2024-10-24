@@ -2,15 +2,9 @@ short-descriptions:
   name:
     en: Full name
     nl: Naam en achternaam
-  honorific-prefix:
-    en: Honorific prefix
-    nl: Aanhef
   given-name:
     en: Given name
     nl: Voornaam
-# family-name-prefix:
-#   en: Family name prefix
-#   nl: Tussenvoegsel
   family-name:
     en: Family name
     nl: Achternaam
@@ -48,4 +42,3 @@ short-descriptions:
   building-and-unit:
     en: House number and unit
     nl: Huisnummer & Toevoeging
-  # street-and-building:
