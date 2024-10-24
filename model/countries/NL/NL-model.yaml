@@ -1,0 +1,24 @@
+cut-off-children:
+  - street
+  - building
+  - unit
+
+cut-off-tokens:
+  - honorific-suffix
+  - organization-title
+  - admin-area2
+  - admin-area3
+  - admin-area4
+  - locality2
+  - locality3
+  - locality4
+
+extra-definitions:
+  building-and-unit:
+  - building
+  - unit
+  building-location:
+  - street
+  - building-and-unit
+  street-address-alternative-1:
+  - building-location
