@@ -1,0 +1,203 @@
+regex_definitions:
+  kBuildingValueRe:  # Regex for type "building".
+    regex_fragment: (?:\d+)
+
+  kUnitValueRe:  # Regex for "unit".
+    regex_fragment: (?:\w[\w\s-]*)
+
+  # Regular expression to match separator of "building" and "unit".
+  kHouseNumberAndUnitSeparator:
+    regex_fragment: (?:[-\s/,]*)
+
+capture_definitions:
+  ParseBuildingLocation:
+    capture:
+      output: building-location
+      parts:
+      - capture:
+          output: street
+          parts: [{regex_reference: kMultipleLazyWordsRe}]
+      - separator: {regex_reference: kWhitespaceSeparator}
+      - capture:
+          output: building-and-unit
+          parts:
+            - capture:
+                output: building
+                parts: [ {regex_reference: kBuildingValueRe} ]
+            - separator: {regex_reference: kHouseNumberAndUnitSeparator} 
+            - capture:
+                output: unit
+                parts: [ {regex_reference: kUnitValueRe} ]
+                quantifier: MATCH_OPTIONAL       
+
+parsing_definitions:
+  building-location:
+    decomposition: 
+      capture_reference: ParseBuildingLocation
+
+  street-address-alternative-1:
+    decomposition:
+      capture: 
+        output: street-address-alternative-1
+        parts:
+        - capture_reference: ParseBuildingLocation
+
+test_parsing_definitions:
+- id: "Test 1"
+  type: building-location
+  input: "Nieuwe Hoogstraat 12A"
+  output:
+    building-location: "Nieuwe Hoogstraat 12A" 
+    street: "Nieuwe Hoogstraat"
+    building-and-unit: "12A"
+    building: "12"
+    unit: "A"
+- id: "Test 2"
+  type: street-address-alternative-1
+  input: "Nieuwe Hoogstraat 12A"
+  output:
+    street-address-alternative-1: "Nieuwe Hoogstraat 12A"  
+    building-location: "Nieuwe Hoogstraat 12A" 
+    street: "Nieuwe Hoogstraat"
+    building-and-unit: "12A"
+    building: "12"
+    unit: "A"
+- id: "Test 3"
+  type: street-address-alternative-1
+  input: "Nieuwe Hoogstraat 12-A"
+  output:
+    street-address-alternative-1: "Nieuwe Hoogstraat 12-A"  
+    building-location: "Nieuwe Hoogstraat 12-A" 
+    street: "Nieuwe Hoogstraat"
+    building-and-unit: "12-A"
+    building: "12"
+    unit: "A"
+- id: "Test 4"
+  type: street-address-alternative-1
+  input: "Nieuwe Hoogstraat 12, A"
+  output:
+    street-address-alternative-1: "Nieuwe Hoogstraat 12, A"  
+    building-location: "Nieuwe Hoogstraat 12, A" 
+    street: "Nieuwe Hoogstraat"
+    building-and-unit: "12, A"
+    building: "12"
+    unit: "A"
+- id: "Test 5"
+  type: street-address-alternative-1
+  input: "Nieuwe Hoogstraat 12 A"
+  output:
+    street-address-alternative-1: "Nieuwe Hoogstraat 12 A"  
+    building-location: "Nieuwe Hoogstraat 12 A" 
+    street: "Nieuwe Hoogstraat"
+    building-and-unit: "12 A"
+    building: "12"
+    unit: "A"
+- id: "Test 6"
+  type: street-address-alternative-1
+  input: "Nieuwe Hoogstraat 12-bis"
+  output:
+    street-address-alternative-1: "Nieuwe Hoogstraat 12-bis"  
+    building-location: "Nieuwe Hoogstraat 12-bis" 
+    street: "Nieuwe Hoogstraat"
+    building-and-unit: "12-bis"
+    building: "12"
+    unit: "bis"
+- id: "Test 7"
+  type: street-address-alternative-1
+  input: "Nieuwe Hoogstraat 12-III"
+  output:
+    street-address-alternative-1: "Nieuwe Hoogstraat 12-III"  
+    building-location: "Nieuwe Hoogstraat 12-III" 
+    street: "Nieuwe Hoogstraat"
+    building-and-unit: "12-III"
+    building: "12"
+    unit: "III"
+- id: "Test 8"
+  type: street-address-alternative-1
+  input: "Nieuwe Hoogstraat 12II"
+  output:
+    street-address-alternative-1: "Nieuwe Hoogstraat 12II"  
+    building-location: "Nieuwe Hoogstraat 12II" 
+    street: "Nieuwe Hoogstraat"
+    building-and-unit: "12II"
+    building: "12"
+    unit: "II"
+- id: "Test 9"
+  type: street-address-alternative-1
+  input: "Nieuwe Hoogstraat 12 -3"
+  output:
+    street-address-alternative-1: "Nieuwe Hoogstraat 12 -3"  
+    building-location: "Nieuwe Hoogstraat 12 -3" 
+    street: "Nieuwe Hoogstraat"
+    building-and-unit: "12 -3"
+    building: "12"
+    unit: "3"
+- id: "Test 10"
+  type: street-address-alternative-1
+  input: "Nieuwe Hoogstraat 12"
+  output:
+    street-address-alternative-1: "Nieuwe Hoogstraat 12"  
+    building-location: "Nieuwe Hoogstraat 12" 
+    street: "Nieuwe Hoogstraat"
+    building-and-unit: "12"
+    building: "12"
+- id: "Test 11"
+  type: street-address-alternative-1
+  input: "Nieuwe Hoogstraat 12\nB"
+  output:
+    street-address-alternative-1: "Nieuwe Hoogstraat 12\nB"  
+    building-location: "Nieuwe Hoogstraat 12\nB" 
+    street: "Nieuwe Hoogstraat"
+    building-and-unit: "12\nB"
+    building: "12"
+    unit: "B"
+- id: "Test 12"
+  type: street-address-alternative-1
+  input: "Nieuwe Hoogstraat\n12B"
+  output:
+    street-address-alternative-1: "Nieuwe Hoogstraat\n12B"  
+    building-location: "Nieuwe Hoogstraat\n12B" 
+    street: "Nieuwe Hoogstraat"
+    building-and-unit: "12B"
+    building: "12"
+    unit: "B"
+- id: "Test 13"
+  type: street-address-alternative-1
+  input: "Kon. Emmaplein 12 B01"
+  output:
+    street-address-alternative-1: Kon. Emmaplein 12 B01"  
+    building-location: "Kon. Emmaplein 12 B01" 
+    street: "Kon. Emmaplein"
+    building-and-unit: "12 B01"
+    building: "12"
+    unit: "B01"
+- id: "Test 14"
+  type: street-address-alternative-1
+  input: "Severenstraat 146A02"
+  output:
+    street-address-alternative-1: Severenstraat 146A02"  
+    building-location: "Severenstraat 146A02" 
+    street: "Severenstraat"
+    building-and-unit: "146A02"
+    building: "146"
+    unit: "A02"
+- id: "Test 15"
+  type: street-address-alternative-1
+  input: "Kagerstraat 5-F 4"
+  output:
+    street-address-alternative-1: "Kagerstraat 5-F 4"
+    building-location: "Kagerstraat 5-F 4"
+    street: "Kagerstraat"
+    building-and-unit: "5-F 4"
+    building: "5"
+    unit: "F 4"
+- id: "Test 16"
+  type: street-address-alternative-1
+  input: "Severenstraat 146A-02"
+  output:
+    street-address-alternative-1: Severenstraat 146A-02"  
+    building-location: "Severenstraat 146A-02" 
+    street: "Severenstraat"
+    building-and-unit: "146A-02"
+    building: "146"
+    unit: "A-02"
