@@ -2,7 +2,6 @@ country: NL
 flag: 🇳🇱
 
 overview: |
-
  <p>Netherlands address forms rarely use the address line concept.
  Instead, they use more granular fields describing entities like city, postal code, state, street name, and building number.
  This addressing system is unified across the country, except for a few cities and districts.
