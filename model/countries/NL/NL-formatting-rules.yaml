@@ -21,6 +21,7 @@ formatting-rules:
 
   building-and-unit:
   - building
+  - separator: "-"
   - unit
 
 examples:
@@ -43,7 +44,7 @@ examples:
     street: Kerkstraat
     building: 10
     unit: A
-    building-and-unit: 10A
+    building-and-unit: 10-A
     locality1: Amsterdam
     postal-code: 1234 AB
     country: NL
@@ -52,7 +53,7 @@ examples:
     address:
       show: true
       text: |
-        Kerkstraat 10A
+        Kerkstraat 10-A
         1234 AB Amsterdam
         Netherlands
 
