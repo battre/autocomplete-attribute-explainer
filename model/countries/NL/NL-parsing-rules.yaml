@@ -94,6 +94,16 @@ test_parsing_definitions:
     unit: "A"
 - id: "Test 6"
   type: street-address-alternative-1
+  input: "Nieuwe Hoogstraat 12/6"
+  output:
+    street-address-alternative-1: "Nieuwe Hoogstraat 12/6"  
+    building-location: "Nieuwe Hoogstraat 12/6" 
+    street: "Nieuwe Hoogstraat"
+    building-and-unit: "12/6"
+    building: "12"
+    unit: "6"
+- id: "Test 7"
+  type: street-address-alternative-1
   input: "Nieuwe Hoogstraat 12-bis"
   output:
     street-address-alternative-1: "Nieuwe Hoogstraat 12-bis"  
@@ -102,7 +112,17 @@ test_parsing_definitions:
     building-and-unit: "12-bis"
     building: "12"
     unit: "bis"
-- id: "Test 7"
+- id: "Test 8"
+  type: street-address-alternative-1
+  input: "Nieuwe Hoogstraat 12bis"
+  output:
+    street-address-alternative-1: "Nieuwe Hoogstraat 12bis"  
+    building-location: "Nieuwe Hoogstraat 12bis" 
+    street: "Nieuwe Hoogstraat"
+    building-and-unit: "12bis"
+    building: "12"
+    unit: "bis"
+- id: "Test 9"
   type: street-address-alternative-1
   input: "Nieuwe Hoogstraat 12-III"
   output:
@@ -112,7 +132,7 @@ test_parsing_definitions:
     building-and-unit: "12-III"
     building: "12"
     unit: "III"
-- id: "Test 8"
+- id: "Test 10"
   type: street-address-alternative-1
   input: "Nieuwe Hoogstraat 12II"
   output:
@@ -122,7 +142,7 @@ test_parsing_definitions:
     building-and-unit: "12II"
     building: "12"
     unit: "II"
-- id: "Test 9"
+- id: "Test 11"
   type: street-address-alternative-1
   input: "Nieuwe Hoogstraat 12 -3"
   output:
@@ -132,7 +152,7 @@ test_parsing_definitions:
     building-and-unit: "12 -3"
     building: "12"
     unit: "3"
-- id: "Test 10"
+- id: "Test 12"
   type: street-address-alternative-1
   input: "Nieuwe Hoogstraat 12"
   output:
@@ -141,7 +161,7 @@ test_parsing_definitions:
     street: "Nieuwe Hoogstraat"
     building-and-unit: "12"
     building: "12"
-- id: "Test 11"
+- id: "Test 13"
   type: street-address-alternative-1
   input: "Nieuwe Hoogstraat 12\nB"
   output:
@@ -151,7 +171,7 @@ test_parsing_definitions:
     building-and-unit: "12\nB"
     building: "12"
     unit: "B"
-- id: "Test 12"
+- id: "Test 14"
   type: street-address-alternative-1
   input: "Nieuwe Hoogstraat\n12B"
   output:
@@ -161,7 +181,7 @@ test_parsing_definitions:
     building-and-unit: "12B"
     building: "12"
     unit: "B"
-- id: "Test 13"
+- id: "Test 15"
   type: street-address-alternative-1
   input: "Kon. Emmaplein 12 B01"
   output:
@@ -171,7 +191,7 @@ test_parsing_definitions:
     building-and-unit: "12 B01"
     building: "12"
     unit: "B01"
-- id: "Test 14"
+- id: "Test 16"
   type: street-address-alternative-1
   input: "Severenstraat 146A02"
   output:
@@ -181,7 +201,7 @@ test_parsing_definitions:
     building-and-unit: "146A02"
     building: "146"
     unit: "A02"
-- id: "Test 15"
+- id: "Test 17"
   type: street-address-alternative-1
   input: "Kagerstraat 5-F 4"
   output:
@@ -191,7 +211,7 @@ test_parsing_definitions:
     building-and-unit: "5-F 4"
     building: "5"
     unit: "F 4"
-- id: "Test 16"
+- id: "Test 18"
   type: street-address-alternative-1
   input: "Severenstraat 146A-02"
   output:
