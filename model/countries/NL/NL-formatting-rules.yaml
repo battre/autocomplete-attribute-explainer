@@ -1,0 +1,77 @@
+formatting-rules:
+  address:
+  - street-address-alternative-1
+  - separator: "\n"
+  - postal-code
+  - separator: " "
+  - locality1
+  - separator: "\n"
+  - country-name
+  - skip: country  # redundant with country-name
+  - skip: street-address  # redundant with street-address-alternative-1
+  - skip: admin-area1 # not commonly used
+
+  street-address-alternative-1:
+  - building-location
+
+  building-location:
+  - street
+  - separator: " "
+  - building-and-unit
+
+  building-and-unit:
+  - building
+  - separator: "-"
+  - unit
+
+examples:
+- id: name
+  comment: |
+    This is an example of a name.
+  attributes:
+    given-name: Vincent
+    additional-name: Willem
+    family-name: van Gogh
+  output:
+    name:
+      show: true
+      text: Vincent Willem van Gogh
+
+- id: address
+  comment: |
+    This is an example of a full address in the Netherlands.
+  attributes:
+    street: Kerkstraat
+    building: 10
+    unit: A
+    building-and-unit: 10-A
+    locality1: Amsterdam
+    postal-code: 1234 AB
+    country: NL
+    country-name: Netherlands
+  output:
+    address:
+      show: true
+      text: |
+        Kerkstraat 10-A
+        1234 AB Amsterdam
+        Netherlands
+
+- id: address-without-unit
+  comment: |
+    This is an example of an address without indication of unit in the Netherlands.
+  attributes:
+    street: Kerkstraat
+    building: 10
+    building-and-unit: 10
+    locality1: Amsterdam
+    postal-code: 1234 AB
+    country: NL
+    country-name: Netherlands
+  output:
+    address:
+      show: true
+      text: |
+        Kerkstraat 10
+        1234 AB Amsterdam
+        Netherlands
