@@ -749,6 +749,45 @@ information about the floor or part of the building. </p>
     
   </div>
   
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#unit-type">unit-type</a>
+    - Type of a unit (e.g. &#34;Apt&#34;, &#34;Room&#34;, &#34;Store&#34;)
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#unit-name">unit-name</a>
+    - Identifier of a unit (e.g. &#34;5&#34;)
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
 </div>
 
         
@@ -1452,6 +1491,10 @@ information about the floor or part of the building. </p>
       
         
       
+        
+      
+        
+      
     </table>
   </td>
   <td valign="top">
@@ -1525,7 +1568,7 @@ information about the floor or part of the building. </p>
       
         
         <tr>
-          <td>building-and-unit</td><td><pre style="margin:0">10A</pre></td>
+          <td>building-and-unit</td><td><pre style="margin:0">10-A</pre></td>
         </tr>
         
       
@@ -1539,6 +1582,10 @@ information about the floor or part of the building. </p>
         <tr>
           <td>unit</td><td><pre style="margin:0">A</pre></td>
         </tr>
+        
+      
+        
+      
         
       
         
@@ -1618,7 +1665,7 @@ information about the floor or part of the building. </p>
   <td valign="top">
     
       Output for "address":<br>
-      <pre class="formatting_example_textbox">Kerkstraat 10A
+      <pre class="formatting_example_textbox">Kerkstraat 10-A
 1234 AB Amsterdam
 Netherlands</pre>
       
@@ -1696,6 +1743,10 @@ Netherlands</pre>
         <tr>
           <td>building</td><td><pre style="margin:0">10</pre></td>
         </tr>
+        
+      
+        
+      
         
       
         
@@ -3925,7 +3976,7 @@ Address of a physical location - Artificial concept, not to be used in HTML
 <h5>Flattened formatting:</h5>
 <div>
 <span class="formatting_token">address</span> =<br>
-<span class="formatting_token">street</span><span class="formatting_token_separator">␣</span><span class="formatting_token">building</span><span class="formatting_token">unit</span><span class="formatting_token_separator"><br></span><span class="formatting_token">postal-code</span><span class="formatting_token_separator">␣</span><span class="formatting_token">locality1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country-name</span>
+<span class="formatting_token">street</span><span class="formatting_token_separator">␣</span><span class="formatting_token">building</span><span class="formatting_token_separator">-</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator"><br></span><span class="formatting_token">postal-code</span><span class="formatting_token_separator">␣</span><span class="formatting_token">locality1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country-name</span>
 </div>
 
 </div><h3 id="street-address">
@@ -4441,7 +4492,7 @@ Separator: Regex Reference <code>kHouseNumberAndUnitSeparator</code> =&gt;
 <h5>Flattened formatting:</h5>
 <div>
 <span class="formatting_token">street-address-alternative-1</span> =<br>
-<span class="formatting_token">street</span><span class="formatting_token_separator">␣</span><span class="formatting_token">building</span><span class="formatting_token">unit</span>
+<span class="formatting_token">street</span><span class="formatting_token_separator">␣</span><span class="formatting_token">building</span><span class="formatting_token_separator">-</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span>
 </div>
 
 </div><h3 id="building-location">
@@ -4709,7 +4760,7 @@ Separator: Regex Reference <code>kHouseNumberAndUnitSeparator</code> =&gt;
 <h5>Flattened formatting:</h5>
 <div>
 <span class="formatting_token">building-location</span> =<br>
-<span class="formatting_token">street</span><span class="formatting_token_separator">␣</span><span class="formatting_token">building</span><span class="formatting_token">unit</span>
+<span class="formatting_token">street</span><span class="formatting_token_separator">␣</span><span class="formatting_token">building</span><span class="formatting_token_separator">-</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span>
 </div>
 
 </div><h3 id="street">
@@ -4808,13 +4859,13 @@ House number and unit
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">building-and-unit</span> =
-<span class="formatting_token">building</span><span class="formatting_token">unit</span>
+<span class="formatting_token">building</span><span class="formatting_token_separator">-</span><span class="formatting_token">unit</span>
 </div>
 
 <h5>Flattened formatting:</h5>
 <div>
 <span class="formatting_token">building-and-unit</span> =<br>
-<span class="formatting_token">building</span><span class="formatting_token">unit</span>
+<span class="formatting_token">building</span><span class="formatting_token_separator">-</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span>
 </div>
 
 </div><h3 id="building">
@@ -4860,6 +4911,111 @@ House number
 <div style="margin-left: 20px;">
 
 Unit in a building (e.g. &#34;A&#34;, &#34;2&#34;, &#34;III&#34;)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    
+    <a href="#unit-type">unit-type</a>
+  </li>
+
+  <li>
+    
+    <a href="#unit-name">unit-name</a>
+  </li>
+
+</ul>
+</div>
+
+
+
+
+
+
+
+<h4>Formatting:</h4>
+<div>
+<span class="formatting_token">unit</span> =
+<span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span>
+</div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">unit</span> =<br>
+<span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span>
+</div>
+
+</div><h3 id="unit-type">
+  <a href="#unit-type">#</a>
+  
+  unit-type
+</h3>
+<div style="margin-left: 20px;">
+
+Type of a unit (e.g. &#34;Apt&#34;, &#34;Room&#34;, &#34;Store&#34;)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="unit-name">
+  <a href="#unit-name">#</a>
+  
+  unit-name
+</h3>
+<div style="margin-left: 20px;">
+
+Identifier of a unit (e.g. &#34;5&#34;)
 
 
 
