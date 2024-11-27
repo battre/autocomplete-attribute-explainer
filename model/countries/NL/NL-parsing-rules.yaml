@@ -27,7 +27,10 @@ capture_definitions:
             - separator: {regex_reference: kHouseNumberAndUnitSeparator} 
             - capture:
                 output: unit
-                parts: [ {regex_reference: kUnitValueRe} ]
+                parts:
+                  - capture:
+                      output: unit-name
+                      parts: [ {regex_reference: kUnitValueRe} ]
                 quantifier: MATCH_OPTIONAL       
 
 parsing_definitions:
@@ -52,6 +55,7 @@ test_parsing_definitions:
     building-and-unit: "12A"
     building: "12"
     unit: "A"
+    unit-name: "A"
 - id: "Test 2"
   type: street-address-alternative-1
   input: "Nieuwe Hoogstraat 12A"
@@ -62,6 +66,7 @@ test_parsing_definitions:
     building-and-unit: "12A"
     building: "12"
     unit: "A"
+    unit-name: "A"
 - id: "Test 3"
   type: street-address-alternative-1
   input: "Nieuwe Hoogstraat 12-A"
@@ -72,6 +77,7 @@ test_parsing_definitions:
     building-and-unit: "12-A"
     building: "12"
     unit: "A"
+    unit-name: "A"
 - id: "Test 4"
   type: street-address-alternative-1
   input: "Nieuwe Hoogstraat 12, A"
@@ -82,6 +88,7 @@ test_parsing_definitions:
     building-and-unit: "12, A"
     building: "12"
     unit: "A"
+    unit-name: "A"
 - id: "Test 5"
   type: street-address-alternative-1
   input: "Nieuwe Hoogstraat 12 A"
@@ -92,6 +99,7 @@ test_parsing_definitions:
     building-and-unit: "12 A"
     building: "12"
     unit: "A"
+    unit-name: "A"
 - id: "Test 6"
   type: street-address-alternative-1
   input: "Nieuwe Hoogstraat 12/6"
@@ -102,6 +110,7 @@ test_parsing_definitions:
     building-and-unit: "12/6"
     building: "12"
     unit: "6"
+    unit-name: "6"
 - id: "Test 7"
   type: street-address-alternative-1
   input: "Nieuwe Hoogstraat 12-bis"
@@ -112,6 +121,7 @@ test_parsing_definitions:
     building-and-unit: "12-bis"
     building: "12"
     unit: "bis"
+    unit-name: "bis"
 - id: "Test 8"
   type: street-address-alternative-1
   input: "Nieuwe Hoogstraat 12bis"
@@ -122,6 +132,7 @@ test_parsing_definitions:
     building-and-unit: "12bis"
     building: "12"
     unit: "bis"
+    unit-name: "bis"
 - id: "Test 9"
   type: street-address-alternative-1
   input: "Nieuwe Hoogstraat 12-III"
@@ -132,6 +143,7 @@ test_parsing_definitions:
     building-and-unit: "12-III"
     building: "12"
     unit: "III"
+    unit-name: "III"
 - id: "Test 10"
   type: street-address-alternative-1
   input: "Nieuwe Hoogstraat 12II"
@@ -142,6 +154,7 @@ test_parsing_definitions:
     building-and-unit: "12II"
     building: "12"
     unit: "II"
+    unit-name: "II"
 - id: "Test 11"
   type: street-address-alternative-1
   input: "Nieuwe Hoogstraat 12 -3"
@@ -152,6 +165,7 @@ test_parsing_definitions:
     building-and-unit: "12 -3"
     building: "12"
     unit: "3"
+    unit-name: "3"
 - id: "Test 12"
   type: street-address-alternative-1
   input: "Nieuwe Hoogstraat 12"
@@ -171,6 +185,7 @@ test_parsing_definitions:
     building-and-unit: "12\nB"
     building: "12"
     unit: "B"
+    unit-name: "B"
 - id: "Test 14"
   type: street-address-alternative-1
   input: "Nieuwe Hoogstraat\n12B"
@@ -181,6 +196,7 @@ test_parsing_definitions:
     building-and-unit: "12B"
     building: "12"
     unit: "B"
+    unit-name: "B"
 - id: "Test 15"
   type: street-address-alternative-1
   input: "Kon. Emmaplein 12 B01"
@@ -191,6 +207,7 @@ test_parsing_definitions:
     building-and-unit: "12 B01"
     building: "12"
     unit: "B01"
+    unit-name: "B01"
 - id: "Test 16"
   type: street-address-alternative-1
   input: "Severenstraat 146A02"
@@ -201,6 +218,7 @@ test_parsing_definitions:
     building-and-unit: "146A02"
     building: "146"
     unit: "A02"
+    unit-name: "A02"
 - id: "Test 17"
   type: street-address-alternative-1
   input: "Kagerstraat 5-F 4"
@@ -211,6 +229,7 @@ test_parsing_definitions:
     building-and-unit: "5-F 4"
     building: "5"
     unit: "F 4"
+    unit-name: "F 4"
 - id: "Test 18"
   type: street-address-alternative-1
   input: "Severenstraat 146A-02"
@@ -221,3 +240,4 @@ test_parsing_definitions:
     building-and-unit: "146A-02"
     building: "146"
     unit: "A-02"
+    unit-name: "A-02"
