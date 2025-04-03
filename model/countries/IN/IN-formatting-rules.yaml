@@ -23,9 +23,7 @@ formatting-rules:
   - locality2
 
   street-address-alternative-1:
-  - building-location
-  - separator: ", "
-  - locality2
+  - building-location-and-locality2
   - separator: ", "
   - landmark
 
