@@ -22,13 +22,6 @@ formatting-rules:
   - separator: ", "
   - locality2
 
-  street-address-alternative-1:
-  - building-location
-  - separator: ", "
-  - locality2
-  - separator: ", "
-  - landmark
-
   landmark-and-locality2:
   - locality2
   - separator: ", "
@@ -39,3 +32,9 @@ formatting-rules:
   - separator: ", "
   - landmark
 
+  street-address-alternative-1:
+  - building-location-and-locality2
+  - separator: ", "
+  - landmark
+  - skip: building-location-and-landmark  # Not necessary.
+  - skip: landmark-and-locality2  # Not necessary.
