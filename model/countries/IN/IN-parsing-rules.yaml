@@ -1,0 +1,48 @@
+regex_definitions:
+  # Matches a single newline character
+  kNewLineSeparatorRe:
+    regex_fragment: '\n'
+
+  # Matches any sequence of characters *not* including a newline.
+  # Using [^\n]* is safer than .* because the framework assumes multiline mode,
+  # and we want to explicitly stop at the end of a line.
+  kAnyLineContentRe:
+    regex_fragment: '[^\n]*'
+
+capture_definitions:
+
+  StreetAddressDecomposition:
+    capture:
+      output: street-address-alternative-1
+      parts:
+        - capture:
+            output: building-location
+            parts:
+              - regex_reference: kAnyLineContentRe
+        - separator:
+            regex_reference: kNewLineSeparatorRe
+        - capture:
+            output: locality2
+            parts:
+              - regex_reference: kAnyLineContentRe
+        - separator:
+            regex_reference: kNewLineSeparatorRe
+        - capture:
+            output: landmark
+            parts:
+              - regex_reference: kAnyLineContentRe
+
+
+parsing_definitions:
+  street-address-alternative-1:
+    decomposition:
+      capture_reference: StreetAddressDecomposition
+
+test_parsing_definitions:
+- id: "Test 1"
+  type: street-address-alternative-1
+  input: "Block B, DivyaSree Omega\nKothaguda\nnear Sarath City Capital Mall"
+  output:
+    building-location: "Block B, DivyaSree Omega"
+    locality2: "Kothaguda"
+    landmark: "near Sarath City Capital Mall"
