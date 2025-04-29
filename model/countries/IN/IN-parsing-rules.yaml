@@ -10,7 +10,6 @@ regex_definitions:
     regex_fragment: '[^\n]*'
 
 capture_definitions:
-
   StreetAddressDecomposition:
     capture:
       output: street-address-alternative-1
@@ -46,3 +45,17 @@ test_parsing_definitions:
     building-location: "Block B, DivyaSree Omega"
     locality2: "Kothaguda"
     landmark: "near Sarath City Capital Mall"
+- id: "Test 2"
+  type: street-address-alternative-1
+  input: "Block B, DivyaSree Omega   \nKothaguda\n   near Sarath City Capital Mall"
+  output:
+    building-location: "Block B, DivyaSree Omega   "
+    locality2: "Kothaguda"
+    landmark: "   near Sarath City Capital Mall"
+- id: "Test 3"
+  type: street-address-alternative-1
+  input: "Block B - DivyaSree, Omega\nKothaguda\nnear, Sarath City, Capital Mall"
+  output:
+    building-location: "Block B - DivyaSree, Omega"
+    locality2: "Kothaguda"
+    landmark: "near, Sarath City, Capital Mall"
