@@ -34,7 +34,9 @@ formatting-rules:
 
   street-address-alternative-1:
   - building-location
-  - separator: "\n"
+  - separator: ", "
   - locality2
   - separator: "\n"
   - landmark
+
+  
