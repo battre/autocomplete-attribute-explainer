@@ -178,6 +178,16 @@ regex_definitions:
   kMiddleNameInitialsCharacteristicsRe:
     regex_fragment: |-
       ^(?:[A-Z]\.?(?:(?:\s|-)?[A-Z]\.?)*)$
+  
+  # Regular expression pattern to match a sequence of alphanumeric chars.
+  kAlphaNumericSequenceRe:
+    regex_fragment:
+      (?:[^\W_]+)
+
+  # Regular expression pattern to match the separator between
+  # zip code prefix and suffix.
+  kZipCodeSeparatorsRe:
+    regex_fragment: (?:[\s-]+)
 
 capture_definitions:
   # Returns an expression to parse a CJK name that includes one separator.
@@ -420,6 +430,22 @@ capture_definitions:
     no_capture:
       parts: [ {regex_fragment: '\A\s*'} ]
 
+  # Returns an expression to parse `postal-code` into `postal-code-prefix`
+  # and `postal-code-suffix`.
+  ParsePostalCodeExpression:
+    capture:
+      output: postal-code
+      parts:
+      - capture:
+          output: postal-code-prefix
+          parts: [ {regex_reference: kAlphaNumericSequenceRe} ]
+      - separator: {regex_reference: kZipCodeSeparatorsRe}
+      - capture:
+          output: postal-code-suffix
+          parts: [ {regex_reference: kAlphaNumericSequenceRe} ]
+          quantifier: MATCH_OPTIONAL
+
+
 parsing_definitions:
   name:
     # If the name is a CJK name, try to match in the following order:
@@ -461,6 +487,10 @@ parsing_definitions:
           - decomposition: {capture_reference: ParseOnlyLastNameExpression}
           - decomposition: {capture_reference: ParseLastCommaFirstMiddleNameExpression}
           - decomposition: {capture_reference: ParseFirstMiddleLastNameExpression}
+
+  postal-code:
+    decomposition:
+      capture_reference: ParsePostalCodeExpression
 
 test_capture_definitions:
 - id: "Chinese name, Unihan"
@@ -914,3 +944,33 @@ test_parsing_definitions:
     # family-name-first: ""
     # family-name-conjunction: ""
     # family-name-second: "孫"
+- id: US zip code with suffix.
+  type: postal-code
+  input: "90210-5555"
+  output:
+    postal-code-prefix: "90210"
+    postal-code-suffix: "5555"
+- id: US zip code without suffix.
+  type: postal-code
+  input: "90210"
+  output:
+    postal-code-prefix: "90210"
+    postal-code-suffix: ""
+- id: Canadian postal code.
+  type: postal-code
+  input: "M5V 2T6"
+  output:
+    postal-code-prefix: "M5V"
+    postal-code-suffix: "2T6"
+- id: UK postal code.
+  type: postal-code
+  input: "SW1A 0AA"
+  output:
+    postal-code-prefix: "SW1A"
+    postal-code-suffix: "0AA"
+- id: Polish postal code.
+  type: postal-code
+  input: "00-950"
+  output:
+    postal-code-prefix: "00"
+    postal-code-suffix: "950"

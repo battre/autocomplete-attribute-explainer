@@ -24,6 +24,10 @@ formatting-rules:
   - separator: "-"
   - unit
 
+  postal-code:
+  - postal-code-prefix
+  - postal-code-suffix
+
 examples:
 - id: name
   comment: |
@@ -46,7 +50,8 @@ examples:
     unit: A
     building-and-unit: 10-A
     locality1: Amsterdam
-    postal-code: 1234 AB
+    postal-code-prefix: 1234
+    postal-code-suffix: AB
     country: NL
     country-name: Netherlands
   output:
@@ -65,7 +70,8 @@ examples:
     building: 10
     building-and-unit: 10
     locality1: Amsterdam
-    postal-code: 1234 AB
+    postal-code-prefix: 1234
+    postal-code-suffix: AB
     country: NL
     country-name: Netherlands
   output:

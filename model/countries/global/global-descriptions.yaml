@@ -13,6 +13,8 @@ short-descriptions:
   country: 2-letter country code
   country-name: Name of a country
   postal-code: Postal code
+  postal-code-prefix: Postal code prefix
+  postal-code-suffix: Postal code suffix
   admin-area1: Biggest type of admin area if a country has multiple levels
   admin-area2: 2nd biggest type of admin area if a country has multiple levels
   admin-area3: 3rd biggest type of admin area if a country has multiple levels

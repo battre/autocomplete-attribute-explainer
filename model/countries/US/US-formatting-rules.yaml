@@ -35,7 +35,8 @@ examples:
     address-line2: Apt. 10, Club of Autofillers
     locality1: New York City
     admin-area1: NY
-    postal-code: 11367
+    postal-code-prefix: 11367
+    postal-code-suffix: 4100
     country: US
     country-name: USA
 
@@ -45,5 +46,5 @@ examples:
       text: |
         1234 Main St.
         Apt. 10, Club of Autofillers
-        New York City, NY 11367
+        New York City, NY 11367-4100
         USA
