@@ -1,0 +1,32 @@
+regex_definitions:
+  # Regular expression to match the separator between
+  # zip code prefix and suffix.
+  kZipCodeSeparatorsRe:
+    regex_reference: kWhitespaceSeparator
+
+  # Regular expression to match zip prefix
+  kZipPrefixValueRe:
+    regex_fragment: (?:[ABCEGHJ-NPRSTVXY]\d[ABCEGHJ-NPRSTV-Z])
+
+  # Regular expression to match zip suffix
+  kZipSuffixValueRe:
+    regex_fragment: (?:\d[ABCEGHJ-NPRSTV-Z]\d)
+
+parsing_definitions:
+  postal-code:
+    decomposition:
+      capture_reference: ParsePostalCodeOptionalSeparatorExpression
+
+test_parsing_definitions:
+- id: "zip code"
+  type: postal-code
+  input: "K1A 0B1"
+  output:
+    postal-code-prefix: "K1A"
+    postal-code-suffix: "0B1"
+- id: "zip code without separator"
+  type: postal-code
+  input: "K1A0B1"
+  output:
+    postal-code-prefix: "K1A"
+    postal-code-suffix: "0B1"

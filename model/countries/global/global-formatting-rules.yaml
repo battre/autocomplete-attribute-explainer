@@ -109,3 +109,8 @@ formatting-rules:
   - tel-local-prefix
   - separator: ""
   - tel-local-suffix
+
+  postal-code:
+  - postal-code-prefix
+  - separator: "-"
+  - postal-code-suffix

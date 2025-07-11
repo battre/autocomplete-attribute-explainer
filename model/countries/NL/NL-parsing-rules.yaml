@@ -9,6 +9,14 @@ regex_definitions:
   kHouseNumberAndUnitSeparator:
     regex_fragment: (?:[-\s/,]*)
 
+  # Regular expression to match zip prefix
+  kZipPrefixValueRe:
+    regex_fragment: (?:[1-9]\d{3})
+
+  # Regular expression to match zip suffix
+  kZipSuffixValueRe:
+    regex_fragment: (?:[A-Z]{2})
+
 capture_definitions:
   ParseBuildingLocation:
     capture:
@@ -31,7 +39,7 @@ capture_definitions:
                   - capture:
                       output: unit-name
                       parts: [ {regex_reference: kUnitValueRe} ]
-                quantifier: MATCH_OPTIONAL       
+                quantifier: MATCH_OPTIONAL
 
 parsing_definitions:
   building-location:
@@ -44,6 +52,10 @@ parsing_definitions:
         output: street-address-alternative-1
         parts:
         - capture_reference: ParseBuildingLocation
+  
+  postal-code:
+    decomposition:
+      capture_reference: ParsePostalCodeOptionalSeparatorExpression
 
 test_parsing_definitions:
 - id: "Test 1"
@@ -241,3 +253,15 @@ test_parsing_definitions:
     building: "146"
     unit: "A-02"
     unit-name: "A-02"
+- id: "zip code with separator"
+  type: postal-code
+  input: "1234 AB"
+  output:
+    postal-code-prefix: "1234"
+    postal-code-suffix: "AB"
+- id: "zip code without separator"
+  type: postal-code
+  input: "1234AB"
+  output:
+    postal-code-prefix: "1234"
+    postal-code-suffix: "AB"

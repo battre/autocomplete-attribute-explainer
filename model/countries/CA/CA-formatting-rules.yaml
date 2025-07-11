@@ -11,6 +11,10 @@ formatting-rules:
   - skip: country  # redundant with country-name
   - skip: street-address  # redundant with street-address-alternative-1
 
+  postal-code:
+  - postal-code-prefix
+  - postal-code-suffix
+
 examples:
 - id: name
   comment: |
@@ -33,7 +37,8 @@ examples:
     address-line2: Apt. 306
     locality1: Ottawa
     admin-area1: ON
-    postal-code: M5H 2J9
+    postal-code-prefix: M5H
+    postal-code-suffix: 2J9
     country: CA
     country-name: Canada
 
