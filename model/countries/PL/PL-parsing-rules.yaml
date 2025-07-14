@@ -65,6 +65,22 @@ capture_definitions:
           output: unit-name
           parts: [{regex_reference: kUnitNameValueRe}]
       quantifier: MATCH_OPTIONAL
+  
+  ParsePostalCodeExpression:
+    capture:
+      output: postal-code
+      parts:
+      - capture:
+          output: postal-code-prefix
+          parts: [ {regex_reference: kZipPrefixValueRe} ]
+      - no_capture:
+          parts:
+          - separator: {regex_reference: kZipCodeSeparatorsRe}
+          quantifier: MATCH_OPTIONAL
+      - capture:
+          output: postal-code-suffix
+          parts: [ {regex_reference: kZipSuffixValueRe} ]
+          quantifier: MATCH_OPTIONAL
 
 
 parsing_definitions:
