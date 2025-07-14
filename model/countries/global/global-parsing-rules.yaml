@@ -970,31 +970,31 @@ test_parsing_definitions:
     # family-name-first: ""
     # family-name-conjunction: ""
     # family-name-second: "孫"
-- id: US zip code with suffix.
+- id: US zip code with suffix
   type: postal-code
   input: "90210-5555"
   output:
     postal-code-prefix: "90210"
     postal-code-suffix: "5555"
-- id: US zip code without suffix.
+- id: US zip code without suffix
   type: postal-code
   input: "90210"
   output:
     postal-code-prefix: "90210"
     postal-code-suffix: ""
-- id: Canadian postal code.
+- id: Canadian postal code
   type: postal-code
   input: "M5V 2T6"
   output:
     postal-code-prefix: "M5V"
     postal-code-suffix: "2T6"
-- id: UK postal code.
+- id: UK postal code
   type: postal-code
   input: "SW1A 0AA"
   output:
     postal-code-prefix: "SW1A"
     postal-code-suffix: "0AA"
-- id: Polish postal code.
+- id: Polish postal code
   type: postal-code
   input: "00-950"
   output:

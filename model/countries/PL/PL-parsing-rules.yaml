@@ -235,13 +235,13 @@ test_parsing_definitions:
     unit: "m.10"
     unit-type: "m."
     unit-name: "10"
-- id: "zip code with separator"
+- id: "Test 15: zip code with separator"
   type: postal-code
   input: "00-843"
   output:
     postal-code-prefix: "00"
     postal-code-suffix: "843"
-- id: "zip code without separator"
+- id: "Test 16: zip code without separator"
   type: postal-code
   input: "00843"
   output:

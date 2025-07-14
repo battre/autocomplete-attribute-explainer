@@ -18,13 +18,13 @@ parsing_definitions:
       capture_reference: ParsePostalCodeOptionalSeparatorExpression
 
 test_parsing_definitions:
-- id: "zip code"
+- id: "Zip code with separator"
   type: postal-code
   input: "K1A 0B1"
   output:
     postal-code-prefix: "K1A"
     postal-code-suffix: "0B1"
-- id: "zip code without separator"
+- id: "Zip code without separator"
   type: postal-code
   input: "K1A0B1"
   output:

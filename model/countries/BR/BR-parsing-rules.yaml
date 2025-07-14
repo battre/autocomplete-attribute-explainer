@@ -336,13 +336,13 @@ test_parsing_definitions:
     unit-name: "12"
     floor: "1"
     landmark: "foo"
-- id: "zip code with separator"
+- id: "Zip code with separator"
   type: postal-code
   input: "12345-678"
   output:
     postal-code-prefix: "12345"
     postal-code-suffix: "678"
-- id: "zip code without separator"
+- id: "Zip code without separator"
   type: postal-code
   input: "12345678"
   output:

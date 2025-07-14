@@ -13,25 +13,25 @@ parsing_definitions:
       capture_reference: ParsePostalCodeOptionalSeparatorExpression
 
 test_parsing_definitions:
-- id: "zip code with suffix"
+- id: "Zip code with suffix"
   type: postal-code
   input: "90210-5555"
   output:
     postal-code-prefix: "90210"
     postal-code-suffix: "5555"
-- id: "zip code without suffix"
+- id: "Zip code without suffix"
   type: postal-code
   input: "90210"
   output:
     postal-code-prefix: "90210"
     postal-code-suffix: ""
-- id: "zip code with extra spaces"
+- id: "Zip code with extra spaces"
   type: postal-code
   input: "90210 - 5555"
   output:
     postal-code-prefix: "90210"
     postal-code-suffix: "5555" 
-- id: "zip code without separator"
+- id: "Zip code without separator"
   type: postal-code
   input: "902105555"
   output:

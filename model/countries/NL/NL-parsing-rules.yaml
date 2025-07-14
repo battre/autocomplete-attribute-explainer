@@ -253,13 +253,13 @@ test_parsing_definitions:
     building: "146"
     unit: "A-02"
     unit-name: "A-02"
-- id: "zip code with separator"
+- id: "Test 19: zip code with separator"
   type: postal-code
   input: "1234 AB"
   output:
     postal-code-prefix: "1234"
     postal-code-suffix: "AB"
-- id: "zip code without separator"
+- id: "Test 20: zip code without separator"
   type: postal-code
   input: "1234AB"
   output:
