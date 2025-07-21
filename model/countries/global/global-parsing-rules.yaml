@@ -7,6 +7,11 @@ regex_definitions:
   kCommaOrWhitespaceSeparator:
     regex_fragment: (?:^|[,\s]+)
 
+  # Regular expression pattern to match a sequence of alphanumeric chars.
+  kAlphaNumericSequenceRe:
+    regex_fragment:
+      (?:[^\W_]+)
+
   # Regular expressions pattern of common two-character CJK last names.
   # Korean names are written in Hangul.
   # Chinese names are written in their traditional and simplified version.
@@ -178,11 +183,6 @@ regex_definitions:
   kMiddleNameInitialsCharacteristicsRe:
     regex_fragment: |-
       ^(?:[A-Z]\.?(?:(?:\s|-)?[A-Z]\.?)*)$
-  
-  # Regular expression pattern to match a sequence of alphanumeric chars.
-  kAlphaNumericSequenceRe:
-    regex_fragment:
-      (?:[^\W_]+)
 
   # Regular expression pattern to match the separator between
   # zip code prefix and suffix.
