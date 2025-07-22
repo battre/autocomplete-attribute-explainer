@@ -19,6 +19,14 @@ regex_definitions:
 
   kFloorLiteralRe:  # Regex for literal for a floor
     regex_fragment: andar
+  
+  # Regular expression to match 5-digit zip prefix
+  kZipPrefixValueRe:
+    regex_fragment: (?:\d{5})
+
+  # Regular expression to match 3-digit zip suffix
+  kZipSuffixValueRe:
+    regex_fragment: (?:\d{3})
 
 capture_definitions:
   ParseBuildingLocation:
@@ -164,6 +172,10 @@ parsing_definitions:
         - capture:
             output: unit-name
             parts: [ {regex_reference: kUnitNameValueRe} ]
+
+  postal-code:
+    decomposition:
+      capture_reference: ParsePostalCodeOptionalSeparatorExpression
 
 test_regex_definitions:
 # Tests for kBuildingValueRe
@@ -324,3 +336,15 @@ test_parsing_definitions:
     unit-name: "12"
     floor: "1"
     landmark: "foo"
+- id: "Zip code with separator"
+  type: postal-code
+  input: "12345-678"
+  output:
+    postal-code-prefix: "12345"
+    postal-code-suffix: "678"
+- id: "Zip code without separator"
+  type: postal-code
+  input: "12345678"
+  output:
+    postal-code-prefix: "12345"
+    postal-code-suffix: "678"

@@ -56,7 +56,9 @@ concepts:
     - admin-area2
     - admin-area3
     - admin-area4
-    - postal-code
+    - postal-code:
+      - postal-code-prefix
+      - postal-code-suffix
     - country
     - country-name
   # Company related

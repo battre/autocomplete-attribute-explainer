@@ -1,0 +1,39 @@
+regex_definitions:
+  # Regular expression to match 5-digit zip prefix
+  kZipPrefixValueRe:
+    regex_fragment: (?:\d{5})
+
+  # Regular expression to match 4-digit zip suffix
+  kZipSuffixValueRe:
+    regex_fragment: (?:\d{4})
+
+parsing_definitions:
+  postal-code:
+    decomposition:
+      capture_reference: ParsePostalCodeOptionalSeparatorExpression
+
+test_parsing_definitions:
+- id: "Zip code with suffix"
+  type: postal-code
+  input: "90210-5555"
+  output:
+    postal-code-prefix: "90210"
+    postal-code-suffix: "5555"
+- id: "Zip code without suffix"
+  type: postal-code
+  input: "90210"
+  output:
+    postal-code-prefix: "90210"
+    postal-code-suffix: ""
+- id: "Zip code with extra spaces"
+  type: postal-code
+  input: "90210 - 5555"
+  output:
+    postal-code-prefix: "90210"
+    postal-code-suffix: "5555" 
+- id: "Zip code without separator"
+  type: postal-code
+  input: "902105555"
+  output:
+    postal-code-prefix: "90210"
+    postal-code-suffix: "5555" 

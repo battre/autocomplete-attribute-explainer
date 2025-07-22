@@ -24,6 +24,14 @@ regex_definitions:
   # Regular expression to match separator of house/building number and unit/apartment number.
   kHouseNumberAndUnitSeparator:
     regex_fragment: (?:^|[/\s]+)
+  
+  # Regular expression to match 2-digit zip prefix
+  kZipPrefixValueRe:
+    regex_fragment: (?:\d{2})
+
+  # Regular expression to match 3-digit zip suffix
+  kZipSuffixValueRe:
+    regex_fragment: (?:\d{3})
 
 capture_definitions:
   ParseBuildingLocation:
@@ -85,6 +93,10 @@ parsing_definitions:
   unit:
     decomposition:
       capture_reference: ParseUnitWithOptionalPrefix
+  
+  postal-code:
+    decomposition:
+      capture_reference: ParsePostalCodeOptionalSeparatorExpression
 
 
 test_parsing_definitions:
@@ -223,3 +235,15 @@ test_parsing_definitions:
     unit: "m.10"
     unit-type: "m."
     unit-name: "10"
+- id: "Test 15: zip code with separator"
+  type: postal-code
+  input: "00-843"
+  output:
+    postal-code-prefix: "00"
+    postal-code-suffix: "843"
+- id: "Test 16: zip code without separator"
+  type: postal-code
+  input: "00843"
+  output:
+    postal-code-prefix: "00"
+    postal-code-suffix: "843"
