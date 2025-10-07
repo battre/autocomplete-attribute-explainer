@@ -127,20 +127,21 @@ for country in countries:
       after_token_index += new_after_token_index
   content += after_token_index
 
-  all_token_content = ""
-  for token in renderer.get_model(country).pre_order_only_uniques():
-    token_content = ""
-    for module in modules:
-      if new_token_conent := module.render_token_details(
-          country, token.id, renderer):
-        token_content += new_token_conent
-    token_content = renderer.wrap_token_details(token.id,
-                                                renderer.get_model(country),
-                                                token_content)
-    all_token_content += token_content
-  if all_token_content:
-    all_token_content = renderer.wrap_all_token_details(all_token_content)
-    content += all_token_content
+  model = renderer.get_model(country)
+  if model is not None:
+    all_token_content = ""
+    for token in model.pre_order_only_uniques():
+      token_content = ""
+      for module in modules:
+        if new_token_conent := module.render_token_details(
+            country, token.id, renderer):
+          token_content += new_token_conent
+      token_content = renderer.wrap_token_details(token.id, model,
+                                                  token_content)
+      all_token_content += token_content
+    if all_token_content:
+      all_token_content = renderer.wrap_all_token_details(all_token_content)
+      content += all_token_content
 
   epilogue = ""
   for module in modules:

@@ -1,0 +1,87 @@
+regex_definitions:
+  # Regular expression to match optional zip prefix.
+  kZipOptionalPrefixRe:
+    regex_fragment: (?:〒\s*)
+
+  # Regular expression to match 3-digit zip prefix.
+  kZipPrefixValueRe:
+    regex_fragment: (?:[0-9０-９]{3})
+  
+  # Regular expression pattern to match the separator between
+  # zip code prefix and suffix.
+  kZipCodeSeparatorsRe:
+    regex_fragment: (?:[\s－-]+)
+
+  # Regular expression to match 4-digit zip suffix.
+  kZipSuffixValueRe:
+    regex_fragment: (?:[0-9０-９]{4})
+
+capture_definitions:
+  # Returns an expression to parse `postal-code` into `postal-code-prefix`
+  # and `postal-code-suffix`, separator is optional, skip optional prefix.
+  ParsePostalCodeOptionalSeparatorOptionalPrefixExpression:
+    capture:
+      output: postal-code
+      parts:
+      - no_capture:
+          parts: [ {regex_reference: kZipOptionalPrefixRe} ]
+          quantifier: MATCH_OPTIONAL
+      - capture:
+          output: postal-code-prefix
+          parts: [ {regex_reference: kZipPrefixValueRe} ]
+      - no_capture:
+          parts:
+          - separator: {regex_reference: kZipCodeSeparatorsRe}
+          quantifier: MATCH_OPTIONAL
+      - capture:
+          output: postal-code-suffix
+          parts: [ {regex_reference: kZipSuffixValueRe} ]
+
+parsing_definitions:
+  postal-code:
+    decomposition:
+      capture_reference: ParsePostalCodeOptionalSeparatorOptionalPrefixExpression
+
+test_parsing_definitions:
+- id: "Zip code with separator"
+  type: postal-code
+  input: "163-8001"
+  output:
+    postal-code-prefix: "163"
+    postal-code-suffix: "8001"
+- id: "Zip code without separator"
+  type: postal-code
+  input: "1638001"
+  output:
+    postal-code-prefix: "163"
+    postal-code-suffix: "8001" 
+- id: "Full-width zip code with separator"
+  type: postal-code
+  input: "１６３－８００１"
+  output:
+    postal-code-prefix: "１６３"
+    postal-code-suffix: "８００１"
+- id: "Zip code with optional prefix and separator"
+  type: postal-code
+  input: "〒163-8001"
+  output:
+    postal-code-prefix: "163"
+    postal-code-suffix: "8001"
+- id: "Zip code with optional prefix, space, and separator"
+  type: postal-code
+  input: "〒 163-8001"
+  output:
+    postal-code-prefix: "163"
+    postal-code-suffix: "8001"
+- id: "Full-width zip code with optional prefix"
+  type: postal-code
+  input: "〒１６３－８００１"
+  output:
+    postal-code-prefix: "１６３"
+    postal-code-suffix: "８００１"
+- id: "Zip code with optional prefix and no separator"
+  type: postal-code
+  input: "〒1638001"
+  output:
+    postal-code-prefix: "163"
+    postal-code-suffix: "8001"

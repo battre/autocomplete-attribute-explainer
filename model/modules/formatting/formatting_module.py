@@ -192,6 +192,8 @@ class FormattingModule(AbstractModule):
       return str(data[token_id])
 
     model = renderer.get_model(country)
+    if model is None:
+      return ""
 
     token = model.find_token(token_id)
     if not token or token.is_atomic_token() or not token.children:
@@ -290,7 +292,7 @@ class FormattingModule(AbstractModule):
       })
     return {
         'examples': collected_details,
-        'model': renderer.country_data[country]['model']
+        'model': renderer.country_data[country].get('model')
     }
 
   def render_after_token_index(self, country: str,
