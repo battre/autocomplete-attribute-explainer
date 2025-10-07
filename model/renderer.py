@@ -24,7 +24,7 @@ class Renderer:
 
   countries = []
   vendor_extension_extra_pages: List[ExtraPage] = []
-  LEGACY_COUNTRT_CODE = "XX"
+  LEGACY_COUNTRY_CODE = "XX"
 
   def __init__(self,
                output_dir: Optional[str] = None,
