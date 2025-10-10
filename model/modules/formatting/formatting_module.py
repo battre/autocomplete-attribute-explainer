@@ -192,7 +192,7 @@ class FormattingModule(AbstractModule):
       return str(data[token_id])
 
     model = renderer.get_model(country)
-    if model is None:
+    if not model:
       return ""
 
     token = model.find_token(token_id)

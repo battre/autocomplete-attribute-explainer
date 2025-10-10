@@ -128,7 +128,7 @@ for country in countries:
   content += after_token_index
 
   model = renderer.get_model(country)
-  if model is not None:
+  if model:
     all_token_content = ""
     for token in model.pre_order_only_uniques():
       token_content = ""
