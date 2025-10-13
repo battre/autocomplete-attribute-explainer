@@ -174,7 +174,7 @@ class ParsingModule(AbstractModule):
     engine.prune_output_types(all_removed_tokens)
 
     model = renderer.get_model(country)
-    if not engine.validate(model):
+    if model and not engine.validate(model):
       return
 
     if 'test_regex_definitions' in yaml:
