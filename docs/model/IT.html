@@ -282,6 +282,15 @@
           <span>IT</span></a>
         
         <a class="mdl-navigation__link "
+          href="JP.html">
+          
+          <span class="mdl-color-text--blue-grey-400 material-icons"
+              style="font-family:'Roboto', 'Helvetica', sans-serif;">
+              🇯🇵</span>
+          
+          <span>JP</span></a>
+        
+        <a class="mdl-navigation__link "
           href="MX.html">
           
           <span class="mdl-color-text--blue-grey-400 material-icons"
@@ -728,6 +737,45 @@
       
     
   </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#postal-code-prefix">postal-code-prefix</a>
+    - Postal code prefix
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#postal-code-suffix">postal-code-suffix</a>
+    - Postal code suffix
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
   
 </div>
 
@@ -1340,6 +1388,10 @@
       
         
       
+        
+      
+        
+      
     </table>
   </td>
   <td valign="top">
@@ -1442,6 +1494,10 @@
         
       
         
+      
+        
+      
+        
         <tr>
           <td>country</td><td><pre style="margin:0">IT</pre></td>
         </tr>
@@ -1506,8 +1562,26 @@
       Output for "address":<br>
       <pre class="formatting_example_textbox">Via Roma 15, Appartamento 3
 20121 Milano MI
-Italia</pre>
+IT</pre>
       
+      
+        <p class="formatting_errors">
+          Expected:
+          <pre class="formatting_example_textbox formatting_errors">Via Roma 15, Appartamento 3
+20121 Milano MI
+Italia
+</pre>
+        </p>
+        <p class="formatting_errors">
+          Delta:
+          <pre class="formatting_example_textbox formatting_errors">--- expected_output
++++ actual_output
+@@ -1,3 +1,3 @@
+ Via Roma 15, Appartamento 3
+ 20121 Milano MI
+-Italia
++IT</pre>
+        </p>
       
     
   </td>
@@ -3646,13 +3720,13 @@ Address of a physical location - Artificial concept, not to be used in HTML
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">address</span> =
-<span class="formatting_token">street-address-alternative-1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">postal-code</span><span class="formatting_token_separator">␣</span><span class="formatting_token">locality1</span><span class="formatting_token_separator">␣</span><span class="formatting_token">admin-area1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">country-name</span>
+<span class="formatting_token">street-address-alternative-1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">postal-code</span><span class="formatting_token_separator">␣</span><span class="formatting_token">locality1</span><span class="formatting_token_separator">␣</span><span class="formatting_token">admin-area1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">country</span>
 </div>
 
 <h5>Flattened formatting:</h5>
 <div>
 <span class="formatting_token">address</span> =<br>
-<span class="formatting_token">street</span><span class="formatting_token_separator">␣</span><span class="formatting_token">building</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">address-overflow</span><span class="formatting_token_separator"><br></span><span class="formatting_token">postal-code</span><span class="formatting_token_separator">␣</span><span class="formatting_token">locality1</span><span class="formatting_token_separator">␣</span><span class="formatting_token">admin-area1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country-name</span>
+<span class="formatting_token">street</span><span class="formatting_token_separator">␣</span><span class="formatting_token">building</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">address-overflow</span><span class="formatting_token_separator"><br></span><span class="formatting_token">postal-code-prefix</span><span class="formatting_token_separator">-</span><span class="formatting_token">postal-code-suffix</span><span class="formatting_token_separator">␣</span><span class="formatting_token">locality1</span><span class="formatting_token_separator">␣</span><span class="formatting_token">admin-area1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country</span>
 </div>
 
 </div><h3 id="street-address">
@@ -4764,6 +4838,261 @@ Biggest type of admin area if a country has multiple levels
 <div style="margin-left: 20px;">
 
 Postal code
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h4>Parsing:</h4>
+<div class="parsing">
+
+
+
+
+<details>
+  <summary>Decomposition
+    
+    (<code>ParsePostalCodeMandatorySeparatorExpression</code>)
+    
+  </summary>
+  Anchor beginning: True<br>
+  
+    Capture Reference: ParsePostalCodeMandatorySeparatorExpression<br>
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>postal-code</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>postal-code-prefix</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+<details>
+  <summary>Regex Reference: <code>kZipPrefixValueRe</code></summary>
+  
+
+
+
+  Regex Reference: <code>kAlphaNumericSequenceRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[^\W_]+)</code>
+
+
+
+
+</details>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kZipCodeSeparatorsRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[\s-]+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>postal-code-suffix</code>
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+<details>
+  <summary>Regex Reference: <code>kZipSuffixValueRe</code></summary>
+  
+
+
+
+  Regex Reference: <code>kAlphaNumericSequenceRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[^\W_]+)</code>
+
+
+
+
+</details>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+  Anchor end: True<br>
+</details>
+
+
+
+
+</div>
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    
+    <a href="#postal-code-prefix">postal-code-prefix</a>
+  </li>
+
+  <li>
+    
+    <a href="#postal-code-suffix">postal-code-suffix</a>
+  </li>
+
+</ul>
+</div>
+
+
+
+
+
+
+
+<h4>Formatting:</h4>
+<div>
+<span class="formatting_token">postal-code</span> =
+<span class="formatting_token">postal-code-prefix</span><span class="formatting_token_separator">-</span><span class="formatting_token">postal-code-suffix</span>
+</div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">postal-code</span> =<br>
+<span class="formatting_token">postal-code-prefix</span><span class="formatting_token_separator">-</span><span class="formatting_token">postal-code-suffix</span>
+</div>
+
+</div><h3 id="postal-code-prefix">
+  <a href="#postal-code-prefix">#</a>
+  
+  postal-code-prefix
+</h3>
+<div style="margin-left: 20px;">
+
+Postal code prefix
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="postal-code-suffix">
+  <a href="#postal-code-suffix">#</a>
+  
+  postal-code-suffix
+</h3>
+<div style="margin-left: 20px;">
+
+Postal code suffix
 
 
 

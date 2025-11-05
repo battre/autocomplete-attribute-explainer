@@ -14,8 +14,8 @@ formatting-rules:
   - admin-area1
   - separator: "\n"
   # {country}
-  - country-name
-  - skip: country  # redundant with country-name
+  - country
+  - skip: country-name  # redundant with country
   - skip: street-address  # redundant with street-address-alternative-1
 
   building-location:

@@ -6,8 +6,8 @@ formatting-rules:
   - separator: " "
   - locality1
   - separator: "\n"
-  - country-name
-  - skip: country  # redundant with country-name
+  - country
+  - skip: country-name  # redundant with country
   - skip: street-address  # redundant with street-address-alternative-1
   - skip: admin-area1
 

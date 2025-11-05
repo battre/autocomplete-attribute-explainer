@@ -9,8 +9,8 @@ formatting-rules:
   - postal-code
   - separator: "\n"
   # {country}
-  - country-name
-  - skip: country  # redundant with country-name
+  - country
+  - skip: country-name  # redundant with country
   - skip: street-address  # redundant with street-address-alternative-1
 
 examples:
