@@ -282,6 +282,15 @@
           <span>IT</span></a>
         
         <a class="mdl-navigation__link "
+          href="JP.html">
+          
+          <span class="mdl-color-text--blue-grey-400 material-icons"
+              style="font-family:'Roboto', 'Helvetica', sans-serif;">
+              🇯🇵</span>
+          
+          <span>JP</span></a>
+        
+        <a class="mdl-navigation__link "
           href="MX.html">
           
           <span class="mdl-color-text--blue-grey-400 material-icons"
@@ -888,6 +897,45 @@ Address forms also often contain a landmark field ("Ponto de referência"). Some
     
   </div>
   
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#postal-code-prefix">postal-code-prefix</a>
+    - Postal code prefix
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#postal-code-suffix">postal-code-suffix</a>
+    - Postal code suffix
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
+  
 </div>
 
         
@@ -1468,6 +1516,10 @@ Address forms also often contain a landmark field ("Ponto de referência"). Some
       
         
       
+        
+      
+        
+      
     </table>
   </td>
   <td valign="top">
@@ -1593,6 +1645,10 @@ granular tokens.
         
       
         
+      
+        
+      
+        
         <tr>
           <td>country</td><td><pre style="margin:0">BR</pre></td>
         </tr>
@@ -1657,8 +1713,31 @@ Ponto de referência: Theatro Municipal do Rio de Janeiro
 Centro
 Rio de Janeiro - RJ
 20230-153
-Brasil</pre>
+BR</pre>
       
+      
+        <p class="formatting_errors">
+          Expected:
+          <pre class="formatting_example_textbox formatting_errors">Avenida Mem de Sá, 1234
+Andar 1, Apto. 12
+Ponto de referência: Theatro Municipal do Rio de Janeiro
+Centro
+Rio de Janeiro - RJ
+20230-153
+Brasil
+</pre>
+        </p>
+        <p class="formatting_errors">
+          Delta:
+          <pre class="formatting_example_textbox formatting_errors">--- expected_output
++++ actual_output
+@@ -4,4 +4,4 @@
+ Centro
+ Rio de Janeiro - RJ
+ 20230-153
+-Brasil
++BR</pre>
+        </p>
       
     
   </td>
@@ -1777,6 +1856,10 @@ address-overflow trumps the leaf node values of unit-type, unit-name, etc.
         
       
         
+      
+        
+      
+        
         <tr>
           <td>country</td><td><pre style="margin:0">BR</pre></td>
         </tr>
@@ -1841,8 +1924,31 @@ Ponto de referência: Theatro Municipal do Rio de Janeiro
 Centro
 Rio de Janeiro - RJ
 20230-153
-Brasil</pre>
+BR</pre>
       
+      
+        <p class="formatting_errors">
+          Expected:
+          <pre class="formatting_example_textbox formatting_errors">Avenida Mem de Sá, 1234
+1º andar, ap 12
+Ponto de referência: Theatro Municipal do Rio de Janeiro
+Centro
+Rio de Janeiro - RJ
+20230-153
+Brasil
+</pre>
+        </p>
+        <p class="formatting_errors">
+          Delta:
+          <pre class="formatting_example_textbox formatting_errors">--- expected_output
++++ actual_output
+@@ -4,4 +4,4 @@
+ Centro
+ Rio de Janeiro - RJ
+ 20230-153
+-Brasil
++BR</pre>
+        </p>
       
     
   </td>
@@ -1945,6 +2051,10 @@ uses a different addressing system.
         
       
         
+      
+        
+      
+        
         <tr>
           <td>country</td><td><pre style="margin:0">BR</pre></td>
         </tr>
@@ -2007,8 +2117,29 @@ uses a different addressing system.
 Andar 4
 Brasília - DF
 70297-400
-Brasil</pre>
+BR</pre>
       
+      
+        <p class="formatting_errors">
+          Expected:
+          <pre class="formatting_example_textbox formatting_errors">SCS – Quadra 6, Bloco A
+Andar 4
+Brasília - DF
+70297-400
+Brasil
+</pre>
+        </p>
+        <p class="formatting_errors">
+          Delta:
+          <pre class="formatting_example_textbox formatting_errors">--- expected_output
++++ actual_output
+@@ -2,4 +2,4 @@
+ Andar 4
+ Brasília - DF
+ 70297-400
+-Brasil
++BR</pre>
+        </p>
       
     
   </td>
@@ -3927,13 +4058,13 @@ Address of a physical location - Artificial concept, not to be used in HTML
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">address</span> =
-<span class="formatting_token">street-address-alternative-1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">locality2</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">locality1</span><span class="formatting_token_separator">␣-␣</span><span class="formatting_token">admin-area1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">postal-code</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">country-name</span>
+<span class="formatting_token">street-address-alternative-1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">locality2</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">locality1</span><span class="formatting_token_separator">␣-␣</span><span class="formatting_token">admin-area1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">postal-code</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">country</span>
 </div>
 
 <h5>Flattened formatting:</h5>
 <div>
 <span class="formatting_token">address</span> =<br>
-<span class="formatting_token">street</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">building</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Andar </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Ponto de referência: </span><span class="formatting_token">landmark</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality1</span><span class="formatting_token_separator">␣-␣</span><span class="formatting_token">admin-area1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">postal-code</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country-name</span>
+<span class="formatting_token">street</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">building</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Andar </span><span class="formatting_token">floor</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator"><br></span><span class="formatting_token_prefix">Ponto de referência: </span><span class="formatting_token">landmark</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality1</span><span class="formatting_token_separator">␣-␣</span><span class="formatting_token">admin-area1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">postal-code-prefix</span><span class="formatting_token_separator">-</span><span class="formatting_token">postal-code-suffix</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country</span>
 </div>
 
 </div><h3 id="street-address">
@@ -6971,6 +7102,263 @@ State
 <div style="margin-left: 20px;">
 
 Postal code
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h4>Parsing:</h4>
+<div class="parsing">
+
+
+
+
+<details>
+  <summary>Decomposition
+    
+    (<code>ParsePostalCodeOptionalSeparatorExpression</code>)
+    
+  </summary>
+  Anchor beginning: True<br>
+  
+    Capture Reference: ParsePostalCodeOptionalSeparatorExpression<br>
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>postal-code</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>postal-code-prefix</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kZipPrefixValueRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:\d{5})</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      No capturing pattern
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kZipCodeSeparatorsRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[\s-]+)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>postal-code-suffix</code>
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kZipSuffixValueRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:\d{3})</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+  Anchor end: True<br>
+</details>
+
+
+
+
+</div>
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    
+    <a href="#postal-code-prefix">postal-code-prefix</a>
+  </li>
+
+  <li>
+    
+    <a href="#postal-code-suffix">postal-code-suffix</a>
+  </li>
+
+</ul>
+</div>
+
+
+
+
+
+
+
+<h4>Formatting:</h4>
+<div>
+<span class="formatting_token">postal-code</span> =
+<span class="formatting_token">postal-code-prefix</span><span class="formatting_token_separator">-</span><span class="formatting_token">postal-code-suffix</span>
+</div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">postal-code</span> =<br>
+<span class="formatting_token">postal-code-prefix</span><span class="formatting_token_separator">-</span><span class="formatting_token">postal-code-suffix</span>
+</div>
+
+</div><h3 id="postal-code-prefix">
+  <a href="#postal-code-prefix">#</a>
+  
+  postal-code-prefix
+</h3>
+<div style="margin-left: 20px;">
+
+Postal code prefix
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="postal-code-suffix">
+  <a href="#postal-code-suffix">#</a>
+  
+  postal-code-suffix
+</h3>
+<div style="margin-left: 20px;">
+
+Postal code suffix
 
 
 

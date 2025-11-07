@@ -12,8 +12,8 @@ formatting-rules:
   - separator: "\n"
   - postal-code
   - separator: "\n"
-  - country-name
-  - skip: country  # redundant with country-name
+  - country
+  - skip: country-name  # redundant with country
   - skip: street-address  # Not necessary.
   - skip: street-address-alternative-1  # Not necessary.
 
