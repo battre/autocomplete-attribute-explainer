@@ -12,7 +12,7 @@ regex_definitions:
       
   # Regular expression to match the prefixes that indicate a house number.
   kStreetOptionalPrefixRe:
-    regex_fragment: '(?:(?:ulica|ul\.?)\s*)?'
+    regex_fragment: '(?:(?:ulica|ul\.?\W)\s*)?'
 
   # Regular expression to match the unit-types in Poland.
   kUnitTypeLiteralRe:
@@ -247,3 +247,15 @@ test_parsing_definitions:
   output:
     postal-code-prefix: "00"
     postal-code-suffix: "843"
+- id: "Test 17: street name starting with street prefix"
+  type: street-address-alternative-1
+  input: "Ulubiona 9A/m.10"
+  output:
+    street-address-alternative-1: "Ulubiona 9A/m.10"
+    building-location: "Ulubiona 9A/m.10"
+    street: "Ulubiona"
+    building-and-unit: "9A/m.10"
+    building: "9A"
+    unit: "m.10"
+    unit-type: "m."
+    unit-name: "10"
