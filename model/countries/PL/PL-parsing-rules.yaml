@@ -259,3 +259,15 @@ test_parsing_definitions:
     unit: "m.10"
     unit-type: "m."
     unit-name: "10"
+- id: "Test 18: street name starting with street prefix without separator"
+  type: street-address-alternative-1
+  input: "ul.Ulubiona 9A/m.10"
+  output:
+    street-address-alternative-1: "ul.Ulubiona 9A/m.10"
+    building-location: "ul.Ulubiona 9A/m.10"
+    street: "Ulubiona"
+    building-and-unit: "9A/m.10"
+    building: "9A"
+    unit: "m.10"
+    unit-type: "m."
+    unit-name: "10"
