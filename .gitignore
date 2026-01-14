@@ -1,3 +1,5 @@
 .DS_Store
 *.bak
 .venv
+model/build_internal_version.sh
+model/vendor
