@@ -197,6 +197,29 @@
     }
     </style>
     
+    <style>
+      .website { padding: 4px; }
+      .website h1 {
+        font-size: 14px;
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+      .website h1 i { font-size: 14px; }
+      .website a i { font-size: 10px; }
+      .website_form {
+        border: 1px solid black;
+      }
+      .form-field-depth-0 { padding-left: 12px; }
+      .form-field-depth-1 { padding-left: 24px; }
+      .form-field-depth-2 { padding-left: 36px; }
+      .form-field-depth-3 { padding-left: 48px; }
+      .form-field-depth-4 { padding-left: 60px; }
+      .form-field-depth-5 { padding-left: 72px; }
+      .form-field-depth-6 { padding-left: 74px; }
+      .form-field-not-found { color: lightgrey; }
+      .missing-field-type { color: red; }
+    </style>
+    
 </head>
 
 <body>
@@ -282,6 +305,15 @@
           <span>IT</span></a>
         
         <a class="mdl-navigation__link "
+          href="JP.html">
+          
+          <span class="mdl-color-text--blue-grey-400 material-icons"
+              style="font-family:'Roboto', 'Helvetica', sans-serif;">
+              🇯🇵</span>
+          
+          <span>JP</span></a>
+        
+        <a class="mdl-navigation__link "
           href="MX.html">
           
           <span class="mdl-color-text--blue-grey-400 material-icons"
@@ -327,6 +359,27 @@
           <span>XX</span></a>
         
         
+        <div>
+          <hr>
+          <a class="mdl-navigation__link current" href="NL.html">Model</a></li>
+          
+          <a class="mdl-navigation__link "
+                 href="NL-structure-analysis.html">
+                 Structure Analysis
+              </a>
+          
+          <a class="mdl-navigation__link "
+                 href="NL-token-analysis.html">
+                 Token Analysis
+              </a>
+          
+          <a class="mdl-navigation__link "
+                 href="NL-type-subset-analysis.html">
+                 Type Subset Analysis
+              </a>
+          
+        </div>
+        
       </nav>
     </div>
     <main class="mdl-layout__content mdl-color--grey-100">
@@ -340,6 +393,7 @@
     <div style="margin: 8px"><p>Netherlands address forms rarely use the address line concept.
 Instead, they use more granular fields describing entities like city, postal code, state, street name, and building number.
 This addressing system is unified across the country, except for a few cities and districts.
+The unified structure is described in the following <a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/nldEn.pdf" > DOCUMENT</a>.
 Address fields in the Netherlands can be divided into two groups: high-level location and street address.</p>
 <p><b>High-level location</b></p>
 <p>High-level location fields are: country, state, city, and postal code.
@@ -865,6 +919,45 @@ information about the floor or part of the building. </p>
       
     
   </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#postal-code-prefix">postal-code-prefix</a>
+    - Postal code prefix
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#postal-code-suffix">postal-code-suffix</a>
+    - Postal code suffix
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
   
 </div>
 
@@ -1495,6 +1588,10 @@ information about the floor or part of the building. </p>
       
         
       
+        
+      
+        
+      
     </table>
   </td>
   <td valign="top">
@@ -1595,10 +1692,22 @@ information about the floor or part of the building. </p>
         
       
         
+        <tr>
+          <td>admin-area1</td><td><pre style="margin:0">Noord-Holland</pre></td>
+        </tr>
+        
+      
+        
       
         
         <tr>
-          <td>postal-code</td><td><pre style="margin:0">1234 AB</pre></td>
+          <td>postal-code-prefix</td><td><pre style="margin:0">1234</pre></td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>postal-code-suffix</td><td><pre style="margin:0">AB</pre></td>
         </tr>
         
       
@@ -1667,6 +1776,7 @@ information about the floor or part of the building. </p>
       Output for "address":<br>
       <pre class="formatting_example_textbox">Kerkstraat 10-A
 1234 AB Amsterdam
+Noord-Holland
 Netherlands</pre>
       
       
@@ -1758,10 +1868,22 @@ Netherlands</pre>
         
       
         
+        <tr>
+          <td>admin-area1</td><td><pre style="margin:0">Noord-Holland</pre></td>
+        </tr>
+        
+      
+        
       
         
         <tr>
-          <td>postal-code</td><td><pre style="margin:0">1234 AB</pre></td>
+          <td>postal-code-prefix</td><td><pre style="margin:0">1234</pre></td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>postal-code-suffix</td><td><pre style="margin:0">AB</pre></td>
         </tr>
         
       
@@ -1830,6 +1952,7 @@ Netherlands</pre>
       Output for "address":<br>
       <pre class="formatting_example_textbox">Kerkstraat 10
 1234 AB Amsterdam
+Noord-Holland
 Netherlands</pre>
       
       
@@ -3970,13 +4093,13 @@ Address of a physical location - Artificial concept, not to be used in HTML
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">address</span> =
-<span class="formatting_token">street-address-alternative-1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">postal-code</span><span class="formatting_token_separator">␣</span><span class="formatting_token">locality1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">country-name</span>
+<span class="formatting_token">street-address-alternative-1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">postal-code</span><span class="formatting_token_separator">␣</span><span class="formatting_token">locality1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">admin-area1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">country-name</span>
 </div>
 
 <h5>Flattened formatting:</h5>
 <div>
 <span class="formatting_token">address</span> =<br>
-<span class="formatting_token">street</span><span class="formatting_token_separator">␣</span><span class="formatting_token">building</span><span class="formatting_token_separator">-</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator"><br></span><span class="formatting_token">postal-code</span><span class="formatting_token_separator">␣</span><span class="formatting_token">locality1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country-name</span>
+<span class="formatting_token">street</span><span class="formatting_token_separator">␣</span><span class="formatting_token">building</span><span class="formatting_token_separator">-</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator"><br></span><span class="formatting_token">postal-code-prefix</span><span class="formatting_token">postal-code-suffix</span><span class="formatting_token_separator">␣</span><span class="formatting_token">locality1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">admin-area1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country-name</span>
 </div>
 
 </div><h3 id="street-address">
@@ -5169,6 +5292,263 @@ State
 <div style="margin-left: 20px;">
 
 Postal code
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h4>Parsing:</h4>
+<div class="parsing">
+
+
+
+
+<details>
+  <summary>Decomposition
+    
+    (<code>ParsePostalCodeOptionalSeparatorExpression</code>)
+    
+  </summary>
+  Anchor beginning: True<br>
+  
+    Capture Reference: ParsePostalCodeOptionalSeparatorExpression<br>
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>postal-code</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>postal-code-prefix</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kZipPrefixValueRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[1-9]\d{3})</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      No capturing pattern
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kZipCodeSeparatorsRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[\s-]+)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>postal-code-suffix</code>
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kZipSuffixValueRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[A-Z]{2})</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+  Anchor end: True<br>
+</details>
+
+
+
+
+</div>
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    
+    <a href="#postal-code-prefix">postal-code-prefix</a>
+  </li>
+
+  <li>
+    
+    <a href="#postal-code-suffix">postal-code-suffix</a>
+  </li>
+
+</ul>
+</div>
+
+
+
+
+
+
+
+<h4>Formatting:</h4>
+<div>
+<span class="formatting_token">postal-code</span> =
+<span class="formatting_token">postal-code-prefix</span><span class="formatting_token">postal-code-suffix</span>
+</div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">postal-code</span> =<br>
+<span class="formatting_token">postal-code-prefix</span><span class="formatting_token">postal-code-suffix</span>
+</div>
+
+</div><h3 id="postal-code-prefix">
+  <a href="#postal-code-prefix">#</a>
+  
+  postal-code-prefix
+</h3>
+<div style="margin-left: 20px;">
+
+Postal code prefix
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="postal-code-suffix">
+  <a href="#postal-code-suffix">#</a>
+  
+  postal-code-suffix
+</h3>
+<div style="margin-left: 20px;">
+
+Postal code suffix
 
 
 

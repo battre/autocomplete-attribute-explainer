@@ -197,6 +197,29 @@
     }
     </style>
     
+    <style>
+      .website { padding: 4px; }
+      .website h1 {
+        font-size: 14px;
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+      .website h1 i { font-size: 14px; }
+      .website a i { font-size: 10px; }
+      .website_form {
+        border: 1px solid black;
+      }
+      .form-field-depth-0 { padding-left: 12px; }
+      .form-field-depth-1 { padding-left: 24px; }
+      .form-field-depth-2 { padding-left: 36px; }
+      .form-field-depth-3 { padding-left: 48px; }
+      .form-field-depth-4 { padding-left: 60px; }
+      .form-field-depth-5 { padding-left: 72px; }
+      .form-field-depth-6 { padding-left: 74px; }
+      .form-field-not-found { color: lightgrey; }
+      .missing-field-type { color: red; }
+    </style>
+    
 </head>
 
 <body>
@@ -282,6 +305,15 @@
           <span>IT</span></a>
         
         <a class="mdl-navigation__link "
+          href="JP.html">
+          
+          <span class="mdl-color-text--blue-grey-400 material-icons"
+              style="font-family:'Roboto', 'Helvetica', sans-serif;">
+              🇯🇵</span>
+          
+          <span>JP</span></a>
+        
+        <a class="mdl-navigation__link "
           href="MX.html">
           
           <span class="mdl-color-text--blue-grey-400 material-icons"
@@ -327,11 +359,41 @@
           <span>XX</span></a>
         
         
+        <div>
+          <hr>
+          <a class="mdl-navigation__link current" href="CA.html">Model</a></li>
+          
+          <a class="mdl-navigation__link "
+                 href="CA-structure-analysis.html">
+                 Structure Analysis
+              </a>
+          
+          <a class="mdl-navigation__link "
+                 href="CA-token-analysis.html">
+                 Token Analysis
+              </a>
+          
+          <a class="mdl-navigation__link "
+                 href="CA-type-subset-analysis.html">
+                 Type Subset Analysis
+              </a>
+          
+        </div>
+        
       </nav>
     </div>
     <main class="mdl-layout__content mdl-color--grey-100">
       <div id="content" class="content">
         
+<div class="mdl-card mdl-shadow--2dp" style="width: 95%; margin: 8px">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">About the country</h2>
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <div style="margin: 8px">Addresses in Canada follow the structure described in the following <a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/canEn.pdf" > DOCUMENT</a>.</div>
+  </div>
+</div>
+
 
 
 
@@ -561,6 +623,45 @@
       
     
   </div>
+  
+    
+    
+      <div class="concept-content">
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#postal-code-prefix">postal-code-prefix</a>
+    - Postal code prefix
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+          
+<div class="concept">
+  <div class="concept-id">
+    
+    
+    <a href="#postal-code-suffix">postal-code-suffix</a>
+    - Postal code suffix
+      
+        
+      
+    
+  </div>
+  
+</div>
+
+        
+      </div>
+    
   
 </div>
 
@@ -1159,6 +1260,10 @@
       
         
       
+        
+      
+        
+      
     </table>
   </td>
   <td valign="top">
@@ -1234,8 +1339,16 @@ granular tokens.
         
       
         
+      
+        
         <tr>
-          <td>postal-code</td><td><pre style="margin:0">M5H 2J9</pre></td>
+          <td>postal-code-prefix</td><td><pre style="margin:0">M5H</pre></td>
+        </tr>
+        
+      
+        
+        <tr>
+          <td>postal-code-suffix</td><td><pre style="margin:0">2J9</pre></td>
         </tr>
         
       
@@ -1336,6 +1449,1699 @@ Full name
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h4>Parsing:</h4>
+<div class="parsing">
+
+
+
+
+<details>
+  <summary>Decomposition Cascade
+  
+  </summary>
+  
+  Cascade:<br>
+  <ol>
+  
+  <li>
+
+
+<details>
+  <summary>Decomposition Cascade
+  
+  (if <code>kHasCjkNameCharacteristics</code>)
+  
+  </summary>
+  
+  Condition:<br>
+  
+
+
+
+<details>
+  <summary>Regex Reference: <code>kHasCjkNameCharacteristics</code></summary>
+  
+
+
+  Regex concatenation
+  <ol>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">^</code>
+
+
+</li>
+    
+    <li>
+
+
+
+  Regex Reference: <code>kCjkCharactersRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:\p{Han}|\p{Hangul}|\p{Katakana}|\p{Hiragana}|\p{Bopomofo})+)</code>
+
+
+
+</li>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">(?:</code>
+
+
+</li>
+    
+    <li>
+
+
+
+  Regex Reference: <code>kCjkNameSeperatorsRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:・|·|　|\s+)</code>
+
+
+
+</li>
+    
+    <li>
+
+
+
+  Regex Reference: <code>kCjkCharactersRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:\p{Han}|\p{Hangul}|\p{Katakana}|\p{Hiragana}|\p{Bopomofo})+)</code>
+
+
+
+</li>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">)?$</code>
+
+
+</li>
+    
+  </ol>
+  Wrap as non-capture group: True
+
+
+
+</details>
+
+
+
+<br>
+  
+  Cascade:<br>
+  <ol>
+  
+  <li>
+
+
+<details>
+  <summary>Decomposition
+    
+    (<code>ParseSeparatedCjkNameExpression</code>)
+    
+  </summary>
+  Anchor beginning: True<br>
+  
+    Capture Reference: ParseSeparatedCjkNameExpression<br>
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>family-name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kCjkCharactersRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:\p{Han}|\p{Hangul}|\p{Katakana}|\p{Hiragana}|\p{Bopomofo})+)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kCjkNameSeperatorsRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:・|·|　|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>given-name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kCjkCharactersRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:\p{Han}|\p{Hangul}|\p{Katakana}|\p{Hiragana}|\p{Bopomofo})+)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+  Anchor end: True<br>
+</details>
+
+
+</li>
+  
+  <li>
+
+
+<details>
+  <summary>Decomposition
+    
+    (<code>ParseKoreanTwoCharacterLastNameExpression</code>)
+    
+  </summary>
+  Anchor beginning: True<br>
+  
+    Capture Reference: ParseKoreanTwoCharacterLastNameExpression<br>
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>family-name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kTwoCharacterKoreanNamesRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:강전|남궁|독고|동방|망절|사공|서문|선우|소봉|어금|장곡|제갈|황목|황보)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>given-name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kHangulCharacterRe</code> =&gt;
+  <code class="parsing-regexfragment">\p{Hangul}</code>
+
+
+
+</li>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kHangulCharactersRe</code> =&gt;
+  <code class="parsing-regexfragment">\p{Hangul}+</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+  Anchor end: True<br>
+</details>
+
+
+</li>
+  
+  <li>
+
+
+<details>
+  <summary>Decomposition
+    
+    (<code>ParseCommonCjkTwoCharacterLastNameExpression</code>)
+    
+  </summary>
+  Anchor beginning: True<br>
+  
+    Capture Reference: ParseCommonCjkTwoCharacterLastNameExpression<br>
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>family-name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kTwoCharacterCjkLastNamesRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:남궁|사공|서문|선우|제갈|황보|독고|망절|欧阳|令狐|皇甫|上官|司徒|诸葛|司马|宇文|呼延|端木|張簡|歐陽|諸葛|申屠|尉遲|司馬|軒轅|夏侯)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>given-name</code>
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kCjkCharactersRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:\p{Han}|\p{Hangul}|\p{Katakana}|\p{Hiragana}|\p{Bopomofo})+)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+  Anchor end: True<br>
+</details>
+
+
+</li>
+  
+  <li>
+
+
+<details>
+  <summary>Decomposition
+    
+    (<code>ParseCjkSingleCharacterLastNameExpression</code>)
+    
+  </summary>
+  Anchor beginning: True<br>
+  
+    Capture Reference: ParseCjkSingleCharacterLastNameExpression<br>
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>family-name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kCjkCharacterRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:\p{Han}|\p{Hangul}|\p{Katakana}|\p{Hiragana}|\p{Bopomofo})</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>given-name</code>
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kCjkCharactersRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:\p{Han}|\p{Hangul}|\p{Katakana}|\p{Hiragana}|\p{Bopomofo})+)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+  Anchor end: True<br>
+</details>
+
+
+</li>
+  
+  </ol>
+</details>
+
+
+</li>
+  
+  <li>
+
+
+<details>
+  <summary>Decomposition Cascade
+  
+  (if <code>kHasHispanicLatinxNameCharacteristics</code>)
+  
+  </summary>
+  
+  Condition:<br>
+  
+
+
+
+<details>
+  <summary>Regex Reference: <code>kHasHispanicLatinxNameCharacteristics</code></summary>
+  
+
+
+  Regex concatenation
+  <ol>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">(?:</code>
+
+
+</li>
+    
+    <li>
+
+
+
+  Regex Reference: <code>kHispanicCommonLastNameCharacteristicsRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:Aguilar|Alonso|Álvarez|Amador|Betancourt|Blanco|Burgos|Castillo|Castro|Chávez|Colón|Contreras|Cortez|Cruz|Delgado|Diaz|Díaz|Domínguez|Estrada|Fernandez|Fernández|Flores|Fuentes|Garcia|García|Garza|Gil|Gómez|González|Guerrero|Gutiérrez|Guzmán|Hernández|Herrera|Iglesias|Jiménez|Juárez|Lopez|López|Luna|Marín|Marroquín|Martín|Martinez|Martínez|Medina|Méndez|Mendoza|Molina|Morales|Moreno|Muñoz|Narvaez|Navarro|Núñez|Ortega|Ortiz|Ortíz|Peña|Perez|Pérez|Ramírez|Ramos|Reyes|Rivera|Rodriguez|Rodríguez|Rojas|Romero|Rosario|Rubio|Ruiz|Ruíz|Salazar|Sanchez|Sánchez|Santana|Santiago|Santos|Sanz|Serrano|Soto|Suárez|Toro|Torres|Vargas|Vasquez|Vásquez|Vázquez|Velásquez)</code>
+
+
+
+</li>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">|</code>
+
+
+</li>
+    
+    <li>
+
+
+
+  Regex Reference: <code>kHispanicLastNameConjunctionCharacteristicsRe</code> =&gt;
+  <code class="parsing-regexfragment">\s(?:y|e|i)\s</code>
+
+
+
+</li>
+    
+    <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">)</code>
+
+
+</li>
+    
+  </ol>
+  Wrap as non-capture group: True
+
+
+
+</details>
+
+
+
+<br>
+  
+  Cascade:<br>
+  <ol>
+  
+  <li>
+
+
+<details>
+  <summary>Decomposition
+    
+    (<code>ParseHispanicFullNameExpression</code>)
+    
+  </summary>
+  Anchor beginning: True<br>
+  
+    Capture Reference: ParseHispanicFullNameExpression<br>
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      No capturing pattern
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kHonorificPrefixRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:Master|Mr\.?|Miss\.?|Mrs\.?|Missus|Ms\.?|Mx\.?|M\.?|Ma&#39;am|Sir|Gentleman|Sire|Mistress|Madam|Ma&#39;am|Dame|Lord|Lady|Esq|Excellency|Excellence|Her Honour|His Honour|Hon\.?|The Right Honourable|The Most Honourable|Dr\.?|PhD|DPhil|MD|DO|Prof\.|Professor|QC|CL|Chancellor|Vice-Chancellor|Principle|Principal|President|Master|Warden|Dean|Regent|Rector|Provost|Director|Chief Executive|Imām|Shaykh|Muftī|Hāfiz|Hāfizah|Qārī|Mawlānā|Hājī|Sayyid|Sayyidah|Sharif|Eminent|Venerable|His Holiness|His Holiness|His All Holiness|His Beatitude|The Most Blessed|His Excellency|His Most Eminent Highness|His Eminence|Most Reverend Eminence|The Most Reverend|His Grace|His Lordship|The Reverend|Fr|Pr|Br|Sr|Elder|Rabbi|The Reverend|Cantor|Chief Rabbi|Grand Rabbi|Rebbetzin|Herr|Frau|Fräulein|Dame|PD|Doktor|Magister|Ingenieur|1lt|1st|2lt|2nd|3rd|admiral|capt|captain|col|cpt|dr|gen|general|lcdr|lt|ltc|ltg|ltjg|maj|major|mg|pastor|prof|rep|reverend|rev|sen|st)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>given-name</code>
+    
+    (MATCH_LAZY_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kMultipleLazyWordsRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[^\s,]+(?:[^\S\r\n]+[^\s,]+)*?)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>Capture Reference: <code>ParseHispanicLastNameExpression</code></summary>
+  
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>family-name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      No capturing pattern
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kOptionalLastNamePrefixRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:a|ab|af|av|ap|abu|aït|al|ālam|aust|austre|bar|bath|bat|ben|bin|ibn|bet|bint|binti|binte|da|das|de|degli|dele|del|du|della|der|di|dos|du|e|el|fetch|vetch|fitz|i??|kil|gil|de le|de la|la|le|lille|lu|m|mac|mc|mck|mhic|mic|mala|mellom|myljom|na|ned|nedre|neder|nic|ni|nin|nord|norr|ny|o|ua|ui|opp|upp|öfver|ost|öst|öster|øst|øst|østre|över|øvste|øvre|øver|öz|pour|putra|putri|setia|tor|söder|sør|sønder|sør|syd|søndre|syndre|søre|ter|ter|tre|van|van der|väst|väster|verch|erch|vest|vestre|vesle|vetle|von|zu|von und zu)\s)?</code>
+
+
+
+</li>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kSingleWordRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[^\s,]+)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      No capturing pattern
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kHispanicLastNameConjunctionsRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:y|e|i)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      No capturing pattern
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kOptionalLastNamePrefixRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:a|ab|af|av|ap|abu|aït|al|ālam|aust|austre|bar|bath|bat|ben|bin|ibn|bet|bint|binti|binte|da|das|de|degli|dele|del|du|della|der|di|dos|du|e|el|fetch|vetch|fitz|i??|kil|gil|de le|de la|la|le|lille|lu|m|mac|mc|mck|mhic|mic|mala|mellom|myljom|na|ned|nedre|neder|nic|ni|nin|nord|norr|ny|o|ua|ui|opp|upp|öfver|ost|öst|öster|øst|øst|østre|över|øvste|øvre|øver|öz|pour|putra|putri|setia|tor|söder|sør|sønder|sør|syd|søndre|syndre|søre|ter|ter|tre|van|van der|väst|väster|verch|erch|vest|vestre|vesle|vetle|von|zu|von und zu)\s)?</code>
+
+
+
+</li>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kSingleWordRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[^\s,]+)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+  Anchor end: True<br>
+</details>
+
+
+</li>
+  
+  </ol>
+</details>
+
+
+</li>
+  
+  <li>
+
+
+<details>
+  <summary>Decomposition Cascade
+  
+  </summary>
+  
+  Cascade:<br>
+  <ol>
+  
+  <li>
+
+
+<details>
+  <summary>Decomposition
+    
+    (<code>ParseOnlyLastNameExpression</code>)
+    
+  </summary>
+  Anchor beginning: True<br>
+  
+    Capture Reference: ParseOnlyLastNameExpression<br>
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>family-name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kOptionalLastNamePrefixRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:a|ab|af|av|ap|abu|aït|al|ālam|aust|austre|bar|bath|bat|ben|bin|ibn|bet|bint|binti|binte|da|das|de|degli|dele|del|du|della|der|di|dos|du|e|el|fetch|vetch|fitz|i??|kil|gil|de le|de la|la|le|lille|lu|m|mac|mc|mck|mhic|mic|mala|mellom|myljom|na|ned|nedre|neder|nic|ni|nin|nord|norr|ny|o|ua|ui|opp|upp|öfver|ost|öst|öster|øst|øst|østre|över|øvste|øvre|øver|öz|pour|putra|putri|setia|tor|söder|sør|sønder|sør|syd|søndre|syndre|søre|ter|ter|tre|van|van der|väst|väster|verch|erch|vest|vestre|vesle|vetle|von|zu|von und zu)\s)?</code>
+
+
+
+</li>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kSingleWordRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[^\s,]+)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      No capturing pattern
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kLastNameSuffixRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:b\.a|ba|d\.d\.s|dds|ii|iii|iv|ix|jr|m\.a|m\.d|md|ms|ph\.?d|sr|v|vi|vii|viii|x)\.?)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+  Anchor end: True<br>
+</details>
+
+
+</li>
+  
+  <li>
+
+
+<details>
+  <summary>Decomposition
+    
+    (<code>ParseLastCommaFirstMiddleNameExpression</code>)
+    
+  </summary>
+  Anchor beginning: True<br>
+  
+    Capture Reference: ParseLastCommaFirstMiddleNameExpression<br>
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      No capturing pattern
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kHonorificPrefixRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:Master|Mr\.?|Miss\.?|Mrs\.?|Missus|Ms\.?|Mx\.?|M\.?|Ma&#39;am|Sir|Gentleman|Sire|Mistress|Madam|Ma&#39;am|Dame|Lord|Lady|Esq|Excellency|Excellence|Her Honour|His Honour|Hon\.?|The Right Honourable|The Most Honourable|Dr\.?|PhD|DPhil|MD|DO|Prof\.|Professor|QC|CL|Chancellor|Vice-Chancellor|Principle|Principal|President|Master|Warden|Dean|Regent|Rector|Provost|Director|Chief Executive|Imām|Shaykh|Muftī|Hāfiz|Hāfizah|Qārī|Mawlānā|Hājī|Sayyid|Sayyidah|Sharif|Eminent|Venerable|His Holiness|His Holiness|His All Holiness|His Beatitude|The Most Blessed|His Excellency|His Most Eminent Highness|His Eminence|Most Reverend Eminence|The Most Reverend|His Grace|His Lordship|The Reverend|Fr|Pr|Br|Sr|Elder|Rabbi|The Reverend|Cantor|Chief Rabbi|Grand Rabbi|Rebbetzin|Herr|Frau|Fräulein|Dame|PD|Doktor|Magister|Ingenieur|1lt|1st|2lt|2nd|3rd|admiral|capt|captain|col|cpt|dr|gen|general|lcdr|lt|ltc|ltg|ltjg|maj|major|mg|pastor|prof|rep|reverend|rev|sen|st)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>family-name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kOptionalLastNamePrefixRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:a|ab|af|av|ap|abu|aït|al|ālam|aust|austre|bar|bath|bat|ben|bin|ibn|bet|bint|binti|binte|da|das|de|degli|dele|del|du|della|der|di|dos|du|e|el|fetch|vetch|fitz|i??|kil|gil|de le|de la|la|le|lille|lu|m|mac|mc|mck|mhic|mic|mala|mellom|myljom|na|ned|nedre|neder|nic|ni|nin|nord|norr|ny|o|ua|ui|opp|upp|öfver|ost|öst|öster|øst|øst|østre|över|øvste|øvre|øver|öz|pour|putra|putri|setia|tor|söder|sør|sønder|sør|syd|søndre|syndre|søre|ter|ter|tre|van|van der|väst|väster|verch|erch|vest|vestre|vesle|vetle|von|zu|von und zu)\s)?</code>
+
+
+
+</li>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kSingleWordRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[^\s,]+)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      No capturing pattern
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+Regex Fragment: <code class="parsing-regexfragment">\s*,\s*</code>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>given-name</code>
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kSingleWordRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[^\s,]+)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>additional-name</code>
+    
+    (MATCH_LAZY_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kMultipleLazyWordsRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[^\s,]+(?:[^\S\r\n]+[^\s,]+)*?)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+  Anchor end: True<br>
+</details>
+
+
+</li>
+  
+  <li>
+
+
+<details>
+  <summary>Decomposition
+    
+    (<code>ParseFirstMiddleLastNameExpression</code>)
+    
+  </summary>
+  Anchor beginning: True<br>
+  
+    Capture Reference: ParseFirstMiddleLastNameExpression<br>
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      No capturing pattern
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kHonorificPrefixRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:Master|Mr\.?|Miss\.?|Mrs\.?|Missus|Ms\.?|Mx\.?|M\.?|Ma&#39;am|Sir|Gentleman|Sire|Mistress|Madam|Ma&#39;am|Dame|Lord|Lady|Esq|Excellency|Excellence|Her Honour|His Honour|Hon\.?|The Right Honourable|The Most Honourable|Dr\.?|PhD|DPhil|MD|DO|Prof\.|Professor|QC|CL|Chancellor|Vice-Chancellor|Principle|Principal|President|Master|Warden|Dean|Regent|Rector|Provost|Director|Chief Executive|Imām|Shaykh|Muftī|Hāfiz|Hāfizah|Qārī|Mawlānā|Hājī|Sayyid|Sayyidah|Sharif|Eminent|Venerable|His Holiness|His Holiness|His All Holiness|His Beatitude|The Most Blessed|His Excellency|His Most Eminent Highness|His Eminence|Most Reverend Eminence|The Most Reverend|His Grace|His Lordship|The Reverend|Fr|Pr|Br|Sr|Elder|Rabbi|The Reverend|Cantor|Chief Rabbi|Grand Rabbi|Rebbetzin|Herr|Frau|Fräulein|Dame|PD|Doktor|Magister|Ingenieur|1lt|1st|2lt|2nd|3rd|admiral|capt|captain|col|cpt|dr|gen|general|lcdr|lt|ltc|ltg|ltjg|maj|major|mg|pastor|prof|rep|reverend|rev|sen|st)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>given-name</code>
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kSingleWordRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[^\s,]+)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>additional-name</code>
+    
+    (MATCH_LAZY_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kMultipleLazyWordsRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[^\s,]+(?:[^\S\r\n]+[^\s,]+)*?)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>family-name</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kOptionalLastNamePrefixRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:a|ab|af|av|ap|abu|aït|al|ālam|aust|austre|bar|bath|bat|ben|bin|ibn|bet|bint|binti|binte|da|das|de|degli|dele|del|du|della|der|di|dos|du|e|el|fetch|vetch|fitz|i??|kil|gil|de le|de la|la|le|lille|lu|m|mac|mc|mck|mhic|mic|mala|mellom|myljom|na|ned|nedre|neder|nic|ni|nin|nord|norr|ny|o|ua|ui|opp|upp|öfver|ost|öst|öster|øst|øst|østre|över|øvste|øvre|øver|öz|pour|putra|putri|setia|tor|söder|sør|sønder|sør|syd|søndre|syndre|søre|ter|ter|tre|van|van der|väst|väster|verch|erch|vest|vestre|vesle|vetle|von|zu|von und zu)\s)?</code>
+
+
+
+</li>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kSingleWordRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[^\s,]+)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+
+Separator: Regex Reference <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      No capturing pattern
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kLastNameSuffixRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:(?:b\.a|ba|d\.d\.s|dds|ii|iii|iv|ix|jr|m\.a|m\.d|md|ms|ph\.?d|sr|v|vi|vii|viii|x)\.?)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+  Anchor end: True<br>
+</details>
+
+
+</li>
+  
+  </ol>
+</details>
+
+
+</li>
+  
+  </ol>
+</details>
+
+
+
+
+</div>
+
 <div>
 <h4>Children:</h4>
 <ul>
@@ -1387,6 +3193,30 @@ First name
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="additional-name">
   <a href="#additional-name">#</a>
   
@@ -1395,6 +3225,30 @@ First name
 <div style="margin-left: 20px;">
 
 Middle name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1409,6 +3263,30 @@ Last name
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="address">
   <a href="#address">#</a>
   
@@ -1417,6 +3295,30 @@ Last name
 <div style="margin-left: 20px;">
 
 Address of a physical location - Artificial concept, not to be used in HTML
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1472,7 +3374,7 @@ Address of a physical location - Artificial concept, not to be used in HTML
 <h5>Flattened formatting:</h5>
 <div>
 <span class="formatting_token">address</span> =<br>
-<span class="formatting_token">address-line1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">address-line2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">address-line3</span><span class="formatting_token_separator"><br></span><span class="formatting_token">address-line4</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality1</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area1</span><span class="formatting_token">postal-code</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country-name</span>
+<span class="formatting_token">address-line1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">address-line2</span><span class="formatting_token_separator"><br></span><span class="formatting_token">address-line3</span><span class="formatting_token_separator"><br></span><span class="formatting_token">address-line4</span><span class="formatting_token_separator"><br></span><span class="formatting_token">locality1</span><span class="formatting_token_separator">,␣</span><span class="formatting_token">admin-area1</span><span class="formatting_token">postal-code-prefix</span><span class="formatting_token">postal-code-suffix</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country-name</span>
 </div>
 
 </div><h3 id="street-address">
@@ -1483,6 +3385,30 @@ Address of a physical location - Artificial concept, not to be used in HTML
 <div style="margin-left: 20px;">
 
 Street address (street name, house number, apartment)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1542,6 +3468,30 @@ Street address (street name, house number, apartment)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="address-line2">
   <a href="#address-line2">#</a>
   
@@ -1550,6 +3500,30 @@ Street address (street name, house number, apartment)
 <div style="margin-left: 20px;">
 
 2nd line of street-address
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1564,6 +3538,30 @@ Street address (street name, house number, apartment)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="address-line4">
   <a href="#address-line4">#</a>
   
@@ -1572,6 +3570,30 @@ Street address (street name, house number, apartment)
 <div style="margin-left: 20px;">
 
 4th line of street-address
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1586,6 +3608,30 @@ City
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="admin-area1">
   <a href="#admin-area1">#</a>
   
@@ -1594,6 +3640,30 @@ City
 <div style="margin-left: 20px;">
 
 State
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1608,6 +3678,309 @@ Postal code
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h4>Parsing:</h4>
+<div class="parsing">
+
+
+
+
+<details>
+  <summary>Decomposition
+    
+    (<code>ParsePostalCodeOptionalSeparatorExpression</code>)
+    
+  </summary>
+  Anchor beginning: True<br>
+  
+    Capture Reference: ParsePostalCodeOptionalSeparatorExpression<br>
+    
+
+
+<details>
+  <summary>
+    
+      Capture <code>postal-code</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>postal-code-prefix</code>
+    
+    (MATCH_REQUIRED)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kZipPrefixValueRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:[ABCEGHJ-NPRSTVXY]\d[ABCEGHJ-NPRSTV-Z])</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      No capturing pattern
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+<details>
+  <summary>Separator:</summary>
+  
+
+
+
+<details>
+  <summary>Regex Reference: <code>kZipCodeSeparatorsRe</code></summary>
+  
+
+
+
+  Regex Reference: <code>kWhitespaceSeparator</code> =&gt;
+  <code class="parsing-regexfragment">(?:^|\s+)</code>
+
+
+
+
+</details>
+
+
+
+
+</details>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+        <li>
+
+
+<details>
+  <summary>
+    
+      Capture <code>postal-code-suffix</code>
+    
+    (MATCH_OPTIONAL)
+  </summary>
+    
+    
+      Parts: <br>
+      <ul>
+        
+        <li>
+
+
+
+  Regex Reference: <code>kZipSuffixValueRe</code> =&gt;
+  <code class="parsing-regexfragment">(?:\d[ABCEGHJ-NPRSTV-Z]\d)</code>
+
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+</li>
+        
+      </ul>
+    
+    
+    
+</details>
+
+
+
+  
+  Anchor end: True<br>
+</details>
+
+
+
+
+</div>
+
+<div>
+<h4>Children:</h4>
+<ul>
+
+  <li>
+    
+    <a href="#postal-code-prefix">postal-code-prefix</a>
+  </li>
+
+  <li>
+    
+    <a href="#postal-code-suffix">postal-code-suffix</a>
+  </li>
+
+</ul>
+</div>
+
+
+
+
+
+
+
+<h4>Formatting:</h4>
+<div>
+<span class="formatting_token">postal-code</span> =
+<span class="formatting_token">postal-code-prefix</span><span class="formatting_token">postal-code-suffix</span>
+</div>
+
+<h5>Flattened formatting:</h5>
+<div>
+<span class="formatting_token">postal-code</span> =<br>
+<span class="formatting_token">postal-code-prefix</span><span class="formatting_token">postal-code-suffix</span>
+</div>
+
+</div><h3 id="postal-code-prefix">
+  <a href="#postal-code-prefix">#</a>
+  
+  postal-code-prefix
+</h3>
+<div style="margin-left: 20px;">
+
+Postal code prefix
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><h3 id="postal-code-suffix">
+  <a href="#postal-code-suffix">#</a>
+  
+  postal-code-suffix
+</h3>
+<div style="margin-left: 20px;">
+
+Postal code suffix
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="country">
   <a href="#country">#</a>
   
@@ -1616,6 +3989,30 @@ Postal code
 <div style="margin-left: 20px;">
 
 2-letter country code
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1630,6 +4027,30 @@ Name of a country
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="organization">
   <a href="#organization">#</a>
   
@@ -1641,6 +4062,30 @@ Name of an organization/company
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="credit-card">
   <a href="#credit-card">#</a>
   
@@ -1649,6 +4094,30 @@ Name of an organization/company
 <div style="margin-left: 20px;">
 
 Artificial concept, not to be used in HTML
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1697,6 +4166,30 @@ Artificial concept, not to be used in HTML
 <div style="margin-left: 20px;">
 
 Full name of credit card holder
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1751,6 +4244,30 @@ Given name of credit card holder
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="cc-additional-name">
   <a href="#cc-additional-name">#</a>
   
@@ -1759,6 +4276,30 @@ Given name of credit card holder
 <div style="margin-left: 20px;">
 
 Additional name of credit card holder
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1773,6 +4314,30 @@ Family name of credit card holder
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="cc-number">
   <a href="#cc-number">#</a>
   
@@ -1784,6 +4349,30 @@ Credit card number
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="cc-exp-MMYY">
   <a href="#cc-exp-MMYY">#</a>
   
@@ -1792,6 +4381,30 @@ Credit card number
 <div style="margin-left: 20px;">
 
 Credit card expiration date in format MM/YY
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1841,6 +4454,30 @@ Credit card expiration month (2 digits)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="cc-exp-YY">
   <a href="#cc-exp-YY">#</a>
   
@@ -1852,6 +4489,30 @@ Credit card expiration date in format YY (2 digits)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="cc-exp-MMYYYY">
   <a href="#cc-exp-MMYYYY">#</a>
   
@@ -1860,6 +4521,30 @@ Credit card expiration date in format YY (2 digits)
 <div style="margin-left: 20px;">
 
 Credit card expiration date in format MM/YYYY
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1909,6 +4594,30 @@ Credit card expiration date in format YYYY (4 digits)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="cc-csc">
   <a href="#cc-csc">#</a>
   
@@ -1917,6 +4626,30 @@ Credit card expiration date in format YYYY (4 digits)
 <div style="margin-left: 20px;">
 
 CSC/CVC/CVV number
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1931,6 +4664,30 @@ Credit card type
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="tel">
   <a href="#tel">#</a>
   
@@ -1939,6 +4696,30 @@ Credit card type
 <div style="margin-left: 20px;">
 
 Full telephone number
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1993,6 +4774,30 @@ Country code component of the telephone number
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="tel-national">
   <a href="#tel-national">#</a>
   
@@ -2001,6 +4806,30 @@ Country code component of the telephone number
 <div style="margin-left: 20px;">
 
 Telephone number without the county code component, with a country-internal prefix applied if applicable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2052,6 +4881,30 @@ Area code component of the telephone number, with a country-internal prefix appl
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="tel-local">
   <a href="#tel-local">#</a>
   
@@ -2060,6 +4913,30 @@ Area code component of the telephone number, with a country-internal prefix appl
 <div style="margin-left: 20px;">
 
 Telephone number without the country code and area code components
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2111,6 +4988,30 @@ First part of the component of the telephone number that follows the area code, 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="tel-local-suffix">
   <a href="#tel-local-suffix">#</a>
   
@@ -2119,6 +5020,30 @@ First part of the component of the telephone number that follows the area code, 
 <div style="margin-left: 20px;">
 
 Second part of the component of the telephone number that follows the area code, when that component is split into two components
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2134,6 +5059,30 @@ Telephone number internal extension code
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div><h3 id="email">
   <a href="#email">#</a>
   
@@ -2142,6 +5091,30 @@ Telephone number internal extension code
 <div style="margin-left: 20px;">
 
 Email address
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -197,6 +197,29 @@
     }
     </style>
     
+    <style>
+      .website { padding: 4px; }
+      .website h1 {
+        font-size: 14px;
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+      .website h1 i { font-size: 14px; }
+      .website a i { font-size: 10px; }
+      .website_form {
+        border: 1px solid black;
+      }
+      .form-field-depth-0 { padding-left: 12px; }
+      .form-field-depth-1 { padding-left: 24px; }
+      .form-field-depth-2 { padding-left: 36px; }
+      .form-field-depth-3 { padding-left: 48px; }
+      .form-field-depth-4 { padding-left: 60px; }
+      .form-field-depth-5 { padding-left: 72px; }
+      .form-field-depth-6 { padding-left: 74px; }
+      .form-field-not-found { color: lightgrey; }
+      .missing-field-type { color: red; }
+    </style>
+    
 </head>
 
 <body>
@@ -336,6 +359,27 @@
           <span>XX</span></a>
         
         
+        <div>
+          <hr>
+          <a class="mdl-navigation__link current" href="PL.html">Model</a></li>
+          
+          <a class="mdl-navigation__link "
+                 href="PL-structure-analysis.html">
+                 Structure Analysis
+              </a>
+          
+          <a class="mdl-navigation__link "
+                 href="PL-token-analysis.html">
+                 Token Analysis
+              </a>
+          
+          <a class="mdl-navigation__link "
+                 href="PL-type-subset-analysis.html">
+                 Type Subset Analysis
+              </a>
+          
+        </div>
+        
       </nav>
     </div>
     <main class="mdl-layout__content mdl-color--grey-100">
@@ -346,7 +390,7 @@
     <h2 class="mdl-card__title-text">About the country</h2>
   </div>
   <div class="mdl-card__actions mdl-card--border">
-    <div style="margin: 8px">
+    <div style="margin: 8px">Addresses in Poland follow the structure described in the following <a href="https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/polEn.pdf" > DOCUMENT</a>.
 Street Addresses in Poland typically consist of street name, building number and apartment number. 
 Specifically for data model of Poland the node <b>building-and-unit</b> was created to store house number and apartment number in one node. 
 The whole node of street-address for Poland in redundant, since the data is stored in <b>building-location</b> node, but we keep the main <b>street-address</b> node to preserve generic i18n project tree like data structure.</div>
@@ -1564,6 +1608,10 @@ The whole node of street-address for Poland in redundant, since the data is stor
         
       
         
+        <tr>
+          <td>admin-area1</td><td><pre style="margin:0">mazowieckie</pre></td>
+        </tr>
+        
       
         
         <tr>
@@ -1640,6 +1688,7 @@ The whole node of street-address for Poland in redundant, since the data is stor
       Output for "address":<br>
       <pre class="formatting_example_textbox">ul. Warsaw 9/10
 01-001 Warsaw
+mazowieckie
 Polska</pre>
       
       
@@ -1725,6 +1774,10 @@ Polska</pre>
         
       
         
+        <tr>
+          <td>admin-area1</td><td><pre style="margin:0">mazowieckie</pre></td>
+        </tr>
+        
       
         
         <tr>
@@ -1801,6 +1854,7 @@ Polska</pre>
       Output for "address":<br>
       <pre class="formatting_example_textbox">ul. Warsaw 9
 01-001 Warsaw
+mazowieckie
 Polska</pre>
       
       
@@ -3796,13 +3850,13 @@ Address of a physical location - Artificial concept, not to be used in HTML
 <h4>Formatting:</h4>
 <div>
 <span class="formatting_token">address</span> =
-<span class="formatting_token">street-address-alternative-1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">postal-code</span><span class="formatting_token_separator">␣</span><span class="formatting_token">locality1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">country-name</span>
+<span class="formatting_token">street-address-alternative-1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">postal-code</span><span class="formatting_token">locality1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">admin-area1</span><span class="formatting_token_separator">⏎</span><span class="formatting_token">country-name</span>
 </div>
 
 <h5>Flattened formatting:</h5>
 <div>
 <span class="formatting_token">address</span> =<br>
-<span class="formatting_token">street</span><span class="formatting_token_separator">␣</span><span class="formatting_token">building</span><span class="formatting_token_separator">/</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator"><br></span><span class="formatting_token">postal-code-prefix</span><span class="formatting_token_separator">-</span><span class="formatting_token">postal-code-suffix</span><span class="formatting_token_separator">␣</span><span class="formatting_token">locality1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country-name</span>
+<span class="formatting_token">street</span><span class="formatting_token_separator">␣</span><span class="formatting_token">building</span><span class="formatting_token_separator">/</span><span class="formatting_token">unit-type</span><span class="formatting_token">unit-name</span><span class="formatting_token_separator"><br></span><span class="formatting_token">postal-code-prefix</span><span class="formatting_token_separator">-</span><span class="formatting_token">postal-code-suffix</span><span class="formatting_token">locality1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">admin-area1</span><span class="formatting_token_separator"><br></span><span class="formatting_token">country-name</span>
 </div>
 
 </div><h3 id="street-address">
