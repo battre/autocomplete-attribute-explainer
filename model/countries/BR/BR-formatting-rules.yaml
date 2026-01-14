@@ -1,5 +1,10 @@
 formatting-rules:
   address:
+  # {street-address-alternative-1}
+  # {locality2}
+  # {locality1} - {admin-area1}
+  # {postal-code}
+  # {country-name}
   - street-address-alternative-1
   - separator: "\n"
   - locality2
@@ -29,10 +34,10 @@ formatting-rules:
   - in-building-location
 
   in-building-location:
-    - prefix: "Andar "
-    - floor
-    - separator: ", "
-    - unit
+  - prefix: "Andar "
+  - floor
+  - separator: ", "
+  - unit
 
   building-location:
   - street

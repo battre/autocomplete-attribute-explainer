@@ -1,8 +1,10 @@
 formatting-rules:
   address:
+  # {street-address-alternative-1}
+  # {locality1} {locality2}, {admin-area1} {admin-area2} {postal-code}
+  # {country-name}
   - street-address-alternative-1
   - separator: "\n"
-  # {city} {dummy-neighborhood}, {state} {dummy-adminarea2} {post-code}
   - locality1
   - locality2
   - separator: ", "
@@ -10,7 +12,6 @@ formatting-rules:
   - admin-area2
   - postal-code
   - separator: "\n"
-  # {country}
   - country-name
   - skip: country  # redundant with country-name
   - skip: street-address  # redundant with street-address-alternative-1
@@ -23,7 +24,6 @@ formatting-rules:
   - separator: "\n"
   - in-building-location
 
-  # Apartamento 5A, Piso 10
   in-building-location:
   - prefix: "Apt. "
   - unit-name
