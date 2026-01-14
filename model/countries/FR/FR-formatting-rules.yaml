@@ -1,17 +1,22 @@
 formatting-rules:
   address:
+  # {street-address-alternative-1}
+  # {locality2}
+  # {postal-code} {locality1}
+  # {admin-area1}
+  # {country-name}
   - street-address-alternative-1
   - separator: "\n"
   - locality2
   - separator: "\n"
   - postal-code
-  - separator: " "
   - locality1
+  - separator: "\n"
+  - admin-area1
   - separator: "\n"
   - country-name
   - skip: country  # redundant with country-name
   - skip: street-address  # redundant with street-address-alternative-1
-  - skip: admin-area1  # redundant with postal-code
 
   street-address-alternative-1:
   - building-location
@@ -57,4 +62,5 @@ examples:
         Appartament 36
         Quartier du Marais
         59491 Villeneuve-d'ascq
+        Nord-Pas-de-Calais
         France
