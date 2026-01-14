@@ -1,15 +1,20 @@
 formatting-rules:
   address:
+  # {street-address-alternative-1}
+  # {postal-code} {locality1}
+  # {admin-area1}
+  # {country-name}
   - street-address-alternative-1
   - separator: "\n"
   - postal-code
   - separator: " "
   - locality1
   - separator: "\n"
+  - admin-area1
+  - separator: "\n"
   - country-name
   - skip: country  # redundant with country-name
   - skip: street-address  # redundant with street-address-alternative-1
-  - skip: admin-area1 # not commonly used
 
   street-address-alternative-1:
   - building-location
@@ -52,6 +57,7 @@ examples:
     locality1: Amsterdam
     postal-code-prefix: 1234
     postal-code-suffix: AB
+    admin-area1: Noord-Holland
     country: NL
     country-name: Netherlands
   output:
@@ -60,6 +66,7 @@ examples:
       text: |
         Kerkstraat 10-A
         1234 AB Amsterdam
+        Noord-Holland
         Netherlands
 
 - id: address-without-unit
@@ -72,6 +79,7 @@ examples:
     locality1: Amsterdam
     postal-code-prefix: 1234
     postal-code-suffix: AB
+    admin-area1: Noord-Holland
     country: NL
     country-name: Netherlands
   output:
@@ -80,4 +88,5 @@ examples:
       text: |
         Kerkstraat 10
         1234 AB Amsterdam
+        Noord-Holland
         Netherlands

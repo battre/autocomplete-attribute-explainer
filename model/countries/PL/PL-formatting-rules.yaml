@@ -1,15 +1,19 @@
 formatting-rules:
   address:
+  # {street-address-alternative-1}
+  # {postal-code} {locality1}
+  # {admin-area1}
+  # {country-name}
   - street-address-alternative-1
   - separator: "\n"
   - postal-code
-  - separator: " "
   - locality1
+  - separator: "\n"
+  - admin-area1
   - separator: "\n"
   - country-name
   - skip: country  # redundant with country-name
   - skip: street-address  # redundant with street-address-alternative-1
-  - skip: admin-area1
 
   street-address-alternative-1:
   - building-location
@@ -46,6 +50,7 @@ examples:
     building-and-unit: 9/10
     locality1: Warsaw
     postal-code: 01-001
+    admin-area1: mazowieckie
     country: PL
     country-name: Polska
 
@@ -55,6 +60,7 @@ examples:
       text: |
         ul. Warsaw 9/10
         01-001 Warsaw
+        mazowieckie
         Polska
 
 - id: address-without-apartment
@@ -66,6 +72,7 @@ examples:
     building-and-unit: 9
     locality1: Warsaw
     postal-code: 01-001
+    admin-area1: mazowieckie
     country: PL
     country-name: Polska
 
@@ -75,4 +82,5 @@ examples:
       text: |
         ul. Warsaw 9
         01-001 Warsaw
+        mazowieckie
         Polska
