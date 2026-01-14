@@ -27,14 +27,16 @@ from google.cloud import translate_v2 as translate
 # enabled, an autofill-information attribute of form controls contains
 # information about Chrome autofill's interpretation of the form control.
 def extract_autofill_information(element):
-  if not element.has_attr("autofill-information"):
-    return {}
-  autofill_information = [
-      row.strip() for row in element["autofill-information"].split("\n")
-  ]
-  autofill_information = [row.split(": ", 2) for row in autofill_information]
-  autofill_information = [row for row in autofill_information if len(row) == 2]
-  return {row[0]: row[1] for row in autofill_information}
+    if not element.has_attr("autofill-information"):
+        return {}
+    autofill_information = [
+        row.strip() for row in element["autofill-information"].split("\n")
+    ]
+    autofill_information = [row.split(": ", 2) for row in autofill_information]
+    autofill_information = [
+        row for row in autofill_information if len(row) == 2
+    ]
+    return {row[0]: row[1] for row in autofill_information}
 
 
 # For some fields Chrome does not extract the label correctly today. This is
@@ -42,34 +44,38 @@ def extract_autofill_information(element):
 # a form control. You can enable this strategy with the --label-follows-field
 # command line parameter.
 def extract_label_after_field(element):
-  for attempt in range(1, 3):
-    element = element.next_sibling
-    if not element:
-      return ""
-    if element.string and element.string.strip():
-      return element.string.strip()
-    if isinstance(element, bs4.element.NavigableString) and element.strip():
-      return element
-    if not isinstance(element, bs4.element.NavigableString):
-      contents = u' '.join(element.findAll(text=True)).strip()
-      if contents:
-        return contents
-  return ""
+    for attempt in range(1, 3):
+        element = element.next_sibling
+        if not element:
+            return ""
+        if element.string and element.string.strip():
+            return element.string.strip()
+        if isinstance(element,
+                      bs4.element.NavigableString) and element.strip():
+            return element
+        if not isinstance(element, bs4.element.NavigableString):
+            contents = u' '.join(element.findAll(text=True)).strip()
+            if contents:
+                return contents
+    return ""
+
 
 def extract_label_before_field(element):
-  for attempt in range(1, 3):
-    element = element.previous_sibling
-    if not element:
-      return ""
-    if element.string and element.string.strip():
-      return element.string.strip()
-    if isinstance(element, bs4.element.NavigableString) and element.strip():
-      return element
-    if not isinstance(element, bs4.element.NavigableString):
-      contents = u' '.join(element.findAll(text=True)).strip()
-      if contents:
-        return contents
-  return ""
+    for attempt in range(1, 3):
+        element = element.previous_sibling
+        if not element:
+            return ""
+        if element.string and element.string.strip():
+            return element.string.strip()
+        if isinstance(element,
+                      bs4.element.NavigableString) and element.strip():
+            return element
+        if not isinstance(element, bs4.element.NavigableString):
+            contents = u' '.join(element.findAll(text=True)).strip()
+            if contents:
+                return contents
+    return ""
+
 
 parser = argparse.ArgumentParser(description="Extract fields of forms.")
 parser.add_argument(
@@ -98,8 +104,9 @@ parser.add_argument(
     action="store_true",
     help="take label from dom predecessor",
 )
-parser.add_argument(
-    "--translate", action="store_true", help="enable Google translate")
+parser.add_argument("--translate",
+                    action="store_true",
+                    help="enable Google translate")
 parser.add_argument(
     "file",
     type=str,
@@ -129,83 +136,87 @@ sequence = site_example.sequences.add()
 sequence.section = address_pb2.ExampleSequenceSection.UNDEFINED
 sequence.hide = False
 for html_field in soup.find_all(["input", "select", "textarea"]):
-  field = sequence.fields.add()
-  field.name = ((html_field["id"] if html_field.has_attr("id") else "") + "|" +
-                (html_field["name"] if html_field.has_attr("name") else ""))
-  placeholder = (
-      html_field["placeholder"] if html_field.has_attr("placeholder") else "")
-  arialabel = (
-      html_field["aria-label"] if html_field.has_attr("aria-label") else "")
-  autocomplete = (
-      html_field["autocomplete"] if html_field.has_attr("autocomplete") else "")
+    field = sequence.fields.add()
+    field.name = ((html_field["id"] if html_field.has_attr("id") else "") +
+                  "|" +
+                  (html_field["name"] if html_field.has_attr("name") else ""))
+    placeholder = (html_field["placeholder"]
+                   if html_field.has_attr("placeholder") else "")
+    arialabel = (html_field["aria-label"]
+                 if html_field.has_attr("aria-label") else "")
+    autocomplete = (html_field["autocomplete"]
+                    if html_field.has_attr("autocomplete") else "")
 
-  autofill_information = extract_autofill_information(html_field)
-  overall_type = autofill_information.get("overall type", "")
+    autofill_information = extract_autofill_information(html_field)
+    overall_type = autofill_information.get("overall type", "")
 
-  if args.label_follows_field:
-    field.label = extract_label_after_field(html_field)
-  elif args.label_before_field:
-    field.label = extract_label_before_field(html_field)
-  else:
-    field.label = autofill_information.get("label", "")
-  if field.label and args.translate:
-    translation = translate_client.translate(
-        field.label, target_language="en", source_language=args.language)
-    field.label_translated = translation["translatedText"]
-  if not (placeholder and placeholder.strip()) and (arialabel and arialabel.strip()):
-    placeholder = arialabel
-  if placeholder and placeholder.strip():
-    field.example = placeholder.strip()
-    if field.example == field.label:
-      field.example = ""
-    if args.translate:
-      translation = translate_client.translate(
-          field.example, target_language="en", source_language=args.language)
-      field.example_translated = translation["translatedText"]
-
-  field.control_type = address_pb2.ControlType.UNSPECIFIED
-  if html_field.name == "input":
-    if html_field.has_attr("type") and html_field["type"] == "radio":
-      field.control_type = address_pb2.ControlType.RADIO
-    elif html_field.has_attr("type") and html_field["type"] == "checkbox":
-      field.control_type = address_pb2.ControlType.CHECKBOX
+    if args.label_follows_field:
+        field.label = extract_label_after_field(html_field)
+    elif args.label_before_field:
+        field.label = extract_label_before_field(html_field)
     else:
-      field.control_type = address_pb2.ControlType.INPUT
-  elif html_field.name == "select":
-    field.control_type = address_pb2.ControlType.SELECT
-  elif html_field.name == "textarea":
-    field.control_type = address_pb2.ControlType.TEXTAREA
+        field.label = autofill_information.get("label", "")
+    if field.label and args.translate:
+        translation = translate_client.translate(field.label,
+                                                 target_language="en",
+                                                 source_language=args.language)
+        field.label_translated = translation["translatedText"]
+    if not (placeholder and placeholder.strip()) and (arialabel
+                                                      and arialabel.strip()):
+        placeholder = arialabel
+    if placeholder and placeholder.strip():
+        field.example = placeholder.strip()
+        if field.example == field.label:
+            field.example = ""
+        if args.translate:
+            translation = translate_client.translate(
+                field.example,
+                target_language="en",
+                source_language=args.language)
+            field.example_translated = translation["translatedText"]
 
-  if autocomplete:
-    field.autocomplete_attribute = autocomplete
+    field.control_type = address_pb2.ControlType.UNSPECIFIED
+    if html_field.name == "input":
+        if html_field.has_attr("type") and html_field["type"] == "radio":
+            field.control_type = address_pb2.ControlType.RADIO
+        elif html_field.has_attr("type") and html_field["type"] == "checkbox":
+            field.control_type = address_pb2.ControlType.CHECKBOX
+        else:
+            field.control_type = address_pb2.ControlType.INPUT
+    elif html_field.name == "select":
+        field.control_type = address_pb2.ControlType.SELECT
+    elif html_field.name == "textarea":
+        field.control_type = address_pb2.ControlType.TEXTAREA
 
-  field.concepts.append("unset")
+    if autocomplete:
+        field.autocomplete_attribute = autocomplete
 
-  field.section = address_pb2.ExampleSequenceSection.OTHER
-  if "CREDIT_CARD_" in overall_type:
-    field.section = address_pb2.ExampleSequenceSection.PAYMENT
-  elif "ADDRESS_" in overall_type or "COMPANY_NAME" in overall_type:
-    field.section = address_pb2.ExampleSequenceSection.ADDRESS
-  elif "NAME_" in overall_type:
-    field.section = address_pb2.ExampleSequenceSection.NAME
-  elif "PHONE" in overall_type:
-    field.section = address_pb2.ExampleSequenceSection.PHONE
-  elif "EMAIL" in overall_type:
+    field.concepts.append("unset")
+
     field.section = address_pb2.ExampleSequenceSection.OTHER
+    if "CREDIT_CARD_" in overall_type:
+        field.section = address_pb2.ExampleSequenceSection.PAYMENT
+    elif "ADDRESS_" in overall_type or "COMPANY_NAME" in overall_type:
+        field.section = address_pb2.ExampleSequenceSection.ADDRESS
+    elif "NAME_" in overall_type:
+        field.section = address_pb2.ExampleSequenceSection.NAME
+    elif "PHONE" in overall_type:
+        field.section = address_pb2.ExampleSequenceSection.PHONE
+    elif "EMAIL" in overall_type:
+        field.section = address_pb2.ExampleSequenceSection.OTHER
 
-  form_sig = (
-      html_field["form_signature"] if html_field.has_attr("form_signature") else "")
-  if not form_sig in form_sig_to_counter:
-    form_counter += 1
-    form_sig_to_counter[form_sig] = form_counter
+    form_sig = (html_field["form_signature"]
+                if html_field.has_attr("form_signature") else "")
+    if not form_sig in form_sig_to_counter:
+        form_counter += 1
+        form_sig_to_counter[form_sig] = form_counter
 
-  field.html_comment = "Form {}".format(form_sig_to_counter[form_sig])
+    field.html_comment = "Form {}".format(form_sig_to_counter[form_sig])
 
-  testerfreezeat = (
-    html_field["testerfreezeat"] if html_field.has_attr("testerfreezeat") else "")
-  if "\"width\":0,\"height\":0" in testerfreezeat:
-    field.html_comment += ", invisible field"
-    field.section = address_pb2.ExampleSequenceSection.OTHER
-
+    testerfreezeat = (html_field["testerfreezeat"]
+                      if html_field.has_attr("testerfreezeat") else "")
+    if "\"width\":0,\"height\":0" in testerfreezeat:
+        field.html_comment += ", invisible field"
+        field.section = address_pb2.ExampleSequenceSection.OTHER
 
 print(text_format.MessageToString(ontology, as_utf8=True))
