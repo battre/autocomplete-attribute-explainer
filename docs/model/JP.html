@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="prototype for autofill attribute">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>Prototype for autofill attribute</title>
+  <link rel="shortcut icon" href="static/images/favicon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://www.gstatic.com/external_hosted/material_design_lite/mdl_css-cyan-light_blue-bundle.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script defer src="https://www.gstatic.com/external_hosted/material_design_lite/mdl_all_js_compiled.js"></script>
+  <style>
+    html, body {
+      font-family: 'Roboto', 'Helvetica', sans-serif;
+    }
+    a {
+      color: #3d5afe;
+    }
+    h3 { font-size: 20px; }
+    h4 { font-size: 18px; }
+    h5 { font-size: 16px; }
+    .example-form {
+      border: 1px black solid;
+      width: 600px;
+      margin: 4px;
+      padding: 4px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-gap: 10px;
+    }
+    .example-form span {
+      margin-right: 10px;
+    }
+
+    .navigation {
+      -webkit-flex-grow: 1;
+          -ms-flex-positive: 1;
+              flex-grow: 1;
+    }
+
+    .layout .navigation .mdl-navigation__link {
+      display: -webkit-flex !important;
+      display: -ms-flexbox !important;
+      display: flex !important;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      color: rgba(255, 255, 255, 0.56);
+      font-weight: 500;
+    }
+
+    .navigation .mdl-navigation__link .material-icons {
+      font-size: 24px;
+      color: rgba(255, 255, 255, 0.56);
+      margin-right: 12px;
+    }
+
+    .layout .navigation .mdl-navigation__link:hover {
+      background-color: #00bcd4;
+      color: #37474f;
+    }
+
+    .form {
+      margin: 8px;
+      padding: 4px;
+      border: 1px solid #37474f;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-column-gap: 10px;
+    }
+
+    .production_token {
+      border: 1px solid #00bcd4;
+      padding: 1px;
+      margin-right: 1px;
+      display: inline-block;
+    }
+
+    .production_token_separator, .production_token_prefix, .production_token_suffix {
+      font-family: 'Courier New', Courier, monospace;
+      padding: 1px;
+      margin: 1px;
+    }
+    .production_token_separator {
+      background-color: azure;
+    }
+    .production_token_prefix, .production_token_suffix {
+      background-color: beige;
+    }
+    .mdl-navigation__link.current{
+      opacity: 1;
+      font-weight: 700 !important;
+    }
+  </style>
+  
+    <style>
+    .parsing details {
+        border: 1px solid #aaa;
+        border-radius: 4px;
+        padding: 0.5em 0.5em 0;
+    }
+
+    .parsing summary {
+        font-weight: bold;
+        margin: -0.5em -0.5em 0;
+        padding: 0.5em;
+    }
+
+    .parsing details[open] {
+        padding: 0.5em;
+    }
+
+    .parsing details[open].summary {
+        border-bottom: 1px solid #aaa;
+        margin-bottom: 0.5em;
+    }
+
+    .parsing-regexfragment {
+        overflow-wrap: anywhere;
+        font-family: 'Courier New', Courier, monospace;
+        padding: 2px;
+        margin: 1px;
+        background-color: beige;
+    }
+    </style>
+    
+    <style>
+    .concept {
+      border-style: solid;
+      border-width: 1px;
+      border-color: #EEE;
+    }
+    .concept-id {
+      padding: 4px;
+      background-color: #EEE;
+    }
+    .concept-content {
+      padding: 4px 4px 4px 16px ;
+    }
+    </style>
+    
+    <style>
+    .concept {
+      border-style: solid;
+      border-width: 1px;
+      border-color: #EEE;
+    }
+    .concept-id {
+      padding: 4px;
+      background-color: #EEE;
+    }
+    .concept-content {
+      padding: 4px 4px 4px 16px ;
+    }
+    </style>
+    
+    <style>
+    .formatting_token {
+      border: 1px solid #00bcd4;
+      padding: 2px;
+      margin-left: 2px;
+      margin-right: 2px;
+      display: inline-block;
+    }
+    .formatting_token_separator, .formatting_token_prefix, .formatting_token_suffix {
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2px;
+      margin: 1px;
+    }
+    .formatting_token_separator {
+      background-color: azure;
+    }
+    .formatting_token_prefix, .formatting_token_suffix {
+      background-color: beige;
+    }
+    .formatting_errors {
+      color: red;
+    }
+
+    .formatting_example_textbox {
+      border: 1px solid black;
+      padding: 6px;
+    }
+    .formatting_example_overview_table td {
+      vertical-align: top;
+      padding: 0 10px;
+    }
+    .formatting_example_overview_table > tbody > tr > td {
+      padding: 6px;
+    }
+    </style>
+    
+    <style>
+      .website { padding: 4px; }
+      .website h1 {
+        font-size: 14px;
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+      .website h1 i { font-size: 14px; }
+      .website a i { font-size: 10px; }
+      .website_form {
+        border: 1px solid black;
+      }
+      .form-field-depth-0 { padding-left: 12px; }
+      .form-field-depth-1 { padding-left: 24px; }
+      .form-field-depth-2 { padding-left: 36px; }
+      .form-field-depth-3 { padding-left: 48px; }
+      .form-field-depth-4 { padding-left: 60px; }
+      .form-field-depth-5 { padding-left: 72px; }
+      .form-field-depth-6 { padding-left: 74px; }
+      .form-field-not-found { color: lightgrey; }
+      .missing-field-type { color: red; }
+    </style>
+    
+</head>
+
+<body>
+  <div class="layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+    <header class="header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title">Country: JP</span>
+      </div>
+    </header>
+    <div class="mdl-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+      <span class="mdl-layout-title">Select a country:</span>
+      <nav class="navigation mdl-navigation mdl-color--blue-grey-800">
+        
+        <a class="mdl-navigation__link "
+          href="global.html">
+          
+          <i class="mdl-color-text--blue-grey-400 material-icons"
+              role="presentation">south_america</i>
+          
+          <span>global</span></a>
+        
+        <a class="mdl-navigation__link "
+          href="AU.html">
+          
+          <span class="mdl-color-text--blue-grey-400 material-icons"
+              style="font-family:'Roboto', 'Helvetica', sans-serif;">
+              🇦🇺</span>
+          
+          <span>AU</span></a>
+        
+        <a class="mdl-navigation__link "
+          href="BR.html">
+          
+          <span class="mdl-color-text--blue-grey-400 material-icons"
+              style="font-family:'Roboto', 'Helvetica', sans-serif;">
+              🇧🇷</span>
+          
+          <span>BR</span></a>
+        
+        <a class="mdl-navigation__link "
+          href="CA.html">
+          
+          <span class="mdl-color-text--blue-grey-400 material-icons"
+              style="font-family:'Roboto', 'Helvetica', sans-serif;">
+              🇨🇦</span>
+          
+          <span>CA</span></a>
+        
+        <a class="mdl-navigation__link "
+          href="DE.html">
+          
+          <span class="mdl-color-text--blue-grey-400 material-icons"
+              style="font-family:'Roboto', 'Helvetica', sans-serif;">
+              🇩🇪</span>
+          
+          <span>DE</span></a>
+        
+        <a class="mdl-navigation__link "
+          href="FR.html">
+          
+          <span class="mdl-color-text--blue-grey-400 material-icons"
+              style="font-family:'Roboto', 'Helvetica', sans-serif;">
+              🇫🇷</span>
+          
+          <span>FR</span></a>
+        
+        <a class="mdl-navigation__link "
+          href="IN.html">
+          
+          <span class="mdl-color-text--blue-grey-400 material-icons"
+              style="font-family:'Roboto', 'Helvetica', sans-serif;">
+              🇮🇳</span>
+          
+          <span>IN</span></a>
+        
+        <a class="mdl-navigation__link "
+          href="IT.html">
+          
+          <span class="mdl-color-text--blue-grey-400 material-icons"
+              style="font-family:'Roboto', 'Helvetica', sans-serif;">
+              🇮🇹</span>
+          
+          <span>IT</span></a>
+        
+        <a class="mdl-navigation__link current"
+          href="JP.html">
+          
+          <span class="mdl-color-text--blue-grey-400 material-icons"
+              style="font-family:'Roboto', 'Helvetica', sans-serif;">
+              🇯🇵</span>
+          
+          <span>JP</span></a>
+        
+        <a class="mdl-navigation__link "
+          href="MX.html">
+          
+          <span class="mdl-color-text--blue-grey-400 material-icons"
+              style="font-family:'Roboto', 'Helvetica', sans-serif;">
+              🇲🇽</span>
+          
+          <span>MX</span></a>
+        
+        <a class="mdl-navigation__link "
+          href="NL.html">
+          
+          <span class="mdl-color-text--blue-grey-400 material-icons"
+              style="font-family:'Roboto', 'Helvetica', sans-serif;">
+              🇳🇱</span>
+          
+          <span>NL</span></a>
+        
+        <a class="mdl-navigation__link "
+          href="PL.html">
+          
+          <span class="mdl-color-text--blue-grey-400 material-icons"
+              style="font-family:'Roboto', 'Helvetica', sans-serif;">
+              🇵🇱</span>
+          
+          <span>PL</span></a>
+        
+        <a class="mdl-navigation__link "
+          href="US.html">
+          
+          <span class="mdl-color-text--blue-grey-400 material-icons"
+              style="font-family:'Roboto', 'Helvetica', sans-serif;">
+              🇺🇸</span>
+          
+          <span>US</span></a>
+        
+        <a class="mdl-navigation__link "
+          href="XX.html">
+          
+          <span class="mdl-color-text--blue-grey-400 material-icons"
+              style="font-family:'Roboto', 'Helvetica', sans-serif;">
+              �</span>
+          
+          <span>XX</span></a>
+        
+        
+        <div>
+          <hr>
+          <a class="mdl-navigation__link current" href="JP.html">Model</a></li>
+          
+          <a class="mdl-navigation__link "
+                 href="JP-structure-analysis.html">
+                 Structure Analysis
+              </a>
+          
+          <a class="mdl-navigation__link "
+                 href="JP-token-analysis.html">
+                 Token Analysis
+              </a>
+          
+          <a class="mdl-navigation__link "
+                 href="JP-type-subset-analysis.html">
+                 Type Subset Analysis
+              </a>
+          
+        </div>
+        
+      </nav>
+    </div>
+    <main class="mdl-layout__content mdl-color--grey-100">
+      <div id="content" class="content">
+        
+
+
+
+<div class="mdl-card mdl-shadow--2dp" style="width: 95%; margin: 8px">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Overview of concepts</h2>
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    
+  </div>
+</div>
+      </div>
+    </main>
+  </div>
+  
+</body>
+</html>
