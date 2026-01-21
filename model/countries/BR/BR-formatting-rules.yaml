@@ -34,10 +34,10 @@ formatting-rules:
   - in-building-location
 
   in-building-location:
-  - prefix: "Andar "
-  - floor
-  - separator: ", "
-  - unit
+    - prefix: "Andar "
+    - floor
+    - separator: ", "
+    - unit
 
   building-location:
   - street
