@@ -3,7 +3,9 @@ formatting-rules:
   - street-address-alternative-1
   - separator: "\n"
   - postal-code
+  - separator: " "
   - locality1
+  - separator: " "
   - admin-area1
   - separator: "\n"
   - country-name

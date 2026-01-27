@@ -3,10 +3,13 @@ formatting-rules:
   - street-address-alternative-1
   - separator: "\n"
   - locality1
+  - separator: " "
   - locality2
   - separator: ", "
   - admin-area1
+  - separator: " "
   - admin-area2
+  - separator: " "
   - postal-code
   - separator: "\n"
   - country-name
