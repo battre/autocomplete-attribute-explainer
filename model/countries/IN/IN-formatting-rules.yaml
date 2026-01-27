@@ -1,12 +1,5 @@
 formatting-rules:
   address:
-  # {building-location}
-  # {locality2}
-  # {landmark}
-  # {locality1}
-  # {admin-area1}
-  # {postal-code}
-  # {country-name}
   - building-location
   - separator: "\n"
   - locality2

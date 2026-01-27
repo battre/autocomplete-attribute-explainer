@@ -1,8 +1,5 @@
 formatting-rules:
   address:
-  # {street-address-alternative-1}
-  # {locality1} {locality2}, {admin-area1} {admin-area2} {postal-code}
-  # {country-name}
   - street-address-alternative-1
   - separator: "\n"
   - locality1
