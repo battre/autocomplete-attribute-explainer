@@ -13,6 +13,19 @@ cut-off-tokens:
   - locality4
 
 extra-definitions:
+  address:
+    - street-address
+    - street-address-alternative-1
+    - locality2
+    - postal-code-and-city
+    - admin-area1
+    - country
+    - country-name
+
   street-address-alternative-1:
   - building-location
   - address-overflow
+
+  postal-code-and-city:
+  - postal-code
+  - locality1
