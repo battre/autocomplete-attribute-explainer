@@ -4,9 +4,7 @@ formatting-rules:
   - separator: "\n"
   - locality2
   - separator: "\n"
-  - postal-code
-  - separator: " "
-  - locality1
+  - postal-code-and-city
   - separator: "\n"
   - admin-area1
   - separator: "\n"
@@ -23,6 +21,11 @@ formatting-rules:
   - building
   - separator: " "
   - street
+
+  postal-code-and-city:
+  - postal-code
+  - separator: " "
+  - locality1
 
 examples:
 - id: name

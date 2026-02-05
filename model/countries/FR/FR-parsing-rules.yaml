@@ -20,6 +20,9 @@ regex_definitions:
   kCommaOrNewlineSeparator:
     regex_fragment: '(?:, |\n|\r|,)+'
 
+  kZipValueRe:
+    regex_fragment: '\b\d{5}\b'
+
 capture_definitions:
   ParseBuildingLocation:
     capture:
@@ -47,6 +50,30 @@ capture_definitions:
           parts: [ {regex_fragment: '(?:[^\r\n]+)'} ]
           quantifier: MATCH_OPTIONAL
 
+  ParsePostalCodeThenCity:
+    capture:
+      output: postal-code-and-city
+      parts:
+      - capture:
+          output: postal-code
+          parts: [ {regex_reference: kZipValueRe} ]
+      - separator: {regex_reference: kCommaOrWhitespaceSeparator}
+      - capture:
+          output: locality1
+          parts: [ {regex_reference: kMultipleWordsRe} ]
+
+  ParseCityThenPostalCode:
+    capture:
+      output: postal-code-and-city
+      parts:
+      - capture:
+          output: locality1
+          parts: [ {regex_reference: kMultipleWordsRe} ]
+      - separator: {regex_reference: kCommaOrWhitespaceSeparator}
+      - capture:
+          output: postal-code
+          parts: [ {regex_reference: kZipValueRe} ]
+
 parsing_definitions:
   building-location:
     decomposition:
@@ -54,6 +81,13 @@ parsing_definitions:
   street-address-alternative-1:
     decomposition:
       capture_reference: StreetAddressDecomposition
+  postal-code-and-city:
+    decomposition_cascade:
+      alternatives:
+        - decomposition:
+            capture_reference: ParsePostalCodeThenCity
+        - decomposition:
+            capture_reference: ParseCityThenPostalCode
 
 test_parsing_definitions:
 - id: "Test 1"
@@ -156,3 +190,45 @@ test_parsing_definitions:
     street: "Place Charles de Gaulle"
     building: "1661"
     address-overflow: "Floor 5, Apartment 2"
+- id: "Test 13"
+  type: postal-code-and-city
+  input: "59491 Villeneuve-d'Ascq"
+  output:
+    postal-code-and-city: "59491 Villeneuve-d'Ascq"
+    postal-code: "59491"
+    locality1: "Villeneuve-d'Ascq"
+- id: "Test 14"
+  type: postal-code-and-city
+  input: "Paris 75002"
+  output:
+    postal-code-and-city: "75002 Paris"
+    locality1: "Paris"
+    postal-code: "75002"
+- id: "Test 15"
+  type: postal-code-and-city
+  input: "69120 Vaulx-en-Velin"
+  output:
+    postal-code-and-city: "69120 Vaulx-en-Velin"
+    postal-code: "69120"
+    locality1: "Vaulx-en-Velin"
+- id: "Test 16"
+  type: postal-code-and-city
+  input: "Aix-en-Provence 13100"
+  output:
+    postal-code-and-city: "Aix-en-Provence 13100"
+    locality1: "Aix-en-Provence"
+    postal-code: "13100"
+- id: "Test 17"
+  type: postal-code-and-city  # Matches the key in parsing_definitions
+  input: "Val de Moder 67350"
+  output:
+    postal-code-and-city: "Val de Moder 67350"
+    locality1: "Val de Moder"
+    postal-code: "67350"
+- id: "Test 18"
+  type: postal-code-and-city  # Matches the key in parsing_definitions
+  input: "42000 St. Étienne"
+  output:
+    postal-code-and-city: "42000 St. Étienne"
+    locality1: "St. Étienne"
+    postal-code: "42000"
